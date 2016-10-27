@@ -1,0 +1,15 @@
+-#- $this->layout('app:html')
+
+%nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      %a.navbar-brand{:href => "/"}
+        Admin Dashboard
+    .nav.navbar-nav.navbar-right
+      %p.navbar-text
+        = $admin->login
+        - $httpPath = $this->httpPath('app.cp.action', array('adminProcessor' => 'auth', 'action' => 'logout'))
+        %a.navbar-link{:href => $httpPath}
+          %span.glyphicon.glyphicon-log-out
+
+- $this->childContent();

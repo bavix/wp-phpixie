@@ -1,0 +1,16 @@
+- $this->layout('app:cp/layout')
+
+.container
+  .row
+    .col-sm-4.col-sm-offset-4
+
+      %h3 Impersonate user
+
+      - $httpPath = $this->httpPath('app.cp.action', array('cpProcessor' => 'dashboard', 'action' => 'impersonate'))
+      %form{:action => $httpPath, :method => "POST", :target => "_blank"}
+
+        %p
+          Log in as any existing user. Since cp and user authorization is completely separated,
+          this will not log you out of your cp account.
+
+        %button.btn.btn-default{:type => "submit"} Impersonate
