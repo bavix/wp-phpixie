@@ -1,15 +1,477 @@
--#- $this->layout('app:html')
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %title INSPINIA | CSS Animations
+    %link{:href => "/assets/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}
+    %link{:href => "/assets/font-awesome/css/font-awesome.css", :rel => "stylesheet"}
+    %link{:href => "/assets/inspinia/inspinia.css", :rel => "stylesheet"}
+  %body.pace-done
+    .pace.pace-inactive
+      .pace-progress{"data-progress" => "99", "data-progress-text" => "100%", :style => "transform: translate3d(100%, 0px, 0px);"}
+        .pace-progress-inner
+      .pace-activity
+    #wrapper
+      %nav.navbar-default.navbar-static-side{:role => "navigation"}
+        .sidebar-collapse
+          %ul#side-menu.nav.metismenu{:style => "display: block;"}
+            %li.nav-header
+              .dropdown.profile-element
+                %span
+                  %img.img-circle{:alt => "image", :src => "img/profile_small.jpg"}
+                %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
+                  %span.clear
+                    %span.block.m-t-xs
+                      %strong.font-bold =$admin->login
+                    %span.text-muted.text-xs.block
+                      Art Director
+                      %b.caret
+                %ul.dropdown-menu.animated.fadeInRight.m-t-xs
+                  %li
+                    %a{:href => "profile.html"} Profile
+                  %li
+                    %a{:href => "contacts.html"} Contacts
+                  %li
+                    %a{:href => "mailbox.html"} Mailbox
+                  %li.divider
+                  %li
+                    - $httpPath = $this->httpPath('app.cp.action', array('cpProcessor' => 'auth', 'action' => 'logout'))
+                    %a{:href => $httpPath} Logout
+              .logo-element
+                IN+
+            %li
+              %a{:href => "index.html"}
+                %i.fa.fa-th-large
+                %span.nav-label Dashboards
+                %span.fa.arrow
+              %ul.nav.nav-second-level.collapse
+                %li
+                  %a{:href => "index.html"} Dashboard v.1
+                %li
+                  %a{:href => "dashboard_2.html"} Dashboard v.2
+                %li
+                  %a{:href => "dashboard_3.html"} Dashboard v.3
+                %li
+                  %a{:href => "dashboard_4_1.html"} Dashboard v.4
+                %li
+                  %a{:href => "dashboard_5.html"}
+                    Dashboard v.5
+                    %span.label.label-primary.pull-right NEW
+            %li
+              %a{:href => "layouts.html"}
+                %i.fa.fa-diamond
+                %span.nav-label Layouts
+            %li
+              %a{:href => "#"}
+                %i.fa.fa-bar-chart-o
+                %span.nav-label Graphs
+                %span.fa.arrow
+              %ul.nav.nav-second-level.collapse
+                %li
+                  %a{:href => "graph_flot.html"} Flot Charts
+                %li
+                  %a{:href => "graph_morris.html"} Morris.js Charts
+                %li
+                  %a{:href => "graph_rickshaw.html"} Rickshaw Charts
+                %li
+                  %a{:href => "graph_chartjs.html"} Chart.js
+                %li
+                  %a{:href => "graph_chartist.html"} Chartist
+                %li
+                  %a{:href => "c3.html"} c3 charts
+                %li
+                  %a{:href => "graph_peity.html"} Peity Charts
+                %li
+                  %a{:href => "graph_sparkline.html"} Sparkline Charts
+            %li
+              %a{:href => "mailbox.html"}
+                %i.fa.fa-envelope
+                %span.nav-label Mailbox
+                %span.label.label-warning.pull-right 16/24
+              %ul.nav.nav-second-level.collapse
+                %li
+                  %a{:href => "mailbox.html"} Inbox
+                %li
+                  %a{:href => "mail_detail.html"} Email view
+                %li
+                  %a{:href => "mail_compose.html"} Compose email
+                %li
+                  %a{:href => "email_template.html"} Email templates
+            %li
+              %a{:href => "metrics.html"}
+                %i.fa.fa-pie-chart
+                %span.nav-label Metrics
+            %li
+              %a{:href => "widgets.html"}
+                %i.fa.fa-flask
+                %span.nav-label Widgets
+            %li
+              %a{:href => "#"}
+                %i.fa.fa-edit
+                %span.nav-label Forms
+                %span.fa.arrow
+              %ul.nav.nav-second-level.collapse
+                %li
+                  %a{:href => "form_basic.html"} Basic form
+                %li
+                  %a{:href => "form_advanced.html"} Advanced Plugins
+                %li
+                  %a{:href => "form_wizard.html"} Wizard
+                %li
+                  %a{:href => "form_file_upload.html"} File Upload
+                %li
+                  %a{:href => "form_editors.html"} Text Editor
+                %li
+                  %a{:href => "form_markdown.html"} Markdown
+            %li
+              %a{:href => "#"}
+                %i.fa.fa-desktop
+                %span.nav-label App Views
+                %span.pull-right.label.label-primary SPECIAL
+              %ul.nav.nav-second-level.collapse
+                %li
+                  %a{:href => "contacts.html"} Contacts
+                %li
+                  %a{:href => "profile.html"} Profile
+                %li
+                  %a{:href => "profile_2.html"} Profile v.2
+                %li
+                  %a{:href => "contacts_2.html"} Contacts v.2
+                %li
+                  %a{:href => "projects.html"} Projects
+                %li
+                  %a{:href => "project_detail.html"} Project detail
+                %li
+                  %a{:href => "teams_board.html"} Teams board
+                %li
+                  %a{:href => "social_feed.html"} Social feed
+                %li
+                  %a{:href => "clients.html"} Clients
+                %li
+                  %a{:href => "full_height.html"} Outlook view
+                %li
+                  %a{:href => "vote_list.html"} Vote list
+                %li
+                  %a{:href => "file_manager.html"} File manager
+                %li
+                  %a{:href => "calendar.html"} Calendar
+                %li
+                  %a{:href => "issue_tracker.html"} Issue tracker
+                %li
+                  %a{:href => "blog.html"} Blog
+                %li
+                  %a{:href => "article.html"} Article
+                %li
+                  %a{:href => "faq.html"} FAQ
+                %li
+                  %a{:href => "timeline.html"} Timeline
+                %li
+                  %a{:href => "pin_board.html"} Pin board
+            %li
+              %a{:href => "#"}
+                %i.fa.fa-files-o
+                %span.nav-label Other Pages
+                %span.fa.arrow
+              %ul.nav.nav-second-level.collapse
+                %li
+                  %a{:href => "search_results.html"} Search results
+                %li
+                  %a{:href => "lockscreen.html"} Lockscreen
+                %li
+                  %a{:href => "invoice.html"} Invoice
+                %li
+                  %a{:href => "login.html"} Login
+                %li
+                  %a{:href => "login_two_columns.html"} Login v.2
+                %li
+                  %a{:href => "forgot_password.html"} Forget password
+                %li
+                  %a{:href => "register.html"} Register
+                %li
+                  %a{:href => "404.html"} 404 Page
+                %li
+                  %a{:href => "500.html"} 500 Page
+                %li
+                  %a{:href => "empty_page.html"} Empty page
+            %li
+              %a{:href => "#"}
+                %i.fa.fa-globe
+                %span.nav-label Miscellaneous
+                %span.label.label-info.pull-right NEW
+              %ul.nav.nav-second-level.collapse
+                %li
+                  %a{:href => "toastr_notifications.html"} Notification
+                %li
+                  %a{:href => "nestable_list.html"} Nestable list
+                %li
+                  %a{:href => "agile_board.html"} Agile board
+                %li
+                  %a{:href => "timeline_2.html"} Timeline v.2
+                %li
+                  %a{:href => "diff.html"} Diff
+                %li
+                  %a{:href => "i18support.html"} i18 support
+                %li
+                  %a{:href => "sweetalert.html"} Sweet alert
+                %li
+                  %a{:href => "idle_timer.html"} Idle timer
+                %li
+                  %a{:href => "truncate.html"} Truncate
+                %li
+                  %a{:href => "spinners.html"} Spinners
+                %li
+                  %a{:href => "tinycon.html"} Live favicon
+                %li
+                  %a{:href => "google_maps.html"} Google maps
+                %li
+                  %a{:href => "code_editor.html"} Code editor
+                %li
+                  %a{:href => "modal_window.html"} Modal window
+                %li
+                  %a{:href => "clipboard.html"} Clipboard
+                %li
+                  %a{:href => "forum_main.html"} Forum view
+                %li
+                  %a{:href => "validation.html"} Validation
+                %li
+                  %a{:href => "tree_view.html"} Tree view
+                %li
+                  %a{:href => "loading_buttons.html"} Loading buttons
+                %li
+                  %a{:href => "chat_view.html"} Chat view
+                %li
+                  %a{:href => "masonry.html"} Masonry
+                %li
+                  %a{:href => "tour.html"} Tour
+            %li
+              %a{:href => "#"}
+                %i.fa.fa-flask
+                %span.nav-label UI Elements
+                %span.fa.arrow
+              %ul.nav.nav-second-level.collapse
+                %li
+                  %a{:href => "typography.html"} Typography
+                %li
+                  %a{:href => "icons.html"} Icons
+                %li
+                  %a{:href => "draggable_panels.html"} Draggable Panels
+                %li
+                  %a{:href => "resizeable_panels.html"} Resizeable Panels
+                %li
+                  %a{:href => "buttons.html"} Buttons
+                %li
+                  %a{:href => "video.html"} Video
+                %li
+                  %a{:href => "tabs_panels.html"} Panels
+                %li
+                  %a{:href => "tabs.html"} Tabs
+                %li
+                  %a{:href => "notifications.html"} Notifications & Tooltips
+                %li
+                  %a{:href => "badges_labels.html"} Badges, Labels, Progress
+            %li
+              %a{:href => "grid_options.html"}
+                %i.fa.fa-laptop
+                %span.nav-label Grid options
+            %li
+              %a{:href => "#"}
+                %i.fa.fa-table
+                %span.nav-label Tables
+                %span.fa.arrow
+              %ul.nav.nav-second-level.collapse
+                %li
+                  %a{:href => "table_basic.html"} Static Tables
+                %li
+                  %a{:href => "table_data_tables.html"} Data Tables
+                %li
+                  %a{:href => "table_foo_table.html"} Foo Tables
+                %li
+                  %a{:href => "jq_grid.html"} jqGrid
+            %li
+              %a{:href => "#"}
+                %i.fa.fa-shopping-cart
+                %span.nav-label E-commerce
+                %span.fa.arrow
+              %ul.nav.nav-second-level.collapse
+                %li
+                  %a{:href => "ecommerce_products_grid.html"} Products grid
+                %li
+                  %a{:href => "ecommerce_product_list.html"} Products list
+                %li
+                  %a{:href => "ecommerce_product.html"} Product edit
+                %li
+                  %a{:href => "ecommerce_product_detail.html"} Product detail
+                %li
+                  %a{:href => "ecommerce-cart.html"} Cart
+                %li
+                  %a{:href => "ecommerce-orders.html"} Orders
+                %li
+                  %a{:href => "ecommerce_payments.html"} Credit Card form
+            %li
+              %a{:href => "#"}
+                %i.fa.fa-picture-o
+                %span.nav-label Gallery
+                %span.fa.arrow
+              %ul.nav.nav-second-level.collapse
+                %li
+                  %a{:href => "basic_gallery.html"} Lightbox Gallery
+                %li
+                  %a{:href => "slick_carousel.html"} Slick Carousel
+                %li
+                  %a{:href => "carousel.html"} Bootstrap Carousel
+            %li
+              %a{:href => "#"}
+                %i.fa.fa-sitemap
+                %span.nav-label Menu Levels
+                %span.fa.arrow
+              %ul.nav.nav-second-level.collapse
+                %li
+                  %a{:href => "#"}
+                    Third Level
+                    %span.fa.arrow
+                  %ul.nav.nav-third-level.collapse
+                    %li
+                      %a{:href => "#"} Third Level Item
+                    %li
+                      %a{:href => "#"} Third Level Item
+                    %li
+                      %a{:href => "#"} Third Level Item
+                %li
+                  %a{:href => "#"} Second Level Item
+                %li
+                  %a{:href => "#"} Second Level Item
+                %li
+                  %a{:href => "#"} Second Level Item
+            %li.active
+              %a{:href => ""}
+                %i.fa.fa-magic
+                %span.nav-label CSS Animations
+                %span.label.label-info.pull-right 62
+            %li.landing_link
+              %a{:href => "landing.html", :target => "_blank"}
+                %i.fa.fa-star
+                %span.nav-label Landing Page
+                %span.label.label-warning.pull-right NEW
+            %li.special_link
+              %a{:href => "package.html"}
+                %i.fa.fa-database
+                %span.nav-label Package
+      #page-wrapper.gray-bg{:style => "min-height: 1011px;"}
+        .row.border-bottom
+          %nav.navbar.navbar-static-top{:role => "navigation", :style => "margin-bottom: 0"}
+            .navbar-header
+              %a.navbar-minimalize.minimalize-styl-2.btn.btn-primary{:href => "#"}
+                %i.fa.fa-bars
+              %form.navbar-form-custom{:action => "search_results.html", :role => "search"}
+                .form-group
+                  %input#top-search.form-control{:name => "top-search", :placeholder => "Search for something...", :type => "text"}/
+            %ul.nav.navbar-top-links.navbar-right
+              %li
+                %span.m-r-sm.text-muted.welcome-message 
+              %li.dropdown
+                %a.dropdown-toggle.count-info{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
+                  %i.fa.fa-envelope
+                  %span.label.label-warning 16
+                %ul.dropdown-menu.dropdown-messages
+                  %li
+                    .dropdown-messages-box
+                      %a.pull-left{:href => "profile.html"}
+                        %img.img-circle{:alt => "image", :src => "img/a7.jpg"}/
+                      .media-body
+                        %small.pull-right 46h ago
+                        %strong Mike Loreipsum
+                        started following
+                        %strong Monica Smith
+                        %br/
+                        %small.text-muted 3 days ago at 7:58 pm - 10.06.2014
+                  %li.divider
+                  %li
+                    .dropdown-messages-box
+                      %a.pull-left{:href => "profile.html"}
+                        %img.img-circle{:alt => "image", :src => "img/a4.jpg"}/
+                      .media-body
+                        %small.pull-right.text-navy 5h ago
+                        %strong Chris Johnatan Overtunk
+                        started following
+                        %strong Monica Smith
+                        %br/
+                        %small.text-muted Yesterday 1:21 pm - 11.06.2014
+                  %li.divider
+                  %li
+                    .dropdown-messages-box
+                      %a.pull-left{:href => "profile.html"}
+                        %img.img-circle{:alt => "image", :src => "img/profile.jpg"}/
+                      .media-body
+                        %small.pull-right 23h ago
+                        %strong Monica Smith
+                        love
+                        %strong Kim Smith
+                        %br/
+                        %small.text-muted 2 days ago at 2:30 am - 11.06.2014
+                  %li.divider
+                  %li
+                    .text-center.link-block
+                      %a{:href => "mailbox.html"}
+                        %i.fa.fa-envelope
+                        %strong Read All Messages
+              %li.dropdown
+                %a.dropdown-toggle.count-info{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
+                  %i.fa.fa-bell
+                  %span.label.label-primary 8
+                %ul.dropdown-menu.dropdown-alerts
+                  %li
+                    %a{:href => "mailbox.html"}
+                      %div
+                        %i.fa.fa-envelope.fa-fw
+                        You have 16 messages
+                        %span.pull-right.text-muted.small 4 minutes ago
+                  %li.divider
+                  %li
+                    %a{:href => "profile.html"}
+                      %div
+                        %i.fa.fa-twitter.fa-fw
+                        3 New Followers
+                        %span.pull-right.text-muted.small 12 minutes ago
+                  %li.divider
+                  %li
+                    %a{:href => "grid_options.html"}
+                      %div
+                        %i.fa.fa-upload.fa-fw
+                        Server Rebooted
+                        %span.pull-right.text-muted.small 4 minutes ago
+                  %li.divider
+                  %li
+                    .text-center.link-block
+                      %a{:href => "notifications.html"}
+                        %strong See All Alerts
+                        %i.fa.fa-angle-right
+              %li
+                %a{:href => $httpPath}
+                  %i.fa.fa-sign-out
+                  Log out
+        .row.wrapper.border-bottom.white-bg.page-heading
+          .col-lg-10
+            %h2 CSS Animations
+            %ol.breadcrumb
+              %li
+                %a{:href => "index.html"} Home
+              %li.active
+                %strong CSS Animations
+          .col-lg-2
+        .wrapper.wrapper-content.animated.fadeIn
+          .row
+            .col-lg-12
+        .footer
+          .pull-right
+          %div
+            %strong Copyright
+            WBS © // 2016
 
-%nav.navbar.navbar-default
-  .container-fluid
-    .navbar-header
-      %a.navbar-brand{:href => "/"}
-        Admin Dashboard
-    .nav.navbar-nav.navbar-right
-      %p.navbar-text
-        = $admin->login
-        - $httpPath = $this->httpPath('app.cp.action', array('adminProcessor' => 'auth', 'action' => 'logout'))
-        %a.navbar-link{:href => $httpPath}
-          %span.glyphicon.glyphicon-log-out
+    %script{:src => "/assets/jquery/jquery.js"}
+    %script{:src => "/assets/bootstrap/js/bootstrap.min.js"}
+    %script{:src => "/assets/metisMenu/jquery.metisMenu.js"}
+    %script{:src => "/assets/slimscroll/jquery.slimscroll.min.js"}
+    %script{:src => "/assets/inspinia/inspinia.js"}
 
-- $this->childContent();
+-#- $this->childContent();

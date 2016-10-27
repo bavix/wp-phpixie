@@ -2,49 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/sass/template/cp/auth.sass" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/sass/template/wbs.sass" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Processor/CPProtected.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.codeclimate.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/template/http/exception.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/template/http/notFound.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PHPixie/Framework.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PHPixie/Framework/Assets.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PHPixie/Framework/Builder.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PHPixie/Framework/Components.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PHPixie/Framework/Configuration.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PHPixie/Framework/Console.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PHPixie/Framework/Context.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PHPixie/Framework/Extensions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PHPixie/Framework/Extensions/Template/Extension/Debug.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PHPixie/Framework/Extensions/Template/Extension/RouteTranslator.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PHPixie/Framework/HTTP.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PHPixie/Framework/Processors.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PHPixie/Framework/Processors/HTTP/ParseRoute.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PHPixie/Framework/Processors/HTTP/Response/Exception.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PHPixie/Framework/Processors/HTTP/Response/Normalize.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PHPixie/Framework/Processors/HTTP/Response/NotFound.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/PHPixie/Tests/Framework/AssetsTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/PHPixie/Tests/Framework/BuilderTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/PHPixie/Tests/Framework/ComponentsTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/PHPixie/Tests/Framework/ContextTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/PHPixie/Tests/Framework/Extensions/Template/Extension/DebugTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/PHPixie/Tests/Framework/Extensions/Template/Extension/RouteTranslatorTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/PHPixie/Tests/Framework/ExtensionsTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/PHPixie/Tests/Framework/HTTPTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/PHPixie/Tests/Framework/Processors/HTTP/ParseRouteTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/PHPixie/Tests/Framework/Processors/HTTP/Response/ExceptionTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/PHPixie/Tests/Framework/Processors/HTTP/Response/NormalizeTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/PHPixie/Tests/Framework/Processors/HTTP/Response/NotFoundTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/PHPixie/Tests/Framework/ProcessorsTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/PHPixie/Tests/FrameworkTest.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phpunit.xml" afterPath="$PROJECT_DIR$/phpunit.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/phpunit.php" afterPath="$PROJECT_DIR$/tests/phpunit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/assets/templates/cp/layout.haml" afterPath="$PROJECT_DIR$/bundles/app/assets/templates/cp/layout.haml" />
     </list>
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,7 +30,18 @@
     <favorites_list name="gallery-auth" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="layout.haml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bundles/app/assets/templates/cp/layout.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -273,6 +242,72 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Quickly CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wbs-cms" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Quickly CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wbs-cms" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Quickly CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wbs-cms" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -769,18 +804,18 @@
       <workItem from="1477507581407" duration="2317000" />
       <workItem from="1477510832075" duration="616000" />
       <workItem from="1477587146863" duration="7000" />
-      <workItem from="1477587213824" duration="6827000" />
+      <workItem from="1477587213824" duration="8647000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196095000" />
+    <option name="totallyTimeSpent" value="197915000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2730711" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2730711" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1200,14 +1235,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/app/assets/templates/cp/layout.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/app/assets/templates/cp/dashboard.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1233,6 +1260,14 @@
           <folding>
             <element signature="e#56#112#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/app/assets/templates/cp/layout.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
