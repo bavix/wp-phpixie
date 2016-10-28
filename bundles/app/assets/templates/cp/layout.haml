@@ -5,9 +5,10 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %title INSPINIA | Empty Page
     %link{:href => "/assets/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}
+    %link{:href => "/assets/toastr/toastr.min.css", :rel => "stylesheet"}
     %link{:href => "/assets/font-awesome/css/font-awesome.css", :rel => "stylesheet"}
     %link{:href => "/css/inspinia.css", :rel => "stylesheet"}
-  %body.fixed-sidebar
+  %body
     #wrapper
       %nav.navbar-default.navbar-static-side{:role => "navigation"}
         .sidebar-collapse
@@ -61,7 +62,7 @@
                 %i.fa.fa-diamond
                 %span.nav-label Layouts
             %li
-              %a{:href => "#"}
+              %a
                 %i.fa.fa-bar-chart-o
                 %span.nav-label Graphs
                 %span.fa.arrow
@@ -105,7 +106,7 @@
                 %i.fa.fa-flask
                 %span.nav-label Widgets
             %li
-              %a{:href => "#"}
+              %a
                 %i.fa.fa-edit
                 %span.nav-label Forms
                 %span.fa.arrow
@@ -123,7 +124,7 @@
                 %li
                   %a{:href => "form_markdown.html"} Markdown
             %li
-              %a{:href => "#"}
+              %a
                 %i.fa.fa-desktop
                 %span.nav-label App Views
                 %span.pull-right.label.label-primary SPECIAL
@@ -167,7 +168,7 @@
                 %li
                   %a{:href => "pin_board.html"} Pin board
             %li.active
-              %a{:href => "#"}
+              %a
                 %i.fa.fa-files-o
                 %span.nav-label Other Pages
                 %span.fa.arrow
@@ -193,7 +194,7 @@
                 %li.active
                   %a{:href => "empty_page.html"} Empty page
             %li
-              %a{:href => "#"}
+              %a
                 %i.fa.fa-globe
                 %span.nav-label Miscellaneous
                 %span.label.label-info.pull-right NEW
@@ -243,7 +244,7 @@
                 %li
                   %a{:href => "tour.html"} Tour
             %li
-              %a{:href => "#"}
+              %a
                 %i.fa.fa-flask
                 %span.nav-label UI Elements
                 %span.fa.arrow
@@ -273,7 +274,7 @@
                 %i.fa.fa-laptop
                 %span.nav-label Grid options
             %li
-              %a{:href => "#"}
+              %a
                 %i.fa.fa-table
                 %span.nav-label Tables
                 %span.fa.arrow
@@ -287,7 +288,7 @@
                 %li
                   %a{:href => "jq_grid.html"} jqGrid
             %li
-              %a{:href => "#"}
+              %a
                 %i.fa.fa-shopping-cart
                 %span.nav-label E-commerce
                 %span.fa.arrow
@@ -307,7 +308,7 @@
                 %li
                   %a{:href => "ecommerce_payments.html"} Credit Card form
             %li
-              %a{:href => "#"}
+              %a
                 %i.fa.fa-picture-o
                 %span.nav-label Gallery
                 %span.fa.arrow
@@ -319,28 +320,28 @@
                 %li
                   %a{:href => "carousel.html"} Bootstrap Carousel
             %li
-              %a{:href => "#"}
+              %a
                 %i.fa.fa-sitemap
                 %span.nav-label Menu Levels
                 %span.fa.arrow
               %ul.nav.nav-second-level.collapse
                 %li
-                  %a{:href => "#"}
+                  %a
                     Third Level
                     %span.fa.arrow
                   %ul.nav.nav-third-level
                     %li
-                      %a{:href => "#"} Third Level Item
+                      %a Third Level Item
                     %li
-                      %a{:href => "#"} Third Level Item
+                      %a Third Level Item
                     %li
-                      %a{:href => "#"} Third Level Item
+                      %a Third Level Item
                 %li
-                  %a{:href => "#"} Second Level Item
+                  %a Second Level Item
                 %li
-                  %a{:href => "#"} Second Level Item
+                  %a Second Level Item
                 %li
-                  %a{:href => "#"} Second Level Item
+                  %a Second Level Item
             %li
               %a{:href => "css_animation.html"}
                 %i.fa.fa-magic
@@ -359,7 +360,7 @@
         .row.border-bottom
           %nav.navbar.navbar-static-top{:role => "navigation", :style => "margin-bottom: 0"}
             .navbar-header
-              %a.navbar-minimalize.minimalize-styl-2.btn.btn-primary{:href => "#"}
+              %a.navbar-minimalize.minimalize-styl-2.btn.btn-primary
                 %i.fa.fa-bars
               %form.navbar-form-custom{:action => "search_results.html", :role => "search"}
                 .form-group
@@ -478,7 +479,9 @@
             WBS // © 2016
     %script{:src => "/assets/jquery/jquery.js"}
     %script{:src => "/assets/bootstrap/js/bootstrap.min.js"}
+    %script{:src => "/assets/toastr/toastr.min.js"}
     %script{:src => "/assets/metisMenu/jquery.metisMenu.js"}
     %script{:src => "/assets/slimscroll/jquery.slimscroll.min.js"}
     %script{:src => "/js/inspinia.js"}
     %script{:src => "/assets/pace/pace.min.js"}
+    partial: 'app:cp/config'

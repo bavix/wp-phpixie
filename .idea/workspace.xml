@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/inspinia/inspinia.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/inspinia/inspinia.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/Quickly CMS.iml" afterPath="$PROJECT_DIR$/.idea/WBS.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/assets/templates/cp/layout.haml" afterPath="$PROJECT_DIR$/bundles/app/assets/templates/cp/layout.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/assets/templates/error/404.haml" afterPath="$PROJECT_DIR$/bundles/app/assets/templates/error/404.haml" />
-    </list>
+    <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="" />
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -41,9 +32,73 @@
       <file leaf-file-name="layout.haml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bundles/app/assets/templates/cp/layout.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+            <state relative-caret-position="170">
+              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/app/assets/templates/cp/config.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+              <folding>
+                <marker date="1477655038634" expanded="true" signature="2702:10028" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="2702:10032" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="2783:3815" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="2830:3313" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="3118:3192" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="3230:3303" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="3318:3809" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="3612:3686" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="3724:3799" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="3898:4936" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="3946:4458" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="4262:4336" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="4374:4448" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="4464:4930" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="4734:4809" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="4846:4920" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="5016:5672" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="5065:5367" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="5162:5242" ph="{&quot;height&quot;: '100%'...}" />
+                <marker date="1477655038634" expanded="true" signature="5282:5356" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="5372:5666" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="5581:5656" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="5752:6214" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="5800:6000" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="5914:5989" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="6005:6208" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="6122:6198" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="6292:7442" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="6339:7257" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="6836:6910" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="6948:7023" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="7061:7135" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="7174:7247" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="7262:7436" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="7352:7426" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="7520:8131" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="7567:7950" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="7755:7829" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="7867:7940" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="7955:8125" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="8041:8115" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="8191:8250" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="8310:8440" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="8497:8624" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="8691:8818" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="8877:9004" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="9036:10028" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="9449:9517" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="9551:9619" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="9652:9719" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="9753:9821" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="9854:9921" ph="{...}" />
+                <marker date="1477655038634" expanded="true" signature="9955:10022" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,9 +106,21 @@
       <file leaf-file-name="inspinia.sass" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/sass/template/inspinia/inspinia.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
+            <state relative-caret-position="46">
               <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inspinia.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/inspinia.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="196" column="19" selection-start-line="196" selection-start-column="19" selection-end-line="196" selection-end-column="19" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -61,7 +128,7 @@
       <file leaf-file-name="_variables.sass" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/sass/template/inspinia/_variables.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
+            <state relative-caret-position="709">
               <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
@@ -84,8 +151,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vendor/phpixie/social/src/PHPixie/Social/Providers/Instagram/Provider.php" />
-        <option value="$PROJECT_DIR$/sql/getPermissions.sql" />
         <option value="$PROJECT_DIR$/bundles/app/assets/templates/admin/dashboard.haml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6d5d9b53-fdd8-4c4c-95f0-3477bb00a107/console.sql" />
         <option value="$PROJECT_DIR$/vendor/phpixie/orm/src/PHPixie/ORM.php" />
@@ -134,6 +199,8 @@
         <option value="$PROJECT_DIR$/assets/sass/template/inspinia/_landing.sass" />
         <option value="$PROJECT_DIR$/assets/sass/template/inspinia/_md-skin.sass" />
         <option value="$PROJECT_DIR$/assets/sass/template/inspinia/_variables.sass" />
+        <option value="$PROJECT_DIR$/web/js/inspinia.js" />
+        <option value="$PROJECT_DIR$/bundles/app/assets/templates/cp/config.haml" />
         <option value="$PROJECT_DIR$/bundles/app/assets/templates/cp/layout.haml" />
       </list>
     </option>
@@ -221,6 +288,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -268,6 +336,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="svg" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WBS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wbs-cms" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -717,7 +803,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -837,35 +922,36 @@
       <workItem from="1477510832075" duration="616000" />
       <workItem from="1477587146863" duration="7000" />
       <workItem from="1477587213824" duration="8647000" />
-      <workItem from="1477631397586" duration="11022000" />
+      <workItem from="1477631397586" duration="11175000" />
+      <workItem from="1477652313583" duration="3272000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208937000" />
+    <option name="totallyTimeSpent" value="212362000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2761194" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2793177" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -884,24 +970,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bundles/app/src/Project/App/AuthRepositories.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-130">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding>
-            <element signature="e#31#47#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/app/src/Project/App/Builder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="59" column="31" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessor.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -990,7 +1058,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,7 +1069,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="29" column="21" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,7 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="423">
           <caret line="63" column="24" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1025,9 +1090,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="397">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding>
-            <element signature="e#56#112#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1039,22 +1101,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/inspinia/inspinia.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="403" column="11" selection-start-line="403" selection-start-column="2" selection-end-line="403" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/inspinia/inspinia.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/web/assets/inspinia/inspinia.css" />
+    <entry file="file://$PROJECT_DIR$/web/assets/inspinia/inspinia.js" />
     <entry file="file://$PROJECT_DIR$/bundles/app/src/Project/HamlFormat.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
@@ -1086,7 +1134,6 @@
         <state relative-caret-position="187">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <marker date="1477633507768" expanded="true" signature="192:475" ph="{...}" />
             <marker date="1477633507768" expanded="true" signature="351:472" ph="{...}" />
             <marker date="1477633507768" expanded="true" signature="394:464" ph="..." />
             <marker date="1477633507768" expanded="true" signature="420:463" ph="..." />
@@ -1098,7 +1145,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="113" selection-start-line="8" selection-start-column="102" selection-end-line="8" selection-end-column="113" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1106,7 +1152,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="43" column="70" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1126,19 +1171,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/app/assets/templates/cp/layout2.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="61" selection-start-line="0" selection-start-column="0" selection-end-line="481" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/app/assets/templates/cp/layout2.haml" />
     <entry file="file://$PROJECT_DIR$/bundles/app/assets/templates/error/404.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1190,9 +1227,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/app/assets/templates/cp/config.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <marker date="1477655038634" expanded="true" signature="2702:10028" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="2702:10032" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="2783:3815" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="2830:3313" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="3118:3192" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="3230:3303" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="3318:3809" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="3612:3686" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="3724:3799" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="3898:4936" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="3946:4458" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="4262:4336" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="4374:4448" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="4464:4930" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="4734:4809" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="4846:4920" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="5016:5672" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="5065:5367" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="5162:5242" ph="{&quot;height&quot;: '100%'...}" />
+            <marker date="1477655038634" expanded="true" signature="5282:5356" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="5372:5666" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="5581:5656" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="5752:6214" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="5800:6000" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="5914:5989" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="6005:6208" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="6122:6198" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="6292:7442" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="6339:7257" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="6836:6910" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="6948:7023" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="7061:7135" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="7174:7247" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="7262:7436" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="7352:7426" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="7520:8131" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="7567:7950" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="7755:7829" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="7867:7940" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="7955:8125" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="8041:8115" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="8191:8250" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="8310:8440" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="8497:8624" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="8691:8818" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="8877:9004" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="9036:10028" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="9449:9517" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="9551:9619" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="9652:9719" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="9753:9821" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="9854:9921" ph="{...}" />
+            <marker date="1477655038634" expanded="true" signature="9955:10022" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/sass/template/inspinia/inspinia.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
+        <state relative-caret-position="46">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
         </state>
@@ -1200,16 +1299,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/sass/template/inspinia/_variables.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
+        <state relative-caret-position="709">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/inspinia.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="196" column="19" selection-start-line="196" selection-start-column="19" selection-end-line="196" selection-end-column="19" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/app/assets/templates/cp/layout.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+        <state relative-caret-position="170">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
           <folding />
         </state>
       </provider>
