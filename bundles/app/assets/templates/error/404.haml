@@ -1,15 +1,23 @@
-.container
-  .col-md-12
-    .col-md-3
-    .col-md-6
-      %h1.primary Oops!
-      %h2.warning
-        %b.info 404
-        Not Found
-      %p.clearfix
-      %h4.default К сожалению, произошла ошибка, страница не найдена
-      %p.clearfix
-      %a.btn.btn-success{:href => "/"}
-        %span.fa.fa-home
-        Главная
-  .col-md-3
+!!!
+%html
+  %head
+    %title Error 404
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %link{:href => "/assets/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}
+    %link{:href => "/assets/font-awesome/css/font-awesome.css", :rel => "stylesheet"}
+    %link{:href => "/css/inspinia.css", :rel => "stylesheet"}
+  %body.gray-bg
+    .middle-box.text-center.animated.fadeInDown
+      %h1 404
+      %h3.font-bold Page Not Found
+      .error-desc
+        Sorry, but the page you are looking for has note been found. Try checking the URL for error, then hit the refresh button on your browser or try found something else in our app.
+        %br
+        %br
+        %a.btn.btn-primary(href="/") Back to home
+    %script{:src => "/assets/jquery/jquery.js"}
+    %script{:src => "/assets/bootstrap/js/bootstrap.min.js"}
+    %script{:src => "/assets/metisMenu/jquery.metisMenu.js"}
+    %script{:src => "/assets/slimscroll/jquery.slimscroll.min.js"}
+    %script{:src => "/js/inspinia.js"}

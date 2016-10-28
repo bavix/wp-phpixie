@@ -1,35 +1,43 @@
 !!!
 %html
   %head
-    %meta{:charset => "utf-8"}
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
-    %title INSPINIA | CSS Animations
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title INSPINIA | Empty Page
     %link{:href => "/assets/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}
     %link{:href => "/assets/font-awesome/css/font-awesome.css", :rel => "stylesheet"}
-    %link{:href => "/assets/inspinia/inspinia.css", :rel => "stylesheet"}
-  %body.pace-done
-    .pace.pace-inactive
-      .pace-progress{"data-progress" => "99", "data-progress-text" => "100%", :style => "transform: translate3d(100%, 0px, 0px);"}
-        .pace-progress-inner
-      .pace-activity
+    %link{:href => "/css/inspinia.css", :rel => "stylesheet"}
+  %body.fixed-sidebar
     #wrapper
       %nav.navbar-default.navbar-static-side{:role => "navigation"}
         .sidebar-collapse
-          %ul#side-menu.nav.metismenu{:style => "display: block;"}
+          %ul#side-menu.nav.metismenu
             %li.nav-header
-              .profile-element
+              .dropdown.profile-element(align="center")
                 %span
                   - $profileEmail = '/svg/no-avatar.svg'
                   - if ($user->email)
                     - $profileEmail = 'https://secure.gravatar.com/avatar/' . md5($user->email)
-                  %img.img-circle{:alt => "image", :src => $profileEmail, :width => '48'}
+                  %img.img-circle{:alt => "image", :src => $profileEmail, :width => 48}
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                   %span.clear
                     %span.block.m-t-xs
                       %strong.font-bold =$user->login
                     %span.text-muted.text-xs.block
-                      = $user->role()->title
+                      =$_($user->role()->title)
+                      %b.caret
+                %ul.dropdown-menu.animated.fadeInRight.m-t-xs
+                  %li
+                    %a{:href => "profile.html"} Profile
+                  %li
+                    %a{:href => "contacts.html"} Contacts
+                  %li
+                    %a{:href => "mailbox.html"} Mailbox
+                  %li.divider
+                  %li
+                    %a{:href => "login.html"} Logout
               .logo-element
-                WBS
+                IN+
             %li
               %a{:href => "index.html"}
                 %i.fa.fa-th-large
@@ -158,12 +166,12 @@
                   %a{:href => "timeline.html"} Timeline
                 %li
                   %a{:href => "pin_board.html"} Pin board
-            %li
+            %li.active
               %a{:href => "#"}
                 %i.fa.fa-files-o
                 %span.nav-label Other Pages
                 %span.fa.arrow
-              %ul.nav.nav-second-level.collapse
+              %ul.nav.nav-second-level
                 %li
                   %a{:href => "search_results.html"} Search results
                 %li
@@ -182,7 +190,7 @@
                   %a{:href => "404.html"} 404 Page
                 %li
                   %a{:href => "500.html"} 500 Page
-                %li
+                %li.active
                   %a{:href => "empty_page.html"} Empty page
             %li
               %a{:href => "#"}
@@ -320,7 +328,7 @@
                   %a{:href => "#"}
                     Third Level
                     %span.fa.arrow
-                  %ul.nav.nav-third-level.collapse
+                  %ul.nav.nav-third-level
                     %li
                       %a{:href => "#"} Third Level Item
                     %li
@@ -333,8 +341,8 @@
                   %a{:href => "#"} Second Level Item
                 %li
                   %a{:href => "#"} Second Level Item
-            %li.active
-              %a{:href => ""}
+            %li
+              %a{:href => "css_animation.html"}
                 %i.fa.fa-magic
                 %span.nav-label CSS Animations
                 %span.label.label-info.pull-right 62
@@ -347,7 +355,7 @@
               %a{:href => "package.html"}
                 %i.fa.fa-database
                 %span.nav-label Package
-      #page-wrapper.gray-bg{:style => "min-height: 1011px;"}
+      #page-wrapper.gray-bg
         .row.border-bottom
           %nav.navbar.navbar-static-top{:role => "navigation", :style => "margin-bottom: 0"}
             .navbar-header
@@ -358,9 +366,9 @@
                   %input#top-search.form-control{:name => "top-search", :placeholder => "Search for something...", :type => "text"}/
             %ul.nav.navbar-top-links.navbar-right
               %li
-                %span.m-r-sm.text-muted.welcome-message 
+                %span.m-r-sm.text-muted.welcome-message
               %li.dropdown
-                %a.dropdown-toggle.count-info{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
+                %a.dropdown-toggle.count-info{"data-toggle" => "dropdown", :href => "#"}
                   %i.fa.fa-envelope
                   %span.label.label-warning 16
                 %ul.dropdown-menu.dropdown-messages
@@ -406,7 +414,7 @@
                         %i.fa.fa-envelope
                         %strong Read All Messages
               %li.dropdown
-                %a.dropdown-toggle.count-info{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
+                %a.dropdown-toggle.count-info{"data-toggle" => "dropdown", :href => "#"}
                   %i.fa.fa-bell
                   %span.label.label-primary 8
                 %ul.dropdown-menu.dropdown-alerts
@@ -442,27 +450,35 @@
                   %i.fa.fa-sign-out
                   Log out
         .row.wrapper.border-bottom.white-bg.page-heading
-          .col-lg-10
-            %h2 CSS Animations
+          .col-sm-4
+            %h2 This is main title
             %ol.breadcrumb
               %li
-                %a{:href => "index.html"} Home
+                %a{:href => "index.html"} This is
               %li.active
-                %strong CSS Animations
-          .col-lg-2
-        .wrapper.wrapper-content.animated.fadeIn
-          .row
-            .col-lg-12
+                %strong Breadcrumb
+          .col-sm-8
+            .title-action
+              %a.btn.btn-primary{:href => ""} This is action area
+        .wrapper.wrapper-content
+          .middle-box.text-center.animated.fadeInRightBig
+            %h3.font-bold This is page content
+            .error-desc
+              You can create here any grid layout you want. And any variation layout you imagine:) Check out
+              main dashboard and other site. It use many different layout.
+              %br/
+              %a.btn.btn-primary.m-t{:href => "index.html"} Dashboard
         .footer
           .pull-right
+            10GB of
+            %strong 250GB
+            Free.
           %div
             %strong Copyright
-            WBS © // 2016
-
+            WBS // © 2016
     %script{:src => "/assets/jquery/jquery.js"}
     %script{:src => "/assets/bootstrap/js/bootstrap.min.js"}
     %script{:src => "/assets/metisMenu/jquery.metisMenu.js"}
     %script{:src => "/assets/slimscroll/jquery.slimscroll.min.js"}
-    %script{:src => "/assets/inspinia/inspinia.js"}
-
--#- $this->childContent();
+    %script{:src => "/js/inspinia.js"}
+    %script{:src => "/assets/pace/pace.min.js"}
