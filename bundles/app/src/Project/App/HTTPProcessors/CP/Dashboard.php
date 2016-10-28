@@ -21,7 +21,7 @@ class Dashboard extends CPProtected
     public function defaultAction(Request $request)
     {
         return $this->template->get('app:cp/dashboard', array(
-            'admin' => $this->user
+            'user' => $this->user
         ));
     }
 

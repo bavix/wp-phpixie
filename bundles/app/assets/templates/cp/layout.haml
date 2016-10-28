@@ -17,29 +17,19 @@
         .sidebar-collapse
           %ul#side-menu.nav.metismenu{:style => "display: block;"}
             %li.nav-header
-              .dropdown.profile-element
+              .profile-element
                 %span
-                  %img.img-circle{:alt => "image", :src => "img/profile_small.jpg"}
-                %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
+                  - $profileEmail = '/svg/no-avatar.svg'
+                  - if ($user->email)
+                    - $profileEmail = 'https://secure.gravatar.com/avatar/' . md5($user->email)
+                  %img.img-circle{:alt => "image", :src => $profileEmail, :width => '48'}
                   %span.clear
                     %span.block.m-t-xs
-                      %strong.font-bold =$admin->login
+                      %strong.font-bold =$user->login
                     %span.text-muted.text-xs.block
-                      Art Director
-                      %b.caret
-                %ul.dropdown-menu.animated.fadeInRight.m-t-xs
-                  %li
-                    %a{:href => "profile.html"} Profile
-                  %li
-                    %a{:href => "contacts.html"} Contacts
-                  %li
-                    %a{:href => "mailbox.html"} Mailbox
-                  %li.divider
-                  %li
-                    - $httpPath = $this->httpPath('app.cp.action', array('cpProcessor' => 'auth', 'action' => 'logout'))
-                    %a{:href => $httpPath} Logout
+                      = $user->role()->title
               .logo-element
-                IN+
+                WBS
             %li
               %a{:href => "index.html"}
                 %i.fa.fa-th-large
@@ -447,6 +437,7 @@
                         %strong See All Alerts
                         %i.fa.fa-angle-right
               %li
+                - $httpPath = $this->httpPath('app.cp.action', array('cpProcessor' => 'auth', 'action' => 'logout'))
                 %a{:href => $httpPath}
                   %i.fa.fa-sign-out
                   Log out

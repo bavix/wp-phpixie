@@ -99,7 +99,7 @@ h5 {
   position: absolute;
   text-shadow: none;
   top: 100%;
-  z-index: 1000;
+  z-index: 1;
 }
 .dropdown-menu > li > a {
   border-radius: 3px;
@@ -207,7 +207,7 @@ h5 {
   font-size: 14px;
   height: 60px;
   margin: 0;
-  z-index: 2000;
+  z-index: 2;
 }
 .count-info .label {
   line-height: 12px;
@@ -401,7 +401,7 @@ body.fixed-sidebar .navbar-static-side,
 body.canvas-menu .navbar-static-side {
   position: fixed;
   width: 220px;
-  z-index: 2001;
+  z-index: 3;
   height: 100%;
 }
 body.fixed-sidebar.mini-navbar .navbar-static-side {
@@ -465,7 +465,7 @@ body.canvas-menu.mini-navbar .navbar-default .nav li .profile-element a span {
   left: 0;
 }
 body.canvas-menu nav.navbar-static-side {
-  z-index: 2001;
+  z-index: 3;
   background: #2f4050;
   height: 100%;
   position: fixed;
@@ -1535,7 +1535,7 @@ a.list-group-item.active:focus {
   color: white;
   text-align: left;
   white-space: nowrap;
-  z-index: 10000;
+  z-index: 10;
   padding: 5px 5px 5px 5px;
   min-height: 22px;
   border-radius: 3px;
@@ -3014,7 +3014,7 @@ a.forum-item-title:hover {
 }
 .jvectormap-goback {
   bottom: 10px;
-  z-index: 1000;
+  z-index: 1;
   padding: 6px;
 }
 .jvectormap-spinner {
@@ -3497,7 +3497,7 @@ ol.unstyled {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1;
   padding: 10px 20px;
   background: white;
   border-top: 1px solid #e7eaec;
@@ -3507,7 +3507,7 @@ ol.unstyled {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1;
   padding: 10px 20px;
   background: white;
   border-top: 1px solid #e7eaec;
@@ -4995,7 +4995,7 @@ dd.project-people {
   color: inherit;
 }
 .chat-view {
-  z-index: 20012;
+  z-index: 10;
 }
 .chat-users,
 .chat-statistic {
@@ -6523,7 +6523,7 @@ body.body-small .vote-icon {
 .landing-page.pace .pace-progress {
   background: #fff;
   position: fixed;
-  z-index: 2000;
+  z-index: 2;
   top: 0;
   left: 0;
   height: 2px;
@@ -7315,7 +7315,7 @@ body.rtls.top-navigation .footer.fixed {
   }
   .body-small.rtls .navbar-static-side {
     display: none;
-    z-index: 2001;
+    z-index: 3;
     position: absolute;
     width: 70px;
   }
@@ -7324,7 +7324,7 @@ body.rtls.top-navigation .footer.fixed {
   }
   .rtls.fixed-sidebar.body-small .navbar-static-side {
     display: none;
-    z-index: 2001;
+    z-index: 3;
     position: fixed;
     width: 220px;
   }
@@ -7362,7 +7362,7 @@ body.rtls.top-navigation .footer.fixed {
 .theme-config-box {
   margin-right: -220px;
   position: relative;
-  z-index: 2000;
+  z-index: 2;
   transition-duration: 0.8s;
 }
 .theme-config-box.show {
@@ -8108,7 +8108,7 @@ body.md-skin {
   background-color: #ffffff;
 }
 .md-skin.canvas-menu nav.navbar-static-side {
-  z-index: 2001;
+  z-index: 3;
   background: #ffffff;
   height: 100%;
   position: fixed;
@@ -8121,7 +8121,7 @@ body.md-skin {
     min-height: 1200px;
   }
   .navbar-static-side {
-    z-index: 2001;
+    z-index: 3;
     position: absolute;
     width: 220px;
   }
@@ -8139,7 +8139,7 @@ body.md-skin {
   }
   .body-small .navbar-static-side {
     display: none;
-    z-index: 2001;
+    z-index: 3;
     position: absolute;
     width: 70px;
   }
@@ -8168,7 +8168,7 @@ body.md-skin {
   }
   .fixed-sidebar.body-small .navbar-static-side {
     display: none;
-    z-index: 2001;
+    z-index: 3;
     position: fixed;
     width: 220px;
   }
