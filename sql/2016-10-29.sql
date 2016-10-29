@@ -79,6 +79,7 @@ CREATE TABLE IF NOT EXISTS `dealersHeadings` (
 -- Dumping structure for table wbs.headings
 CREATE TABLE IF NOT EXISTS `headings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parentId` int(11) NOT NULL DEFAULT '0',
   `title` varchar(50) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -87,13 +88,13 @@ CREATE TABLE IF NOT EXISTS `headings` (
 
 -- Dumping data for table wbs.headings: ~6 rows (approximately)
 /*!40000 ALTER TABLE `headings` DISABLE KEYS */;
-INSERT INTO `headings` (`id`, `title`, `createdAt`, `updatedAt`) VALUES
-	(1, 'WHEELS', '2016-10-29 10:55:27', '2016-10-29 10:55:27'),
-	(2, 'AERODYNAMICS', '2016-10-29 10:55:27', '2016-10-29 10:55:27'),
-	(3, 'EXHAUST', '2016-10-29 10:55:27', '2016-10-29 10:55:27'),
-	(4, 'BRAKES', '2016-10-29 10:55:27', '2016-10-29 10:55:27'),
-	(5, 'FORCING', '2016-10-29 10:55:27', '2016-10-29 10:55:27'),
-	(6, 'ACCESORIES', '2016-10-29 10:55:27', '2016-10-29 10:55:27');
+INSERT INTO `headings` (`id`, `parentId`, `title`, `createdAt`, `updatedAt`) VALUES
+	(1, 0, 'WHEELS', '2016-10-29 10:55:27', '2016-10-29 10:55:27'),
+	(2, 0, 'AERODYNAMICS', '2016-10-29 10:55:27', '2016-10-29 10:55:27'),
+	(3, 0, 'EXHAUST', '2016-10-29 10:55:27', '2016-10-29 10:55:27'),
+	(4, 0, 'BRAKES', '2016-10-29 10:55:27', '2016-10-29 10:55:27'),
+	(5, 0, 'FORCING', '2016-10-29 10:55:27', '2016-10-29 10:55:27'),
+	(6, 0, 'ACCESORIES', '2016-10-29 10:55:27', '2016-10-29 10:55:27');
 /*!40000 ALTER TABLE `headings` ENABLE KEYS */;
 
 
@@ -152,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `permissions` (
   `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table wbs.permissions: ~29 rows (approximately)
 /*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
@@ -203,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
   KEY `title` (`title`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table wbs.roles: ~10 rows (approximately)
+-- Dumping data for table wbs.roles: ~9 rows (approximately)
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
 INSERT INTO `roles` (`id`, `title`, `left`, `right`, `depth`, `rootId`, `createdAt`, `updatedAt`) VALUES
 	(1, 'Administrator', 1, 20, 0, 1, '2016-10-07 21:03:24', '2016-10-29 11:19:02'),
@@ -226,9 +227,9 @@ CREATE TABLE IF NOT EXISTS `rolesPermissions` (
   `permissionId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `permission` (`roleId`,`permissionId`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table wbs.rolesPermissions: ~33 rows (approximately)
+-- Dumping data for table wbs.rolesPermissions: ~29 rows (approximately)
 /*!40000 ALTER TABLE `rolesPermissions` DISABLE KEYS */;
 INSERT INTO `rolesPermissions` (`id`, `roleId`, `permissionId`) VALUES
 	(9, 1, 15),
@@ -276,7 +277,7 @@ CREATE TABLE IF NOT EXISTS `tokens` (
   `expires` bigint(20) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table wbs.tokens: ~0 rows (approximately)
 /*!40000 ALTER TABLE `tokens` DISABLE KEYS */;
@@ -302,7 +303,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table wbs.users: ~1 rows (approximately)
+-- Dumping data for table wbs.users: ~0 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `login`, `googleId`, `facebookId`, `instagramId`, `githubId`, `vkId`, `twitterId`, `dropboxId`, `email`, `passwordHash`, `roleId`, `createdAt`, `updatedAt`) VALUES
 	(1, 'rez1dent3', NULL, NULL, NULL, '5111255', '77525486', NULL, NULL, 'maksim.babichev95@gmail.com', '$2y$10$5PN0fk6ih8MbIxgb9Yhu0ORWKn7srgXBfAK4xxGBeU4ELv0SiABbC', 1, '2016-10-06 10:45:45', '2016-10-29 09:10:00');
