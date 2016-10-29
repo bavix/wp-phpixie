@@ -8,6 +8,7 @@ use PHPixie\HTTP\Messages\Message\Request;
 use PHPixie\HTTP\Responses\Response;
 use Project\App\ORM\User\User;
 use Project\App\Builder;
+use Project\Util;
 
 /**
  * Base processor
@@ -101,7 +102,7 @@ abstract class Processor extends Actions
 
         return $this->redirect($url);
     }
-    
+
     /**
      * @param $httpRequest
      *
@@ -111,12 +112,7 @@ abstract class Processor extends Actions
     {
         $action = $httpRequest->attributes()->get('action');
 
-        $action = preg_replace_callback('~-(\w)~', function ($word)
-        {
-            return mb_strtoupper($word[1]);
-        }, $action);
-
-        return $action;
+        return Util::camelCase($action);
     }
 
 }

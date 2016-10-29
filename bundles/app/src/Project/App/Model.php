@@ -14,4 +14,6 @@ class Model
     const Dealer = 'dealer';
 
     const Heading = 'heading';
+
+    const Image = 'image';
 }

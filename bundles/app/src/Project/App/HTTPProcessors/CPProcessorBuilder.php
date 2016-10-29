@@ -89,4 +89,12 @@ class CPProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
         return new CP\Settings($this->builder);
     }
 
+    /**
+     * @return CP\Upload
+     */
+    protected function buildUploadProcessor()
+    {
+        return new CP\Upload($this->builder);
+    }
+
 }
