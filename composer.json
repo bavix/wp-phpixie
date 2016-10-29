@@ -1,56 +1,69 @@
 {
-    "name": "phpixie/framework",
-    "description": "PHPixie Framework",
-    "keywords": ["processors"],
-    "homepage": "http://phpixie.com",
-    "type": "library",
+    "name": "phpixie/project",
+    "type": "project",
+    "description": "PHPixie skeleton project",
     "license": "BSD",
-    "authors": [
-        {
-            "name": "Roman Tsiupa",
-            "email": "draconyster@gmail.com",
-            "homepage": "http://dracony.org"
-        }
-    ],
-    "require": {
-        "phpixie/debug": "~3.0",
-        "phpixie/route": "~3.0",
-        "phpixie/template": "~3.0",
-        "phpixie/filesystem": "~3.0",
-        "phpixie/database": "~3.0",
-        "phpixie/config": "~3.0",
-        "phpixie/orm": "~3.0",
-        "phpixie/slice": "~3.0",
-        "phpixie/processors": "~3.0",
-        "phpixie/http": "~3.0",
-        "phpixie/http-processors": "~3.0",
-        "phpixie/security": "~3.0",
-        "phpixie/auth": "~3.0",
-        "phpixie/auth-orm": "~3.0",
-        "phpixie/auth-http": "~3.0",
-        "phpixie/auth-login": "~3.0",
-        "phpixie/auth-social": "~3.0",
-        "phpixie/auth-processors": "~3.0",
-        "phpixie/paginate": "~3.0",
-        "phpixie/paginate-orm": "~3.0",
-        "phpixie/image": "~3.0",
-        "phpixie/validate": "~3.0",
-        "phpixie/social": "~3.0",
-        "phpixie/cli": "~3.0",
-        "phpixie/console": "~3.0"
-    },
-    "require-dev": {
-        "phpixie/test": "~3.0"
-    },
     "autoload": {
         "psr-4": {
-            "PHPixie\\": "src/PHPixie",
-            "PHPixie\\Tests\\": "tests/PHPixie/Tests"
+            "": [
+                "src/",
+                "tests/",
+                "bundles/app/src/",
+                "bundles/test/src/",
+                "bundles/auth/src/"
+            ]
         }
+    },
+    "require": {
+        "phpixie/bundles": "3.*-dev",
+        "phpixie/framework": "3.*-dev",
+        "phpixie/config": "3.*-dev",
+        "phpixie/di": "3.*-dev",
+        "phpixie/console": "3.*-dev",
+        "phpixie/slice": "3.*-dev",
+        "phpixie/paginate": "3.*-dev",
+        "phpixie/orm": "3.*-dev",
+        "phpixie/processors": "3.*-dev",
+        "phpixie/route": "3.*-dev",
+        "phpixie/security": "3.*-dev",
+        "phpixie/template": "3.*-dev",
+        "phpixie/validate": "3.*-dev",
+        "phpixie/http-processors": "3.*-dev",
+        "phpixie/test": "3.*-dev",
+        "phpixie/filesystem": "3.*-dev",
+        "phpixie/debug": "3.*-dev",
+        "phpixie/database": "3.*-dev",
+        "phpixie/auth": "3.*-dev",
+        "phpixie/auth-http": "3.*-dev",
+        "phpixie/auth-login": "3.*-dev",
+        "phpixie/auth-orm": "3.*-dev",
+        "phpixie/auth-processors": "3.*-dev",
+        "phpixie/cli": "3.*-dev",
+        "phpixie/default-bundle": "3.*-dev",
+        "phpixie/bundle-framework": "3.*-dev",
+        "phpixie/framework-bundle": "3.*-dev",
+        "phpixie/auth-social": "3.*-dev",
+        "phpixie/social": "3.*-dev",
+        "phpixie/image": "3.*-dev",
+        "mthaml/mthaml": "^1.8",
+        "tedivm/stash": "^0.14.1",
+        "ezyang/htmlpurifier": "dev-master",
+        "ircmaxell/random-lib": "^1.2",
+        "nesbot/carbon": "^1.21",
+        "ralouphie/mimey": "^1.0"
+    },
+    "require-dev": {
+        "phpixie/test": "3.*-dev"
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "3.x-dev"
+            "dev-master": "3.*-dev"
         }
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "php ./console framework:generateBundle app",
+            "php ./console framework:installWebAssets"
+        ]
     }
 }
