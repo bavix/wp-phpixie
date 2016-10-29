@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/assets/config/orm.php" afterPath="$PROJECT_DIR$/bundles/app/assets/config/orm.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/assets/templates/cp/layout.haml" afterPath="$PROJECT_DIR$/bundles/app/assets/templates/cp/layout.haml" />
     </list>
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,6 +32,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="layout.haml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bundles/app/assets/templates/cp/layout.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="56" column="50" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Role.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/app/src/Project/App/Role.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -81,11 +92,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="orm.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="orm.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/app/assets/config/orm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
+            <state relative-caret-position="74">
               <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/app/assets/templates/cp/dashboard.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="22" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -169,7 +190,6 @@
         <option value="$PROJECT_DIR$/assets/sass/template/inspinia/_theme-config.sass" />
         <option value="$PROJECT_DIR$/bundles/app/src/Project/Breadcrumb.php" />
         <option value="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Processor.php" />
-        <option value="$PROJECT_DIR$/bundles/app/assets/templates/cp/layout.haml" />
         <option value="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/CP/Auth.php" />
         <option value="$PROJECT_DIR$/bundles/app/src/Project/App/Role.php" />
         <option value="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Landing.php" />
@@ -178,6 +198,7 @@
         <option value="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/CP/Dashboard.php" />
         <option value="$PROJECT_DIR$/bundles/app/src/Project/App/ORM/User/User.php" />
         <option value="$PROJECT_DIR$/bundles/app/assets/config/orm.php" />
+        <option value="$PROJECT_DIR$/bundles/app/assets/templates/cp/layout.haml" />
       </list>
     </option>
   </component>
@@ -927,12 +948,12 @@
       <workItem from="1477587213824" duration="8647000" />
       <workItem from="1477631397586" duration="11175000" />
       <workItem from="1477652313583" duration="3997000" />
-      <workItem from="1477662448995" duration="20527000" />
+      <workItem from="1477662448995" duration="20869000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="233614000" />
+    <option name="totallyTimeSpent" value="233956000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1039,14 +1060,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/app/assets/templates/cp/dashboard.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/CPProcessorBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-357">
@@ -1091,14 +1104,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/app/assets/templates/cp/layout.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -1276,8 +1281,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bundles/app/assets/config/orm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
+        <state relative-caret-position="74">
           <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/app/assets/templates/cp/dashboard.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/app/assets/templates/cp/layout.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="56" column="50" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
           <folding />
         </state>
       </provider>

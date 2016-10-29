@@ -41,7 +41,8 @@
                 WBS
             - foreach ($menuList as $menu)
               - $menuItems = $menu->menus()->asArray(true)
-              %li{:class => ($menu->processor == $currentMenu->processor) ? 'active' : ''}
+              - $isActive = $menu->processor == $currentMenu->processor
+              %li{:class => $isActive ? 'active' : ''}
                 - $attributes = ['cpProcessor' => $menu->processor, 'action' => $menu->action]
                 - $httpPath = 'app.cp.' . ($menu->action == 'default' ? 'processor' : 'action')
                 - $httpPath = $this->httpPath($httpPath, $attributes)
@@ -53,7 +54,7 @@
                 - if (!empty($menuItems))
                   %ul.nav.nav-second-level.collapse
                     - foreach ($menuItems as $menu)
-                      %li{:class => ($menu->action == $currentMenu->action) ? 'active' : ''}
+                      %li{:class => ($isActive && $menu->action == $currentMenu->action) ? 'active' : ''}
                         - $httpPath = 'app.cp.' . ($menu->action == 'default' ? 'processor' : 'action');
                         - $httpPath = $this->httpPath($httpPath, $attributes)
                         %a{:href => $httpPath} = $_($menu->title)
