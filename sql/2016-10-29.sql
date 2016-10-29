@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `headings` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COMMENT='Рубрики';
 
--- Dumping data for table wbs.headings: ~0 rows (approximately)
+-- Dumping data for table wbs.headings: ~6 rows (approximately)
 /*!40000 ALTER TABLE `headings` DISABLE KEYS */;
 INSERT INTO `headings` (`id`, `title`, `createdAt`, `updatedAt`) VALUES
 	(1, 'WHEELS', '2016-10-29 10:55:27', '2016-10-29 10:55:27'),
@@ -120,22 +120,26 @@ CREATE TABLE IF NOT EXISTS `menus` (
   `sortId` int(11) NOT NULL DEFAULT '99',
   `title` varchar(50) NOT NULL,
   `icon` varchar(50) NOT NULL DEFAULT 'fa-th-large',
-  `processor` varchar(50) NOT NULL,
+  `processor` varchar(50) DEFAULT NULL,
   `action` varchar(50) NOT NULL DEFAULT 'default',
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
--- Dumping data for table wbs.menus: ~6 rows (approximately)
+-- Dumping data for table wbs.menus: ~10 rows (approximately)
 /*!40000 ALTER TABLE `menus` DISABLE KEYS */;
 INSERT INTO `menus` (`id`, `parentId`, `sortId`, `title`, `icon`, `processor`, `action`, `createdAt`, `updatedAt`) VALUES
 	(1, 0, 0, 'Dashboard', 'fa-th-large', 'dashboard', 'default', '2016-10-28 18:00:23', '2016-10-28 18:40:48'),
 	(2, 0, 99, 'Settings', 'fa-cogs', 'settings', 'default', '2016-10-28 18:00:23', '2016-10-28 18:40:51'),
-	(3, 0, 1, 'Section of Wheels', 'fa-car', 'wheel', 'default', '2016-10-28 18:00:23', '2016-10-29 09:38:26'),
+	(3, 0, 2, 'Section of Wheels', 'fa-car', 'wheel', 'default', '2016-10-28 18:00:23', '2016-10-29 11:10:52'),
 	(4, 3, 0, 'Bolt Pattern', 'fa-car', 'wheel', 'boltPattern', '2016-10-28 18:00:23', '2016-10-29 10:52:51'),
 	(5, 3, 1, 'Styles', 'fa-car', 'wheel', 'styles', '2016-10-28 18:00:23', '2016-10-29 10:54:01'),
-	(6, 3, 2, 'Wheels', 'fa-car', 'wheel', 'default', '2016-10-28 18:00:23', '2016-10-29 10:54:03');
+	(6, 3, 2, 'Wheels', 'fa-car', 'wheel', 'default', '2016-10-28 18:00:23', '2016-10-29 10:54:03'),
+	(7, 0, 1, 'Catalogue', 'fa-database', NULL, 'default', '2016-10-28 18:00:23', '2016-10-29 11:10:58'),
+	(8, 7, 0, 'Heading', 'fa-database', 'heading', 'default', '2016-10-28 18:00:23', '2016-10-29 11:10:46'),
+	(9, 7, 1, 'Brand', 'fa-database', 'brand', 'default', '2016-10-28 18:00:23', '2016-10-29 11:10:47'),
+	(10, 7, 2, 'Dealer', 'fa-database', 'dealer', 'default', '2016-10-28 18:00:23', '2016-10-29 11:09:57');
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
 
 

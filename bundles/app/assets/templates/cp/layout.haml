@@ -43,19 +43,23 @@
               - $menuItems = $menu->menus->query()->orderAscendingBy('sortId')->find()->asArray(true)
               - $isActive = $menu->processor == $currentMenu->processor
               %li{:class => $isActive ? 'active' : ''}
+                - $isNotEmpty = !empty($menuItems)
                 - $attributes = ['cpProcessor' => $menu->processor, 'action' => $menu->action]
-                - $httpPath = 'app.cp.' . ($menu->action == 'default' ? 'processor' : 'action')
-                - $httpPath = $this->httpPath($httpPath, $attributes)
+                - $httpPath = '#'
+                - if (!$isNotEmpty && $menu->processor)
+                  - $httpPath = 'app.cp.' . ($menu->action == 'default' ? 'processor' : 'action')
+                  - $httpPath = $this->httpPath($httpPath, $attributes)
                 %a{:href => $httpPath}
                   %i.fa{:class => $menu->icon}
                   %span.nav-label = $_($menu->title)
-                  - if (!empty($menuItems))
+                  - if ($isNotEmpty)
                     %span.fa.arrow
-                - if (!empty($menuItems))
+                - if ($isNotEmpty)
                   %ul.nav.nav-second-level.collapse
                     - foreach ($menuItems as $menu)
                       %li{:class => ($isActive && $menu->action == $currentMenu->action) ? 'active' : ''}
-                        - $httpPath = 'app.cp.' . ($menu->action == 'default' ? 'processor' : 'action');
+                        - $httpPath = 'app.cp.' . ($menu->action == 'default' ? 'processor' : 'action')
+                        - $attributes = ['cpProcessor' => $menu->processor, 'action' => $menu->action]
                         - $httpPath = $this->httpPath($httpPath, $attributes)
                         %a{:href => $httpPath} = $_($menu->title)
 
