@@ -45,19 +45,19 @@ return [
         // brands & dealers
 
         [
-            'type'    => 'manyToMany',
-            'left'    => Model::Brand,
-            'dealers' => Model::Dealer,
+            'type'  => 'manyToMany',
+            'left'  => Model::Brand,
+            'right' => Model::Dealer,
         ],
         [
-            'type'    => 'manyToMany',
-            'left'    => Model::Brand, // бренд + рубрика
-            'dealers' => Model::Heading,
+            'type'  => 'manyToMany',
+            'left'  => Model::Brand, // бренд + рубрика
+            'right' => Model::Heading,
         ],
         [
-            'type'    => 'manyToMany',
-            'left'    => Model::Dealer, // бренд + рубрика
-            'dealers' => Model::Heading,
+            'type'  => 'manyToMany',
+            'left'  => Model::Dealer, // бренд + рубрика
+            'right' => Model::Heading,
         ],
         [
             'type'  => 'oneToMany',
