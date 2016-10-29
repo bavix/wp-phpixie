@@ -135,7 +135,7 @@ INSERT INTO `menus` (`id`, `parentId`, `sortId`, `title`, `icon`, `processor`, `
 	(3, 0, 2, 'Section of Wheels', 'fa-car', 'wheel', 'default', '2016-10-28 18:00:23', '2016-10-29 11:10:52'),
 	(4, 3, 0, 'Bolt Pattern', 'fa-car', 'wheel', 'boltPattern', '2016-10-28 18:00:23', '2016-10-29 10:52:51'),
 	(5, 3, 1, 'Styles', 'fa-car', 'wheel', 'styles', '2016-10-28 18:00:23', '2016-10-29 10:54:01'),
-	(6, 3, 2, 'Wheels', 'fa-car', 'wheel', 'default', '2016-10-28 18:00:23', '2016-10-29 10:54:03'),
+	(6, 3, 2, 'Wheel', 'fa-car', 'wheel', 'default', '2016-10-28 18:00:23', '2016-10-29 11:30:37'),
 	(7, 0, 1, 'Catalogue', 'fa-database', NULL, 'default', '2016-10-28 18:00:23', '2016-10-29 11:10:58'),
 	(8, 7, 0, 'Heading', 'fa-database', 'heading', 'default', '2016-10-28 18:00:23', '2016-10-29 11:10:46'),
 	(9, 7, 1, 'Brand', 'fa-database', 'brand', 'default', '2016-10-28 18:00:23', '2016-10-29 11:10:47'),
@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS `permissions` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table wbs.permissions: ~25 rows (approximately)
+-- Dumping data for table wbs.permissions: ~29 rows (approximately)
 /*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
 INSERT INTO `permissions` (`id`, `title`, `name`, `createdAt`, `updatedAt`) VALUES
 	(1, 'Доступ к административной панели', 'cp', '2016-10-25 06:25:31', '2016-10-28 18:58:41'),
@@ -228,7 +228,7 @@ CREATE TABLE IF NOT EXISTS `rolesPermissions` (
   UNIQUE KEY `permission` (`roleId`,`permissionId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table wbs.rolesPermissions: ~28 rows (approximately)
+-- Dumping data for table wbs.rolesPermissions: ~33 rows (approximately)
 /*!40000 ALTER TABLE `rolesPermissions` DISABLE KEYS */;
 INSERT INTO `rolesPermissions` (`id`, `roleId`, `permissionId`) VALUES
 	(9, 1, 15),
