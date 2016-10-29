@@ -181,7 +181,11 @@ INSERT INTO `permissions` (`id`, `title`, `name`, `createdAt`, `updatedAt`) VALU
 	(23, 'Раздел Дилеров', 'cp.delear', '2016-10-29 09:04:50', '2016-10-29 09:25:53'),
 	(25, 'Добавить Дилера', 'cp.delear.add', '2016-10-29 09:04:50', '2016-10-29 09:25:53'),
 	(26, 'Редактировать Дилера', 'cp.delear.edit', '2016-10-29 09:04:50', '2016-10-29 09:25:53'),
-	(27, 'Удалить Дилера', 'cp.delear.delete', '2016-10-29 09:04:50', '2016-10-29 09:25:53');
+	(27, 'Удалить Дилера', 'cp.delear.delete', '2016-10-29 09:04:50', '2016-10-29 09:25:53'),
+	(28, 'Раздел Рубрик', 'cp.heading', '2016-10-29 11:22:57', '2016-10-29 11:22:57'),
+	(29, 'Добавить Рубрику', 'cp.heading.add', '2016-10-29 11:22:57', '2016-10-29 11:23:23'),
+	(30, 'Редактировать Рубрику', 'cp.heading.edit', '2016-10-29 11:22:57', '2016-10-29 11:23:30'),
+	(31, 'Удалить Рубрику', 'cp.heading.delete', '2016-10-29 11:22:57', '2016-10-29 11:23:39');
 /*!40000 ALTER TABLE `permissions` ENABLE KEYS */;
 
 
@@ -199,7 +203,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
   KEY `title` (`title`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table wbs.roles: ~9 rows (approximately)
+-- Dumping data for table wbs.roles: ~10 rows (approximately)
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
 INSERT INTO `roles` (`id`, `title`, `left`, `right`, `depth`, `rootId`, `createdAt`, `updatedAt`) VALUES
 	(1, 'Administrator', 1, 20, 0, 1, '2016-10-07 21:03:24', '2016-10-29 11:19:02'),
@@ -254,7 +258,12 @@ INSERT INTO `rolesPermissions` (`id`, `roleId`, `permissionId`) VALUES
 	(26, 9, 10),
 	(27, 9, 11),
 	(28, 9, 12),
-	(29, 9, 13);
+	(29, 9, 13),
+	(30, 10, 1),
+	(31, 10, 28),
+	(32, 10, 29),
+	(33, 10, 30),
+	(34, 10, 31);
 /*!40000 ALTER TABLE `rolesPermissions` ENABLE KEYS */;
 
 
@@ -293,7 +302,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table wbs.users: ~0 rows (approximately)
+-- Dumping data for table wbs.users: ~1 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `login`, `googleId`, `facebookId`, `instagramId`, `githubId`, `vkId`, `twitterId`, `dropboxId`, `email`, `passwordHash`, `roleId`, `createdAt`, `updatedAt`) VALUES
 	(1, 'rez1dent3', NULL, NULL, NULL, '5111255', '77525486', NULL, NULL, 'maksim.babichev95@gmail.com', '$2y$10$5PN0fk6ih8MbIxgb9Yhu0ORWKn7srgXBfAK4xxGBeU4ELv0SiABbC', 1, '2016-10-06 10:45:45', '2016-10-29 09:10:00');
