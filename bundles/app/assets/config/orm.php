@@ -87,7 +87,20 @@ return [
                 'ownerKey'      => 'parentId'
             )
         ],
+        [
+            'type'  => 'oneToMany',
+            'owner' => Model::Heading,
+            'items' => Model::Heading,
 
+            'ownerOptions' => array(
+                'itemsProperty' => 'headings'
+            ),
+
+            'itemsOptions' => array(
+                'ownerProperty' => Model::Heading,
+                'ownerKey'      => 'parentId'
+            )
+        ],
     ]
 
 ];

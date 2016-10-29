@@ -3,7 +3,6 @@
 namespace Project\App;
 
 use PHPixie\DefaultBundle\Builder as DefaultBuilder;
-use Project\App\HTTPProcessors\Admin\Auth;
 use Stash\Pool;
 
 /**

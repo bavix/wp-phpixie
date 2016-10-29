@@ -4,6 +4,7 @@ namespace Project\App\HTTPProcessors;
 
 use PHPixie\DefaultBundle\Processor\HTTP\Actions;
 use PHPixie\BundleFramework\Components;
+use PHPixie\HTTP\Messages\Message\Request;
 use PHPixie\HTTP\Responses\Response;
 use Project\App\ORM\User\User;
 use Project\App\Builder;
@@ -99,6 +100,23 @@ abstract class Processor extends Actions
         $url = $this->builder->frameworkBuilder()->http()->generatePath($route, $params);
 
         return $this->redirect($url);
+    }
+    
+    /**
+     * @param $httpRequest
+     *
+     * @return mixed
+     */
+    protected function getActionNameFor($httpRequest)
+    {
+        $action = $httpRequest->attributes()->get('action');
+
+        $action = preg_replace_callback('~-(\w)~', function ($word)
+        {
+            return mb_strtoupper($word[1]);
+        }, $action);
+
+        return $action;
     }
 
 }

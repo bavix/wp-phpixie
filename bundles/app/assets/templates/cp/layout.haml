@@ -160,19 +160,19 @@
         .row.wrapper.border-bottom.white-bg.page-heading
           .col-sm-4
             %h2 =$_($currentMenu->title)
-            %ol.breadcrumb
-              -#- foreach (\Project\Breadcrumb::get() as $breadcrumbName => $url)
-              -#  - $isActive = (\Project\Breadcrumb::active() == $breadcrumbName)
-              -#  %li{:class => $isActive ? 'active' : ''}
-              -#    - if ($isActive || empty($url))
-              -#      %strong = $breadcrumbName
-              -#    - else
-              -#      - $httpPath = $this->httpPath($url[0], $url[1])
-              -#      %a{:href => $httpPath} = $breadcrumbName
-              -#%li
-              -#  %a{:href => "index.html"} This is
-              -#%li.active
-              -#  %strong Breadcrumb
+            -#%ol.breadcrumb
+            -#  - foreach (\Project\Breadcrumb::get() as $breadcrumbName => $url)
+            -#    - $isActive = (\Project\Breadcrumb::active() == $breadcrumbName)
+            -#    %li{:class => $isActive ? 'active' : ''}
+            -#      - if ($isActive || empty($url))
+            -#        %strong = $breadcrumbName
+            -#      - else
+            -#        - $httpPath = $this->httpPath($url[0], $url[1])
+            -#        %a{:href => $httpPath} = $breadcrumbName
+            -#  %li
+            -#    %a{:href => "index.html"} This is
+            -#  %li.active
+            -#    %strong Breadcrumb
           .col-sm-8
             .title-action
               %a.btn.btn-primary{:href => ""} This is action area
