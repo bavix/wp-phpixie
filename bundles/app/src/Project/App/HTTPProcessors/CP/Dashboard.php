@@ -4,6 +4,8 @@ namespace Project\App\HTTPProcessors\CP;
 
 use PHPixie\HTTP\Request;
 use Project\App\HTTPProcessors\Processor\CPProtected;
+use Project\App\Model;
+use Project\Breadcrumb;
 
 /**
  * Admin dashboard
@@ -20,9 +22,7 @@ class Dashboard extends CPProtected
      */
     public function defaultAction(Request $request)
     {
-        return $this->template->get('app:cp/dashboard', array(
-            'user' => $this->user
-        ));
+        return $this->render('app:cp/dashboard');
     }
 
 }

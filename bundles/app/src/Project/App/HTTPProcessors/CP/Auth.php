@@ -35,7 +35,7 @@ class Auth extends Processor
 
         if ($request->method() === 'GET')
         {
-            return $this->getTemplate();
+            return $this->render('app:cp/auth');
         }
 
         return $this->handleLogin($request);
@@ -82,27 +82,12 @@ class Auth extends Processor
 
         if ($user === null)
         {
-            return $this->getTemplate(array(
-                'loginFailed' => true
-            ));
+            $this->variables['loginFailed'] = true;
+
+            return $this->render('app:cp/auth');
         }
 
         return $this->loggedInRedirect();
-    }
-
-    /**
-     * Get template for the auth page
-     *
-     * @param array $data
-     *
-     * @return Template\Container
-     */
-    protected function getTemplate($data = array())
-    {
-        return $this->template->get(
-            'app:cp/auth',
-            $data
-        );
     }
 
     /**

@@ -15,6 +15,11 @@ abstract class Processor extends Actions
 {
 
     /**
+     * @var string
+     */
+    protected $resolverPath = 'app.processor';
+
+    /**
      * @var Builder
      */
     protected $builder;
@@ -28,6 +33,11 @@ abstract class Processor extends Actions
      * @var \PHPixie\Template
      */
     protected $template;
+
+    /**
+     * @var array
+     */
+    protected $variables = [];
 
     /**
      * @param Builder $builder
@@ -59,6 +69,11 @@ abstract class Processor extends Actions
             $resolverPath,
             $attributes
         );
+    }
+
+    public function render($path)
+    {
+        return $this->template->render($path, $this->variables);
     }
 
     /**

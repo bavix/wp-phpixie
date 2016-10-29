@@ -24,7 +24,69 @@ return [
         [
             'type'  => 'nestedSet',
             'model' => Model::Role
-        ]
+        ],
+
+        // self
+        [
+            'type'  => 'oneToMany',
+            'owner' => Model::Menu,
+            'items' => Model::Menu,
+
+            'ownerOptions' => array(
+                'itemsProperty' => 'menus'
+            ),
+
+            'itemsOptions' => array(
+                'ownerProperty' => Model::Menu,
+                'ownerKey'      => 'parentId'
+            )
+        ],
+
+        // brands & dealers
+
+        [
+            'type'    => 'manyToMany',
+            'left'    => Model::Brand,
+            'dealers' => Model::Dealer,
+        ],
+        [
+            'type'    => 'manyToMany',
+            'left'    => Model::Brand, // бренд + рубрика
+            'dealers' => Model::Heading,
+        ],
+        [
+            'type'    => 'manyToMany',
+            'left'    => Model::Dealer, // бренд + рубрика
+            'dealers' => Model::Heading,
+        ],
+        [
+            'type'  => 'oneToMany',
+            'owner' => Model::Brand,
+            'items' => Model::Brand,
+
+            'ownerOptions' => array(
+                'itemsProperty' => 'brands'
+            ),
+
+            'itemsOptions' => array(
+                'ownerProperty' => Model::Brand,
+                'ownerKey'      => 'parentId'
+            )
+        ],
+        [
+            'type'  => 'oneToMany',
+            'owner' => Model::Dealer,
+            'items' => Model::Dealer,
+
+            'ownerOptions' => array(
+                'itemsProperty' => 'dealers'
+            ),
+
+            'itemsOptions' => array(
+                'ownerProperty' => Model::Dealer,
+                'ownerKey'      => 'parentId'
+            )
+        ],
 
     ]
 
