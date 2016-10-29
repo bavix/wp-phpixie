@@ -49,4 +49,44 @@ class CPProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
         return new CP\Auth($this->builder);
     }
 
+    /**
+     * @return CP\Brand
+     */
+    protected function buildBrandProcessor()
+    {
+        return new CP\Brand($this->builder);
+    }
+
+    /**
+     * @return CP\Dealer
+     */
+    protected function buildDealerProcessor()
+    {
+        return new CP\Dealer($this->builder);
+    }
+
+    /**
+     * @return CP\Wheel
+     */
+    protected function buildWheelProcessor()
+    {
+        return new CP\Wheel($this->builder);
+    }
+
+    /**
+     * @return CP\Heading
+     */
+    protected function buildHeadingProcessor()
+    {
+        return new CP\Heading($this->builder);
+    }
+
+    /**
+     * @return CP\Settings
+     */
+    protected function buildSettingsProcessor()
+    {
+        return new CP\Settings($this->builder);
+    }
+
 }
