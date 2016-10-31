@@ -1,0 +1,244 @@
+- $this->layout('app:cp/layout')
+
+.tabs-container
+  .tabs-left
+    %ul.nav.nav-tabs
+      - foreach ($roles as $item => $role)
+        %li{:class => $item === 0 ? 'active' : ''}
+          %a{"aria-expanded" => "true", "data-toggle" => "tab", :href => "#role-" . $role->id()} = $role->title
+    .tab-content
+      - foreach ($roles as $item => $role)
+        %div.tab-pane{:id => 'role-' . $role->id(), :class => $item === 0 ? 'active' : ''}
+          .panel-body
+            %table.table.table-bordered.table-striped
+              %thead
+                %tr
+                  %td
+                  %td Right of viewing
+                  %td Right of addition
+                  %td Right of editing
+                  %td Right of removal
+              %tbody
+                %tr
+                  %td Section of Wheels
+
+                  %td
+                    - if ($role->hasMyPermission('cp.wheel'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.wheel'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.wheel.add'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.wheel.add'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.wheel.edit'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.wheel.edit'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.wheel.delete'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.wheel.delete'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+
+                %tr
+                  %td Section of Brands
+
+                  %td
+                    - if ($role->hasMyPermission('cp.brand'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.brand'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.brand.add'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.brand.add'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.brand.edit'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.brand.edit'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.brand.delete'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.brand.delete'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+
+                %tr
+                  %td Section of Users
+
+                  %td
+                    - if ($role->hasMyPermission('cp.user'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.user'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.user.add'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.user.add'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.user.edit'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.user.edit'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.user.delete'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.user.delete'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+
+                %tr
+                  %td Section of Roles
+
+                  %td
+                    - if ($role->hasMyPermission('cp.role'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.role'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.role.add'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.role.add'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.role.edit'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.role.edit'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.role.delete'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.role.delete'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+
+                %tr
+                  %td Section of Permissions
+
+                  %td
+                    - if ($role->hasMyPermission('cp.permission'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.permission'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.permission.add'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.permission.add'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.permission.edit'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.permission.edit'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.permission.delete'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.permission.delete'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+
+                %tr
+                  %td Section of Dealers
+
+                  %td
+                    - if ($role->hasMyPermission('cp.dealer'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.dealer'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.dealer.add'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.dealer.add'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.dealer.edit'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.dealer.edit'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.dealer.delete'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.dealer.delete'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+
+                %tr
+                  %td Section of Headings
+
+                  %td
+                    - if ($role->hasMyPermission('cp.heading'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.heading'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.heading.add'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.heading.add'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.heading.edit'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.heading.edit'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.heading.delete'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.heading.delete'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no

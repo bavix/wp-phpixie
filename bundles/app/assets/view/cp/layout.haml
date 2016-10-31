@@ -8,8 +8,8 @@
     %link{:href => "/assets/toastr/toastr.min.css", :rel => "stylesheet"}
     %link{:href => "/assets/font-awesome/css/font-awesome.css", :rel => "stylesheet"}
     %link{:href => "/css/inspinia.css", :rel => "stylesheet"}
-    - $this->block('head.style')
-    - $this->block('head.script')
+    %link{:href => "/css/wbs.css", :rel => "stylesheet"}
+    - $this->block('head')
   %body
     #wrapper
       %nav.navbar-default.navbar-static-side{:role => "navigation"}
@@ -42,6 +42,8 @@
               .logo-element
                 WBS
             - foreach ($menuList as $menu)
+              - if (!$user->hasPermission('cp.' . $menu->processor))
+                - continue
               - $menuItems = $menu->menus->query()->orderAscendingBy('sortId')->find()->asArray(true)
               - $isActive = $menu->processor == $currentMenu->processor
               %li{:class => $isActive ? 'active' : ''}
@@ -59,6 +61,8 @@
                 - if ($isNotEmpty)
                   %ul.nav.nav-second-level.collapse
                     - foreach ($menuItems as $menu)
+                      - if (!$user->hasPermission('cp.' . $menu->processor))
+                        - continue
                       %li{:class => ($isActive && $menu->action == $currentMenu->action) ? 'active' : ''}
                         - $httpPath = 'app.cp.' . ($menu->action == 'default' ? 'processor' : 'action')
                         - $attributes = ['cpProcessor' => $menu->processor, 'action' => $menu->action]
@@ -198,3 +202,4 @@
     %script{:src => "/js/inspinia.js"}
     %script{:src => "/assets/pace/pace.min.js"}
     partial: 'app:cp/config'
+    %script(type="text/javascript" src="/js/inspinia.config.js")

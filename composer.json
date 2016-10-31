@@ -50,7 +50,10 @@
         "ezyang/htmlpurifier": "dev-master",
         "ircmaxell/random-lib": "^1.2",
         "nesbot/carbon": "^1.21",
-        "ralouphie/mimey": "^1.0"
+        "ralouphie/mimey": "^1.0",
+        "nelexa/buffer": "^1.1",
+        "league/html-to-markdown": "^4.3",
+        "phpixie/migrate": "3.*-dev"
     },
     "require-dev": {
         "phpixie/test": "3.*-dev"

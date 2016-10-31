@@ -97,4 +97,12 @@ class CPProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
         return new CP\Upload($this->builder);
     }
 
+    /**
+     * @return CP\Role
+     */
+    protected function buildRoleProcessor()
+    {
+        return new CP\Role($this->builder);
+    }
+
 }

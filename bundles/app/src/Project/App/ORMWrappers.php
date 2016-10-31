@@ -29,7 +29,8 @@ class ORMWrappers extends WrappersImplementation
      * @var array
      */
     protected $databaseEntities = array(
-        Model::User
+        Model::User,
+        Model::Role
     );
 
     /**
@@ -47,6 +48,19 @@ class ORMWrappers extends WrappersImplementation
     public function userEntity($entity)
     {
         return new ORM\User\User(
+            $entity,
+            $this->builder
+        );
+    }
+
+    /**
+     * @param $entity
+     *
+     * @return ORM\Role\Role
+     */
+    public function roleEntity($entity)
+    {
+        return new ORM\Role\Role(
             $entity,
             $this->builder
         );

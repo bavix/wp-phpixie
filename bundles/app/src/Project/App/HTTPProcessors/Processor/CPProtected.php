@@ -35,6 +35,11 @@ abstract class CPProtected extends Processor
         parent::__construct($builder);
     }
 
+    protected function accessDenied()
+    {
+        throw new \PHPixie\Processors\Exception("Access Denied");
+    }
+
     /**
      * Only process the request if the user is logged in.
      * Otherwise redirect to the login page.
@@ -57,22 +62,32 @@ abstract class CPProtected extends Processor
 
         if (!$this->user->hasPermission('cp'))
         {
-            throw new \PHPixie\Processors\Exception("Access Denied");
+            $this->accessDenied();
         }
 
-        $this->variables['user']      = $this->user;
-        $this->variables['menuList']  = $this->components->orm()
+        $attributes = $request->attributes();
+
+        $processor = $attributes->get('cpProcessor');
+        $action    = $attributes->get('action');
+
+        $permission = 'cp.' . $processor;
+
+        if (!$this->user->hasPermission($permission))
+        {
+            $this->accessDenied();
+        }
+
+        $this->variables['user']     = $this->user;
+        $this->variables['menuList'] = $this->components->orm()
             ->query(Model::Menu)
             ->where('parentId', 0)
             ->orderAscendingBy('sortId')
             ->find();
 
-        $attributes = $request->attributes();
-
         $this->variables['currentMenu'] = $this->components->orm()
             ->query(Model::Menu)
-            ->where('processor', $attributes->get('cpProcessor'))
-            ->where('action', $attributes->get('action'))
+            ->where('processor', $processor)
+            ->where('action', $action)
             ->findOne();
 
         return parent::process($request);

@@ -42,9 +42,7 @@ class Util
      */
     public static function unique(array $array)
     {
-        $array = array_keys(array_flip($array));
-
-        return $array;
+        return array_keys(array_flip($array));
     }
 
 }

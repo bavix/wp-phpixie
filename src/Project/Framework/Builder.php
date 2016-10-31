@@ -11,6 +11,7 @@ class Builder extends \PHPixie\BundleFramework\Builder
 {
     /**
      * Your Bundles registry
+     *
      * @return Bundles
      */
     protected function buildBundles()
@@ -19,7 +20,16 @@ class Builder extends \PHPixie\BundleFramework\Builder
     }
 
     /**
+     * @return Components
+     */
+    protected function buildComponents()
+    {
+        return new Components($this);
+    }
+
+    /**
      * Your extension registry registry
+     *
      * @return Extensions
      */
     protected function buildExtensions()
@@ -29,10 +39,11 @@ class Builder extends \PHPixie\BundleFramework\Builder
 
     /**
      * Projects root directory
+     *
      * @return Bundles
      */
     protected function getRootDirectory()
     {
-        return realpath(__DIR__.'/../../../');
+        return realpath(__DIR__ . '/../../../');
     }
 }
