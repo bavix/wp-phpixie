@@ -32,7 +32,7 @@
       <file leaf-file-name="2016-10-29.sql" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sql/2016-10-29.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-255">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -854,15 +854,15 @@
       <workItem from="1477652313583" duration="3997000" />
       <workItem from="1477662448995" duration="36232000" />
       <workItem from="1477899618623" duration="2608000" />
-      <workItem from="1477902270203" duration="19941000" />
+      <workItem from="1477902270203" duration="20177000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="271868000" />
+    <option name="totallyTimeSpent" value="272104000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29198185" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1309,7 +1309,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sql/2016-10-29.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-255">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
