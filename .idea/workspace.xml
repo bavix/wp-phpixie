@@ -1,40 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/composerJson.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/app/assets/view/cp/config.haml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/app/assets/view/cp/role/role.haml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/CP/Role.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/ORM/Role/Role.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/app/src/Project/Template/Builder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/app/src/Project/Template/Compiler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/app/src/Project/Template/Resolver.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/app/src/Project/Template/Template.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Project/Framework/Components.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/inspinia.config.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bundles/app/assets/templates/cp/config.haml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sass/template/wbs.sass" afterPath="$PROJECT_DIR$/assets/sass/template/wbs.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/assets/config/templateLocator.php" afterPath="$PROJECT_DIR$/bundles/app/assets/config/templateLocator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/CP/Auth.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/CP/Auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/CP/Dashboard.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/CP/Dashboard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/CPProcessorBuilder.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/CPProcessorBuilder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Processor/CPProtected.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Processor/CPProtected.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App/ORM/User/User.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/ORM/User/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App/ORMWrappers.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/ORMWrappers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/Util.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/Util.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Project/Framework/Builder.php" afterPath="$PROJECT_DIR$/src/Project/Framework/Builder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/wbs.css" afterPath="$PROJECT_DIR$/web/css/wbs.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/wbs.css.map" afterPath="$PROJECT_DIR$/web/css/wbs.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/app/assets/templates/cp/auth.haml" afterPath="$PROJECT_DIR$/bundles/app/assets/view/cp/auth/auth.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/app/assets/templates/cp/dashboard.haml" afterPath="$PROJECT_DIR$/bundles/app/assets/view/cp/dashboard/dashboard.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/app/assets/templates/cp/layout.haml" afterPath="$PROJECT_DIR$/bundles/app/assets/view/cp/layout.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/app/assets/templates/error/404.haml" afterPath="$PROJECT_DIR$/bundles/app/assets/view/error/404.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/app/assets/templates/layout.haml" afterPath="$PROJECT_DIR$/bundles/app/assets/view/layout.haml" />
-    </list>
+    <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="" />
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -887,15 +854,15 @@
       <workItem from="1477652313583" duration="3997000" />
       <workItem from="1477662448995" duration="36232000" />
       <workItem from="1477899618623" duration="2608000" />
-      <workItem from="1477902270203" duration="19855000" />
+      <workItem from="1477902270203" duration="19941000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="271782000" />
+    <option name="totallyTimeSpent" value="271868000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29198185" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
