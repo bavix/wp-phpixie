@@ -105,4 +105,12 @@ class CPProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
         return new CP\Role($this->builder);
     }
 
+    /**
+     * @return CP\User
+     */
+    protected function buildUserProcessor()
+    {
+        return new CP\User($this->builder);
+    }
+
 }

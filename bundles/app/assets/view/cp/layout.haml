@@ -20,7 +20,7 @@
                 %span
                   - $profileEmail = '/svg/no-avatar.svg'
                   - if ($user->email)
-                    - $profileEmail = 'https://secure.gravatar.com/avatar/' . md5($user->email)
+                    - $profileEmail = 'https://secure.gravatar.com/avatar/' . md5($user->email) . '?s=48'
                   %img.img-circle{:alt => "image", :src => $profileEmail, :width => 48}
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                   %span.clear

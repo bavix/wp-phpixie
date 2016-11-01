@@ -18,6 +18,11 @@ return array(
                 'type' => 'group',
                 'resolvers' => array(
 
+                    'item' => array(
+                        'type'     => 'pattern',
+                        'path'     => '/<cpProcessor>/<action>/<id>'
+                    ),
+
                     'action' => array(
                         'type'     => 'pattern',
                         'path'     => '/<cpProcessor>/<action>'
