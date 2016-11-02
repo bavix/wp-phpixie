@@ -1,29 +1,23 @@
 - $this->layout('app:cp/layout')
 
 .row
-  .col-md-12.col-lg-12
+  .col-md-12.col-lg-12.col-xs-12.col-sm-12
     .ibox
       .ibox-title
+        Users
         .pull-right
-          (
-          %strong = $pager->itemCount()
-          )
-          users
+          %strong.label.label-primary = $pager->itemCount()
       .ibox-content
         .table-responsive
           - foreach ($pager->getCurrentItems() as $_user)
-            .col-md-1.col-lg-1
-              - $profileEmail = '/svg/no-avatar.svg'
-              - if ($user->email)
-                - $profileEmail = 'https://secure.gravatar.com/avatar/' . md5($user->email) . '?s=48'
-              %img.img-circle(src="#{$profileEmail}")
-            .col-md-4.col-lg-4
+            %img.col-md-1.img-circle(src="#{$_user->getAvatar(96)}")
+            .col-md-11
               %h3
                 - $httpPath = 'app.cp.item'
                 - $attributes = ['cpProcessor' => 'user', 'action' => 'profile', 'id' => $_user->id]
                 - $httpPath = $this->httpPath($httpPath, $attributes)
                 %a.text-navy(href="#{$httpPath}")
-                  = $_($_user->name . ' ' . $_user->lastname)
+                  = '#' . $_user->id() . ' ' . $_($_user->name . ' ' . $_user->lastname)
               %p.small
                 Login:
                 = $_($_user->login)
@@ -33,4 +27,3 @@
               %p.small
                 Role:
                 = $_($_user->role()->title)
-            -#.col-md-7.col-lg-7

@@ -47,4 +47,32 @@ class User extends UserLogin
         return $role->hasPermission($name);
     }
 
+    /**
+     * @param int $width
+     *
+     * @return string
+     */
+    public function getAvatar($width = 96)
+    {
+        $components = $this->builder->components();
+
+        $http = $components->http();
+        $request = $http->request();
+        $uri = $request->uri();
+
+        $urlPath = $uri->getScheme() . '://' . $uri->getHost() . '/svg/no-avatar.svg';
+
+        if ($this->email)
+        {
+            $grAvatar = 'https://secure.gravatar.com/avatar/' . md5($this->email);
+
+            $grAvatar .= '?s=' . $width;
+            $grAvatar .= '&d=' . $urlPath;
+
+            return $grAvatar;
+        }
+
+        return $urlPath;
+    }
+
 }
