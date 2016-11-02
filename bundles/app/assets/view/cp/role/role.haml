@@ -178,7 +178,10 @@
                     - else
                       %span.label.label-danger no
                   %td
-                    %span.label.label-default none
+                    - if ($role->hasPermission('cp.role.delete'))
+                      %span.label.label-info master
+                    - else
+                      %span.label.label-default none
 
                 %tr
                   %td Section of Permissions
@@ -212,7 +215,10 @@
                     - else
                       %span.label.label-danger no
                   %td
-                    %span.label.label-default none
+                    - if ($role->hasPermission('cp.permission.delete'))
+                      %span.label.label-info master
+                    - else
+                      %span.label.label-default none
 
                 %tr
                   %td Section of Dealers
