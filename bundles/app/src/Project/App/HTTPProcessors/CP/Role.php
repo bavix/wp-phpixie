@@ -18,7 +18,7 @@ class Role extends CPProtected
     {
         $orm = $this->components->orm();
 
-        $roles = $orm->query(Model::Role)
+        $roles = $orm->query(Model::ROLE)
             ->find();
 
         $this->variables['roles'] = $roles;

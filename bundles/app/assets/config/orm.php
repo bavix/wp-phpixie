@@ -13,31 +13,31 @@ return [
         // permissions + roles
         [
             'type'  => 'manyToMany',
-            'left'  => Model::Role,
-            'right' => Model::Permission
+            'left'  => Model::ROLE,
+            'right' => Model::PERMISSION
         ],
         [
             'type'  => 'oneToMany',
-            'owner' => Model::Role,
-            'items' => Model::User
+            'owner' => Model::ROLE,
+            'items' => Model::USER
         ],
         [
             'type'  => 'nestedSet',
-            'model' => Model::Role
+            'model' => Model::ROLE
         ],
 
         // self
         [
             'type'  => 'oneToMany',
-            'owner' => Model::Menu,
-            'items' => Model::Menu,
+            'owner' => Model::MENU,
+            'items' => Model::MENU,
 
             'ownerOptions' => array(
                 'itemsProperty' => 'menus'
             ),
 
             'itemsOptions' => array(
-                'ownerProperty' => Model::Menu,
+                'ownerProperty' => Model::MENU,
                 'ownerKey'      => 'parentId'
             )
         ],
@@ -46,58 +46,58 @@ return [
 
         [
             'type'  => 'manyToMany',
-            'left'  => Model::Brand,
-            'right' => Model::Dealer,
+            'left'  => Model::BRAND,
+            'right' => Model::DEALER,
         ],
         [
             'type'  => 'manyToMany',
-            'left'  => Model::Brand, // бренд + рубрика
-            'right' => Model::Heading,
+            'left'  => Model::BRAND, // бренд + рубрика
+            'right' => Model::HEADING,
         ],
         [
             'type'  => 'manyToMany',
-            'left'  => Model::Dealer, // бренд + рубрика
-            'right' => Model::Heading,
+            'left'  => Model::DEALER, // бренд + рубрика
+            'right' => Model::HEADING,
         ],
         [
             'type'  => 'oneToMany',
-            'owner' => Model::Brand,
-            'items' => Model::Brand,
+            'owner' => Model::BRAND,
+            'items' => Model::BRAND,
 
             'ownerOptions' => array(
                 'itemsProperty' => 'brands'
             ),
 
             'itemsOptions' => array(
-                'ownerProperty' => Model::Brand,
+                'ownerProperty' => Model::BRAND,
                 'ownerKey'      => 'parentId'
             )
         ],
         [
             'type'  => 'oneToMany',
-            'owner' => Model::Dealer,
-            'items' => Model::Dealer,
+            'owner' => Model::DEALER,
+            'items' => Model::DEALER,
 
             'ownerOptions' => array(
                 'itemsProperty' => 'dealers'
             ),
 
             'itemsOptions' => array(
-                'ownerProperty' => Model::Dealer,
+                'ownerProperty' => Model::DEALER,
                 'ownerKey'      => 'parentId'
             )
         ],
         [
             'type'  => 'oneToMany',
-            'owner' => Model::Heading,
-            'items' => Model::Heading,
+            'owner' => Model::HEADING,
+            'items' => Model::HEADING,
 
             'ownerOptions' => array(
                 'itemsProperty' => 'headings'
             ),
 
             'itemsOptions' => array(
-                'ownerProperty' => Model::Heading,
+                'ownerProperty' => Model::HEADING,
                 'ownerKey'      => 'parentId'
             )
         ],

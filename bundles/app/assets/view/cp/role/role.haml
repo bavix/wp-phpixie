@@ -5,7 +5,10 @@
     %ul.nav.nav-tabs
       - foreach ($roles as $item => $role)
         %li{:class => $item === 0 ? 'active' : ''}
-          %a{"aria-expanded" => "true", "data-toggle" => "tab", :href => "#role-" . $role->id()} = $role->title
+          %a{"aria-expanded" => "true", "data-toggle" => "tab", :href => "#role-" . $role->id()}
+            = $role->title
+            %label.label.label-danger.pull-right
+              = $role->id
     .tab-content
       - foreach ($roles as $item => $role)
         %div.tab-pane{:id => 'role-' . $role->id(), :class => $item === 0 ? 'active' : ''}
@@ -18,6 +21,7 @@
                   %td Right of addition
                   %td Right of editing
                   %td Right of removal
+                  %td Pull Request
               %tbody
                 %tr
                   %td Section of Wheels
@@ -47,6 +51,15 @@
                     - if ($role->hasMyPermission('cp.wheel.delete'))
                       %span.label.label-primary yes
                     - else if ($role->hasPermission('cp.wheel.delete'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasPermission('cp.wheel.delete'))
+                      %span.label.label-success master
+                    - else if ($role->hasMyPermission('cp.wheel.pull-request'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.wheel.pull-request'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
@@ -82,6 +95,15 @@
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
+                  %td
+                    - if ($role->hasPermission('cp.brand.delete'))
+                      %span.label.label-success master
+                    - else if ($role->hasMyPermission('cp.brand.pull-request'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.brand.pull-request'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
 
                 %tr
                   %td Section of Users
@@ -111,6 +133,15 @@
                     - if ($role->hasMyPermission('cp.user.delete'))
                       %span.label.label-primary yes
                     - else if ($role->hasPermission('cp.user.delete'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasPermission('cp.user.delete'))
+                      %span.label.label-success master
+                    - else if ($role->hasMyPermission('cp.user.pull-request'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.user.pull-request'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
@@ -146,6 +177,8 @@
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
+                  %td
+                    %span.label.label-default none
 
                 %tr
                   %td Section of Permissions
@@ -178,6 +211,8 @@
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
+                  %td
+                    %span.label.label-default none
 
                 %tr
                   %td Section of Dealers
@@ -210,6 +245,15 @@
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
+                  %td
+                    - if ($role->hasPermission('cp.dealer.delete'))
+                      %span.label.label-success master
+                    - else if ($role->hasMyPermission('cp.dealer.pull-request'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.dealer.pull-request'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
 
                 %tr
                   %td Section of Headings
@@ -239,6 +283,15 @@
                     - if ($role->hasMyPermission('cp.heading.delete'))
                       %span.label.label-primary yes
                     - else if ($role->hasPermission('cp.heading.delete'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasPermission('cp.heading.delete'))
+                      %span.label.label-success master
+                    - else if ($role->hasMyPermission('cp.heading.pull-request'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.heading.pull-request'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no

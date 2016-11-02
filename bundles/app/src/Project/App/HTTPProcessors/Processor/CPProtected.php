@@ -79,13 +79,13 @@ abstract class CPProtected extends Processor
 
         $this->variables['user']     = $this->user;
         $this->variables['menuList'] = $this->components->orm()
-            ->query(Model::Menu)
+            ->query(Model::MENU)
             ->where('parentId', 0)
             ->orderAscendingBy('sortId')
             ->find();
 
         $this->variables['currentMenu'] = $this->components->orm()
-            ->query(Model::Menu)
+            ->query(Model::MENU)
             ->where('processor', $processor)
             ->where('action', $action)
             ->findOne();

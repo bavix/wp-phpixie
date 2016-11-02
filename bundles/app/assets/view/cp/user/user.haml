@@ -5,25 +5,44 @@
     .ibox
       .ibox-title
         Users
-        .pull-right
-          %strong.label.label-primary = $pager->itemCount()
-      .ibox-content
-        .table-responsive
-          - foreach ($pager->getCurrentItems() as $_user)
-            %img.col-md-1.img-circle(src="#{$_user->getAvatar(96)}")
-            .col-md-11
-              %h3
-                - $httpPath = 'app.cp.item'
-                - $attributes = ['cpProcessor' => 'user', 'action' => 'profile', 'id' => $_user->id]
-                - $httpPath = $this->httpPath($httpPath, $attributes)
-                %a.text-navy(href="#{$httpPath}")
-                  = '#' . $_user->id() . ' ' . $_($_user->name . ' ' . $_user->lastname)
-              %p.small
-                Login:
-                = $_($_user->login)
-              %p.small
-                Email:
-                = $_($_user->email)
-              %p.small
-                Role:
-                = $_($_user->role()->title)
+      - foreach ($pager->getCurrentItems() as $_user)
+        .ibox-content
+          .table-responsive
+            %table.table.shoping-cart-table
+              %tbody
+                %tr
+                  %td.col-md-1
+                    %img.img-circle(src="#{$_user->getAvatar(96)}" width="96")
+                  %td.col-md-11
+                    %h3
+                      - $httpPath = 'app.cp.item'
+                      - $attributes = ['cpProcessor' => 'user', 'action' => 'profile', 'id' => $_user->id]
+                      - $httpPath = $this->httpPath($httpPath, $attributes)
+                      %a.text-navy(href="#{$httpPath}")
+                        = '#' . $_user->id() . ' ' . $_($_user->name . ' ' . $_user->lastname)
+                    %p
+                      Login:
+                      = $_($_user->login)
+                    %p
+                      Email:
+                      = $_($_user->email)
+                    %p
+                      Role:
+                      = $_($_user->role()->title)
+                    .m-t-sm
+                      - if ($user->hasPermission('cp.user.edit'))
+                        - $httpPath = 'app.cp.item'
+                        - $attributes = ['cpProcessor' => 'user', 'action' => 'edit', 'id' => $_user->id]
+                        - $httpPath = $this->httpPath($httpPath, $attributes)
+                        %a.text-muted{:href => $httpPath}
+                          %i.fa.fa-edit
+                          edit
+                      \|
+                      - if ($user->hasPermission('cp.user.delete'))
+                        - $httpPath = 'app.cp.item'
+                        - $attributes = ['cpProcessor' => 'user', 'action' => 'delete', 'id' => $_user->id]
+                        - $httpPath = $this->httpPath($httpPath, $attributes)
+                        %a.text-muted{:href => $httpPath}
+                          %i.fa.fa-trash
+                          delete
+      partial: 'app:cp/pager'

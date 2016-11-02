@@ -29,15 +29,15 @@ class ORMWrappers extends WrappersImplementation
      * @var array
      */
     protected $databaseEntities = array(
-        Model::User,
-        Model::Role
+        Model::USER,
+        Model::ROLE
     );
 
     /**
      * @var array
      */
     protected $databaseRepositories = array(
-        Model::User
+        Model::USER
     );
 
     /**

@@ -22,7 +22,7 @@ class Role extends Entity
 
     public function hasMyPermission($name)
     {
-        $key = __FUNCTION__ . Model::Role . $this->id();
+        $key = __FUNCTION__ . Model::ROLE . $this->id();
 
         $pool = $this->builder->cache();
 
@@ -32,7 +32,7 @@ class Role extends Entity
 
             $orm = $this->builder->components()->orm();
 
-            $permissions = $orm->query(Model::Permission)
+            $permissions = $orm->query(Model::PERMISSION)
                 ->relatedTo('roles', $this)
                 ->find()
                 ->asArray(true);
@@ -58,7 +58,7 @@ class Role extends Entity
      */
     public function hasPermission($name)
     {
-        $key = __FUNCTION__ . Model::Role . $this->id();
+        $key = __FUNCTION__ . Model::ROLE . $this->id();
 
         $pool = $this->builder->cache();
 
@@ -68,7 +68,7 @@ class Role extends Entity
 
             $orm = $this->builder->components()->orm();
 
-            $permissions = $orm->query(Model::Permission)
+            $permissions = $orm->query(Model::PERMISSION)
                 ->relatedTo('roles', $this)
                 ->orRelatedTo('roles', $this->children->allQuery())
                 ->find()
