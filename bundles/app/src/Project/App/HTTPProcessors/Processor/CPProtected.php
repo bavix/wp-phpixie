@@ -47,7 +47,9 @@ abstract class CPProtected extends Processor
      * @param Request $request
      *
      * @return \PHPixie\HTTP\Responses\Response
-     * @throws \PHPixie\Processors\Exception
+     *
+     * @throws Exception
+     * @throws \PHPixie\ORM\Exception\Query
      */
     public function process($request)
     {
@@ -84,11 +86,21 @@ abstract class CPProtected extends Processor
             ->orderAscendingBy('sortId')
             ->find();
 
-        $this->variables['currentMenu'] = $this->components->orm()
+        $currentMenu = $this->components->orm()
             ->query(Model::MENU)
             ->where('processor', $processor)
             ->where('action', $action)
             ->findOne();
+
+        if (!$currentMenu)
+        {
+            $currentMenu = $this->components->orm()
+                ->query(Model::MENU)
+                ->where('processor', $processor)
+                ->findOne();
+        }
+
+        $this->variables['currentMenu'] = $currentMenu;
 
         return parent::process($request);
     }
