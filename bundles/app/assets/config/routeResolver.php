@@ -18,6 +18,41 @@ return array(
                 'type' => 'group',
                 'resolvers' => array(
 
+                    // a prefixed group for /cp/wheel routes
+                    'wheel' => array(
+
+                        'type' => 'prefix',
+                        'path' => 'wheel',
+                        'defaults' => array(
+                            'cpProcessor' => 'wheel',
+                        ),
+
+                        'resolver' => array(
+                            'type' => 'group',
+                            'resolvers' => array(
+
+                                'item' => array(
+                                    'type'     => 'pattern',
+                                    'path'     => '/<wheelProcessor>/<action>/<id>'
+                                ),
+
+                                'action' => array(
+                                    'type'     => 'pattern',
+                                    'path'     => '/<wheelProcessor>/<action>'
+                                ),
+
+                                'processor' => array(
+                                    'type'     => 'pattern',
+                                    'path'     => '(/<wheelProcessor>)',
+                                    'defaults' => array(
+                                        'wheelProcessor' => 'wheel',
+                                        'action'    => 'default'
+                                    )
+                                ),
+                            )
+                        )
+                    ),
+
                     'item' => array(
                         'type'     => 'pattern',
                         'path'     => '/<cpProcessor>/<action>/<id>'

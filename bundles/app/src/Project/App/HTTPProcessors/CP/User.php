@@ -98,7 +98,7 @@ class User extends CPProtected
             ->query(Model::USER)
             ->where('id', (int)$id)
             ->findOne();
-        
+
         $this->variables['user'] = $user;
 
         return $this->render('app:cp/user/profile');

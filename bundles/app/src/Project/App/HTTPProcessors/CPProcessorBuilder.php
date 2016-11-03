@@ -66,14 +66,6 @@ class CPProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
     }
 
     /**
-     * @return CP\Wheel
-     */
-    protected function buildWheelProcessor()
-    {
-        return new CP\Wheel($this->builder);
-    }
-
-    /**
      * @return CP\Heading
      */
     protected function buildHeadingProcessor()
@@ -111,6 +103,16 @@ class CPProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
     protected function buildUserProcessor()
     {
         return new CP\User($this->builder);
+    }
+
+    /**
+     * Build 'admin' processor group
+     *
+     * @return CP\WheelProcessorBuilder
+     */
+    protected function buildWheelProcessor()
+    {
+        return new CP\WheelProcessorBuilder($this->builder);
     }
 
 }

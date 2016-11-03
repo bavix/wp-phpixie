@@ -1,10 +1,10 @@
 <?php
 
-namespace Project\App\HTTPProcessors\CP;
+namespace Project\App\HTTPProcessors\CP\Wheel;
 
-use Project\App\HTTPProcessors\Processor\CPProtected;
+use Project\App\HTTPProcessors\Processor\WheelProtected;
 
-class Wheel extends CPProtected
+class Wheel extends WheelProtected
 {
 
     public function defaultAction()
