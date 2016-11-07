@@ -24,10 +24,11 @@
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                   %span.clear
                     %span.block.m-t-xs
+                      %i.fa.fa-user-o
                       %strong.font-bold =$user->login
                     %span.text-muted.text-xs.block
                       =$_($user->role()->title)
-                      %b.caret
+                      %b.fa.fa-angle-down
                 %ul.dropdown-menu.animated.fadeInRight.m-t-xs
                   %li
                     %a{:href => "profile.html"} Profile
