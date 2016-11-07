@@ -20,6 +20,11 @@ class Role extends Entity
         $this->builder = $builder;
     }
 
+    /**
+     * @param $name
+     *
+     * @return bool
+     */
     public function hasMyPermission($name)
     {
         $key = __FUNCTION__ . Model::ROLE . $this->id();

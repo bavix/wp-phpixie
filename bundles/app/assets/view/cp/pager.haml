@@ -47,11 +47,8 @@
             %a = $item
           - else
             %a{"data-page" => $item, :onclick => 'javascript:wbsPager(this)'} = $item
-:javascript
-  if (typeof wbsPager === "undefined") {
-    function wbsPager(element) {
-      var page = $(element).data('page');
-      Url.updateSearchParam("page", page);
-      location.reload();
-    }
-  }
+
+- if (!$this->blockExists('pager'))
+  - $this->startBlock('pager')
+  %script(src="/js/pager.js")
+  - $this->endBlock()

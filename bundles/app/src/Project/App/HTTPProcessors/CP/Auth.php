@@ -14,6 +14,7 @@ use PHPixie\Template;
  */
 class Auth extends Processor
 {
+
     /**
      * Login page
      *
@@ -102,4 +103,5 @@ class Auth extends Processor
             array('cpProcessor' => 'dashboard')
         );
     }
+
 }
