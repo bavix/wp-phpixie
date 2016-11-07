@@ -79,9 +79,19 @@ return array(
             )
         ),
 
+        'item' => array(
+            'type' => 'pattern',
+            'path' => '/<processor>/<action>/<id>'
+        ),
+
+        'action' => array(
+            'type' => 'pattern',
+            'path' => '/<processor>/<action>'
+        ),
+
         'processor' => array(
             'type' => 'pattern',
-            'path' => '(<processor>(/<action>))',
+            'path' => '(/<processor>)',
             'defaults' => array(
                 'processor' => 'landing',
                 'action' => 'default'
