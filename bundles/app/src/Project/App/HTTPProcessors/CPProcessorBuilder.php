@@ -3,6 +3,7 @@
 namespace Project\App\HTTPProcessors;
 
 use Project\App\Builder;
+use Project\Util;
 
 /**
  * Builds processors in the 'app.admin' namespace
@@ -31,6 +32,14 @@ class CPProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
     public function __construct($builder)
     {
         $this->builder = $builder;
+    }
+
+    protected function getProcessorNameFor($httpRequest)
+    {
+        $processorName = $httpRequest->attributes()->get($this->attributeName);
+        $processorName = Util::camelCase($processorName);
+
+        return $processorName;
     }
 
     /**

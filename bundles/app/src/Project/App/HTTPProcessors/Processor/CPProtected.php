@@ -20,6 +20,11 @@ abstract class CPProtected extends Processor
     /**
      * @var string
      */
+    protected $permission = 'cp';
+
+    /**
+     * @var string
+     */
     protected $resolverPath = 'app.cp.processor';
 
     /**
@@ -62,7 +67,7 @@ abstract class CPProtected extends Processor
             ));
         }
 
-        if (!$this->user->hasPermission('cp'))
+        if (!$this->user->hasPermission($this->permission))
         {
             $this->accessDenied();
         }

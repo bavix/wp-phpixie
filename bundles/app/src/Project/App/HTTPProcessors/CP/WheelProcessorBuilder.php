@@ -3,6 +3,7 @@
 namespace Project\App\HTTPProcessors\CP;
 
 use Project\App\Builder;
+use Project\Util;
 
 /**
  * Builds processors in the 'app.admin' namespace
@@ -33,12 +34,36 @@ class WheelProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builde
         $this->builder = $builder;
     }
 
+    protected function getProcessorNameFor($httpRequest)
+    {
+        $processorName = $httpRequest->attributes()->get($this->attributeName);
+        $processorName = Util::camelCase($processorName);
+
+        return $processorName;
+    }
+
     /**
-     * @return Wheel\Wheel
+     * @return SOW\Wheel
      */
     protected function buildWheelProcessor()
     {
-        return new Wheel\Wheel($this->builder);
+        return new SOW\Wheel($this->builder);
+    }
+
+    /**
+     * @return SOW\Style
+     */
+    protected function buildStyleProcessor()
+    {
+        return new SOW\Style($this->builder);
+    }
+
+    /**
+     * @return SOW\BoltPattern
+     */
+    protected function buildBoltPatternProcessor()
+    {
+        return new SOW\BoltPattern($this->builder);
     }
 
 }

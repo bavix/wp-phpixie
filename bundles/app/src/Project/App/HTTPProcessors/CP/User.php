@@ -72,7 +72,7 @@ class User extends CPProtected
 
     public function deleteAction(Request $request)
     {
-        if (!$this->user->hasPermission('cp.user.pull-request'))
+        if (!$this->user->hasPermission('cp.user.delete'))
         {
             $this->accessDenied();
         }

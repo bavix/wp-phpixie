@@ -46,10 +46,13 @@
               - $isActive = $menu->processor == $currentMenu->processor
               %li{:class => $isActive ? 'active' : ''}
                 - $isNotEmpty = !empty($menuItems)
-                - $attributes = ['cpProcessor' => $menu->processor, 'action' => $menu->action]
+                - $attributes = ['cpProcessor' => $menu->processor, 'wheelProcessor' => $menu->wheelProcessor, 'action' => $menu->action]
                 - $httpPath = '#'
                 - if (!$isNotEmpty && $menu->processor)
-                  - $httpPath = 'app.cp.' . ($menu->action == 'default' ? 'processor' : 'action')
+                  - if ($menu->wheelProcessor == null)
+                    - $httpPath = 'app.cp.' . ($menu->action == 'default' ? 'processor' : 'action')
+                  - else
+                    - $httpPath = 'app.cp.sow.' . ($menu->action == 'default' ? 'processor' : 'action')
                   - $httpPath = $this->httpPath($httpPath, $attributes)
                 %a{:href => $httpPath}
                   %i.fa{:class => $menu->icon}
@@ -63,7 +66,11 @@
                         - continue
                       %li{:class => ($isActive && $menu->action == $currentMenu->action) ? 'active' : ''}
                         - $httpPath = 'app.cp.' . ($menu->action == 'default' ? 'processor' : 'action')
-                        - $attributes = ['cpProcessor' => $menu->processor, 'action' => $menu->action]
+                        - $attributes = ['cpProcessor' => $menu->processor, 'wheelProcessor' => $menu->wheelProcessor, 'action' => $menu->action]
+                        - if ($menu->wheelProcessor == null)
+                          - $httpPath = 'app.cp.' . ($menu->action == 'default' ? 'processor' : 'action')
+                        - else
+                          - $httpPath = 'app.cp.sow.' . ($menu->action == 'default' ? 'processor' : 'action')
                         - $httpPath = $this->httpPath($httpPath, $attributes)
                         %a{:href => $httpPath} = $_($menu->title)
 

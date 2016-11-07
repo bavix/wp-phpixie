@@ -2,7 +2,7 @@
 
 return array(
 
-    'type'      => 'group',
+    'type' => 'group',
     'resolvers' => array(
 
         // a prefixed group for /cp/ routes
@@ -15,60 +15,64 @@ return array(
             ),
 
             'resolver' => array(
+
                 'type' => 'group',
                 'resolvers' => array(
 
-                    // a prefixed group for /cp/wheel routes
-                    'wheel' => array(
+                    'sow' => array(
 
                         'type' => 'prefix',
-                        'path' => 'wheel',
+                        'path' => '/sow',
+
                         'defaults' => array(
                             'cpProcessor' => 'wheel',
                         ),
 
                         'resolver' => array(
+
                             'type' => 'group',
+
                             'resolvers' => array(
 
                                 'item' => array(
-                                    'type'     => 'pattern',
-                                    'path'     => '/<wheelProcessor>/<action>/<id>'
+                                    'type' => 'pattern',
+                                    'path' => '/<wheelProcessor>/<action>/<id>'
                                 ),
 
                                 'action' => array(
-                                    'type'     => 'pattern',
-                                    'path'     => '/<wheelProcessor>/<action>'
+                                    'type' => 'pattern',
+                                    'path' => '/<wheelProcessor>/<action>'
                                 ),
 
                                 'processor' => array(
-                                    'type'     => 'pattern',
-                                    'path'     => '(/<wheelProcessor>)',
+                                    'type' => 'pattern',
+                                    'path' => '/<wheelProcessor>',
                                     'defaults' => array(
                                         'wheelProcessor' => 'wheel',
-                                        'action'    => 'default'
+                                        'action' => 'default'
                                     )
                                 ),
+
                             )
                         )
                     ),
 
                     'item' => array(
-                        'type'     => 'pattern',
-                        'path'     => '/<cpProcessor>/<action>/<id>'
+                        'type' => 'pattern',
+                        'path' => '/<cpProcessor>/<action>/<id>'
                     ),
 
                     'action' => array(
-                        'type'     => 'pattern',
-                        'path'     => '/<cpProcessor>/<action>'
+                        'type' => 'pattern',
+                        'path' => '/<cpProcessor>/<action>'
                     ),
 
                     'processor' => array(
-                        'type'     => 'pattern',
-                        'path'     => '(/<cpProcessor>)',
+                        'type' => 'pattern',
+                        'path' => '(/<cpProcessor>)',
                         'defaults' => array(
                             'cpProcessor' => 'dashboard',
-                            'action'    => 'default'
+                            'action' => 'default'
                         )
                     ),
                 )
@@ -76,14 +80,14 @@ return array(
         ),
 
         'processor' => array(
-            'type'     => 'pattern',
-            'path'     => '(<processor>(/<action>))',
+            'type' => 'pattern',
+            'path' => '(<processor>(/<action>))',
             'defaults' => array(
                 'processor' => 'landing',
-                'action'    => 'default'
+                'action' => 'default'
             )
         ),
-        
+
     )
 
 );

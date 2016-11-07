@@ -20,71 +20,11 @@ abstract class WheelProtected extends CPProtected
     /**
      * @var string
      */
-    protected $resolverPath = 'app.cp.wheel.processor';
+    protected $permission = 'cp.wheel';
 
     /**
-     * Only process the request if the user is logged in.
-     * Otherwise redirect to the login page.
-     *
-     * @param Request $request
-     *
-     * @return \PHPixie\HTTP\Responses\Response
-     *
-     * @throws Exception
-     * @throws \PHPixie\ORM\Exception\Query
+     * @var string
      */
-    public function process($request)
-    {
-        $this->user = $this->loggedUser();
-
-        if (!$this->user)
-        {
-            return $this->redirectResponse('app.cp.processor', array(
-                'cpProcessor' => 'auth'
-            ));
-        }
-
-        if (!$this->user->hasPermission('cp.wheel'))
-        {
-            $this->accessDenied();
-        }
-
-        $attributes = $request->attributes();
-
-        $processor = $attributes->get('wheelProcessor');
-        $action    = $attributes->get('action');
-
-        $permission = 'cp.' . $processor;
-
-        if (!$this->user->hasPermission($permission))
-        {
-            $this->accessDenied();
-        }
-
-        $this->variables['user']     = $this->user;
-        $this->variables['menuList'] = $this->components->orm()
-            ->query(Model::MENU)
-            ->where('parentId', 0)
-            ->orderAscendingBy('sortId')
-            ->find();
-
-        $currentMenu = $this->components->orm()
-            ->query(Model::MENU)
-            ->where('processor', $processor)
-            ->where('action', $action)
-            ->findOne();
-
-        if (!$currentMenu)
-        {
-            $currentMenu = $this->components->orm()
-                ->query(Model::MENU)
-                ->where('processor', $processor)
-                ->findOne();
-        }
-
-        $this->variables['currentMenu'] = $currentMenu;
-
-        return parent::process($request);
-    }
+    protected $resolverPath = 'app.cp.wheel.processor';
 
 }
