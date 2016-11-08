@@ -2,6 +2,8 @@
 
 namespace Project\App;
 
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 use PHPixie\DefaultBundle\Builder as DefaultBuilder;
 use Stash\Pool;
 
@@ -29,6 +31,29 @@ class Builder extends DefaultBuilder
             ->get('cache.driver', \Stash\Driver\Apc::class);
 
         return new Pool(new $driver());
+    }
+
+    /**
+     * @return Logger
+     */
+    public function log()
+    {
+        return $this->instance('log');
+    }
+
+    /**
+     * @return Logger
+     */
+    protected function buildLog()
+    {
+        $path = $this->webRoot()->path('log.log');
+
+        $handler = new StreamHandler($path, Logger::WARNING);
+
+        $log = new Logger($this->bundleName());
+        $log->pushHandler($handler);
+
+        return $log;
     }
 
     /**
