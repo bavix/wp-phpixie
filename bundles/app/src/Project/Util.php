@@ -45,4 +45,32 @@ class Util
         return array_keys(array_flip($array));
     }
 
+    public static function httpPath($url)
+    {
+        $processor     = null;
+        $cpProcessor   = null;
+        $nextProcessor = null;
+        $action        = null;
+        $id            = null;
+
+        $null = [null, null, null];
+
+        list($processors, $attributes) = explode('@', $url) + $null;
+
+        list($processor, $cpProcessor, $nextProcessor) = explode('.', $processors) + $null;
+
+        if ($attributes)
+        {
+            list($action, $id) = explode('.', $attributes) + $null;
+        }
+
+        return compact(
+            'processor',
+            'cpProcessor',
+            'nextProcessor',
+            'action',
+            'id'
+        );
+    }
+
 }
