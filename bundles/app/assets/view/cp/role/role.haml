@@ -27,39 +27,39 @@
                   %td Section of Wheels
 
                   %td
-                    - if ($role->hasMyPermission('cp.wheel'))
+                    - if ($role->hasMyPermission('cp.sow.wheel'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.wheel'))
+                    - else if ($role->hasPermission('cp.sow.wheel'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.wheel.add'))
+                    - if ($role->hasMyPermission('cp.sow.wheel.add'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.wheel.add'))
+                    - else if ($role->hasPermission('cp.sow.wheel.add'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.wheel.edit'))
+                    - if ($role->hasMyPermission('cp.sow.wheel.edit'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.wheel.edit'))
+                    - else if ($role->hasPermission('cp.sow.wheel.edit'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.wheel.delete'))
+                    - if ($role->hasMyPermission('cp.sow.wheel.delete'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.wheel.delete'))
+                    - else if ($role->hasPermission('cp.sow.wheel.delete'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasPermission('cp.wheel.delete'))
+                    - if ($role->hasPermission('cp.sow.wheel.delete'))
                       %span.label.label-success master
-                    - else if ($role->hasMyPermission('cp.wheel.pull-request'))
+                    - else if ($role->hasMyPermission('cp.sow.wheel.pull-request'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.wheel.pull-request'))
+                    - else if ($role->hasPermission('cp.sow.wheel.pull-request'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
@@ -68,39 +68,39 @@
                   %td Section of Brands
 
                   %td
-                    - if ($role->hasMyPermission('cp.brand'))
+                    - if ($role->hasMyPermission('cp.catalogue.brand'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.brand'))
+                    - else if ($role->hasPermission('cp.catalogue.brand'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.brand.add'))
+                    - if ($role->hasMyPermission('cp.catalogue.brand.add'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.brand.add'))
+                    - else if ($role->hasPermission('cp.catalogue.brand.add'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.brand.edit'))
+                    - if ($role->hasMyPermission('cp.catalogue.brand.edit'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.brand.edit'))
+                    - else if ($role->hasPermission('cp.catalogue.brand.edit'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.brand.delete'))
+                    - if ($role->hasMyPermission('cp.catalogue.brand.delete'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.brand.delete'))
+                    - else if ($role->hasPermission('cp.catalogue.brand.delete'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasPermission('cp.brand.delete'))
+                    - if ($role->hasPermission('cp.catalogue.brand.delete'))
                       %span.label.label-success master
-                    - else if ($role->hasMyPermission('cp.brand.pull-request'))
+                    - else if ($role->hasMyPermission('cp.catalogue.brand.pull-request'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.brand.pull-request'))
+                    - else if ($role->hasPermission('cp.catalogue.brand.pull-request'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
@@ -224,39 +224,39 @@
                   %td Section of Dealers
 
                   %td
-                    - if ($role->hasMyPermission('cp.dealer'))
+                    - if ($role->hasMyPermission('cp.catalogue.dealer'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.dealer'))
+                    - else if ($role->hasPermission('cp.catalogue.dealer'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.dealer.add'))
+                    - if ($role->hasMyPermission('cp.catalogue.dealer.add'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.dealer.add'))
+                    - else if ($role->hasPermission('cp.catalogue.dealer.add'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.dealer.edit'))
+                    - if ($role->hasMyPermission('cp.catalogue.dealer.edit'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.dealer.edit'))
+                    - else if ($role->hasPermission('cp.catalogue.dealer.edit'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.dealer.delete'))
+                    - if ($role->hasMyPermission('cp.catalogue.dealer.delete'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.dealer.delete'))
+                    - else if ($role->hasPermission('cp.catalogue.dealer.delete'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasPermission('cp.dealer.delete'))
+                    - if ($role->hasPermission('cp.catalogue.dealer.delete'))
                       %span.label.label-success master
-                    - else if ($role->hasMyPermission('cp.dealer.pull-request'))
+                    - else if ($role->hasMyPermission('cp.catalogue.dealer.pull-request'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.dealer.pull-request'))
+                    - else if ($role->hasPermission('cp.catalogue.dealer.pull-request'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
@@ -265,39 +265,39 @@
                   %td Section of Headings
 
                   %td
-                    - if ($role->hasMyPermission('cp.heading'))
+                    - if ($role->hasMyPermission('cp.catalogue.heading'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.heading'))
+                    - else if ($role->hasPermission('cp.catalogue.heading'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.heading.add'))
+                    - if ($role->hasMyPermission('cp.catalogue.heading.add'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.heading.add'))
+                    - else if ($role->hasPermission('cp.catalogue.heading.add'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.heading.edit'))
+                    - if ($role->hasMyPermission('cp.catalogue.heading.edit'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.heading.edit'))
+                    - else if ($role->hasPermission('cp.catalogue.heading.edit'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.heading.delete'))
+                    - if ($role->hasMyPermission('cp.catalogue.heading.delete'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.heading.delete'))
+                    - else if ($role->hasPermission('cp.catalogue.heading.delete'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasPermission('cp.heading.delete'))
+                    - if ($role->hasPermission('cp.catalogue.heading.delete'))
                       %span.label.label-success master
-                    - else if ($role->hasMyPermission('cp.heading.pull-request'))
+                    - else if ($role->hasMyPermission('cp.catalogue.heading.pull-request'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.heading.pull-request'))
+                    - else if ($role->hasPermission('cp.catalogue.heading.pull-request'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no

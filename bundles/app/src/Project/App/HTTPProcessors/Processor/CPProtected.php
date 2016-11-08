@@ -20,7 +20,8 @@ abstract class CPProtected extends Processor
     /**
      * @var string
      */
-    protected $permission = 'cp';
+    protected $permission     = 'cp';
+    protected $nextPermission = null;
 
     /**
      * @var string
@@ -67,6 +68,11 @@ abstract class CPProtected extends Processor
             ));
         }
 
+        if ($this->nextPermission)
+        {
+            $this->permission .= '.' . $this->nextPermission;
+        }
+
         if (!$this->user->hasPermission($this->permission))
         {
             $this->accessDenied();
@@ -84,14 +90,16 @@ abstract class CPProtected extends Processor
             $this->accessDenied();
         }
 
-        $this->variables['user']     = $this->user;
-        $this->variables['menuList'] = $this->components->orm()
-            ->query(Model::MENU)
-            ->where('parentId', 0)
-            ->orderAscendingBy('sortId')
-            ->find();
+        $orm = $this->components->orm();
 
-        $currentMenu = $this->components->orm()
+        $nextProcessor = $attributes->get('nextProcessor');
+
+        if ($nextProcessor)
+        {
+            $processor .= '.' . $nextProcessor;
+        }
+
+        $currentMenu = $orm
             ->query(Model::MENU)
             ->where('processor', $processor)
             ->where('action', $action)
@@ -99,13 +107,18 @@ abstract class CPProtected extends Processor
 
         if (!$currentMenu)
         {
-            $currentMenu = $this->components->orm()
+            $currentMenu = $orm
                 ->query(Model::MENU)
                 ->where('processor', $processor)
                 ->findOne();
         }
 
+        $this->variables['user']        = $this->user;
         $this->variables['currentMenu'] = $currentMenu;
+        $this->variables['menuList']    = $orm->query(Model::MENU)
+            ->where('parentId', 0)
+            ->orderAscendingBy('sortId')
+            ->find();
 
         return parent::process($request);
     }

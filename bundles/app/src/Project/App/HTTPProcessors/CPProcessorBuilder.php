@@ -59,30 +59,6 @@ class CPProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
     }
 
     /**
-     * @return CP\Brand
-     */
-    protected function buildBrandProcessor()
-    {
-        return new CP\Brand($this->builder);
-    }
-
-    /**
-     * @return CP\Dealer
-     */
-    protected function buildDealerProcessor()
-    {
-        return new CP\Dealer($this->builder);
-    }
-
-    /**
-     * @return CP\Heading
-     */
-    protected function buildHeadingProcessor()
-    {
-        return new CP\Heading($this->builder);
-    }
-
-    /**
      * @return CP\Settings
      */
     protected function buildSettingsProcessor()
@@ -122,6 +98,16 @@ class CPProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
     protected function buildWheelProcessor()
     {
         return new CP\WheelProcessorBuilder($this->builder);
+    }
+
+    /**
+     * Build 'admin' processor group
+     *
+     * @return CP\CatalogueProcessorBuilder
+     */
+    protected function buildCatalogueProcessor()
+    {
+        return new CP\CatalogueProcessorBuilder($this->builder);
     }
 
 }

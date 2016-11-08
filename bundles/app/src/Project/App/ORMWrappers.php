@@ -30,7 +30,8 @@ class ORMWrappers extends WrappersImplementation
      */
     protected $databaseEntities = array(
         Model::USER,
-        Model::ROLE
+        Model::ROLE,
+        Model::MENU
     );
 
     /**
@@ -61,6 +62,19 @@ class ORMWrappers extends WrappersImplementation
     public function roleEntity($entity)
     {
         return new ORM\Role\Role(
+            $entity,
+            $this->builder
+        );
+    }
+
+    /**
+     * @param $entity
+     *
+     * @return ORM\Menu\Menu
+     */
+    public function menuEntity($entity)
+    {
+        return new ORM\Menu\Menu(
             $entity,
             $this->builder
         );

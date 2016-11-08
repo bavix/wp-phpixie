@@ -2,14 +2,14 @@
 
 namespace Project\App\HTTPProcessors\CP\SOW;
 
-use Project\App\HTTPProcessors\Processor\WheelProtected;
+use Project\App\HTTPProcessors\Processor\SOWProtected;
 
-class BoltPattern extends WheelProtected
+class BoltPattern extends SOWProtected
 {
 
     public function defaultAction()
     {
-        return [__METHOD__];
+        return $this->render('app:cp/sow/bolt-pattern/view');
     }
 
 }

@@ -2,21 +2,21 @@
 
 return array(
 
-    'type' => 'group',
+    'type'      => 'group',
     'resolvers' => array(
 
         // a prefixed group for /cp/ routes
         'cp' => array(
 
-            'type' => 'prefix',
-            'path' => 'cp',
+            'type'     => 'prefix',
+            'path'     => 'cp',
             'defaults' => array(
                 'processor' => 'cp',
             ),
 
             'resolver' => array(
 
-                'type' => 'group',
+                'type'      => 'group',
                 'resolvers' => array(
 
                     'sow' => array(
@@ -36,21 +36,55 @@ return array(
 
                                 'item' => array(
                                     'type' => 'pattern',
-                                    'path' => '/<wheelProcessor>/<action>/<id>'
+                                    'path' => '/<nextProcessor>/<action>/<id>'
                                 ),
 
                                 'action' => array(
                                     'type' => 'pattern',
-                                    'path' => '/<wheelProcessor>/<action>'
+                                    'path' => '/<nextProcessor>/<action>'
+                                ),
+
+                                'processor' => array(
+                                    'type'     => 'pattern',
+                                    'path'     => '/<nextProcessor>',
+                                    'defaults' => array(
+                                        'wheelProcessor' => 'wheel',
+                                        'action'         => 'default'
+                                    )
+                                ),
+
+                            )
+                        )
+                    ),
+
+                    'catalogue' => array(
+
+                        'type' => 'prefix',
+                        'path' => '/catalogue',
+
+                        'defaults' => array(
+                            'cpProcessor' => 'catalogue',
+                        ),
+
+                        'resolver' => array(
+
+                            'type' => 'group',
+
+                            'resolvers' => array(
+
+                                'item' => array(
+                                    'type' => 'pattern',
+                                    'path' => '/<nextProcessor>/<action>/<id>'
+                                ),
+
+                                'action' => array(
+                                    'type' => 'pattern',
+                                    'path' => '/<nextProcessor>/<action>'
                                 ),
 
                                 'processor' => array(
                                     'type' => 'pattern',
-                                    'path' => '/<wheelProcessor>',
-                                    'defaults' => array(
-                                        'wheelProcessor' => 'wheel',
-                                        'action' => 'default'
-                                    )
+                                    'path' => '/<nextProcessor>'
                                 ),
 
                             )
@@ -68,11 +102,11 @@ return array(
                     ),
 
                     'processor' => array(
-                        'type' => 'pattern',
-                        'path' => '(/<cpProcessor>)',
+                        'type'     => 'pattern',
+                        'path'     => '(/<cpProcessor>)',
                         'defaults' => array(
                             'cpProcessor' => 'dashboard',
-                            'action' => 'default'
+                            'action'      => 'default'
                         )
                     ),
                 )
@@ -90,11 +124,11 @@ return array(
         ),
 
         'processor' => array(
-            'type' => 'pattern',
-            'path' => '(/<processor>)',
+            'type'     => 'pattern',
+            'path'     => '(/<processor>)',
             'defaults' => array(
                 'processor' => 'landing',
-                'action' => 'default'
+                'action'    => 'default'
             )
         ),
 

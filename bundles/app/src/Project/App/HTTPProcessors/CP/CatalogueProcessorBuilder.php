@@ -8,7 +8,7 @@ use Project\Util;
 /**
  * Builds processors in the 'app.admin' namespace
  */
-class WheelProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
+class CatalogueProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
 {
 
     /**
@@ -43,27 +43,27 @@ class WheelProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builde
     }
 
     /**
-     * @return SOW\Wheel
+     * @return Catalogue\Brand
      */
-    protected function buildWheelProcessor()
+    protected function buildBrandProcessor()
     {
-        return new SOW\Wheel($this->builder);
+        return new Catalogue\Brand($this->builder);
     }
 
     /**
-     * @return SOW\Style
+     * @return Catalogue\Dealer
      */
-    protected function buildStyleProcessor()
+    protected function buildDealerProcessor()
     {
-        return new SOW\Style($this->builder);
+        return new Catalogue\Dealer($this->builder);
     }
 
     /**
-     * @return SOW\BoltPattern
+     * @return Catalogue\Heading
      */
-    protected function buildBoltPatternProcessor()
+    protected function buildHeadingProcessor()
     {
-        return new SOW\BoltPattern($this->builder);
+        return new Catalogue\Heading($this->builder);
     }
 
 }

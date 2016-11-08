@@ -42,19 +42,19 @@
               .logo-element
                 WBS
             - foreach ($menuList as $menu)
-              - if (!$user->hasPermission('cp.' . $menu->processor))
+              - if (!$user->hasPermission('cp.' . $menu->getProcessor()))
                 - continue
               - $menuItems = $menu->menus->query()->orderAscendingBy('sortId')->find()->asArray(true)
-              - $isActive = $menu->processor == $currentMenu->processor
+              - $isActive = $menu->getProcessor() == $currentMenu->getProcessor()
               %li{:class => $isActive ? 'active' : ''}
                 - $isNotEmpty = !empty($menuItems)
-                - $attributes = ['cpProcessor' => $menu->processor, 'wheelProcessor' => $menu->wheelProcessor, 'action' => $menu->action]
+                - $attributes = ['cpProcessor' => $menu->getProcessor(), 'nextProcessor' => $menu->nextProcessor(), 'action' => $menu->action]
                 - $httpPath = '#'
-                - if (!$isNotEmpty && $menu->processor)
-                  - if ($menu->wheelProcessor == null)
+                - if (!$isNotEmpty && $menu->getProcessor())
+                  - if ($menu->nextProcessor() == null)
                     - $httpPath = 'app.cp.' . ($menu->action == 'default' ? 'processor' : 'action')
                   - else
-                    - $httpPath = 'app.cp.sow.' . ($menu->action == 'default' ? 'processor' : 'action')
+                    - $httpPath = 'app.cp.' . $menu->getProcessor() . '.' . ($menu->action == 'default' ? 'processor' : 'action')
                   - $httpPath = $this->httpPath($httpPath, $attributes)
                 %a{:href => $httpPath}
                   %i.fa{:class => $menu->icon}
@@ -64,15 +64,15 @@
                 - if ($isNotEmpty)
                   %ul.nav.nav-second-level.collapse
                     - foreach ($menuItems as $menu)
-                      - if (!$user->hasPermission('cp.' . $menu->processor))
+                      - if (!$user->hasPermission('cp.' . $menu->getProcessor()))
                         - continue
                       %li{:class => ($isActive && $menu->action == $currentMenu->action) ? 'active' : ''}
                         - $httpPath = 'app.cp.' . ($menu->action == 'default' ? 'processor' : 'action')
-                        - $attributes = ['cpProcessor' => $menu->processor, 'wheelProcessor' => $menu->wheelProcessor, 'action' => $menu->action]
-                        - if ($menu->wheelProcessor == null)
+                        - $attributes = ['cpProcessor' => $menu->getProcessor(), 'nextProcessor' => $menu->nextProcessor(), 'action' => $menu->action]
+                        - if ($menu->nextProcessor() == null)
                           - $httpPath = 'app.cp.' . ($menu->action == 'default' ? 'processor' : 'action')
                         - else
-                          - $httpPath = 'app.cp.sow.' . ($menu->action == 'default' ? 'processor' : 'action')
+                          - $httpPath = 'app.cp.' . $menu->getProcessor() . '.' . ($menu->action == 'default' ? 'processor' : 'action')
                         - $httpPath = $this->httpPath($httpPath, $attributes)
                         %a{:href => $httpPath} = $_($menu->title)
 

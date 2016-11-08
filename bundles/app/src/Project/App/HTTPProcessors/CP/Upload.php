@@ -9,11 +9,11 @@ use Project\App\Model;
 class Upload extends CPProtected
 {
 
-    const METHOD_IMAGE  = 'image';
-    const METHOD_VIDEO  = 'video';
+    const METHOD_IMAGE = 'image';
+    const METHOD_VIDEO = 'video';
 
     /**
-     * @param string  $method
+     * @param string $method
      *
      * @return array
      */
@@ -50,7 +50,7 @@ class Upload extends CPProtected
             'path'     => array_merge([$method], $split),
             'files'    => $files,
             '_FILES'   => $_FILES,
-            'r' => mt_rand(1, 111111)
+            'r'        => mt_rand(1, 111111)
         ];
 
     }
