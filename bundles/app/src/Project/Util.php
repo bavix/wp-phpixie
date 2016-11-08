@@ -46,36 +46,75 @@ class Util
     }
 
     /**
+     * @param $attributes
+     *
+     * @return mixed|string
+     */
+    protected static function httpPath($attributes)
+    {
+        $last = isset($attributes['action']) ? 'action' : 'processor';
+        $last = isset($attributes['id']) ? 'item' : $last;
+
+        $path = $last;
+        if ($attributes['nextProcessor'])
+        {
+            $path =
+                $attributes['processor'] . '.' .
+                $attributes['cpProcessor'] . '.' . $last;
+        }
+        else if ($attributes['cpProcessor'])
+        {
+            $path = $attributes['processor'] . '.' . $last;
+        }
+
+        $path = preg_replace('~\.+~', '.', trim($path, '.'));
+
+        return $path;
+    }
+
+    /**
      * @param string $url
      *
      * @return array
      */
-    public static function httpPath($url)
+    public static function httpWithURL($url)
     {
-        $action = null;
-        $id     = null;
+        $processor     = null;
+        $cpProcessor   = null;
+        $nextProcessor = null;
+        $action        = null;
+        $id            = null;
 
-        $null = [null, null, null];
-
-        list($processors, $attributes) = explode('@', $url) + $null;
+        list($processors, $attributes) =
+            explode('@', $url, 2) +
+            [null, null];
 
         if ($processors)
         {
-            list($processor, $cpProcessor, $nextProcessor) = explode('.', $processors) + $null;
+            list($processor, $cpProcessor, $nextProcessor) =
+                explode('.', $processors, 3) +
+                [null, null, null];
         }
 
         if ($attributes)
         {
-            list($action, $id) = explode('.', $attributes) + $null;
+            list($action, $id) =
+                explode('.', $attributes, 2) +
+                [null, null];
         }
 
-        return compact(
-            'processor',
-            'cpProcessor',
-            'nextProcessor',
-            'action',
-            'id'
-        );
+        $attributes = [
+            'processor'     => $processor,
+            'cpProcessor'   => $cpProcessor,
+            'nextProcessor' => $nextProcessor,
+            'action'        => $action,
+            'id'            => $id
+        ];
+
+        return [
+            'url'        => static::httpPath($attributes),
+            'attributes' => $attributes
+        ];
     }
 
 }
