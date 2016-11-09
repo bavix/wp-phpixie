@@ -182,7 +182,7 @@ CREATE TABLE IF NOT EXISTS `menus` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
--- Dumping data for table wbs.menus: ~14 rows (approximately)
+-- Dumping data for table wbs.menus: ~12 rows (approximately)
 /*!40000 ALTER TABLE `menus` DISABLE KEYS */;
 INSERT INTO `menus` (`id`, `parentId`, `sortId`, `title`, `icon`, `httpPath`, `createdAt`, `updatedAt`) VALUES
 	(1, 0, 0, 'Dashboard', 'fa-dashboard', 'cp.dashboard', '2016-10-28 18:00:23', '2016-11-09 08:42:15'),
@@ -310,7 +310,7 @@ CREATE TABLE IF NOT EXISTS `rolesPermissions` (
   UNIQUE KEY `permission` (`roleId`,`permissionId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table wbs.rolesPermissions: ~61 rows (approximately)
+-- Dumping data for table wbs.rolesPermissions: ~63 rows (approximately)
 /*!40000 ALTER TABLE `rolesPermissions` DISABLE KEYS */;
 INSERT INTO `rolesPermissions` (`id`, `roleId`, `permissionId`) VALUES
 	(1, 1, 14),
