@@ -75,22 +75,6 @@ class CPProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
     }
 
     /**
-     * @return CP\Role
-     */
-    protected function buildRoleProcessor()
-    {
-        return new CP\Role($this->builder);
-    }
-
-    /**
-     * @return CP\User
-     */
-    protected function buildUserProcessor()
-    {
-        return new CP\User($this->builder);
-    }
-
-    /**
      * Build 'admin' processor group
      *
      * @return CP\SOWProcessorBuilder
@@ -108,6 +92,16 @@ class CPProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
     protected function buildSocProcessor()
     {
         return new CP\SOCProcessorBuilder($this->builder);
+    }
+
+    /**
+     * Build 'admin' processor group
+     *
+     * @return CP\SOUProcessorBuilder
+     */
+    protected function buildSouProcessor()
+    {
+        return new CP\SOUProcessorBuilder($this->builder);
     }
 
 }

@@ -93,6 +93,43 @@ return array(
                         )
                     ),
 
+                    'sou' => array(
+
+                        'type' => 'prefix',
+                        'path' => '/sou',
+
+                        'defaults' => array(
+                            'cpProcessor' => 'sou',
+                        ),
+
+                        'resolver' => array(
+
+                            'type' => 'group',
+
+                            'resolvers' => array(
+
+                                'item' => array(
+                                    'type' => 'pattern',
+                                    'path' => '/<nextProcessor>/<action>/<id>'
+                                ),
+
+                                'action' => array(
+                                    'type' => 'pattern',
+                                    'path' => '/<nextProcessor>/<action>'
+                                ),
+
+                                'processor' => array(
+                                    'type'     => 'pattern',
+                                    'path'     => '/<nextProcessor>',
+                                    'defaults' => array(
+                                        'action' => 'default'
+                                    )
+                                ),
+
+                            )
+                        )
+                    ),
+
                     'item' => array(
                         'type' => 'pattern',
                         'path' => '/<cpProcessor>/<action>/<id>'

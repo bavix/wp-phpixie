@@ -1,13 +1,13 @@
 <?php
 
-namespace Project\App\HTTPProcessors\CP;
+namespace Project\App\HTTPProcessors\CP\SOU;
 
 use PHPixie\HTTP\Request;
-use Project\App\HTTPProcessors\Processor\CPProtected;
+use Project\App\HTTPProcessors\Processor\SOUProtected;
 use Project\App\Model;
 use Project\App\Role;
 
-class User extends CPProtected
+class User extends SOUProtected 
 {
 
     /**
@@ -49,7 +49,7 @@ class User extends CPProtected
 
         $this->variables['pager'] = $pager;
 
-        return $this->render('app:cp/user/default');
+        return $this->render('app:cp/sou/user/default');
     }
 
     public function editAction(Request $request)
@@ -67,7 +67,7 @@ class User extends CPProtected
             // update profile user
         }
 
-        return $this->render('app:cp/user/edit');
+        return $this->render('app:cp/sou/user/edit');
     }
 
     public function deleteAction(Request $request)
@@ -101,7 +101,7 @@ class User extends CPProtected
 
         $this->variables['user'] = $user;
 
-        return $this->render('app:cp/user/profile');
+        return $this->render('app:cp/sou/user/profile');
     }
 
 }

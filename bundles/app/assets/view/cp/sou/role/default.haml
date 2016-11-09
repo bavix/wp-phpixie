@@ -304,39 +304,39 @@
                   %td User
 
                   %td
-                    - if ($role->hasMyPermission('cp.user'))
+                    - if ($role->hasMyPermission('cp.sou.user'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.user'))
+                    - else if ($role->hasPermission('cp.sou.user'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.user.add'))
+                    - if ($role->hasMyPermission('cp.sou.user.add'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.user.add'))
+                    - else if ($role->hasPermission('cp.sou.user.add'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.user.edit'))
+                    - if ($role->hasMyPermission('cp.sou.user.edit'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.user.edit'))
+                    - else if ($role->hasPermission('cp.sou.user.edit'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.user.delete'))
+                    - if ($role->hasMyPermission('cp.sou.user.delete'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.user.delete'))
+                    - else if ($role->hasPermission('cp.sou.user.delete'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasPermission('cp.user.delete'))
+                    - if ($role->hasPermission('cp.sou.user.delete'))
                       %span.label.label-success master
-                    - else if ($role->hasMyPermission('cp.user.pull-request'))
+                    - else if ($role->hasMyPermission('cp.sou.user.pull-request'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.user.pull-request'))
+                    - else if ($role->hasPermission('cp.sou.user.pull-request'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
@@ -346,35 +346,35 @@
                   %td Role
 
                   %td
-                    - if ($role->hasMyPermission('cp.role'))
+                    - if ($role->hasMyPermission('cp.sou.role'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.role'))
+                    - else if ($role->hasPermission('cp.sou.role'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.role.add'))
+                    - if ($role->hasMyPermission('cp.sou.role.add'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.role.add'))
+                    - else if ($role->hasPermission('cp.sou.role.add'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.role.edit'))
+                    - if ($role->hasMyPermission('cp.sou.role.edit'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.role.edit'))
+                    - else if ($role->hasPermission('cp.sou.role.edit'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.role.delete'))
+                    - if ($role->hasMyPermission('cp.sou.role.delete'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.role.delete'))
+                    - else if ($role->hasPermission('cp.sou.role.delete'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasPermission('cp.role.delete'))
+                    - if ($role->hasPermission('cp.sou.role.delete'))
                       %span.label.label-info master
                     - else
                       %span.label.label-default none
@@ -383,35 +383,35 @@
                   %td Permission
 
                   %td
-                    - if ($role->hasMyPermission('cp.permission'))
+                    - if ($role->hasMyPermission('cp.sou.permission'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.permission'))
+                    - else if ($role->hasPermission('cp.sou.permission'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.permission.add'))
+                    - if ($role->hasMyPermission('cp.sou.permission.add'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.permission.add'))
+                    - else if ($role->hasPermission('cp.sou.permission.add'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.permission.edit'))
+                    - if ($role->hasMyPermission('cp.sou.permission.edit'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.permission.edit'))
+                    - else if ($role->hasPermission('cp.sou.permission.edit'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasMyPermission('cp.permission.delete'))
+                    - if ($role->hasMyPermission('cp.sou.permission.delete'))
                       %span.label.label-primary yes
-                    - else if ($role->hasPermission('cp.permission.delete'))
+                    - else if ($role->hasPermission('cp.sou.permission.delete'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
                   %td
-                    - if ($role->hasPermission('cp.permission.delete'))
+                    - if ($role->hasPermission('cp.sou.permission.delete'))
                       %span.label.label-info master
                     - else
                       %span.label.label-default none

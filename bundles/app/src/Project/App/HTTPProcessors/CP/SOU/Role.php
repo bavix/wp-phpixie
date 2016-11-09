@@ -1,12 +1,12 @@
 <?php
 
-namespace Project\App\HTTPProcessors\CP;
+namespace Project\App\HTTPProcessors\CP\SOU;
 
 use PHPixie\HTTP\Request;
-use Project\App\HTTPProcessors\Processor\CPProtected;
+use Project\App\HTTPProcessors\Processor\SOUProtected;
 use Project\App\Model;
 
-class Role extends CPProtected
+class Role extends SOUProtected
 {
 
     /**
@@ -23,7 +23,7 @@ class Role extends CPProtected
 
         $this->variables['roles'] = $roles;
 
-        return $this->render('app:cp/role/default');
+        return $this->render('app:cp/sou/role/default');
     }
 
 }
