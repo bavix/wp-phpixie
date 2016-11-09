@@ -23,7 +23,7 @@ class Role extends CPProtected
 
         $this->variables['roles'] = $roles;
 
-       return $this->render('app:cp/role/role');
+        return $this->render('app:cp/role/role');
     }
 
 }

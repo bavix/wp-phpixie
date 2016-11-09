@@ -10,6 +10,7 @@ use Project\App\HTTPProcessors\Processor;
 use Project\App\Model;
 use Project\App\ORM\User\User;
 use Project\Breadcrumb;
+use Project\Util;
 
 /**
  * Base processor that allows only logged in users
@@ -20,7 +21,7 @@ abstract class CPProtected extends Processor
     /**
      * @var string
      */
-    protected $permission = 'cp';
+    protected $permission     = 'cp';
 
     /**
      * @var string
@@ -67,45 +68,47 @@ abstract class CPProtected extends Processor
             ));
         }
 
-        if (!$this->user->hasPermission($this->permission))
-        {
-            $this->accessDenied();
-        }
-
         $attributes = $request->attributes();
 
-        $processor = $attributes->get('cpProcessor');
-        $action    = $attributes->get('action');
+        $processor     = $attributes->get('processor');
+        $cpProcessor   = $attributes->get('cpProcessor');
+        $nextProcessor = $attributes->get('nextProcessor');
+        $action        = $attributes->get('action');
 
-        $permission = 'cp.' . $processor;
+        $permission = implode('.', [
+            $processor,
+            $cpProcessor,
+            $nextProcessor,
+        ]);
+
+        $permission = preg_replace('~\.+~', '.', $permission);
+        $permission = trim($permission, '.');
 
         if (!$this->user->hasPermission($permission))
         {
             $this->accessDenied();
         }
 
-        $this->variables['user']     = $this->user;
-        $this->variables['menuList'] = $this->components->orm()
+        $orm = $this->components->orm();
+
+        $httpPath = $permission;
+
+        if ($action !== 'default')
+        {
+            $httpPath .= '@' . $action;
+        }
+
+        $currentMenu = $orm
             ->query(Model::MENU)
+            ->where('httpPath', $httpPath)
+            ->findOne();
+
+        $this->variables['user']        = $this->user;
+        $this->variables['currentMenu'] = $currentMenu;
+        $this->variables['menuList']    = $orm->query(Model::MENU)
             ->where('parentId', 0)
             ->orderAscendingBy('sortId')
             ->find();
-
-        $currentMenu = $this->components->orm()
-            ->query(Model::MENU)
-            ->where('processor', $processor)
-            ->where('action', $action)
-            ->findOne();
-
-        if (!$currentMenu)
-        {
-            $currentMenu = $this->components->orm()
-                ->query(Model::MENU)
-                ->where('processor', $processor)
-                ->findOne();
-        }
-
-        $this->variables['currentMenu'] = $currentMenu;
 
         return parent::process($request);
     }

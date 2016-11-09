@@ -14,17 +14,12 @@ use Project\Breadcrumb;
 /**
  * Base processor that allows only logged in users
  */
-abstract class WheelProtected extends CPProtected
+abstract class SOWProtected extends CPProtected
 {
 
     /**
      * @var string
      */
-    protected $permission = 'cp.wheel';
-
-    /**
-     * @var string
-     */
-    protected $resolverPath = 'app.cp.wheel.processor';
+    protected $resolverPath = 'app.cp.sow.processor';
 
 }

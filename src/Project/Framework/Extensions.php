@@ -6,7 +6,7 @@ use Project\HamlFormat;
 
 /**
  * Extensions registry.
-  */
+ */
 class Extensions extends \PHPixie\Framework\Extensions
 {
     /**
@@ -15,8 +15,7 @@ class Extensions extends \PHPixie\Framework\Extensions
      */
     public function templateExtensions()
     {
-        return array_merge(parent::templateExtensions(), array(
-           //add your Template Extensions here
+        return array_merge(parent::templateExtensions(), array(//add your Template Extensions here
         ));
     }
 
@@ -38,8 +37,7 @@ class Extensions extends \PHPixie\Framework\Extensions
      */
     public function authProviderBuilders()
     {
-        return array_merge(parent::authProviderBuilders(), array(
-            //add your Auth Provider Builders here
+        return array_merge(parent::authProviderBuilders(), array(//add your Auth Provider Builders here
         ));
     }
 }

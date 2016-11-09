@@ -56,9 +56,9 @@ class User extends UserLogin
     {
         $components = $this->builder->components();
 
-        $http = $components->http();
+        $http    = $components->http();
         $request = $http->request();
-        $uri = $request->uri();
+        $uri     = $request->uri();
 
         $urlPath = $uri->getScheme() . '://' . $uri->getHost() . '/svg/no-avatar.svg';
 

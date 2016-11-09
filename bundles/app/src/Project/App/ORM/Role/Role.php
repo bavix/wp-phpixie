@@ -42,7 +42,7 @@ class Role extends Entity
                 ->find()
                 ->asArray(true);
 
-            $column = array_column($permissions, 'name');
+            $column   = array_column($permissions, 'name');
             $fillKeys = array_fill_keys($column, true);
 
             $item->set($fillKeys);
@@ -79,7 +79,7 @@ class Role extends Entity
                 ->find()
                 ->asArray(true);
 
-            $column = array_column($permissions, 'name');
+            $column   = array_column($permissions, 'name');
             $fillKeys = array_fill_keys($column, true);
 
             $item->set($fillKeys);

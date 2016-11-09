@@ -13,7 +13,7 @@ class Components extends \PHPixie\BundleFramework\Components
     protected function buildTemplate()
     {
         $configuration = $this->builder->configuration();
-        $extensions    = $this->builder->extensions();
+        $extensions = $this->builder->extensions();
 
         return new Template(
             $this->slice(),
