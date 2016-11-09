@@ -91,19 +91,6 @@ abstract class Processor extends Actions
     }
 
     /**
-     * @param       $route
-     * @param array $params
-     *
-     * @return Response
-     */
-    protected function routeRedirect($route, $params = array())
-    {
-        $url = $this->builder->frameworkBuilder()->http()->generatePath($route, $params);
-
-        return $this->redirect($url);
-    }
-
-    /**
      * @param $httpRequest
      *
      * @return mixed

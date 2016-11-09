@@ -9,7 +9,7 @@ class Settings extends CPProtected
 
     public function defaultAction()
     {
-        return [__METHOD__];
+        return $this->render('app:cp/settings/default');
     }
 
 }

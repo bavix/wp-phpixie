@@ -9,7 +9,7 @@ class Style extends SOWProtected
 
     public function defaultAction()
     {
-        return $this->render('app:cp/sow/style/view');
+        return $this->render('app:cp/sow/style/default');
     }
 
 }

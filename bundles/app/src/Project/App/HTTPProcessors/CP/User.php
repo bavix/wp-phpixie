@@ -49,7 +49,7 @@ class User extends CPProtected
 
         $this->variables['pager'] = $pager;
 
-        return $this->render('app:cp/user/user');
+        return $this->render('app:cp/user/default');
     }
 
     public function editAction(Request $request)

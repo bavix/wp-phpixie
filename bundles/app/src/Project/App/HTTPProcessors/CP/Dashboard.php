@@ -20,7 +20,7 @@ class Dashboard extends CPProtected
      */
     public function defaultAction(Request $request)
     {
-        return $this->render('app:cp/dashboard/dashboard');
+        return $this->render('app:cp/dashboard/default');
     }
 
 }

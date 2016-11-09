@@ -9,7 +9,7 @@ class Wheel extends SOWProtected
 
     public function defaultAction()
     {
-        return $this->render('app:cp/sow/wheel/view');
+        return $this->render('app:cp/sow/wheel/default');
     }
 
 }

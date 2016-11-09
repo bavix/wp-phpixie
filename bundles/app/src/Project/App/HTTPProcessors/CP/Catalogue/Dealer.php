@@ -9,7 +9,7 @@ class Dealer extends CatalogueProtected
 
     public function defaultAction()
     {
-        return $this->render('app:cp/catalogue/dealer/view');
+        return $this->render('app:cp/catalogue/dealer/default');
     }
 
 }

@@ -105,12 +105,21 @@ return array(
 
                     'processor' => array(
                         'type'     => 'pattern',
-                        'path'     => '(/<cpProcessor>)',
+                        'path'     => '/<cpProcessor>',
                         'defaults' => array(
                             'cpProcessor' => 'dashboard',
                             'action'      => 'default'
                         )
                     ),
+
+                    'default' => array(
+                        'type'     => 'pattern',
+                        'defaults' => array(
+                            'cpProcessor' => 'dashboard',
+                            'action'    => 'default'
+                        )
+                    ),
+
                 )
             )
         ),
@@ -127,7 +136,14 @@ return array(
 
         'processor' => array(
             'type'     => 'pattern',
-            'path'     => '(/<processor>)',
+            'path'     => '/<processor>',
+            'defaults' => array(
+                'action'    => 'default'
+            )
+        ),
+
+        'default' => array(
+            'type'     => 'pattern',
             'defaults' => array(
                 'processor' => 'landing',
                 'action'    => 'default'

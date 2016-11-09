@@ -9,7 +9,7 @@ class BoltPattern extends SOWProtected
 
     public function defaultAction()
     {
-        return $this->render('app:cp/sow/bolt-pattern/view');
+        return $this->render('app:cp/sow/bolt-pattern/default');
     }
 
 }
