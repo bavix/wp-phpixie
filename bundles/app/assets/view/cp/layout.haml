@@ -3,7 +3,8 @@
   %head
     %meta{:charset => "utf-8"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %title = 'WBS - ' . ($title ?? 'dashboard')
+    - $layoutTitle = $title ?? $currentMenu->title ?? 'dashboard'
+    %title = 'WBS - ' . $layoutTitle
     %link{:href => "/assets/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}
     %link{:href => "/assets/gridlex/gridlex.min.css", :rel => "stylesheet"}
     %link{:href => "/assets/toastr/toastr.min.css", :rel => "stylesheet"}

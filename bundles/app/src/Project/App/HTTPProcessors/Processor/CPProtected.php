@@ -21,7 +21,7 @@ abstract class CPProtected extends Processor
     /**
      * @var string
      */
-    protected $permission     = 'cp';
+    protected $permission = 'cp';
 
     /**
      * @var string
@@ -103,6 +103,28 @@ abstract class CPProtected extends Processor
             ->where('parentId', 0)
             ->orderAscendingBy('sortId')
             ->find();
+
+        $current = clone $currentMenu;
+
+        $breadcrumbs = new \SplStack();
+        $breadcrumbs->push($current->asObject(true));
+
+        do
+        {
+            $current = $current->menu();
+
+            if ($current)
+            {
+                $breadcrumbs->push($current->asObject(true));
+            }
+        }
+        while ($current->parentId);
+
+        while (!$breadcrumbs->isEmpty())
+        {
+            var_dump($breadcrumbs->pop()->title);
+        }
+        die;
 
         return parent::process($request);
     }
