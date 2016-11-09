@@ -165,7 +165,7 @@ CREATE TABLE IF NOT EXISTS `menus` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
--- Dumping data for table wbs.menus: ~12 rows (approximately)
+-- Dumping data for table wbs.menus: ~14 rows (approximately)
 /*!40000 ALTER TABLE `menus` DISABLE KEYS */;
 INSERT INTO `menus` (`id`, `parentId`, `sortId`, `title`, `icon`, `httpPath`, `createdAt`, `updatedAt`) VALUES
 	(1, 0, 0, 'Dashboard', 'fa-dashboard', 'cp.dashboard', '2016-10-28 18:00:23', '2016-11-09 08:42:15'),
@@ -195,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `permissions` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table wbs.permissions: ~49 rows (approximately)
+-- Dumping data for table wbs.permissions: ~50 rows (approximately)
 /*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
 INSERT INTO `permissions` (`id`, `title`, `name`, `createdAt`, `updatedAt`) VALUES
 	(1, 'Доступ к административной панели', 'cp', '2016-10-25 06:25:31', '2016-10-28 18:58:41'),
@@ -288,7 +288,7 @@ CREATE TABLE IF NOT EXISTS `rolesPermissions` (
   UNIQUE KEY `permission` (`roleId`,`permissionId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table wbs.rolesPermissions: ~49 rows (approximately)
+-- Dumping data for table wbs.rolesPermissions: ~61 rows (approximately)
 /*!40000 ALTER TABLE `rolesPermissions` DISABLE KEYS */;
 INSERT INTO `rolesPermissions` (`id`, `roleId`, `permissionId`) VALUES
 	(1, 1, 14),

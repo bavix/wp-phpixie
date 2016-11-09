@@ -20,25 +20,20 @@ class Role extends Entity
         $this->builder = $builder;
     }
 
-    /**
-     * @param $name
-     *
-     * @return bool
-     */
-    public function hasMyPermission($name)
+    protected function cache($query, $method)
     {
-        $key = __FUNCTION__ . Model::ROLE . $this->id();
+        $key = $method . Model::ROLE . $this->id();
 
         $pool = $this->builder->cache();
 
-        if ($pool->hasItem($key) === false || 1)
+        if ($pool->hasItem($key) === false)
         {
             $item = $pool->getItem($key);
 
             $orm = $this->builder->components()->orm();
 
             $permissions = $orm->query(Model::PERMISSION)
-                ->relatedTo('roles', $this)
+                ->relatedTo('roles', $query)
                 ->find()
                 ->asArray(true);
 
@@ -51,7 +46,17 @@ class Role extends Entity
             $pool->save($item);
         }
 
-        $permissions = $pool->getItem($key)->get();
+        return $pool->getItem($key)->get();
+    }
+
+    /**
+     * @param $name
+     *
+     * @return bool
+     */
+    public function hasMyPermission($name)
+    {
+        $permissions = $this->cache($this, __FUNCTION__);
 
         return isset($permissions[$name]);
     }
@@ -63,32 +68,14 @@ class Role extends Entity
      */
     public function hasPermission($name)
     {
-        $key = __FUNCTION__ . Model::ROLE . $this->id();
-
-        $pool = $this->builder->cache();
-
-        if ($pool->hasItem($key) === false || 1)
+        if ($this->hasMyPermission($name))
         {
-            $item = $pool->getItem($key);
-
-            $orm = $this->builder->components()->orm();
-
-            $permissions = $orm->query(Model::PERMISSION)
-                ->relatedTo('roles', $this)
-                ->orRelatedTo('roles', $this->children->allQuery())
-                ->find()
-                ->asArray(true);
-
-            $column   = array_column($permissions, 'name');
-            $fillKeys = array_fill_keys($column, true);
-
-            $item->set($fillKeys);
-            $item->expiresAfter(60); // one min..
-
-            $pool->save($item);
+            return true;
         }
 
-        $permissions = $pool->getItem($key)->get();
+        $query = $this->children->allQuery(); // nested set
+
+        $permissions = $this->cache($query, __FUNCTION__);
 
         return isset($permissions[$name]);
     }
