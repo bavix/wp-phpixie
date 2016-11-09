@@ -26,6 +26,13 @@ return [
             'model' => Model::ROLE
         ],
 
+        // user invites
+        [
+            'type'  => 'oneToMany',
+            'owner' => Model::USER,
+            'items' => Model::INVITE
+        ],
+
         // self
         [
             'type'  => 'oneToMany',

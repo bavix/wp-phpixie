@@ -136,6 +136,23 @@ CREATE TABLE IF NOT EXISTS `images` (
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 
+-- Dumping structure for table wbs.invites
+CREATE TABLE IF NOT EXISTS `invites` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `token` char(64) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `roleId` int(11) NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table wbs.invites: ~0 rows (approximately)
+/*!40000 ALTER TABLE `invites` DISABLE KEYS */;
+/*!40000 ALTER TABLE `invites` ENABLE KEYS */;
+
 -- Dumping structure for table wbs.logs
 CREATE TABLE IF NOT EXISTS `logs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -163,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `menus` (
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table wbs.menus: ~14 rows (approximately)
 /*!40000 ALTER TABLE `menus` DISABLE KEYS */;
@@ -178,10 +195,11 @@ INSERT INTO `menus` (`id`, `parentId`, `sortId`, `title`, `icon`, `httpPath`, `c
 	(8, 7, 0, 'Heading', 'fa-car', 'cp.soc.heading', '2016-10-28 18:00:23', '2016-11-09 13:11:16'),
 	(9, 7, 1, 'Brand', 'fa-car', 'cp.soc.brand', '2016-10-28 18:00:23', '2016-11-09 13:11:21'),
 	(10, 7, 2, 'Dealer', 'fa-car', 'cp.soc.dealer', '2016-10-28 18:00:23', '2016-11-09 13:11:24'),
-	(11, 13, 98, 'Role', 'fa-shield', 'cp.sou.role', '2016-10-31 12:34:53', '2016-11-09 13:59:27'),
-	(12, 13, 97, 'User', 'fa-user', 'cp.sou.user', '2016-11-01 20:16:02', '2016-11-09 13:59:23'),
-	(13, 0, 96, 'Section of Users', 'fa-user', 'cp.sou', '2016-11-09 13:56:01', '2016-11-09 13:59:36'),
-	(14, 13, 99, 'Permission', 'fa-user', 'cp.sou.permission', '2016-11-01 20:16:02', '2016-11-09 13:59:23');
+	(11, 13, 2, 'Role', 'fa-shield', 'cp.sou.role', '2016-10-31 12:34:53', '2016-11-09 16:06:53'),
+	(12, 13, 1, 'User', 'fa-user', 'cp.sou.user', '2016-11-01 20:16:02', '2016-11-09 16:06:51'),
+	(13, 0, 98, 'Section of Users', 'fa-user', 'cp.sou', '2016-11-09 13:56:01', '2016-11-09 16:16:37'),
+	(14, 13, 3, 'Permission', 'fa-user', 'cp.sou.permission', '2016-11-01 20:16:02', '2016-11-09 16:06:55'),
+	(15, 13, 4, 'Invite', 'fa-user', 'cp.sou.invite', '2016-11-01 20:16:02', '2016-11-09 16:07:14');
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
 
 -- Dumping structure for table wbs.permissions
@@ -193,9 +211,9 @@ CREATE TABLE IF NOT EXISTS `permissions` (
   `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table wbs.permissions: ~50 rows (approximately)
+-- Dumping data for table wbs.permissions: ~55 rows (approximately)
 /*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
 INSERT INTO `permissions` (`id`, `title`, `name`, `createdAt`, `updatedAt`) VALUES
 	(1, 'Доступ к административной панели', 'cp', '2016-10-25 06:25:31', '2016-10-28 18:58:41'),
@@ -247,7 +265,11 @@ INSERT INTO `permissions` (`id`, `title`, `name`, `createdAt`, `updatedAt`) VALU
 	(48, 'Удалить Разболтовку', 'cp.sow.bolt-pattern.delete', '2016-10-29 09:02:34', '2016-11-08 16:22:17'),
 	(49, 'Редактировать Разболтовку', 'cp.sow.bolt-pattern.edit', '2016-10-29 09:02:34', '2016-11-08 16:22:17'),
 	(50, 'Попросить удаление разболтовки', 'cp.sow.bolt-pattern.pull-request', '2016-10-29 09:02:34', '2016-11-08 16:22:17'),
-	(51, 'Доступ к пользователям', 'cp.sou', '2016-11-09 14:02:36', '2016-11-09 14:02:38');
+	(51, 'Доступ к пользователям', 'cp.sou', '2016-11-09 14:02:36', '2016-11-09 14:02:38'),
+	(52, 'Список инвайтов', 'cp.sou.invite', '2016-11-09 15:58:25', '2016-11-09 15:58:40'),
+	(53, 'Добавить инвайт', 'cp.sou.invite.add', '2016-11-09 15:58:25', '2016-11-09 15:58:53'),
+	(54, 'Редактировать инвайт', 'cp.sou.invite.edit', '2016-11-09 15:58:25', '2016-11-09 15:59:08'),
+	(55, 'Удалить инвайт', 'cp.sou.invite.delete', '2016-11-09 15:58:25', '2016-11-09 15:59:08');
 /*!40000 ALTER TABLE `permissions` ENABLE KEYS */;
 
 -- Dumping structure for table wbs.roles
@@ -286,7 +308,7 @@ CREATE TABLE IF NOT EXISTS `rolesPermissions` (
   `permissionId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `permission` (`roleId`,`permissionId`)
-) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table wbs.rolesPermissions: ~61 rows (approximately)
 /*!40000 ALTER TABLE `rolesPermissions` DISABLE KEYS */;
@@ -299,6 +321,10 @@ INSERT INTO `rolesPermissions` (`id`, `roleId`, `permissionId`) VALUES
 	(6, 1, 19),
 	(7, 1, 20),
 	(8, 1, 21),
+	(62, 1, 52),
+	(63, 1, 53),
+	(64, 1, 54),
+	(65, 1, 55),
 	(27, 4, 5),
 	(33, 4, 13),
 	(59, 4, 44),

@@ -16,4 +16,6 @@ class Model
     const HEADING = 'heading';
 
     const IMAGE = 'image';
+
+    const INVITE = 'invite';
 }

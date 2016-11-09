@@ -5,6 +5,7 @@ namespace Project\App;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use PHPixie\DefaultBundle\Builder as DefaultBuilder;
+use RandomLib\Factory;
 use Stash\Pool;
 
 /**
@@ -12,6 +13,22 @@ use Stash\Pool;
  */
 class Builder extends DefaultBuilder
 {
+
+    /**
+     * @return Factory
+     */
+    public function randomFactory()
+    {
+        return $this->instance('randomFactory');
+    }
+
+    /**
+     * @return Factory
+     */
+    protected function buildRandomFactory()
+    {
+        return new Factory();
+    }
 
     /**
      * @return Pool

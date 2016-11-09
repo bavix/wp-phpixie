@@ -73,7 +73,6 @@ abstract class CPProtected extends Processor
         $processor     = $attributes->get('processor');
         $cpProcessor   = $attributes->get('cpProcessor');
         $nextProcessor = $attributes->get('nextProcessor');
-        $action        = $attributes->get('action');
 
         $permission = implode('.', [
             $processor,
@@ -92,11 +91,6 @@ abstract class CPProtected extends Processor
         $orm = $this->components->orm();
 
         $httpPath = $permission;
-
-        if ($action !== 'default')
-        {
-            $httpPath .= '@' . $action;
-        }
 
         $currentMenu = $orm
             ->query(Model::MENU)

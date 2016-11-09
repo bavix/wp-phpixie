@@ -66,4 +66,12 @@ class SOUProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
         return new SOU\Role($this->builder);
     }
 
+    /**
+     * @return SOU\Invite
+     */
+    protected function buildInviteProcessor()
+    {
+        return new SOU\Invite($this->builder);
+    }
+
 }
