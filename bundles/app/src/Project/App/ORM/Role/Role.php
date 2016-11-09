@@ -41,7 +41,6 @@ class Role extends Entity
             $fillKeys = array_fill_keys($column, true);
 
             $item->set($fillKeys);
-            $item->expiresAfter(60); // one min..
 
             $pool->save($item);
         }

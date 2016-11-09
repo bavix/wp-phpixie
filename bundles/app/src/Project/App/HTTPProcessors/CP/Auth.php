@@ -53,7 +53,7 @@ class Auth extends Processor
     {
         $this->components->auth()->domain()->forgetUser();
 
-        return $this->redirectResponse('app.default');
+        return $this->redirectResponse('app.processor');
     }
 
     /**
@@ -96,7 +96,7 @@ class Auth extends Processor
      */
     protected function loggedInRedirect()
     {
-        return $this->redirectResponse('app.cp.default');
+        return $this->redirectResponse('app.cp.processor');
     }
 
 }

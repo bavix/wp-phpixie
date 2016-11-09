@@ -48,7 +48,7 @@ return array(
                                     'type'     => 'pattern',
                                     'path'     => '/<nextProcessor>',
                                     'defaults' => array(
-                                        'action'         => 'default'
+                                        'action' => 'default'
                                     )
                                 ),
 
@@ -142,18 +142,10 @@ return array(
 
                     'processor' => array(
                         'type'     => 'pattern',
-                        'path'     => '/<cpProcessor>',
+                        'path'     => '(/<cpProcessor>)',
                         'defaults' => array(
                             'cpProcessor' => 'dashboard',
                             'action'      => 'default'
-                        )
-                    ),
-
-                    'default' => array(
-                        'type'     => 'pattern',
-                        'defaults' => array(
-                            'cpProcessor' => 'dashboard',
-                            'action'    => 'default'
                         )
                     ),
 
@@ -163,24 +155,17 @@ return array(
 
         'item' => array(
             'type' => 'pattern',
-            'path' => '/<processor>/<action>/<id>'
+            'path' => '<processor>/<action>/<id>'
         ),
 
         'action' => array(
             'type' => 'pattern',
-            'path' => '/<processor>/<action>'
+            'path' => '<processor>/<action>'
         ),
 
         'processor' => array(
             'type'     => 'pattern',
-            'path'     => '/<processor>',
-            'defaults' => array(
-                'action'    => 'default'
-            )
-        ),
-
-        'default' => array(
-            'type'     => 'pattern',
+            'path'     => '(<processor>)',
             'defaults' => array(
                 'processor' => 'landing',
                 'action'    => 'default'

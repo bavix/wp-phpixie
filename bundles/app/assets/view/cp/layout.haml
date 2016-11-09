@@ -3,8 +3,18 @@
   %head
     %meta{:charset => "utf-8"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    - $layoutTitle = $title ?? $currentMenu->title ?? 'dashboard'
-    %title = 'WBS - ' . $layoutTitle
+
+    - $layoutTitle = []
+    - foreach ($breadcrumbs as $breadcrumb)
+      - if (is_array($breadcrumb))
+        - $layoutTitle[] = $breadcrumb['title']
+      - else
+        - $layoutTitle[] = $breadcrumb
+
+    - $layoutTitle = implode(' - ', $layoutTitle)
+    - $layoutTitle .= (isset($title) ? ' - ' . $title : '')
+
+    %title = $layoutTitle
     %link{:href => "/assets/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}
     %link{:href => "/assets/gridlex/gridlex.min.css", :rel => "stylesheet"}
     %link{:href => "/assets/toastr/toastr.min.css", :rel => "stylesheet"}
@@ -190,19 +200,16 @@
         .row.wrapper.border-bottom.white-bg.page-heading
           .col-sm-4
             %h2 =$_($currentMenu->title)
-            -#%ol.breadcrumb
-            -#  - foreach (\Project\Breadcrumb::get() as $breadcrumbName => $url)
-            -#    - $isActive = (\Project\Breadcrumb::active() == $breadcrumbName)
-            -#    %li{:class => $isActive ? 'active' : ''}
-            -#      - if ($isActive || empty($url))
-            -#        %strong = $breadcrumbName
-            -#      - else
-            -#        - $httpPath = $this->httpPath($url[0], $url[1])
-            -#        %a{:href => $httpPath} = $breadcrumbName
-            -#  %li
-            -#    %a{:href => "index.html"} This is
-            -#  %li.active
-            -#    %strong Breadcrumb
+            %ol.breadcrumb
+              - foreach ($breadcrumbs as $breadcrumb)
+                - if (is_array($breadcrumb))
+                  - $httpPath = $breadcrumb['httpPath']
+                  - $httpPath = $this->httpPath($httpPath['url'], $httpPath['attributes'])
+                  %li
+                    %a{:href => $httpPath} = $breadcrumb['title']
+                - else
+                  %li.active
+                    %strong = $breadcrumb
           .col-sm-8
             .title-action
               %a.btn.btn-success{:href => ""}

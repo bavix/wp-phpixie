@@ -8,9 +8,8 @@ use PHPixie\Processors\Exception;
 use Project\App\Builder;
 use Project\App\HTTPProcessors\Processor;
 use Project\App\Model;
+use Project\App\ORM\Menu\Menu;
 use Project\App\ORM\User\User;
-use Project\Breadcrumb;
-use Project\Util;
 
 /**
  * Base processor that allows only logged in users
@@ -32,6 +31,48 @@ abstract class CPProtected extends Processor
      * @var User
      */
     protected $user;
+
+    public function breadcrumbs($action, Menu $current)
+    {
+        $pool = $this->builder->cache();
+
+        $key = __FUNCTION__ . $action . $current->id();
+
+        if ($pool->hasItem($key) === false)
+        {
+            $item = $pool->getItem($key);
+
+            if ($action !== 'default')
+            {
+                $breadcrumbs[] = $action;
+            }
+
+            $breadcrumbs[] = [
+                'title'    => $current->title,
+                'httpPath' => $current->httpPath(),
+            ];
+
+            do
+            {
+                $current = $current->menu();
+
+                if ($current)
+                {
+                    $breadcrumbs[] = [
+                        'title'    => $current->title,
+                        'httpPath' => $current->httpPath(),
+                    ];
+                }
+            }
+            while ($current && $current->parentId);
+
+            $item->set(array_reverse($breadcrumbs));
+
+            $pool->save($item);
+        }
+
+        return $pool->getItem($key)->get();
+    }
 
     /**
      * @param Builder $builder
@@ -104,27 +145,9 @@ abstract class CPProtected extends Processor
             ->orderAscendingBy('sortId')
             ->find();
 
-        $current = clone $currentMenu;
+        $action = $request->attributes()->get('action');
 
-        $breadcrumbs = new \SplStack();
-        $breadcrumbs->push($current->asObject(true));
-
-        do
-        {
-            $current = $current->menu();
-
-            if ($current)
-            {
-                $breadcrumbs->push($current->asObject(true));
-            }
-        }
-        while ($current->parentId);
-
-        while (!$breadcrumbs->isEmpty())
-        {
-            var_dump($breadcrumbs->pop()->title);
-        }
-        die;
+        $this->variables['breadcrumbs'] = $this->breadcrumbs($action, $currentMenu);
 
         return parent::process($request);
     }
