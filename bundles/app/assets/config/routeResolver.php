@@ -56,13 +56,13 @@ return array(
                         )
                     ),
 
-                    'catalogue' => array(
+                    'soc' => array(
 
                         'type' => 'prefix',
-                        'path' => '/catalogue',
+                        'path' => '/soc',
 
                         'defaults' => array(
-                            'cpProcessor' => 'catalogue',
+                            'cpProcessor' => 'soc',
                         ),
 
                         'resolver' => array(

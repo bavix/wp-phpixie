@@ -31,7 +31,7 @@ class Role extends Entity
 
         $pool = $this->builder->cache();
 
-        if ($pool->hasItem($key) === false)
+        if ($pool->hasItem($key) === false || 1)
         {
             $item = $pool->getItem($key);
 
@@ -67,7 +67,7 @@ class Role extends Entity
 
         $pool = $this->builder->cache();
 
-        if ($pool->hasItem($key) === false)
+        if ($pool->hasItem($key) === false || 1)
         {
             $item = $pool->getItem($key);
 

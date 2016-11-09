@@ -8,7 +8,7 @@ use Project\Util;
 /**
  * Builds processors in the 'app.admin' namespace
  */
-class CatalogueProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
+class SOCProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
 {
 
     /**
@@ -43,27 +43,27 @@ class CatalogueProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Bu
     }
 
     /**
-     * @return Catalogue\Brand
+     * @return SOC\Brand
      */
     protected function buildBrandProcessor()
     {
-        return new Catalogue\Brand($this->builder);
+        return new SOC\Brand($this->builder);
     }
 
     /**
-     * @return Catalogue\Dealer
+     * @return SOC\Dealer
      */
     protected function buildDealerProcessor()
     {
-        return new Catalogue\Dealer($this->builder);
+        return new SOC\Dealer($this->builder);
     }
 
     /**
-     * @return Catalogue\Heading
+     * @return SOC\Heading
      */
     protected function buildHeadingProcessor()
     {
-        return new Catalogue\Heading($this->builder);
+        return new SOC\Heading($this->builder);
     }
 
 }

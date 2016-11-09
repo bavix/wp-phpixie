@@ -103,11 +103,11 @@ class CPProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
     /**
      * Build 'admin' processor group
      *
-     * @return CP\CatalogueProcessorBuilder
+     * @return CP\SOCProcessorBuilder
      */
-    protected function buildCatalogueProcessor()
+    protected function buildSocProcessor()
     {
-        return new CP\CatalogueProcessorBuilder($this->builder);
+        return new CP\SOCProcessorBuilder($this->builder);
     }
 
 }

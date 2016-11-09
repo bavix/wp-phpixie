@@ -14,12 +14,12 @@ use Project\Breadcrumb;
 /**
  * Base processor that allows only logged in users
  */
-abstract class CatalogueProtected extends CPProtected
+abstract class SOCProtected extends CPProtected
 {
 
     /**
      * @var string
      */
-    protected $resolverPath = 'app.cp.catalogue.processor';
+    protected $resolverPath = 'app.cp.soc.processor';
 
 }

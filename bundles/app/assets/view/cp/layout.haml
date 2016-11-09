@@ -38,7 +38,10 @@
                     %a{:href => "mailbox.html"} Mailbox
                   %li.divider
                   %li
-                    %a{:href => "login.html"} Logout
+                    - $httpPath = $this->httpPath('app.cp.action', array('cpProcessor' => 'auth', 'action' => 'logout'))
+                    %a{:href => $httpPath}
+                      %i.fa.fa-sign-out
+                      Log out
               .logo-element
                 WBS
 
