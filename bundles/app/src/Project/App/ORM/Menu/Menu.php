@@ -5,6 +5,7 @@ namespace Project\App\ORM\Menu;
 use \PHPixie\ORM\Wrappers\Type\Database\Entity;
 use Project\App\Builder;
 use Project\App\Model;
+use Project\Util;
 
 class Menu extends Entity
 {
@@ -20,18 +21,9 @@ class Menu extends Entity
         $this->builder = $builder;
     }
 
-    public function getProcessor()
+    public function httpPath()
     {
-        $processors = explode('.', $this->entity->processor);
-
-        return current($processors);
-    }
-
-    public function nextProcessor()
-    {
-        $processors = explode('.', $this->entity->processor);
-
-        return $processors[1] ?? null;
+        return Util::httpWithURL($this->entity->httpPath);
     }
 
 }

@@ -93,11 +93,11 @@ class CPProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
     /**
      * Build 'admin' processor group
      *
-     * @return CP\WheelProcessorBuilder
+     * @return CP\SOWProcessorBuilder
      */
-    protected function buildWheelProcessor()
+    protected function buildSowProcessor()
     {
-        return new CP\WheelProcessorBuilder($this->builder);
+        return new CP\SOWProcessorBuilder($this->builder);
     }
 
     /**

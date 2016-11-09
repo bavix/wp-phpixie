@@ -47,10 +47,11 @@ class Util
 
     /**
      * @param $attributes
+     * @param $bundle
      *
      * @return mixed|string
      */
-    protected static function httpPath($attributes)
+    public static function httpPath($attributes, $bundle = 'app')
     {
         $last = isset($attributes['action']) ? 'action' : 'processor';
         $last = isset($attributes['id']) ? 'item' : $last;
@@ -69,7 +70,7 @@ class Util
 
         $path = preg_replace('~\.+~', '.', trim($path, '.'));
 
-        return $path;
+        return $bundle . '.' . $path;
     }
 
     /**

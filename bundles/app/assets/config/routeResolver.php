@@ -25,7 +25,7 @@ return array(
                         'path' => '/sow',
 
                         'defaults' => array(
-                            'cpProcessor' => 'wheel',
+                            'cpProcessor' => 'sow',
                         ),
 
                         'resolver' => array(
@@ -48,7 +48,6 @@ return array(
                                     'type'     => 'pattern',
                                     'path'     => '/<nextProcessor>',
                                     'defaults' => array(
-                                        'wheelProcessor' => 'wheel',
                                         'action'         => 'default'
                                     )
                                 ),
@@ -83,8 +82,11 @@ return array(
                                 ),
 
                                 'processor' => array(
-                                    'type' => 'pattern',
-                                    'path' => '/<nextProcessor>'
+                                    'type'     => 'pattern',
+                                    'path'     => '/<nextProcessor>',
+                                    'defaults' => array(
+                                        'action' => 'default'
+                                    )
                                 ),
 
                             )

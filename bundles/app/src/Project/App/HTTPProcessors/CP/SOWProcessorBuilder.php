@@ -8,7 +8,7 @@ use Project\Util;
 /**
  * Builds processors in the 'app.admin' namespace
  */
-class WheelProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
+class SOWProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
 {
 
     /**

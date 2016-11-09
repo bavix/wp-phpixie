@@ -20,11 +20,6 @@ abstract class SOWProtected extends CPProtected
     /**
      * @var string
      */
-    protected $nextPermission = 'sow';
-
-    /**
-     * @var string
-     */
     protected $resolverPath = 'app.cp.sow.processor';
 
 }

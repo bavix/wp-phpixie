@@ -10,6 +10,7 @@ use Project\App\HTTPProcessors\Processor;
 use Project\App\Model;
 use Project\App\ORM\User\User;
 use Project\Breadcrumb;
+use Project\Util;
 
 /**
  * Base processor that allows only logged in users
@@ -21,7 +22,6 @@ abstract class CPProtected extends Processor
      * @var string
      */
     protected $permission     = 'cp';
-    protected $nextPermission = null;
 
     /**
      * @var string
@@ -68,22 +68,21 @@ abstract class CPProtected extends Processor
             ));
         }
 
-        if ($this->nextPermission)
-        {
-            $this->permission .= '.' . $this->nextPermission;
-        }
-
-        if (!$this->user->hasPermission($this->permission))
-        {
-            $this->accessDenied();
-        }
-
         $attributes = $request->attributes();
 
-        $processor = $attributes->get('cpProcessor');
-        $action    = $attributes->get('action');
+        $processor     = $attributes->get('processor');
+        $cpProcessor   = $attributes->get('cpProcessor');
+        $nextProcessor = $attributes->get('nextProcessor');
+        $action        = $attributes->get('action');
 
-        $permission = 'cp.' . $processor;
+        $permission = implode('.', [
+            $processor,
+            $cpProcessor,
+            $nextProcessor,
+        ]);
+
+        $permission = preg_replace('~\.+~', '.', $permission);
+        $permission = trim($permission, '.');
 
         if (!$this->user->hasPermission($permission))
         {
@@ -92,26 +91,17 @@ abstract class CPProtected extends Processor
 
         $orm = $this->components->orm();
 
-        $nextProcessor = $attributes->get('nextProcessor');
+        $httpPath = $permission;
 
-        if ($nextProcessor)
+        if ($action !== 'default')
         {
-            $processor .= '.' . $nextProcessor;
+            $httpPath .= '@' . $action;
         }
 
         $currentMenu = $orm
             ->query(Model::MENU)
-            ->where('processor', $processor)
-            ->where('action', $action)
+            ->where('httpPath', $httpPath)
             ->findOne();
-
-        if (!$currentMenu)
-        {
-            $currentMenu = $orm
-                ->query(Model::MENU)
-                ->where('processor', $processor)
-                ->findOne();
-        }
 
         $this->variables['user']        = $this->user;
         $this->variables['currentMenu'] = $currentMenu;

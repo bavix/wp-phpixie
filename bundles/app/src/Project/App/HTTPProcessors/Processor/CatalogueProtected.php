@@ -20,11 +20,6 @@ abstract class CatalogueProtected extends CPProtected
     /**
      * @var string
      */
-    protected $nextPermission = 'catalogue';
-
-    /**
-     * @var string
-     */
     protected $resolverPath = 'app.cp.catalogue.processor';
 
 }
