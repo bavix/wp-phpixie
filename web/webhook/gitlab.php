@@ -27,13 +27,16 @@ $branch = trim($data["ref"]);
 fwrite($fs, 'BRANCH: ' . print_r($branch, true) . PHP_EOL);
 fwrite($fs, '=======================================================================' . PHP_EOL);
 
+$connection = ssh2_connect('localhost', 22);
+ssh2_auth_password($connection, 'wheelpro', 'yynK5DJTgseXW48e');
+
 if ($branch == 'refs/heads/master')
 {
-    fwrite($fs, shell_exec("sh /home/wheelpro/scripts/webhook/master.sh") . PHP_EOL);
+    $stream = ssh2_exec($connection, 'cd /home/wheelpro/web/www/ && git reset --hard origin/master && git pull');
 }
 else
 {
-    fwrite($fs, shell_exec("sh /home/wheelpro/scripts/webhook/dev.sh") . PHP_EOL);
+    $stream = ssh2_exec($connection, 'cd /home/wheelpro/web/dev/ && git reset --hard origin/dev && git pull');
 }
 
 $fs and fclose($fs);
