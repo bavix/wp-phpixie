@@ -8,3 +8,4 @@ bundles/app/web/upload/
 cache/haml/*
 console
 web/bundles/app
+web/webhook/*.log
