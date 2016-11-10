@@ -29,28 +29,41 @@ fwrite($fs, '===================================================================
 
 $server = filter_input_array(INPUT_SERVER);
 
-if ($branch == 'refs/heads/master' && !empty($server['HTTP_HOST']) && $server['HTTP_HOST'] == 'wheelpro.ru')
+if (!empty($server['HTTP_HOST']))
 {
-    chdir('/home/wheelpro/web/www/');
 
-    $output = shell_exec("git checkout master");
-    fwrite($fs, $output . PHP_EOL);
+    if ($branch === 'refs/heads/master' && $server['HTTP_HOST'] === 'wheelpro.ru')
+    {
+        chdir('/home/wheelpro/web/www/');
 
-    $output = shell_exec("git pull origin master");
-    fwrite($fs, $output . PHP_EOL);
+        $output = shell_exec("git checkout master");
+        fwrite($fs, $output . PHP_EOL);
+
+        $output = shell_exec("git pull origin master");
+        fwrite($fs, $output . PHP_EOL);
+
+        $output = shell_exec("composer update");
+        fwrite($fs, $output . PHP_EOL);
+    }
+    else if ($branch === 'refs/heads/dev' && $server['HTTP_HOST'] === 'dev.wheelpro.ru')
+    {
+        chdir('/home/wheelpro/web/dev/');
+
+        $output = shell_exec("git checkout dev");
+        fwrite($fs, $output . PHP_EOL);
+
+        $output = shell_exec("git pull origin dev");
+        fwrite($fs, $output . PHP_EOL);
+
+        $output = shell_exec("composer update");
+        fwrite($fs, $output . PHP_EOL);
+
+        $apiGen = "php ../apigen.phar generate --config apigen.yaml --php --no-source-code --title \"WBS CMS API Documentation\" --debug --tree --deprecated --php --todo";
+
+        $output = shell_exec($apiGen);
+        fwrite($fs, $output . PHP_EOL);
+    }
+
 }
-else if ($branch == 'refs/heads/dev' && !empty($server['HTTP_HOST']) && $server['HTTP_HOST'] == 'dev.wheelpro.ru')
-{
-    chdir('/home/wheelpro/web/dev/');
-
-    $output = shell_exec("git checkout dev");
-    fwrite($fs, $output . PHP_EOL);
-
-    $output = shell_exec("git pull origin dev");
-    fwrite($fs, $output . PHP_EOL);
-}
-
-$output = shell_exec("composer update");
-fwrite($fs, $output . PHP_EOL);
 
 $fs and fclose($fs);
