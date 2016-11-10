@@ -3,3 +3,15 @@ source:
     - ./src/Project
 
 destination: ./../doc
+internal: yes
+php: yes
+tree: yes
+deprecated: yes
+todo: yes
+sourceCode: no
+download: no
+wipeout: yes
+quiet: no
+progressbar: yes
+colors: yes
+debug: yes
