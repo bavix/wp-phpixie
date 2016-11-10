@@ -52,7 +52,7 @@ if (!empty($server['HTTP_HOST']))
         $output = shell_exec("git pull origin dev");
         fwrite($fs, $output . PHP_EOL);
 
-        $apiGen = "php ../apigen.phar generate --config apigen.yaml --php --no-source-code --quiet yes --title \"WBS CMS API Documentation\" --debug --tree --todo yes";
+        $apiGen = "php ../apigen.phar generate --config apigen.yaml";
 
         $output = shell_exec($apiGen);
         fwrite($fs, $output . PHP_EOL);
