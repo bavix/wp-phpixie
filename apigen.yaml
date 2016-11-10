@@ -9,6 +9,5 @@ tree: yes
 deprecated: yes
 todo: yes
 sourceCode: no
-wipeout: yes
 quiet: no
 debug: yes
