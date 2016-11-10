@@ -25,6 +25,7 @@
 
 - $httpPath = $this->httpPath('app.cp.processor', array('cpProcessor' => 'auth'))
 %form{:action => $httpPath, :method => "POST"}
+  %input{:name => "redirect", :value => $redirect ?? '', :type => "hidden"}
   .form-group
     %input{:name => "login", :placeholder => "username", :type => "text"}
   .form-group

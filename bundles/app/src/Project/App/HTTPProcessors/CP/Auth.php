@@ -36,6 +36,8 @@ class Auth extends Processor
 
         if ($request->method() === 'GET')
         {
+            $this->variables['redirect'] = $request->query()->get('redirect');
+
             return $this->render('app:cp/auth/default');
         }
 
@@ -84,6 +86,13 @@ class Auth extends Processor
             $this->variables['loginFailed'] = true;
 
             return $this->render('app:cp/auth/default');
+        }
+
+        $redirect = $data->get('redirect');
+
+        if ($redirect)
+        {
+            return $this->redirect($redirect);
         }
 
         return $this->loggedInRedirect();
