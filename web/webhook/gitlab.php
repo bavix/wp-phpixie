@@ -33,16 +33,18 @@ if ($branch == 'refs/heads/master' && !empty($server['HTTP_HOST']) && $server['H
 {
     chdir('/home/wheelpro/web/www/');
 
-    exec("git checkout master && git pull origin master", $output);
-
+    exec("git checkout master", $output);
+    fwrite($fs, print_r($output) . PHP_EOL);
+    exec("git pull origin master", $output);
     fwrite($fs, print_r($output) . PHP_EOL);
 }
 else if ($branch == 'refs/heads/dev' && !empty($server['HTTP_HOST']) && $server['HTTP_HOST'] == 'dev.wheelpro.ru')
 {
     chdir('/home/wheelpro/web/dev/');
 
-    exec("git checkout dev && git pull origin dev", $output);
-
+    exec("git checkout dev", $output);
+    fwrite($fs, print_r($output) . PHP_EOL);
+    exec("git pull origin dev", $output);
     fwrite($fs, print_r($output) . PHP_EOL);
 }
 
