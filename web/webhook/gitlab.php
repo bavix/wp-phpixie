@@ -23,19 +23,17 @@ fwrite($fs, '===================================================================
 
 $branch = $data["ref"];
 
+fwrite($fs, 'BRANCH: ' . print_r($branch, true) . PHP_EOL);
+fwrite($fs, 'DATA: ' . print_r($data, true) . PHP_EOL);
+fwrite($fs, '=======================================================================' . PHP_EOL);
+
 if ($branch === 'refs/heads/master')
 {
-    fwrite($fs, 'BRANCH: ' . print_r($branch, true) . PHP_EOL);
-    fwrite($fs, '=======================================================================' . PHP_EOL);
-
     fwrite($fs, shell_exec("sh /home/wheelpro/scripts/webhook/master.sh") . PHP_EOL);
-    $fs and fclose($fs);
 }
 else
 {
-    fwrite($fs, 'BRANCH: ' . print_r($branch, true) . PHP_EOL);
-    fwrite($fs, '=======================================================================' . PHP_EOL);
-
     fwrite($fs, shell_exec("sh /home/wheelpro/scripts/webhook/dev.sh") . PHP_EOL);
-    $fs and fclose($fs);
 }
+
+$fs and fclose($fs);
