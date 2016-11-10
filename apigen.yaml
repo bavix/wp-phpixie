@@ -1,0 +1,5 @@
+source:
+    - ./bundles/app/src/Project
+    - ./src/Project
+
+destination: ./../doc
