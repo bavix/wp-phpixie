@@ -2,19 +2,18 @@
 -- Host:                         127.0.0.1
 -- Server version:               5.7.13-log - MySQL Community Server (GPL)
 -- Server OS:                    Win64
--- HeidiSQL Version:             9.3.0.5117
+-- HeidiSQL Version:             9.3.0.4984
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-
 
 -- Dumping database structure for wbs
 CREATE DATABASE IF NOT EXISTS `wbs` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `wbs`;
+
 
 -- Dumping structure for table wbs.brands
 CREATE TABLE IF NOT EXISTS `brands` (
@@ -35,6 +34,7 @@ CREATE TABLE IF NOT EXISTS `brands` (
 /*!40000 ALTER TABLE `brands` DISABLE KEYS */;
 /*!40000 ALTER TABLE `brands` ENABLE KEYS */;
 
+
 -- Dumping structure for table wbs.brandsDealers
 CREATE TABLE IF NOT EXISTS `brandsDealers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -48,6 +48,7 @@ CREATE TABLE IF NOT EXISTS `brandsDealers` (
 /*!40000 ALTER TABLE `brandsDealers` DISABLE KEYS */;
 /*!40000 ALTER TABLE `brandsDealers` ENABLE KEYS */;
 
+
 -- Dumping structure for table wbs.brandsHeadings
 CREATE TABLE IF NOT EXISTS `brandsHeadings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -60,6 +61,7 @@ CREATE TABLE IF NOT EXISTS `brandsHeadings` (
 -- Dumping data for table wbs.brandsHeadings: ~0 rows (approximately)
 /*!40000 ALTER TABLE `brandsHeadings` DISABLE KEYS */;
 /*!40000 ALTER TABLE `brandsHeadings` ENABLE KEYS */;
+
 
 -- Dumping structure for table wbs.configurations
 CREATE TABLE IF NOT EXISTS `configurations` (
@@ -75,6 +77,7 @@ CREATE TABLE IF NOT EXISTS `configurations` (
 /*!40000 ALTER TABLE `configurations` DISABLE KEYS */;
 /*!40000 ALTER TABLE `configurations` ENABLE KEYS */;
 
+
 -- Dumping structure for table wbs.dealers
 CREATE TABLE IF NOT EXISTS `dealers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -85,6 +88,7 @@ CREATE TABLE IF NOT EXISTS `dealers` (
 -- Dumping data for table wbs.dealers: ~0 rows (approximately)
 /*!40000 ALTER TABLE `dealers` DISABLE KEYS */;
 /*!40000 ALTER TABLE `dealers` ENABLE KEYS */;
+
 
 -- Dumping structure for table wbs.dealersHeadings
 CREATE TABLE IF NOT EXISTS `dealersHeadings` (
@@ -98,6 +102,7 @@ CREATE TABLE IF NOT EXISTS `dealersHeadings` (
 -- Dumping data for table wbs.dealersHeadings: ~0 rows (approximately)
 /*!40000 ALTER TABLE `dealersHeadings` DISABLE KEYS */;
 /*!40000 ALTER TABLE `dealersHeadings` ENABLE KEYS */;
+
 
 -- Dumping structure for table wbs.headings
 CREATE TABLE IF NOT EXISTS `headings` (
@@ -120,6 +125,7 @@ INSERT INTO `headings` (`id`, `parentId`, `title`, `createdAt`, `updatedAt`) VAL
 	(6, 0, 'ACCESORIES', '2016-10-29 10:55:27', '2016-10-29 10:55:27');
 /*!40000 ALTER TABLE `headings` ENABLE KEYS */;
 
+
 -- Dumping structure for table wbs.images
 CREATE TABLE IF NOT EXISTS `images` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -135,6 +141,7 @@ CREATE TABLE IF NOT EXISTS `images` (
 -- Dumping data for table wbs.images: ~0 rows (approximately)
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
+
 
 -- Dumping structure for table wbs.invites
 CREATE TABLE IF NOT EXISTS `invites` (
@@ -153,6 +160,7 @@ CREATE TABLE IF NOT EXISTS `invites` (
 /*!40000 ALTER TABLE `invites` DISABLE KEYS */;
 /*!40000 ALTER TABLE `invites` ENABLE KEYS */;
 
+
 -- Dumping structure for table wbs.logs
 CREATE TABLE IF NOT EXISTS `logs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -169,6 +177,7 @@ CREATE TABLE IF NOT EXISTS `logs` (
 /*!40000 ALTER TABLE `logs` DISABLE KEYS */;
 /*!40000 ALTER TABLE `logs` ENABLE KEYS */;
 
+
 -- Dumping structure for table wbs.menus
 CREATE TABLE IF NOT EXISTS `menus` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -182,7 +191,7 @@ CREATE TABLE IF NOT EXISTS `menus` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
--- Dumping data for table wbs.menus: ~12 rows (approximately)
+-- Dumping data for table wbs.menus: ~15 rows (approximately)
 /*!40000 ALTER TABLE `menus` DISABLE KEYS */;
 INSERT INTO `menus` (`id`, `parentId`, `sortId`, `title`, `icon`, `httpPath`, `createdAt`, `updatedAt`) VALUES
 	(1, 0, 0, 'Dashboard', 'fa-dashboard', 'cp.dashboard', '2016-10-28 18:00:23', '2016-11-09 08:42:15'),
@@ -202,6 +211,7 @@ INSERT INTO `menus` (`id`, `parentId`, `sortId`, `title`, `icon`, `httpPath`, `c
 	(15, 13, 4, 'Invite', 'fa-user', 'cp.sou.invite', '2016-11-01 20:16:02', '2016-11-09 16:07:14');
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
 
+
 -- Dumping structure for table wbs.permissions
 CREATE TABLE IF NOT EXISTS `permissions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -211,9 +221,9 @@ CREATE TABLE IF NOT EXISTS `permissions` (
   `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table wbs.permissions: ~55 rows (approximately)
+-- Dumping data for table wbs.permissions: ~54 rows (approximately)
 /*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
 INSERT INTO `permissions` (`id`, `title`, `name`, `createdAt`, `updatedAt`) VALUES
 	(1, 'Доступ к административной панели', 'cp', '2016-10-25 06:25:31', '2016-10-28 18:58:41'),
@@ -269,8 +279,10 @@ INSERT INTO `permissions` (`id`, `title`, `name`, `createdAt`, `updatedAt`) VALU
 	(52, 'Список инвайтов', 'cp.sou.invite', '2016-11-09 15:58:25', '2016-11-09 15:58:40'),
 	(53, 'Добавить инвайт', 'cp.sou.invite.add', '2016-11-09 15:58:25', '2016-11-09 15:58:53'),
 	(54, 'Редактировать инвайт', 'cp.sou.invite.edit', '2016-11-09 15:58:25', '2016-11-09 15:59:08'),
-	(55, 'Удалить инвайт', 'cp.sou.invite.delete', '2016-11-09 15:58:25', '2016-11-09 15:59:08');
+	(55, 'Удалить инвайт', 'cp.sou.invite.delete', '2016-11-09 15:58:25', '2016-11-09 15:59:08'),
+	(56, 'Раздел Настроек', 'cp.settings', '2016-11-10 21:43:09', '2016-11-10 21:43:09');
 /*!40000 ALTER TABLE `permissions` ENABLE KEYS */;
+
 
 -- Dumping structure for table wbs.roles
 CREATE TABLE IF NOT EXISTS `roles` (
@@ -286,7 +298,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
   KEY `title` (`title`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table wbs.roles: ~10 rows (approximately)
+-- Dumping data for table wbs.roles: ~0 rows (approximately)
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
 INSERT INTO `roles` (`id`, `title`, `left`, `right`, `depth`, `rootId`, `createdAt`, `updatedAt`) VALUES
 	(1, 'Administrator', 1, 20, 0, 1, '2016-10-07 21:03:24', '2016-10-29 11:19:02'),
@@ -301,6 +313,7 @@ INSERT INTO `roles` (`id`, `title`, `left`, `right`, `depth`, `rootId`, `created
 	(10, 'Manager Heading', 16, 17, 3, 1, '2016-10-29 11:16:17', '2016-10-29 11:19:02');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 
+
 -- Dumping structure for table wbs.rolesPermissions
 CREATE TABLE IF NOT EXISTS `rolesPermissions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -308,9 +321,9 @@ CREATE TABLE IF NOT EXISTS `rolesPermissions` (
   `permissionId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `permission` (`roleId`,`permissionId`)
-) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table wbs.rolesPermissions: ~63 rows (approximately)
+-- Dumping data for table wbs.rolesPermissions: ~0 rows (approximately)
 /*!40000 ALTER TABLE `rolesPermissions` DISABLE KEYS */;
 INSERT INTO `rolesPermissions` (`id`, `roleId`, `permissionId`) VALUES
 	(1, 1, 14),
@@ -325,6 +338,7 @@ INSERT INTO `rolesPermissions` (`id`, `roleId`, `permissionId`) VALUES
 	(63, 1, 53),
 	(64, 1, 54),
 	(65, 1, 55),
+	(66, 1, 56),
 	(27, 4, 5),
 	(33, 4, 13),
 	(59, 4, 44),
@@ -380,6 +394,7 @@ INSERT INTO `rolesPermissions` (`id`, `roleId`, `permissionId`) VALUES
 	(44, 10, 34);
 /*!40000 ALTER TABLE `rolesPermissions` ENABLE KEYS */;
 
+
 -- Dumping structure for table wbs.tokens
 CREATE TABLE IF NOT EXISTS `tokens` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -394,6 +409,7 @@ CREATE TABLE IF NOT EXISTS `tokens` (
 -- Dumping data for table wbs.tokens: ~0 rows (approximately)
 /*!40000 ALTER TABLE `tokens` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tokens` ENABLE KEYS */;
+
 
 -- Dumping structure for table wbs.users
 CREATE TABLE IF NOT EXISTS `users` (
@@ -421,7 +437,6 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `googleId`, `facebookId`, `instagramId`, `githubId`, `vkId`, `twitterId`, `dropboxId`, `login`, `lastname`, `name`, `email`, `passwordHash`, `roleId`, `createdAt`, `updatedAt`) VALUES
 	(1, NULL, NULL, NULL, '5111255', '77525486', NULL, NULL, 'rez1dent3', 'Бабичев', 'Максим', 'maksim.babichev95@gmail.com', '$2y$10$5PN0fk6ih8MbIxgb9Yhu0ORWKn7srgXBfAK4xxGBeU4ELv0SiABbC', 1, '2016-10-06 10:45:45', '2016-11-01 21:30:30');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
-
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

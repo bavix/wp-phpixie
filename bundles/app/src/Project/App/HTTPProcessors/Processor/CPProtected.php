@@ -104,9 +104,20 @@ abstract class CPProtected extends Processor
 
         if (!$this->user)
         {
-            return $this->redirectResponse('app.cp.processor', array(
+            $http = $this->builder->frameworkBuilder()->http();
+
+            $url = $http->generatePath('app.cp.processor', array(
                 'cpProcessor' => 'auth'
             ));
+
+            $redirect = $request->server()->get('REDIRECT_URL');
+
+            if ($redirect)
+            {
+                $url .= '?redirect=' . $redirect;
+            }
+
+            return $this->redirect($url);
         }
 
         $attributes = $request->attributes();
