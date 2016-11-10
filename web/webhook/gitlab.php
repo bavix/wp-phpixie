@@ -41,9 +41,6 @@ if (!empty($server['HTTP_HOST']))
 
         $output = shell_exec("git pull origin master");
         fwrite($fs, $output . PHP_EOL);
-
-        $output = shell_exec("composer update");
-        fwrite($fs, $output . PHP_EOL);
     }
     else if ($branch === 'refs/heads/dev' && $server['HTTP_HOST'] === 'dev.wheelpro.ru')
     {
@@ -55,14 +52,14 @@ if (!empty($server['HTTP_HOST']))
         $output = shell_exec("git pull origin dev");
         fwrite($fs, $output . PHP_EOL);
 
-        $output = shell_exec("composer update");
-        fwrite($fs, $output . PHP_EOL);
-
-        $apiGen = "php ../apigen.phar generate --config apigen.yaml --php --no-source-code --title \"WBS CMS API Documentation\" --debug --tree --deprecated --php --todo";
+        $apiGen = "php ../apigen.phar generate --config apigen.yaml --php --no-source-code --quiet yes --title \"WBS CMS API Documentation\" --debug --tree --todo yes";
 
         $output = shell_exec($apiGen);
         fwrite($fs, $output . PHP_EOL);
     }
+
+    $output = shell_exec("composer update");
+    fwrite($fs, $output . PHP_EOL);
 
 }
 
