@@ -53,7 +53,8 @@ if (!empty($server['HTTP_HOST']))
         fwrite($fs, $output . PHP_EOL);
 
         // for apiGen
-        $output = shell_exec("rm -fr ../doc/*"); // remove docs
+        shell_exec("rm -fr ../doc/*"); // remove docs
+        shell_exec("rm -fr /tmp/_apigen/*"); // remove temp files
 
         $apiGen = "php ../apigen.phar generate --config apigen.yaml";
 
