@@ -1,5 +1,6 @@
 <?php
 
+$pswd = 'ltiN\p[R7Yz*nj/e';
 $access_token = '_D1d^+{NK#T.b9q-4*&IMHj:mJk"]Y[fCRA6l;89S0Us&cVQgWP?}!/E5wv7oXuZ';
 
 $client_token = $_GET['token'];
