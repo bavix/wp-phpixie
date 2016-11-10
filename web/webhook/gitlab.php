@@ -35,6 +35,7 @@ if ($branch == 'refs/heads/master' && !empty($server['HTTP_HOST']) && $server['H
 
     exec("git checkout master", $output);
     fwrite($fs, print_r($output) . PHP_EOL);
+    
     exec("git pull origin master", $output);
     fwrite($fs, print_r($output) . PHP_EOL);
 }
@@ -44,6 +45,7 @@ else if ($branch == 'refs/heads/dev' && !empty($server['HTTP_HOST']) && $server[
 
     exec("git checkout dev", $output);
     fwrite($fs, print_r($output) . PHP_EOL);
+
     exec("git pull origin dev", $output);
     fwrite($fs, print_r($output) . PHP_EOL);
 }
