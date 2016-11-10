@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/hook.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="" />
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -107,8 +104,8 @@
         <option value="$PROJECT_DIR$/bundles/app/assets/view/cp/layout.haml" />
         <option value="$PROJECT_DIR$/web/index.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/web/webhook/gitlab.php" />
         <option value="$PROJECT_DIR$/web/hook.txt" />
+        <option value="$PROJECT_DIR$/web/webhook/gitlab.php" />
       </list>
     </option>
   </component>
@@ -795,12 +792,12 @@
       <workItem from="1478704640521" duration="4954000" />
       <workItem from="1478754092757" duration="3062000" />
       <workItem from="1478760637693" duration="2000" />
-      <workItem from="1478761334752" duration="15212000" />
+      <workItem from="1478761334752" duration="15295000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="373472000" />
+    <option name="totallyTimeSpent" value="373555000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
