@@ -1,7 +1,5 @@
 <?php
 
-include_once '../../vendor/autoload.php';
-
 $pswd         = 'ltiN\p[R7Yz*nj/e';
 $access_token = '_D1d^+{NK#T.b9q-4*&IMHj:mJk"]Y[fCRA6l;89S0Us&cVQgWP?}!/E5wv7oXuZ';
 
@@ -29,24 +27,15 @@ $branch = trim($data["ref"]);
 fwrite($fs, 'BRANCH: ' . print_r($branch, true) . PHP_EOL);
 fwrite($fs, '=======================================================================' . PHP_EOL);
 
-
-$wrapper = new \GitWrapper\GitWrapper();
-
-$wrapper->setPrivateKey('/home/wheelpro/sshkeys/wheelpro');
-
-$git = $wrapper->workingCopy(dirname(dirname(__DIR__)));
-
 if ($branch == 'refs/heads/master')
 {
-    $git->checkout('master');
+    chdir('/home/wheelpro/web/www/');
+    fwrite($fs, shell_exec("git checkout master && git pull origin master") . PHP_EOL);
 }
 else
 {
-    $git->checkout('dev');
+    chdir('/home/wheelpro/web/dev/');
+    fwrite($fs, shell_exec("git checkout && git pull origin dev") . PHP_EOL);
 }
-
-$git->pull();
-
-fwrite($fs, $git->getOutput(), PHP_EOL);
 
 $fs and fclose($fs);
