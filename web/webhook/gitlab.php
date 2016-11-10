@@ -22,8 +22,9 @@ if ($client_token !== $access_token)
 $json = file_get_contents('php://input');
 $data = json_decode($json, true);
 
-$branch = $data["ref"];
 fwrite($fs, '=======================================================================' . PHP_EOL);
+
+$branch = $data["ref"];
 
 if ($branch === 'refs/heads/master')
 {
