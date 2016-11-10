@@ -1,0 +1,67 @@
+.theme-config
+  .theme-config-box
+    .spin-icon
+      %i.fa.fa-cogs.fa-spin
+    .skin-setttings
+      .title Configuration
+      .setings-item
+        %span
+          Collapse menu
+        .switch
+          .onoffswitch
+            %input#collapsemenu.wbs-checkbox{:name => "collapsemenu", :type => "checkbox"}/
+            %label{:for => "collapsemenu"}
+      .setings-item
+        %span
+          Fixed sidebar
+        .switch
+          .onoffswitch
+            %input#fixedsidebar.wbs-checkbox{:name => "fixedsidebar", :type => "checkbox"}/
+            %label{:for => "fixedsidebar"}
+      .setings-item
+        %span
+          Top navbar
+        .switch
+          .onoffswitch
+            %input#fixednavbar.wbs-checkbox{:name => "fixednavbar", :type => "checkbox"}/
+            %label{:for => "fixednavbar"}
+      .setings-item
+        %span
+          Top navbar v.2
+          %br/
+          %small *Primary layout
+        .switch
+          .onoffswitch
+            %input#fixednavbar2.wbs-checkbox{:name => "fixednavbar2", :type => "checkbox"}/
+            %label{:for => "fixednavbar2"}
+      .setings-item
+        %span
+          Boxed layout
+        .switch
+          .onoffswitch
+            %input#boxedlayout.wbs-checkbox{:name => "boxedlayout", :type => "checkbox"}/
+            %label{:for => "boxedlayout"}
+      .setings-item
+        %span
+          Fixed footer
+        .switch
+          .onoffswitch
+            %input#fixedfooter.wbs-checkbox{:name => "fixedfooter", :type => "checkbox"}/
+            %label{:for => "fixedfooter"}
+      .title Skins
+      .setings-item.default-skin
+        %span.skin-name
+          %a.s-skin-0
+            Default
+      .setings-item.blue-skin
+        %span.skin-name
+          %a.s-skin-1
+            Blue light
+      .setings-item.yellow-skin
+        %span.skin-name
+          %a.s-skin-3
+            Yellow/Purple
+      .setings-item.ultra-skin
+        %span.skin-name
+          %a.s-md-skin
+            Material Design

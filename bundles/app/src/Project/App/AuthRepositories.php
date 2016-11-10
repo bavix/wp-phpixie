@@ -34,7 +34,7 @@ class AuthRepositories extends Builder
      */
     protected function buildUserRepository()
     {
-        return $this->orm->repository(Model::User);
+        return $this->orm->repository(Model::USER);
     }
 
 }

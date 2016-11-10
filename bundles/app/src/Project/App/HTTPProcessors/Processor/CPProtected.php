@@ -8,14 +8,19 @@ use PHPixie\Processors\Exception;
 use Project\App\Builder;
 use Project\App\HTTPProcessors\Processor;
 use Project\App\Model;
+use Project\App\ORM\Menu\Menu;
 use Project\App\ORM\User\User;
-use Project\Breadcrumb;
 
 /**
  * Base processor that allows only logged in users
  */
 abstract class CPProtected extends Processor
 {
+
+    /**
+     * @var string
+     */
+    protected $permission = 'cp';
 
     /**
      * @var string
@@ -27,12 +32,59 @@ abstract class CPProtected extends Processor
      */
     protected $user;
 
+    public function breadcrumbs($action, Menu $current)
+    {
+        $pool = $this->builder->cache();
+
+        $key = __FUNCTION__ . $action . $current->id();
+
+        if ($pool->hasItem($key) === false)
+        {
+            $item = $pool->getItem($key);
+
+            if ($action !== 'default')
+            {
+                $breadcrumbs[] = $action;
+            }
+
+            $breadcrumbs[] = [
+                'title'    => $current->title,
+                'httpPath' => $current->httpPath(),
+            ];
+
+            do
+            {
+                $current = $current->menu();
+
+                if ($current)
+                {
+                    $breadcrumbs[] = [
+                        'title'    => $current->title,
+                        'httpPath' => $current->httpPath(),
+                    ];
+                }
+            }
+            while ($current && $current->parentId);
+
+            $item->set(array_reverse($breadcrumbs));
+
+            $pool->save($item);
+        }
+
+        return $pool->getItem($key)->get();
+    }
+
     /**
      * @param Builder $builder
      */
     public function __construct($builder)
     {
         parent::__construct($builder);
+    }
+
+    protected function accessDenied()
+    {
+        throw new \PHPixie\Processors\Exception("Access Denied");
     }
 
     /**
@@ -42,7 +94,9 @@ abstract class CPProtected extends Processor
      * @param Request $request
      *
      * @return \PHPixie\HTTP\Responses\Response
-     * @throws \PHPixie\Processors\Exception
+     *
+     * @throws Exception
+     * @throws \PHPixie\ORM\Exception\Query
      */
     public function process($request)
     {
@@ -55,25 +109,45 @@ abstract class CPProtected extends Processor
             ));
         }
 
-        if (!$this->user->hasPermission('cp'))
+        $attributes = $request->attributes();
+
+        $processor     = $attributes->get('processor');
+        $cpProcessor   = $attributes->get('cpProcessor');
+        $nextProcessor = $attributes->get('nextProcessor');
+
+        $permission = implode('.', [
+            $processor,
+            $cpProcessor,
+            $nextProcessor,
+        ]);
+
+        $permission = preg_replace('~\.+~', '.', $permission);
+        $permission = trim($permission, '.');
+
+        if (!$this->user->hasPermission($permission))
         {
-            throw new \PHPixie\Processors\Exception("Access Denied");
+            $this->accessDenied();
         }
 
-        $this->variables['user']      = $this->user;
-        $this->variables['menuList']  = $this->components->orm()
-            ->query(Model::Menu)
+        $orm = $this->components->orm();
+
+        $httpPath = $permission;
+
+        $currentMenu = $orm
+            ->query(Model::MENU)
+            ->where('httpPath', $httpPath)
+            ->findOne();
+
+        $this->variables['user']        = $this->user;
+        $this->variables['currentMenu'] = $currentMenu;
+        $this->variables['menuList']    = $orm->query(Model::MENU)
             ->where('parentId', 0)
             ->orderAscendingBy('sortId')
             ->find();
 
-        $attributes = $request->attributes();
+        $action = $request->attributes()->get('action');
 
-        $this->variables['currentMenu'] = $this->components->orm()
-            ->query(Model::Menu)
-            ->where('processor', $attributes->get('cpProcessor'))
-            ->where('action', $attributes->get('action'))
-            ->findOne();
+        $this->variables['breadcrumbs'] = $this->breadcrumbs($action, $currentMenu);
 
         return parent::process($request);
     }

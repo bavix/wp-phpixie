@@ -79,14 +79,22 @@ CREATE TABLE IF NOT EXISTS `dealersHeadings` (
 -- Dumping structure for table wbs.headings
 CREATE TABLE IF NOT EXISTS `headings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` int(11) NOT NULL,
+  `parentId` int(11) NOT NULL DEFAULT '0',
+  `title` varchar(50) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Рубрики';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COMMENT='Рубрики';
 
--- Dumping data for table wbs.headings: ~0 rows (approximately)
+-- Dumping data for table wbs.headings: ~6 rows (approximately)
 /*!40000 ALTER TABLE `headings` DISABLE KEYS */;
+INSERT INTO `headings` (`id`, `parentId`, `title`, `createdAt`, `updatedAt`) VALUES
+	(1, 0, 'WHEELS', '2016-10-29 10:55:27', '2016-10-29 10:55:27'),
+	(2, 0, 'AERODYNAMICS', '2016-10-29 10:55:27', '2016-10-29 10:55:27'),
+	(3, 0, 'EXHAUST', '2016-10-29 10:55:27', '2016-10-29 10:55:27'),
+	(4, 0, 'BRAKES', '2016-10-29 10:55:27', '2016-10-29 10:55:27'),
+	(5, 0, 'FORCING', '2016-10-29 10:55:27', '2016-10-29 10:55:27'),
+	(6, 0, 'ACCESORIES', '2016-10-29 10:55:27', '2016-10-29 10:55:27');
 /*!40000 ALTER TABLE `headings` ENABLE KEYS */;
 
 
@@ -113,22 +121,26 @@ CREATE TABLE IF NOT EXISTS `menus` (
   `sortId` int(11) NOT NULL DEFAULT '99',
   `title` varchar(50) NOT NULL,
   `icon` varchar(50) NOT NULL DEFAULT 'fa-th-large',
-  `processor` varchar(50) NOT NULL,
+  `processor` varchar(50) DEFAULT NULL,
   `action` varchar(50) NOT NULL DEFAULT 'default',
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
--- Dumping data for table wbs.menus: ~6 rows (approximately)
+-- Dumping data for table wbs.menus: ~10 rows (approximately)
 /*!40000 ALTER TABLE `menus` DISABLE KEYS */;
 INSERT INTO `menus` (`id`, `parentId`, `sortId`, `title`, `icon`, `processor`, `action`, `createdAt`, `updatedAt`) VALUES
 	(1, 0, 0, 'Dashboard', 'fa-th-large', 'dashboard', 'default', '2016-10-28 18:00:23', '2016-10-28 18:40:48'),
 	(2, 0, 99, 'Settings', 'fa-cogs', 'settings', 'default', '2016-10-28 18:00:23', '2016-10-28 18:40:51'),
-	(3, 0, 1, 'Section of Wheels', 'fa-car', 'wheel', 'default', '2016-10-28 18:00:23', '2016-10-29 09:38:26'),
-	(4, 3, 0, 'Bolt Pattern', 'fa-car', 'wheel', 'boltPattern', '2016-10-28 18:00:23', '2016-10-29 09:34:34'),
-	(5, 3, 0, 'Styles', 'fa-car', 'wheel', 'styles', '2016-10-28 18:00:23', '2016-10-29 09:34:34'),
-	(6, 3, 0, 'Wheels', 'fa-car', 'wheel', 'default', '2016-10-28 18:00:23', '2016-10-29 09:38:50');
+	(3, 0, 2, 'Section of Wheels', 'fa-car', 'wheel', 'default', '2016-10-28 18:00:23', '2016-10-29 11:10:52'),
+	(4, 3, 0, 'Bolt Pattern', 'fa-car', 'wheel', 'boltPattern', '2016-10-28 18:00:23', '2016-10-29 10:52:51'),
+	(5, 3, 1, 'Styles', 'fa-car', 'wheel', 'styles', '2016-10-28 18:00:23', '2016-10-29 10:54:01'),
+	(6, 3, 2, 'Wheel', 'fa-car', 'wheel', 'default', '2016-10-28 18:00:23', '2016-10-29 11:30:37'),
+	(7, 0, 1, 'Catalogue', 'fa-database', NULL, 'default', '2016-10-28 18:00:23', '2016-10-29 11:10:58'),
+	(8, 7, 0, 'Heading', 'fa-database', 'heading', 'default', '2016-10-28 18:00:23', '2016-10-29 11:10:46'),
+	(9, 7, 1, 'Brand', 'fa-database', 'brand', 'default', '2016-10-28 18:00:23', '2016-10-29 11:10:47'),
+	(10, 7, 2, 'Dealer', 'fa-database', 'dealer', 'default', '2016-10-28 18:00:23', '2016-10-29 11:09:57');
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
 
 
@@ -141,9 +153,9 @@ CREATE TABLE IF NOT EXISTS `permissions` (
   `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table wbs.permissions: ~25 rows (approximately)
+-- Dumping data for table wbs.permissions: ~29 rows (approximately)
 /*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
 INSERT INTO `permissions` (`id`, `title`, `name`, `createdAt`, `updatedAt`) VALUES
 	(1, 'Доступ к административной панели', 'cp', '2016-10-25 06:25:31', '2016-10-28 18:58:41'),
@@ -170,7 +182,11 @@ INSERT INTO `permissions` (`id`, `title`, `name`, `createdAt`, `updatedAt`) VALU
 	(23, 'Раздел Дилеров', 'cp.delear', '2016-10-29 09:04:50', '2016-10-29 09:25:53'),
 	(25, 'Добавить Дилера', 'cp.delear.add', '2016-10-29 09:04:50', '2016-10-29 09:25:53'),
 	(26, 'Редактировать Дилера', 'cp.delear.edit', '2016-10-29 09:04:50', '2016-10-29 09:25:53'),
-	(27, 'Удалить Дилера', 'cp.delear.delete', '2016-10-29 09:04:50', '2016-10-29 09:25:53');
+	(27, 'Удалить Дилера', 'cp.delear.delete', '2016-10-29 09:04:50', '2016-10-29 09:25:53'),
+	(28, 'Раздел Рубрик', 'cp.heading', '2016-10-29 11:22:57', '2016-10-29 11:22:57'),
+	(29, 'Добавить Рубрику', 'cp.heading.add', '2016-10-29 11:22:57', '2016-10-29 11:23:23'),
+	(30, 'Редактировать Рубрику', 'cp.heading.edit', '2016-10-29 11:22:57', '2016-10-29 11:23:30'),
+	(31, 'Удалить Рубрику', 'cp.heading.delete', '2016-10-29 11:22:57', '2016-10-29 11:23:39');
 /*!40000 ALTER TABLE `permissions` ENABLE KEYS */;
 
 
@@ -186,20 +202,21 @@ CREATE TABLE IF NOT EXISTS `roles` (
   `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `title` (`title`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table wbs.roles: ~9 rows (approximately)
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
 INSERT INTO `roles` (`id`, `title`, `left`, `right`, `depth`, `rootId`, `createdAt`, `updatedAt`) VALUES
-	(1, 'Администратор', 1, 18, 0, 1, '2016-10-07 21:03:24', '2016-10-29 09:00:21'),
-	(2, 'Пользователь', 2, 5, 1, 1, '2016-10-18 19:49:02', '2016-10-29 09:00:21'),
-	(3, 'Регистрируемый', 3, 4, 2, 1, '2016-10-18 19:49:11', '2016-10-29 09:00:21'),
-	(4, 'Главный менеджер', 6, 17, 1, 1, '2016-10-18 19:49:11', '2016-10-29 09:00:21'),
-	(5, 'Менеджер БиД', 11, 16, 2, 1, '2016-10-18 19:49:11', '2016-10-29 09:09:25'),
-	(6, 'Менеджер Бренды', 12, 13, 3, 1, '2016-10-18 19:49:11', '2016-10-29 09:00:21'),
-	(7, 'Менеджер Дилеры', 14, 15, 3, 1, '2016-10-18 19:49:11', '2016-10-29 09:58:43'),
-	(8, 'Менеджер Дисков', 7, 8, 2, 1, '2016-10-18 19:49:11', '2016-10-29 09:00:21'),
-	(9, 'Менеджер пользователей', 9, 10, 2, 1, '2016-10-29 08:50:14', '2016-10-29 09:00:21');
+	(1, 'Administrator', 1, 20, 0, 1, '2016-10-07 21:03:24', '2016-10-29 11:19:02'),
+	(2, 'User', 2, 5, 1, 1, '2016-10-18 19:49:02', '2016-10-29 11:13:01'),
+	(3, 'Register', 3, 4, 2, 1, '2016-10-18 19:49:11', '2016-10-29 11:13:24'),
+	(4, 'Chief Manager', 6, 19, 1, 1, '2016-10-18 19:49:11', '2016-10-29 11:19:02'),
+	(5, 'Manager Catalogue', 11, 18, 2, 1, '2016-10-18 19:49:11', '2016-10-29 11:19:02'),
+	(6, 'Manager Brand', 12, 13, 3, 1, '2016-10-18 19:49:11', '2016-10-29 11:14:55'),
+	(7, 'Manager Dealer', 14, 15, 3, 1, '2016-10-18 19:49:11', '2016-10-29 11:15:48'),
+	(8, 'Manager Wheel', 7, 8, 2, 1, '2016-10-18 19:49:11', '2016-10-29 11:15:53'),
+	(9, 'Manager User', 9, 10, 2, 1, '2016-10-29 08:50:14', '2016-10-29 11:15:59'),
+	(10, 'Manager Heading', 16, 17, 3, 1, '2016-10-29 11:16:17', '2016-10-29 11:19:02');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 
 
@@ -210,9 +227,9 @@ CREATE TABLE IF NOT EXISTS `rolesPermissions` (
   `permissionId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `permission` (`roleId`,`permissionId`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table wbs.rolesPermissions: ~28 rows (approximately)
+-- Dumping data for table wbs.rolesPermissions: ~29 rows (approximately)
 /*!40000 ALTER TABLE `rolesPermissions` DISABLE KEYS */;
 INSERT INTO `rolesPermissions` (`id`, `roleId`, `permissionId`) VALUES
 	(9, 1, 15),
@@ -242,7 +259,12 @@ INSERT INTO `rolesPermissions` (`id`, `roleId`, `permissionId`) VALUES
 	(26, 9, 10),
 	(27, 9, 11),
 	(28, 9, 12),
-	(29, 9, 13);
+	(29, 9, 13),
+	(30, 10, 1),
+	(31, 10, 28),
+	(32, 10, 29),
+	(33, 10, 30),
+	(34, 10, 31);
 /*!40000 ALTER TABLE `rolesPermissions` ENABLE KEYS */;
 
 
@@ -255,7 +277,7 @@ CREATE TABLE IF NOT EXISTS `tokens` (
   `expires` bigint(20) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table wbs.tokens: ~0 rows (approximately)
 /*!40000 ALTER TABLE `tokens` DISABLE KEYS */;

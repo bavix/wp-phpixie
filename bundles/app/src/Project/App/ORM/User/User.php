@@ -5,6 +5,7 @@ namespace Project\App\ORM\User;
 use PHPixie\AuthORM\Repositories\Type\Login\User as UserLogin;
 use Project\App\Builder;
 use Project\App\Model;
+use Project\App\ORM\Role\Role;
 
 /**
  * User entity with support for Login auth
@@ -38,36 +39,40 @@ class User extends UserLogin
      */
     public function hasPermission($name)
     {
-        $key = __FUNCTION__ . Model::Role . $this->roleId;
+        /**
+         * @var $role Role
+         */
+        $role = $this->role();
 
-        $pool = $this->builder->cache();
+        return $role->hasPermission($name);
+    }
 
-        if ($pool->hasItem($key) === false)
+    /**
+     * @param int $width
+     *
+     * @return string
+     */
+    public function getAvatar($width = 96)
+    {
+        $components = $this->builder->components();
+
+        $http    = $components->http();
+        $request = $http->request();
+        $uri     = $request->uri();
+
+        $urlPath = $uri->getScheme() . '://' . $uri->getHost() . '/svg/no-avatar.svg';
+
+        if ($this->email)
         {
-            $item = $pool->getItem($key);
+            $grAvatar = 'https://secure.gravatar.com/avatar/' . md5($this->email);
 
-            $roleEntity = $this->role();
+            $grAvatar .= '?s=' . $width;
+            $grAvatar .= '&d=' . $urlPath;
 
-            $orm = $this->builder->components()->orm();
-
-            $permissions = $orm->query(Model::Permission)
-                ->relatedTo('roles', $roleEntity)
-                ->orRelatedTo('roles', $roleEntity->children->allQuery())
-                ->find()
-                ->asArray(true);
-
-            $column = array_column($permissions, 'name');
-            $fillKeys = array_fill_keys($column, true);
-
-            $item->set($fillKeys);
-            $item->expiresAfter(60); // one min..
-
-            $pool->save($item);
+            return $grAvatar;
         }
 
-        $permissions = $pool->getItem($key)->get();
-
-        return isset($permissions[$name]);
+        return $urlPath;
     }
 
 }

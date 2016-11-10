@@ -2,7 +2,7 @@
 
 return array(
 
-    'facebook'  => array(
+    'facebook' => array(
         'type'       => 'facebook',
         'appId'      => '',
         'appSecret'  => '',
@@ -14,13 +14,13 @@ return array(
         'apiVersion' => '2.8'
     ),
 
-    'twitter'   => array(
+    'twitter' => array(
         'type'           => 'twitter',
         'consumerKey'    => '',
         'consumerSecret' => ''
     ),
 
-    'google'    => array(
+    'google' => array(
         'type'      => 'google',
         'appId'     => '',
         'appSecret' => '',
@@ -30,7 +30,7 @@ return array(
         )
     ),
 
-    'vk'        => array(
+    'vk' => array(
         'type'      => 'vk',
         'appId'     => '',
         'appSecret' => '',
@@ -49,7 +49,7 @@ return array(
         ),
     ),
 
-    'github'    => array(
+    'github' => array(
         'type'      => 'github',
         'appId'     => '',
         'appSecret' => '',

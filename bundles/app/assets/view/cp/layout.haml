@@ -3,11 +3,26 @@
   %head
     %meta{:charset => "utf-8"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %title = 'WBS - ' . ($title ?? 'dashboard')
+
+    - $layoutTitle = []
+    - foreach ($breadcrumbs as $breadcrumb)
+      - if (is_array($breadcrumb))
+        - $layoutTitle[] = $breadcrumb['title']
+      - else
+        - $layoutTitle[] = $breadcrumb
+
+    - $layoutTitle = implode(' - ', $layoutTitle)
+    - $layoutTitle .= (isset($title) ? ' - ' . $title : '')
+
+    %title = $layoutTitle
     %link{:href => "/assets/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}
+    %link{:href => "/assets/gridlex/gridlex.min.css", :rel => "stylesheet"}
     %link{:href => "/assets/toastr/toastr.min.css", :rel => "stylesheet"}
     %link{:href => "/assets/font-awesome/css/font-awesome.css", :rel => "stylesheet"}
     %link{:href => "/css/inspinia.css", :rel => "stylesheet"}
+    %link{:href => "/css/wbs.css", :rel => "stylesheet"}
+    - $this->block('head')
+    - $this->block('pager')
   %body
     #wrapper
       %nav.navbar-default.navbar-static-side{:role => "navigation"}
@@ -16,17 +31,15 @@
             %li.nav-header
               .dropdown.profile-element(align="center")
                 %span
-                  - $profileEmail = '/svg/no-avatar.svg'
-                  - if ($user->email)
-                    - $profileEmail = 'https://secure.gravatar.com/avatar/' . md5($user->email)
-                  %img.img-circle{:alt => "image", :src => $profileEmail, :width => 48}
+                  %img.img-circle(src="#{$user->getAvatar(48)}" width="48")
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                   %span.clear
                     %span.block.m-t-xs
+                      %i.fa.fa-user-o
                       %strong.font-bold =$user->login
                     %span.text-muted.text-xs.block
                       =$_($user->role()->title)
-                      %b.caret
+                      %b.fa.fa-angle-down
                 %ul.dropdown-menu.animated.fadeInRight.m-t-xs
                   %li
                     %a{:href => "profile.html"} Profile
@@ -36,26 +49,58 @@
                     %a{:href => "mailbox.html"} Mailbox
                   %li.divider
                   %li
-                    %a{:href => "login.html"} Logout
+                    - $httpPath = $this->httpPath('app.cp.action', array('cpProcessor' => 'auth', 'action' => 'logout'))
+                    %a{:href => $httpPath}
+                      %i.fa.fa-sign-out
+                      Log out
               .logo-element
                 WBS
+
             - foreach ($menuList as $menu)
-              - $menuItems = $menu->menus()->asArray(true)
-              %li{:class => ($menu->processor == $currentMenu->processor) ? 'active' : ''}
-                - $attributes = ['cpProcessor' => $menu->processor, 'action' => $menu->action]
-                - $httpPath = 'app.cp.' . ($menu->action == 'default' ? 'processor' : 'action')
-                - $httpPath = $this->httpPath($httpPath, $attributes)
-                %a{:href => $httpPath}
+
+              - if (!$user->hasPermission($menu->httpPath))
+                - continue
+
+              - $currentHttpPath = $currentMenu->httpPath()
+              - $menuHttpPath = $menu->httpPath()
+
+              - $isActive = $currentHttpPath['attributes']['cpProcessor'] == $menuHttpPath['attributes']['cpProcessor']
+
+              %li{:class => $isActive ? 'active' : ''}
+
+                - $menuItems = $menu->menus->query()->orderAscendingBy('sortId')->find()->asArray()
+
+                - $isNotEmpty = !empty($menuItems)
+
+                - $attributes = $menuHttpPath['attributes']
+                - $httpPath = '#'
+
+                - if (!$isNotEmpty)
+                  - $httpPath = $this->httpPath($menuHttpPath['url'], $attributes)
+
+                %a(href="#{$httpPath}")
+
                   %i.fa{:class => $menu->icon}
                   %span.nav-label = $_($menu->title)
-                  - if (!empty($menuItems))
+
+                  - if ($isNotEmpty)
                     %span.fa.arrow
-                - if (!empty($menuItems))
+
+                - if ($isNotEmpty)
+
                   %ul.nav.nav-second-level.collapse
+
                     - foreach ($menuItems as $menu)
-                      %li{:class => ($menu->action == $currentMenu->action) ? 'active' : ''}
-                        - $httpPath = 'app.cp.' . ($menu->action == 'default' ? 'processor' : 'action');
-                        - $httpPath = $this->httpPath($httpPath, $attributes)
+
+                      - if (!$user->hasPermission($menu->httpPath))
+                        - continue
+
+                      - $menuHttpPath = $menu->httpPath()
+
+                      %li{:class => ($menu->httpPath == $currentMenu->httpPath) ? 'active' : ''}
+
+                        - $httpPath = $this->httpPath($menuHttpPath['url'], $menuHttpPath['attributes'])
+
                         %a{:href => $httpPath} = $_($menu->title)
 
       #page-wrapper.gray-bg
@@ -156,42 +201,33 @@
           .col-sm-4
             %h2 =$_($currentMenu->title)
             %ol.breadcrumb
-              -#- foreach (\Project\Breadcrumb::get() as $breadcrumbName => $url)
-              -#  - $isActive = (\Project\Breadcrumb::active() == $breadcrumbName)
-              -#  %li{:class => $isActive ? 'active' : ''}
-              -#    - if ($isActive || empty($url))
-              -#      %strong = $breadcrumbName
-              -#    - else
-              -#      - $httpPath = $this->httpPath($url[0], $url[1])
-              -#      %a{:href => $httpPath} = $breadcrumbName
-              -#%li
-              -#  %a{:href => "index.html"} This is
-              -#%li.active
-              -#  %strong Breadcrumb
+              - foreach ($breadcrumbs as $breadcrumb)
+                - if (is_array($breadcrumb))
+                  - $httpPath = $breadcrumb['httpPath']
+                  - $httpPath = $this->httpPath($httpPath['url'], $httpPath['attributes'])
+                  %li
+                    %a{:href => $httpPath} = $breadcrumb['title']
+                - else
+                  %li.active
+                    %strong = $breadcrumb
           .col-sm-8
             .title-action
-              %a.btn.btn-primary{:href => ""} This is action area
+              %a.btn.btn-success{:href => ""}
+                %i.fa.fa-plus
+                Add item
         .wrapper.wrapper-content
-          .middle-box.text-center.animated.fadeInRightBig
-            %h3.font-bold This is page content
-            .error-desc
-              You can create here any grid layout you want. And any variation layout you imagine:) Check out
-              main dashboard and other site. It use many different layout.
-              %br/
-              %a.btn.btn-primary.m-t{:href => "index.html"} Dashboard
+          - $this->childContent()
         .footer
-          .pull-right
-            10GB of
-            %strong 250GB
-            Free.
           %div
             %strong Copyright
             WBS // © 2016
     %script{:src => "/assets/jquery/jquery.js"}
     %script{:src => "/assets/bootstrap/js/bootstrap.min.js"}
     %script{:src => "/assets/toastr/toastr.min.js"}
+    %script{:src => "/assets/url.js/url.min.js"}
     %script{:src => "/assets/metisMenu/jquery.metisMenu.js"}
     %script{:src => "/assets/slimscroll/jquery.slimscroll.min.js"}
     %script{:src => "/js/inspinia.js"}
     %script{:src => "/assets/pace/pace.min.js"}
     partial: 'app:cp/config'
+    %script(type="text/javascript" src="/js/inspinia.config.js")

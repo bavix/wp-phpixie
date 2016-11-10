@@ -4,14 +4,18 @@ namespace Project\App;
 
 class Model
 {
-    const User       = 'user';
-    const Role       = 'role';
-    const Permission = 'permission';
+    const USER       = 'user';
+    const ROLE       = 'role';
+    const PERMISSION = 'permission';
 
-    const Menu = 'menu';
+    const MENU = 'menu';
 
-    const Brand = 'brand';
-    const Dealer = 'dealer';
+    const BRAND  = 'brand';
+    const DEALER = 'dealer';
 
-    const Heading = 'heading';
+    const HEADING = 'heading';
+
+    const IMAGE = 'image';
+
+    const INVITE = 'invite';
 }
