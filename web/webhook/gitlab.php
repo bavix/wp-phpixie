@@ -7,6 +7,7 @@ $client_token = $_SERVER['HTTP_X_GITLAB_TOKEN'] ?? '';
 $client_ip    = $_SERVER['REMOTE_ADDR'];
 
 $fs = fopen('../../logs/gitlab.log', 'a');
+
 fwrite($fs, 'Request on [' . date("Y-m-d H:i:s") . '] from [' . $client_ip . ']' . PHP_EOL);
 
 if ($client_token !== $access_token)
@@ -24,7 +25,6 @@ fwrite($fs, '===================================================================
 $branch = trim($data["ref"]);
 
 fwrite($fs, 'BRANCH: ' . print_r($branch, true) . PHP_EOL);
-fwrite($fs, 'DATA: ' . print_r($data, true) . PHP_EOL);
 fwrite($fs, '=======================================================================' . PHP_EOL);
 
 if ($branch == 'refs/heads/master')
