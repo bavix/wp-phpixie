@@ -27,7 +27,9 @@ $branch = trim($data["ref"]);
 fwrite($fs, 'BRANCH: ' . print_r($branch, true) . PHP_EOL);
 fwrite($fs, '=======================================================================' . PHP_EOL);
 
-if ($branch == 'refs/heads/master')
+$server = filter_input_array(INPUT_SERVER);
+
+if ($branch == 'refs/heads/master' && !empty($server['HTTP_HOST']) && $server['HTTP_HOST'] == 'wheelpro.ru')
 {
     chdir('/home/wheelpro/web/www/');
 
@@ -35,7 +37,7 @@ if ($branch == 'refs/heads/master')
 
     fwrite($fs, print_r($output) . PHP_EOL);
 }
-else
+else if ($branch == 'refs/heads/dev' && !empty($server['HTTP_HOST']) && $server['HTTP_HOST'] == 'dev.wheelpro.ru')
 {
     chdir('/home/wheelpro/web/dev/');
 
