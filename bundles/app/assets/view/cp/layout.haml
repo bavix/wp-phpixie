@@ -9,10 +9,9 @@
       - if (is_array($breadcrumb))
         - $layoutTitle[] = $breadcrumb['title']
       - else
-        - $layoutTitle[] = $breadcrumb
+        - $layoutTitle[] = isset($title) ? $title : $breadcrumb
 
     - $layoutTitle = implode(' - ', $layoutTitle)
-    - $layoutTitle .= (isset($title) ? ' - ' . $title : '')
 
     %title = $layoutTitle
     %link{:href => "/assets/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}

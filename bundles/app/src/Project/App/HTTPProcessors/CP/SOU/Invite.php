@@ -19,6 +19,8 @@ class Invite extends SOUProtected
 
     public function addAction(Request $request)
     {
+        $this->variables['title'] = 'New Item';
+
         if ($request->method() === 'POST')
         {
             $userId = $this->loggedUser()->getRequiredField('id');
