@@ -6,7 +6,7 @@ $access_token = '_D1d^+{NK#T.b9q-4*&IMHj:mJk"]Y[fCRA6l;89S0Us&cVQgWP?}!/E5wv7oXu
 $client_token = $_SERVER['HTTP_X_GITLAB_TOKEN'];
 $client_ip    = $_SERVER['REMOTE_ADDR'];
 
-$fs = fopen('webhook.log', 'a');
+$fs = fopen('../../logs/gitlab.log', 'a');
 fwrite($fs, 'Request on [' . date("Y-m-d H:i:s") . '] from [' . $client_ip . ']' . PHP_EOL);
 
 if ($client_token !== $access_token)
