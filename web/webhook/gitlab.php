@@ -52,6 +52,9 @@ if (!empty($server['HTTP_HOST']))
         $output = shell_exec("git pull origin dev");
         fwrite($fs, $output . PHP_EOL);
 
+        // for apiGen
+        $output = shell_exec("rm -fr ../doc/*"); // remove docs
+
         $apiGen = "php ../apigen.phar generate --config apigen.yaml";
 
         $output = shell_exec($apiGen);
