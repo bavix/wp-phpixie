@@ -21,25 +21,12 @@
 -#          %input#password.form-control{:name => "password", :placeholder => "Password", :type => "password"}
 -#
 -#        %button.btn.btn-default{:type => "submit"} Submit
-!!!
-%html{:lang => "en"}
-  %head
-    %meta{:charset => "utf-8"}
-    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
-    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+- $this->layout('app:layout/auth')
 
-    %link(href="/css/auth.css" rel="stylesheet")
-    %link{:href => "/assets/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}
-  %body
-    .container
-      .login-container
-        #output
-        %img.avatar(src="/svg/no-avatar.svg" title="no avatar")
-        .form-box
-          - $httpPath = $this->httpPath('app.cp.processor', array('cpProcessor' => 'auth'))
-          %form{:action => $httpPath, :method => "POST"}
-            .form-group
-              %input{:name => "login", :placeholder => "username", :type => "text"}
-            .form-group
-              %input{:placeholder => "password", :name => "password", :type => "password"}
-            %button.btn.btn-info.btn-block.login{:type => "submit"} Log In
+- $httpPath = $this->httpPath('app.cp.processor', array('cpProcessor' => 'auth'))
+%form{:action => $httpPath, :method => "POST"}
+  .form-group
+    %input{:name => "login", :placeholder => "username", :type => "text"}
+  .form-group
+    %input{:placeholder => "password", :name => "password", :type => "password"}
+  %button.btn.btn-info.btn-block.login{:type => "submit"} Log In

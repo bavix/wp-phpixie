@@ -35,7 +35,6 @@ class HTTPProcessor extends HttpBuilder
         return new HTTPProcessors\Landing($this->builder);
     }
 
-
     /**
      * Build 'invite' processor
      *
