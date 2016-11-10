@@ -50,4 +50,7 @@ else if ($branch == 'refs/heads/dev' && !empty($server['HTTP_HOST']) && $server[
     fwrite($fs, $output . PHP_EOL);
 }
 
+$output = shell_exec("composer update");
+fwrite($fs, $output . PHP_EOL);
+
 $fs and fclose($fs);
