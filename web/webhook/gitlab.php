@@ -3,7 +3,7 @@
 $pswd = 'ltiN\p[R7Yz*nj/e';
 $access_token = '_D1d^+{NK#T.b9q-4*&IMHj:mJk"]Y[fCRA6l;89S0Us&cVQgWP?}!/E5wv7oXuZ';
 
-$client_token = $_GET['token'];
+$client_token = $_SERVER['X-Gitlab-Token'];
 $client_ip = $_SERVER['REMOTE_ADDR'];
 
 $fs = fopen('webhook.log', 'a');
