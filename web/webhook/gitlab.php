@@ -28,7 +28,9 @@ if ($branch === 'refs/heads/master')
     fwrite($fs, 'BRANCH: ' . print_r($branch, true) . PHP_EOL);
     fwrite($fs, '=======================================================================' . PHP_EOL);
 
-    fwrite($fs, exec("/home/wheelpro/scripts/webhook/master.sh") . PHP_EOL);
+    exec("/home/wheelpro/scripts/webhook/master.sh", $output);
+    
+    fwrite($fs, implode(PHP_EOL, $output). PHP_EOL);
     $fs and fclose($fs);
 }
 else
@@ -36,6 +38,8 @@ else
     fwrite($fs, 'BRANCH: ' . print_r($branch, true) . PHP_EOL);
     fwrite($fs, '=======================================================================' . PHP_EOL);
 
-    fwrite($fs, exec("/home/wheelpro/scripts/webhook/dev.sh") . PHP_EOL);
+    exec("/home/wheelpro/scripts/webhook/dev.sh", $output);
+
+    fwrite($fs, implode(PHP_EOL, $output) . PHP_EOL);
     $fs and fclose($fs);
 }
