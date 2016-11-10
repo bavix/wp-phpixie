@@ -13,6 +13,8 @@ if ($client_token !== $access_token)
 {
     echo "error 403";
     fwrite($fs, "Invalid token [{$client_token}]".PHP_EOL);
+    fwrite($fs, json_encode(['GET' => $_GET]).PHP_EOL);
+    fwrite($fs, json_encode(['POST' => $_POST]).PHP_EOL);
     exit(0);
 }
 
