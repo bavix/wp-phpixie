@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/assets/view/cp/auth/default.haml" afterPath="$PROJECT_DIR$/bundles/app/assets/view/cp/auth/default.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/CP/Auth.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/CP/Auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Processor/CPProtected.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Processor/CPProtected.php" />
-    </list>
+    <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="" />
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -1377,15 +1372,15 @@
       <workItem from="1478761334752" duration="20045000" />
       <workItem from="1478792633362" duration="5660000" />
       <workItem from="1478799603937" duration="967000" />
-      <workItem from="1478803289625" duration="3181000" />
+      <workItem from="1478803289625" duration="3267000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="388113000" />
+    <option name="totallyTimeSpent" value="388199000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25340393" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
