@@ -43,11 +43,11 @@ else if ($branch == 'refs/heads/dev' && !empty($server['HTTP_HOST']) && $server[
 {
     chdir('/home/wheelpro/web/dev/');
 
-    exec("git checkout dev", $output);
-    fwrite($fs, print_r($output) . PHP_EOL);
+    $output = shell_exec("git checkout dev");
+    fwrite($fs, $output . PHP_EOL);
 
-    exec("git pull origin dev", $output);
-    fwrite($fs, print_r($output) . PHP_EOL);
+    $output = shell_exec("git pull origin dev");
+    fwrite($fs, $output . PHP_EOL);
 }
 
 $fs and fclose($fs);
