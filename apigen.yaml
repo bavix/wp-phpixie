@@ -1,0 +1,13 @@
+source:
+    - ./bundles/app/src/Project
+    - ./src/Project
+
+destination: ./../doc
+internal: yes
+php: yes
+tree: yes
+deprecated: yes
+todo: yes
+sourceCode: no
+quiet: no
+debug: yes

@@ -2,8 +2,10 @@
 
 namespace Project\App;
 
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 use PHPixie\DefaultBundle\Builder as DefaultBuilder;
-use Project\App\HTTPProcessors\Admin\Auth;
+use RandomLib\Factory;
 use Stash\Pool;
 
 /**
@@ -11,6 +13,22 @@ use Stash\Pool;
  */
 class Builder extends DefaultBuilder
 {
+
+    /**
+     * @return Factory
+     */
+    public function randomFactory()
+    {
+        return $this->instance('randomFactory');
+    }
+
+    /**
+     * @return Factory
+     */
+    protected function buildRandomFactory()
+    {
+        return new Factory();
+    }
 
     /**
      * @return Pool
@@ -30,6 +48,29 @@ class Builder extends DefaultBuilder
             ->get('cache.driver', \Stash\Driver\Apc::class);
 
         return new Pool(new $driver());
+    }
+
+    /**
+     * @return Logger
+     */
+    public function log()
+    {
+        return $this->instance('log');
+    }
+
+    /**
+     * @return Logger
+     */
+    protected function buildLog()
+    {
+        $path = $this->webRoot()->path('log.log');
+
+        $handler = new StreamHandler($path, Logger::WARNING);
+
+        $log = new Logger($this->bundleName());
+        $log->pushHandler($handler);
+
+        return $log;
     }
 
     /**

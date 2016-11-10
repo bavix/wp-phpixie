@@ -1,0 +1,54 @@
+- if ($pager)
+
+  - $begin = 1
+  - $end = $pager->pageCount()
+
+  - if ($end && $begin < $end)
+
+    - $active = $pager->currentPage()
+
+    - $result = []
+
+    - if ($end > 15)
+      - $beginStorage = range($begin, $begin + 1)
+      - $beginMax     = max($beginStorage)
+
+      - $activeStorage = range(max($beginMax, $active - 3), min($active + 3, $end))
+      - $activeMin     = min($activeStorage)
+      - $activeMax     = max($activeStorage)
+
+      - $endStorage = range(max($activeMax, $end - 1), $end)
+      - $endMin     = min($endStorage)
+
+      - $calc = $activeMin - $beginMax
+
+      - $dots = 0;
+      - if ($calc <= 0)
+        - $result = range($begin, $activeMax)
+      - else
+        - $dots++
+        - $result = array_merge($beginStorage, ['..'], $activeStorage)
+
+      - $calc = $endMin - $activeMax
+      - if ($calc <= 0)
+        - $last = min($activeMax + $dots, $end)
+        - if ($last !== $end)
+          - $result = array_merge($result, range($last, $end))
+      - else
+        - $result = array_merge($result, ['..'], $endStorage)
+
+    - else
+      - $result = range($begin, $end)
+
+    %ul.pagination.pull-right
+      - foreach ($result as $item)
+        %li.footable-page{:class => ($item === $active) ? 'active' : ''}
+          - if ($item == '..' || $item === $active)
+            %a = $item
+          - else
+            %a{"data-page" => $item, :onclick => 'javascript:wbsPager(this)'} = $item
+
+- if (!$this->blockExists('pager'))
+  - $this->startBlock('pager')
+  %script(src="/js/pager.js")
+  - $this->endBlock()

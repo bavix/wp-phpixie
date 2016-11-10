@@ -2,6 +2,6 @@
 
 return array(
     'type'             => 'directory',
-    'directory'        => 'templates',
+    'directory'        => 'view',
     'defaultExtension' => 'haml'
 );

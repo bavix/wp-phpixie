@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title = $this->block('title')
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %link{:href => "/assets/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}
+    %link{:href => "/assets/font-awesome/css/font-awesome.css", :rel => "stylesheet"}
+    %link{:href => "/css/inspinia.css", :rel => "stylesheet"}
+  %body.gray-bg
+    .middle-box.text-center.animated.fadeInDown
+      %h1 = $this->block('h1')
+      %h3.font-bold = $this->block('message')
+      .error-desc
+        - $this->childContent()
+        %br
+        %br
+        %a.btn.btn-primary(href="/") Back to home
+    %script{:src => "/assets/jquery/jquery.js"}
+    %script{:src => "/assets/bootstrap/js/bootstrap.min.js"}
+    %script{:src => "/assets/metisMenu/jquery.metisMenu.js"}
+    %script{:src => "/assets/slimscroll/jquery.slimscroll.min.js"}
+    %script{:src => "/js/inspinia.js"}

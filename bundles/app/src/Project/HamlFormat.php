@@ -38,8 +38,10 @@ class HamlFormat implements Format
     {
         $contents = file_get_contents($file);
 
-        $contents = preg_replace_callback('#^([ \t]*)partial\:(.*?)[ \t]*$#m', function ($match) {
+        $contents = preg_replace_callback('#^([ \t]*)partial\:(.*?)[ \t]*$#m', function ($match)
+        {
             $partial = trim($match[2]);
+
             return "{$match[1]}- include(\$this->resolve({$partial}));";
         }, $contents);
 

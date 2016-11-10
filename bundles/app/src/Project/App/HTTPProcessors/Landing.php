@@ -14,7 +14,6 @@ class Landing extends Processor
 
 //    public function initAction()
 //    {
-//
 //        $orm = $this->components->orm();
 //
 //        $admin = $orm->query(Model::Role)
@@ -29,7 +28,7 @@ class Landing extends Processor
 //            ->in(Role::ManagerUser)
 //            ->findOne();
 //
-//        $managerBrandAndDealers = $orm->query(Model::Role)
+//        $managerCatalogue = $orm->query(Model::Role)
 //            ->in(Role::ManagerBrandAndDealer)
 //            ->findOne();
 //
@@ -45,12 +44,16 @@ class Landing extends Processor
 //            ->in(Role::ManagerDealer)
 //            ->findOne();
 //
+//        $managerHeading = $orm->query(Model::Role)
+//            ->in(Role::ManagerHeading)
+//            ->findOne();
+//
 //        $user = $orm->query(Model::Role)
-//            ->in(2)
+//            ->in(Role::User)
 //            ->findOne();
 //
 //        $reg = $orm->query(Model::Role)
-//            ->in(3)
+//            ->in(Role::Register)
 //            ->findOne();
 //
 //        $admin->children->add($user);
@@ -60,10 +63,13 @@ class Landing extends Processor
 //
 //        $genManager->children->add($managerWheel);
 //        $genManager->children->add($managerUser);
-//        $genManager->children->add($managerBrandAndDealers);
+//        $genManager->children->add($managerCatalogue);
 //
-//        $managerBrandAndDealers->children->add($managerBrand);
-//        $managerBrandAndDealers->children->add($managerDealer);
+//        $managerCatalogue->children->add($managerBrand);
+//        $managerCatalogue->children->add($managerDealer);
+//        $managerCatalogue->children->add($managerHeading);
+//
+//        die;
 //    }
 
     /**

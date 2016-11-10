@@ -1,0 +1,32 @@
+-#-#- $this->layout('app:html')
+-#.container
+-#  .row
+-#    .col-sm-4.col-sm-offset-4
+-#
+-#      %h1 Login
+-#
+-#      - $httpPath = $this->httpPath('app.cp.processor', array('cpProcessor' => 'auth'))
+-#      %form{:action => $httpPath, :method => "POST"}
+-#
+-#        - if($this->get('loginFailed'))
+-#          .form-group
+-#            .alert.alert-warning{:role => "alert"} Login failed
+-#
+-#        .form-group
+-#          %label{:for => "username"} Login
+-#          %input#username.form-control{:name => "login", :placeholder => "Login", :type => "text"}
+-#
+-#        .form-group
+-#          %label{:for => "password"} Password
+-#          %input#password.form-control{:name => "password", :placeholder => "Password", :type => "password"}
+-#
+-#        %button.btn.btn-default{:type => "submit"} Submit
+- $this->layout('app:layout/auth')
+
+- $httpPath = $this->httpPath('app.cp.processor', array('cpProcessor' => 'auth'))
+%form{:action => $httpPath, :method => "POST"}
+  .form-group
+    %input{:name => "login", :placeholder => "username", :type => "text"}
+  .form-group
+    %input{:placeholder => "password", :name => "password", :type => "password"}
+  %button.btn.btn-info.btn-block.login{:type => "submit"} Log In

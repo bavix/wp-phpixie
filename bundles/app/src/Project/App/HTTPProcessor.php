@@ -36,6 +36,16 @@ class HTTPProcessor extends HttpBuilder
     }
 
     /**
+     * Build 'invite' processor
+     *
+     * @return HTTPProcessors\Invite
+     */
+    protected function buildInviteProcessor()
+    {
+        return new HTTPProcessors\Invite($this->builder);
+    }
+
+    /**
      * Build 'admin' processor group
      *
      * @return HTTPProcessors\CPProcessorBuilder

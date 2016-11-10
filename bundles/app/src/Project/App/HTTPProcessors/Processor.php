@@ -4,9 +4,11 @@ namespace Project\App\HTTPProcessors;
 
 use PHPixie\DefaultBundle\Processor\HTTP\Actions;
 use PHPixie\BundleFramework\Components;
+use PHPixie\HTTP\Messages\Message\Request;
 use PHPixie\HTTP\Responses\Response;
 use Project\App\ORM\User\User;
 use Project\App\Builder;
+use Project\Util;
 
 /**
  * Base processor
@@ -89,16 +91,15 @@ abstract class Processor extends Actions
     }
 
     /**
-     * @param       $route
-     * @param array $params
+     * @param $httpRequest
      *
-     * @return Response
+     * @return mixed
      */
-    protected function routeRedirect($route, $params = array())
+    protected function getActionNameFor($httpRequest)
     {
-        $url = $this->builder->frameworkBuilder()->http()->generatePath($route, $params);
+        $action = $httpRequest->attributes()->get('action');
 
-        return $this->redirect($url);
+        return Util::camelCase($action);
     }
 
 }

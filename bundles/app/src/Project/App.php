@@ -7,14 +7,11 @@ use \PHPixie\DefaultBundle;
 
 /**
  * Default application bundle
+ *
+ * @var $builder Builder
  */
 class App extends DefaultBundle
 {
-
-    /**
-     * @var Builder
-     */
-    protected $builder;
 
     /**
      * Build bundle builder

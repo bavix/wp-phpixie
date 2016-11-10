@@ -14,6 +14,7 @@ use PHPixie\Template;
  */
 class Auth extends Processor
 {
+
     /**
      * Login page
      *
@@ -35,7 +36,7 @@ class Auth extends Processor
 
         if ($request->method() === 'GET')
         {
-            return $this->render('app:cp/auth');
+            return $this->render('app:cp/auth/default');
         }
 
         return $this->handleLogin($request);
@@ -52,9 +53,7 @@ class Auth extends Processor
     {
         $this->components->auth()->domain()->forgetUser();
 
-        return $this->redirectResponse('app.processor', array(
-            'processor' => 'landing'
-        ));
+        return $this->redirectResponse('app.processor');
     }
 
     /**
@@ -84,7 +83,7 @@ class Auth extends Processor
         {
             $this->variables['loginFailed'] = true;
 
-            return $this->render('app:cp/auth');
+            return $this->render('app:cp/auth/default');
         }
 
         return $this->loggedInRedirect();
@@ -97,9 +96,7 @@ class Auth extends Processor
      */
     protected function loggedInRedirect()
     {
-        return $this->redirectResponse(
-            'app.cp.processor',
-            array('cpProcessor' => 'dashboard')
-        );
+        return $this->redirectResponse('app.cp.processor');
     }
+
 }
