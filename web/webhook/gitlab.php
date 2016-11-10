@@ -1,5 +1,7 @@
 <?php
 
+include_once '../../vendor/autoload.php';
+
 $pswd         = 'ltiN\p[R7Yz*nj/e';
 $access_token = '_D1d^+{NK#T.b9q-4*&IMHj:mJk"]Y[fCRA6l;89S0Us&cVQgWP?}!/E5wv7oXuZ';
 
@@ -27,16 +29,24 @@ $branch = trim($data["ref"]);
 fwrite($fs, 'BRANCH: ' . print_r($branch, true) . PHP_EOL);
 fwrite($fs, '=======================================================================' . PHP_EOL);
 
-$connection = ssh2_connect('localhost', 22);
-ssh2_auth_password($connection, 'wheelpro', 'yynK5DJTgseXW48e');
+
+$wrapper = new \GitWrapper\GitWrapper();
+
+$wrapper->setPrivateKey('/home/wheelpro/sshkeys/wheelpro');
+
+$git = $wrapper->workingCopy(dirname(dirname(__DIR__)));
 
 if ($branch == 'refs/heads/master')
 {
-    $stream = ssh2_exec($connection, 'cd /home/wheelpro/web/www/ && git reset --hard origin/master && git pull');
+    $git->checkout('master');
 }
 else
 {
-    $stream = ssh2_exec($connection, 'cd /home/wheelpro/web/dev/ && git reset --hard origin/dev && git pull');
+    $git->checkout('dev');
 }
+
+$git->pull();
+
+fwrite($fs, $git->getOutput(), PHP_EOL);
 
 $fs and fclose($fs);
