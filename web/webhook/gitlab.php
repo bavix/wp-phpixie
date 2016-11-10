@@ -27,15 +27,15 @@ if ($branch === 'refs/heads/master')
 {
     fwrite($fs, 'BRANCH: ' . print_r($branch, true) . PHP_EOL);
     fwrite($fs, '=======================================================================' . PHP_EOL);
-    $fs and fclose($fs);
 
-    exec("/home/wheelpro/scripts/webhook/master.sh");
+    fwrite($fs, exec("/home/wheelpro/scripts/webhook/master.sh") . PHP_EOL);
+    $fs and fclose($fs);
 }
 else
 {
     fwrite($fs, 'BRANCH: ' . print_r($branch, true) . PHP_EOL);
     fwrite($fs, '=======================================================================' . PHP_EOL);
-    $fs and fclose($fs);
 
-    exec("/home/wheelpro/scripts/webhook/dev.sh");
+    fwrite($fs, exec("/home/wheelpro/scripts/webhook/dev.sh") . PHP_EOL);
+    $fs and fclose($fs);
 }
