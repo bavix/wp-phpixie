@@ -9,9 +9,6 @@ tree: yes
 deprecated: yes
 todo: yes
 sourceCode: no
-download: no
 wipeout: yes
 quiet: no
-progressbar: yes
-colors: yes
 debug: yes
