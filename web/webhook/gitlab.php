@@ -30,12 +30,18 @@ fwrite($fs, '===================================================================
 if ($branch == 'refs/heads/master')
 {
     chdir('/home/wheelpro/web/www/');
-    fwrite($fs, shell_exec("git checkout master && git pull origin master") . PHP_EOL);
+
+    exec("git checkout master && git pull origin master", $output);
+
+    fwrite($fs, print_r($output) . PHP_EOL);
 }
 else
 {
     chdir('/home/wheelpro/web/dev/');
-    fwrite($fs, shell_exec("git checkout && git pull origin dev") . PHP_EOL);
+
+    exec("git checkout dev && git pull origin dev", $output);
+
+    fwrite($fs, print_r($output) . PHP_EOL);
 }
 
 $fs and fclose($fs);
