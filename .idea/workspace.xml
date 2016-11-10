@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="" />
+    <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/assets/config/cache.php" afterPath="$PROJECT_DIR$/bundles/app/assets/config/cache.php" />
+    </list>
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -41,6 +44,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="cache.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bundles/app/assets/config/cache.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="AuthRepositories.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/app/src/Project/App/AuthRepositories.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -51,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.haml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="default.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/app/assets/view/cp/settings/default.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
@@ -169,15 +182,15 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/apigen.yaml" />
         <option value="$PROJECT_DIR$/web/webhook/gitlab.php" />
-        <option value="$PROJECT_DIR$/bundles/app/assets/config/cache.php" />
         <option value="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/CPProcessorBuilder.php" />
         <option value="$PROJECT_DIR$/bundles/app/src/Project/App/ORM/Role/Role.php" />
         <option value="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/CP/Settings.php" />
-        <option value="$PROJECT_DIR$/bundles/app/assets/view/cp/settings/default.haml" />
         <option value="$PROJECT_DIR$/bundles/app/assets/view/cp/auth/default.haml" />
         <option value="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/CP/Auth.php" />
         <option value="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Processor.php" />
         <option value="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Processor/CPProtected.php" />
+        <option value="$PROJECT_DIR$/bundles/app/assets/view/cp/settings/default.haml" />
+        <option value="$PROJECT_DIR$/bundles/app/assets/config/cache.php" />
       </list>
     </option>
   </component>
@@ -1362,12 +1375,12 @@
       <workItem from="1478761334752" duration="20045000" />
       <workItem from="1478792633362" duration="5660000" />
       <workItem from="1478799603937" duration="967000" />
-      <workItem from="1478803289625" duration="3623000" />
+      <workItem from="1478803289625" duration="3983000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="388555000" />
+    <option name="totallyTimeSpent" value="388915000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1606,14 +1619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/app/assets/config/cache.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sql/2016-11-10.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3196">
@@ -1747,6 +1752,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/app/assets/config/cache.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
           <folding />
         </state>
       </provider>

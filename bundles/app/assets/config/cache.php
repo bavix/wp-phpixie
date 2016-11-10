@@ -2,5 +2,5 @@
 
 return [
     'driver'       => \Stash\Driver\Redis::class,
-    'expiresAfter' => 3600 // todo
+    'expiresAfter' => 3600
 ];
