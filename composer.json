@@ -55,8 +55,7 @@
         "league/html-to-markdown": "^4.3",
         "phpixie/migrate": "3.*-dev",
         "monolog/monolog": "^1.21",
-        "swiftmailer/swiftmailer": "^5.4",
-        "cpliakas/git-wrapper": "^1.7"
+        "swiftmailer/swiftmailer": "^5.4"
     },
     "require-dev": {
         "phpixie/test": "3.*-dev"
