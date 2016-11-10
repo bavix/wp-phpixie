@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/app/assets/view/invite/default.haml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/app/assets/view/layout/auth.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/assets/view/cp/auth/default.haml" afterPath="$PROJECT_DIR$/bundles/app/assets/view/cp/auth/default.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessor.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessor.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Invite.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Invite.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/assets/view/cp/layout.haml" afterPath="$PROJECT_DIR$/bundles/app/assets/view/cp/layout.haml" />
     </list>
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="layout.haml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="layout.haml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bundles/app/assets/view/cp/layout.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="217" column="10" selection-start-line="217" selection-start-column="10" selection-end-line="217" selection-end-column="33" />
+            <state relative-caret-position="527">
+              <caret line="217" column="32" selection-start-line="217" selection-start-column="32" selection-end-line="217" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -98,7 +93,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.haml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="default.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/app/assets/view/invite/default.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -174,7 +169,6 @@
         <option value="$PROJECT_DIR$/bundles/app/assets/view/cp/dashboard/default.haml" />
         <option value="$PROJECT_DIR$/web/test.php" />
         <option value="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/CP/SOU/Invite.php" />
-        <option value="$PROJECT_DIR$/bundles/app/assets/view/cp/layout.haml" />
         <option value="$PROJECT_DIR$/web/index.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/web/hook.txt" />
@@ -185,6 +179,7 @@
         <option value="$PROJECT_DIR$/bundles/app/assets/view/invite/default.haml" />
         <option value="$PROJECT_DIR$/bundles/app/assets/view/cp/auth/default.haml" />
         <option value="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Invite.php" />
+        <option value="$PROJECT_DIR$/bundles/app/assets/view/cp/layout.haml" />
       </list>
     </option>
   </component>
@@ -1037,12 +1032,12 @@
       <workItem from="1478704640521" duration="4954000" />
       <workItem from="1478754092757" duration="3062000" />
       <workItem from="1478760637693" duration="2000" />
-      <workItem from="1478761334752" duration="18774000" />
+      <workItem from="1478761334752" duration="19616000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="377034000" />
+    <option name="totallyTimeSpent" value="377876000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -1373,14 +1368,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/app/assets/view/cp/layout.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="217" column="10" selection-start-line="217" selection-start-column="10" selection-end-line="217" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/app/assets/view/layout.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1483,6 +1470,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="32" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/app/assets/view/cp/layout.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="217" column="32" selection-start-line="217" selection-start-column="32" selection-end-line="217" selection-end-column="32" />
           <folding />
         </state>
       </provider>
