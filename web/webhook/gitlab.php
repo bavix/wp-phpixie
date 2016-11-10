@@ -21,13 +21,13 @@ $data = json_decode($json, true);
 
 fwrite($fs, '=======================================================================' . PHP_EOL);
 
-$branch = $data["ref"];
+$branch = trim($data["ref"]);
 
 fwrite($fs, 'BRANCH: ' . print_r($branch, true) . PHP_EOL);
 fwrite($fs, 'DATA: ' . print_r($data, true) . PHP_EOL);
 fwrite($fs, '=======================================================================' . PHP_EOL);
 
-if ($branch === 'refs/heads/master')
+if ($branch == 'refs/heads/master')
 {
     fwrite($fs, shell_exec("sh /home/wheelpro/scripts/webhook/master.sh") . PHP_EOL);
 }
