@@ -1,6 +1,10 @@
 <?php
 
 return [
-    'driver'       => \Stash\Driver\Redis::class,
-    'expiresAfter' => 3600
+    'drivers' => [
+        \Stash\Driver\Redis::class => [],
+        \Stash\Driver\Apc::class   => [
+            'ttl' => 3600
+        ]
+    ]
 ];
