@@ -72,28 +72,28 @@ class Builder extends DefaultBuilder
         return new Pool($driver);
     }
 
-    /**
-     * @return Logger
-     */
-    public function log()
-    {
-        return $this->instance('log');
-    }
-
-    /**
-     * @return Logger
-     */
-    protected function buildLog()
-    {
-        $path = $this->webRoot()->path('log.log');
-
-        $handler = new StreamHandler($path, Logger::WARNING);
-
-        $log = new Logger($this->bundleName());
-        $log->pushHandler($handler);
-
-        return $log;
-    }
+//    /**
+//     * @return Logger
+//     */
+//    public function log()
+//    {
+//        return $this->instance('log');
+//    }
+//
+//    /**
+//     * @return Logger
+//     */
+//    protected function buildLog()
+//    {
+//        $path = $this->webRoot()->path('log.log');
+//
+//        $handler = new StreamHandler($path, Logger::WARNING);
+//
+//        $log = new Logger($this->bundleName());
+//        $log->pushHandler($handler);
+//
+//        return $log;
+//    }
 
     /**
      * Build Processor for HTTP requests
