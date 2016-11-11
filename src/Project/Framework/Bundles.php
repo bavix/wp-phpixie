@@ -17,7 +17,7 @@ class Bundles extends \PHPixie\BundleFramework\Bundles
     protected function buildBundles()
     {
         return array(
-//            new \PHPixie\FrameworkBundle($this->builder),
+            new \PHPixie\FrameworkBundle($this->builder),
             new App($this->builder)
         );
     }

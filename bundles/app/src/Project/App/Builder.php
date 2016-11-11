@@ -6,6 +6,7 @@ use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use PHPixie\DefaultBundle\Builder as DefaultBuilder;
 use RandomLib\Factory;
+use Stash\Driver\Composite;
 use Stash\Pool;
 
 /**
@@ -40,38 +41,59 @@ class Builder extends DefaultBuilder
 
     /**
      * @return Pool
+     * @throws \Exception
      */
     protected function buildCache()
     {
-        $driver = $this
-            ->bundleConfig()
-            ->get('cache.driver', \Stash\Driver\Apc::class);
+        $config = $this->bundleConfig();
 
-        return new Pool(new $driver());
+        $drivers = $config->get('cache.drivers');
+
+        $subDrivers = [];
+
+        foreach ($drivers as $driver => $options)
+        {
+            if (!is_array($options))
+            {
+                throw new \Exception();
+            }
+
+            /**
+             * @var $subDriver \Stash\Driver\AbstractDriver
+             */
+            $subDriver = new $driver($options);
+
+            $subDrivers[] = $subDriver;
+        }
+
+        $options = array('drivers' => $subDrivers);
+        $driver = new Composite($options);
+
+        return new Pool($driver);
     }
 
-    /**
-     * @return Logger
-     */
-    public function log()
-    {
-        return $this->instance('log');
-    }
-
-    /**
-     * @return Logger
-     */
-    protected function buildLog()
-    {
-        $path = $this->webRoot()->path('log.log');
-
-        $handler = new StreamHandler($path, Logger::WARNING);
-
-        $log = new Logger($this->bundleName());
-        $log->pushHandler($handler);
-
-        return $log;
-    }
+//    /**
+//     * @return Logger
+//     */
+//    public function log()
+//    {
+//        return $this->instance('log');
+//    }
+//
+//    /**
+//     * @return Logger
+//     */
+//    protected function buildLog()
+//    {
+//        $path = $this->webRoot()->path('log.log');
+//
+//        $handler = new StreamHandler($path, Logger::WARNING);
+//
+//        $log = new Logger($this->bundleName());
+//        $log->pushHandler($handler);
+//
+//        return $log;
+//    }
 
     /**
      * Build Processor for HTTP requests

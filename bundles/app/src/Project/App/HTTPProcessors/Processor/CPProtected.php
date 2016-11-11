@@ -110,7 +110,7 @@ abstract class CPProtected extends Processor
                 'cpProcessor' => 'auth'
             ));
 
-            $redirect = $request->server()->get('REDIRECT_URL');
+            $redirect = $request->server()->get('REQUEST_URI');
 
             if ($redirect)
             {

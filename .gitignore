@@ -9,3 +9,4 @@ cache/haml/*
 console
 web/bundles/app
 logs/*.log
+assets/parameters.php
