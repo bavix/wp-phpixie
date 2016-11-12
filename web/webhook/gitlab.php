@@ -6,7 +6,7 @@ $access_token = '_D1d^+{NK#T.b9q-4*&IMHj:mJk"]Y[fCRA6l;89S0Us&cVQgWP?}!/E5wv7oXu
 $client_token = isset($_SERVER['HTTP_X_GITLAB_TOKEN']) ? $_SERVER['HTTP_X_GITLAB_TOKEN'] : '';
 $client_ip    = $_SERVER['REMOTE_ADDR'];
 
-$fs = fopen('../../logs/gitlab.log', 'a');
+$fs = fopen('../../logs/gitlab.log', 'ba');
 
 fwrite($fs, 'Request on [' . date("Y-m-d H:i:s") . '] from [' . $client_ip . ']' . PHP_EOL);
 
@@ -70,12 +70,12 @@ if (!empty($server['HTTP_HOST']))
 
     $output = shell_exec("composer update");
     fwrite($fs, $output . PHP_EOL);
-
 }
 
 $output = shell_exec("redis-cli flushall");
 fwrite($fs, $output . PHP_EOL);
 
 $output = shell_exec("./console framework:migrate");
+fwrite($fs, $output . PHP_EOL);
 
 $fs and fclose($fs);

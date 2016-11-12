@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/migrate/migrations/2.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/webhook/gitlab.php" afterPath="$PROJECT_DIR$/web/webhook/gitlab.php" />
     </list>
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,8 +65,8 @@
       <file leaf-file-name="gitlab.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/webhook/gitlab.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -136,8 +137,8 @@
         <option value="$PROJECT_DIR$/vendor/phpixie/migrate/src/PHPixie/Migrate/Migrator.php" />
         <option value="$PROJECT_DIR$/vendor/phpixie/migrate/src/PHPixie/Migrate/Seeder.php" />
         <option value="$PROJECT_DIR$/vendor/phpixie/migrate/src/PHPixie/Migrate/Migrator/Runner.php" />
-        <option value="$PROJECT_DIR$/web/webhook/gitlab.php" />
         <option value="$PROJECT_DIR$/assets/migrate/migrations/2.sql" />
+        <option value="$PROJECT_DIR$/web/webhook/gitlab.php" />
       </list>
     </option>
   </component>
@@ -1030,12 +1031,12 @@
       <workItem from="1478841086156" duration="4504000" />
       <workItem from="1478880110657" duration="9119000" />
       <workItem from="1478940159223" duration="4624000" />
-      <workItem from="1478955206212" duration="259000" />
+      <workItem from="1478955206212" duration="3892000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="408047000" />
+    <option name="totallyTimeSpent" value="411680000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1434,8 +1435,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/webhook/gitlab.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding />
         </state>
       </provider>
