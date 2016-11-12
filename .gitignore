@@ -6,7 +6,7 @@ README.md
 bundles/.gitkeep
 bundles/app/web/upload/
 cache/haml/*
-console
+#console
 web/bundles/app
 logs/*.log
 assets/parameters.php
