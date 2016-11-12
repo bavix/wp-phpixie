@@ -41,6 +41,9 @@ if (!empty($server['HTTP_HOST']))
 
         $output = shell_exec("git pull origin master");
         fwrite($fs, $output . PHP_EOL);
+
+        $output = shell_exec("composer install");
+        fwrite($fs, $output . PHP_EOL);
     }
     else if ($branch === 'refs/heads/dev' && $server['HTTP_HOST'] === 'dev.wheelpro.ru')
     {
@@ -62,9 +65,15 @@ if (!empty($server['HTTP_HOST']))
         fwrite($fs, $output . PHP_EOL);
     }
 
+    $output = shell_exec("composer install");
+    fwrite($fs, $output . PHP_EOL);
+
     $output = shell_exec("composer update");
     fwrite($fs, $output . PHP_EOL);
 
 }
+
+$output = shell_exec("redis-cli flushall");
+fwrite($fs, $output . PHP_EOL);
 
 $fs and fclose($fs);
