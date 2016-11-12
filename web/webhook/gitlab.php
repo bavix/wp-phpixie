@@ -76,4 +76,6 @@ if (!empty($server['HTTP_HOST']))
 $output = shell_exec("redis-cli flushall");
 fwrite($fs, $output . PHP_EOL);
 
+$output = shell_exec("./console framework:migrate");
+
 $fs and fclose($fs);
