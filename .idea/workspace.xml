@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/webhook/gitlab.php" afterPath="$PROJECT_DIR$/web/webhook/gitlab.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/migrate/migrations/2.sql" />
     </list>
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,7 +87,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/web/hook.txt" />
         <option value="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessor.php" />
         <option value="$PROJECT_DIR$/bundles/app/assets/view/cp/invite/default.haml" />
@@ -138,6 +137,7 @@
         <option value="$PROJECT_DIR$/vendor/phpixie/migrate/src/PHPixie/Migrate/Seeder.php" />
         <option value="$PROJECT_DIR$/vendor/phpixie/migrate/src/PHPixie/Migrate/Migrator/Runner.php" />
         <option value="$PROJECT_DIR$/web/webhook/gitlab.php" />
+        <option value="$PROJECT_DIR$/assets/migrate/migrations/2.sql" />
       </list>
     </option>
   </component>
@@ -1030,12 +1030,12 @@
       <workItem from="1478841086156" duration="4504000" />
       <workItem from="1478880110657" duration="9119000" />
       <workItem from="1478940159223" duration="4624000" />
-      <workItem from="1478955206212" duration="68000" />
+      <workItem from="1478955206212" duration="259000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="407856000" />
+    <option name="totallyTimeSpent" value="408047000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1192,7 +1192,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/3.php" />
-    <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/2.sql" />
     <entry file="file://$PROJECT_DIR$/assets/migrate/seeds/flowers.json" />
     <entry file="file://$PROJECT_DIR$/assets/migrate/seeds/fairies.php" />
     <entry file="file://$PROJECT_DIR$/assets/migrate/seeds/users.php">
@@ -1421,6 +1420,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/2.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="65" selection-start-line="1" selection-start-column="65" selection-end-line="1" selection-end-column="65" />
           <folding />
         </state>
       </provider>
