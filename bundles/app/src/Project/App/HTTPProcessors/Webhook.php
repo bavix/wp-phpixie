@@ -49,6 +49,8 @@ class Webhook extends Processor
         if ($token !== static::GL_ACCESS_TOKEN)
         {
             $this->logger()->addInfo($data->get());
+            $this->logger()->addInfo($request->query()->get());
+            $this->logger()->addInfo($request->server()->asArray());
             $this->logger()->addError($token);
             throw new \Exception(); // 403
         }
