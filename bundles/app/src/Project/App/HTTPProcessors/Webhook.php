@@ -28,8 +28,8 @@ class Webhook extends Processor
 
             $handler = new StreamHandler($path, Logger::WARNING);
 
-            $log = new Logger(__CLASS__);
-            $log->pushHandler($handler);
+            $this->logger = new Logger(__CLASS__);
+            $this->logger->pushHandler($handler);
         }
 
         return $this->logger;
