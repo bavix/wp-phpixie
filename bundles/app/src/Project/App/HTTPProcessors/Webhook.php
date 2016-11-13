@@ -38,7 +38,7 @@ class Webhook extends Processor
     protected function shellExec($command)
     {
         $output = shell_exec($command);
-        $this->logger()->info($output);
+        $this->logger()->addInfo($output);
     }
 
     public function gitlabAction(Request $request)
@@ -48,17 +48,17 @@ class Webhook extends Processor
 
         if ($token !== static::GL_ACCESS_TOKEN)
         {
-            $this->logger()->info($data->get());
-            $this->logger()->err($token);
+            $this->logger()->addInfo($data->get());
+            $this->logger()->addError($token);
             throw new \Exception(); // 403
         }
 
-        $this->logger()->info(__METHOD__);
+        $this->logger()->addInfo(__METHOD__);
 
-        $this->logger()->info('POST', $data->get());
+        $this->logger()->addInfo('POST', $data->get());
 
         $branch = basename($data->get('ref'));
-        $this->logger()->info('branch', $branch);
+        $this->logger()->addInfo('branch', $branch);
 
         $httpHost = $request->server()->get('http_host');
 
