@@ -9,7 +9,7 @@ use PHPixie\HTTP\Request;
 class Webhook extends Processor
 {
 
-    const GL_PSWD         = 'ltiN\p[R7Yz*nj/e';
+    const GL_PASSWORD     = 'ltiN\p[R7Yz*nj/e';
     const GL_ACCESS_TOKEN = '_D1d^+{NK#T.b9q-4*&IMHj:mJk"]Y[fCRA6l;89S0Us&cVQgWP?}!/E5wv7oXuZ';
 
     protected $logger;
