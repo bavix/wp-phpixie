@@ -43,16 +43,18 @@ class Webhook extends Processor
 
     public function gitlabAction(Request $request)
     {
+        $data  = $request->data();
         $token = $request->server()->get('http_x_gitlab_token');
 
         if ($token !== static::GL_ACCESS_TOKEN)
         {
+            $this->logger()->info($data->get());
+            $this->logger()->err($token);
             throw new \Exception(); // 403
         }
 
         $this->logger()->info(__METHOD__);
 
-        $data = $request->data();
         $this->logger()->info('POST', $data->get());
 
         $branch = basename($data->get('ref'));
@@ -74,7 +76,7 @@ class Webhook extends Processor
 
                 $this->shellExec("redis-cli flushall");
                 $this->shellExec("./console framework:migrate");
-                
+
                 break;
 
             case ($httpHost === 'dev.wheelpro.ru') && ($branch === 'dev'):
