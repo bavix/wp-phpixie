@@ -26,7 +26,7 @@ class Webhook extends Processor
         {
             $path = $this->builder->webRoot()->path('webhook.log');
 
-            $handler = new StreamHandler($path, Logger::WARNING);
+            $handler = new StreamHandler($path);
 
             $this->logger = new Logger(__CLASS__);
             $this->logger->pushHandler($handler);
