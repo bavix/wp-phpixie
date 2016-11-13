@@ -2,6 +2,7 @@
 
 namespace Project\App\HTTPProcessors\CP\SOU;
 
+use Carbon\Carbon;
 use PHPixie\HTTP\Request;
 use Project\App\HTTPProcessors\Processor\SOUProtected;
 use Project\App\Model;
@@ -28,28 +29,48 @@ class Invite extends SOUProtected
 
         if ($request->method() === 'POST')
         {
-            $userId = $this->loggedUser()->getRequiredField('id');
-
             $orm = $this->components->orm();
+
+            $invite = $orm->query(Model::INVITE)
+                ->where('email', $email)
+                ->findOne();
+
+            $user = $orm->query(Model::USER)
+                ->where('email', $email)
+                ->findOne();
+
+            if ($user)
+            {
+                // error
+            }
+
+            if ($invite)
+            {
+                // error
+            }
 
             $invite = $orm->createEntity(Model::INVITE);
 
-            $data = $request->data();
+            $invite->email  = $email;
+            $invite->roleId = $roleId;
 
-            $invite->email  = $data->get('email');
-            $invite->roleId = $data->get('roleId');
-
+            $userId         = $this->loggedUser()->getRequiredField('id');
             $invite->userId = $userId;
 
             $factory = $this->builder->randomFactory();
 
             $generator = $factory->getHighStrengthGenerator();
 
-            $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+-';
+            $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
             $invite->token = $generator->generateString(64, $chars);
 
-            return $data->get();
+            $carbon = Carbon::create();
+            $carbon->addDay(3); // add 3 day
+
+            $invite->expires = $carbon->timestamp;
+
+            return $invite->asObject(true);
         }
 
         $roles = $this->components->orm()->query(Model::ROLE)
