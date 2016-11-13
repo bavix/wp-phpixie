@@ -46,6 +46,16 @@ class HTTPProcessor extends HttpBuilder
     }
 
     /**
+     * Build 'webhook' processor
+     *
+     * @return HTTPProcessors\Webhook
+     */
+    protected function buildWebhookProcessor()
+    {
+        return new HTTPProcessors\Webhook($this->builder);
+    }
+
+    /**
      * Build 'admin' processor group
      *
      * @return HTTPProcessors\CPProcessorBuilder
