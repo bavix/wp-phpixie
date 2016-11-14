@@ -24,48 +24,74 @@ class Invite extends Processor
 
         $user = $this->loggedUser();
 
-        if ($user || mb_strlen($token) != 64)
+        if ($user || mb_strlen($token) !== 64)
         {
             throw new \Exception();
         }
 
-        $data = $request->data();
+        $invite = $this->components->orm()->query(Model::INVITE)
+            ->where('token', $token)
+            ->findOne();
 
-        $validator = $this->getSignupValidator();
-        $result    = $validator->validate($data->get());
-
-        if (!$result->isValid())
+        if (!$invite)
         {
-            $this->variables['signupResult'] = $result;
-            $this->variables['activeTab']    = 'signUp';
-
-            return $this->render('app:invite/default');
+            throw new \Exception();
         }
 
-        $domain = $this->components->auth()->domain();
+        if ($request->method() === 'POST')
+        {
 
-        /**
-         * @var PasswordProvider $passwordProvider
-         */
-        $passwordProvider = $domain->provider('password');
+            $data = $request->data();
 
-        /**
-         * @var User $user
-         */
-        $user               = $this->components->orm()->createEntity(Model::USER);
-        $user->email        = $data->get('email'); // default
-        $user->passwordHash = $passwordProvider->hash($data->get('password'));
-        $user->save();
+            $validator = $this->getSignupValidator();
+            $result    = $validator->validate($data->get());
 
-        $domain->setUser($user, 'session');
+            if ($result->isValid())
+            {
+                var_dump('valid');
+                die;
 
-        /**
-         * @var SessionProvider $sessionProvider
-         */
-        $sessionProvider = $domain->provider('session');
-        $sessionProvider->persist();
+                $domain = $this->components->auth()->domain();
 
-        return $this->redirectResponse('app.cp');
+                /**
+                 * @var PasswordProvider $passwordProvider
+                 */
+                $passwordProvider = $domain->provider('password');
+
+                /**
+                 * @var User $user
+                 */
+                $user               = $this->components->orm()->createEntity(Model::USER);
+                $user->login        = $data->get('login');
+                $user->email        = $invite->email;
+                $user->passwordHash = $passwordProvider->hash($data->get('password'));
+                $user->save();
+
+                $domain->setUser($user, 'session');
+
+                /**
+                 * @var SessionProvider $sessionProvider
+                 */
+                $sessionProvider = $domain->provider('session');
+                $sessionProvider->persist();
+
+            }
+
+        }
+
+        $uri = $request->uri();
+
+        $urlPath = $uri->getScheme() . '://' . $uri->getHost() . '/svg/no-avatar-140.png';
+
+        $grAvatar = 'https://secure.gravatar.com/avatar/' . md5($invite->email);
+
+        $grAvatar .= '?s=' . 100;
+        $grAvatar .= '&d=' . $urlPath;
+
+        $this->variables['avatar'] = $grAvatar;
+        $this->variables['invite'] = $invite;
+
+        return $this->render('app:invite/default');
     }
 
     /**
@@ -75,55 +101,41 @@ class Invite extends Processor
      */
     protected function getSignupValidator()
     {
-
         /**
          * @var $validator \PHPixie\Validate\Validator
          */
         $validator = $this->components->validate()->validator();
 
         /**
-         * @var $rule \PHPixie\Validate\Rules\Rule
+         * @var $document \PHPixie\Validate\Rules\Rule\Data\Document
          */
-        $rule = $validator->rule();
+        $document = $validator->rule()->addDocument();
 
-        /**
-         * @var Document $document
-         */
-        $document = $rule->addDocument();
-        $document->allowExtraFields();
-
-        $document->valueField('email')
+        $document->valueField('login')
             ->required()
-            ->filter('email')
-            ->callback(function (Field $result, $value)
+            ->addFilter()
+            ->minLength(3)
+            ->maxLength(16);
+
+        $validator->rule()->callback(function (RootResult $result, $value)
+        {
+            if ($result->isValid())
             {
+                $user = $this->components->orm()->query(Model::USER)
+                    ->where('login', $value['login'])
+                    ->findOne();
 
-                if ($result->isValid())
+                if ($user !== null)
                 {
-                    $user = $this->components->orm()->query(Model::USER)
-                        ->where('email', $value)
-                        ->findOne();
-
-                    if ($user !== null)
-                    {
-                        $result->addCustomError('emailInUse');
-                    }
+                    $result->addCustomError('loginInUse');
                 }
-
-            });
+            }
+        });
 
         $document->valueField('password')
             ->required()
             ->addFilter()
             ->minLength(8);
-
-        $validator->rule()->callback(function (RootResult $result, $data)
-        {
-            if ($result->field('password')->isValid() && $data['passwordConfirm'] !== $data['password'])
-            {
-                $result->field('passwordConfirm')->addCustomError('passwordConfirm');
-            }
-        });
 
         return $validator;
     }

@@ -123,13 +123,17 @@ $(function () {
         var navbarHeigh = $('nav.navbar-default').height();
         var wrapperHeigh = $('#page-wrapper').height();
 
-        if (navbarHeigh > wrapperHeigh) {
-            $('#page-wrapper').css("min-height", navbarHeigh + "px");
-        }
+        var height = Math.max($(document).height(), navbarHeigh, wrapperHeigh);
 
-        if (navbarHeigh < wrapperHeigh) {
-            $('#page-wrapper').css("min-height", $(window).height() + "px");
-        }
+        $('#page-wrapper').css('min-height', height + 'px');
+
+        // if (navbarHeigh > wrapperHeigh) {
+        //     $('#page-wrapper').css("min-height", navbarHeigh + "px");
+        // }
+        //
+        // if (navbarHeigh < wrapperHeigh) {
+        //     $('#page-wrapper').css("min-height", $(window).height() + "px");
+        // }
 
         if ($('body').hasClass('fixed-nav')) {
             if (navbarHeigh > wrapperHeigh) {

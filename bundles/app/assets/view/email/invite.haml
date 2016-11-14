@@ -1,0 +1,33 @@
+- $this->layout('app:email/layout')
+
+%table.main{:cellpadding => "0", :cellspacing => "0", :width => "100%"}
+  %tr
+    %td.content-wrap
+      %table{:cellpadding => "0", :cellspacing => "0"}
+        %tr
+          %td(align='center')
+            %img.img-responsive{:src => "/svg/wheel-white.svg", :width => '120'}
+        %tr
+          %td.content-block
+            %h3 WBS CMS - Invite
+        %tr
+          %td.content-block
+            Dear friend!
+            You are invited to the website as
+            = $invite->role()->title . '.'
+            This invitation will be valid within three days!
+        %tr
+          %td.content-block
+            We may need to send you critical information about our service and it is important that
+            we have an accurate email address.
+        %tr
+          %td.content-block.aligncenter
+            %a.btn-primary{:href => "/invite?token=" . $invite->token}
+              Confirm email address
+  .footer
+    %table{:width => "100%"}
+      %tr
+        %td.aligncenter.content-block
+          Follow
+          %a{:href => "#"} @Company
+          on Twitter.

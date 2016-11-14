@@ -21,6 +21,10 @@
         The basis of the invitation system is that a member can grant
         approval to a new user without having to consult any other members. [todo]
       %form(method="POST")
+        - if ($message)
+          .form-group
+            .alert{:class => key($message)}
+              = current($message)
         .form-group
           %label Email address
           %input.form-control{:name => "email", :placeholder => "email", :type => "email", :value => $email}

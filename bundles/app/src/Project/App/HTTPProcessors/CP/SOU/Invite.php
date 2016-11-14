@@ -27,55 +27,98 @@ class Invite extends SOUProtected
         $email        = $data->get('email');
         $roleId       = $data->get('roleId', Role::User);
 
+        $message = null;
+
         if ($request->method() === 'POST')
         {
             $orm = $this->components->orm();
-
-            $invite = $orm->query(Model::INVITE)
-                ->where('email', $email)
-                ->findOne();
 
             $user = $orm->query(Model::USER)
                 ->where('email', $email)
                 ->findOne();
 
+            $invite = $orm->query(Model::INVITE)
+                ->where('email', $email)
+                ->where('expires', '>', time())
+                ->where('activated', '=', 0)
+                ->findOne();
+
             if ($user)
             {
-                // error
+                $message['alert-danger'] = 'The user with such email is already registered!';
             }
-
-            if ($invite)
+            else if ($invite)
             {
-                // error
+                $message['alert-danger'] = 'Invite has been sent to the specified email earlier, we expect activation.';
             }
+            else
+            {
+                $invite = $orm->createEntity(Model::INVITE);
 
-            $invite = $orm->createEntity(Model::INVITE);
+                $invite->email  = $email;
+                $invite->roleId = $roleId;
 
-            $invite->email  = $email;
-            $invite->roleId = $roleId;
+                $userId         = $this->loggedUser()->getRequiredField('id');
+                $invite->userId = $userId;
 
-            $userId         = $this->loggedUser()->getRequiredField('id');
-            $invite->userId = $userId;
+                $factory = $this->builder->randomFactory();
 
-            $factory = $this->builder->randomFactory();
+                $generator = $factory->getHighStrengthGenerator();
 
-            $generator = $factory->getHighStrengthGenerator();
+                $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-            $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                $invite->token = $generator->generateString(64, $chars);
 
-            $invite->token = $generator->generateString(64, $chars);
+                $carbon = Carbon::create();
+                $carbon->addDay(3); // add 3 day
 
-            $carbon = Carbon::create();
-            $carbon->addDay(3); // add 3 day
+                $invite->expires = $carbon->timestamp;
 
-            $invite->expires = $carbon->timestamp;
+                if ($invite->save())
+                {
+                    $config = $this->builder->bundleConfig();
 
-            return $invite->asObject(true);
+                    /**
+                     * @var $mailConfig \PHPixie\Slice\Type\Slice\Editable
+                     */
+                    $mailConfig = $config->slice('mail');
+
+                    $smtp     = $mailConfig->get('smtp');
+                    $username = $mailConfig->get('username');
+                    $password = $mailConfig->get('password');
+
+                    $transport = \Swift_SmtpTransport::newInstance($smtp);
+                    $transport->setUsername($username);
+                    $transport->setPassword($password);
+
+                    $template = $this->template->render('app:email/invite', array(
+                        'invite' => $invite
+                    ));
+
+                    $mailMessage = \Swift_Message::newInstance()
+                        ->setFrom([$username => 'Invite Bot'])
+                        ->setTo([$email])
+                        ->setSubject('Invite from WBS CMS')
+                        ->setBody($template, 'text/html', 'utf-8');
+
+                    $mailer = \Swift_Mailer::newInstance($transport);
+
+                    $message['alert-danger'] = 'Error of sending invite. Try later!';
+
+                    if ($mailer->send($mailMessage))
+                    {
+                        $message['alert-success'] = 'Invite is successfully sent to the user!';
+                    }
+                }
+
+            }
         }
 
         $roles = $this->components->orm()->query(Model::ROLE)
             ->find()
             ->asArray(true);
+
+        $this->variables['message'] = $message;
 
         $this->variables['email']  = $email;
         $this->variables['roleId'] = $roleId;

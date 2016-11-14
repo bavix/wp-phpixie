@@ -82,4 +82,16 @@ class Landing extends Processor
         return $this->components->template()->get('app:layout');
     }
 
+    /**
+     * @param Request $request
+     *
+     * @return mixed
+     */
+    public function emailAction(Request $request)
+    {
+        return $this->components->template()->get('app:email/invite', array(
+            'invite' => $this->components->orm()->query(Model::INVITE)->findOne()
+        ));
+    }
+
 }

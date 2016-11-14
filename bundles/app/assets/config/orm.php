@@ -108,6 +108,12 @@ return [
                 'ownerKey'      => 'parentId'
             )
         ],
+
+        [
+            'type'  => 'oneToMany',
+            'owner' => Model::ROLE,
+            'items' => Model::INVITE
+        ],
     ]
 
 ];
