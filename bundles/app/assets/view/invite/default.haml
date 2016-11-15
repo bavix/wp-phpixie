@@ -1,8 +1,21 @@
 - $this->layout('app:layout/auth')
 
 %form(method="POST")
+  - $fieldLogin = $formSignUp ? $formSignUp->field('login') : null
+  - $fieldLastName = $formSignUp ? $formSignUp->field('lastname') : null
+  - $fieldName = $formSignUp ? $formSignUp->field('name') : null
+  - $fieldPassword = $formSignUp ? $formSignUp->field('password') : null
+
+  -#.alert.alert-danger
+    Hello
   .form-group
-    %input(type="text" name="login" placeholder="login")
+    %input(type="text" name="login" placeholder="login" onfocus="this.removeAttribute('readonly');" readonly required value="#{$_($fieldLogin ? $fieldLogin->getValue() : '')}")
   .form-group
-    %input(type="password" name="password" placeholder="password")
-  %button.btn.btn-success Register
+    %input(type="text" name="lastname" placeholder="last name" onfocus="this.removeAttribute('readonly');" readonly required value="#{$_($_($fieldLastName ? $fieldLastName->getValue() : ''))}")
+  .form-group
+    %input(type="text" name="name" placeholder="name" onfocus="this.removeAttribute('readonly');" readonly required value="#{$_($_($fieldName ? $fieldName->getValue() : ''))}")
+  .form-group
+    %input(type="password" name="password" placeholder="password" onfocus="this.removeAttribute('readonly');" readonly required value="")
+  %button.btn.btn-success
+    %i.fa.fa-sign-in
+    Register

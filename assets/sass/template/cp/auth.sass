@@ -4,7 +4,7 @@ html, body
 
 .login-container
   position: relative
-  width: 300px
+  width: 350px
   margin: 80px auto
   padding: 20px 40px 40px
   text-align: center
@@ -75,15 +75,21 @@ html, body
     &:focus
       outline: 0
       background: #eee
-    &[type="text"]
-      border-radius: 5px 5px 0 0
-      text-transform: lowercase
     &[type="password"]
       border-radius: 0 0 5px 5px
       border-top: 0
   button.login
     margin-top: 15px
     padding: 10px 20px
+
+.alert + .form-group + .form-group, .form-group + .form-group
+  input
+    border-top: 0 none
+
+.alert + .form-group, .form-group:nth-of-type(1)
+  input[type="text"]
+    border-radius: 5px 5px 0 0
+    text-transform: lowercase
 
 .animated
   -webkit-animation-duration: 1s

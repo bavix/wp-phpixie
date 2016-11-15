@@ -40,19 +40,16 @@ class Invite extends Processor
             throw new \Exception();
         }
 
+        $data = $request->data();
+
         if ($request->method() === 'POST')
         {
 
-            $data = $request->data();
+            $validator  = $this->getSignupValidator();
+            $formSignUp = $validator->validate($data->get());
 
-            $validator = $this->getSignupValidator();
-            $result    = $validator->validate($data->get());
-
-            if ($result->isValid())
+            if ($formSignUp->isValid())
             {
-                var_dump('valid');
-                die;
-
                 $domain = $this->components->auth()->domain();
 
                 /**
@@ -65,9 +62,15 @@ class Invite extends Processor
                  */
                 $user               = $this->components->orm()->createEntity(Model::USER);
                 $user->login        = $data->get('login');
+                $user->lastname     = $data->get('lastname');
+                $user->name         = $data->get('name');
                 $user->email        = $invite->email;
+                $user->roleId       = $invite->roleId;
                 $user->passwordHash = $passwordProvider->hash($data->get('password'));
                 $user->save();
+
+                $invite->activated = 1;
+                $invite->save();
 
                 $domain->setUser($user, 'session');
 
@@ -77,8 +80,8 @@ class Invite extends Processor
                 $sessionProvider = $domain->provider('session');
                 $sessionProvider->persist();
 
+                return $this->redirectResponse('app.cp.processor');
             }
-
         }
 
         $uri = $request->uri();
@@ -92,6 +95,8 @@ class Invite extends Processor
 
         $this->variables['avatar'] = $grAvatar;
         $this->variables['invite'] = $invite;
+
+        $this->variables['formSignUp'] = $formSignUp ?? null;
 
         return $this->render('app:invite/default');
     }
@@ -134,10 +139,24 @@ class Invite extends Processor
             }
         });
 
+        $document->valueField('lastname')
+            ->required()
+            ->addFilter()
+            ->alpha()
+            ->minLength(1)
+            ->maxLength(40);
+
+        $document->valueField('name')
+            ->required()
+            ->addFilter()
+            ->alpha()
+            ->minLength(1)
+            ->maxLength(40);
+
         $document->valueField('password')
             ->required()
             ->addFilter()
-            ->minLength(8);
+            ->minLength(6);
 
         return $validator;
     }
