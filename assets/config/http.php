@@ -23,8 +23,8 @@ return array(
     ),
 
     'exceptionResponse' => array(
-        'template' => //'framework:http/exception'
-        'app:error/404'
+        'template' => 'framework:http/exception'
+        //'app:error/404'
     ),
 
     'notFoundResponse' => array(
