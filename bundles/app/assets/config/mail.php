@@ -5,8 +5,10 @@
 //fsi84g
 
 return [
-    'smtp'     => 'smtp.timeweb.ru',
-    'imap'     => 'imap.timeweb.ru',
-    'username' => 'invite@wheelpro.ru',
-    'password' => 'fsi84g',
+    'invite' => [
+        'smtp'     => 'smtp.timeweb.ru',
+        'imap'     => 'imap.timeweb.ru',
+        'username' => 'invite@wheelpro.ru',
+        'password' => 'fsi84g',
+    ]
 ];

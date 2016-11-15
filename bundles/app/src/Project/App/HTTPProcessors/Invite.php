@@ -24,13 +24,15 @@ class Invite extends Processor
 
         $user = $this->loggedUser();
 
-        if ($user || mb_strlen($token) !== 64)
+        if ($user || mb_strlen($token) !== 8)
         {
             throw new \Exception();
         }
 
         $invite = $this->components->orm()->query(Model::INVITE)
             ->where('token', $token)
+            ->where('expires', '>=', time())
+            ->where('activated', '=', 0)
             ->findOne();
 
         if (!$invite)

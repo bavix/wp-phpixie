@@ -3,6 +3,7 @@
 namespace Project\App\HTTPProcessors\CP\SOU;
 
 use Carbon\Carbon;
+use Openbuildings\Swiftmailer\CssInlinerPlugin;
 use PHPixie\HTTP\Request;
 use Project\App\HTTPProcessors\Processor\SOUProtected;
 use Project\App\Model;
@@ -67,7 +68,7 @@ class Invite extends SOUProtected
 
                 $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-                $invite->token = $generator->generateString(64, $chars);
+                $invite->token = $generator->generateString(8, $chars);
 
                 $carbon = Carbon::create();
                 $carbon->addDay(3); // add 3 day
@@ -81,7 +82,7 @@ class Invite extends SOUProtected
                     /**
                      * @var $mailConfig \PHPixie\Slice\Type\Slice\Editable
                      */
-                    $mailConfig = $config->slice('mail');
+                    $mailConfig = $config->slice('mail.invite');
 
                     $smtp     = $mailConfig->get('smtp');
                     $username = $mailConfig->get('username');
@@ -91,11 +92,24 @@ class Invite extends SOUProtected
                     $transport->setUsername($username);
                     $transport->setPassword($password);
 
+                    $mailMessage = \Swift_Message::newInstance();
+
+                    $logoData = __DIR_WEB__ . 'svg/wheel-white.svg';
+
+                    $logoImage = new \Swift_Image(file_get_contents($logoData));
+                    $logo      = $mailMessage->embed($logoImage);
+
                     $template = $this->template->render('app:email/invite', array(
-                        'invite' => $invite
+                        'assetsPath' => __DIR_WEB__ . 'assets/',
+                        'cssPath'    => __DIR_WEB__ . 'css/',
+                        'jsPath'     => __DIR_WEB__ . 'js/',
+                        'logo'       => $logo,
+                        'scheme'     => $request->uri()->getScheme(),
+                        'host'       => $request->uri()->getHost(),
+                        'invite'     => $invite
                     ));
 
-                    $mailMessage = \Swift_Message::newInstance()
+                    $mailMessage
                         ->setFrom([$username => 'Invite Bot'])
                         ->setTo([$email])
                         ->setSubject('Invite from WBS CMS')
@@ -103,11 +117,17 @@ class Invite extends SOUProtected
 
                     $mailer = \Swift_Mailer::newInstance($transport);
 
-                    $message['alert-danger'] = 'Error of sending invite. Try later!';
+                    $mailer->registerPlugin(new CssInlinerPlugin());
 
-                    if ($mailer->send($mailMessage))
+                    $send = $mailer->send($mailMessage);
+
+                    if ($send)
                     {
                         $message['alert-success'] = 'Invite is successfully sent to the user!';
+                    }
+                    else
+                    {
+                        $message['alert-danger'] = 'Error of sending invite. Try later!';
                     }
                 }
 
@@ -130,25 +150,5 @@ class Invite extends SOUProtected
 
         return $this->render('app:cp/sou/invite/add');
     }
-
-//    public function registerAction(Request $request)
-//    {
-//        $token = $request->query()->getRequired('token');
-//
-//        $orm = $this->components->orm();
-//
-//        if ($request->method() === 'POST')
-//        {
-//
-//            $invite = $orm->query(Model::INVITE)
-//                ->where('token', $token)
-//                ->findOne();
-//
-//            // validate
-//
-//        }
-//
-//        return $this->render('app:cp/sou/invite/register');
-//    }
 
 }

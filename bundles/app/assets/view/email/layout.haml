@@ -1,12 +1,13 @@
 !!!
-%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+%html
   %head
     %meta{:content => "width=device-width", :name => "viewport"}
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %title Invite code from WBS CMS
-    %link(href="/css/email.css" rel="stylesheet")
-  %body
-    %table.body-wrap
+    %style(type="text/css")
+      - echo file_get_contents($cssPath . 'email.css')
+  %body.body
+    %table.table.body-wrap
       %tr
         %td
         %td.container{:width => "600"}
