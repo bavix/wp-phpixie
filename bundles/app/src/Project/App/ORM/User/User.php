@@ -60,7 +60,13 @@ class User extends UserLogin
         $request = $http->request();
         $uri     = $request->uri();
 
-        $urlPath = $uri->getScheme() . '://' . $uri->getHost() . '/svg/no-avatar-140.png';
+        $size = 140;
+        if ($width >= 300)
+        {
+            $size = 512;
+        }
+
+        $urlPath = $uri->getScheme() . '://' . $uri->getHost() . '/svg/no-avatar-' . $size . '.png';
 
         if ($this->email)
         {
