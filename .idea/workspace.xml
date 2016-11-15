@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/php.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/migrate/migrations/5.sql" afterPath="$PROJECT_DIR$/assets/migrate/migrations/5.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sass/template/cp/auth.sass" afterPath="$PROJECT_DIR$/assets/sass/template/cp/auth.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/assets/view/invite/default.haml" afterPath="$PROJECT_DIR$/bundles/app/assets/view/invite/default.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Invite.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Invite.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/auth.css" afterPath="$PROJECT_DIR$/web/css/auth.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/auth.css.map" afterPath="$PROJECT_DIR$/web/css/auth.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/config/http.php" afterPath="$PROJECT_DIR$/assets/config/http.php" />
     </list>
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,11 +31,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Invite.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Invite.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Invite.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="794">
               <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/config/template.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="http.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/config/http.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -98,7 +111,6 @@
         <option value="$PROJECT_DIR$/assets/config/database.php" />
         <option value="$PROJECT_DIR$/assets/config/parameters.php" />
         <option value="$PROJECT_DIR$/assets/parameters.php" />
-        <option value="$PROJECT_DIR$/assets/config/http.php" />
         <option value="$PROJECT_DIR$/assets/config/migrate.php" />
         <option value="$PROJECT_DIR$/sql/2016-11-10.sql" />
         <option value="$PROJECT_DIR$/assets/migrate/seeds/headings.php" />
@@ -135,6 +147,7 @@
         <option value="$PROJECT_DIR$/assets/sass/template/cp/auth.sass" />
         <option value="$PROJECT_DIR$/bundles/app/assets/view/invite/default.haml" />
         <option value="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Invite.php" />
+        <option value="$PROJECT_DIR$/assets/config/http.php" />
       </list>
     </option>
   </component>
@@ -1285,12 +1298,12 @@
       <workItem from="1478955206212" duration="4490000" />
       <workItem from="1479053906024" duration="10228000" />
       <workItem from="1479120409148" duration="2096000" />
-      <workItem from="1479188968622" duration="16670000" />
+      <workItem from="1479188968622" duration="16900000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="441272000" />
+    <option name="totallyTimeSpent" value="441502000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -1338,21 +1351,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/phpixie/http/src/PHPixie/HTTP/Data/Server.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/app/assets/config/routeResolver.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Logger.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -1700,6 +1698,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="794">
           <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/config/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/config/http.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
           <folding />
         </state>
       </provider>
