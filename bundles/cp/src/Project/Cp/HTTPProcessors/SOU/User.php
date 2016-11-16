@@ -49,7 +49,7 @@ class User extends SOUProtected
 
         $this->variables['pager'] = $pager;
 
-        return $this->render('app:cp/sou/user/default');
+        return $this->render('cp:sou/user/default');
     }
 
     public function editAction(Request $request)
@@ -67,7 +67,7 @@ class User extends SOUProtected
             // update profile user
         }
 
-        return $this->render('app:cp/sou/user/edit');
+        return $this->render('cp:sou/user/edit');
     }
 
     public function deleteAction(Request $request)
@@ -101,7 +101,7 @@ class User extends SOUProtected
 
         $this->variables['user'] = $user;
 
-        return $this->render('app:cp/sou/user/profile');
+        return $this->render('cp:sou/user/profile');
     }
 
 }

@@ -121,43 +121,44 @@ abstract class CPProtected extends Processor
 
         $this->variables['breadcrumbs'] = [];
 
-//        $attributes = $request->attributes();
-//
-//        $processor     = $attributes->get('processor');
-//        $nextProcessor = $attributes->get('nextProcessor');
-//
-//        $permission = implode('.', [
-//            $processor,
-//            $nextProcessor,
-//        ]);
-//
-//        $permission = preg_replace('~\.+~', '.', $permission);
-//        $permission = trim($permission, '.');
-//
-//        if (!$this->user->hasPermission($permission))
-//        {
-//            $this->accessDenied();
-//        }
-//
-//        $orm = $this->components->orm();
-//
-//        $httpPath = $permission;
-//
-//        $currentMenu = $orm
-//            ->query(Model::MENU)
-//            ->where('httpPath', $httpPath)
-//            ->findOne();
-//
+        $attributes = $request->attributes();
+
+        $processor     = $attributes->get('processor');
+        $nextProcessor = $attributes->get('nextProcessor');
+
+        $permission = implode('.', [
+            $this->builder->bundleName(),
+            $processor,
+            $nextProcessor,
+        ]);
+
+        $permission = preg_replace('~\.+~', '.', $permission);
+        $permission = trim($permission, '.');
+
+        if (!$this->user->hasPermission($permission))
+        {
+            $this->accessDenied();
+        }
+
+        $orm = $this->components->orm();
+
+        $httpPath = $permission;
+
+        $currentMenu = $orm
+            ->query(Model::MENU)
+            ->where('httpPath', $httpPath)
+            ->findOne();
+
         $this->variables['user']        = $this->user;
-//        $this->variables['currentMenu'] = $currentMenu;
-//        $this->variables['menuList']    = $orm->query(Model::MENU)
-//            ->where('parentId', 0)
-//            ->orderAscendingBy('sortId')
-//            ->find();
-//
-//        $action = $request->attributes()->get('action');
-//
-//        $this->variables['breadcrumbs'] = $this->breadcrumbs($action, $currentMenu);
+        $this->variables['currentMenu'] = $currentMenu;
+        $this->variables['menuList']    = $orm->query(Model::MENU)
+            ->where('parentId', 0)
+            ->orderAscendingBy('sortId')
+            ->find();
+
+        $action = $request->attributes()->get('action');
+
+        $this->variables['breadcrumbs'] = $this->breadcrumbs($action, $currentMenu);
 
         return parent::process($request);
     }

@@ -47,30 +47,24 @@ class Util
 
     /**
      * @param $attributes
-     * @param $bundle
      *
      * @return mixed|string
      */
-    public static function httpPath($attributes, $bundle = 'app')
+    public static function httpPath($attributes)
     {
         $last = isset($attributes['action']) ? 'action' : 'processor';
         $last = isset($attributes['id']) ? 'item' : $last;
 
         $path = $last;
+
         if ($attributes['nextProcessor'])
-        {
-            $path =
-                $attributes['processor'] . '.' .
-                $attributes['cpProcessor'] . '.' . $last;
-        }
-        else if ($attributes['cpProcessor'])
         {
             $path = $attributes['processor'] . '.' . $last;
         }
 
         $path = preg_replace('~\.+~', '.', trim($path, '.'));
 
-        return $bundle . '.' . $path;
+        return $attributes['bundle'] . '.' . $path;
     }
 
     /**
@@ -80,6 +74,7 @@ class Util
      */
     public static function httpWithURL($url)
     {
+        $bundle        = null;
         $processor     = null;
         $nextProcessor = null;
         $action        = null;
@@ -91,9 +86,9 @@ class Util
 
         if ($processors)
         {
-            list($processor, $nextProcessor) =
-                explode('.', $processors, 2) +
-                [null, null];
+            list($bundle, $processor, $nextProcessor) =
+                explode('.', $processors, 3) +
+                [null, null, null];
         }
 
         if ($attributes)
@@ -104,6 +99,7 @@ class Util
         }
 
         $attributes = [
+            'bundle'        => $bundle,
             'processor'     => $processor,
             'nextProcessor' => $nextProcessor,
             'action'        => $action,

@@ -1,7 +1,9 @@
 <?php
 
 namespace Project\Framework;
+
 use RandomLib\Factory;
+use Stash\Driver\Composite;
 use Stash\Pool;
 
 /**
@@ -64,7 +66,7 @@ class Builder extends \PHPixie\BundleFramework\Builder
         }
 
         $options = array('drivers' => $subDrivers);
-        $driver = new Components($options);
+        $driver  = new Composite($options);
 
         return new Pool($driver);
     }

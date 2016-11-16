@@ -59,7 +59,7 @@
               .logo-element
                 WBS
 
-            -#- foreach ($menuList as $menu)
+            - foreach ($menuList as $menu)
 
               - if (!$user->hasPermission($menu->httpPath))
                 - continue
@@ -93,7 +93,7 @@
 
                   %ul.nav.nav-second-level.collapse
 
-                    -#- foreach ($menuItems as $menu)
+                    - foreach ($menuItems as $menu)
 
                       - if (!$user->hasPermission($menu->httpPath))
                         - continue
@@ -115,7 +115,7 @@
               %form.navbar-form-custom{:action => "search_results.html", :role => "search"}
                 .form-group
                   %input#top-search.form-control{:name => "top-search", :placeholder => "Search for something...", :type => "text"}/
-            -#%ul.nav.navbar-top-links.navbar-right
+            %ul.nav.navbar-top-links.navbar-right
               %li
                 %span.m-r-sm.text-muted.welcome-message
               %li.dropdown
@@ -202,7 +202,7 @@
                   Log out
         .row.wrapper.border-bottom.white-bg.page-heading
           .col-sm-4
-            -#%h2 =$_($currentMenu->title)
+            %h2 =$_($currentMenu->title)
             %ol.breadcrumb
               - foreach ($breadcrumbs as $breadcrumb)
                 - if (is_array($breadcrumb))

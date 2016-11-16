@@ -6,7 +6,7 @@ use PHPixie\HTTP\Request;
 use PHPixie\HTTP\Responses\Response;
 use Project\App\HTTPProcessors\Processor;
 use PHPixie\AuthLogin\Providers\Password as PasswordProvider;
-use Project\App\ORM\User\User;
+use Project\ORM\User\User;
 use PHPixie\Template;
 
 /**
@@ -55,7 +55,7 @@ class Auth extends Processor
     {
         $this->components->auth()->domain()->forgetUser();
 
-        return $this->redirectResponse('landing.processor');
+        return $this->redirectResponse('app.processor');
     }
 
     /**

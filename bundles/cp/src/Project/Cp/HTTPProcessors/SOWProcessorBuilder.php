@@ -6,7 +6,7 @@ use Project\Cp\Builder;
 use Project\Extension\Util;
 
 /**
- * Builds processors in the 'app.admin' namespace
+ * Builds processors in the 'cp.admin' namespace
  */
 class SOWProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
 {

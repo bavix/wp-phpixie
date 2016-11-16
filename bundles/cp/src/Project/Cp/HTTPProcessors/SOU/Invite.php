@@ -7,7 +7,7 @@ use Openbuildings\Swiftmailer\CssInlinerPlugin;
 use PHPixie\HTTP\Request;
 use Project\Cp\HTTPProcessors\Processor\SOUProtected;
 use Project\Model;
-use Project\App\Role;
+use Project\Role;
 
 class Invite extends SOUProtected
 {
@@ -77,7 +77,7 @@ class Invite extends SOUProtected
 
                 if ($invite->save())
                 {
-                    $config = $this->builder->bundleConfig();
+                    $config = $this->builder->frameworkBuilder()->assets()->configStorage();
 
                     /**
                      * @var $mailConfig \PHPixie\Slice\Type\Slice\Editable
@@ -92,24 +92,21 @@ class Invite extends SOUProtected
                     $transport->setUsername($username);
                     $transport->setPassword($password);
 
-                    $mailMessage = \Swift_Message::newInstance();
-
-                    $logoData = __DIR_WEB__ . 'svg/wheel-white.svg';
-
-                    $logoImage = new \Swift_Image(file_get_contents($logoData));
-                    $logo      = $mailMessage->embed($logoImage);
+                    $logoPath = __DIR_WEB__ . 'svg/wheel-white.png';
+                    $logoData = file_get_contents($logoPath);
+                    $logoData = 'data:image/png;base64,' . base64_encode($logoData);
 
                     $template = $this->template->render('app:email/invite', array(
                         'assetsPath' => __DIR_WEB__ . 'assets/',
                         'cssPath'    => __DIR_WEB__ . 'css/',
                         'jsPath'     => __DIR_WEB__ . 'js/',
-                        'logo'       => $logo,
+                        'logo'       => $logoData,
                         'scheme'     => $request->uri()->getScheme(),
                         'host'       => $request->uri()->getHost(),
                         'invite'     => $invite
                     ));
 
-                    $mailMessage
+                    $mailMessage = \Swift_Message::newInstance()
                         ->setFrom([$username => 'Invite Bot'])
                         ->setTo([$email])
                         ->setSubject('Invite from WBS CMS')

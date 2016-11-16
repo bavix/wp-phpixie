@@ -12,7 +12,7 @@ use Project\Model;
 use PHPixie\AuthHTTP\Providers\Cookie as CookieProvider;
 use PHPixie\AuthHTTP\Providers\Session as SessionProvider;
 use PHPixie\AuthLogin\Providers\Password as PasswordProvider;
-use Project\App\ORM\User\User;
+use Project\ORM\User\User;
 
 class Invite extends Processor
 {
@@ -80,7 +80,7 @@ class Invite extends Processor
                 $sessionProvider = $domain->provider('session');
                 $sessionProvider->persist();
 
-                return $this->redirectResponse('app.cp.processor');
+                return $this->redirectResponse('cp.processor');
             }
         }
 
