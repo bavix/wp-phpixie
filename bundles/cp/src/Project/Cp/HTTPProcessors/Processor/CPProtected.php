@@ -43,7 +43,7 @@ abstract class CPProtected extends Processor
 
             if ($action !== 'default')
             {
-                $breadcrumbs[] = $action;
+                $breadcrumbs[] = ucfirst($action);
             }
 
             $breadcrumbs[] = [
