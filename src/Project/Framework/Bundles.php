@@ -2,7 +2,9 @@
 
 namespace Project\Framework;
 
+use PHPixie\FrameworkBundle;
 use Project\App;
+use Project\Cp;
 
 /**
  * Your projects bundle registry.
@@ -10,15 +12,19 @@ use Project\App;
  */
 class Bundles extends \PHPixie\BundleFramework\Bundles
 {
+
     /**
      * Should return an array of Bundle instances
+     *
      * @return array
      */
     protected function buildBundles()
     {
         return array(
-            new \PHPixie\FrameworkBundle($this->builder),
-            new App($this->builder)
+            new FrameworkBundle($this->builder),
+            new Cp($this->builder),
+            new App($this->builder),
         );
     }
+
 }

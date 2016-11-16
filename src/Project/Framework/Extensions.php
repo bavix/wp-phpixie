@@ -2,7 +2,7 @@
 
 namespace Project\Framework;
 
-use Project\HamlFormat;
+use Project\Extension\HamlFormat;
 
 /**
  * Extensions registry.
@@ -11,6 +11,7 @@ class Extensions extends \PHPixie\Framework\Extensions
 {
     /**
      * Extensions for the Template component
+     *
      * @return array
      */
     public function templateExtensions()
@@ -21,6 +22,7 @@ class Extensions extends \PHPixie\Framework\Extensions
 
     /**
      * Format compilers for the Template component
+     *
      * @return array
      */
     public function templateFormats()
@@ -33,6 +35,7 @@ class Extensions extends \PHPixie\Framework\Extensions
 
     /**
      * Provider Builders for the Auth component
+     *
      * @return array
      */
     public function authProviderBuilders()

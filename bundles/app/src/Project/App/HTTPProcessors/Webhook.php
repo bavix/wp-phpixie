@@ -74,8 +74,8 @@ class Webhook extends Processor
 
                 $this->shellExec("composer install");
 
-                $this->shellExec("redis-cli flushall");
                 $this->shellExec("./console framework:migrate");
+                $this->shellExec("redis-cli flushall");
 
                 break;
 
@@ -97,8 +97,8 @@ class Webhook extends Processor
                 $this->shellExec("composer install");
                 $this->shellExec("composer update");
 
-                $this->shellExec("redis-cli flushall");
                 $this->shellExec("./console framework:migrate");
+                $this->shellExec("redis-cli flushall");
 
                 break;
 

@@ -10,7 +10,11 @@
                 "tests/",
                 "bundles/app/src/",
                 "bundles/test/src/",
-                "bundles/auth/src/"
+                "bundles/auth/src/",
+                "bundles/landing/src/",
+                "bundles/webhook/src/",
+                "bundles/cp/src/",
+                "bundles/invite/src/"
             ]
         }
     },

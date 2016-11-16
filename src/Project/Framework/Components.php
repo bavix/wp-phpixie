@@ -2,7 +2,7 @@
 
 namespace Project\Framework;
 
-use \Project\Template\Template;
+use \Project\Extension\Template\Template;
 
 class Components extends \PHPixie\BundleFramework\Components
 {
@@ -13,7 +13,7 @@ class Components extends \PHPixie\BundleFramework\Components
     protected function buildTemplate()
     {
         $configuration = $this->builder->configuration();
-        $extensions = $this->builder->extensions();
+        $extensions    = $this->builder->extensions();
 
         return new Template(
             $this->slice(),
