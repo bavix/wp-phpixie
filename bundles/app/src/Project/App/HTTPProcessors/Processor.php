@@ -4,11 +4,10 @@ namespace Project\App\HTTPProcessors;
 
 use PHPixie\DefaultBundle\Processor\HTTP\Actions;
 use PHPixie\BundleFramework\Components;
-use PHPixie\HTTP\Messages\Message\Request;
 use PHPixie\HTTP\Responses\Response;
-use Project\App\ORM\User\User;
+use Project\ORM\User\User;
 use Project\App\Builder;
-use Project\Util;
+use Project\Extension\Util;
 
 /**
  * Base processor

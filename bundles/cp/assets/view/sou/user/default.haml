@@ -1,0 +1,44 @@
+- $this->layout('cp:layout')
+
+.row
+  partial: 'cp:pager'
+.row
+  .grid
+    - foreach ($pager->getCurrentItems() as $_user)
+      .col-3_md-4_sm-6_xs-12
+        .ibox
+          .ibox-content.product-box
+            %img(src="#{$_user->getAvatar(400)}" width="100%")
+            .product-desc
+              %small.text-muted = $_($_user->login)
+              - $httpPath = 'cp.item'
+              - $attributes = ['processor' => 'user', 'action' => 'profile', 'id' => $_user->id]
+              - $httpPath = $this->httpPath($httpPath, $attributes)
+              %a.product-name(href="#{$httpPath}")
+                = '#' . $_user->id() . ' ' . $_($_user->name . ' ' . $_user->lastname)
+              .small.m-t-xs
+                - if ($_user->email)
+                  %p
+                    Email:
+                    = $_($_user->email)
+                %p
+                  Role:
+                  = $_($_user->role()->title)
+              .m-t.text-righ
+                - if ($user->hasPermission('cp.user.edit'))
+                  - $httpPath = 'cp.item'
+                  - $attributes = ['cpProcessor' => 'user', 'action' => 'edit', 'id' => $_user->id]
+                  - $httpPath = $this->httpPath($httpPath, $attributes)
+                  %a.btn.btn-xs.btn-outline.btn-success{:href => $httpPath}
+                    %i.fa.fa-edit
+                    edit
+
+                - if ($user->hasPermission('cp.user.delete'))
+                  - $httpPath = 'cp.item'
+                  - $attributes = ['cpProcessor' => 'user', 'action' => 'delete', 'id' => $_user->id]
+                  - $httpPath = $this->httpPath($httpPath, $attributes)
+                  %a.btn.btn-xs.btn-outline.btn-danger{:href => $httpPath}
+                    %i.fa.fa-trash
+                    delete
+.row
+  partial: 'cp:pager'

@@ -10,7 +10,11 @@
                 "tests/",
                 "bundles/app/src/",
                 "bundles/test/src/",
-                "bundles/auth/src/"
+                "bundles/auth/src/",
+                "bundles/landing/src/",
+                "bundles/webhook/src/",
+                "bundles/cp/src/",
+                "bundles/invite/src/"
             ]
         }
     },
@@ -55,7 +59,8 @@
         "league/html-to-markdown": "^4.3",
         "phpixie/migrate": "3.*-dev",
         "monolog/monolog": "^1.21",
-        "swiftmailer/swiftmailer": "^5.4"
+        "swiftmailer/swiftmailer": "^5.4",
+        "openbuildings/swiftmailer-css-inliner": "^0.4.0"
     },
     "require-dev": {
         "phpixie/test": "3.*-dev"

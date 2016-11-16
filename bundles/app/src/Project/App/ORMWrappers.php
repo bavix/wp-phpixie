@@ -3,6 +3,7 @@
 namespace Project\App;
 
 use PHPixie\ORM\Wrappers\Implementation as WrappersImplementation;
+use Project\Model;
 
 /**
  * ORM Wrapper registry
@@ -44,11 +45,11 @@ class ORMWrappers extends WrappersImplementation
     /**
      * @param $entity
      *
-     * @return ORM\User\User
+     * @return \Project\ORM\User\User
      */
     public function userEntity($entity)
     {
-        return new ORM\User\User(
+        return new \Project\ORM\User\User(
             $entity,
             $this->builder
         );
@@ -57,11 +58,11 @@ class ORMWrappers extends WrappersImplementation
     /**
      * @param $entity
      *
-     * @return ORM\Role\Role
+     * @return \Project\ORM\Role\Role
      */
     public function roleEntity($entity)
     {
-        return new ORM\Role\Role(
+        return new \Project\ORM\Role\Role(
             $entity,
             $this->builder
         );
@@ -70,11 +71,11 @@ class ORMWrappers extends WrappersImplementation
     /**
      * @param $entity
      *
-     * @return ORM\Menu\Menu
+     * @return \Project\ORM\Menu\Menu
      */
     public function menuEntity($entity)
     {
-        return new ORM\Menu\Menu(
+        return new \Project\ORM\Menu\Menu(
             $entity,
             $this->builder
         );
@@ -83,11 +84,11 @@ class ORMWrappers extends WrappersImplementation
     /**
      * @param $repository
      *
-     * @return ORM\User\UserRepository
+     * @return \Project\ORM\User\UserRepository
      */
     public function userRepository($repository)
     {
-        return new ORM\User\UserRepository(
+        return new \Project\ORM\User\UserRepository(
             $repository,
             $this->builder
         );

@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %meta{:content => "width=device-width", :name => "viewport"}
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %title Invite code from WBS CMS
+    %style(type="text/css")
+      - echo file_get_contents($cssPath . 'email.css')
+  %body.body
+    %table.table.body-wrap
+      %tr
+        %td
+        %td.container{:width => "600"}
+          .content
+            - $this->childContent()
