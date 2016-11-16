@@ -44,22 +44,22 @@
                       =$_($user->role()->title)
                       %b.fa.fa-angle-down
                 %ul.dropdown-menu.animated.fadeInRight.m-t-xs
-                  %li
+                  -#%li
                     %a{:href => "profile.html"} Profile
-                  %li
+                  -#%li
                     %a{:href => "contacts.html"} Contacts
-                  %li
+                  -#%li
                     %a{:href => "mailbox.html"} Mailbox
-                  %li.divider
+                  -#%li.divider
                   %li
-                    - $httpPath = $this->httpPath('app.cp.action', array('cpProcessor' => 'auth', 'action' => 'logout'))
+                    - $httpPath = $this->httpPath('cp.action', array('processor' => 'auth', 'action' => 'logout'))
                     %a{:href => $httpPath}
                       %i.fa.fa-sign-out
                       Log out
               .logo-element
                 WBS
 
-            - foreach ($menuList as $menu)
+            -#- foreach ($menuList as $menu)
 
               - if (!$user->hasPermission($menu->httpPath))
                 - continue
@@ -67,7 +67,7 @@
               - $currentHttpPath = $currentMenu->httpPath()
               - $menuHttpPath = $menu->httpPath()
 
-              - $isActive = $currentHttpPath['attributes']['cpProcessor'] == $menuHttpPath['attributes']['cpProcessor']
+              - $isActive = $currentHttpPath['attributes']['processor'] == $menuHttpPath['attributes']['processor']
 
               %li{:class => $isActive ? 'active' : ''}
 
@@ -93,7 +93,7 @@
 
                   %ul.nav.nav-second-level.collapse
 
-                    - foreach ($menuItems as $menu)
+                    -#- foreach ($menuItems as $menu)
 
                       - if (!$user->hasPermission($menu->httpPath))
                         - continue
@@ -115,7 +115,7 @@
               %form.navbar-form-custom{:action => "search_results.html", :role => "search"}
                 .form-group
                   %input#top-search.form-control{:name => "top-search", :placeholder => "Search for something...", :type => "text"}/
-            %ul.nav.navbar-top-links.navbar-right
+            -#%ul.nav.navbar-top-links.navbar-right
               %li
                 %span.m-r-sm.text-muted.welcome-message
               %li.dropdown
@@ -196,13 +196,13 @@
                         %strong See All Alerts
                         %i.fa.fa-angle-right
               %li
-                - $httpPath = $this->httpPath('app.cp.action', array('cpProcessor' => 'auth', 'action' => 'logout'))
+                - $httpPath = $this->httpPath('cp.action', array('processor' => 'auth', 'action' => 'logout'))
                 %a{:href => $httpPath}
                   %i.fa.fa-sign-out
                   Log out
         .row.wrapper.border-bottom.white-bg.page-heading
           .col-sm-4
-            %h2 =$_($currentMenu->title)
+            -#%h2 =$_($currentMenu->title)
             %ol.breadcrumb
               - foreach ($breadcrumbs as $breadcrumb)
                 - if (is_array($breadcrumb))
@@ -234,5 +234,5 @@
     %script{:src => "/js/cp.js"}
     %script{:src => "/js/inspinia.js"}
     %script{:src => "/assets/pace/pace.min.js"}
-    partial: 'app:cp/config'
+    partial: 'cp:config'
     %script(type="text/javascript" src="/js/inspinia.config.js")

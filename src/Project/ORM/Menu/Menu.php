@@ -1,6 +1,6 @@
 <?php
 
-namespace Project\App\ORM\Menu;
+namespace Project\ORM\Menu;
 
 use PHPixie\ORM\Wrappers\Type\Database\Entity;
 use Project\App\Builder;

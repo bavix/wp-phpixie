@@ -1,6 +1,6 @@
 <?php
 
-namespace Project\App\ORM\User;
+namespace Project\ORM\User;
 
 use PHPixie\AuthORM\Repositories\Type\Login;
 use PHPixie\AuthSocial\Repository as AuthSocialRepository;

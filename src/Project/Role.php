@@ -1,6 +1,6 @@
 <?php
 
-namespace Project\App;
+namespace Project;
 
 class Role
 {

@@ -7,8 +7,8 @@ use PHPixie\Processors\Exception;
 use Project\Cp\Builder;
 use Project\App\HTTPProcessors\Processor;
 use Project\Model;
-use Project\App\ORM\Menu\Menu;
-use Project\App\ORM\User\User;
+use Project\ORM\Menu\Menu;
+use Project\ORM\User\User;
 
 /**
  * Base processor that allows only logged in users
@@ -148,7 +148,7 @@ abstract class CPProtected extends Processor
 //            ->where('httpPath', $httpPath)
 //            ->findOne();
 //
-//        $this->variables['user']        = $this->user;
+        $this->variables['user']        = $this->user;
 //        $this->variables['currentMenu'] = $currentMenu;
 //        $this->variables['menuList']    = $orm->query(Model::MENU)
 //            ->where('parentId', 0)

@@ -1,10 +1,10 @@
 <?php
 
-namespace Project\App\ORM\User;
+namespace Project\ORM\User;
 
 use PHPixie\AuthORM\Repositories\Type\Login\User as UserLogin;
 use Project\App\Builder;
-use Project\App\ORM\Role\Role;
+use Project\ORM\Role\Role;
 
 /**
  * User entity with support for Login auth

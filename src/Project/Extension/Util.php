@@ -81,7 +81,6 @@ class Util
     public static function httpWithURL($url)
     {
         $processor     = null;
-        $cpProcessor   = null;
         $nextProcessor = null;
         $action        = null;
         $id            = null;
@@ -92,9 +91,9 @@ class Util
 
         if ($processors)
         {
-            list($processor, $cpProcessor, $nextProcessor) =
-                explode('.', $processors, 3) +
-                [null, null, null];
+            list($processor, $nextProcessor) =
+                explode('.', $processors, 2) +
+                [null, null];
         }
 
         if ($attributes)
@@ -106,7 +105,6 @@ class Util
 
         $attributes = [
             'processor'     => $processor,
-            'cpProcessor'   => $cpProcessor,
             'nextProcessor' => $nextProcessor,
             'action'        => $action,
             'id'            => $id
