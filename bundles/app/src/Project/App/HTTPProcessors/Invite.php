@@ -7,7 +7,7 @@ use PHPixie\HTTP\Request;
 use PHPixie\Validate\Results\Result\Field;
 use PHPixie\Validate\Rules\Rule\Data\Document;
 use PHPixie\Validate\Results\Result\Root as RootResult;
-use Project\App\Model;
+use Project\Model;
 
 use PHPixie\AuthHTTP\Providers\Cookie as CookieProvider;
 use PHPixie\AuthHTTP\Providers\Session as SessionProvider;

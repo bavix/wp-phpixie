@@ -9,7 +9,18 @@ return array(
     'resolver' => array(
         'type'      => 'group',
         'resolvers' => array(
-            'app' => array(
+            'cp'      => array(
+                'type'     => 'prefix',
+                'path'     => 'cp',
+                'defaults' => array(
+                    'bundle' => 'cp'
+                ),
+                'resolver' => array(
+                    'type' => 'mount',
+                    'name' => 'cp'
+                )
+            ),
+            'app'     => array(
                 'type'     => 'prefix',
                 'defaults' => array(
                     'bundle' => 'app'
@@ -18,7 +29,7 @@ return array(
                     'type' => 'mount',
                     'name' => 'app'
                 )
-            )
+            ),
         )
     ),
 

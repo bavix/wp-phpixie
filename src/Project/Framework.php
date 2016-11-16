@@ -8,6 +8,7 @@ use \PHPixie\BundleFramework;
  */
 class Framework extends BundleFramework
 {
+
     /**
      * Project factory
      * @return Framework\Builder
@@ -16,4 +17,5 @@ class Framework extends BundleFramework
     {
         return new Framework\Builder();
     }
+
 }

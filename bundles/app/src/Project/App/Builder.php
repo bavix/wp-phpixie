@@ -16,86 +16,6 @@ class Builder extends DefaultBuilder
 {
 
     /**
-     * @return Factory
-     */
-    public function randomFactory()
-    {
-        return $this->instance('randomFactory');
-    }
-
-    /**
-     * @return Factory
-     */
-    protected function buildRandomFactory()
-    {
-        return new Factory();
-    }
-
-    /**
-     * @return Pool
-     */
-    public function cache()
-    {
-        return $this->instance('cache');
-    }
-
-    /**
-     * @return Pool
-     * @throws \Exception
-     */
-    protected function buildCache()
-    {
-        $config = $this->bundleConfig();
-
-        $drivers = $config->get('cache.drivers');
-
-        $subDrivers = [];
-
-        foreach ($drivers as $driver => $options)
-        {
-            if (!is_array($options))
-            {
-                throw new \Exception();
-            }
-
-            /**
-             * @var $subDriver \Stash\Driver\AbstractDriver
-             */
-            $subDriver = new $driver($options);
-
-            $subDrivers[] = $subDriver;
-        }
-
-        $options = array('drivers' => $subDrivers);
-        $driver = new Composite($options);
-
-        return new Pool($driver);
-    }
-
-//    /**
-//     * @return Logger
-//     */
-//    public function log()
-//    {
-//        return $this->instance('log');
-//    }
-//
-//    /**
-//     * @return Logger
-//     */
-//    protected function buildLog()
-//    {
-//        $path = $this->webRoot()->path('log.log');
-//
-//        $handler = new StreamHandler($path, Logger::WARNING);
-//
-//        $log = new Logger($this->bundleName());
-//        $log->pushHandler($handler);
-//
-//        return $log;
-//    }
-
-    /**
      * Build Processor for HTTP requests
      *
      * @return HTTPProcessor
@@ -144,4 +64,5 @@ class Builder extends DefaultBuilder
     {
         return 'app';
     }
+
 }

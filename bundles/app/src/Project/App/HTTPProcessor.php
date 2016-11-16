@@ -26,7 +26,7 @@ class HTTPProcessor extends HttpBuilder
     }
 
     /**
-     * Build 'dashboard' processor
+     * Build 'invite' processor
      *
      * @return HTTPProcessors\Landing
      */

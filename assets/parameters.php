@@ -8,5 +8,5 @@ return [
         'user'     => 'root',
         'password' => '',
         'adapter'  => 'mysql',
-    ]
+    ],
 ];
