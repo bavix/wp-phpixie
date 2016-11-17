@@ -13,23 +13,23 @@ class Brand extends SOCProtected
     {
         if ($request->method() === 'POST')
         {
-            $title = $request->data()->getRequired('title');
+            $name = $request->data()->getRequired('name');
 
-            $title = mb_strtoupper($title);
+            $name = mb_strtoupper($name);
 
-            if (!empty($title))
+            if (!empty($name))
             {
                 $orm = $this->components->orm();
 
                 $brand = $orm->query(Model::BRAND)
-                    ->where('title', $title)
+                    ->where('name', $name)
                     ->findOne();
 
                 if (!$brand)
                 {
                     $brand = $orm->createEntity(Model::BRAND);
 
-                    $brand->title = $title;
+                    $brand->name = $name;
                     $brand->save();
                 }
 
@@ -57,6 +57,38 @@ class Brand extends SOCProtected
 
     public function defaultAction(Request $request)
     {
+
+        $orm      = $this->components->orm();
+        $paginate = $this->components->paginateOrm();
+
+        $query = $request->query();
+
+        $page = (int)$query->get('page', 1);
+
+        if (!$page)
+        {
+            $page = 1;
+        }
+
+        $limit  = 50;
+        $page   = $page > 0 ? $page - 1 : 0;
+        $offset = $limit * $page;
+
+        $brandQuery = $orm->query(Model::BRAND)
+            ->orderDescendingBy('id');
+
+        $brandQuery->offset($offset);
+        $brandQuery->limit($limit);
+
+        /**
+         * @var $pager \PHPixie\Paginate\Pager
+         */
+        $pager = $paginate->queryPager($brandQuery, $limit);
+
+        $pager->setCurrentPage($page + 1);
+
+        $this->variables['pager'] = $pager;
+
         return $this->render('cp:soc/brand/default');
     }
 

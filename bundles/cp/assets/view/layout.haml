@@ -19,6 +19,7 @@
     %link{:href => "/css/chosen-bootstrap.css", :rel => "stylesheet"}
     -#%link{:href => "/assets/chosen/chosen.min.css", :rel => "stylesheet"}
     %link{:href => "/assets/gridlex/gridlex.min.css", :rel => "stylesheet"}
+    %link{:href => "/assets/datatables/datatables.min.css", :rel => "stylesheet"}
     %link{:href => "/assets/animate.css/animate.css", :rel => "stylesheet"}
     %link{:href => "/assets/toastr/toastr.min.css", :rel => "stylesheet"}
     %link{:href => "/assets/font-awesome/css/font-awesome.css", :rel => "stylesheet"}
@@ -224,8 +225,11 @@
           %div
             %strong Copyright
             WBS // © 2016
+    %script{:src => "/js/request.js"}
     %script{:src => "/assets/jquery/jquery.js"}
+    %script{:src => "/assets/momentjs/moment.js"}
     %script{:src => "/assets/bootstrap/js/bootstrap.min.js"}
+    %script{:src => "/assets/datatables/datatables.min.js"}
     %script{:src => "/assets/toastr/toastr.min.js"}
     %script{:src => "/assets/chosen/chosen.jquery.min.js"}
     %script{:src => "/assets/url.js/url.min.js"}
@@ -234,5 +238,5 @@
     %script{:src => "/js/cp.js"}
     %script{:src => "/js/inspinia.js"}
     %script{:src => "/assets/pace/pace.min.js"}
-    partial: 'cp:config'
     %script(type="text/javascript" src="/js/inspinia.config.js")
+    partial: 'cp:config'

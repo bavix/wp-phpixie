@@ -24,7 +24,6 @@ class Repository extends \PHPixie\ORM\Drivers\Driver\PDO\Repository
     {
         if ($this->modelName() !== 'log')
         {
-
             $orm = $this->components->orm();
 
             $log = $orm->createEntity(Model::LOG);
@@ -43,7 +42,6 @@ class Repository extends \PHPixie\ORM\Drivers\Driver\PDO\Repository
             $log->data = json_encode($entity->asObject(true));
 
             $log->save();
-
         }
     }
 
