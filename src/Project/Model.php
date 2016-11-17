@@ -18,4 +18,6 @@ class Model
     const IMAGE = 'image';
 
     const INVITE = 'invite';
+
+    const LOG = 'log';
 }

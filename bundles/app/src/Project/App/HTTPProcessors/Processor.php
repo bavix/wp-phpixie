@@ -59,6 +59,18 @@ abstract class Processor extends Actions
     }
 
     /**
+     * @param $resolverPath string
+     *
+     * @return Response
+     */
+    public function redirectWithUtil($resolverPath)
+    {
+        $data = Util::httpWithURL($resolverPath);
+
+        return $this->redirectResponse($data['url'], $data['attributes']);
+    }
+
+    /**
      * @param       $resolverPath
      * @param array $attributes
      *

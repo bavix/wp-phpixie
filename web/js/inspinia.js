@@ -108,11 +108,11 @@ $(function () {
 
     });
 
-    // Tooltips demo
-    $('.tooltip-demo').tooltip({
-        selector: "[data-toggle=tooltip]",
-        container: "body"
-    });
+    // // Tooltips demo
+    // $('.tooltip-demo').tooltip({
+    //     selector: "[data-toggle=tooltip]",
+    //     container: "body"
+    // });
 
 
     // Full height of sidebar
@@ -172,8 +172,8 @@ $(function () {
         }
     });
 
-    $("[data-toggle=popover]")
-        .popover();
+    // $("[data-toggle=popover]")
+    //     .popover();
 
     // Add slimscroll to element
     $('.full-height-scroll').slimscroll({
@@ -254,7 +254,7 @@ function animationHover(element, animation) {
         },
         function () {
             //wait for animation to finish before removing classes
-            window.setTimeout(function () {
+            requestTimeout(function () {
                 element.removeClass('animated ' + animation);
             }, 2000);
         });

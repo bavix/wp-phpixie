@@ -3,9 +3,25 @@
 namespace Project\Framework;
 
 use \Project\Extension\Template\Template;
+use \Project\Extension\ORM\ORM;
 
 class Components extends \PHPixie\BundleFramework\Components
 {
+
+    /**
+     * @return ORM
+     */
+    protected function buildOrm()
+    {
+        $configuration = $this->builder->configuration();
+
+        return new ORM(
+            $this->database(),
+            $configuration->ormConfig(),
+            $configuration->ormWrappers(),
+            $this
+        );
+    }
 
     /**
      * @return Template

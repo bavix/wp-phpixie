@@ -22,9 +22,7 @@ class Invite extends Processor
 
         $token = $request->query()->getRequired('token');
 
-        $user = $this->loggedUser();
-
-        if ($user || mb_strlen($token) !== 8)
+        if (mb_strlen($token) !== 8)
         {
             throw new \Exception();
         }

@@ -60,7 +60,8 @@
         "phpixie/migrate": "3.*-dev",
         "monolog/monolog": "^1.21",
         "swiftmailer/swiftmailer": "^5.4",
-        "openbuildings/swiftmailer-css-inliner": "^0.4.0"
+        "openbuildings/swiftmailer-css-inliner": "^0.4.0",
+        "bshaffer/oauth2-server-php": "~1.8"
     },
     "require-dev": {
         "phpixie/test": "3.*-dev"

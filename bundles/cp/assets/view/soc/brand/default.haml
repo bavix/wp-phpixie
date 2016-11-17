@@ -1,3 +1,44 @@
 - $this->layout('cp:layout')
 
-%h1 Brand
+.col-lg-9
+  .ibox
+    .ibox-title
+      %h3 = $currentMenu->title
+    .ibox-content
+      partial: 'cp:pager'
+      %table.table.table-striped
+        %thead
+          %tr
+            %th Active
+            %th Name
+            %th Created At
+            %th Updated At
+            %th Actions
+        %tbody
+          - foreach ($pager->getCurrentItems() as $brand)
+            %tr(id="brand-#{$brand->id()}")
+              %td
+                %label.label{:class => ($brand->active ? 'label-success' : 'label-warning')}
+                  - if ($brand->active)
+                    Yes
+                  - else
+                    No
+              %td = $brand->name
+              %td.entry-date(data-time="#{$brand->createdAt}")
+              %td.entry-date(data-time="#{$brand->updatedAt}")
+              %td
+                - $httpPath = 'cp.soc.item'
+                - $attributes = ['nextProcessor' => 'brand', 'action' => 'edit', 'id' => $brand->id]
+                - $httpPath = $this->httpPath($httpPath, $attributes)
+                %a.btn.btn-primary.btn-sm(href="#{$httpPath}")
+                  %i.fa.fa-edit
+                  Edit
+                - if ($user->hasPermission('cp.soc.brand.delete'))
+                  - $httpPath = 'cp.soc.item'
+                  - $attributes = ['nextProcessor' => 'brand', 'action' => 'delete', 'id' => $brand->id]
+                  - $httpPath = $this->httpPath($httpPath, $attributes)
+                  %a.btn.btn-danger.btn-sm(href="#{$httpPath}")
+                    %i.fa.fa-trash
+                    Delete
+      partial: 'cp:pager'
+.col-lg-3

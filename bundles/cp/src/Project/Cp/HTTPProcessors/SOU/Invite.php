@@ -27,7 +27,7 @@ class Invite extends SOUProtected
         $inviteSystem = false;
         $email        = $data->get('email');
         $roleId       = $data->get('roleId', Role::User);
-
+        // validator add
         $message = null;
 
         if ($request->method() === 'POST')
