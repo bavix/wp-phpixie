@@ -35,12 +35,23 @@ class Webhook extends Processor
         return $this->logger;
     }
 
+    /**
+     * @param $command string
+     *
+     * @throws \Exception
+     */
     protected function shellExec($command)
     {
         $output = shell_exec($command);
         $this->logger()->addInfo($output);
     }
 
+    /**
+     * @param Request $request
+     *
+     * @return array|null|string
+     * @throws \Exception
+     */
     public function gitlabAction(Request $request)
     {
         $data  = $request->data();

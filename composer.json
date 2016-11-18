@@ -14,7 +14,8 @@
                 "bundles/landing/src/",
                 "bundles/webhook/src/",
                 "bundles/cp/src/",
-                "bundles/invite/src/"
+                "bundles/invite/src/",
+                "bundles/api/src/"
             ]
         }
     },

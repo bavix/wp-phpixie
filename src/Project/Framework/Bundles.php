@@ -3,6 +3,7 @@
 namespace Project\Framework;
 
 use PHPixie\FrameworkBundle;
+use Project\Api;
 use Project\App;
 use Project\Cp;
 
@@ -23,6 +24,7 @@ class Bundles extends \PHPixie\BundleFramework\Bundles
         return array(
             new FrameworkBundle($this->builder),
             new Cp($this->builder),
+            new Api($this->builder),
             new App($this->builder),
         );
     }

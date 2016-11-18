@@ -20,6 +20,17 @@ return array(
                     'name' => 'cp'
                 )
             ),
+            'api'      => array(
+                'type'     => 'prefix',
+                'path'     => 'api',
+                'defaults' => array(
+                    'bundle' => 'api'
+                ),
+                'resolver' => array(
+                    'type' => 'mount',
+                    'name' => 'api'
+                )
+            ),
             'app'     => array(
                 'type'     => 'prefix',
                 'defaults' => array(
