@@ -1,6 +1,7 @@
 $(function () {
 
     $("select").select2();
+    // $('.table').DataTable();
 
     function entryDate() {
         $(".entry-date").html(function (index, value) {
@@ -16,11 +17,13 @@ $(function () {
         });
     }
 
-    function interval(callback, timeout) {
+    function interval(callback) {
         callback();
-        requestInterval(callback, timeout);
+        return requestAnimFrame(function () {
+            interval(callback)
+        });
     }
 
-    interval(entryDate, 3000);
+    interval(entryDate);
 
 });

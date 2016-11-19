@@ -71,7 +71,7 @@ class Helper
             $this->logs[$modelName][$modelId] = $orm->query(Model::LOG)
                 ->where('model', $modelName)
                 ->where('modelId', $modelId)
-                ->orderDescendingBy('id');
+                ->orderDescendingBy('createdAt');
         }
 
         return $this->logs[$modelName][$modelId];

@@ -83,19 +83,19 @@ class Brand extends SOCProtected
          */
         $builder = $this->builder->frameworkBuilder();
 
-        $page = $request->query()->get('page');
+//        $page = $request->query()->get('page');
 
         $helper = $builder->helper();
 
         $logCount = $helper->logCountByModel(Model::BRAND, $id);
-        $logPager = $helper->logPager(Model::BRAND, $id, $page);
+//        $logPager = $helper->logPager(Model::BRAND, $id, $page);
 
         $brand = $this->getBrandById($id);
 
         $this->assign('brand', $brand);
 
         $this->assign('logCount', $logCount);
-        $this->assign('pager', $logPager);
+//        $this->assign('pager', $logPager);
 
         return $this->render('cp:soc/brand/edit');
     }
@@ -141,7 +141,7 @@ class Brand extends SOCProtected
         $orm = $this->components->orm();
 
         $brandQuery = $orm->query(Model::BRAND)
-            ->orderDescendingBy('id');
+            ->orderDescendingBy('createdAt');
 
         /**
          * @var $builder \Project\Framework\Builder
