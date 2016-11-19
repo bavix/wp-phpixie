@@ -37,7 +37,7 @@
                   - $httpPath = 'cp.soc.item'
                   - $attributes = ['nextProcessor' => 'brand', 'action' => 'delete', 'id' => $brand->id]
                   - $httpPath = $this->httpPath($httpPath, $attributes)
-                  %a.btn.btn-danger.btn-sm(href="#{$httpPath}")
+                  %a.btn.btn-danger.trash-data.btn-sm(href="#{$httpPath}")
                     %i.fa.fa-trash
                     Delete
       partial: 'cp:pager'
