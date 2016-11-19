@@ -91,10 +91,10 @@ class Invite extends Processor
         $grAvatar .= '?s=' . 100;
         $grAvatar .= '&d=' . $urlPath;
 
-        $this->variables['avatar'] = $grAvatar;
-        $this->variables['invite'] = $invite;
+        $this->assign('avatar', $grAvatar);
+        $this->assign('invite', $invite);
 
-        $this->variables['formSignUp'] = $formSignUp ?? null;
+        $this->assign('formSignUp', $formSignUp ?? null);
 
         return $this->render('app:invite/default');
     }

@@ -6,6 +6,7 @@ use PHPixie\HTTP\Request;
 use PHPixie\Processors\Exception;
 use Project\Cp\Builder;
 use Project\App\HTTPProcessors\Processor;
+use Project\Extension\Util;
 use Project\Model;
 use Project\ORM\Menu\Menu;
 use Project\ORM\User\User;
@@ -30,6 +31,54 @@ abstract class CPProtected extends Processor
      * @var User
      */
     protected $user;
+
+    /**
+     * @param string $url
+     * @param string $text
+     * @param string $icon
+     * @param string $class
+     */
+    public function addItemButton($url, $text = null, $icon = null, $class = null)
+    {
+        $data = Util::httpWithURL($url);
+
+        $url        = $data['url'];
+        $attributes = $data['attributes'];
+
+        switch ($attributes['action'])
+        {
+            case 'add':
+                $text  = 'Add Item';
+                $icon  = 'fa-plus';
+                $class = 'btn-success';
+                break;
+
+            case 'pull-request':
+                $text  = 'Pull Request';
+                $icon  = 'fa-chain-broken';
+                $class = 'btn-warning';
+                break;
+
+            case 'delete':
+                $text  = 'Delete Item';
+                $icon  = 'fa-trash';
+                $class = 'btn-danger trash-data';
+                break;
+            default:
+                break;
+        }
+
+        $http = $this->builder->frameworkBuilder()->http();
+
+        $url = $http->generatePath($url, $attributes);
+
+        $this->variables['actions'][] = [
+            'url'   => $url,
+            'class' => $class,
+            'icon'  => $icon,
+            'text'  => $text
+        ];
+    }
 
     public function breadcrumbs($action, Menu $current)
     {
@@ -79,6 +128,8 @@ abstract class CPProtected extends Processor
     public function __construct($builder)
     {
         parent::__construct($builder);
+
+        $this->variables['actions'] = [];
     }
 
     protected function accessDenied()

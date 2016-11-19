@@ -70,6 +70,9 @@ class Brand extends SOCProtected
     {
         $id = $request->attributes()->getRequired('id');
 
+        $this->addItemButton('cp.soc.brand@add');
+        $this->addItemButton('cp.soc.brand@delete.' . $id);
+
         if ($request->method() === 'POST')
         {
             return $request->data()->get();
@@ -80,10 +83,19 @@ class Brand extends SOCProtected
          */
         $builder = $this->builder->frameworkBuilder();
 
-        $page = $request->query()->get('page');
+//        $page = $request->query()->get('page');
 
-        $this->variables['brand'] = $this->getBrandById($id);
-        $this->variables['pager']   = $builder->helper()->log(Model::BRAND, $id, $page);
+        $helper = $builder->helper();
+
+        $logCount = $helper->logCountByModel(Model::BRAND, $id);
+//        $logPager = $helper->logPager(Model::BRAND, $id, $page);
+
+        $brand = $this->getBrandById($id);
+
+        $this->assign('brand', $brand);
+
+        $this->assign('logCount', $logCount);
+//        $this->assign('pager', $logPager);
 
         return $this->render('cp:soc/brand/edit');
     }
@@ -92,15 +104,16 @@ class Brand extends SOCProtected
     {
         if ($this->user->hasPermission('cp.soc.brand.delete'))
         {
+            return $request->method() ;
             if ($request->method() === 'DELETE')
             {
-                $id = $request->query()->getRequired('id');
-
-                $brand = $this->getBrandById($id);
-
-                $brand->delete();
-
-                return [$brand->isDeleted()]; // todo
+//                $id = $request->query()->getRequired('id');
+//
+//                $brand = $this->getBrandById($id);
+//
+//                $brand->delete();
+//
+//                return [$brand->isDeleted()]; // todo
             }
 
             return [];
@@ -110,6 +123,10 @@ class Brand extends SOCProtected
     }
 
     /**
+     * Brand List
+     */
+
+    /**
      * @param Request $request
      *
      * @return mixed
@@ -117,6 +134,7 @@ class Brand extends SOCProtected
      */
     public function defaultAction(Request $request)
     {
+        $this->addItemButton('cp.soc.brand@add');
 
         $query = $request->query();
         $page  = $query->get('page');
@@ -124,7 +142,7 @@ class Brand extends SOCProtected
         $orm = $this->components->orm();
 
         $brandQuery = $orm->query(Model::BRAND)
-            ->orderDescendingBy('id');
+            ->orderDescendingBy('createdAt');
 
         /**
          * @var $builder \Project\Framework\Builder
@@ -133,7 +151,7 @@ class Brand extends SOCProtected
 
         $pager = $builder->helper()->pager($page, $brandQuery);
 
-        $this->variables['pager'] = $pager;
+        $this->assign('pager', $pager);
 
         return $this->render('cp:soc/brand/default');
     }

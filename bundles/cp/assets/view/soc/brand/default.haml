@@ -24,8 +24,8 @@
                   - else
                     No
               %td = $brand->name
-              %td.entry-date(data-time="#{$brand->createdAt}")
-              %td.entry-date(data-time="#{$brand->updatedAt}")
+              %td.entry-date(data-time="#{$brand->createdAt}" data-order="#{$brand->createdAt}")
+              %td.entry-date(data-time="#{$brand->updatedAt}" data-order="#{$brand->updatedAt}")
               %td
                 - $httpPath = 'cp.soc.item'
                 - $attributes = ['nextProcessor' => 'brand', 'action' => 'edit', 'id' => $brand->id]

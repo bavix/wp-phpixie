@@ -1,21 +1,7 @@
 $(function () {
 
-    // var config = {
-    //     '.chosen-select': {},
-    //     '.chosen-select-deselect': {allow_single_deselect: true},
-    //     '.chosen-select-no-single': {disable_search_threshold: 10},
-    //     '.chosen-select-no-results': {no_results_text: 'Oops, nothing found!'},
-    //     '.chosen-select-rtl': {rtl: true},
-    //     '.chosen-select-width': {width: "95%"}
-    // };
-    //
-    // for (var selector in config) {
-    //     $(selector).chosen(config[selector]);
-    // }
-
-    // $.fn.select2.defaults.set("theme", "bootstrap");
-
     $("select").select2();
+    // $('.table').DataTable();
 
     function entryDate() {
         $(".entry-date").html(function (index, value) {
@@ -31,8 +17,52 @@ $(function () {
         });
     }
 
-    entryDate();
+    function interval(callback) {
+        callback();
+        return requestAnimFrame(function () {
+            interval(callback)
+        });
+    }
 
-    requestInterval(entryDate, 6000);
+    function ajaxDelete(button) {
+
+        var $current = $(button);
+
+        swal({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            confirmButtonClass: 'btn btn-danger',
+            cancelButtonClass: 'btn btn-primary'
+        }).then(function () {
+
+            $.ajax({
+                async: false,
+                url: $current.attr('href'),
+                type: 'json',
+                method: 'DELETE',
+                success: function (response) {
+
+                    console.log(response);
+                }
+            });
+            swal(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+            )
+        });
+
+        return false;
+    }
+
+    $('a.btn.btn-danger.trash-data').click(function () {
+        return ajaxDelete(this);
+    });
+
+    interval(entryDate);
 
 });

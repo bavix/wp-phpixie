@@ -33,6 +33,12 @@ return [
             'items' => Model::INVITE
         ],
 
+        [
+            'type'  => 'oneToMany',
+            'owner' => Model::ROLE,
+            'items' => Model::INVITE
+        ],
+
         // self
         [
             'type'  => 'oneToMany',
@@ -107,12 +113,6 @@ return [
                 'ownerProperty' => Model::HEADING,
                 'ownerKey'      => 'parentId'
             )
-        ],
-
-        [
-            'type'  => 'oneToMany',
-            'owner' => Model::ROLE,
-            'items' => Model::INVITE
         ],
 
         [

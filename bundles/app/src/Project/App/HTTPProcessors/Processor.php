@@ -90,6 +90,15 @@ abstract class Processor extends Actions
     }
 
     /**
+     * @param $key
+     * @param $value
+     */
+    public function assign($key, $value)
+    {
+        $this->variables[$key] = $value;
+    }
+
+    /**
      * @param $url
      *
      * @return Response

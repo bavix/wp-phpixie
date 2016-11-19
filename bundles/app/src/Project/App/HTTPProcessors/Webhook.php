@@ -71,12 +71,10 @@ class Webhook extends Processor
         $branch = basename($data->get('ref'));
         $this->logger()->addInfo('branch', ['branch' => $branch]);
 
-        $httpHost = $request->server()->get('http_host');
-
         switch (true)
         {
 
-            case ($httpHost === 'wheelpro.ru') && ($branch === 'master'):
+            case ($branch === 'master'):
 
                 chdir('/home/wheelpro/web/www/');
 
@@ -90,7 +88,7 @@ class Webhook extends Processor
 
                 break;
 
-            case ($httpHost === 'dev.wheelpro.ru') && ($branch === 'dev'):
+            case ($branch === 'dev'):
 
                 chdir('/home/wheelpro/web/dev/');
 

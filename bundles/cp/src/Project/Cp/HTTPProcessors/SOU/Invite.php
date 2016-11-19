@@ -14,9 +14,31 @@ class Invite extends SOUProtected
 
     /**
      * @param Request $request
+     *
+     * @return mixed
+     * @throws \PHPixie\Paginate\Exception
      */
     public function defaultAction(Request $request)
     {
+        $this->addItemButton('cp.sou.invite@add');
+
+        /**
+         * @var $builder \Project\Framework\Builder
+         */
+        $builder = $this->builder->frameworkBuilder();
+        $helper  = $builder->helper();
+
+        $orm = $this->components->orm();
+
+        $page = $request->query()->get('page');
+
+        $queryInvite = $orm->query(Model::INVITE)
+            ->orderDescendingBy('createdAt');
+
+        $pager = $helper->pager($page, $queryInvite);
+
+        $this->assign('pager', $pager);
+
         return $this->render('cp:sou/invite/default');
     }
 
@@ -135,15 +157,15 @@ class Invite extends SOUProtected
             ->find()
             ->asArray(true);
 
-        $this->variables['message'] = $message;
+        $this->assign('message', $message);
 
-        $this->variables['email']  = $email;
-        $this->variables['roleId'] = $roleId;
+        $this->assign('email', $email);
+        $this->assign('roleId', $roleId);
 
-        $this->variables['inviteSystem'] = $inviteSystem;
-        $this->variables['roles']        = $roles;
+        $this->assign('inviteSystem', $inviteSystem);
+        $this->assign('roles', $roles);
 
-        $this->variables['title'] = 'New Item';
+        $this->assign('title', 'New Item');
 
         return $this->render('cp:sou/invite/add');
     }
