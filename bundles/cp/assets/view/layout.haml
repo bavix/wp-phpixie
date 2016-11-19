@@ -1,8 +1,8 @@
 !!!
 %html
   %head
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
 
     - $layoutTitle = []
     - foreach ($breadcrumbs as $breadcrumb)
@@ -16,7 +16,9 @@
     %title = $layoutTitle
     %link{:href => "/assets/chosen/chosen.min.css", :rel => "stylesheet"}
     %link{:href => "/assets/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}
-    %link{:href => "/css/chosen-bootstrap.css", :rel => "stylesheet"}
+    -#%link{:href => "/css/chosen-bootstrap.css", :rel => "stylesheet"}
+    %link{:href => "/assets/select2/dist/css/select2.min.css", :rel => "stylesheet"}
+    -#%link{:href => "/css/select2-bootstrap.css", :rel => "stylesheet"}
     -#%link{:href => "/assets/chosen/chosen.min.css", :rel => "stylesheet"}
     %link{:href => "/assets/gridlex/gridlex.min.css", :rel => "stylesheet"}
     %link{:href => "/assets/datatables/datatables.min.css", :rel => "stylesheet"}
@@ -229,7 +231,8 @@
     %script{:src => "/assets/jquery/jquery.js"}
     %script{:src => "/assets/momentjs/moment.js"}
     %script{:src => "/assets/bootstrap/js/bootstrap.min.js"}
-    %script{:src => "/assets/datatables/datatables.min.js"}
+    %script{:src => "/assets/select2/dist/js/select2.min.js"}
+    -#%script{:src => "/assets/datatables/datatables.min.js"}
     %script{:src => "/assets/toastr/toastr.min.js"}
     %script{:src => "/assets/chosen/chosen.jquery.min.js"}
     %script{:src => "/assets/url.js/url.min.js"}

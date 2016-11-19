@@ -10,6 +10,7 @@ class Builder extends \PHPixie\DefaultBundle\Builder
 
     /**
      * Build Processor for HTTP requests
+     *
      * @return HTTPProcessor
      */
     protected function buildHttpProcessor()
@@ -19,6 +20,7 @@ class Builder extends \PHPixie\DefaultBundle\Builder
 
     /**
      * Build ORM Wrappers
+     *
      * @return ORMWrappers
      */
     protected function buildORMWrappers()
@@ -28,15 +30,17 @@ class Builder extends \PHPixie\DefaultBundle\Builder
 
     /**
      * Get bundle root directory
+     *
      * @return string
      */
     protected function getRootDirectory()
     {
-        return realpath(__DIR__.'/../../../');
+        return dirname(__DIR__, 3);
     }
 
     /**
      * Get bundle name
+     *
      * @return string
      */
     public function bundleName()

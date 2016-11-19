@@ -12,8 +12,6 @@ class ORMWrappers extends \PHPixie\ORM\Wrappers\Implementation
      * Array of model names that have custom Entity wrappers
      * @var array
      */
-    protected $databaseEntities = array(
-        
-    );
+    protected $databaseEntities = array();
 
 }

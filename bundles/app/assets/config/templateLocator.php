@@ -1,7 +1,3 @@
 <?php
 
-return array(
-    'type'             => 'directory',
-    'directory'        => 'view',
-    'defaultExtension' => 'haml'
-);
+return $this->read(dirname(__DIR__, 4) . '/assets/config/templateLocator.php');

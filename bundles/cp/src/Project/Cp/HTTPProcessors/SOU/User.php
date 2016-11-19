@@ -7,7 +7,7 @@ use Project\Cp\HTTPProcessors\Processor\SOUProtected;
 use Project\Model;
 use Project\App\Role;
 
-class User extends SOUProtected 
+class User extends SOUProtected
 {
 
     /**
@@ -19,33 +19,22 @@ class User extends SOUProtected
      */
     public function defaultAction(Request $request)
     {
-        $orm      = $this->components->orm();
-        $paginate = $this->components->paginateOrm();
-
         $query = $request->query();
 
-        $page = (int)$query->get('page', 1);
-
-        if (!$page)
-        {
-            $page = 1;
-        }
-
-        $limit  = 24;
-        $page   = $page > 0 ? $page - 1 : 0;
-        $offset = $limit * $page;
+        $orm  = $this->components->orm();
+        $page = $query->get('page');
 
         $userQuery = $orm->query(Model::USER);
 
-        $userQuery->offset($offset);
-        $userQuery->limit($limit);
+        /**
+         * @var $builder \Project\Framework\Builder
+         */
+        $builder = $this->builder->frameworkBuilder();
 
         /**
          * @var $pager \PHPixie\Paginate\Pager
          */
-        $pager = $paginate->queryPager($userQuery, $limit);
-
-        $pager->setCurrentPage($page + 1);
+        $pager = $builder->helper()->pager($page, $userQuery, 24);
 
         $this->variables['pager'] = $pager;
 
@@ -94,9 +83,8 @@ class User extends SOUProtected
     {
         $id = $request->attributes()->getRequired('id');
 
-        $user = $this->components->orm()
-            ->query(Model::USER)
-            ->where('id', (int)$id)
+        $user = $this->components->orm()->query(Model::USER)
+            ->in($id)
             ->findOne();
 
         $this->variables['user'] = $user;
