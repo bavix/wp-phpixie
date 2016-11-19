@@ -29,7 +29,7 @@ class Settings extends CPProtected
             }
         }
 
-        $this->variables['purgeCache'] = $purgeCache;
+        $this->assign('purgeCache', $purgeCache);
 
         return $this->render('cp:settings/default');
     }

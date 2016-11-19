@@ -14,6 +14,8 @@ class Helper
      */
     protected $builder;
 
+    protected $logs = array();
+
     /**
      * Helper constructor.
      *
@@ -55,22 +57,50 @@ class Helper
     }
 
     /**
-     * @param $modelName
-     * @param $modelId
-     * @param $page
+     * @param string $modelName
+     * @param int $modelId
+     *
+     * @return mixed
+     */
+    protected function modelLog($modelName, $modelId)
+    {
+        if (empty($this->logs[$modelName][$modelId]))
+        {
+            $orm = $this->builder->components()->orm();
+
+            $this->logs[$modelName][$modelId] = $orm->query(Model::LOG)
+                ->where('model', $modelName)
+                ->where('modelId', $modelId)
+                ->orderDescendingBy('id');
+        }
+
+        return $this->logs[$modelName][$modelId];
+    }
+
+    /**
+     * @param string $modelName
+     * @param int $modelId
+     * @param int $page
      *
      * @return Pager
      * @throws \PHPixie\Paginate\Exception
      */
-    public function log($modelName, $modelId, $page)
+    public function logPager($modelName, $modelId, $page)
     {
-        $orm = $this->builder->components()->orm();
-
-        $logerQuery = $orm->query(Model::LOG)
-            ->where('model', $modelName)
-            ->where('modelId', $modelId);
+        $logerQuery = $this->modelLog($modelName, $modelId);
 
         return $this->pager($page, $logerQuery);
+    }
+
+    /**
+     * @param string $name
+     * @param int    $id
+     *
+     * @return int
+     */
+    public function logCountByModel($name, $id)
+    {
+        return $this->modelLog($name, $id)->count();
     }
 
 }

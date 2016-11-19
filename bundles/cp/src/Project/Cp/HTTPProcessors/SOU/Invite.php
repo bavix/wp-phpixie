@@ -135,15 +135,15 @@ class Invite extends SOUProtected
             ->find()
             ->asArray(true);
 
-        $this->variables['message'] = $message;
+        $this->assign('message', $message);
 
-        $this->variables['email']  = $email;
-        $this->variables['roleId'] = $roleId;
+        $this->assign('email', $email);
+        $this->assign('roleId', $roleId);
 
-        $this->variables['inviteSystem'] = $inviteSystem;
-        $this->variables['roles']        = $roles;
+        $this->assign('inviteSystem', $inviteSystem);
+        $this->assign('roles', $roles);
 
-        $this->variables['title'] = 'New Item';
+        $this->assign('title', 'New Item');
 
         return $this->render('cp:sou/invite/add');
     }

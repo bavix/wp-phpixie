@@ -21,7 +21,7 @@ class Role extends SOUProtected
         $roles = $orm->query(Model::ROLE)
             ->find();
 
-        $this->variables['roles'] = $roles;
+        $this->assign('roles', $roles);
 
         return $this->render('cp:sou/role/default');
     }

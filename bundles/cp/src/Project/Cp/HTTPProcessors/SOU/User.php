@@ -36,7 +36,7 @@ class User extends SOUProtected
          */
         $pager = $builder->helper()->pager($page, $userQuery, 24);
 
-        $this->variables['pager'] = $pager;
+        $this->assign('pager', $pager);
 
         return $this->render('cp:sou/user/default');
     }
@@ -87,7 +87,7 @@ class User extends SOUProtected
             ->in($id)
             ->findOne();
 
-        $this->variables['user'] = $user;
+        $this->assign('user', $user);
 
         return $this->render('cp:sou/user/profile');
     }
