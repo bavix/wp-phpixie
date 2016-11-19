@@ -104,15 +104,16 @@ class Brand extends SOCProtected
     {
         if ($this->user->hasPermission('cp.soc.brand.delete'))
         {
+            return $request->method() ;
             if ($request->method() === 'DELETE')
             {
-                $id = $request->query()->getRequired('id');
-
-                $brand = $this->getBrandById($id);
-
-                $brand->delete();
-
-                return [$brand->isDeleted()]; // todo
+//                $id = $request->query()->getRequired('id');
+//
+//                $brand = $this->getBrandById($id);
+//
+//                $brand->delete();
+//
+//                return [$brand->isDeleted()]; // todo
             }
 
             return [];

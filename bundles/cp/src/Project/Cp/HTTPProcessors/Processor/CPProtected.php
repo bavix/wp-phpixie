@@ -62,7 +62,7 @@ abstract class CPProtected extends Processor
             case 'delete':
                 $text  = 'Delete Item';
                 $icon  = 'fa-trash';
-                $class = 'btn-danger';
+                $class = 'btn-danger trash-data';
                 break;
             default:
                 break;

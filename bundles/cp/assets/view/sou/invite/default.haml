@@ -1,3 +1,34 @@
 - $this->layout('cp:layout')
 
-%h1 Invite -- In developing
+.col-lg-12
+  .ibox
+    .ibox-title
+      %h3 = $currentMenu->title
+    .ibox-content
+      partial: 'cp:pager'
+      %table.table.table-striped
+        %thead
+          %tr
+            %th Active
+            %th Token
+            %th Email
+            %th Role
+            %th Who has invited
+            %th CreatedAt
+            %th Updated At
+        %tbody
+          - foreach ($pager->getCurrentItems() as $invite)
+            %tr
+              %td
+                %label.label{:class => ($invite->activated ? 'label-warning' : 'label-success')}
+                  - if ($invite->activated)
+                    No
+                  - else
+                    Yes
+              %td = $invite->token
+              %td = $invite->email
+              %td = $invite->role()->title
+              %td = $invite->user()->login
+              %td.entry-date(data-time="#{$invite->createdAt}")
+              %td.entry-date(data-time="#{$invite->updatedAt}")
+      partial: 'cp:pager'

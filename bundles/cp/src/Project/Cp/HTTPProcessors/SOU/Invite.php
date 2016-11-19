@@ -14,9 +14,31 @@ class Invite extends SOUProtected
 
     /**
      * @param Request $request
+     *
+     * @return mixed
+     * @throws \PHPixie\Paginate\Exception
      */
     public function defaultAction(Request $request)
     {
+        $this->addItemButton('cp.sou.invite@add');
+
+        /**
+         * @var $builder \Project\Framework\Builder
+         */
+        $builder = $this->builder->frameworkBuilder();
+        $helper  = $builder->helper();
+
+        $orm = $this->components->orm();
+
+        $page = $request->query()->get('page');
+
+        $queryInvite = $orm->query(Model::INVITE)
+            ->orderDescendingBy('createdAt');
+
+        $pager = $helper->pager($page, $queryInvite);
+
+        $this->assign('pager', $pager);
+
         return $this->render('cp:sou/invite/default');
     }
 
