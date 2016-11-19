@@ -1,5 +1,7 @@
 source:
+    - ./bundles/api/src/Project
     - ./bundles/app/src/Project
+    - ./bundles/cp/src/Project
     - ./src/Project
 
 destination: ./../doc
