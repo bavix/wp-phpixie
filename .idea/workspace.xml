@@ -2,38 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/config/templateLocator.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/migrate/migrations/8.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Project/Helper.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Project/ORMWrappers.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/select2-bootstrap.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/config/orm.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/assets/config/templateLocator.php" afterPath="$PROJECT_DIR$/bundles/api/assets/config/templateLocator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/Builder.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/Builder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessor.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessor.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/ORMWrappers.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/ORMWrappers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/assets/config/orm.php" afterPath="$PROJECT_DIR$/bundles/app/assets/config/orm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/assets/config/templateLocator.php" afterPath="$PROJECT_DIR$/bundles/app/assets/config/templateLocator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App/ORMWrappers.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/ORMWrappers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/config/templateLocator.php" afterPath="$PROJECT_DIR$/bundles/cp/assets/config/templateLocator.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/layout.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/layout.haml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/default.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/default.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/soc/heading/default.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/heading/default.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/sou/invite/add.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/sou/invite/add.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/sou/invite/default.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/sou/invite/default.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/sou/permission/default.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/sou/permission/default.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/sow/bolt-pattern/default.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/sow/bolt-pattern/default.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/sow/style/default.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/sow/style/default.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/default.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/default.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/Builder.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/Builder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Processor/CPProtected.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Processor/CPProtected.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOU/User.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOU/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/ORMWrappers.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/ORMWrappers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Project/Framework/Builder.php" afterPath="$PROJECT_DIR$/src/Project/Framework/Builder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp.js" afterPath="$PROJECT_DIR$/web/js/cp.js" />
     </list>
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,11 +34,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="edit.haml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
+            <state relative-caret-position="-34">
+              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Brand.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SOCProtected.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Processor/SOCProtected.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/layout.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="224" column="32" selection-start-line="224" selection-start-column="32" selection-end-line="224" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Processor.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Processor.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HTTP.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/phpixie/framework/src/PHPixie/Framework/HTTP.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="252" column="32" selection-start-line="252" selection-start-column="20" selection-end-line="252" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -82,16 +104,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Util.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Project/Extension/Util.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="74" column="38" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ORMWrappers.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Project/ORMWrappers.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -102,41 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="orm.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/app/assets/config/orm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="120" column="33" selection-start-line="120" selection-start-column="33" selection-end-line="120" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pager.haml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/pager.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="cp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/cp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Helper.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Project/Helper.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+            <state relative-caret-position="-2">
+              <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -158,7 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Project/Extension/ORM/PDO.php" />
         <option value="$PROJECT_DIR$/src/Project/Model.php" />
         <option value="$PROJECT_DIR$/assets/migrate/migrations/6.sql" />
         <option value="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Dashboard.php" />
@@ -193,7 +174,6 @@
         <option value="$PROJECT_DIR$/bundles/cp/assets/config/templateLocator.php" />
         <option value="$PROJECT_DIR$/assets/migrate/migrations/8.sql" />
         <option value="$PROJECT_DIR$/web/css/select2-bootstrap.css" />
-        <option value="$PROJECT_DIR$/bundles/cp/assets/view/layout.haml" />
         <option value="$PROJECT_DIR$/assets/sass/template/wbs.sass" />
         <option value="$PROJECT_DIR$/web/js/cp.js" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/sou/invite/add.haml" />
@@ -205,10 +185,12 @@
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/heading/default.haml" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/default.haml" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/default.haml" />
-        <option value="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php" />
         <option value="$PROJECT_DIR$/src/Project/Helper.php" />
         <option value="$PROJECT_DIR$/bundles/app/assets/config/orm.php" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml" />
+        <option value="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php" />
+        <option value="$PROJECT_DIR$/bundles/cp/assets/view/layout.haml" />
+        <option value="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Processor/CPProtected.php" />
       </list>
     </option>
   </component>
@@ -1594,12 +1576,12 @@
       <workItem from="1479467651133" duration="3119000" />
       <workItem from="1479471831803" duration="4501000" />
       <workItem from="1479490821986" duration="90000" />
-      <workItem from="1479490930796" duration="12537000" />
+      <workItem from="1479490930796" duration="15160000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="515304000" />
+    <option name="totallyTimeSpent" value="517927000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1648,14 +1630,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bundles/api/assets/config/orm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="63" selection-start-line="2" selection-start-column="63" selection-end-line="2" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/config/orm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-612">
@@ -1816,30 +1790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Processor/CPProtected.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Processor/SOCProtected.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Processor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="86" column="20" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/phpixie/orm/src/PHPixie/ORM/Models/Type/Database/Implementation/Entity.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -1852,14 +1802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="465" column="68" selection-start-line="465" selection-start-column="68" selection-end-line="465" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/layout.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3243">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1976,14 +1918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Project/Helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/app/assets/config/orm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -2000,26 +1934,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php">
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/pager.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-184">
-          <caret line="61" column="42" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Project/Helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/cp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Project/Extension/Util.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="74" column="38" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="38" />
+        <state relative-caret-position="-2">
+          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -2032,10 +1966,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/pager.haml">
+    <entry file="file://$PROJECT_DIR$/src/Project/Extension/Util.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-215">
+          <caret line="74" column="27" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/phpixie/framework/src/PHPixie/Framework/HTTP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="252" column="32" selection-start-line="252" selection-start-column="20" selection-end-line="252" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Processor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2048,10 +2006,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml">
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/layout.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
+        <state relative-caret-position="242">
+          <caret line="224" column="32" selection-start-line="224" selection-start-column="32" selection-end-line="224" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Processor/CPProtected.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="40" column="79" selection-start-line="40" selection-start-column="79" selection-end-line="40" selection-end-column="79" />
+          <folding>
+            <element signature="e#725#1839#0#PHP" expanded="false" />
+            <element signature="e#1845#2915#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Processor/SOCProtected.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
           <folding />
         </state>
       </provider>

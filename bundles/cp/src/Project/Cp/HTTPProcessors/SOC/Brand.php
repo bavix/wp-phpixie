@@ -70,6 +70,9 @@ class Brand extends SOCProtected
     {
         $id = $request->attributes()->getRequired('id');
 
+        $this->addItemButton('cp.soc.brand@add');
+        $this->addItemButton('cp.soc.brand@delete.' . $id);
+
         if ($request->method() === 'POST')
         {
             return $request->data()->get();
@@ -83,7 +86,7 @@ class Brand extends SOCProtected
         $page = $request->query()->get('page');
 
         $this->variables['brand'] = $this->getBrandById($id);
-        $this->variables['pager']   = $builder->helper()->log(Model::BRAND, $id, $page);
+        $this->variables['pager'] = $builder->helper()->log(Model::BRAND, $id, $page);
 
         return $this->render('cp:soc/brand/edit');
     }
@@ -117,6 +120,7 @@ class Brand extends SOCProtected
      */
     public function defaultAction(Request $request)
     {
+        $this->addItemButton('cp.soc.brand@add');
 
         $query = $request->query();
         $page  = $query->get('page');

@@ -218,9 +218,10 @@
                     %strong = isset($title) ? $title : $breadcrumb
           .col-sm-8
             .title-action
-              %a.btn.btn-success{:href => ""}
-                %i.fa.fa-plus
-                Add item
+              - foreach ($actions as $buttonAction)
+                %a.btn{:class => $buttonAction['class'], :href => $buttonAction['url']}
+                  %i.fa{:class => $buttonAction['icon']}
+                  = $buttonAction['text']
         .wrapper.wrapper-content
           - $this->childContent()
         .footer

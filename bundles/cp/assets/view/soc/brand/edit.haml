@@ -35,7 +35,7 @@
                           Using carbon fiber technology
 
                       .form-group.form-group-lg
-                        %input#isMultipleBrand.wbs-checkbox(type="checkbox" name="isMultiple" checked="#{(bool)$brand->isMultiple}")
+                        %input#isMultipleBrand.wbs-checkbox(type="checkbox" name="isMultiple" disabled checked="#{(bool)$brand->isMultiple}")
                         %label(for="isMultipleBrand")
                           Multiple Brand
 
@@ -51,19 +51,17 @@
                         %label(for="activeBrand")
                           Active
 
-
-                  -#.hidden
-                  #multipleBrandInputs
+                  #multipleBrandInputs.hidden
 
                     .form-group.form-group-lg
                       %label.control-label(for="brandWebGroup")
                         Web Group
-                      %input#brandWebGroup.form-control.text-uppercase(type="text" name="webGroup" value="#{$brand->webGroup}")
+                      %input#brandWebGroup.form-control.text-uppercase(type="text" disabled name="webGroup" value="#{$brand->webGroup}")
 
                     .form-group.form-group-lg
                       %label.control-label(for="brandsBrands")
                         Brands in group
-                      %input#brandsBrands.form-control.text-uppercase(type="text" name="brandsBrands")
+                      %input#brandsBrands.form-control.text-uppercase(type="text" disabled name="brandsBrands")
 
                   .hr-line-dashed
                   .form-group(align="center")
