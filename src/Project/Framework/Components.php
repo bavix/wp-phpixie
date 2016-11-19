@@ -2,8 +2,8 @@
 
 namespace Project\Framework;
 
-use \Project\Extension\Template\Template;
-use \Project\Extension\ORM\ORM;
+use Project\Extension\ORM\ORM;
+use Project\Extension\Template\Template;
 
 class Components extends \PHPixie\BundleFramework\Components
 {

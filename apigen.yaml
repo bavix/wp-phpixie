@@ -1,9 +1,8 @@
 source:
-  - ./bundles/api/src/Project
-  - ./bundles/app/src/Project
-  - ./bundles/cp/src/Project
-#  - ./src/Project
-
+  - bundles/api/src/Project
+  - bundles/app/src/Project
+  - bundles/cp/src/Project
+#  - src/Project
 destination: ./../doc
 internal: yes
 php: yes
@@ -12,4 +11,3 @@ deprecated: yes
 todo: yes
 sourceCode: no
 quiet: no
-debug: yes

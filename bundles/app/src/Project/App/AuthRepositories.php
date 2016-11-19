@@ -2,10 +2,10 @@
 
 namespace Project\App;
 
-use PHPixie\ORM;
 use PHPixie\Auth\Repositories\Registry\Builder;
-use Project\ORM\User\UserRepository;
+use PHPixie\ORM;
 use Project\Model;
+use Project\ORM\User\UserRepository;
 
 /**
  * Registry of user repositories for Auth component

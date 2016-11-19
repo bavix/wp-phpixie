@@ -2,8 +2,6 @@
 
 namespace Project\Api;
 
-use PHPixie\HTTP\Request;
-
 class HTTPProcessor extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
 {
 

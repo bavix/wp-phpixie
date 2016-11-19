@@ -4,7 +4,6 @@ namespace Project\Cp\HTTPProcessors\SOU;
 
 use PHPixie\HTTP\Request;
 use Project\Cp\HTTPProcessors\Processor\SOUProtected;
-use Project\Model;
 
 class Permission extends SOUProtected
 {

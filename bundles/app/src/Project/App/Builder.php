@@ -2,12 +2,7 @@
 
 namespace Project\App;
 
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
 use PHPixie\DefaultBundle\Builder as DefaultBuilder;
-use RandomLib\Factory;
-use Stash\Driver\Composite;
-use Stash\Pool;
 
 /**
  * App bundle builder

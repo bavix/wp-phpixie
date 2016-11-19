@@ -61,7 +61,7 @@ class Helper
 
     /**
      * @param string $modelName
-     * @param int $modelId
+     * @param int    $modelId
      *
      * @return mixed
      */
@@ -82,8 +82,8 @@ class Helper
 
     /**
      * @param string $modelName
-     * @param int $modelId
-     * @param int $page
+     * @param int    $modelId
+     * @param int    $page
      *
      * @return Pager
      * @throws \PHPixie\Paginate\Exception
