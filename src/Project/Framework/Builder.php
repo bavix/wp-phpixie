@@ -2,6 +2,7 @@
 
 namespace Project\Framework;
 
+use Project\Helper;
 use RandomLib\Factory;
 use Stash\Driver\Composite;
 use Stash\Pool;
@@ -13,6 +14,22 @@ use Stash\Pool;
  */
 class Builder extends \PHPixie\BundleFramework\Builder
 {
+
+    /**
+     * @return Helper
+     */
+    public function helper()
+    {
+        return $this->instance('helper');
+    }
+
+    /**
+     * @return Helper
+     */
+    protected function buildHelper()
+    {
+        return new Helper($this);
+    }
 
     /**
      * @return Factory
@@ -46,6 +63,9 @@ class Builder extends \PHPixie\BundleFramework\Builder
     {
         $config = $this->assets()->configStorage();
 
+        /**
+         * @var $drivers array
+         */
         $drivers = $config->get('cache.drivers');
 
         $subDrivers = [];
@@ -106,7 +126,7 @@ class Builder extends \PHPixie\BundleFramework\Builder
      */
     protected function getRootDirectory()
     {
-        return realpath(__DIR__ . '/../../../');
+        return dirname(__DIR__, 3);
     }
 
 }

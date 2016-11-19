@@ -114,6 +114,12 @@ return [
             'owner' => Model::ROLE,
             'items' => Model::INVITE
         ],
+
+        [
+            'type'  => 'oneToMany',
+            'owner' => Model::USER,
+            'items' => Model::LOG
+        ],
     ]
 
 ];

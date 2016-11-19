@@ -35,7 +35,7 @@ class Builder extends \PHPixie\DefaultBundle\Builder
      */
     protected function getRootDirectory()
     {
-        return realpath(__DIR__ . '/../../../');
+        return dirname(__DIR__, 3);
     }
 
     /**

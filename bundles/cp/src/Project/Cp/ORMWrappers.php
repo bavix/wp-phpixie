@@ -3,14 +3,9 @@
 namespace Project\Cp;
 
 /**
- * Here you can define wrappers for the ORM to use.
+ * ORM Wrapper registry
  */
-class ORMWrappers extends \PHPixie\ORM\Wrappers\Implementation
+class ORMWrappers extends \Project\ORMWrappers
 {
-    /**
-     * Array of model names that have custom Entity wrappers
-     *
-     * @var array
-     */
-    protected $databaseEntities = array();
+
 }

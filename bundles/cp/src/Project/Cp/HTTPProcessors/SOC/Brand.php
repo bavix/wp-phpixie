@@ -9,6 +9,32 @@ use Project\Model;
 class Brand extends SOCProtected
 {
 
+    /**
+     * @param $name
+     *
+     * @return null|\PHPixie\ORM\Models\Type\Database\Implementation\Entity
+     * @throws \PHPixie\ORM\Exception\Query
+     */
+    protected function getBrandByName($name)
+    {
+        return $this->components->orm()->query(Model::BRAND)
+            ->where('name', $name)
+            ->findOne();
+    }
+
+    /**
+     * @param $id
+     *
+     * @return null|\PHPixie\ORM\Models\Type\Database\Implementation\Entity
+     * @throws \PHPixie\ORM\Exception\Query
+     */
+    protected function getBrandById($id)
+    {
+        return $this->components->orm()->query(Model::BRAND)
+            ->in($id)
+            ->findOne();
+    }
+
     public function addAction(Request $request)
     {
         if ($request->method() === 'POST')
@@ -21,9 +47,7 @@ class Brand extends SOCProtected
             {
                 $orm = $this->components->orm();
 
-                $brand = $orm->query(Model::BRAND)
-                    ->where('name', $name)
-                    ->findOne();
+                $brand = $this->getBrandByName($name);
 
                 if (!$brand)
                 {
@@ -46,46 +70,68 @@ class Brand extends SOCProtected
     {
         $id = $request->attributes()->getRequired('id');
 
+        if ($request->method() === 'POST')
+        {
+            return $request->data()->get();
+        }
+
+        /**
+         * @var \Project\Framework\Builder $builder
+         */
+        $builder = $this->builder->frameworkBuilder();
+
+        $page = $request->query()->get('page');
+
+        $this->variables['brand'] = $this->getBrandById($id);
+        $this->variables['pager']   = $builder->helper()->log(Model::BRAND, $id, $page);
+
         return $this->render('cp:soc/brand/edit');
     }
 
     public function deleteAction(Request $request)
     {
-        // ajax
-        return [];
+        if ($this->user->hasPermission('cp.soc.brand.delete'))
+        {
+            if ($request->method() === 'DELETE')
+            {
+                $id = $request->query()->getRequired('id');
+
+                $brand = $this->getBrandById($id);
+
+                $brand->delete();
+
+                return [$brand->isDeleted()]; // todo
+            }
+
+            return [];
+        }
+
+        throw new \Exception();
     }
 
+    /**
+     * @param Request $request
+     *
+     * @return mixed
+     * @throws \PHPixie\Paginate\Exception
+     */
     public function defaultAction(Request $request)
     {
 
-        $orm      = $this->components->orm();
-        $paginate = $this->components->paginateOrm();
-
         $query = $request->query();
+        $page  = $query->get('page');
 
-        $page = (int)$query->get('page', 1);
-
-        if (!$page)
-        {
-            $page = 1;
-        }
-
-        $limit  = 50;
-        $page   = $page > 0 ? $page - 1 : 0;
-        $offset = $limit * $page;
+        $orm = $this->components->orm();
 
         $brandQuery = $orm->query(Model::BRAND)
             ->orderDescendingBy('id');
 
-        $brandQuery->offset($offset);
-        $brandQuery->limit($limit);
-
         /**
-         * @var $pager \PHPixie\Paginate\Pager
+         * @var $builder \Project\Framework\Builder
          */
-        $pager = $paginate->queryPager($brandQuery, $limit);
+        $builder = $this->builder->frameworkBuilder();
 
-        $pager->setCurrentPage($page + 1);
+        $pager = $builder->helper()->pager($page, $brandQuery);
 
         $this->variables['pager'] = $pager;
 
