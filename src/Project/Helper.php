@@ -14,6 +14,9 @@ class Helper
      */
     protected $builder;
 
+    /**
+     * @var array
+     */
     protected $logs = array();
 
     /**
