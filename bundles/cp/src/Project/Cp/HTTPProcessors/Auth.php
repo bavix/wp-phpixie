@@ -23,6 +23,8 @@ class Auth extends Processor
      */
     public function defaultAction(Request $request)
     {
+        $this->assign('title', 'Auth');
+
         /**
          * @var User $user
          */
