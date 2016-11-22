@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/migrate/migrations/9.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/sou/role/default.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/sou/role/default.haml" />
     </list>
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,19 +48,19 @@
       <file leaf-file-name="edit.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="105" column="28" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
+            <state relative-caret-position="357">
+              <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
               <folding>
-                <marker date="1479814537563" expanded="true" signature="4831:5241" ph="{...}" />
-                <marker date="1479814537563" expanded="true" signature="4859:5235" ph="{&quot;theme&quot;: filerObject.theme...}" />
-                <marker date="1479814537563" expanded="true" signature="4934:4983" ph="{...}" />
-                <marker date="1479814537563" expanded="true" signature="5018:5067" ph="{...}" />
+                <marker date="1479817470935" expanded="true" signature="4999:5409" ph="{...}" />
+                <marker date="1479817470935" expanded="true" signature="5027:5403" ph="{&quot;theme&quot;: filerObject.theme...}" />
+                <marker date="1479817470935" expanded="true" signature="5102:5151" ph="{...}" />
+                <marker date="1479817470935" expanded="true" signature="5186:5235" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Brand.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Brand.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="250">
@@ -67,11 +70,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filter.php" pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/filter.php">
+      <file leaf-file-name="9.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/9.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4658">
-              <caret line="274" column="32" selection-start-line="274" selection-start-column="9" selection-end-line="274" selection-end-column="32" />
+            <state relative-caret-position="51">
+              <caret line="3" column="77" selection-start-line="3" selection-start-column="77" selection-end-line="3" selection-end-column="77" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sou/role/default.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="760">
+              <caret line="466" column="34" selection-start-line="466" selection-start-column="34" selection-end-line="466" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -80,7 +93,7 @@
       <file leaf-file-name="Request.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/phpixie/http/src/PHPixie/HTTP/Request.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1037">
+            <state relative-caret-position="80">
               <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
               <folding />
             </state>
@@ -90,7 +103,7 @@
       <file leaf-file-name="Helper.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Project/Helper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1428">
+            <state relative-caret-position="437">
               <caret line="86" column="27" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="27" />
               <folding />
             </state>
@@ -123,8 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Project/Framework/Builder.php" />
-        <option value="$PROJECT_DIR$/bundles/app/src/Project/App/ORMWrappers.php" />
         <option value="$PROJECT_DIR$/bundles/cp/src/Project/Cp/ORMWrappers.php" />
         <option value="$PROJECT_DIR$/bundles/api/assets/config/orm.php" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/config/orm.php" />
@@ -171,9 +182,11 @@
         <option value="$PROJECT_DIR$/src/Project/ORM/Brand/Query.php" />
         <option value="$PROJECT_DIR$/src/Project/ORMWrappers.php" />
         <option value="$PROJECT_DIR$/src/Project/Helper.php" />
-        <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml" />
         <option value="$PROJECT_DIR$/web/index.php" />
         <option value="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php" />
+        <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml" />
+        <option value="$PROJECT_DIR$/bundles/cp/assets/view/sou/role/default.haml" />
+        <option value="$PROJECT_DIR$/assets/migrate/migrations/9.sql" />
       </list>
     </option>
   </component>
@@ -1014,6 +1027,70 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="sou" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WBS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wbs-cms" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cp" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sou" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="role" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WBS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wbs-cms" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cp" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="soc" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -1121,6 +1198,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WBS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wbs-cms" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrate" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WBS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wbs-cms" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrate" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1319,15 +1436,15 @@
       <workItem from="1479809587013" duration="723000" />
       <workItem from="1479810316128" duration="847000" />
       <workItem from="1479811168351" duration="1784000" />
-      <workItem from="1479814899697" duration="485000" />
+      <workItem from="1479814899697" duration="1677000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="551192000" />
+    <option name="totallyTimeSpent" value="552384000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="49" width="1936" height="1066" extended-state="0" />
+    <frame x="1912" y="49" width="1936" height="1066" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21748401" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1373,20 +1490,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOWProcessorBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-362">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sou/role/default.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6924">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/phpixie/paginate-orm/src/PHPixie/PaginateORM.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1679,38 +1782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Project/ORM/Brand/Query.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Project/Helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="86" column="27" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpixie/http/src/PHPixie/HTTP/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/filter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4658">
-          <caret line="274" column="32" selection-start-line="274" selection-start-column="9" selection-end-line="274" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1735,16 +1806,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/filter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="105" column="28" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
-          <folding>
-            <marker date="1479814537563" expanded="true" signature="4831:5241" ph="{...}" />
-            <marker date="1479814537563" expanded="true" signature="4859:5235" ph="{&quot;theme&quot;: filerObject.theme...}" />
-            <marker date="1479814537563" expanded="true" signature="4934:4983" ph="{...}" />
-            <marker date="1479814537563" expanded="true" signature="5018:5067" ph="{...}" />
-          </folding>
+        <state relative-caret-position="334">
+          <caret line="274" column="32" selection-start-line="274" selection-start-column="9" selection-end-line="274" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/phpixie/http/src/PHPixie/HTTP/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Project/Helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="86" column="27" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Project/ORM/Brand/Query.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1752,6 +1842,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding>
+            <marker date="1479817470935" expanded="true" signature="4999:5409" ph="{...}" />
+            <marker date="1479817470935" expanded="true" signature="5027:5403" ph="{&quot;theme&quot;: filerObject.theme...}" />
+            <marker date="1479817470935" expanded="true" signature="5102:5151" ph="{...}" />
+            <marker date="1479817470935" expanded="true" signature="5186:5235" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sou/role/default.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="466" column="34" selection-start-line="466" selection-start-column="34" selection-end-line="466" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/9.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="77" selection-start-line="3" selection-start-column="77" selection-end-line="3" selection-end-column="77" />
           <folding />
         </state>
       </provider>

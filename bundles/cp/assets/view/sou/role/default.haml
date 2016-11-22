@@ -452,3 +452,32 @@
                       %span.label.label-info master
                     - else
                       %span.label.label-default none
+
+                %tr
+
+                  %td
+                    Log
+                    - if ($role->hasMyPermission('cp.log'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.log'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+
+                  %td Global [ALL]
+
+                  %td
+                    - if ($role->hasMyPermission('cp.log'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.log'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-default none
+                  %td
+                    %span.label.label-default none
+                  %td
+                    %span.label.label-default none
+                  %td
+                    %span.label.label-default none
+                  %td
+                    %span.label.label-default none

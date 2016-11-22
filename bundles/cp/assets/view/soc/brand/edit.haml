@@ -14,10 +14,11 @@
           %ul.nav.nav-tabs
             %li.active
               %a(data-toggle="tab" href="#tab-base") Base
-            %li
-              %a(data-toggle="tab" href="#tab-last-activity")
-                %label.label.label-info.pull-right = $logCount
-                Last activity
+            - if ($user->hasPermission('cp.log'))
+              %li
+                %a(data-toggle="tab" href="#tab-last-activity")
+                  %label.label.label-info.pull-right = $logCount
+                  Last activity
           .tab-content
 
             #tab-base.tab-pane.active
@@ -75,36 +76,37 @@
                       %i.fa.fa-save
                       Submit
 
-            #tab-last-activity.tab-pane
-              .panel-body
-                %table.table.table-bordered
-                  %thead
-                    %tr
-                      %th User (Login)
-                      %th Type
-                      %th Data
-                      %th Created At
-                  %tbody
-                    - foreach ($pager->getCurrentItems() as $log)
-                      %tr(id="log-#{$log->id}")
-                        %td
-                          - $logUser = $log->user()
-                          - $urlProfile = 'cp.sou.user@profile.' . $logUser->id
-                          - $urlData = \Project\Extension\Util::httpWithURL($urlProfile)
-                          - $httpPath = $this->httpPath($urlData['url'], $urlData['attributes'])
-                          %a(href="#{$httpPath}")
-                            = $_($logUser->login)
-                        %td
-                          - $classLabel = 'label-success'
-                          - if ($log->type === 'updated')
-                            - $classLabel = 'label-warning'
-                          - else if ($log->type === 'deleted')
-                            - $classLabel = 'label-danger'
-                          %label{:class => ['label', $classLabel]} = $_($log->type)
-                        %td
-                          %pre
-                            - print_r(json_decode($log->data))
-                        %td.entry-date(data-time="#{$log->createdAt}" data-order="#{$log->createdAt}")
+            - if ($user->hasPermission('cp.log'))
+              #tab-last-activity.tab-pane
+                .panel-body
+                  %table.table.table-bordered
+                    %thead
+                      %tr
+                        %th User (Login)
+                        %th Type
+                        %th Data
+                        %th Created At
+                    %tbody
+                      - foreach ($pager->getCurrentItems() as $log)
+                        %tr(id="log-#{$log->id}")
+                          %td
+                            - $logUser = $log->user()
+                            - $urlProfile = 'cp.sou.user@profile.' . $logUser->id
+                            - $urlData = \Project\Extension\Util::httpWithURL($urlProfile)
+                            - $httpPath = $this->httpPath($urlData['url'], $urlData['attributes'])
+                            %a(href="#{$httpPath}")
+                              = $_($logUser->login)
+                          %td
+                            - $classLabel = 'label-success'
+                            - if ($log->type === 'updated')
+                              - $classLabel = 'label-warning'
+                            - else if ($log->type === 'deleted')
+                              - $classLabel = 'label-danger'
+                            %label{:class => ['label', $classLabel]} = $_($log->type)
+                          %td
+                            %pre
+                              - print_r(json_decode($log->data))
+                          %td.entry-date(data-time="#{$log->createdAt}" data-order="#{$log->createdAt}")
 
 .col-lg-3(align="center")
   %form(method="post")
