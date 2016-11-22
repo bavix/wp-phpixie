@@ -117,21 +117,40 @@ class Brand extends SOCProtected
 
     public function deleteAction(Request $request)
     {
+        $id = $request->attributes()->getRequired('id');
+
         if ($this->user->hasPermission('cp.soc.brand.delete'))
         {
-            return $request->method();
             if ($request->method() === 'DELETE')
             {
-//                $id = $request->query()->getRequired('id');
-//
-//                $brand = $this->getBrandById($id);
-//
-//                $brand->delete();
-//
-//                return [$brand->isDeleted()]; // todo
+                $brand = $this->components->orm()->query(Model::BRAND)
+                    ->in($id)
+                    ->findOne();
+
+                $brand->delete();
+
+                return [
+                    'status' => 'success',
+                    'data'   => [
+                        'isDeleted'   => $brand->isDeleted(),
+                        'pullRequest' => false
+                    ]
+                ];
             }
 
             return [];
+        }
+        else if ($this->user->hasPermission('cp.soc.brand.pull-request'))
+        {
+            // pull request
+
+            return [
+                'status' => 'error',
+                'data'   => [
+                    'isDeleted'   => false,
+                    'pullRequest' => false
+                ]
+            ];
         }
 
         throw new \Exception();
