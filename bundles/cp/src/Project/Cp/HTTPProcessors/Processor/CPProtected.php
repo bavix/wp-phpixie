@@ -59,11 +59,6 @@ abstract class CPProtected extends Processor
                 $class = 'btn-warning';
                 break;
 
-            case 'delete':
-                $text  = 'Delete Item';
-                $icon  = 'fa-trash';
-                $class = 'btn-danger trash-data';
-                break;
             default:
                 break;
         }
@@ -169,8 +164,6 @@ abstract class CPProtected extends Processor
 
             return $this->redirect($url);
         }
-
-        $this->variables['breadcrumbs'] = [];
 
         $attributes = $request->attributes();
 

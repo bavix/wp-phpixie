@@ -28,7 +28,7 @@
         width: 16px;
         height: 16px;
         border-radius: 50%;
-        background: #9FD468;
+        background: #ff8700;
         box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.5);
         opacity: 0;
         transition: all 0.2s; }
@@ -72,7 +72,7 @@
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         transition: all 0.2s; }
   .wbs-checkbox:checked + label:before {
-    background: #9FD468; }
+    background: #ff8700; }
   .wbs-checkbox:checked + label:after {
     left: 26px; }
   .wbs-checkbox:disabled:not(checked) + label:before {
@@ -80,7 +80,7 @@
   .wbs-checkbox:disabled:not(checked) + label:after {
     background: #d0d0d0; }
   .wbs-checkbox:disabled + label:before {
-    background: #56ccb5; }
+    background: #8f4500; }
   .wbs-checkbox:focus + label:before {
     box-shadow: 0 0 0 3px rgba(255, 255, 0, 0.5); }
 

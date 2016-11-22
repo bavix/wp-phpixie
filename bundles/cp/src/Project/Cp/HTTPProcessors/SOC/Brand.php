@@ -71,7 +71,6 @@ class Brand extends SOCProtected
         $id = $request->attributes()->getRequired('id');
 
         $this->addItemButton('cp.soc.brand@add');
-        $this->addItemButton('cp.soc.brand@delete.' . $id);
 
         if ($request->method() === 'POST')
         {
