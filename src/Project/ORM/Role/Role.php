@@ -2,7 +2,7 @@
 
 namespace Project\ORM\Role;
 
-use \PHPixie\ORM\Wrappers\Type\Database\Entity;
+use PHPixie\ORM\Wrappers\Type\Database\Entity;
 use Project\App\Builder;
 use Project\Model;
 

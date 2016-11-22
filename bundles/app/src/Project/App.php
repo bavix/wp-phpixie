@@ -2,8 +2,8 @@
 
 namespace Project;
 
+use PHPixie\DefaultBundle;
 use Project\App\Builder;
-use \PHPixie\DefaultBundle;
 
 /**
  * Default application bundle

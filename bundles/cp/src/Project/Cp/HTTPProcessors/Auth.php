@@ -2,12 +2,11 @@
 
 namespace Project\Cp\HTTPProcessors;
 
+use PHPixie\AuthLogin\Providers\Password as PasswordProvider;
 use PHPixie\HTTP\Request;
 use PHPixie\HTTP\Responses\Response;
 use Project\App\HTTPProcessors\Processor;
-use PHPixie\AuthLogin\Providers\Password as PasswordProvider;
 use Project\ORM\User\User;
-use PHPixie\Template;
 
 /**
  * Admin authorization processor
@@ -24,6 +23,8 @@ class Auth extends Processor
      */
     public function defaultAction(Request $request)
     {
+        $this->assign('title', 'Auth');
+
         /**
          * @var User $user
          */

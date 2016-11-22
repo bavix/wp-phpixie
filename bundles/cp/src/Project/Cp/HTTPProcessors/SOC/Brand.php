@@ -71,7 +71,6 @@ class Brand extends SOCProtected
         $id = $request->attributes()->getRequired('id');
 
         $this->addItemButton('cp.soc.brand@add');
-        $this->addItemButton('cp.soc.brand@delete.' . $id);
 
         if ($request->method() === 'POST')
         {
@@ -95,6 +94,7 @@ class Brand extends SOCProtected
         $this->assign('brand', $brand);
 
         $this->assign('logCount', $logCount);
+
 //        $this->assign('pager', $logPager);
 
         return $this->render('cp:soc/brand/edit');
@@ -104,7 +104,7 @@ class Brand extends SOCProtected
     {
         if ($this->user->hasPermission('cp.soc.brand.delete'))
         {
-            return $request->method() ;
+            return $request->method();
             if ($request->method() === 'DELETE')
             {
 //                $id = $request->query()->getRequired('id');

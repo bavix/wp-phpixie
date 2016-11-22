@@ -2,12 +2,12 @@
 
 namespace Project\App\HTTPProcessors;
 
-use PHPixie\DefaultBundle\Processor\HTTP\Actions;
 use PHPixie\BundleFramework\Components;
+use PHPixie\DefaultBundle\Processor\HTTP\Actions;
 use PHPixie\HTTP\Responses\Response;
-use Project\ORM\User\User;
 use Project\App\Builder;
 use Project\Extension\Util;
+use Project\ORM\User\User;
 
 /**
  * Base processor

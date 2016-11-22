@@ -3,9 +3,9 @@
 namespace Project\Cp\HTTPProcessors\SOU;
 
 use PHPixie\HTTP\Request;
+use Project\App\Role;
 use Project\Cp\HTTPProcessors\Processor\SOUProtected;
 use Project\Model;
-use Project\App\Role;
 
 class User extends SOUProtected
 {

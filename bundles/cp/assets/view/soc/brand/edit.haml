@@ -106,8 +106,29 @@
                         %td.entry-date(data-time="#{$log->createdAt}" data-order="#{$log->createdAt}")
 
 .col-lg-3(align="center")
-  %label(for="brandLogo")
-    %img.img-thumbnail(src="https://placeholdit.imgix.net/~text?txtsize=24&txt=210×210&w=210&h=210")
-  %form#logoUpload.hidden(method="post")
+  %form(method="post")
     %input(type="hidden" name="id" value="#{$brand->id}")
-    %input#brandLogo(type="file" name="logo" onchange="$(this).parent().submit();")
+    %input.hidden#brandLogo(type="file" name="logo")
+    -#.form-group
+      -#%label(for="brandLogo")
+      -#  %img.img-rounded(src="https://placeholdit.imgix.net/~text?txtsize=24&txt=210×210&w=210&h=210")
+    .form-group(align="center")
+      %button.btn.btn-success.btn-lg(disabled) Upload
+
+:javascript
+  $(function () {
+    $('#brandLogo').filer({
+      limit: 1,
+      showThumbs: true,
+      appendTo: function (event) {
+        console.log(event, 'appendTo');
+      },
+      onSelect: function (event) {
+        console.log(event, 'onSelect');
+      },
+      theme: filerObject.theme,
+      dragDrop: filerObject.dragDrop,
+      changeInput: filerObject.changeInput,
+      extensions: filerObject.extensionsImage,
+    });
+  });
