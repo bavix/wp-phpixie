@@ -104,8 +104,7 @@
                               - $classLabel = 'label-danger'
                             %label{:class => ['label', $classLabel]} = $_($log->type)
                           %td
-                            %pre
-                              - print_r(json_decode($log->data))
+                            %pre = json_encode(json_decode($log->data), JSON_PRETTY_PRINT)
                           %td.entry-date(data-time="#{$log->createdAt}" data-order="#{$log->createdAt}")
 
 .col-lg-3(align="center")

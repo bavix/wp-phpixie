@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/migrate/migrations/9.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/sou/role/default.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/sou/role/default.haml" />
     </list>
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,16 +41,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.haml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="edit.haml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+            <state relative-caret-position="425">
+              <caret line="106" column="35" selection-start-line="106" selection-start-column="35" selection-end-line="106" selection-end-column="35" />
               <folding>
-                <marker date="1479817470935" expanded="true" signature="4999:5409" ph="{...}" />
-                <marker date="1479817470935" expanded="true" signature="5027:5403" ph="{&quot;theme&quot;: filerObject.theme...}" />
-                <marker date="1479817470935" expanded="true" signature="5102:5151" ph="{...}" />
-                <marker date="1479817470935" expanded="true" signature="5186:5235" ph="{...}" />
+                <marker date="1479818401302" expanded="true" signature="4992:5402" ph="{...}" />
+                <marker date="1479818401302" expanded="true" signature="5020:5396" ph="{&quot;theme&quot;: filerObject.theme...}" />
+                <marker date="1479818401302" expanded="true" signature="5095:5144" ph="{...}" />
+                <marker date="1479818401302" expanded="true" signature="5179:5228" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -70,7 +66,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="9.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="9.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/9.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
@@ -184,9 +180,9 @@
         <option value="$PROJECT_DIR$/src/Project/Helper.php" />
         <option value="$PROJECT_DIR$/web/index.php" />
         <option value="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php" />
-        <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/sou/role/default.haml" />
         <option value="$PROJECT_DIR$/assets/migrate/migrations/9.sql" />
+        <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml" />
       </list>
     </option>
   </component>
@@ -1436,15 +1432,15 @@
       <workItem from="1479809587013" duration="723000" />
       <workItem from="1479810316128" duration="847000" />
       <workItem from="1479811168351" duration="1784000" />
-      <workItem from="1479814899697" duration="1677000" />
+      <workItem from="1479814899697" duration="2105000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="552384000" />
+    <option name="totallyTimeSpent" value="552812000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="49" width="1936" height="1066" extended-state="1" />
+    <frame x="1912" y="49" width="1936" height="1066" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21748401" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1846,16 +1842,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml">
+    <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/9.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding>
-            <marker date="1479817470935" expanded="true" signature="4999:5409" ph="{...}" />
-            <marker date="1479817470935" expanded="true" signature="5027:5403" ph="{&quot;theme&quot;: filerObject.theme...}" />
-            <marker date="1479817470935" expanded="true" signature="5102:5151" ph="{...}" />
-            <marker date="1479817470935" expanded="true" signature="5186:5235" ph="{...}" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="3" column="77" selection-start-line="3" selection-start-column="77" selection-end-line="3" selection-end-column="77" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1867,11 +1858,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/9.sql">
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="77" selection-start-line="3" selection-start-column="77" selection-end-line="3" selection-end-column="77" />
-          <folding />
+        <state relative-caret-position="425">
+          <caret line="106" column="35" selection-start-line="106" selection-start-column="35" selection-end-line="106" selection-end-column="35" />
+          <folding>
+            <marker date="1479818401302" expanded="true" signature="4992:5402" ph="{...}" />
+            <marker date="1479818401302" expanded="true" signature="5020:5396" ph="{&quot;theme&quot;: filerObject.theme...}" />
+            <marker date="1479818401302" expanded="true" signature="5095:5144" ph="{...}" />
+            <marker date="1479818401302" expanded="true" signature="5179:5228" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
