@@ -1,6 +1,6 @@
 <?php
 
-namespace Project\ORM\Invite;
+namespace Project\ORM\User;
 
 use Project\Framework\Builder;
 
@@ -23,6 +23,17 @@ class Query extends \PHPixie\ORM\Wrappers\Type\Database\Query
         $this->frameworkBuilder = $builder;
     }
 
-    public function isActive
+    /**
+     * @param       $email
+     * @param array $preload
+     * @param null  $fields
+     *
+     * @return null|\PHPixie\ORM\Models\Type\Database\Implementation\Entity
+     */
+    public function findByEmail($email, array $preload = array(), $fields = null)
+    {
+        return $this->query->where('email', $email)
+            ->findOne($preload, $fields);
+    }
 
 }

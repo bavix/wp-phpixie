@@ -5,35 +5,10 @@ namespace Project\Cp\HTTPProcessors\SOC;
 use PHPixie\HTTP\Request;
 use Project\Cp\HTTPProcessors\Processor\SOCProtected;
 use Project\Model;
+use Project\ORM\Brand\Query;
 
 class Brand extends SOCProtected
 {
-
-    /**
-     * @param $name
-     *
-     * @return null|\PHPixie\ORM\Models\Type\Database\Implementation\Entity
-     * @throws \PHPixie\ORM\Exception\Query
-     */
-    protected function getBrandByName($name)
-    {
-        return $this->components->orm()->query(Model::BRAND)
-            ->where('name', $name)
-            ->findOne();
-    }
-
-    /**
-     * @param $id
-     *
-     * @return null|\PHPixie\ORM\Models\Type\Database\Implementation\Entity
-     * @throws \PHPixie\ORM\Exception\Query
-     */
-    protected function getBrandById($id)
-    {
-        return $this->components->orm()->query(Model::BRAND)
-            ->in($id)
-            ->findOne();
-    }
 
     public function addAction(Request $request)
     {
@@ -47,7 +22,11 @@ class Brand extends SOCProtected
             {
                 $orm = $this->components->orm();
 
-                $brand = $this->getBrandByName($name);
+                /**
+                 * @var Query $brand
+                 */
+                $brand = $orm->query(Model::BRAND);
+                $brand = $brand->findByName($name);
 
                 if (!$brand)
                 {
@@ -74,7 +53,41 @@ class Brand extends SOCProtected
 
         if ($request->method() === 'POST')
         {
-            return $request->data()->get();
+            // todo add checking data [post]
+
+            $brand = $this->components->orm()->query(Model::BRAND)
+                ->in($id)
+                ->findOne();
+
+            $name = $request->data()->get('name', $brand->name);
+
+            $isCarbon = $request->data()->get('isCarbon', $brand->isCarbon);
+            $isCarbon = (int)filter_var($isCarbon, FILTER_VALIDATE_BOOLEAN, array(
+                'options' => array(
+                    'default' => false
+                )
+            ));
+
+            $isOffRoad = $request->data()->get('isOffRoad', $brand->isOffRoad);
+            $isOffRoad = (int)filter_var($isOffRoad, FILTER_VALIDATE_BOOLEAN, array(
+                'options' => array(
+                    'default' => false
+                )
+            ));
+
+            $active = $request->data()->get('active', $brand->active);
+            $active = (int)filter_var($active, FILTER_VALIDATE_BOOLEAN, array(
+                'options' => array(
+                    'default' => false
+                )
+            ));
+
+            $brand->name      = $name;
+            $brand->isCarbon  = $isCarbon;
+            $brand->isOffRoad = $isOffRoad;
+            $brand->active    = $active;
+
+            $brand->save();
         }
 
         /**
@@ -82,20 +95,22 @@ class Brand extends SOCProtected
          */
         $builder = $this->builder->frameworkBuilder();
 
-//        $page = $request->query()->get('page');
+        $page = $request->query()->get('page');
 
         $helper = $builder->helper();
 
         $logCount = $helper->logCountByModel(Model::BRAND, $id);
-//        $logPager = $helper->logPager(Model::BRAND, $id, $page);
+        $logPager = $helper->logPager(Model::BRAND, $id, $page, 150);
 
-        $brand = $this->getBrandById($id);
+        $brand = $this->components->orm()->query(Model::BRAND)
+            ->in($id)
+            ->findOne();
 
         $this->assign('brand', $brand);
 
         $this->assign('logCount', $logCount);
 
-//        $this->assign('pager', $logPager);
+        $this->assign('pager', $logPager);
 
         return $this->render('cp:soc/brand/edit');
     }

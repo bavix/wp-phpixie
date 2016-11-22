@@ -84,15 +84,16 @@ class Helper
      * @param string $modelName
      * @param int    $modelId
      * @param int    $page
+     * @param int    $limit
      *
      * @return Pager
      * @throws \PHPixie\Paginate\Exception
      */
-    public function logPager($modelName, $modelId, $page)
+    public function logPager($modelName, $modelId, $page, $limit = 50)
     {
         $logerQuery = $this->modelLog($modelName, $modelId);
 
-        return $this->pager($page, $logerQuery);
+        return $this->pager($page, $logerQuery, $limit);
     }
 
     /**

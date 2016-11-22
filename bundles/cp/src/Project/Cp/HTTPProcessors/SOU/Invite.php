@@ -56,15 +56,17 @@ class Invite extends SOUProtected
         {
             $orm = $this->components->orm();
 
-            $user = $orm->query(Model::USER)
-                ->where('email', $email)
-                ->findOne();
+            /**
+             * @var $user \Project\ORM\User\Query
+             */
+            $user = $orm->query(Model::USER);
+            $user = $user->findByEmail($email);
 
-            $invite = $orm->query(Model::INVITE)
-                ->where('email', $email)
-                ->where('expires', '>', time())
-                ->where('activated', '=', 0)
-                ->findOne();
+            /**
+             * @var $invite \Project\ORM\Invite\Query
+             */
+            $invite = $orm->query(Model::INVITE);
+            $invite = $invite->findByEmail($email);
 
             if ($user)
             {
