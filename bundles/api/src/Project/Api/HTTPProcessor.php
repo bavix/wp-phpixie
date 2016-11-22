@@ -2,7 +2,9 @@
 
 namespace Project\Api;
 
-class HTTPProcessor extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
+use PHPixie\DefaultBundle\Processor\HTTP\Builder as HttpBuilder;
+
+class HTTPProcessor extends HttpBuilder
 {
 
     /**
@@ -18,6 +20,14 @@ class HTTPProcessor extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
     public function __construct($builder)
     {
         $this->builder = $builder;
+    }
+
+    /**
+     * @return HTTPProcessors\Auth
+     */
+    public function buildAuthProcessor()
+    {
+        return new HTTPProcessors\Auth($this->builder);
     }
 
 }

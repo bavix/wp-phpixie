@@ -5,8 +5,10 @@ LICENSE
 README.md
 bundles/.gitkeep
 bundles/app/web/upload/
-cache/haml/*
 #console
 web/bundles/app
 logs/*.log
 assets/parameters.php
+web/node_modules
+web/yarn.lock
+cache/haml/

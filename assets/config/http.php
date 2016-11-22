@@ -9,7 +9,7 @@ return array(
     'resolver' => array(
         'type'      => 'group',
         'resolvers' => array(
-            'cp'      => array(
+            'cp'  => array(
                 'type'     => 'prefix',
                 'path'     => 'cp',
                 'defaults' => array(
@@ -20,7 +20,7 @@ return array(
                     'name' => 'cp'
                 )
             ),
-            'api'      => array(
+            'api' => array(
                 'type'     => 'prefix',
                 'path'     => 'api',
                 'defaults' => array(
@@ -31,7 +31,7 @@ return array(
                     'name' => 'api'
                 )
             ),
-            'app'     => array(
+            'app' => array(
                 'type'     => 'prefix',
                 'defaults' => array(
                     'bundle' => 'app'

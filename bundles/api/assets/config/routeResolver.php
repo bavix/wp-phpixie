@@ -16,8 +16,11 @@ return array(
         ),
 
         'processor' => array(
-            'type' => 'pattern',
-            'path' => '/<processor>',
+            'type'     => 'pattern',
+            'path'     => '(/<processor>)',
+            'defaults' => array(
+                'action' => 'default'
+            )
         ),
 
     )
