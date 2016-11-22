@@ -25,6 +25,15 @@ class ORMWrappers extends WrappersImplementation
     /**
      * @var array
      */
+    protected $databaseQueries = array(
+        Model::INVITE,
+        Model::USER,
+        Model::BRAND
+    );
+
+    /**
+     * @var array
+     */
     protected $databaseEntities = array(
         Model::USER,
         Model::ROLE,
@@ -39,16 +48,43 @@ class ORMWrappers extends WrappersImplementation
     );
 
     /**
+     * @param $query
+     *
+     * @return ORM\Invite\Query
+     */
+    public function inviteQuery($query)
+    {
+        return new ORM\Invite\Query($query, $this->builder);
+    }
+
+    /**
+     * @param $query
+     *
+     * @return ORM\User\Query
+     */
+    public function userQuery($query)
+    {
+        return new ORM\User\Query($query, $this->builder);
+    }
+
+    /**
+     * @param $query
+     *
+     * @return ORM\Brand\Query
+     */
+    public function brandQuery($query)
+    {
+        return new ORM\Brand\Query($query, $this->builder);
+    }
+
+    /**
      * @param $entity
      *
      * @return ORM\User\User
      */
     public function userEntity($entity)
     {
-        return new ORM\User\User(
-            $entity,
-            $this->builder
-        );
+        return new ORM\User\User($entity, $this->builder);
     }
 
     /**
@@ -58,10 +94,7 @@ class ORMWrappers extends WrappersImplementation
      */
     public function roleEntity($entity)
     {
-        return new ORM\Role\Role(
-            $entity,
-            $this->builder
-        );
+        return new ORM\Role\Role($entity, $this->builder);
     }
 
     /**
@@ -71,10 +104,7 @@ class ORMWrappers extends WrappersImplementation
      */
     public function menuEntity($entity)
     {
-        return new ORM\Menu\Menu(
-            $entity,
-            $this->builder
-        );
+        return new ORM\Menu\Menu($entity, $this->builder);
     }
 
     /**

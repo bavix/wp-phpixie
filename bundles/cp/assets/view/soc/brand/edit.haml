@@ -77,7 +77,7 @@
 
             #tab-last-activity.tab-pane
               .panel-body
-                %table.table.table-striped
+                %table.table.table-bordered
                   %thead
                     %tr
                       %th User (Login)
@@ -85,7 +85,7 @@
                       %th Data
                       %th Created At
                   %tbody
-                    -#- foreach ($pager->getCurrentItems() as $log)
+                    - foreach ($pager->getCurrentItems() as $log)
                       %tr(id="log-#{$log->id}")
                         %td
                           - $logUser = $log->user()
@@ -102,7 +102,8 @@
                             - $classLabel = 'label-danger'
                           %label{:class => ['label', $classLabel]} = $_($log->type)
                         %td
-                          - echo $log->data
+                          %pre
+                            - print_r(json_decode($log->data))
                         %td.entry-date(data-time="#{$log->createdAt}" data-order="#{$log->createdAt}")
 
 .col-lg-3(align="center")
