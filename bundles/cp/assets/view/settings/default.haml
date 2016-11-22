@@ -12,7 +12,7 @@
         amounts of write I/O occur. The disadvantage is that
         data is not cached unless it is read from storage.
         As such, the initial read operation will be comparatively
-        slow because the data has not yet been cached. [todo]
+        slow because the data has not yet been cached.
       %form(method="POST")
         %input(type="hidden" name="type" value="cache")
         %button.btn.btn-warning{:disabled => $purgeCache} Purge
