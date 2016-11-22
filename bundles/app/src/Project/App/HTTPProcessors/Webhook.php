@@ -78,13 +78,13 @@ class Webhook extends Processor
 
                 chdir('/home/wheelpro/web/www/');
 
-                $this->shellExec("git checkout master");
-                $this->shellExec("git pull origin master");
+                $this->shellExec('git checkout master');
+                $this->shellExec('git pull origin master');
 
-                $this->shellExec("composer install");
+                $this->shellExec('composer install');
 
-                $this->shellExec("./console framework:migrate");
-                $this->shellExec("redis-cli flushall");
+                $this->shellExec('./console framework:migrate');
+                $this->shellExec('redis-cli flushall');
 
                 break;
 
@@ -92,22 +92,22 @@ class Webhook extends Processor
 
                 chdir('/home/wheelpro/web/dev/');
 
-                $this->shellExec("git checkout dev");
+                $this->shellExec('git checkout dev');
 
-                $this->shellExec("git pull origin dev");
+                $this->shellExec('git pull origin dev');
 
-                $this->shellExec("rm -fr ../doc/*"); // remove docs
-                $this->shellExec("rm -fr /tmp/_apigen/*"); // remove temp files
+                $this->shellExec('rm -fr ../doc/*'); // remove docs
+                $this->shellExec('rm -fr /tmp/_apigen/*'); // remove temp files
 
-                $apiGen = "php ../apigen.phar generate --config apigen.yaml";
+                $apiGen = 'php ../apigen.phar generate --config apigen.yaml';
 
                 $this->shellExec($apiGen);
 
-                $this->shellExec("composer install");
-                $this->shellExec("composer update");
+                $this->shellExec('composer install');
+                $this->shellExec('composer update');
 
-                $this->shellExec("./console framework:migrate");
-                $this->shellExec("redis-cli flushall");
+                $this->shellExec('./console framework:migrate');
+                $this->shellExec('redis-cli flushall');
 
                 break;
 
