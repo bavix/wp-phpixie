@@ -61,21 +61,21 @@ class Brand extends SOCProtected
 
             $name = $request->data()->get('name', $brand->name);
 
-            $isCarbon = $request->data()->get('isCarbon', $brand->isCarbon);
+            $isCarbon = $request->data()->get('isCarbon');
             $isCarbon = (int)filter_var($isCarbon, FILTER_VALIDATE_BOOLEAN, array(
                 'options' => array(
                     'default' => false
                 )
             ));
 
-            $isOffRoad = $request->data()->get('isOffRoad', $brand->isOffRoad);
+            $isOffRoad = $request->data()->get('isOffRoad');
             $isOffRoad = (int)filter_var($isOffRoad, FILTER_VALIDATE_BOOLEAN, array(
                 'options' => array(
                     'default' => false
                 )
             ));
 
-            $active = $request->data()->get('active', $brand->active);
+            $active = $request->data()->get('active');
             $active = (int)filter_var($active, FILTER_VALIDATE_BOOLEAN, array(
                 'options' => array(
                     'default' => false
