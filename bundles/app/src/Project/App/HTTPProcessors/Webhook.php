@@ -89,8 +89,8 @@ class Webhook extends Processor
 
                 $this->logger()->addInfo(getcwd());
 
-                $this->shellExec('npm install');
-                $this->shellExec('npm update');
+                $this->shellExec('yarn');
+                $this->shellExec('yarn upgrade');
 
                 $this->shellExec('redis-cli flushall');
                 
@@ -120,8 +120,8 @@ class Webhook extends Processor
 
                 $this->logger()->addInfo(getcwd());
 
-                $this->shellExec('npm install');
-                $this->shellExec('npm update');
+                $this->shellExec('yarn');
+                $this->shellExec('yarn upgrade');
 
                 $this->shellExec('redis-cli flushall');
 
