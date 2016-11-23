@@ -117,7 +117,7 @@ class Webhook extends Processor
                 chdir('/home/wheelpro/web/dev/web/');
 
                 $this->shellExec('yarn install');
-                $this->shellExec('yarn upgrade');
+//                $this->shellExec('yarn upgrade');
 
                 break;
 
