@@ -124,7 +124,7 @@ abstract class CPProtected extends Processor
     {
         parent::__construct($builder);
 
-        $this->variables['actions'] = [];
+        $this->assign('actions', []);
     }
 
     protected function accessDenied()

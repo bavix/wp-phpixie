@@ -36,4 +36,17 @@ class Query extends \PHPixie\ORM\Wrappers\Type\Database\Query
             ->findOne($preload, $fields);
     }
 
+    /**
+     * @param       $login
+     * @param array $preload
+     * @param null  $fields
+     *
+     * @return null|\PHPixie\ORM\Models\Type\Database\Implementation\Entity
+     */
+    public function findByLogin($login, array $preload = array(), $fields = null)
+    {
+        return $this->query->where('login', $login)
+            ->findOne($preload, $fields);
+    }
+
 }
