@@ -76,7 +76,7 @@ class Webhook extends Processor
 
             case ($branch === 'master'):
 
-                chroot('/home/wheelpro/web/www/');
+                chdir('/home/wheelpro/web/www/');
 
                 $this->shellExec('git checkout master');
                 $this->shellExec('git pull origin master');
@@ -86,7 +86,7 @@ class Webhook extends Processor
                 $this->shellExec('./console framework:migrate');
                 $this->shellExec('redis-cli flushall');
 
-                chroot('/home/wheelpro/web/www/web/');
+                chdir('web');
 
                 $this->shellExec('npm install');
                 $this->shellExec('npm update');
@@ -95,7 +95,7 @@ class Webhook extends Processor
 
             case ($branch === 'dev'):
 
-                chroot('/home/wheelpro/web/dev/');
+                chdir('/home/wheelpro/web/dev/');
 
                 $this->shellExec('git checkout dev');
 
@@ -114,7 +114,7 @@ class Webhook extends Processor
                 $this->shellExec('./console framework:migrate');
                 $this->shellExec('redis-cli flushall');
 
-                chroot('/home/wheelpro/web/dev/web/');
+                chdir('web');
 
                 $this->shellExec('npm install');
                 $this->shellExec('npm update');
