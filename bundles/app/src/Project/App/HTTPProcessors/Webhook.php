@@ -64,12 +64,8 @@ class Webhook extends Processor
             throw new \Exception(); // 403
         }
 
-        $this->logger()->addInfo(__METHOD__);
-
-        $this->logger()->addInfo('POST', $data->get());
-
         $branch = basename($data->get('ref'));
-        $this->logger()->addInfo('branch', ['branch' => $branch]);
+        $this->logger()->addInfo($branch);
 
         switch (true)
         {
@@ -85,12 +81,12 @@ class Webhook extends Processor
 
                 $this->shellExec('./console framework:migrate');
 
+                $this->shellExec('redis-cli flushall');
+
                 chdir('web');
 
                 $this->shellExec('yarn');
 
-                $this->shellExec('redis-cli flushall');
-                
                 break;
 
             case ($branch === 'dev'):
@@ -113,11 +109,11 @@ class Webhook extends Processor
 
                 $this->shellExec('./console framework:migrate');
 
+                $this->shellExec('redis-cli flushall');
+
                 chdir('web');
 
                 $this->shellExec('yarn');
-
-                $this->shellExec('redis-cli flushall');
 
                 break;
 
