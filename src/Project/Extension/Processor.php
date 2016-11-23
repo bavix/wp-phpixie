@@ -37,7 +37,9 @@ abstract class Processor extends Actions
     /**
      * @var array
      */
-    protected $variables = [];
+    protected $variables = [
+        'assets' => \Project\Assets::class
+    ];
 
     /**
      * @param Builder $builder
