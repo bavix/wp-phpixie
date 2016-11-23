@@ -48,7 +48,4 @@
           - else
             %a{"data-page" => $item, :onclick => 'javascript:wbsPager(this)'} = $item
 
-- if (!$this->blockExists('pager'))
-  - $this->startBlock('pager')
-  %script(src="/js/pager.js")
-  - $this->endBlock()
+- $assets::pushJs('/js/pager.js')

@@ -86,6 +86,11 @@ class Webhook extends Processor
                 $this->shellExec('./console framework:migrate');
                 $this->shellExec('redis-cli flushall');
 
+                chdir('/home/wheelpro/web/www/web/');
+
+                $this->shellExec('yarn install');
+                $this->shellExec('yarn upgrade');
+
                 break;
 
             case ($branch === 'dev'):
@@ -108,6 +113,11 @@ class Webhook extends Processor
 
                 $this->shellExec('./console framework:migrate');
                 $this->shellExec('redis-cli flushall');
+
+                chdir('/home/wheelpro/web/dev/web/');
+
+                $this->shellExec('yarn install');
+                $this->shellExec('yarn upgrade');
 
                 break;
 
