@@ -87,10 +87,7 @@ class Webhook extends Processor
 
                 chdir('web');
 
-                $this->logger()->addInfo(getcwd());
-
                 $this->shellExec('yarn');
-                $this->shellExec('yarn upgrade');
 
                 $this->shellExec('redis-cli flushall');
                 
@@ -118,10 +115,7 @@ class Webhook extends Processor
 
                 chdir('web');
 
-                $this->logger()->addInfo(getcwd());
-
                 $this->shellExec('yarn');
-                $this->shellExec('yarn upgrade');
 
                 $this->shellExec('redis-cli flushall');
 
