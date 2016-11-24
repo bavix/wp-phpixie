@@ -67,57 +67,36 @@ class Webhook extends Processor
         $branch = basename($data->get('ref'));
         $this->logger()->addInfo($branch);
 
-        switch (true)
+        if (in_array($branch, ['master', 'dev']))
         {
 
-            case ($branch === 'master'):
+            chdir("/home/wheelpro/web/{$branch}/");
 
-                chdir('/home/wheelpro/web/www/');
+            $this->shellExec("git checkout {$branch}");
 
-                $this->shellExec('git checkout master');
-                $this->shellExec('git pull origin master');
+            $this->shellExec("git pull origin {$branch}");
 
-                $this->shellExec('composer install');
-
-                chdir('web');
-
-                $this->shellExec('yarn');
-                $this->shellExec('yarn update');
-
-                $this->shellExec('./console framework:migrate');
-
-                $this->shellExec('redis-cli flushall');
-
-                break;
-
-            case ($branch === 'dev'):
-
-                chdir('/home/wheelpro/web/dev/');
-
-                $this->shellExec('git checkout dev');
-
-                $this->shellExec('git pull origin dev');
-
+            if ($branch === 'dev')
+            {
                 $this->shellExec('rm -fr ../doc/*'); // remove docs
                 $this->shellExec('rm -fr /tmp/_apigen/*'); // remove temp files
 
                 $apiGen = 'php ../apigen.phar generate --config apigen.yaml';
 
                 $this->shellExec($apiGen);
+            }
 
-                $this->shellExec('composer install');
-                $this->shellExec('composer update');
+            $this->shellExec('composer install');
+            $this->shellExec('composer update');
 
-                chdir('web');
+            chdir('web');
 
-                $this->shellExec('yarn');
-                $this->shellExec('yarn update');
+            $this->shellExec('yarn');
+            $this->shellExec('yarn update');
 
-                $this->shellExec('./console framework:migrate');
+            $this->shellExec('./console framework:migrate');
 
-                $this->shellExec('redis-cli flushall');
-
-                break;
+            $this->shellExec('redis-cli flushall');
 
         }
 
