@@ -1,8 +1,195 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bshaffer/oauth2-server-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ezyang/htmlpurifier" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ircmaxell/password-compat" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ircmaxell/random-lib" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ircmaxell/security-lib" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/league/html-to-markdown" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mthaml/mthaml" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nelexa/buffer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/openbuildings/swiftmailer-css-inliner" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/auth" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/auth-http" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/auth-login" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/auth-orm" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/auth-processors" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/auth-social" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/bundle-framework" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/bundles" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/cli" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/config" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/console" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/database" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/default-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/di" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/filesystem" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/framework-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/http" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/http-processors" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/image" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/migrate" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/orm" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/paginate" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/paginate-orm" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/processors" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/route" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/security" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/slice" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/social" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/template" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/test" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/validate" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ralouphie/mimey" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/css-selector" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tedivm/stash" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="PHP Runtime" type="php">
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard" />
+        </CLASSES>
+        <SOURCES>
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="PHP" type="php">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bshaffer/oauth2-server-php" />
+          <root url="file://$MODULE_DIR$/vendor/composer" />
+          <root url="file://$MODULE_DIR$/vendor/ezyang/htmlpurifier" />
+          <root url="file://$MODULE_DIR$/vendor/ircmaxell/password-compat" />
+          <root url="file://$MODULE_DIR$/vendor/ircmaxell/random-lib" />
+          <root url="file://$MODULE_DIR$/vendor/ircmaxell/security-lib" />
+          <root url="file://$MODULE_DIR$/vendor/league/html-to-markdown" />
+          <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
+          <root url="file://$MODULE_DIR$/vendor/mthaml/mthaml" />
+          <root url="file://$MODULE_DIR$/vendor/nelexa/buffer" />
+          <root url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
+          <root url="file://$MODULE_DIR$/vendor/openbuildings/swiftmailer-css-inliner" />
+          <root url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/auth" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/auth-http" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/auth-login" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/auth-orm" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/auth-processors" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/auth-social" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/bundle-framework" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/bundles" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/cli" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/config" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/console" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/database" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/debug" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/default-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/di" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/filesystem" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/framework" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/framework-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/http" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/http-processors" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/image" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/migrate" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/orm" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/paginate" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/paginate-orm" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/processors" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/route" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/security" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/slice" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/social" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/template" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/test" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/validate" />
+          <root url="file://$MODULE_DIR$/vendor/psr/cache" />
+          <root url="file://$MODULE_DIR$/vendor/psr/http-message" />
+          <root url="file://$MODULE_DIR$/vendor/psr/log" />
+          <root url="file://$MODULE_DIR$/vendor/ralouphie/mimey" />
+          <root url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/css-selector" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/translation" />
+          <root url="file://$MODULE_DIR$/vendor/tedivm/stash" />
+          <root url="file://$MODULE_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bshaffer/oauth2-server-php" />
+          <root url="file://$MODULE_DIR$/vendor/composer" />
+          <root url="file://$MODULE_DIR$/vendor/ezyang/htmlpurifier" />
+          <root url="file://$MODULE_DIR$/vendor/ircmaxell/password-compat" />
+          <root url="file://$MODULE_DIR$/vendor/ircmaxell/random-lib" />
+          <root url="file://$MODULE_DIR$/vendor/ircmaxell/security-lib" />
+          <root url="file://$MODULE_DIR$/vendor/league/html-to-markdown" />
+          <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
+          <root url="file://$MODULE_DIR$/vendor/mthaml/mthaml" />
+          <root url="file://$MODULE_DIR$/vendor/nelexa/buffer" />
+          <root url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
+          <root url="file://$MODULE_DIR$/vendor/openbuildings/swiftmailer-css-inliner" />
+          <root url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/auth" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/auth-http" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/auth-login" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/auth-orm" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/auth-processors" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/auth-social" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/bundle-framework" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/bundles" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/cli" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/config" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/console" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/database" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/debug" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/default-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/di" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/filesystem" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/framework" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/framework-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/http" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/http-processors" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/image" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/migrate" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/orm" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/paginate" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/paginate-orm" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/processors" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/route" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/security" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/slice" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/social" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/template" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/test" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/validate" />
+          <root url="file://$MODULE_DIR$/vendor/psr/cache" />
+          <root url="file://$MODULE_DIR$/vendor/psr/http-message" />
+          <root url="file://$MODULE_DIR$/vendor/psr/log" />
+          <root url="file://$MODULE_DIR$/vendor/ralouphie/mimey" />
+          <root url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/css-selector" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/translation" />
+          <root url="file://$MODULE_DIR$/vendor/tedivm/stash" />
+          <root url="file://$MODULE_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

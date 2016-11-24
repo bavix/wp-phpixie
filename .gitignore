@@ -3,12 +3,9 @@ vendor/
 composer.lock
 LICENSE
 README.md
-bundles/.gitkeep
 bundles/app/web/upload/
-#console
-web/bundles/app
-logs/*.log
+web/bundles
 assets/parameters.php
-web/node_modules
-web/yarn.lock
+node_modules
+yarn.lock
 cache/haml/
