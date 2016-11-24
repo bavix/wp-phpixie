@@ -94,21 +94,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="git.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="git.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/git.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="4" selection-end-column="18" />
+            <state relative-caret-position="68">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="yarn.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="yarn.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/yarn.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+            <state relative-caret-position="51">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -189,8 +189,8 @@
         <option value="$PROJECT_DIR$/web/package.json" />
         <option value="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Webhook.php" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/layout.haml" />
-        <option value="$PROJECT_DIR$/web/git.php" />
         <option value="$PROJECT_DIR$/web/yarn.php" />
+        <option value="$PROJECT_DIR$/web/git.php" />
       </list>
     </option>
   </component>
@@ -1057,12 +1057,12 @@
       <workItem from="1479926840075" duration="1933000" />
       <workItem from="1479931186091" duration="963000" />
       <workItem from="1479964611670" duration="473000" />
-      <workItem from="1479965117642" duration="2850000" />
+      <workItem from="1479965117642" duration="3083000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="581697000" />
+    <option name="totallyTimeSpent" value="581930000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2167" y="172" width="1382" height="754" extended-state="0" />
@@ -1467,18 +1467,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/git.php">
+    <entry file="file://$PROJECT_DIR$/web/yarn.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="4" selection-end-column="18" />
+        <state relative-caret-position="51">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/yarn.php">
+    <entry file="file://$PROJECT_DIR$/web/git.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        <state relative-caret-position="68">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
