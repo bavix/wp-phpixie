@@ -1,5 +1,5 @@
 <?php
 
 chdir('..');
-
-var_dump(shell_exec('git pull'));
+exec('git pull', $output);
+var_dump($output);

@@ -1,3 +1,4 @@
 <?php
 
-var_dump(shell_exec('yarn'));
+exec('yarn', $output);
+var_dump($output);
