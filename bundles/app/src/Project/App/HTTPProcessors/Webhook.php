@@ -67,7 +67,9 @@ class Webhook extends Processor
         $branch = basename($data->get('ref'));
         $this->logger()->addInfo($branch);
 
-        if (in_array($branch, ['master', 'dev']))
+        $isDev = $branch === 'dev';
+
+        if ($branch === 'master' || $isDev)
         {
 
             chdir("/home/wheelpro/web/{$branch}/");
@@ -75,16 +77,6 @@ class Webhook extends Processor
             $this->shellExec("git checkout {$branch}");
 
             $this->shellExec("git pull origin {$branch}");
-
-            if ($branch === 'dev')
-            {
-                $this->shellExec('rm -fr ../doc/*'); // remove docs
-                $this->shellExec('rm -fr /tmp/_apigen/*'); // remove temp files
-
-                $apiGen = 'php ../apigen.phar generate --config apigen.yaml';
-
-                $this->shellExec($apiGen);
-            }
 
             $this->shellExec('composer install');
             $this->shellExec('composer update');
@@ -98,6 +90,16 @@ class Webhook extends Processor
 
             $this->shellExec('redis-cli flushall');
 
+        }
+
+        if ($isDev)
+        {
+            $this->shellExec('rm -fr ../doc/*'); // remove docs
+            $this->shellExec('rm -fr /tmp/_apigen/*'); // remove temp files
+
+            $apiGen = 'php ../apigen.phar generate --config apigen.yaml';
+
+            $this->shellExec($apiGen);
         }
 
         return $data->get();
