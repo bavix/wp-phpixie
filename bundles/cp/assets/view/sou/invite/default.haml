@@ -24,7 +24,10 @@
                   - if ($invite->activated)
                     No
                   - else
-                    Yes
+                    - if ($invite->expires < time())
+                      No [no activated]
+                    - else
+                      Yes
               %td = $invite->token
               %td = $invite->email
               %td = $invite->role()->title

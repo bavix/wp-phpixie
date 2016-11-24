@@ -9,6 +9,8 @@
         <whitelist>
             <directory suffix=".php">./src</directory>
             <directory suffix=".php">./bundles/app/src</directory>
+            <directory suffix=".php">./bundles/api/src</directory>
+            <directory suffix=".php">./bundles/cp/src</directory>
         </whitelist>
     </filter>
 </phpunit>
