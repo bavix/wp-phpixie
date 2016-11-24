@@ -96,10 +96,12 @@ class Webhook extends Processor
 
         if ($isDev)
         {
-            $this->shellExec('rm -fr ../../doc/*'); // remove docs
+            chdir('..');
+
+            $this->shellExec('rm -fr ../doc/*'); // remove docs
             $this->shellExec('rm -fr /tmp/_apigen/*'); // remove temp files
 
-            $apiGen = 'php ../../apigen.phar generate --config ../apigen.yaml';
+            $apiGen = 'php ../apigen.phar generate --config apigen.yaml';
 
             $this->shellExec($apiGen);
         }
