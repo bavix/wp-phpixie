@@ -79,13 +79,14 @@ class Webhook extends Processor
 
                 $this->shellExec('composer install');
 
-                $this->shellExec('./console framework:migrate');
-
-                $this->shellExec('redis-cli flushall');
-
                 chdir('web');
 
                 $this->shellExec('yarn');
+                $this->shellExec('yarn update');
+
+                $this->shellExec('./console framework:migrate');
+
+                $this->shellExec('redis-cli flushall');
 
                 break;
 
@@ -107,13 +108,14 @@ class Webhook extends Processor
                 $this->shellExec('composer install');
                 $this->shellExec('composer update');
 
-                $this->shellExec('./console framework:migrate');
-
-                $this->shellExec('redis-cli flushall');
-
                 chdir('web');
 
                 $this->shellExec('yarn');
+                $this->shellExec('yarn update');
+
+                $this->shellExec('./console framework:migrate');
+
+                $this->shellExec('redis-cli flushall');
 
                 break;
 
