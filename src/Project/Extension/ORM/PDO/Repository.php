@@ -20,7 +20,7 @@ class Repository extends \PHPixie\ORM\Drivers\Driver\PDO\Repository
         parent::__construct($databaseModel, $database, $dataBuilder, $config);
     }
 
-    protected function entityLogger($entity, $type)
+    protected function entityLogger($entity, $data, $type)
     {
         if ($this->modelName() !== 'log')
         {
@@ -39,7 +39,14 @@ class Repository extends \PHPixie\ORM\Drivers\Driver\PDO\Repository
                 $log->userId = $user->id();
             }
 
-            $log->data = json_encode($entity->asObject(true));
+            if (is_null($data))
+            {
+                $log->data = json_encode($entity->asObject(true));
+            }
+            else
+            {
+                $log->data = json_encode($data);
+            }
 
             $log->save();
         }
@@ -52,7 +59,7 @@ class Repository extends \PHPixie\ORM\Drivers\Driver\PDO\Repository
     {
         if (!$entity->isDeleted() && !$entity->isNew())
         {
-            $this->entityLogger($entity, 'deleted');
+            $this->entityLogger($entity, null, 'deleted');
         }
 
         return parent::delete($entity);
@@ -64,9 +71,21 @@ class Repository extends \PHPixie\ORM\Drivers\Driver\PDO\Repository
     public function save($entity)
     {
         $isNew = $entity->isNew();
-        $data  = parent::save($entity);
 
-        $this->entityLogger($entity, $isNew ? 'created' : 'updated');
+
+        /**
+         * @var \PHPixie\ORM\Drivers\Driver\PDO\Entity $entity
+         * @var \PHPixie\ORM\Data\Types\Map            $data
+         * @var \PHPixie\ORM\Data\Diff                 $diff
+         */
+        $data = $entity->data();
+        $diff = $data->diff();
+
+        $diffData = $diff->set();
+
+        $data = parent::save($entity);
+
+        $this->entityLogger($entity, $diffData, $isNew ? 'created' : 'updated');
 
         return $data;
     }
