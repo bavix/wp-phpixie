@@ -72,7 +72,7 @@ class Webhook extends Processor
         if ($branch === 'master' || $isDev)
         {
 
-            $dirName = $isDev ? $branch : 'master';
+            $dirName = $isDev ? $branch : 'www';
 
             chdir("/home/wheelpro/web/{$dirName}/");
 
