@@ -59,6 +59,11 @@ class Brand extends SOCProtected
                 ->in($id)
                 ->findOne();
 
+            if (!$brand)
+            {
+                throw new \Exception();
+            }
+
             $name = $request->data()->get('name', $brand->name);
 
             $isCarbon = $request->data()->get('isCarbon');
