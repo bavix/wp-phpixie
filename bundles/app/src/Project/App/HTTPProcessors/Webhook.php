@@ -72,7 +72,9 @@ class Webhook extends Processor
         if ($branch === 'master' || $isDev)
         {
 
-            chdir("/home/wheelpro/web/{$branch}/");
+            $dirName = $isDev ? $branch : 'master';
+
+            chdir("/home/wheelpro/web/{$dirName}/");
 
             $this->shellExec("git checkout {$branch}");
 
