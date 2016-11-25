@@ -4,7 +4,7 @@ composer.lock
 LICENSE
 bundles/app/web/upload/
 web/bundles
-assets/parameters.php
+parameters.php
 node_modules
 yarn.lock
 cache/haml/
