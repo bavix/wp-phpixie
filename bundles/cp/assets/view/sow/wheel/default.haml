@@ -1,3 +1,9 @@
 - $this->layout('cp:layout')
 
-%h1 Wheel -- In developing
+.col-md-12
+  .ibox
+    .ibox-title Wheel
+    .ibox-content
+      #content
+
+- $assets::pushJs('/js/cp/wheel/list.js')

@@ -32,14 +32,14 @@ class Assets
         // gridlex
         '/node_modules/gridlex/docs/gridlex.min.css',
 
+        // font-awesome
+        '/node_modules/font-awesome/css/font-awesome.min.css',
+
         // datatables
         '/node_modules/datatables.net-bs/css/dataTables.bootstrap.css',
 
         // animate
         '/node_modules/animate.css/animate.min.css',
-
-        // font-awesome
-        '/node_modules/font-awesome/css/font-awesome.min.css',
 
     ];
 
@@ -86,6 +86,10 @@ class Assets
 
         // url.js
         '/node_modules/url.js/url.js',
+
+        // react
+        '/node_modules/react/dist/react.js',
+        '/node_modules/react-dom/dist/react-dom.js',
 
     ];
 
