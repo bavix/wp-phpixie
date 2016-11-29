@@ -24,6 +24,6 @@
     "sweetalert2": "^6.1.1",
     "toastr": "^2.1.2",
     "typeahead": "^0.2.2",
-    "url.js": "^1.0.3"
+    "urljs": "^2.3.1"
   }
 }

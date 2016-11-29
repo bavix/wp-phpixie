@@ -1,0 +1,1 @@
+ALTER TABLE `logs` CHANGE `data` `data` JSON NOT NULL;
