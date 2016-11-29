@@ -183,6 +183,8 @@ class Brand extends SOCProtected
         $brandQuery = $orm->query(Model::BRAND)
             ->orderDescendingBy('createdAt');
 
+        $brandAllCount = $brandQuery->count();
+
         /**
          * @var $builder \Project\Framework\Builder
          */
@@ -191,6 +193,7 @@ class Brand extends SOCProtected
         $pager = $builder->helper()->pager($page, $brandQuery);
 
         $this->assign('pager', $pager);
+        $this->assign('count', $brandAllCount);
 
         return $this->render('cp:soc/brand/default');
     }

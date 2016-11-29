@@ -3,6 +3,7 @@
 .col-lg-9
   .ibox
     .ibox-title
+      %label.label.label-success.pull-right = $count
       %h3 = $currentMenu->title
     .ibox-content
       partial: 'cp:pager'
