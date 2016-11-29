@@ -85,7 +85,7 @@ class Assets
         '/node_modules/sweetalert2/dist/sweetalert2.min.js',
 
         // url.js
-        '/node_modules/url.js/url.js',
+        '/node_modules/urljs/src/url.min.js',
 
         // react
         '/node_modules/react/dist/react.js',
