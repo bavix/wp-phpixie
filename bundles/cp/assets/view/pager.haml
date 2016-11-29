@@ -40,7 +40,7 @@
     - else
       - $result = range($begin, $end)
 
-    %ul.pagination.pull-right
+    %ul.pagination
       - foreach ($result as $item)
         %li.footable-page{:class => ($item === $active) ? 'active' : ''}
           - if ($item == '..' || $item === $active)
