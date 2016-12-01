@@ -2,9 +2,6 @@
 
 declare(strict_types = 1);
 
-ini_set('display_errors', 'stdout');
-error_reporting(E_ALL);
-
 date_default_timezone_set('Europe/Moscow');
 
 define('__DIR_WEB__', __DIR__ . '/');
