@@ -76,9 +76,14 @@ class Webhook extends Processor
 
             chdir("/home/wheelpro/web/{$dirName}/");
 
+            $this->shellExec('chown -R wheelpro:www-group *');
+            $this->shellExec('git reset -hard');
+
             $this->shellExec("git checkout {$branch}");
 
             $this->shellExec("git pull origin {$branch}");
+
+            $this->shellExec('chown -R wheelpro:www-group *');
 
             $this->shellExec('composer install');
             $this->shellExec('composer update');
