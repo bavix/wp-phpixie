@@ -20,7 +20,7 @@ class Assets
 
         // select2
         '/node_modules/select2/dist/css/select2.min.css',
-        '/node_modules/select2-bootstrap-css/select2-bootstrap.min.css',
+        '/node_modules/select2-bootstrap-theme/dist/select2-bootstrap.min.css',
 
         // sweetalert
         '/node_modules/sweetalert2/dist/sweetalert2.min.css',
@@ -91,8 +91,7 @@ class Assets
         '/node_modules/react/dist/react.js',
         '/node_modules/react-dom/dist/react-dom.js',
 
-
-        '/js/infinityScroll.js',
+//        '/js/infinityScroll.js',
 
     ];
 

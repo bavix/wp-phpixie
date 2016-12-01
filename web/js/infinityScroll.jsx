@@ -23,23 +23,38 @@ function defaultValue(object, defObject) {
  * @returns {InfinityScroll}
  * @constructor
  */
-const InfinityScroll = function (options) {
 
-    options = defaultValue(options, {
-        window: window,
-        document: window.document
-    });
+class InfinityScroll {
 
-    this.window = options.window;
-    this.document = options.document;
+    constructor(options) {
 
-    this.hasPageYOffset = () => typeof this.window.pageYOffset !== "undefined";
-    this.pageYOffset = () => this.window.pageYOffset;
-    this.scrollTop = () => (this.document.documentElement || this.document.body.parentNode || this.document.body).scrollTop;
+        options = defaultValue(options, {
+            window: window,
+            document: window.document
+        });
 
-    this.top = () => ( this.hasPageYOffset() ? this.pageYOffset() : this.scrollTop() );
+        this.window = options.window;
+        this.document = options.document;
 
-    this.documentHeight = function () {
+    }
+
+    hasPageYOffset () {
+        return typeof this.window.pageYOffset !== "undefined";
+    }
+
+    pageYOffset () {
+        return this.window.pageYOffset;
+    }
+
+    scrollTop () {
+        return (this.document.documentElement || this.document.body.parentNode || this.document.body).scrollTop;
+    }
+
+    top () {
+        return ( this.hasPageYOffset() ? this.pageYOffset() : this.scrollTop() );
+    }
+
+    documentHeight () {
         const body = this.document.body;
         const html = this.document.documentElement;
 
@@ -49,13 +64,19 @@ const InfinityScroll = function (options) {
         );
     };
 
-    this.innerHeight = () => this.window.innerHeight;
-    this.scrollPercent = () => this.top() / this.maxTop();
-    this.maxTop = () => this.documentHeight() - this.innerHeight();
+    innerHeight () {
+        return this.window.innerHeight;
+    }
 
-    return this;
+    scrollPercent () {
+        return this.top() / this.maxTop();
+    }
 
-};
+    maxTop () {
+        return this.documentHeight() - this.innerHeight();
+    }
+
+}
 
 jQuery.fn.hasScrollBar = function () {
     return this.get(0).scrollHeight > this.height();

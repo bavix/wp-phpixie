@@ -1,5 +1,9 @@
 "use strict";
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 // https://jsfiddle.net/69z2wepo/14377/
 
 Object.prototype.defaultValue = function (defObject) {
@@ -46,50 +50,67 @@ function defaultValue(object, defObject) {
  * @returns {InfinityScroll}
  * @constructor
  */
-var InfinityScroll = function InfinityScroll(options) {
-    var _this = this;
 
-    options = defaultValue(options, {
-        window: window,
-        document: window.document
-    });
+var InfinityScroll = function () {
+    function InfinityScroll(options) {
+        _classCallCheck(this, InfinityScroll);
 
-    this.window = options.window;
-    this.document = options.document;
+        options = defaultValue(options, {
+            window: window,
+            document: window.document
+        });
 
-    this.hasPageYOffset = function () {
-        return typeof _this.window.pageYOffset !== "undefined";
-    };
-    this.pageYOffset = function () {
-        return _this.window.pageYOffset;
-    };
-    this.scrollTop = function () {
-        return (_this.document.documentElement || _this.document.body.parentNode || _this.document.body).scrollTop;
-    };
+        this.window = options.window;
+        this.document = options.document;
+    }
 
-    this.top = function () {
-        return _this.hasPageYOffset() ? _this.pageYOffset() : _this.scrollTop();
-    };
+    _createClass(InfinityScroll, [{
+        key: "hasPageYOffset",
+        value: function hasPageYOffset() {
+            return typeof this.window.pageYOffset !== "undefined";
+        }
+    }, {
+        key: "pageYOffset",
+        value: function pageYOffset() {
+            return this.window.pageYOffset;
+        }
+    }, {
+        key: "scrollTop",
+        value: function scrollTop() {
+            return (this.document.documentElement || this.document.body.parentNode || this.document.body).scrollTop;
+        }
+    }, {
+        key: "top",
+        value: function top() {
+            return this.hasPageYOffset() ? this.pageYOffset() : this.scrollTop();
+        }
+    }, {
+        key: "documentHeight",
+        value: function documentHeight() {
+            var body = this.document.body;
+            var html = this.document.documentElement;
 
-    this.documentHeight = function () {
-        var body = this.document.body;
-        var html = this.document.documentElement;
+            return Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+        }
+    }, {
+        key: "innerHeight",
+        value: function innerHeight() {
+            return this.window.innerHeight;
+        }
+    }, {
+        key: "scrollPercent",
+        value: function scrollPercent() {
+            return this.top() / this.maxTop();
+        }
+    }, {
+        key: "maxTop",
+        value: function maxTop() {
+            return this.documentHeight() - this.innerHeight();
+        }
+    }]);
 
-        return Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
-    };
-
-    this.innerHeight = function () {
-        return _this.window.innerHeight;
-    };
-    this.scrollPercent = function () {
-        return _this.top() / _this.maxTop();
-    };
-    this.maxTop = function () {
-        return _this.documentHeight() - _this.innerHeight();
-    };
-
-    return this;
-};
+    return InfinityScroll;
+}();
 
 jQuery.fn.hasScrollBar = function () {
     return this.get(0).scrollHeight > this.height();

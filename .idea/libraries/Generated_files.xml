@@ -2,6 +2,8 @@
   <library name="Generated files" type="javaScript">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/dist/web/js/cp/brand/list.js" />
+      <root url="file://$PROJECT_DIR$/dist/web/js/infinityScroll.js" />
+      <root url="file://$PROJECT_DIR$/dist/web/js/infinityScroll.js" />
     </CLASSES>
     <SOURCES />
   </library>

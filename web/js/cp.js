@@ -18,7 +18,9 @@ var filerObject = {
 
 $(function () {
 
-    $("select").select2();
+    $("select").select2({
+        theme: "bootstrap"
+    });
     // $('.table').DataTable();
 
     function entryDate() {
