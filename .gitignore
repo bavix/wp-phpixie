@@ -5,6 +5,6 @@ LICENSE
 bundles/app/web/upload/
 web/bundles
 parameters.php
-node_modules
+node_modules/
 yarn.lock
 cache/haml/
