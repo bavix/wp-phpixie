@@ -49,7 +49,6 @@
     "tedivm/stash": "^0.14.1",
     "ezyang/htmlpurifier": "dev-master",
     "ircmaxell/random-lib": "^1.2",
-    "nesbot/carbon": "^1.21",
     "ralouphie/mimey": "^1.0",
     "nelexa/buffer": "^1.1",
     "league/html-to-markdown": "^4.3",
@@ -57,7 +56,8 @@
     "monolog/monolog": "^1.21",
     "swiftmailer/swiftmailer": "^5.4",
     "openbuildings/swiftmailer-css-inliner": "^0.4.0",
-    "bshaffer/oauth2-server-php": "~1.8"
+    "bshaffer/oauth2-server-php": "~1.8",
+    "cakephp/chronos": "^1.0"
   },
   "require-dev": {
     "phpixie/test": "3.*-dev"

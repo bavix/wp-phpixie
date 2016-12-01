@@ -23,11 +23,19 @@ class HTTPProcessor extends HttpBuilder
     }
 
     /**
-     * @return HTTPProcessors\Auth
+     * @return HTTPProcessors\AuthProcessor
      */
     public function buildAuthProcessor()
     {
         return new HTTPProcessors\Auth($this->builder);
+    }
+
+    /**
+     * @return HTTPProcessors\AuthProcessor
+     */
+    public function buildBrandProcessor()
+    {
+        return new HTTPProcessors\Brand($this->builder);
     }
 
 }

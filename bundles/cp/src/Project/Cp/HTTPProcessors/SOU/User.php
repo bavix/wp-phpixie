@@ -43,7 +43,7 @@ class User extends SOUProtected
 
     public function editAction(Request $request)
     {
-        if (!$this->user->hasPermission('cp.user.edit'))
+        if (!$this->user->hasPermission('cp.sou.user.edit'))
         {
             $this->accessDenied();
         }
@@ -61,7 +61,7 @@ class User extends SOUProtected
 
     public function deleteAction(Request $request)
     {
-        if (!$this->user->hasPermission('cp.user.delete'))
+        if (!$this->user->hasPermission('cp.sou.user.delete'))
         {
             $this->accessDenied();
         }
@@ -71,7 +71,7 @@ class User extends SOUProtected
 
     public function pullRequestAction(Request $request)
     {
-        if (!$this->user->hasPermission('cp.user.pull-request'))
+        if (!$this->user->hasPermission('cp.sou.user.pull-request'))
         {
             $this->accessDenied();
         }

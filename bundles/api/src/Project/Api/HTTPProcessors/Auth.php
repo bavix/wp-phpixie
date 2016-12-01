@@ -8,41 +8,25 @@ use OAuth2\GrantType\RefreshToken;
 use OAuth2\GrantType\UserCredentials;
 use PHPixie\HTTP\Request;
 
-class Auth extends Processor
+class Auth extends AuthProcessor
 {
 
-    protected function globalsRequest()
-    {
-        return \OAuth2\Request::createFromGlobals();
-    }
-
-    protected function server()
-    {
-        $storage = new \Project\OAuth2\PDO($this->builder);
-
-        $server = new \OAuth2\Server($storage, [
-            'access_lifetime' => 86400 * 365.25 * 3
-        ]);
-
-        $server->addGrantType(new ClientCredentials($storage));
-        $server->addGrantType(new AuthorizationCode($storage));
-        $server->addGrantType(new RefreshToken($storage));
-        $server->addGrantType(new UserCredentials($storage));
-
-        return $server;
-    }
+    /**
+     * @var array
+     */
+    protected $access = ['resourcePost'];
 
     /**
      * @param Request $request
      *
      * @return array|null|string
      */
-    public function callbackAction(Request $request)
+    public function callbackGetAction(Request $request)
     {
         return $request->data()->get();
     }
 
-    public function authorizeAction()
+    public function authorizeGetAction()
     {
         $this->server();
     }
@@ -54,7 +38,7 @@ class Auth extends Processor
      * @throws \OAuth2\InvalidArgumentException
      * @throws \OAuth2\LogicException
      */
-    public function tokenAction()
+    public function tokenPostAction()
     {
         return $this->server()
             ->handleTokenRequest($this->globalsRequest())
@@ -64,28 +48,11 @@ class Auth extends Processor
     /**
      * http -f POST wbs-cms/api/auth/resource access_token=$TOKEN$
      *
-     * @return array|mixed|string
+     * @return array|bool|mixed|string
      */
-    public function resourceAction()
+    public function resourcePostAction()
     {
-        $server         = $this->server();
-        $globalsRequest = $this->globalsRequest();
-
-        if (!$server->verifyResourceRequest($globalsRequest))
-        {
-            /**
-             * @var $response \OAuth2\Response
-             */
-            $response = $server->getResponse();
-
-            return $response->getResponseBody();
-        }
-
-        return array(
-            'access_token' => $server->getAccessTokenData($globalsRequest),
-            'success'      => true,
-            'message'      => 'You accessed my APIs!'
-        );
+        return ['success'];
     }
 
 }
