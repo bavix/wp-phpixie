@@ -77,7 +77,8 @@ class Webhook extends Processor
             chdir("/home/wheelpro/web/{$dirName}/");
 
             $this->shellExec('chown -R wheelpro:www-group *');
-            $this->shellExec('git reset -hard');
+            $this->shellExec('git clean  -d  -fx ""');
+            $this->shellExec('git reset --hard');
 
             $this->shellExec("git checkout {$branch}");
 
