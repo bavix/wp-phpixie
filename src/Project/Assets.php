@@ -92,6 +92,7 @@ class Assets
         '/node_modules/react-dom/dist/react-dom.js',
 
 //        '/js/infinityScroll.js',
+        '/js/storage.js',
 
     ];
 

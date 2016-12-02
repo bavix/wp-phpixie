@@ -2,10 +2,6 @@
 
 namespace Project\Api\HTTPProcessors;
 
-use OAuth2\GrantType\AuthorizationCode;
-use OAuth2\GrantType\ClientCredentials;
-use OAuth2\GrantType\RefreshToken;
-use OAuth2\GrantType\UserCredentials;
 use PHPixie\HTTP\Request;
 
 class Auth extends AuthProcessor

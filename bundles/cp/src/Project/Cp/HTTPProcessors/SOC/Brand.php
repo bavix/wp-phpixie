@@ -104,14 +104,25 @@ class Brand extends SOCProtected
 
         $helper = $builder->helper();
 
-        $logCount = $helper->logCountByModel(Model::BRAND, $id);
-        $logPager = $helper->logPager(Model::BRAND, $id, $page, 150);
+        $modelsLog = [
+            Model::BRAND,
+            Model::BRAND_HEADING,
+            Model::BRAND_SOCIAL,
+            Model::BRAND_DEALER,
+        ];
+
+        $logCount = $helper->logCountByModel($modelsLog, $id);
+        $logPager = $helper->logPager($modelsLog, $id, $page, 100);
 
         $brand = $this->components->orm()->query(Model::BRAND)
             ->in($id)
             ->findOne();
 
+        $socials = $this->components->orm()->query(Model::SOCIAL)
+            ->find();
+
         $this->assign('brand', $brand);
+        $this->assign('socials', $socials);
 
         $this->assign('logCount', $logCount);
 
@@ -124,41 +135,7 @@ class Brand extends SOCProtected
     {
         $id = $request->attributes()->getRequired('id');
 
-        if ($this->user->hasPermission('cp.soc.brand.delete'))
-        {
-            if ($request->method() === 'DELETE')
-            {
-                $brand = $this->components->orm()->query(Model::BRAND)
-                    ->in($id)
-                    ->findOne();
-
-                $brand->delete();
-
-                return [
-                    'status' => 'success',
-                    'data'   => [
-                        'isDeleted'   => $brand->isDeleted(),
-                        'pullRequest' => false
-                    ]
-                ];
-            }
-
-            return [];
-        }
-        else if ($this->user->hasPermission('cp.soc.brand.pull-request'))
-        {
-            // pull request
-
-            return [
-                'status' => 'error',
-                'data'   => [
-                    'isDeleted'   => false,
-                    'pullRequest' => false
-                ]
-            ];
-        }
-
-        throw new \Exception();
+//        return (new Curl())->delete('/api/', []);
     }
 
     /**

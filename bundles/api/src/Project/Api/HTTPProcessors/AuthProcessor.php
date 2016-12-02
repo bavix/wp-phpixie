@@ -33,7 +33,7 @@ class AuthProcessor extends Processor
         $storage = new \Project\OAuth2\PDO($this->builder);
 
         $server = new \OAuth2\Server($storage, [
-            'access_lifetime' => 86400 * 365.25 * 3
+            'access_lifetime' => 94672800 // 3 year
         ]);
 
         $server->addGrantType(new ClientCredentials($storage));

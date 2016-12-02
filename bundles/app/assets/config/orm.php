@@ -6,6 +6,18 @@ return [
 
     'models' => [
 
+        Model::BRAND_SOCIAL => [
+            'table' => 'brandsSocials'
+        ],
+
+        Model::BRAND_DEALER => [
+            'table' => 'brandsDealers'
+        ],
+
+        Model::BRAND_HEADING => [
+            'table' => 'brandsHeadings'
+        ],
+
     ],
 
     'relationships' => [
@@ -113,6 +125,23 @@ return [
                 'ownerProperty' => Model::HEADING,
                 'ownerKey'      => 'parentId'
             )
+        ],
+
+        // brand <-> social
+        [
+            'type'  => 'manyToMany',
+            'left'  => Model::BRAND,
+            'right' => Model::SOCIAL
+        ],
+        [
+            'type'  => 'oneToMany',
+            'owner' => Model::BRAND,
+            'items' => Model::BRAND_SOCIAL
+        ],
+        [
+            'type'  => 'oneToMany',
+            'owner' => Model::SOCIAL,
+            'items' => Model::BRAND_SOCIAL
         ],
 
         [

@@ -37,7 +37,7 @@ class Helper
      * @return \PHPixie\Paginate\Pager
      * @throws \PHPixie\Paginate\Exception
      */
-    public function pager($page, $query, $limit = 50) : Pager
+    public function pager($page, $query, $limit = 50): Pager
     {
         $page = (int)$page > 0 ? $page - 1 : 0;
 
@@ -60,28 +60,30 @@ class Helper
     }
 
     /**
-     * @param string $modelName
-     * @param int    $modelId
+     * @param array $models
+     * @param int   $modelId
      *
      * @return mixed
      */
-    protected function modelLog($modelName, $modelId)
+    protected function modelLog($models, $modelId)
     {
-        if (empty($this->logs[$modelName][$modelId]))
+        $key = json_encode($models);
+
+        if (empty($this->logs[$key][$modelId]))
         {
             $orm = $this->builder->components()->orm();
 
-            $this->logs[$modelName][$modelId] = $orm->query(Model::LOG)
-                ->where('model', $modelName)
+            $this->logs[$key][$modelId] = $orm->query(Model::LOG)
+                ->where('model', 'in', $models)
                 ->where('modelId', $modelId)
                 ->orderDescendingBy('createdAt');
         }
 
-        return $this->logs[$modelName][$modelId];
+        return $this->logs[$key][$modelId];
     }
 
     /**
-     * @param string $modelName
+     * @param string $models
      * @param int    $modelId
      * @param int    $page
      * @param int    $limit
@@ -89,22 +91,22 @@ class Helper
      * @return Pager
      * @throws \PHPixie\Paginate\Exception
      */
-    public function logPager($modelName, $modelId, $page, $limit = 50)
+    public function logPager($models, $modelId, $page, $limit = 50)
     {
-        $logerQuery = $this->modelLog($modelName, $modelId);
+        $logerQuery = $this->modelLog($models, $modelId);
 
         return $this->pager($page, $logerQuery, $limit);
     }
 
     /**
-     * @param string $name
-     * @param int    $id
+     * @param array $models
+     * @param int   $id
      *
      * @return int
      */
-    public function logCountByModel($name, $id)
+    public function logCountByModel($models, $id)
     {
-        return $this->modelLog($name, $id)->count();
+        return $this->modelLog($models, $id)->count();
     }
 
 }
