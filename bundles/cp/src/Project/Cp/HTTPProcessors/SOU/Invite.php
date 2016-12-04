@@ -2,7 +2,7 @@
 
 namespace Project\Cp\HTTPProcessors\SOU;
 
-use Cake\Chronos\Chronos;
+use Carbon\Carbon;
 use Openbuildings\Swiftmailer\CssInlinerPlugin;
 use PHPixie\HTTP\Request;
 use Project\Cp\HTTPProcessors\Processor\SOUProtected;
@@ -94,10 +94,10 @@ class Invite extends SOUProtected
 
                 $invite->token = $generator->generateString(8, $chars);
 
-                $chronos = Chronos::create();
-                $chronos->addDay(3); // add 3 day
+                $carbon = Carbon::create();
+                $carbon->addDay(3); // add 3 day
 
-                $invite->expires = $chronos->timestamp;
+                $invite->expires = $carbon->timestamp;
 
                 if ($invite->save())
                 {

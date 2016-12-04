@@ -6,7 +6,6 @@ use PHPixie\HTTP\Request;
 use Project\Api\HTTPProcessors\Processor\SOCProtected;
 use Project\Framework\Builder;
 use Project\Model;
-use Project\ORM\Brand\Query;
 
 class Brand extends SOCProtected
 {
@@ -29,24 +28,21 @@ class Brand extends SOCProtected
 
         if ($this->user->hasPermission('cp.soc.brand.delete'))
         {
-            if ($request->method() === 'DELETE')
-            {
-                $brand = $this->components->orm()->query(Model::BRAND)
-                    ->in($id)
-                    ->findOne();
 
-                $brand->delete();
+            $brand = $this->components->orm()->query(Model::BRAND)
+                ->in($id)
+                ->findOne();
 
-                return [
-                    'status' => 'success',
-                    'data'   => [
-                        'isDeleted'   => $brand->isDeleted(),
-                        'pullRequest' => false
-                    ]
-                ];
-            }
+            $brand->delete();
 
-            return [];
+            return [
+                'status' => 'success',
+                'data'   => [
+                    'isDeleted'   => $brand->isDeleted(),
+                    'pullRequest' => false
+                ]
+            ];
+
         }
         else if ($this->user->hasPermission('cp.soc.brand.pull-request'))
         {

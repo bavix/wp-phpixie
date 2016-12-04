@@ -25,7 +25,7 @@ class HTTPProcessor extends HttpBuilder
     }
 
     /**
-     * @return HTTPProcessors\AuthProcessor
+     * @return HTTPProcessors\Auth
      */
     public function buildAuthProcessor()
     {

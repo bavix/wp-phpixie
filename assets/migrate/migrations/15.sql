@@ -10,6 +10,6 @@ CREATE TABLE `brandsSocials` (
 	CONSTRAINT `brandssocials_ibfk_1` FOREIGN KEY (`brandId`) REFERENCES `brands` (`id`),
 	CONSTRAINT `brandssocials_ibfk_2` FOREIGN KEY (`socialId`) REFERENCES `socials` (`id`)
 )
-COLLATE=''utf8mb4_general_ci''
+COLLATE='utf8mb4_general_ci'
 ENGINE=InnoDB
 ROW_FORMAT=DYNAMIC;

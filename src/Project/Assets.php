@@ -91,7 +91,10 @@ class Assets
         '/node_modules/react/dist/react.js',
         '/node_modules/react-dom/dist/react-dom.js',
 
-//        '/js/infinityScroll.js',
+        // fetch
+        '/node_modules/whatwg-fetch/fetch.js',
+
+        //        '/js/infinityScroll.js',
         '/js/storage.js',
 
     ];

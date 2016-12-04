@@ -21,7 +21,7 @@ return array(
 
                     'item' => array(
                         'type' => 'pattern',
-                        'path' => '/<nextProcessor>/<action>/<id>'
+                        'path' => '/<nextProcessor>/<action>/<id>(/<nextAction>)'
                     ),
 
                     'action' => array(
@@ -58,7 +58,7 @@ return array(
 
                     'item' => array(
                         'type' => 'pattern',
-                        'path' => '/<nextProcessor>/<action>/<id>'
+                        'path' => '/<nextProcessor>/<action>/<id>(/<nextAction>)'
                     ),
 
                     'action' => array(
@@ -95,7 +95,7 @@ return array(
 
                     'item' => array(
                         'type' => 'pattern',
-                        'path' => '/<nextProcessor>/<action>/<id>'
+                        'path' => '/<nextProcessor>/<action>/<id>(/<nextAction>)'
                     ),
 
                     'action' => array(
@@ -117,7 +117,7 @@ return array(
 
         'item' => array(
             'type' => 'pattern',
-            'path' => '/<processor>/<action>/<id>'
+            'path' => '/<processor>/<action>/<id>(/<nextAction>)'
         ),
 
         'action' => array(

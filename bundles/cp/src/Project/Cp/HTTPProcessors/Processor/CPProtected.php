@@ -67,17 +67,21 @@ abstract class CPProtected extends Processor
 
         $url = $http->generatePath($url, $attributes);
 
-        $this->variables['actions'][] = [
+        $this->assignPush('actions', [
             'url'   => $url,
             'class' => $class,
             'icon'  => $icon,
             'text'  => $text
-        ];
+        ]);
     }
 
     public function breadcrumbs($action, Menu $current)
     {
-        $pool = $this->builder->frameworkBuilder()->cache();
+        /**
+         * @var $builder \Project\Framework\Builder
+         */
+        $builder = $this->builder->frameworkBuilder();
+        $pool    = $builder->cache();
 
         $key = __FUNCTION__ . $action . $current->id();
 
@@ -97,6 +101,9 @@ abstract class CPProtected extends Processor
 
             do
             {
+                /**
+                 * @var $current Menu
+                 */
                 $current = $current->menu();
 
                 if ($current)
@@ -193,16 +200,18 @@ abstract class CPProtected extends Processor
             ->where('httpPath', $httpPath)
             ->findOne();
 
-        $this->variables['user']        = $this->user;
-        $this->variables['currentMenu'] = $currentMenu;
-        $this->variables['menuList']    = $orm->query(Model::MENU)
+        $menuList = $orm->query(Model::MENU)
             ->where('parentId', 0)
             ->orderAscendingBy('sortId')
             ->find();
 
-        $action = $request->attributes()->get('action');
+        $action      = $request->attributes()->get('action');
+        $breadcrumbs = $this->breadcrumbs($action, $currentMenu);
 
-        $this->variables['breadcrumbs'] = $this->breadcrumbs($action, $currentMenu);
+        $this->assign('user', $this->user);
+        $this->assign('currentMenu', $currentMenu);
+        $this->assign('menuList', $menuList);
+        $this->assign('breadcrumbs', $breadcrumbs);
 
         return parent::process($request);
     }

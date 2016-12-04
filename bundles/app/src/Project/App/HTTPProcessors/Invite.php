@@ -25,7 +25,7 @@ class Invite extends Processor
         $invite = $this->components->orm()->query(Model::INVITE)
             ->where('token', $token)
             ->where('expires', '>=', time())
-            ->where('activated', '=', 0)
+            ->where('activated', 0)
             ->findOne();
 
         if (!$invite)
@@ -82,7 +82,6 @@ class Invite extends Processor
         $urlPath = $uri->getScheme() . '://' . $uri->getHost() . '/svg/no-avatar-140.png';
 
         $grAvatar = 'https://secure.gravatar.com/avatar/' . md5($invite->email);
-
         $grAvatar .= '?s=' . 100;
         $grAvatar .= '&d=' . $urlPath;
 

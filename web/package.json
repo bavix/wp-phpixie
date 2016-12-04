@@ -8,6 +8,7 @@
     "animate.css": "^3.5.2",
     "blueimp-file-upload": "^9.14.1",
     "bootstrap": "^3.3.7",
+    "cropper": "^2.3.4",
     "datatables.net": "^1.10.12",
     "datatables.net-bs": "^1.10.12",
     "font-awesome": "^4.7.0",
@@ -25,6 +26,7 @@
     "sweetalert2": "^6.1.1",
     "toastr": "^2.1.2",
     "typeahead": "^0.2.2",
-    "urljs": "^2.3.1"
+    "urljs": "^2.3.1",
+    "whatwg-fetch": "^2.0.1"
   }
 }

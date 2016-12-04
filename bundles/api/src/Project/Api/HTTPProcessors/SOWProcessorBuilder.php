@@ -1,6 +1,6 @@
 <?php
 
-namespace Project\Cp\HTTPProcessors;
+namespace Project\Api\HTTPProcessors;
 
 use Project\Cp\Builder;
 use Project\Extension\Util;

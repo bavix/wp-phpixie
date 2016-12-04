@@ -21,7 +21,6 @@ $(function () {
     $("select").select2({
         theme: "bootstrap"
     });
-    // $('.table').DataTable();
 
     function entryDate() {
         $(".entry-date").html(function (index, value) {
