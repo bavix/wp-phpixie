@@ -3,7 +3,6 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/vendor/bshaffer/oauth2-server-php" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/cakephp/chronos" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/curl/curl" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ezyang/htmlpurifier" />
@@ -77,7 +76,6 @@
       <library name="PHP" type="php">
         <CLASSES>
           <root url="file://$MODULE_DIR$/vendor/bshaffer/oauth2-server-php" />
-          <root url="file://$MODULE_DIR$/vendor/cakephp/chronos" />
           <root url="file://$MODULE_DIR$/vendor/composer" />
           <root url="file://$MODULE_DIR$/vendor/curl/curl" />
           <root url="file://$MODULE_DIR$/vendor/ezyang/htmlpurifier" />
@@ -137,7 +135,6 @@
         </CLASSES>
         <SOURCES>
           <root url="file://$MODULE_DIR$/vendor/bshaffer/oauth2-server-php" />
-          <root url="file://$MODULE_DIR$/vendor/cakephp/chronos" />
           <root url="file://$MODULE_DIR$/vendor/composer" />
           <root url="file://$MODULE_DIR$/vendor/curl/curl" />
           <root url="file://$MODULE_DIR$/vendor/ezyang/htmlpurifier" />

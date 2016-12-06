@@ -19,14 +19,28 @@ return array(
 
                 'resolvers' => array(
 
-                    'item' => array(
-                        'type' => 'pattern',
-                        'path' => '/<nextProcessor>/<action>/<id>(/<nextAction>)'
+                    'nextItem' => array(
+                        'type'     => 'pattern',
+                        'path' => '/<nextProcessor>/<id>/<nextAction>/<nextId>',
+                        'defaults' => array(
+                            'action' => 'nextItem'
+                        )
                     ),
 
-                    'action' => array(
+                    'nextAction' => array(
                         'type' => 'pattern',
-                        'path' => '/<nextProcessor>/<action>'
+                        'path' => '/<nextProcessor>/<id>/<nextAction>',
+                        'defaults' => array(
+                            'action' => 'next'
+                        )
+                    ),
+
+                    'item' => array(
+                        'type'     => 'pattern',
+                        'path'     => '/<nextProcessor>/<id>',
+                        'defaults' => array(
+                            'action' => 'item'
+                        )
                     ),
 
                     'processor' => array(
@@ -56,14 +70,28 @@ return array(
 
                 'resolvers' => array(
 
-                    'item' => array(
-                        'type' => 'pattern',
-                        'path' => '/<nextProcessor>/<action>/<id>(/<nextAction>)'
+                    'nextItem' => array(
+                        'type'     => 'pattern',
+                        'path' => '/<nextProcessor>/<id>/<nextAction>/<nextId>',
+                        'defaults' => array(
+                            'action' => 'nextItem'
+                        )
                     ),
 
-                    'action' => array(
+                    'nextAction' => array(
                         'type' => 'pattern',
-                        'path' => '/<nextProcessor>/<action>'
+                        'path' => '/<nextProcessor>/<id>/<nextAction>',
+                        'defaults' => array(
+                            'action' => 'next'
+                        )
+                    ),
+
+                    'item' => array(
+                        'type'     => 'pattern',
+                        'path'     => '/<nextProcessor>/<id>',
+                        'defaults' => array(
+                            'action' => 'item'
+                        )
                     ),
 
                     'processor' => array(
@@ -93,14 +121,28 @@ return array(
 
                 'resolvers' => array(
 
-                    'item' => array(
-                        'type' => 'pattern',
-                        'path' => '/<nextProcessor>/<action>/<id>(/<nextAction>)'
+                    'nextItem' => array(
+                        'type'     => 'pattern',
+                        'path' => '/<nextProcessor>/<id>/<nextAction>/<nextId>',
+                        'defaults' => array(
+                            'action' => 'nextItem'
+                        )
                     ),
 
-                    'action' => array(
+                    'nextAction' => array(
                         'type' => 'pattern',
-                        'path' => '/<nextProcessor>/<action>'
+                        'path' => '/<nextProcessor>/<id>/<nextAction>',
+                        'defaults' => array(
+                            'action' => 'next'
+                        )
+                    ),
+
+                    'item' => array(
+                        'type'     => 'pattern',
+                        'path'     => '/<nextProcessor>/<id>',
+                        'defaults' => array(
+                            'action' => 'item'
+                        )
                     ),
 
                     'processor' => array(
@@ -115,14 +157,36 @@ return array(
             )
         ),
 
-        'item' => array(
-            'type' => 'pattern',
-            'path' => '/<processor>/<action>/<id>(/<nextAction>)'
+        'nextItem' => array(
+            'type'     => 'pattern',
+            'path' => '/<nextProcessor>/<id>/<nextAction>/<nextId>',
+            'defaults' => array(
+                'action' => 'nextItem'
+            )
         ),
 
-        'action' => array(
+        'nextAction' => array(
             'type' => 'pattern',
-            'path' => '/<processor>/<action>'
+            'path' => '/<nextProcessor>/<id>/<nextAction>',
+            'defaults' => array(
+                'action' => 'next'
+            )
+        ),
+
+        'item' => array(
+            'type'     => 'pattern',
+            'path'     => '/<nextProcessor>/<id>',
+            'defaults' => array(
+                'action' => 'item'
+            )
+        ),
+
+        'processor' => array(
+            'type'     => 'pattern',
+            'path'     => '/<nextProcessor>',
+            'defaults' => array(
+                'action' => 'default'
+            )
         ),
 
     )

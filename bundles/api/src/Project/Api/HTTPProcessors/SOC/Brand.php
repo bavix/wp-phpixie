@@ -6,17 +6,42 @@ use PHPixie\HTTP\Request;
 use Project\Api\HTTPProcessors\Processor\SOCProtected;
 use Project\Framework\Builder;
 use Project\Model;
+use Project\ORM\Brand\Query;
 
 class Brand extends SOCProtected
 {
 
     protected $access = ['defaultPost'];
 
+    // default
     public function defaultPostAction(Request $request)
     {
+        $name = $request->data()->getRequired('name');
+        $name = mb_strtoupper($name);
+        $name = trim($name);
 
+        if (empty($name))
+        {
+            throw new \Exception('Name is empty');
+        }
 
-        return [__METHOD__];
+        $orm = $this->components->orm();
+
+        /**
+         * @var Query $brand
+         */
+        $brand = $orm->query(Model::BRAND);
+        $brand = $brand->findByName($name);
+
+        if (!$brand)
+        {
+            $brand = $orm->createEntity(Model::BRAND);
+
+            $brand->name = $name;
+            $brand->save();
+        }
+
+        return $brand->asObject(true);
     }
 
     public function defaultPatchAction(Request $request)
@@ -64,6 +89,12 @@ class Brand extends SOCProtected
         throw new \Exception();
     }
 
+    /**
+     * @param Request $request
+     *
+     * @return mixed
+     * @throws \PHPixie\Paginate\Exception
+     */
     public function defaultGetAction(Request $request)
     {
         /**
@@ -78,7 +109,7 @@ class Brand extends SOCProtected
 
         $pager = $builder->helper()->pager($page, $brand, $limit);
 
-        return $pager->getCurrentItems();
+        return $pager->getCurrentItems()->asArray(true);
     }
 
 }

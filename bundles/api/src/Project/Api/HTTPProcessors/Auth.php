@@ -41,14 +41,4 @@ class Auth extends AuthProcessor
             ->getResponseBody();
     }
 
-    /**
-     * http -f POST wbs-cms/api/auth/resource access_token=$TOKEN$
-     *
-     * @return array|bool|mixed|string
-     */
-    public function resourcePostAction()
-    {
-        return ['success'];
-    }
-
 }

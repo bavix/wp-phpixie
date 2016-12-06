@@ -75,4 +75,35 @@ class HTTPProcessor extends HttpBuilder
         return new HTTPProcessors\SOUProcessorBuilder($this->builder);
     }
 
+    /**
+     * @param Request $value
+     *
+     * @return array
+     */
+    public function process($value)
+    {
+        try
+        {
+            $process = parent::process($value);
+        }
+        catch (\Throwable $throwable)
+        {
+            $process = [
+                'message' => $throwable->getMessage()
+            ];
+
+            $http = $this->builder->components()->http();
+
+            $body = $http->messages()->stringStream(
+                json_encode($process, JSON_UNESCAPED_UNICODE)
+            );
+
+            return $http->responses()->response($body, [
+                'Content-Type'  => 'application/json'
+            ], 400); // bad request
+        }
+
+        return $process;
+    }
+
 }
