@@ -10,8 +10,12 @@ use Project\Model;
 class Brand extends SOCProtected
 {
 
+    protected $access = ['defaultPost'];
+
     public function defaultPostAction(Request $request)
     {
+
+
         return [__METHOD__];
     }
 

@@ -2,54 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/moment/locale/bg-x.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/moment/src/locale/bg-x.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/WBS.iml" afterPath="$PROJECT_DIR$/.idea/WBS.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/.yarn-integrity" afterPath="$PROJECT_DIR$/web/node_modules/.yarn-integrity" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/CHANGELOG.md" afterPath="$PROJECT_DIR$/web/node_modules/cropper/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/README.md" afterPath="$PROJECT_DIR$/web/node_modules/cropper/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/dist/cropper.css" afterPath="$PROJECT_DIR$/web/node_modules/cropper/dist/cropper.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/dist/cropper.js" afterPath="$PROJECT_DIR$/web/node_modules/cropper/dist/cropper.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/dist/cropper.min.css" afterPath="$PROJECT_DIR$/web/node_modules/cropper/dist/cropper.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/dist/cropper.min.js" afterPath="$PROJECT_DIR$/web/node_modules/cropper/dist/cropper.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/package.json" afterPath="$PROJECT_DIR$/web/node_modules/cropper/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/src/js/bind.js" afterPath="$PROJECT_DIR$/web/node_modules/cropper/src/js/bind.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/src/js/build.js" afterPath="$PROJECT_DIR$/web/node_modules/cropper/src/js/build.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/src/js/change.js" afterPath="$PROJECT_DIR$/web/node_modules/cropper/src/js/change.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/src/js/cropper.js" afterPath="$PROJECT_DIR$/web/node_modules/cropper/src/js/cropper.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/src/js/defaults.js" afterPath="$PROJECT_DIR$/web/node_modules/cropper/src/js/defaults.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/src/js/handlers.js" afterPath="$PROJECT_DIR$/web/node_modules/cropper/src/js/handlers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/src/js/init.js" afterPath="$PROJECT_DIR$/web/node_modules/cropper/src/js/init.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/src/js/intro.js" afterPath="$PROJECT_DIR$/web/node_modules/cropper/src/js/intro.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/src/js/methods.js" afterPath="$PROJECT_DIR$/web/node_modules/cropper/src/js/methods.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/src/js/outro.js" afterPath="$PROJECT_DIR$/web/node_modules/cropper/src/js/outro.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/src/js/plugin.js" afterPath="$PROJECT_DIR$/web/node_modules/cropper/src/js/plugin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/src/js/preview.js" afterPath="$PROJECT_DIR$/web/node_modules/cropper/src/js/preview.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/src/js/render.js" afterPath="$PROJECT_DIR$/web/node_modules/cropper/src/js/render.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/src/js/template.js" afterPath="$PROJECT_DIR$/web/node_modules/cropper/src/js/template.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/src/js/utilities.js" afterPath="$PROJECT_DIR$/web/node_modules/cropper/src/js/utilities.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/cropper/src/js/variables.js" afterPath="$PROJECT_DIR$/web/node_modules/cropper/src/js/variables.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/CHANGELOG.md" afterPath="$PROJECT_DIR$/web/node_modules/moment/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/locale/yo.js" afterPath="$PROJECT_DIR$/web/node_modules/moment/locale/yo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/min/locales.js" afterPath="$PROJECT_DIR$/web/node_modules/moment/min/locales.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/min/locales.min.js" afterPath="$PROJECT_DIR$/web/node_modules/moment/min/locales.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/min/moment-with-locales.js" afterPath="$PROJECT_DIR$/web/node_modules/moment/min/moment-with-locales.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/min/moment-with-locales.min.js" afterPath="$PROJECT_DIR$/web/node_modules/moment/min/moment-with-locales.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/min/moment.min.js" afterPath="$PROJECT_DIR$/web/node_modules/moment/min/moment.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/moment.d.ts" afterPath="$PROJECT_DIR$/web/node_modules/moment/moment.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/moment.js" afterPath="$PROJECT_DIR$/web/node_modules/moment/moment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/package.json" afterPath="$PROJECT_DIR$/web/node_modules/moment/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/src/locale/yo.js" afterPath="$PROJECT_DIR$/web/node_modules/moment/src/locale/yo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/src/moment.js" afterPath="$PROJECT_DIR$/web/node_modules/moment/src/moment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/sweetalert2/README.md" afterPath="$PROJECT_DIR$/web/node_modules/sweetalert2/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/sweetalert2/dist/sweetalert2.common.js" afterPath="$PROJECT_DIR$/web/node_modules/sweetalert2/dist/sweetalert2.common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/sweetalert2/dist/sweetalert2.js" afterPath="$PROJECT_DIR$/web/node_modules/sweetalert2/dist/sweetalert2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/sweetalert2/dist/sweetalert2.min.js" afterPath="$PROJECT_DIR$/web/node_modules/sweetalert2/dist/sweetalert2.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/sweetalert2/package.json" afterPath="$PROJECT_DIR$/web/node_modules/sweetalert2/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/sweetalert2/src/sweetalert2.js" afterPath="$PROJECT_DIR$/web/node_modules/sweetalert2/src/sweetalert2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/package.json" afterPath="$PROJECT_DIR$/web/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php" />
     </list>
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,28 +42,28 @@
       <file leaf-file-name="cp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/cp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="1309">
               <caret line="77" column="26" lean-forward="false" selection-start-line="77" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.haml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="607">
-              <caret line="127" column="61" lean-forward="true" selection-start-line="127" selection-start-column="61" selection-end-line="127" selection-end-column="61" />
+            <state relative-caret-position="17">
+              <caret line="169" column="0" lean-forward="true" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
               <folding>
-                <marker date="1480943291842" expanded="true" signature="7607:9135" ph="{...}" />
-                <marker date="1480943291842" expanded="true" signature="7655:7922" ph="{...}" />
-                <marker date="1480943291842" expanded="true" signature="7692:7803" ph="{...}" />
-                <marker date="1480943291842" expanded="true" signature="7809:7916" ph="{...}" />
-                <marker date="1480943291842" expanded="true" signature="7984:8310" ph="{...}" />
-                <marker date="1480943291842" expanded="true" signature="8138:8274" ph="{...}" />
-                <marker date="1480943291842" expanded="true" signature="8355:8681" ph="{...}" />
-                <marker date="1480943291842" expanded="true" signature="8495:8651" ph="{...}" />
-                <marker date="1480943291842" expanded="true" signature="8689:9131" ph="//..." />
+                <marker date="1480953584427" expanded="true" signature="7608:9136" ph="{...}" />
+                <marker date="1480953584427" expanded="true" signature="7656:7923" ph="{...}" />
+                <marker date="1480953584427" expanded="true" signature="7693:7804" ph="{...}" />
+                <marker date="1480953584427" expanded="true" signature="7810:7917" ph="{...}" />
+                <marker date="1480953584427" expanded="true" signature="7985:8311" ph="{...}" />
+                <marker date="1480953584427" expanded="true" signature="8139:8275" ph="{...}" />
+                <marker date="1480953584427" expanded="true" signature="8356:8682" ph="{...}" />
+                <marker date="1480953584427" expanded="true" signature="8496:8652" ph="{...}" />
+                <marker date="1480953584427" expanded="true" signature="8690:9132" ph="//..." />
               </folding>
             </state>
           </provider>
@@ -115,8 +72,38 @@
       <file leaf-file-name="Brand.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="54" column="9" lean-forward="false" selection-start-line="54" selection-start-column="9" selection-end-line="57" selection-end-column="0" />
+            <state relative-caret-position="442">
+              <caret line="38" column="42" lean-forward="false" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Brand.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SOCProtected.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Processor/SOCProtected.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Auth.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Auth.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="431">
+              <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -199,7 +186,6 @@
         <option value="$PROJECT_DIR$/src/Project/Framework/Builder.php" />
         <option value="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Dashboard.php" />
         <option value="$PROJECT_DIR$/assets/config/oauth.php" />
-        <option value="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php" />
         <option value="$PROJECT_DIR$/src/Project/Curl.php" />
         <option value="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Auth.php" />
         <option value="$PROJECT_DIR$/src/Project/Assets.php" />
@@ -210,12 +196,13 @@
         <option value="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOU/User.php" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/sou/user/profile.haml" />
         <option value="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Auth.php" />
-        <option value="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php" />
         <option value="$PROJECT_DIR$/bundles/api/assets/config/routeResolver.php" />
         <option value="$PROJECT_DIR$/src/Project/Extension/Processor.php" />
         <option value="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Processor/CPProtected.php" />
         <option value="$PROJECT_DIR$/web/js/cp.js" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml" />
+        <option value="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php" />
+        <option value="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php" />
       </list>
     </option>
   </component>
@@ -291,13 +278,14 @@
       <path value="$PROJECT_DIR$/vendor/curl/curl" />
       <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/cakephp/chronos" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1912" />
-    <option name="y" value="49" />
-    <option name="width" value="1936" />
-    <option name="height" value="1066" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="754" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -355,6 +343,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -539,40 +528,29 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
+              <option name="myItemId" value="Project" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
+              <option name="myItemId" value="Api" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="HTTPProcessors" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="SOC" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -784,18 +762,21 @@
       <workItem from="1480693757855" duration="7625000" />
       <workItem from="1480751950872" duration="16883000" />
       <workItem from="1480916109617" duration="5145000" />
+      <workItem from="1480953498104" duration="17000" />
+      <workItem from="1480953533494" duration="1039000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="667436000" />
+    <option name="totallyTimeSpent" value="668492000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="49" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22547974" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23298033" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32475883" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -809,7 +790,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32583067" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32045087" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -840,22 +820,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/Builder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/Builder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Project/Framework/Bundles.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -874,7 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -889,7 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -918,7 +880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="29" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -926,9 +887,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="44" column="7" lean-forward="false" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
-          <folding>
-            <element signature="e#37#54#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -936,7 +894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
           <caret line="475" column="15" lean-forward="false" selection-start-line="475" selection-start-column="3" selection-end-line="475" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -944,7 +901,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -974,13 +930,6 @@
         <state relative-caret-position="119">
           <caret line="7" column="56" lean-forward="true" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="56" column="1" lean-forward="false" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1072,7 +1021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1125,19 +1073,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/api/assets/config/routeResolver.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1145,9 +1084,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1938">
           <caret line="118" column="20" lean-forward="false" selection-start-line="118" selection-start-column="20" selection-end-line="118" selection-end-column="20" />
-          <folding>
-            <element signature="e#37#76#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1155,7 +1091,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1163,7 +1098,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1176,7 +1110,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/cp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="1309">
           <caret line="77" column="26" lean-forward="false" selection-start-line="77" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
           <folding />
         </state>
@@ -1186,15 +1120,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
           <caret line="65" column="39" lean-forward="false" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/AuthProcessor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1202,35 +1127,72 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="169" column="0" lean-forward="true" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
           <folding>
-            <element signature="e#55#80#0#PHP" expanded="false" />
+            <marker date="1480953584427" expanded="true" signature="7608:9136" ph="{...}" />
+            <marker date="1480953584427" expanded="true" signature="7656:7923" ph="{...}" />
+            <marker date="1480953584427" expanded="true" signature="7693:7804" ph="{...}" />
+            <marker date="1480953584427" expanded="true" signature="7810:7917" ph="{...}" />
+            <marker date="1480953584427" expanded="true" signature="7985:8311" ph="{...}" />
+            <marker date="1480953584427" expanded="true" signature="8139:8275" ph="{...}" />
+            <marker date="1480953584427" expanded="true" signature="8356:8682" ph="{...}" />
+            <marker date="1480953584427" expanded="true" signature="8496:8652" ph="{...}" />
+            <marker date="1480953584427" expanded="true" signature="8690:9132" ph="//..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="54" column="9" lean-forward="false" selection-start-line="54" selection-start-column="9" selection-end-line="57" selection-end-column="0" />
+        <state relative-caret-position="442">
+          <caret line="38" column="42" lean-forward="false" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml">
+    <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="127" column="61" lean-forward="true" selection-start-line="127" selection-start-column="61" selection-end-line="127" selection-end-column="61" />
-          <folding>
-            <marker date="1480943291842" expanded="true" signature="7607:9135" ph="{...}" />
-            <marker date="1480943291842" expanded="true" signature="7655:7922" ph="{...}" />
-            <marker date="1480943291842" expanded="true" signature="7692:7803" ph="{...}" />
-            <marker date="1480943291842" expanded="true" signature="7809:7916" ph="{...}" />
-            <marker date="1480943291842" expanded="true" signature="7984:8310" ph="{...}" />
-            <marker date="1480943291842" expanded="true" signature="8138:8274" ph="{...}" />
-            <marker date="1480943291842" expanded="true" signature="8355:8681" ph="{...}" />
-            <marker date="1480943291842" expanded="true" signature="8495:8651" ph="{...}" />
-            <marker date="1480943291842" expanded="true" signature="8689:9131" ph="//..." />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/AuthProcessor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1581">
+          <caret line="98" column="9" lean-forward="true" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Processor/APIProtected.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="45" lean-forward="false" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Processor/SOCProtected.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

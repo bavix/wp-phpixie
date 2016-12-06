@@ -138,25 +138,6 @@ class Brand extends SOCProtected
         return $this->render('cp:soc/brand/edit');
     }
 
-    public function deleteAction(Request $request)
-    {
-        $id = $request->attributes()->getRequired('id');
-
-        /**
-         * @var $builder Builder
-         */
-        $builder = $this->builder->frameworkBuilder();
-
-//        $curl   = $builder->curl();
-//        $cookie = $builder->context()->httpContext()->cookies();
-//
-//        $curl->delete('api/soc/brand', [
-//
-//        ]);
-
-//        return (new Curl())->delete('/api/', []);
-    }
-
     /**
      * Brand List
      */
