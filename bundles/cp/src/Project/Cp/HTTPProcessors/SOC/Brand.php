@@ -12,36 +12,6 @@ class Brand extends SOCProtected
 
     public function addAction(Request $request)
     {
-//        if ($request->method() === 'POST')
-//        {
-//            $name = $request->data()->getRequired('name');
-//
-//            $name = mb_strtoupper($name);
-//
-//            if (!empty($name))
-//            {
-//                $orm = $this->components->orm();
-//
-//                /**
-//                 * @var Query $brand
-//                 */
-//                $brand = $orm->query(Model::BRAND);
-//                $brand = $brand->findByName($name);
-//
-//                if (!$brand)
-//                {
-//                    $brand = $orm->createEntity(Model::BRAND);
-//
-//                    $brand->name = $name;
-//                    $brand->save();
-//                }
-//
-//                $resolverPath = 'cp.soc.brand@edit.' . $brand->id();
-//
-//                return $this->redirectWithUtil($resolverPath);
-//            }
-//        }
-
         return $this->render('cp:soc/brand/add');
     }
 

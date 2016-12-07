@@ -6,7 +6,7 @@
     .ibox-title
       %h3 New Brand
     .ibox-content
-      %form(method="POST")
+      %form(method="POST" action="/api/soc/brand" data-ajax)
         .form-group.form-group-lg
           %label.control-label(for="brandName")
             Name
