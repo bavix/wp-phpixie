@@ -4,6 +4,7 @@ namespace Project\Api;
 
 use PHPixie\DefaultBundle\Processor\HTTP\Builder as HttpBuilder;
 use PHPixie\HTTP\Request;
+use Project\Api\ENUM\REST;
 use Project\Extension\Util;
 
 class HTTPProcessor extends HttpBuilder
@@ -76,15 +77,16 @@ class HTTPProcessor extends HttpBuilder
     }
 
     /**
-     * @param Request $value
+     * @param Request $request
      *
      * @return array
      */
-    public function process($value)
+    public function process($request)
     {
+
         try
         {
-            $process = parent::process($value);
+            $process = parent::process($request);
         }
         catch (\Throwable $throwable)
         {
@@ -92,18 +94,32 @@ class HTTPProcessor extends HttpBuilder
                 'message' => $throwable->getMessage()
             ];
 
-            $http = $this->builder->components()->http();
+            RESTFUL::setStatus( REST::BAD_REQUEST );
+        }
+        finally
+        {
 
-            $body = $http->messages()->stringStream(
-                json_encode($process, JSON_UNESCAPED_UNICODE)
+            if (is_array($process) || is_object($process))
+            {
+                $process = json_encode($process, JSON_UNESCAPED_UNICODE);
+            }
+
+            $http = $this->builder->components()->http();
+            $body = $http->messages()->stringStream($process);
+
+            return $http->responses()->response(
+                $body,
+                ['Content-Type' => 'application/json'],
+                RESTFUL::getStatus()
             );
 
-            return $http->responses()->response($body, [
-                'Content-Type'  => 'application/json'
-            ], 400); // bad request
         }
 
-        return $process;
+    }
+
+    public function isProcessable($value)
+    {
+        return true; // for api
     }
 
 }

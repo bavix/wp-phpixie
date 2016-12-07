@@ -3,7 +3,9 @@
 namespace Project\Api\HTTPProcessors\SOC;
 
 use PHPixie\HTTP\Request;
+use Project\Api\ENUM\REST;
 use Project\Api\HTTPProcessors\Processor\SOCProtected;
+use Project\Api\RESTFUL;
 use Project\Framework\Builder;
 use Project\Model;
 use Project\ORM\Brand\Query;
@@ -11,7 +13,10 @@ use Project\ORM\Brand\Query;
 class Brand extends SOCProtected
 {
 
-    protected $access = ['defaultPost'];
+    protected $access = [
+        'defaultPost',
+        'itemDelete'
+    ];
 
     // default
     public function defaultPostAction(Request $request)
@@ -39,23 +44,18 @@ class Brand extends SOCProtected
 
             $brand->name = $name;
             $brand->save();
+
+            RESTFUL::setStatus(REST::CREATED);
         }
 
         return $brand->asObject(true);
     }
 
-    public function defaultPatchAction(Request $request)
+    public function itemDeleteAction(Request $request)
     {
         $id = $request->attributes()->getRequired('id');
 
-        return [$id, __METHOD__];
-    }
-
-    public function defaultDeleteAction(Request $request)
-    {
-        $id = $request->attributes()->getRequired('id');
-
-        if ($this->user->hasPermission('cp.soc.brand.delete'))
+        if ($this->loggedUser()->hasPermission('cp.soc.brand.delete'))
         {
 
             $brand = $this->components->orm()->query(Model::BRAND)
@@ -73,7 +73,7 @@ class Brand extends SOCProtected
             ];
 
         }
-        else if ($this->user->hasPermission('cp.soc.brand.pull-request'))
+        else if ($this->loggedUser()->hasPermission('cp.soc.brand.pull-request'))
         {
             // pull request
 

@@ -35,6 +35,11 @@ abstract class Processor extends Actions
     protected $template;
 
     /**
+     * @var User|null
+     */
+    protected $user;
+
+    /**
      * @var array
      */
     protected $variables = [
@@ -56,7 +61,12 @@ abstract class Processor extends Actions
      */
     protected function loggedUser()
     {
-        return $this->components->auth()->domain()->user();
+        if (!$this->user)
+        {
+            $this->user = $this->components->auth()->domain()->user();
+        }
+
+        return $this->user;
     }
 
     /**
