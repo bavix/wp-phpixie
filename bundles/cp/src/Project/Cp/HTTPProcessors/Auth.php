@@ -97,36 +97,6 @@ class Auth extends Processor
 
         if ($redirect)
         {
-            /**
-             * @var $builder Builder
-             */
-            $builder = $this->builder->frameworkBuilder();
-
-            $cookie = $builder->context()->httpContext()->cookies();
-
-            if (!$cookie->get('refresh_token') || !$cookie->get('access_token'))
-            {
-
-                $curl = $builder->curl()->setBasicAuth()->post('api/auth/token', [
-                    'grant_type' => 'password',
-                    'username'   => $data->getRequired('login'),
-                    'password'   => $data->getRequired('password'),
-                ]);
-
-                if (!$curl->error)
-                {
-
-                    $response = json_decode($curl->response);
-
-                    $expiresIn = $response->expires_in;
-
-                    $cookie->set('access_token', $response->access_token, $expiresIn);
-                    $cookie->set('refresh_token', $response->refresh_token, $expiresIn);
-
-                }
-
-            }
-
             return $this->redirect($redirect);
         }
 
