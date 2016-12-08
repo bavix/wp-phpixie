@@ -156,6 +156,13 @@ class Brand extends SOCProtected
         $socialId = $request->data()->getRequired('type');
         $url      = trim($request->data()->getRequired('url'));
 
+        $urlValidate = filter_var($url, FILTER_VALIDATE_URL);
+
+        if (!$urlValidate)
+        {
+            throw new \InvalidArgumentException('not a valid URL');
+        }
+
         $brand = $this->components->orm()->query(Model::BRAND)
             ->in($brandId)
             ->findOne();

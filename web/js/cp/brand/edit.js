@@ -14,12 +14,7 @@ var SocialRows = function (_React$Component) {
     function SocialRows(props) {
         _classCallCheck(this, SocialRows);
 
-        var _this = _possibleConstructorReturn(this, (SocialRows.__proto__ || Object.getPrototypeOf(SocialRows)).call(this, props));
-
-        _this.state = {
-            rows: props.rows
-        };
-        return _this;
+        return _possibleConstructorReturn(this, (SocialRows.__proto__ || Object.getPrototypeOf(SocialRows)).call(this, props));
     }
 
     _createClass(SocialRows, [{
@@ -57,9 +52,10 @@ var SocialRows = function (_React$Component) {
     }, {
         key: 'row',
         value: function row(model) {
+            var socialName = $('#socialType [value="' + model.socialId + '"]').text();
             return React.createElement(
                 'tr',
-                null,
+                { key: model.id },
                 React.createElement(
                     'td',
                     null,
@@ -68,7 +64,7 @@ var SocialRows = function (_React$Component) {
                 React.createElement(
                     'td',
                     null,
-                    model.socialId
+                    socialName
                 ),
                 React.createElement(
                     'td',
@@ -81,16 +77,21 @@ var SocialRows = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            return React.createElement(
+
+            var rows = this.props.rows.map(this.row);
+
+            var table = React.createElement(
                 'table',
                 { className: 'table table-striped' },
                 this.columns(),
                 React.createElement(
                     'tbody',
                     null,
-                    props.rows.map(this.row)
+                    rows
                 )
             );
+
+            return table;
         }
     }]);
 

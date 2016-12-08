@@ -2,38 +2,41 @@ class SocialRows extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            rows: props.rows
-        };
     }
 
     columns() {
         return <thead>
-            <tr>
-                <th>ID</th>
-                <th>Type</th>
-                <th>URL</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>URL</th>
+            <th>Actions</th>
+        </tr>
         </thead>;
     }
 
     row(model) {
-        return <tr>
+        const socialName = $('#socialType [value="' + model.socialId + '"]').text();
+        return <tr key={model.id}>
             <td>{model.id}</td>
-            <td>{model.socialId}</td>
+            <td>{ socialName }</td>
             <td>{model.url}</td>
             <td></td>
         </tr>;
     }
 
     render() {
-        return <table className="table table-striped">
+
+        const rows = this.props.rows.map(this.row);
+
+        const table = <table className="table table-striped">
             {this.columns()}
             <tbody>
-            {props.rows.map(this.row)}
+            { rows }
             </tbody>
         </table>;
+
+        return table;
     }
 }
 
@@ -68,7 +71,7 @@ $(function () {
             socialJson.push(json);
 
             ReactDOM.render(
-                <SocialRows rows={socialJson} />,
+                <SocialRows rows={socialJson}/>,
                 socialRows
             );
 
@@ -96,7 +99,7 @@ $(function () {
         socialJson = json;
 
         ReactDOM.render(
-            <SocialRows rows={socialJson} />,
+            <SocialRows rows={socialJson}/>,
             socialRows
         );
 

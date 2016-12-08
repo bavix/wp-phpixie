@@ -164,7 +164,16 @@
                             %label{:class => ['label', $classLabel]} = $_($log->type)
                           %td = $log->model
                           %td
-                            %pre = json_encode(json_decode($log->data), JSON_PRETTY_PRINT)
+                            - $data = json_decode($log->data)
+                            - foreach ($data as $name => $value)
+                              .grid
+                                - $value = $_($value)
+                                = $name . ' = '
+                                %span(style="white-space: nowrap; overflow: hidden;" )
+                                  - $dots = '..'
+                                  - if (mb_strlen($value) < 25)
+                                    - $dots = ''
+                                  = mb_substr($value, 0, 25) . $dots
                           %td.entry-date(data-time="#{$log->createdAt}" data-order="#{$log->createdAt}")
 
 .col-lg-3(align="center")
