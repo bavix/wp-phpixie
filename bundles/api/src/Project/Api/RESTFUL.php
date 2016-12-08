@@ -2,7 +2,7 @@
 
 namespace Project\Api;
 
-use Project\Api\ENUM\REST as RESTFULConst;
+use Project\Api\ENUM\REST;
 
 class RESTFUL
 {
@@ -10,14 +10,29 @@ class RESTFUL
     /**
      * @var string|int
      */
-    protected static $status = RESTFULConst::OK;
+    protected static $status;
 
     /**
+     * @param int $default
+     *
      * @return int|string
      */
-    public static function getStatus()
+    public static function getStatus($default = REST::OK)
     {
+        static::setDefaultStatus($default);
+
         return static::$status;
+    }
+
+    /**
+     * @param $default
+     */
+    public static function setDefaultStatus($default)
+    {
+        if (!static::$status)
+        {
+            static::$status = $default;
+        }
     }
 
     /**

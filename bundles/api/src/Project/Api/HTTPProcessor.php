@@ -79,7 +79,7 @@ class HTTPProcessor extends HttpBuilder
     /**
      * @param Request $request
      *
-     * @return array
+     * @return \PHPixie\HTTP\Responses\Response
      */
     public function process($request)
     {
@@ -87,14 +87,14 @@ class HTTPProcessor extends HttpBuilder
         try
         {
             $process = parent::process($request);
+
+            RESTFUL::setDefaultStatus(REST::OK);
         }
         catch (\Throwable $throwable)
         {
             $process = [
                 'message' => $throwable->getMessage()
             ];
-
-            RESTFUL::setStatus( REST::BAD_REQUEST );
         }
         finally
         {
@@ -110,7 +110,7 @@ class HTTPProcessor extends HttpBuilder
             return $http->responses()->response(
                 $body,
                 ['Content-Type' => 'application/json'],
-                RESTFUL::getStatus()
+                RESTFUL::getStatus(REST::BAD_REQUEST)
             );
 
         }

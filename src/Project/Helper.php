@@ -33,11 +33,12 @@ class Helper
      * @param int   $page
      * @param Query $query
      * @param int   $limit
+     * @param array $preload
      *
      * @return \PHPixie\Paginate\Pager
      * @throws \PHPixie\Paginate\Exception
      */
-    public function pager($page, $query, $limit = 50): Pager
+    public function pager($page, $query, $limit = 50, $preload = []): Pager
     {
         $page = (int)$page > 0 ? $page - 1 : 0;
 
@@ -52,7 +53,7 @@ class Helper
         /**
          * @var $pager \PHPixie\Paginate\Pager
          */
-        $pager = $paginate->queryPager($query, $limit);
+        $pager = $paginate->queryPager($query, $limit, $preload);
 
         $pager->setCurrentPage($page + 1);
 

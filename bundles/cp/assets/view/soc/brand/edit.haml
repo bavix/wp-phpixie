@@ -25,7 +25,7 @@
 
             #tab-base.tab-pane.active
               .panel-body
-                %form(method="POST")
+                %form(method="PATCH" action="/api/soc/brand/#{$brand->id}")
                   .form-group.form-group-lg
                     %label.control-label(for="brandName")
                       Name
@@ -87,7 +87,7 @@
 
             #tab-social.tab-pane
               .panel-body
-                %form(method="POST" action="/api/brand/social")
+                %form(method="POST" action="/api/soc/brand/#{$brand->id}/social" data-created="social")
 
                   .grid
 
@@ -110,9 +110,15 @@
                       %i.fa.fa-save
                       Submit
 
-                .hr-line-dashed
+                #socialRows.table-responsive
+                -#%tr
+                -#  %td 1
+                -#  %td Facebook
+                -#  %td http://..
+                -#  %td [todo]
 
-                %form(method="PATCH" action="")
+                -#.hr-line-dashed
+                -#%form(method="PATCH" action="")
 
                   .grid
 
@@ -170,6 +176,8 @@
       -#  %img.img-rounded(src="https://placeholdit.imgix.net/~text?txtsize=24&txt=210×210&w=210&h=210")
     .form-group(align="center")
       %button.btn.btn-success.btn-lg(disabled) Upload
+
+- $assets::pushJs('/js/cp/brand/edit.js')
 
 :javascript
 

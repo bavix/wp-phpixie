@@ -1,1 +1,1 @@
-{"version":3,"sources":["list.jsx"],"names":["ReactDOM","render","document","getElementById"],"mappings":";;AAAAA,SAASC,MAAT,CACI;AAAA;AAAA;AAAA;AAAA,CADJ,EAEIC,SAASC,cAAT,CAAwB,MAAxB,CAFJ","file":"list.js","sourcesContent":["ReactDOM.render(\r\n    <h1>Hello, world!</h1>,\r\n    document.getElementById('root')\r\n);"]}
+{"version":3,"sources":["list.jsx"],"names":[],"mappings":"AAAA;AACA;AACA;AACA","file":"list.js","sourcesContent":["// ReactDOM.render(\r\n//     <h1>Hello, world!</h1>,\r\n//     document.getElementById('root')\r\n// );"]}
