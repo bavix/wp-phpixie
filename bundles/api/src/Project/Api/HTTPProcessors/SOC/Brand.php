@@ -56,6 +56,33 @@ class Brand extends SOCProtected
         return $brand->asObject(true);
     }
 
+    public function itemGetAction(Request $request)
+    {
+        $id = $request->attributes()->getRequired('id');
+
+        $preload = $request->query()->get('preload', []);
+
+        try
+        {
+            $brand = $this->components->orm()->query(Model::BRAND)
+                ->in($id)
+                ->findOne($preload);
+        }
+        catch (\Throwable $throwable)
+        {
+            throw new \InvalidArgumentException('Invalid argument');
+        }
+
+        if (!$brand)
+        {
+            RESTFUL::setStatus(REST::NOT_FOUND);
+
+            return [];
+        }
+
+        return $brand->asObject(true);
+    }
+
     public function itemDeleteAction(Request $request)
     {
         if (!$this->loggedUser()->hasPermission('cp.soc.brand.delete'))
@@ -104,7 +131,7 @@ class Brand extends SOCProtected
         $page  = $request->query()->get('page', 1);
         $limit = $request->query()->get('limit', 50);
 
-        $preload  = $request->query()->get('preload', []);
+        $preload = $request->query()->get('preload', []);
 
         $brand = $this->components->orm()->query(Model::BRAND);
 

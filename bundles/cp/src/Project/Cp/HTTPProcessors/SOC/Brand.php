@@ -77,15 +77,8 @@ class Brand extends SOCProtected
 
         $helper = $builder->helper();
 
-        $modelsLog = [
-            Model::BRAND,
-            Model::BRAND_HEADING,
-            Model::BRAND_SOCIAL,
-            Model::BRAND_DEALER,
-        ];
-
-        $logCount = $helper->logCountByModel($modelsLog, $id);
-        $logPager = $helper->logPager($modelsLog, $id, $page, 100);
+        $logCount = $helper->logCountByModel(Model::BRAND, $id);
+        $logPager = $helper->logPager(Model::BRAND, $id, $page, 100);
 
         $brand = $this->components->orm()->query(Model::BRAND)
             ->in($id)
