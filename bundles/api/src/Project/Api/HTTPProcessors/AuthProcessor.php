@@ -120,4 +120,55 @@ class AuthProcessor extends Processor
         return parent::process($request);
     }
 
+    /**
+     * @param \PHPixie\ORM\Wrappers\Type\Database\Query $query
+     * @param Request                                   $request
+     */
+    public function query($query, Request $request)
+    {
+
+        /**
+         * [ [ name, sort ], [ id, sort ] ]
+         *
+         * @var array $order
+         */
+        $orders = $request->query()->get('orders', []);
+
+        foreach ($orders as $order)
+        {
+
+            list($field, $type) = $order;
+
+            if ($type === 'desc')
+            {
+                $query->orderDescendingBy($field);
+            }
+            else
+            {
+                $query->orderAscendingBy($field);
+            }
+
+        }
+
+        /**
+         * // default
+         *
+         * [ [ column, operator, value ], [ column, operator, value ] ]
+         *
+         * @var array $terms
+         */
+
+        $terms = $request->query()->get('terms', []);
+
+        foreach ($terms as $term)
+        {
+            list ($column, $operator, $value) = $term;
+
+            $query->where($column, $operator, $value);
+        }
+
+        return $query;
+
+    }
+
 }

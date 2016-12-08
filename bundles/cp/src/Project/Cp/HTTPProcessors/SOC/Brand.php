@@ -151,7 +151,9 @@ class Brand extends SOCProtected
 
         $pager = $builder->helper()->pager($page, $brandQuery);
 
-        $optionSelectBrands = $orm->query(Model::BRAND)->find();
+        $optionSelectBrands = $orm->query(Model::BRAND)
+            ->orderAscendingBy('name')
+            ->find();
 
         $this->assign('pager', $pager);
         $this->assign('count', $brandAllCount);
