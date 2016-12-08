@@ -4,7 +4,6 @@ namespace Project\Cp\HTTPProcessors\SOC;
 
 use PHPixie\HTTP\Request;
 use Project\Cp\HTTPProcessors\Processor\SOCProtected;
-use Project\Framework\Builder;
 use Project\Model;
 
 class Brand extends SOCProtected
@@ -118,10 +117,30 @@ class Brand extends SOCProtected
         $query = $request->query();
         $page  = $query->get('page');
 
+        /**
+         * @var $filter array
+         */
+        $filter = $query->get('filter', []);
+
         $orm = $this->components->orm();
 
         $brandQuery = $orm->query(Model::BRAND)
             ->orderDescendingBy('createdAt');
+
+        if (is_array($filter))
+        {
+            foreach ($filter as $name => $value)
+            {
+                if (is_array($value))
+                {
+                    $brandQuery->orWhere($name, 'in', $value);
+                }
+                else
+                {
+                    $brandQuery->orWhere($name, $value);
+                }
+            }
+        }
 
         $brandAllCount = $brandQuery->count();
 
@@ -132,8 +151,12 @@ class Brand extends SOCProtected
 
         $pager = $builder->helper()->pager($page, $brandQuery);
 
+        $optionSelectBrands = $orm->query(Model::BRAND)->find();
+
         $this->assign('pager', $pager);
         $this->assign('count', $brandAllCount);
+        $this->assign('filter', $filter);
+        $this->assign('optionSelectBrands', $optionSelectBrands);
 
         return $this->render('cp:soc/brand/default');
     }
