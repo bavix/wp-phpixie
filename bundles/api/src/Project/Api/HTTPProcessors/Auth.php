@@ -2,10 +2,6 @@
 
 namespace Project\Api\HTTPProcessors;
 
-use OAuth2\GrantType\AuthorizationCode;
-use OAuth2\GrantType\ClientCredentials;
-use OAuth2\GrantType\RefreshToken;
-use OAuth2\GrantType\UserCredentials;
 use PHPixie\HTTP\Request;
 
 class Auth extends AuthProcessor
@@ -43,16 +39,6 @@ class Auth extends AuthProcessor
         return $this->server()
             ->handleTokenRequest($this->globalsRequest())
             ->getResponseBody();
-    }
-
-    /**
-     * http -f POST wbs-cms/api/auth/resource access_token=$TOKEN$
-     *
-     * @return array|bool|mixed|string
-     */
-    public function resourcePostAction()
-    {
-        return ['success'];
     }
 
 }

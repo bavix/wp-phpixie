@@ -21,7 +21,6 @@ $(function () {
     $("select").select2({
         theme: "bootstrap"
     });
-    // $('.table').DataTable();
 
     function entryDate() {
         $(".entry-date").html(function (index, value) {
@@ -59,38 +58,32 @@ $(function () {
             cancelButtonClass: 'btn btn-primary'
         }).then(function () {
 
-            $.ajax({
-                async: false,
-                url: $current.attr('href'),
-                type: 'json',
+            fetch($current.attr('href'), {
                 method: 'DELETE',
-                success: function (response) {
-                    if (response.status === 'success' && response.data.isDeleted === true) {
-                        $current.parents('tr').remove();
-                        swal(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
-                        );
-                    }
-                    else if (response.data.pullRequest === true) {
-                        // pull request
-                    }
-                    else {
-                        swal(
-                            'Deleted!',
-                            'Your file has not been deleted.',
-                            'error'
-                        );
-                    }
-                },
-                error: function () {
-                    swal(
-                        'Deleted!',
-                        'Your file has not been deleted.',
-                        'error'
-                    );
+                credentials: 'include'
+            }).then(function (response) {
+
+                if (response.status == 200) {
+                    return response.json();
                 }
+
+                var error = new Error(response.statusText);
+                error.response = response;
+                throw error;
+
+            }).then(function (json) {
+                $current.parents('tr').remove();
+                swal(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                );
+            }).catch(function () {
+                swal(
+                    'Deleted!',
+                    'Your file has not been deleted.',
+                    'error'
+                );
             });
 
         });

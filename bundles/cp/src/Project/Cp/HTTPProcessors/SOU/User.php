@@ -87,7 +87,7 @@ class User extends SOUProtected
             ->in($id)
             ->findOne();
 
-        $this->assign('user', $user);
+        $this->assign('profile', $user);
 
         return $this->render('cp:sou/user/profile');
     }

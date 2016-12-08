@@ -25,7 +25,7 @@
 
             #tab-base.tab-pane.active
               .panel-body
-                %form(method="POST")
+                %form(method="PATCH" action="/api/soc/brand/#{$brand->id}")
                   .form-group.form-group-lg
                     %label.control-label(for="brandName")
                       Name
@@ -43,33 +43,40 @@
                           Using carbon fiber technology
 
                       .form-group.form-group-lg
-                        %input#isMultipleBrand.wbs-checkbox(type="checkbox" name="isMultiple" disabled checked="#{(bool)$brand->isMultiple}")
+                        %input#isMultipleBrand.wbs-checkbox(type="checkbox" name="isMultiple" checked="#{!!$brand->isMultiple}")
                         %label(for="isMultipleBrand")
                           Multiple Brand
 
                     .col-lg-6
 
                       .form-group.form-group-lg
-                        %input#isOffRoadBrand.wbs-checkbox(type="checkbox" name="isOffRoad" checked="#{(bool)$brand->isOffRoad}")
+                        %input#isOffRoadBrand.wbs-checkbox(type="checkbox" name="isOffRoad" checked="#{!!$brand->isOffRoad}")
                         %label(for="isOffRoadBrand")
                           Off-Road
 
                       .form-group.form-group-lg
-                        %input#activeBrand.wbs-checkbox(type="checkbox" name="active" checked="#{(bool)$brand->active}")
+                        %input#activeBrand.wbs-checkbox(type="checkbox" name="active" checked="#{!!$brand->active}")
                         %label(for="activeBrand")
                           Active
 
-                  %div#multipleBrandInputs.hidden
+                  %div#multipleBrandInputs(class="#{ ( $brand->isMultiple ? '' : 'hidden' ) }")
 
                     .form-group.form-group-lg
                       %label.control-label(for="brandWebGroup")
                         Web Group
-                      %input#brandWebGroup.form-control.text-uppercase(type="text" disabled name="webGroup" value="#{$brand->webGroup}")
+                      %input#brandWebGroup.form-control(type="text" disabled="#{!$brand->isMultiple}" name="webGroup" value="#{$brand->webGroup}")
 
                     .form-group.form-group-lg
-                      %label.control-label(for="brandsBrands")
+                      %label.control-label(for="brands")
                         Brands in group
-                      %input#brandsBrands.form-control.text-uppercase(type="text" disabled name="brandsBrands")
+                      %select#brands.form-control.input-lg.select2-multiple(name="brands[]" disabled="#{!$brand->isMultiple}" multiple style="width:100%")
+                        - foreach ($brands as $_brand)
+                          - $hasDelete = $brand->id == $_brand->parentId
+                          - $hasNotDelete = $_brand->id == $brand->parentId
+                          - $currentLvl = ($_brand->parentId && $brand->parentId == $_brand->parentId)
+                          - $currentObject = $_brand->id == $brand->id
+                          - $selected = !$currentObject && ($hasDelete || $hasNotDelete || $currentLvl)
+                          %option(value="#{$_brand->id}" selected="#{$selected}" data-delete="#{$hasDelete || !$_brand->parentId}" data-yourself="#{$currentObject}") =$_($_brand->name)
 
                   .hr-line-dashed
 
@@ -80,21 +87,18 @@
 
             #tab-social.tab-pane
               .panel-body
-                %form(method="POST" action="/api/brand/social")
+                %form(method="POST" action="/api/soc/brand/#{$brand->id}/social" data-created="social")
 
                   .grid
 
-                    .col-md-3
+                    .col-md-4
                       .form-group.form-group-lg
                         %label.control-label(for="socialType") Type
                         %select#socialType.form-control.input-lg.select2-multiple(name="type" style="width: 100%")
-                          %option Facebook
-                          %option 2
-                          %option 3
-                          %option 4
-                          %option 5
+                          - foreach ($socials as $social)
+                            %option(value="#{$social->id}") = $social->title
 
-                    .col-md-9
+                    .col-md-8
                       .form-group.form-group-lg
                         %label.control-label(for="socialUrl") Url
                         %input#socialUrl.form-control(type="text" name="url" value="")
@@ -106,6 +110,30 @@
                       %i.fa.fa-save
                       Submit
 
+                #socialRows.table-responsive
+                -#%tr
+                -#  %td 1
+                -#  %td Facebook
+                -#  %td http://..
+                -#  %td [todo]
+
+                -#.hr-line-dashed
+                -#%form(method="PATCH" action="")
+
+                  .grid
+
+                    .col-md-4
+                      .form-group.form-group-lg
+                        %label.control-label(for="socialType-1") Type
+                        %select#socialType-1.form-control.input-lg.select2-multiple(name="type" style="width: 100%")
+                          - foreach ($socials as $social)
+                            %option(value="#{$social->id}") = $social->title
+
+                    .col-md-8
+                      .form-group.form-group-lg
+                        %label.control-label(for="socialUrl-1") Url
+                        %input#socialUrl-1.form-control(type="text" name="url" value="")
+
             - if ($user->hasPermission('cp.log'))
               #tab-last-activity.tab-pane
                 .panel-body
@@ -114,6 +142,7 @@
                       %tr
                         %th User (Login)
                         %th Type
+                        %th Model
                         %th Data
                         %th Created At
                     %tbody
@@ -133,8 +162,18 @@
                             - else if ($log->type === 'deleted')
                               - $classLabel = 'label-danger'
                             %label{:class => ['label', $classLabel]} = $_($log->type)
+                          %td = $log->model
                           %td
-                            %pre = json_encode(json_decode($log->data), JSON_PRETTY_PRINT)
+                            - $data = json_decode($log->data)
+                            - foreach ($data as $name => $value)
+                              .grid
+                                - $value = $_($value)
+                                = $name . ' = '
+                                %span(style="white-space: nowrap; overflow: hidden;" )
+                                  - $dots = '..'
+                                  - if (mb_strlen($value) < 25)
+                                    - $dots = ''
+                                  = mb_substr($value, 0, 25) . $dots
                           %td.entry-date(data-time="#{$log->createdAt}" data-order="#{$log->createdAt}")
 
 .col-lg-3(align="center")
@@ -147,20 +186,63 @@
     .form-group(align="center")
       %button.btn.btn-success.btn-lg(disabled) Upload
 
+- $assets::pushJs('/js/cp/brand/edit.js')
+
 :javascript
+
   $(function () {
-    $('#brandLogo').filer({
-      limit: 1,
-      showThumbs: true,
-      appendTo: function (event) {
-        console.log(event, 'appendTo');
-      },
-      onSelect: function (event) {
-        console.log(event, 'onSelect');
-      },
-      theme: filerObject.theme,
-      dragDrop: filerObject.dragDrop,
-      changeInput: filerObject.changeInput,
-      extensions: filerObject.extensionsImage,
+
+    $('#isMultipleBrand').change(function () {
+      if ($(this).prop('checked')) {
+        $('#multipleBrandInputs').removeClass('hidden').find('input,select').prop('disabled', false);
+      } else {
+        $('#multipleBrandInputs').addClass('hidden').find('input,select').prop('disabled', true);
+      }
     });
+
+    $('#brands').on('select2:selecting', function (event) {
+
+      var $current = $(event.params.args.data.element);
+
+      var isNotYourSelf = $current.data('yourself') === undefined;
+
+      if (!isNotYourSelf) {
+        swal(
+            'It isn\'t possible to add!',
+            'You try to add yourself!',
+            'error'
+        );
+      }
+
+      return isNotYourSelf;
+
+    }).on('select2:unselecting', function (event) {
+      var $current = $(event.params.args.data.element);
+      var isDelete = $current.data('delete') !== undefined;
+
+      if (!isDelete) {
+        swal(
+            'Not delete!',
+            'Removal of communications is possible only from the parent.',
+            'error'
+        );
+      }
+
+      return isDelete;
+    });
+
+    // $('#brandLogo').filer({
+    //   limit: 1,
+    //   showThumbs: true,
+    //   appendTo: function (event) {
+    //     console.log(event, 'appendTo');
+    //   },
+    //   onSelect: function (event) {
+    //     console.log(event, 'onSelect');
+    //   },
+    //   theme: filerObject.theme,
+    //   dragDrop: filerObject.dragDrop,
+    //   changeInput: filerObject.changeInput,
+    //   extensions: filerObject.extensionsImage,
+    // });
   });

@@ -85,7 +85,7 @@ class Webhook extends Processor
             $this->shellExec("git pull origin {$branch}");
 
             $this->shellExec("ln -s /home/wheelpro/web/config/{$branch}.php /home/wheelpro/web/{$dirName}/assets/parameters.php");
-            
+
             $this->shellExec('chown -R wheelpro:www-group *');
 
             $this->shellExec('composer install');

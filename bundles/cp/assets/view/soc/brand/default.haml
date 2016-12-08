@@ -35,7 +35,7 @@
                   %i.fa.fa-edit
                   Edit
                 - if ($user->hasPermission('cp.soc.brand.delete'))
-                  - $httpPath = 'cp.soc.item'
+                  - $httpPath = 'api.soc.item'
                   - $attributes = ['nextProcessor' => 'brand', 'action' => 'delete', 'id' => $brand->id]
                   - $httpPath = $this->httpPath($httpPath, $attributes)
                   %a.btn.btn-danger.trash-data.btn-sm(href="#{$httpPath}")
@@ -43,3 +43,4 @@
                     Delete
       partial: 'cp:pager'
 .col-lg-3
+- $assets::pushJs('/js/cp/brand/list.js')

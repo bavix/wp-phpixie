@@ -7,6 +7,9 @@ use OAuth2\GrantType\ClientCredentials;
 use OAuth2\GrantType\RefreshToken;
 use OAuth2\GrantType\UserCredentials;
 use PHPixie\HTTP\Request;
+use Project\Api\ENUM\REST;
+use Project\Api\Exceptions\Unauthorized;
+use Project\Api\RESTFUL;
 use Project\Extension\Util;
 
 class AuthProcessor extends Processor
@@ -33,7 +36,7 @@ class AuthProcessor extends Processor
         $storage = new \Project\OAuth2\PDO($this->builder);
 
         $server = new \OAuth2\Server($storage, [
-            'access_lifetime' => 86400 * 365.25 * 3
+            'access_lifetime' => 94672800 // 3 year
         ]);
 
         $server->addGrantType(new ClientCredentials($storage));
@@ -54,12 +57,16 @@ class AuthProcessor extends Processor
 
         if (!$this->loggedUser() && !$server->verifyResourceRequest($globalsRequest))
         {
-            /**
-             * @var $response \OAuth2\Response
-             */
-            $response = $server->getResponse();
+//            /**
+//             * @var $response \OAuth2\Response
+//             */
+//            $response = $server->getResponse();
+//
+//            return $response->getResponseBody();
 
-            return $response->getResponseBody();
+            RESTFUL::setStatus(REST::UNAUTHORIZED);
+
+            throw new Unauthorized();
         }
 
         return false;
@@ -77,6 +84,11 @@ class AuthProcessor extends Processor
         $method = ucfirst($method);
 
         $action = $httpRequest->attributes()->get('action');
+
+        if ($httpRequest->attributes()->get('nextId'))
+        {
+            $action .= '-item';
+        }
 
         return Util::camelCase($action) . $method;
     }

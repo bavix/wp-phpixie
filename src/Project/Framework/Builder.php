@@ -2,6 +2,7 @@
 
 namespace Project\Framework;
 
+use Project\Curl;
 use Project\Helper;
 use RandomLib\Factory;
 use Stash\Driver\Composite;
@@ -29,6 +30,24 @@ class Builder extends \PHPixie\BundleFramework\Builder
     protected function buildHelper()
     {
         return new Helper($this);
+    }
+
+    /**
+     * @return Curl
+     */
+    public function curl()
+    {
+        return $this->instance('curl');
+    }
+
+    /**
+     * @return Curl
+     *
+     * @throws \ErrorException
+     */
+    protected function buildCurl()
+    {
+        return new Curl($this);
     }
 
     /**

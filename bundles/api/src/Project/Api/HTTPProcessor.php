@@ -3,6 +3,9 @@
 namespace Project\Api;
 
 use PHPixie\DefaultBundle\Processor\HTTP\Builder as HttpBuilder;
+use PHPixie\HTTP\Request;
+use Project\Api\ENUM\REST;
+use Project\Extension\Util;
 
 class HTTPProcessor extends HttpBuilder
 {
@@ -23,7 +26,7 @@ class HTTPProcessor extends HttpBuilder
     }
 
     /**
-     * @return HTTPProcessors\AuthProcessor
+     * @return HTTPProcessors\Auth
      */
     public function buildAuthProcessor()
     {
@@ -31,11 +34,92 @@ class HTTPProcessor extends HttpBuilder
     }
 
     /**
-     * @return HTTPProcessors\AuthProcessor
+     * @param Request $httpRequest
+     *
+     * @return string
      */
-    public function buildBrandProcessor()
+    protected function getProcessorNameFor($httpRequest)
     {
-        return new HTTPProcessors\Brand($this->builder);
+        $processorName = $httpRequest->attributes()->get($this->attributeName);
+        $processorName = Util::camelCase($processorName);
+
+        return $processorName;
+    }
+
+    /**
+     * Build 'admin' processor group
+     *
+     * @return HTTPProcessors\SOWProcessorBuilder
+     */
+    protected function buildSowProcessor()
+    {
+        return new HTTPProcessors\SOWProcessorBuilder($this->builder);
+    }
+
+    /**
+     * Build 'admin' processor group
+     *
+     * @return HTTPProcessors\SOCProcessorBuilder
+     */
+    protected function buildSocProcessor()
+    {
+        return new HTTPProcessors\SOCProcessorBuilder($this->builder);
+    }
+
+    /**
+     * Build 'admin' processor group
+     *
+     * @return HTTPProcessors\SOUProcessorBuilder
+     */
+    protected function buildSouProcessor()
+    {
+        return new HTTPProcessors\SOUProcessorBuilder($this->builder);
+    }
+
+    /**
+     * @param Request $request
+     *
+     * @return \PHPixie\HTTP\Responses\Response
+     */
+    public function process($request)
+    {
+
+        try
+        {
+            $process = parent::process($request);
+
+            RESTFUL::setDefaultStatus(REST::OK);
+        }
+        catch (\Throwable $throwable)
+        {
+            $process = [
+                'message' => $throwable->getMessage()
+            ];
+        }
+        finally
+        {
+
+            if (is_array($process) || is_object($process))
+            {
+                $process = json_encode($process, JSON_UNESCAPED_UNICODE);
+            }
+
+            $http = $this->builder->components()->http();
+            $body = $http->messages()->stringStream($process);
+
+            return $http->responses()->response(
+                $body,
+                ['Content-Type' => 'application/json'],
+                RESTFUL::getStatus(REST::BAD_REQUEST)
+            );
+
+        }
+
+    }
+
+    public function isProcessable($value)
+    {
+        return true; // for api
     }
 
 }

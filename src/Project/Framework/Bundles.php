@@ -23,8 +23,8 @@ class Bundles extends \PHPixie\BundleFramework\Bundles
     {
         return array(
             new FrameworkBundle($this->builder),
-            new Cp($this->builder),
             new Api($this->builder),
+            new Cp($this->builder),
             new App($this->builder),
         );
     }

@@ -3,9 +3,9 @@
 namespace Project\Extension;
 
 use PHPixie\BundleFramework\Components;
+use PHPixie\DefaultBundle\Builder;
 use PHPixie\DefaultBundle\Processor\HTTP\Actions;
 use PHPixie\HTTP\Responses\Response;
-use PHPixie\DefaultBundle\Builder;
 use Project\ORM\User\User;
 
 /**
@@ -35,6 +35,11 @@ abstract class Processor extends Actions
     protected $template;
 
     /**
+     * @var User|null
+     */
+    protected $user;
+
+    /**
      * @var array
      */
     protected $variables = [
@@ -56,7 +61,12 @@ abstract class Processor extends Actions
      */
     protected function loggedUser()
     {
-        return $this->components->auth()->domain()->user();
+        if (!$this->user)
+        {
+            $this->user = $this->components->auth()->domain()->user();
+        }
+
+        return $this->user;
     }
 
     /**
@@ -112,6 +122,22 @@ abstract class Processor extends Actions
     public function render($path)
     {
         return $this->template->render($path, $this->variables);
+    }
+
+    /**
+     * @param $key
+     * @param $value
+     */
+    public function assignPush($key, $value)
+    {
+
+        if (!is_array($this->variables[$key]))
+        {
+            $this->variables[$key] = [];
+        }
+
+        $this->variables[$key][] = $value;
+
     }
 
     /**

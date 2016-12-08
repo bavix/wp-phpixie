@@ -4,44 +4,14 @@ namespace Project\Cp\HTTPProcessors\SOC;
 
 use PHPixie\HTTP\Request;
 use Project\Cp\HTTPProcessors\Processor\SOCProtected;
+use Project\Framework\Builder;
 use Project\Model;
-use Project\ORM\Brand\Query;
 
 class Brand extends SOCProtected
 {
 
     public function addAction(Request $request)
     {
-        if ($request->method() === 'POST')
-        {
-            $name = $request->data()->getRequired('name');
-
-            $name = mb_strtoupper($name);
-
-            if (!empty($name))
-            {
-                $orm = $this->components->orm();
-
-                /**
-                 * @var Query $brand
-                 */
-                $brand = $orm->query(Model::BRAND);
-                $brand = $brand->findByName($name);
-
-                if (!$brand)
-                {
-                    $brand = $orm->createEntity(Model::BRAND);
-
-                    $brand->name = $name;
-                    $brand->save();
-                }
-
-                $resolverPath = 'cp.soc.brand@edit.' . $brand->id();
-
-                return $this->redirectWithUtil($resolverPath);
-            }
-        }
-
         return $this->render('cp:soc/brand/add');
     }
 
@@ -53,6 +23,9 @@ class Brand extends SOCProtected
 
         if ($request->method() === 'POST')
         {
+            var_dump($request->data()->get());
+            die;
+
             // todo add checking data [post]
 
             $brand = $this->components->orm()->query(Model::BRAND)
@@ -105,60 +78,27 @@ class Brand extends SOCProtected
         $helper = $builder->helper();
 
         $logCount = $helper->logCountByModel(Model::BRAND, $id);
-        $logPager = $helper->logPager(Model::BRAND, $id, $page, 150);
+        $logPager = $helper->logPager(Model::BRAND, $id, $page, 100);
 
         $brand = $this->components->orm()->query(Model::BRAND)
             ->in($id)
             ->findOne();
 
+        $socials = $this->components->orm()->query(Model::SOCIAL)
+            ->find();
+
+        $brands = $this->components->orm()->query(Model::BRAND)->find();
+
         $this->assign('brand', $brand);
+
+        $this->assign('socials', $socials);
+        $this->assign('brands', $brands);
 
         $this->assign('logCount', $logCount);
 
         $this->assign('pager', $logPager);
 
         return $this->render('cp:soc/brand/edit');
-    }
-
-    public function deleteAction(Request $request)
-    {
-        $id = $request->attributes()->getRequired('id');
-
-        if ($this->user->hasPermission('cp.soc.brand.delete'))
-        {
-            if ($request->method() === 'DELETE')
-            {
-                $brand = $this->components->orm()->query(Model::BRAND)
-                    ->in($id)
-                    ->findOne();
-
-                $brand->delete();
-
-                return [
-                    'status' => 'success',
-                    'data'   => [
-                        'isDeleted'   => $brand->isDeleted(),
-                        'pullRequest' => false
-                    ]
-                ];
-            }
-
-            return [];
-        }
-        else if ($this->user->hasPermission('cp.soc.brand.pull-request'))
-        {
-            // pull request
-
-            return [
-                'status' => 'error',
-                'data'   => [
-                    'isDeleted'   => false,
-                    'pullRequest' => false
-                ]
-            ];
-        }
-
-        throw new \Exception();
     }
 
     /**

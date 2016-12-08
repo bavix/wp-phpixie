@@ -18,6 +18,7 @@
                 %tr
                   %td Section
                   %td Processor
+                  %td Next Processor
                   %td Right of viewing
                   %td Right of addition
                   %td Right of editing
@@ -36,6 +37,7 @@
                       %span.label.label-danger no
 
                   %td Bolt Pattern
+                  %td -
 
                   %td
                     - if ($role->hasMyPermission('cp.sow.bolt-pattern'))
@@ -78,6 +80,7 @@
                 %tr
 
                   %td Style
+                  %td -
 
                   %td
                     - if ($role->hasMyPermission('cp.sow.style'))
@@ -120,6 +123,7 @@
                 %tr
 
                   %td Wheel
+                  %td -
 
                   %td
                     - if ($role->hasMyPermission('cp.sow.wheel'))
@@ -160,7 +164,7 @@
                       %span.label.label-danger no
 
                 %tr
-                  %td(rowspan="3")
+                  %td(rowspan="4")
                     Catalogue
                     - if ($role->hasMyPermission('cp.soc'))
                       %span.label.label-primary yes
@@ -169,7 +173,8 @@
                     - else
                       %span.label.label-danger no
 
-                  %td Brand
+                  %td(rowspan="2") Brand
+                  %td -
 
                   %td
                     - if ($role->hasMyPermission('cp.soc.brand'))
@@ -210,7 +215,50 @@
                       %span.label.label-danger no
 
                 %tr
+
+                  %td Social
+
+                  %td
+                    - if ($role->hasMyPermission('cp.soc.brandsocial'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.soc.brandsocial'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.soc.brandsocial.add'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.soc.brandsocial.add'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.soc.brandsocial.edit'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.soc.brandsocial.edit'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.soc.brandsocial.delete'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.soc.brandsocial.delete'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasPermission('cp.soc.brandsocial.delete'))
+                      %span.label.label-success master
+                    - else if ($role->hasMyPermission('cp.soc.brandsocial.pull-request'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.soc.brandsocial.pull-request'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+
+                %tr
                   %td Dealer
+                  %td -
 
                   %td
                     - if ($role->hasMyPermission('cp.soc.dealer'))
@@ -252,6 +300,7 @@
 
                 %tr
                   %td Heading
+                  %td -
 
                   %td
                     - if ($role->hasMyPermission('cp.soc.heading'))
@@ -302,6 +351,7 @@
                       %span.label.label-danger no
 
                   %td User
+                  %td -
 
                   %td
                     - if ($role->hasMyPermission('cp.sou.user'))
@@ -344,6 +394,7 @@
                 %tr
 
                   %td Role
+                  %td -
 
                   %td
                     - if ($role->hasMyPermission('cp.sou.role'))
@@ -381,6 +432,7 @@
 
                 %tr
                   %td Permission
+                  %td -
 
                   %td
                     - if ($role->hasMyPermission('cp.sou.permission'))
@@ -418,6 +470,7 @@
 
                 %tr
                   %td Invite
+                  %td -
 
                   %td
                     - if ($role->hasMyPermission('cp.sou.invite'))
@@ -465,6 +518,7 @@
                       %span.label.label-danger no
 
                   %td Global [ALL]
+                  %td -
 
                   %td
                     - if ($role->hasMyPermission('cp.log'))

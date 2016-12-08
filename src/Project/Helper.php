@@ -33,11 +33,12 @@ class Helper
      * @param int   $page
      * @param Query $query
      * @param int   $limit
+     * @param array $preload
      *
      * @return \PHPixie\Paginate\Pager
      * @throws \PHPixie\Paginate\Exception
      */
-    public function pager($page, $query, $limit = 50) : Pager
+    public function pager($page, $query, $limit = 50, $preload = []): Pager
     {
         $page = (int)$page > 0 ? $page - 1 : 0;
 
@@ -52,7 +53,7 @@ class Helper
         /**
          * @var $pager \PHPixie\Paginate\Pager
          */
-        $pager = $paginate->queryPager($query, $limit);
+        $pager = $paginate->queryPager($query, $limit, $preload);
 
         $pager->setCurrentPage($page + 1);
 
@@ -60,28 +61,36 @@ class Helper
     }
 
     /**
-     * @param string $modelName
+     * @param string $model
      * @param int    $modelId
      *
      * @return mixed
      */
-    protected function modelLog($modelName, $modelId)
+    protected function modelLog($model, $modelId)
     {
-        if (empty($this->logs[$modelName][$modelId]))
+        if (empty($this->logs[$model][$modelId]))
         {
             $orm = $this->builder->components()->orm();
 
-            $this->logs[$modelName][$modelId] = $orm->query(Model::LOG)
-                ->where('model', $modelName)
+            $database = $this->builder->components()->database();
+
+            $expression = $database->sqlExpression(
+                'JSON_EXTRACT(`data`, ?)',
+                ['$.' . $model . 'Id']
+            );
+
+            $this->logs[$model][$modelId] = $orm->query(Model::LOG)
+                ->where('model', $model)
                 ->where('modelId', $modelId)
+                ->orWhere($expression, $modelId)
                 ->orderDescendingBy('createdAt');
         }
 
-        return $this->logs[$modelName][$modelId];
+        return $this->logs[$model][$modelId];
     }
 
     /**
-     * @param string $modelName
+     * @param string $model
      * @param int    $modelId
      * @param int    $page
      * @param int    $limit
@@ -89,22 +98,22 @@ class Helper
      * @return Pager
      * @throws \PHPixie\Paginate\Exception
      */
-    public function logPager($modelName, $modelId, $page, $limit = 50)
+    public function logPager($model, $modelId, $page, $limit = 50)
     {
-        $logerQuery = $this->modelLog($modelName, $modelId);
+        $logerQuery = $this->modelLog($model, $modelId);
 
         return $this->pager($page, $logerQuery, $limit);
     }
 
     /**
-     * @param string $name
+     * @param string $model
      * @param int    $id
      *
      * @return int
      */
-    public function logCountByModel($name, $id)
+    public function logCountByModel($model, $id)
     {
-        return $this->modelLog($name, $id)->count();
+        return $this->modelLog($model, $id)->count();
     }
 
 }

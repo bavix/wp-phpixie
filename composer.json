@@ -57,7 +57,8 @@
     "swiftmailer/swiftmailer": "^5.4",
     "openbuildings/swiftmailer-css-inliner": "^0.4.0",
     "bshaffer/oauth2-server-php": "~1.8",
-    "cakephp/chronos": "^1.0"
+    "curl/curl": "^1.5",
+    "nesbot/carbon": "^1.21"
   },
   "require-dev": {
     "phpixie/test": "3.*-dev"
