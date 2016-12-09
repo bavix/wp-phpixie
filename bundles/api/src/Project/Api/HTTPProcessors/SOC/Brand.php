@@ -135,6 +135,8 @@ class Brand extends SOCProtected
 
         $brand = $this->components->orm()->query(Model::BRAND);
 
+        $brand = $this->query($brand, $request);
+
         $pager = $builder->helper()->pager($page, $brand, $limit, $preload);
 
         return $pager->getCurrentItems()->asArray(true);

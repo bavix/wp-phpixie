@@ -121,8 +121,8 @@ class AuthProcessor extends Processor
     }
 
     /**
-     * @param \PHPixie\ORM\Wrappers\Type\Database\Query $query
-     * @param Request                                   $request
+     * @param \PHPixie\ORM\Models\Type\Database\Implementation\Query $query
+     * @param Request                                                $request
      */
     public function query($query, Request $request)
     {
@@ -134,37 +134,39 @@ class AuthProcessor extends Processor
          */
         $orders = $request->query()->get('orders', []);
 
-        foreach ($orders as $order)
+        foreach ($orders as $field => $direction)
         {
-
-            list($field, $type) = $order;
-
-            if ($type === 'desc')
-            {
-                $query->orderDescendingBy($field);
-            }
-            else
-            {
-                $query->orderAscendingBy($field);
-            }
-
+            // order by
+            $query->orderBy($field, $direction);
         }
 
         /**
-         * // default
+         * equal
          *
-         * [ [ column, operator, value ], [ column, operator, value ] ]
-         *
-         * @var array $terms
+         * @param array $terms
          */
+        $filters = $request->query()->get('filters', []);
 
-        $terms = $request->query()->get('terms', []);
-
-        foreach ($terms as $term)
+        foreach ($filters as $column => $value)
         {
-            list ($column, $operator, $value) = $term;
+            if (is_array($value))
+            {
+                $query->where($column, 'in', $value);
+            }
+            else
+            {
+                $query->where($column, $value);
+            }
+        }
 
-            $query->where($column, $operator, $value);
+        /**
+         * @var array $queries
+         */
+        $queries = $request->query()->get('queries', []);
+
+        foreach ($queries as $column => $value)
+        {
+            $query->where($column, 'like', $value . '%');
         }
 
         return $query;
