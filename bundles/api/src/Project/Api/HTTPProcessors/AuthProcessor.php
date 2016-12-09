@@ -166,7 +166,7 @@ class AuthProcessor extends Processor
 
         foreach ($queries as $column => $value)
         {
-            $query->where($column, 'like', $value . '%');
+            $query->where($column, 'like', "%$value%");
         }
 
         return $query;
