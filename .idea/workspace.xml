@@ -50,8 +50,8 @@
       <file leaf-file-name="AuthProcessor.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/AuthProcessor.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="168" column="43" lean-forward="false" selection-start-line="168" selection-start-column="43" selection-end-line="168" selection-end-column="43" />
+            <state relative-caret-position="465">
+              <caret line="164" column="50" lean-forward="false" selection-start-line="164" selection-start-column="43" selection-end-line="164" selection-end-column="50" />
               <folding>
                 <element signature="e#46#85#0#PHP" expanded="true" />
                 <marker date="1481305200446" expanded="true" signature="3070:4077" ph="{...}" />
@@ -1120,12 +1120,12 @@
       <workItem from="1481216951897" duration="2631000" />
       <workItem from="1481220594094" duration="2000" />
       <workItem from="1481225752974" duration="2871000" />
-      <workItem from="1481301486698" duration="3712000" />
+      <workItem from="1481301486698" duration="3776000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="699858000" />
+    <option name="totallyTimeSpent" value="699922000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1568,8 +1568,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/AuthProcessor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="168" column="43" lean-forward="false" selection-start-line="168" selection-start-column="43" selection-end-line="168" selection-end-column="43" />
+        <state relative-caret-position="465">
+          <caret line="164" column="50" lean-forward="false" selection-start-line="164" selection-start-column="43" selection-end-line="164" selection-end-column="50" />
           <folding>
             <element signature="e#46#85#0#PHP" expanded="true" />
             <marker date="1481305200446" expanded="true" signature="3070:4077" ph="{...}" />
