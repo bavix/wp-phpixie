@@ -135,6 +135,8 @@ class Brand extends SOCProtected
 
         $brand = $this->components->orm()->query(Model::BRAND);
 
+        $brand = $this->query($brand, $request);
+
         $pager = $builder->helper()->pager($page, $brand, $limit, $preload);
 
         return $pager->getCurrentItems()->asArray(true);
@@ -196,20 +198,16 @@ class Brand extends SOCProtected
 
     public function socialGetAction(Request $request)
     {
-//        if (!$this->loggedUser()->hasPermission('cp.soc.brandsocial'))
-//        {
-//            throw new \Exception('Access denied');
-//        }
-
         $brandId = $request->attributes()->getRequired('id');
 
         $preload = $request->query()->get('preload', []);
+        $fields  = $request->query()->get('fields', []);
 
         try
         {
             $brandSocial = $this->components->orm()->query(Model::BRAND_SOCIAL)
                 ->where('brandId', $brandId)
-                ->find($preload); //['social', 'brand']);
+                ->find($preload, $fields);
         }
         catch (\Throwable $throwable)
         {
