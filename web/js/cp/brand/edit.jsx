@@ -19,8 +19,8 @@ class SocialRows extends React.Component {
         const socialName = $('#socialType [value="' + model.socialId + '"]').text();
         return <tr key={model.id}>
             <td>{model.id}</td>
-            <td>{ socialName }</td>
-            <td>{model.url}</td>
+            <td>{socialName}</td>
+            <td><a href={model.url} title={socialName} target="__blank">{model.url}</a></td>
             <td></td>
         </tr>;
     }
