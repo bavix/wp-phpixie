@@ -7,3 +7,5 @@ find -type f | xargs chmod 0664
 npm install babel-preset-latest --save-dev
 npm install babel-preset-react --save-dev
 ```
+
+[dataTables](https://www.npmjs.com/package/@trungdq88/react-datatable)
