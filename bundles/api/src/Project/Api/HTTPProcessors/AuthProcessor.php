@@ -130,11 +130,11 @@ class AuthProcessor extends Processor
         /**
          * [ [ name, sort ], [ id, sort ] ]
          *
-         * @var array $order
+         * @var array $sort
          */
-        $orders = $request->query()->get('orders', []);
+        $sort = $request->query()->get('sort', []);
 
-        foreach ($orders as $field => $direction)
+        foreach ($sort as $field => $direction)
         {
             // order by
             $query->orderBy($field, $direction);
@@ -143,7 +143,7 @@ class AuthProcessor extends Processor
         /**
          * equal
          *
-         * @param array $terms
+         * @param array $filters
          */
         $filters = $request->query()->get('filters', []);
 
@@ -168,8 +168,6 @@ class AuthProcessor extends Processor
         {
             $query->where($column, 'like', "%$value%");
         }
-
-        return $query;
 
     }
 
