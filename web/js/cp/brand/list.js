@@ -11,7 +11,7 @@ $(function () {
         ajax: {
             url: '/api/soc/brand',
             dataType: 'json',
-            delay: 140,
+            delay: 350,
             data: function data(params) {
                 return {
                     queries: {
