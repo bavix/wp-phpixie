@@ -201,7 +201,7 @@ class Brand extends SOCProtected
         $brandId = $request->attributes()->getRequired('id');
 
         $preload = $request->query()->get('preload', []);
-        $fields  = $request->query()->get('fields', []);
+        $fields  = $request->query()->get('fields');
 
         try
         {
