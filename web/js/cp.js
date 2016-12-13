@@ -18,7 +18,7 @@ var filerObject = {
 
 $(function () {
 
-    $("select").select2({
+    $(".wbs-select2").select2({
         theme: "bootstrap"
     });
 
