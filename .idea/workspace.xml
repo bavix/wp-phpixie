@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sass/template/wbs.sass" afterPath="$PROJECT_DIR$/assets/sass/template/wbs.sass" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/brand/edit.js" afterPath="$PROJECT_DIR$/web/js/cp/brand/edit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/brand/edit.js.map" afterPath="$PROJECT_DIR$/web/js/cp/brand/edit.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/brand/edit.jsx" afterPath="$PROJECT_DIR$/web/js/cp/brand/edit.jsx" />
     </list>
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,11 +59,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/cp/brand/edit.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+              <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wbs.sass" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/sass/template/wbs.sass">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="499">
+              <caret line="105" column="17" lean-forward="true" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -177,7 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Project/Model.php" />
         <option value="$PROJECT_DIR$/bundles/app/assets/config/orm.php" />
         <option value="$PROJECT_DIR$/assets/migrate/migrations/14.sql" />
         <option value="$PROJECT_DIR$/assets/migrate/migrations/15.sql" />
@@ -228,6 +236,7 @@
         <option value="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/AuthProcessor.php" />
         <option value="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php" />
         <option value="$PROJECT_DIR$/web/js/cp/brand/edit.jsx" />
+        <option value="$PROJECT_DIR$/assets/sass/template/wbs.sass" />
       </list>
     </option>
   </component>
@@ -696,6 +705,28 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="sass" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WBS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wbs-cms" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -936,12 +967,12 @@
       <workItem from="1481225752974" duration="2871000" />
       <workItem from="1481301486698" duration="4746000" />
       <workItem from="1481555284238" duration="3859000" />
-      <workItem from="1481641158049" duration="2174000" />
+      <workItem from="1481641158049" duration="2386000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="706925000" />
+    <option name="totallyTimeSpent" value="707137000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -993,14 +1024,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/config/oauth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="45" lean-forward="false" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/config/social.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1370,7 +1393,15 @@
     <entry file="file://$PROJECT_DIR$/web/js/cp/brand/edit.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+          <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/sass/template/wbs.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="105" column="17" lean-forward="true" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="17" />
           <folding />
         </state>
       </provider>
