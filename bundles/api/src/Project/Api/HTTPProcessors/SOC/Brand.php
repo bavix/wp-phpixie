@@ -206,8 +206,11 @@ class Brand extends SOCProtected
         try
         {
             $brandSocial = $this->components->orm()->query(Model::BRAND_SOCIAL)
-                ->where('brandId', $brandId)
-                ->find($preload, $fields);
+                ->where('brandId', $brandId);
+
+            $this->query($brandSocial, $request);
+
+            $brandSocial = $brandSocial->find($preload, $fields);
         }
         catch (\Throwable $throwable)
         {

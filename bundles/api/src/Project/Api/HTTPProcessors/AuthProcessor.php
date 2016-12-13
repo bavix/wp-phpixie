@@ -169,8 +169,6 @@ class AuthProcessor extends Processor
             $query->where($column, 'like', "%$value%");
         }
 
-        return $query;
-
     }
 
 }
