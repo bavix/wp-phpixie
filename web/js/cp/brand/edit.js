@@ -69,7 +69,11 @@ var SocialRows = function (_React$Component) {
                 React.createElement(
                     'td',
                     null,
-                    model.url
+                    React.createElement(
+                        'a',
+                        { href: model.url, title: socialName, target: '__blank' },
+                        model.url
+                    )
                 ),
                 React.createElement('td', null)
             );
