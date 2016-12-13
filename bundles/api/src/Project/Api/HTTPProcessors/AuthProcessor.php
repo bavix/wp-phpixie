@@ -143,11 +143,11 @@ class AuthProcessor extends Processor
         /**
          * equal
          *
-         * @param array $filters
+         * @param array $terms
          */
-        $filters = $request->query()->get('filters', []);
+        $terms = $request->query()->get('terms', []);
 
-        foreach ($filters as $column => $value)
+        foreach ($terms as $column => $value)
         {
             if (is_array($value))
             {

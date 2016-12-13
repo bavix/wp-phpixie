@@ -52,8 +52,6 @@
             Brand
           %select#brandsSelect.form-control.select2-multiple(name="filter[id]" style="width:100%")
             %option(disabled selected) None
-            - foreach ($optionSelectBrands as $option)
-              %option(value="#{$option->id}" selected="#{isset($filter['id']) && $filter['id'] == $option->id}") = $option->name
         .form-group
           %button.btn.btn-success Submit
           %a.btn.btn-default(onclick="Url.removeQuery(); location.reload();") Reset
