@@ -46,6 +46,30 @@ $(function () {
     let $formSocial = $('[data-created="social"]');
     let socialJson = [];
 
+    function response(response) {
+        if (response.status === 201 || response.status === 200) {
+            return response.json();
+        }
+
+        let error = new Error(response.statusText);
+        error.response = response;
+        throw error;
+    }
+
+    function tableInit(json) {
+        if (typeof json.id === "undefined") {
+            socialJson = json;;
+        }
+        else {
+            socialJson.push(json)
+        }
+
+        ReactDOM.render(
+            <SocialRows rows={socialJson}/>,
+            socialRows
+        );
+    }
+
     $formSocial.submit(function (event) {
 
         event.preventDefault();
@@ -56,55 +80,13 @@ $(function () {
             method: $formSocial.attr('method'),
             credentials: 'include',
             body: form
-        }).then(function (response) {
-
-            if (response.status === 201 || response.status === 200) {
-                return response.json();
-            }
-
-            let error = new Error(response.statusText);
-            error.response = response;
-            throw error;
-
-        }).then(function (json) {
-
-            socialJson.push(json);
-
-            ReactDOM.render(
-                <SocialRows rows={socialJson}/>,
-                socialRows
-            );
-
-        }).catch(function (error) {
-            // todo
-        });
+        }).then(response).then(tableInit).catch(() => undefined);
 
     });
 
     fetch($formSocial.attr('action'), {
         method: 'GET',
         credentials: 'include'
-    }).then(function (response) {
-
-        if (response.status === 201 || response.status === 200) {
-            return response.json();
-        }
-
-        let error = new Error(response.statusText);
-        error.response = response;
-        throw error;
-
-    }).then(function (json) {
-
-        socialJson = json;
-
-        ReactDOM.render(
-            <SocialRows rows={socialJson}/>,
-            socialRows
-        );
-
-    }).catch(function (error) {
-        // todo
-    });
+    }).then(response).then(tableInit).catch(() => undefined);
 
 });
