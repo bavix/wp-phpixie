@@ -8,13 +8,93 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var SocialRows = function (_React$Component) {
-    _inherits(SocialRows, _React$Component);
+function response(response) {
+    if (response.status === 201 || response.status === 200) {
+        return response.json();
+    }
+
+    var error = new Error(response.statusText);
+    error.response = response;
+    throw error;
+}
+
+var ButtonDelete = function (_React$Component) {
+    _inherits(ButtonDelete, _React$Component);
+
+    function ButtonDelete(props) {
+        _classCallCheck(this, ButtonDelete);
+
+        var _this = _possibleConstructorReturn(this, (ButtonDelete.__proto__ || Object.getPrototypeOf(ButtonDelete)).call(this, props));
+
+        _this.methodDelete = _this.methodDelete.bind(_this);
+        return _this;
+    }
+
+    _createClass(ButtonDelete, [{
+        key: 'methodDelete',
+        value: function methodDelete(event) {
+            var _this2 = this;
+
+            var node = event.target.parentNode.parentNode;
+
+            if (node.tagName != 'TR') {
+                node = node.parentNode;
+            }
+
+            swal({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
+                confirmButtonClass: 'btn btn-danger',
+                cancelButtonClass: 'btn btn-primary'
+            }).then(function () {
+
+                fetch(_this2.props.api, {
+                    method: 'DELETE',
+                    credentials: 'include'
+                }).then(response).then(function (json) {
+
+                    $(node).remove();
+                    swal('Deleted!', 'Your data has been deleted.', 'success');
+                }).catch(function () {
+                    swal('Deleted!', 'Your data has not been deleted.', 'error');
+                });
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                'a',
+                { onClick: this.methodDelete, className: 'btn btn-danger' },
+                React.createElement(
+                    'i',
+                    { className: 'fa fa-trash' },
+                    ' '
+                ),
+                ' Delete'
+            );
+        }
+    }]);
+
+    return ButtonDelete;
+}(React.Component);
+
+var SocialRows = function (_React$Component2) {
+    _inherits(SocialRows, _React$Component2);
 
     function SocialRows(props) {
         _classCallCheck(this, SocialRows);
 
-        return _possibleConstructorReturn(this, (SocialRows.__proto__ || Object.getPrototypeOf(SocialRows)).call(this, props));
+        var _this3 = _possibleConstructorReturn(this, (SocialRows.__proto__ || Object.getPrototypeOf(SocialRows)).call(this, props));
+
+        _this3.state = {
+            data: props.rows
+        };
+        return _this3;
     }
 
     _createClass(SocialRows, [{
@@ -78,7 +158,7 @@ var SocialRows = function (_React$Component) {
                 React.createElement(
                     'td',
                     null,
-                    ' '
+                    React.createElement(ButtonDelete, { key: model.id, api: '/api/soc/brand/' + model.brandId + '/social/' + model.socialId })
                 )
             );
         }
@@ -104,8 +184,8 @@ var SocialRows = function (_React$Component) {
     return SocialRows;
 }(React.Component);
 
-var HeadingRows = function (_React$Component2) {
-    _inherits(HeadingRows, _React$Component2);
+var HeadingRows = function (_React$Component3) {
+    _inherits(HeadingRows, _React$Component3);
 
     function HeadingRows(props) {
         _classCallCheck(this, HeadingRows);
@@ -169,7 +249,7 @@ var HeadingRows = function (_React$Component2) {
                 React.createElement(
                     'td',
                     null,
-                    ' '
+                    React.createElement(ButtonDelete, { key: model.id, api: '/api/soc/brand/' + model.brandId + '/heading/' + model.id })
                 )
             );
         }
@@ -195,8 +275,8 @@ var HeadingRows = function (_React$Component2) {
     return HeadingRows;
 }(React.Component);
 
-var DealerRows = function (_React$Component3) {
-    _inherits(DealerRows, _React$Component3);
+var DealerRows = function (_React$Component4) {
+    _inherits(DealerRows, _React$Component4);
 
     function DealerRows(props) {
         _classCallCheck(this, DealerRows);
@@ -260,7 +340,7 @@ var DealerRows = function (_React$Component3) {
                 React.createElement(
                     'td',
                     null,
-                    ' '
+                    React.createElement(ButtonDelete, { key: model.id, api: '/api/soc/brand/' + model.brandId + '/dealer/' + model.id })
                 )
             );
         }
@@ -368,16 +448,6 @@ $(function () {
     var headingJson = [];
     var dealerJson = [];
 
-    function response(response) {
-        if (response.status === 201 || response.status === 200) {
-            return response.json();
-        }
-
-        var error = new Error(response.statusText);
-        error.response = response;
-        throw error;
-    }
-
     function tableInit(json) {
         if (typeof json.id === "undefined") {
             socialJson = json;
@@ -390,6 +460,13 @@ $(function () {
 
     function tableHeadingInit(json) {
         if (typeof json.id === "undefined") {
+
+            json = json.map(function (data) {
+                data.brandId = $formHeading.data('id');
+
+                return data;
+            });
+
             headingJson = json;
 
             ReactDOM.render(React.createElement(HeadingRows, { rows: headingJson }), headingRows);
@@ -401,6 +478,7 @@ $(function () {
                 headingJson.push({
                     id: json.headingId,
                     parentId: data.parentId,
+                    brandId: json.brandId,
                     title: data.title,
                     createdAt: data.createdAt,
                     updatedAt: data.updatedAt
@@ -413,6 +491,13 @@ $(function () {
 
     function tableDealerInit(json) {
         if (typeof json.id === "undefined") {
+
+            json = json.map(function (data) {
+                data.brandId = $formDealer.data('id');
+
+                return data;
+            });
+
             dealerJson = json;
 
             ReactDOM.render(React.createElement(DealerRows, { rows: dealerJson }), dealerRows);
@@ -424,6 +509,7 @@ $(function () {
                 dealerJson.push({
                     id: json.dealerId,
                     parentId: data.parentId,
+                    brandId: json.brandId,
                     name: data.name,
                     createdAt: data.createdAt,
                     updatedAt: data.updatedAt

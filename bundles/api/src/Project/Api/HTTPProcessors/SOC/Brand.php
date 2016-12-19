@@ -254,10 +254,12 @@ class Brand extends SOCProtected
             throw new \Exception('Access denied');
         }
 
-        $brandSocialId = $request->attributes()->getRequired('nextId');
+        $brandId = $request->attributes()->getRequired('id');
+        $socialId = $request->attributes()->getRequired('nextId');
 
         $brandSocial = $this->components->orm()->query(Model::BRAND_SOCIAL)
-            ->in($brandSocialId)
+            ->where('brandId', $brandId)
+            ->where('socialId', $socialId)
             ->findOne();
 
         if (!$brandSocial)
@@ -393,10 +395,12 @@ class Brand extends SOCProtected
             throw new \Exception('Access denied');
         }
 
-        $brandHeadingId = $request->attributes()->getRequired('nextId');
+        $brandId = $request->attributes()->getRequired('id');
+        $heading = $request->attributes()->getRequired('nextId');
 
         $brandHeading = $this->components->orm()->query(Model::BRAND_HEADING)
-            ->in($brandHeadingId)
+            ->where('brandId', $brandId)
+            ->where('headingId', $heading)
             ->findOne();
 
         if (!$brandHeading)
@@ -532,10 +536,12 @@ class Brand extends SOCProtected
             throw new \Exception('Access denied');
         }
 
-        $brandDealerId = $request->attributes()->getRequired('nextId');
+        $brandId = $request->attributes()->getRequired('id');
+        $dealerId = $request->attributes()->getRequired('nextId');
 
         $brandDealer = $this->components->orm()->query(Model::BRAND_DEALER)
-            ->in($brandDealerId)
+            ->where('brandId', $brandId)
+            ->where('dealerId', $dealerId)
             ->findOne();
 
         if (!$brandDealer)
