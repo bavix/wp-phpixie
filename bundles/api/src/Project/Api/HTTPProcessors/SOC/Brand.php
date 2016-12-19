@@ -21,6 +21,7 @@ class Brand extends SOCProtected
     // default
     public function defaultPostAction(Request $request)
     {
+
         if (!$this->loggedUser()->hasPermission('cp.soc.brand.add'))
         {
             throw new \Exception('Access denied');
@@ -54,6 +55,7 @@ class Brand extends SOCProtected
         }
 
         return $brand->asObject(true);
+
     }
 
     public function itemGetAction(Request $request)
@@ -81,6 +83,13 @@ class Brand extends SOCProtected
         }
 
         return $brand->asObject(true);
+    }
+
+    public function itemPutAction(Request $request)
+    {
+        $id = $request->attributes()->getRequired('id');
+
+        return [];
     }
 
     public function itemDeleteAction(Request $request)
@@ -254,7 +263,7 @@ class Brand extends SOCProtected
             throw new \Exception('Access denied');
         }
 
-        $brandId = $request->attributes()->getRequired('id');
+        $brandId  = $request->attributes()->getRequired('id');
         $socialId = $request->attributes()->getRequired('nextId');
 
         $brandSocial = $this->components->orm()->query(Model::BRAND_SOCIAL)
@@ -428,7 +437,7 @@ class Brand extends SOCProtected
             throw new \Exception('Access denied');
         }
 
-        $brandId   = $request->attributes()->getRequired('id');
+        $brandId  = $request->attributes()->getRequired('id');
         $dealerId = $request->data()->getRequired('id');
 
         $dealerIdValidate = filter_var($dealerId, FILTER_VALIDATE_INT);
@@ -467,8 +476,8 @@ class Brand extends SOCProtected
 
         if (!$brandDealer)
         {
-            $brandDealer            = $this->components->orm()->createEntity(Model::BRAND_DEALER);
-            $brandDealer->brandId   = $brandId;
+            $brandDealer           = $this->components->orm()->createEntity(Model::BRAND_DEALER);
+            $brandDealer->brandId  = $brandId;
             $brandDealer->dealerId = $dealerId;
             $brandDealer->save();
 
@@ -536,7 +545,7 @@ class Brand extends SOCProtected
             throw new \Exception('Access denied');
         }
 
-        $brandId = $request->attributes()->getRequired('id');
+        $brandId  = $request->attributes()->getRequired('id');
         $dealerId = $request->attributes()->getRequired('nextId');
 
         $brandDealer = $this->components->orm()->query(Model::BRAND_DEALER)
