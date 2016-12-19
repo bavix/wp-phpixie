@@ -524,30 +524,46 @@ $(function () {
 
         event.preventDefault();
 
-        var form = new FormData(this);
+        var ids = $(this).find('select').val();
 
-        fetch($formHeading.attr('action'), {
-            method: $formHeading.attr('method'),
-            credentials: 'include',
-            body: form
-        }).then(response).then(tableHeadingInit).catch(function () {
-            return undefined;
-        });
+        for (var i in ids) {
+
+            if (!ids.hasOwnProperty(i)) continue;
+
+            var form = new FormData();
+            form.append("id", ids[i]);
+
+            fetch($formHeading.attr('action'), {
+                method: $formHeading.attr('method'),
+                credentials: 'include',
+                body: form
+            }).then(response).then(tableHeadingInit).catch(function () {
+                return undefined;
+            });
+        }
     });
 
     $formDealer.submit(function (event) {
 
         event.preventDefault();
 
-        var form = new FormData(this);
+        var ids = $(this).find('select').val();
 
-        fetch($formDealer.attr('action'), {
-            method: $formDealer.attr('method'),
-            credentials: 'include',
-            body: form
-        }).then(response).then(tableDealerInit).catch(function () {
-            return undefined;
-        });
+        for (var i in ids) {
+
+            if (!ids.hasOwnProperty(i)) continue;
+
+            var form = new FormData();
+            form.append("id", ids[i]);
+
+            fetch($formDealer.attr('action'), {
+                method: $formDealer.attr('method'),
+                credentials: 'include',
+                body: form
+            }).then(response).then(tableDealerInit).catch(function () {
+                return undefined;
+            });
+        }
     });
 
     $formSocial.submit(function (event) {

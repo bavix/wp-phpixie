@@ -20,7 +20,9 @@ class ButtonDelete extends React.Component {
 
         let node = event.target.parentNode.parentNode;
 
-        if (node.tagName != 'TR') { node = node.parentNode }
+        if (node.tagName != 'TR') {
+            node = node.parentNode
+        }
 
         swal({
             title: 'Are you sure?',
@@ -291,7 +293,7 @@ $(function () {
     function tableHeadingInit(json) {
         if (typeof json.id === "undefined") {
 
-            json = json.map( data => {
+            json = json.map(data => {
                 data.brandId = $formHeading.data('id');
 
                 return data;
@@ -329,7 +331,7 @@ $(function () {
     function tableDealerInit(json) {
         if (typeof json.id === "undefined") {
 
-            json = json.map( data => {
+            json = json.map(data => {
                 data.brandId = $formDealer.data('id');
 
                 return data;
@@ -368,13 +370,21 @@ $(function () {
 
         event.preventDefault();
 
-        let form = new FormData(this);
+        let ids = $(this).find('select').val();
 
-        fetch($formHeading.attr('action'), {
-            method: $formHeading.attr('method'),
-            credentials: 'include',
-            body: form
-        }).then(response).then(tableHeadingInit).catch(() => undefined);
+        for (let i in  ids) {
+
+            if (!ids.hasOwnProperty(i)) continue;
+
+            let form = new FormData();
+            form.append("id", ids[i]);
+
+            fetch($formHeading.attr('action'), {
+                method: $formHeading.attr('method'),
+                credentials: 'include',
+                body: form
+            }).then(response).then(tableHeadingInit).catch(() => undefined);
+        }
 
     });
 
@@ -382,13 +392,22 @@ $(function () {
 
         event.preventDefault();
 
-        let form = new FormData(this);
+        let ids = $(this).find('select').val();
 
-        fetch($formDealer.attr('action'), {
-            method: $formDealer.attr('method'),
-            credentials: 'include',
-            body: form
-        }).then(response).then(tableDealerInit).catch(() => undefined);
+        for (let i in  ids) {
+
+            if (!ids.hasOwnProperty(i)) continue;
+
+            let form = new FormData();
+            form.append("id", ids[i]);
+
+            fetch($formDealer.attr('action'), {
+                method: $formDealer.attr('method'),
+                credentials: 'include',
+                body: form
+            }).then(response).then(tableDealerInit).catch(() => undefined);
+
+        }
 
     });
 
