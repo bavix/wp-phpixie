@@ -385,7 +385,7 @@ $(function () {
                 body: form
             }).then(response).then(tableHeadingInit).catch(() => undefined);
         }
-
+        
     });
 
     $formDealer.submit(function (event) {
