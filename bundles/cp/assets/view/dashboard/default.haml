@@ -1,11 +1,6 @@
 - $this->layout('cp:layout')
 
-.well
-  %h3.font-bold This is page content
-  .error-desc
-    You can create here any grid layout you want. And any variation layout you imagine:) Check out
-    main dashboard and other site. It use many different layout.
-    %br
-    %a.btn.btn-primary.m-t{:href => $this->httpPath('cp.processor')}
-      %i.fa.fa-dashboard
-      Dashboard
+#content
+
+
+- $assets::pushJs('/js/cp/dashboard/default.js')
