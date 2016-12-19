@@ -23,4 +23,13 @@ class Dashboard extends CPProtected
         return $this->render('cp:dashboard/default');
     }
 
+    public function countAction(Request $request)
+    {
+        $model = $request->query()->getRequired('model');
+
+        return [
+            'count' => $this->components->orm()->query($model)->count()
+        ];
+    }
+
 }
