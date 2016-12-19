@@ -76,11 +76,6 @@ return [
         ],
         [
             'type'  => 'manyToMany',
-            'left'  => Model::BRAND, // бренд + рубрика
-            'right' => Model::HEADING,
-        ],
-        [
-            'type'  => 'manyToMany',
             'left'  => Model::DEALER, // бренд + рубрика
             'right' => Model::HEADING,
         ],
@@ -142,6 +137,24 @@ return [
             'type'  => 'oneToMany',
             'owner' => Model::SOCIAL,
             'items' => Model::BRAND_SOCIAL
+        ],
+
+
+        // brand <-> heading
+        [
+            'type'  => 'manyToMany',
+            'left'  => Model::BRAND,
+            'right' => Model::HEADING
+        ],
+        [
+            'type'  => 'oneToMany',
+            'owner' => Model::BRAND,
+            'items' => Model::BRAND_HEADING
+        ],
+        [
+            'type'  => 'oneToMany',
+            'owner' => Model::HEADING,
+            'items' => Model::BRAND_HEADING
         ],
 
         [

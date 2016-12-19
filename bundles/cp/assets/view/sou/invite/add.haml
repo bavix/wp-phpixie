@@ -31,7 +31,7 @@
           %input.form-control{:name => "email", :placeholder => "email", :type => "email", :value => $email}
         .form-group
           %label Role
-          %select.form-control(name="roleId")
+          %select.wbs-select2.form-control(name="roleId")
             - foreach ($roles as $role)
               %option{:value => $role->id, :selected => ($role->id == $roleId)}
                 = $role->title

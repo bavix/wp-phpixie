@@ -16,6 +16,8 @@
               %a(data-toggle="tab" href="#tab-base") Base
             %li
               %a(data-toggle="tab" href="#tab-social") Social
+            %li
+              %a(data-toggle="tab" href="#tab-heading") Heading
             - if ($user->hasPermission('cp.log'))
               %li
                 %a(data-toggle="tab" href="#tab-last-activity")
@@ -93,53 +95,10 @@
                       Submit
 
             #tab-social.tab-pane
-              .panel-body
-                %form(method="POST" action="/api/soc/brand/#{$brand->id}/social" data-created="social")
+              partial: 'cp:soc/brand/edit.tabs/social'
 
-                  .grid
-
-                    .col-md-4
-                      .form-group.form-group-lg
-                        %label.control-label(for="socialType") Type
-                        %select#socialType.form-control.input-lg.wbs-select2.select2-multiple(name="type" style="width: 100%")
-                          - foreach ($socials as $social)
-                            %option(value="#{$social->id}") = $social->title
-
-                    .col-md-8
-                      .form-group.form-group-lg
-                        %label.control-label(for="socialUrl") Url
-                        %input#socialUrl.form-control(type="text" name="url" value="")
-
-                  .hr-line-dashed
-
-                  .form-group(align="center")
-                    %button.btn.btn-primary.btn-lg
-                      %i.fa.fa-save
-                      Submit
-
-                #socialRows.table-responsive
-                -#%tr
-                -#  %td 1
-                -#  %td Facebook
-                -#  %td http://..
-                -#  %td [todo]
-
-                -#.hr-line-dashed
-                -#%form(method="PATCH" action="")
-
-                  .grid
-
-                    .col-md-4
-                      .form-group.form-group-lg
-                        %label.control-label(for="socialType-1") Type
-                        %select#socialType-1.form-control.input-lg.select2-multiple(name="type" style="width: 100%")
-                          - foreach ($socials as $social)
-                            %option(value="#{$social->id}") = $social->title
-
-                    .col-md-8
-                      .form-group.form-group-lg
-                        %label.control-label(for="socialUrl-1") Url
-                        %input#socialUrl-1.form-control(type="text" name="url" value="")
+            #tab-heading.tab-pane
+              partial: 'cp:soc/brand/edit.tabs/heading'
 
             - if ($user->hasPermission('cp.log'))
               #tab-last-activity.tab-pane
@@ -193,7 +152,7 @@
     .form-group(align="center")
       %button.btn.btn-success.btn-lg(disabled) Upload
 
-- $assets::pushJs('/js/cp/brand/edit.js')
+- $assets::pushJs('/js/cp/soc/brand/edit.js')
 
 :javascript
 

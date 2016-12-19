@@ -1,0 +1,19 @@
+- $this->layout('cp:layout')
+
+.col-lg-3
+.col-lg-6
+  .ibox
+    .ibox-title
+      %h3 New Heading
+    .ibox-content
+      %form(method="POST" action="/api/soc/heading" data-created)
+        .form-group.form-group-lg
+          %label.control-label(for="headingTitle")
+            Title
+          %input#headingTitle.form-control.text-uppercase(type="text" name="title" value="" )
+        .hr-line-dashed
+        .form-group(align="center")
+          %button.btn.btn-primary.btn-lg
+            %i.fa.fa-save
+            Submit
+- $assets::pushJs('/js/cp/soc/heading/add.js')

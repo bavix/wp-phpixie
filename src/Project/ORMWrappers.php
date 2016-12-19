@@ -28,7 +28,8 @@ class ORMWrappers extends WrappersImplementation
     protected $databaseQueries = array(
         Model::INVITE,
         Model::USER,
-        Model::BRAND
+        Model::BRAND,
+        Model::HEADING
     );
 
     /**
@@ -75,6 +76,16 @@ class ORMWrappers extends WrappersImplementation
     public function brandQuery($query)
     {
         return new ORM\Brand\Query($query, $this->builder);
+    }
+
+    /**
+     * @param $query
+     *
+     * @return ORM\Heading\Query
+     */
+    public function headingQuery($query)
+    {
+        return new ORM\Heading\Query($query, $this->builder);
     }
 
     /**

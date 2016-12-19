@@ -1,0 +1,15 @@
+- $this->layout('cp:layout')
+
+.col-lg-9
+  .ibox
+    .ibox-title
+      %h3
+        Edit Heading
+        %label.label.label-info.pull-right
+          = $_($heading->title)
+    .ibox-content
+      %form(method="POST" action="/api/soc/heading" data-created)
+        .form-group.form-group-lg
+          %label.control-label(for="headingTitle")
+            Title
+          %input#headingTitle.form-control.text-uppercase(type="text" name="title" value="#{$heading->title}" )

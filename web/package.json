@@ -4,7 +4,6 @@
   "repository": "https://gitlab.com/REZ1DENT3/WBS-CMS.git",
   "author": "Babichev Maxim <maksim.babichev95@gmail.com>",
   "dependencies": {
-    "amazon-autocomplete": "^1.0.1",
     "animate.css": "^3.5.2",
     "blueimp-file-upload": "^9.14.1",
     "bootstrap": "^3.3.7",
@@ -26,8 +25,6 @@
     "slimscroll": "^0.9.1",
     "sweetalert2": "^6.1.1",
     "toastr": "^2.1.2",
-    "typeahead": "^0.2.2",
-    "typeahead.js": "^0.11.1",
     "urljs": "^2.3.1",
     "whatwg-fetch": "^2.0.1"
   }
