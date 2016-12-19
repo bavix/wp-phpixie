@@ -1,17 +1,87 @@
+function response(response) {
+    if (response.status === 201 || response.status === 200) {
+        return response.json();
+    }
+
+    let error = new Error(response.statusText);
+    error.response = response;
+    throw error;
+}
+
+class ButtonDelete extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.methodDelete = this.methodDelete.bind(this);
+    }
+
+    methodDelete(event) {
+
+        let node = event.target.parentNode.parentNode;
+
+        if (node.tagName != 'TR') { node = node.parentNode }
+
+        swal({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            confirmButtonClass: 'btn btn-danger',
+            cancelButtonClass: 'btn btn-primary'
+        }).then(() => {
+
+            fetch(this.props.api, {
+                method: 'DELETE',
+                credentials: 'include'
+            }).then(response).then(json => {
+
+                $(node).remove();
+                swal(
+                    'Deleted!',
+                    'Your data has been deleted.',
+                    'success'
+                );
+
+            }).catch(function () {
+                swal(
+                    'Deleted!',
+                    'Your data has not been deleted.',
+                    'error'
+                );
+            });
+
+        });
+
+    }
+
+    render() {
+        return <a onClick={ this.methodDelete } className="btn btn-danger">
+            <i className="fa fa-trash"> </i> Delete
+        </a>
+    }
+}
+
 class SocialRows extends React.Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            data: props.rows
+        };
     }
 
-   columns() {
+    columns() {
         return <thead>
-            <tr>
-                <th>ID</th>
-                <th>Type</th>
-                <th>URL</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>URL</th>
+            <th>Actions</th>
+        </tr>
         </thead>;
     }
 
@@ -21,7 +91,9 @@ class SocialRows extends React.Component {
             <td>{model.id}</td>
             <td>{socialName}</td>
             <td><a href={model.url} title={socialName} target="__blank">{model.url}</a></td>
-            <td> </td>
+            <td>
+                <ButtonDelete key={model.id} api={'/api/soc/brand/' + model.brandId + '/social/' + model.socialId}/>
+            </td>
         </tr>;
     }
 
@@ -60,7 +132,9 @@ class HeadingRows extends React.Component {
             <td>{model.id}</td>
             <td>{model.parentId}</td>
             <td>{model.title}</td>
-            <td> </td>
+            <td>
+                <ButtonDelete key={model.id} api={'/api/soc/brand/' + model.brandId + '/heading/' + model.id}/>
+            </td>
         </tr>;
     }
 
@@ -99,7 +173,9 @@ class DealerRows extends React.Component {
             <td>{model.id}</td>
             <td>{model.parentId}</td>
             <td>{model.name}</td>
-            <td> </td>
+            <td>
+                <ButtonDelete key={model.id} api={'/api/soc/brand/' + model.brandId + '/dealer/' + model.id}/>
+            </td>
         </tr>;
     }
 
@@ -198,16 +274,6 @@ $(function () {
     let headingJson = [];
     let dealerJson = [];
 
-    function response(response) {
-        if (response.status === 201 || response.status === 200) {
-            return response.json();
-        }
-
-        let error = new Error(response.statusText);
-        error.response = response;
-        throw error;
-    }
-
     function tableInit(json) {
         if (typeof json.id === "undefined") {
             socialJson = json;
@@ -224,6 +290,13 @@ $(function () {
 
     function tableHeadingInit(json) {
         if (typeof json.id === "undefined") {
+
+            json = json.map( data => {
+                data.brandId = $formHeading.data('id');
+
+                return data;
+            });
+
             headingJson = json;
 
             ReactDOM.render(
@@ -235,25 +308,33 @@ $(function () {
             fetch('/api/soc/heading/' + json.headingId, {
                 method: 'GET',
                 credentials: 'include'
-            }).then( response ).then( data => {
-                headingJson.push( {
+            }).then(response).then(data => {
+                headingJson.push({
                     id: json.headingId,
                     parentId: data.parentId,
+                    brandId: json.brandId,
                     title: data.title,
                     createdAt: data.createdAt,
                     updatedAt: data.updatedAt
-                } );
+                });
 
                 ReactDOM.render(
                     <HeadingRows rows={headingJson}/>,
                     headingRows
                 );
-            } );
+            });
         }
     }
 
     function tableDealerInit(json) {
         if (typeof json.id === "undefined") {
+
+            json = json.map( data => {
+                data.brandId = $formDealer.data('id');
+
+                return data;
+            });
+
             dealerJson = json;
 
             ReactDOM.render(
@@ -265,20 +346,21 @@ $(function () {
             fetch('/api/soc/dealer/' + json.dealerId, {
                 method: 'GET',
                 credentials: 'include'
-            }).then( response ).then( data => {
-                dealerJson.push( {
+            }).then(response).then(data => {
+                dealerJson.push({
                     id: json.dealerId,
                     parentId: data.parentId,
+                    brandId: json.brandId,
                     name: data.name,
                     createdAt: data.createdAt,
                     updatedAt: data.updatedAt
-                } );
+                });
 
                 ReactDOM.render(
                     <DealerRows rows={dealerJson}/>,
                     dealerRows
                 );
-            } );
+            });
         }
     }
 
