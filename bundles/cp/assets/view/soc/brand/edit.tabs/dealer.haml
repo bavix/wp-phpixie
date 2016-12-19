@@ -1,0 +1,19 @@
+.panel-body
+  %form(method="POST" data-id="#{$brand->id}" action="/api/soc/brand/#{$brand->id}/dealer" data-created="dealer")
+
+    .grid
+      .col-md-12
+        .form-group.form-group-lg
+          %label.control-label(for="dealerType") Type
+          %select#dealerType.form-control.select2-multiple(name="id" style="width: 100%")
+            %option(disabled selected) None
+
+    .hr-line-dashed
+
+    .form-group(align="center")
+      %button.btn.btn-primary.btn-lg
+        %i.fa.fa-save
+        Submit
+
+  // http://wbs-cms/api/soc/dealer?terms[brands.id]=9
+  #dealerRows.table-responsive

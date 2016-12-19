@@ -195,6 +195,97 @@ var HeadingRows = function (_React$Component2) {
     return HeadingRows;
 }(React.Component);
 
+var DealerRows = function (_React$Component3) {
+    _inherits(DealerRows, _React$Component3);
+
+    function DealerRows(props) {
+        _classCallCheck(this, DealerRows);
+
+        return _possibleConstructorReturn(this, (DealerRows.__proto__ || Object.getPrototypeOf(DealerRows)).call(this, props));
+    }
+
+    _createClass(DealerRows, [{
+        key: 'columns',
+        value: function columns() {
+            return React.createElement(
+                'thead',
+                null,
+                React.createElement(
+                    'tr',
+                    null,
+                    React.createElement(
+                        'th',
+                        null,
+                        'ID'
+                    ),
+                    React.createElement(
+                        'th',
+                        null,
+                        'Parent ID'
+                    ),
+                    React.createElement(
+                        'th',
+                        null,
+                        'Name'
+                    ),
+                    React.createElement(
+                        'th',
+                        null,
+                        'Actions'
+                    )
+                )
+            );
+        }
+    }, {
+        key: 'row',
+        value: function row(model) {
+            return React.createElement(
+                'tr',
+                { key: model.id },
+                React.createElement(
+                    'td',
+                    null,
+                    model.id
+                ),
+                React.createElement(
+                    'td',
+                    null,
+                    model.parentId
+                ),
+                React.createElement(
+                    'td',
+                    null,
+                    model.name
+                ),
+                React.createElement(
+                    'td',
+                    null,
+                    ' '
+                )
+            );
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+
+            var rows = this.props.rows.map(this.row);
+
+            return React.createElement(
+                'table',
+                { className: 'table table-striped' },
+                this.columns(),
+                React.createElement(
+                    'tbody',
+                    null,
+                    rows
+                )
+            );
+        }
+    }]);
+
+    return DealerRows;
+}(React.Component);
+
 $(function () {
 
     // heading
@@ -230,6 +321,37 @@ $(function () {
         }
     });
 
+    $('#dealerType').select2({
+        theme: "bootstrap",
+        ajax: {
+            url: '/api/soc/dealer?limit=15',
+            dataType: 'json',
+            delay: 350,
+            data: function data(params) {
+                return {
+                    queries: {
+                        name: params.term
+                    },
+                    page: params.page || 1
+                };
+            },
+            processResults: function processResults(data) {
+                if (typeof data.message !== "undefined") {
+                    return {
+                        results: {}
+                    };
+                }
+
+                return {
+                    results: $.map(data, function (obj) {
+                        return { id: obj.id, text: obj.name };
+                    })
+                };
+            },
+            cache: true
+        }
+    });
+
     /// social
     var socialRows = document.getElementById('socialRows');
     var $formSocial = $('[data-created="social"]');
@@ -238,8 +360,13 @@ $(function () {
     var headingRows = document.getElementById('headingRows');
     var $formHeading = $('[data-created="heading"]');
 
+    // dealer
+    var dealerRows = document.getElementById('dealerRows');
+    var $formDealer = $('[data-created="dealer"]');
+
     var socialJson = [];
     var headingJson = [];
+    var dealerJson = [];
 
     function response(response) {
         if (response.status === 201 || response.status === 200) {
@@ -284,6 +411,29 @@ $(function () {
         }
     }
 
+    function tableDealerInit(json) {
+        if (typeof json.id === "undefined") {
+            dealerJson = json;
+
+            ReactDOM.render(React.createElement(DealerRows, { rows: dealerJson }), dealerRows);
+        } else {
+            fetch('/api/soc/dealer/' + json.dealerId, {
+                method: 'GET',
+                credentials: 'include'
+            }).then(response).then(function (data) {
+                dealerJson.push({
+                    id: json.dealerId,
+                    parentId: data.parentId,
+                    name: data.name,
+                    createdAt: data.createdAt,
+                    updatedAt: data.updatedAt
+                });
+
+                ReactDOM.render(React.createElement(DealerRows, { rows: dealerJson }), dealerRows);
+            });
+        }
+    }
+
     $formHeading.submit(function (event) {
 
         event.preventDefault();
@@ -295,6 +445,21 @@ $(function () {
             credentials: 'include',
             body: form
         }).then(response).then(tableHeadingInit).catch(function () {
+            return undefined;
+        });
+    });
+
+    $formDealer.submit(function (event) {
+
+        event.preventDefault();
+
+        var form = new FormData(this);
+
+        fetch($formDealer.attr('action'), {
+            method: $formDealer.attr('method'),
+            credentials: 'include',
+            body: form
+        }).then(response).then(tableDealerInit).catch(function () {
             return undefined;
         });
     });
@@ -325,6 +490,13 @@ $(function () {
         method: 'GET',
         credentials: 'include'
     }).then(response).then(tableHeadingInit).catch(function () {
+        return undefined;
+    });
+
+    fetch('/api/soc/dealer?terms[brands.id]=' + $formDealer.data('id'), {
+        method: 'GET',
+        credentials: 'include'
+    }).then(response).then(tableDealerInit).catch(function () {
         return undefined;
     });
 });

@@ -164,7 +164,7 @@
                       %span.label.label-danger no
 
                 %tr
-                  %td(rowspan="4")
+                  %td(rowspan="6")
                     Catalogue
                     - if ($role->hasMyPermission('cp.soc'))
                       %span.label.label-primary yes
@@ -173,7 +173,7 @@
                     - else
                       %span.label.label-danger no
 
-                  %td(rowspan="2") Brand
+                  %td(rowspan="4") Brand
                   %td -
 
                   %td
@@ -252,6 +252,90 @@
                     - else if ($role->hasMyPermission('cp.soc.brandsocial.pull-request'))
                       %span.label.label-primary yes
                     - else if ($role->hasPermission('cp.soc.brandsocial.pull-request'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+
+                %tr
+
+                  %td Heading
+
+                  %td
+                    - if ($role->hasMyPermission('cp.soc.brandheading'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.soc.brandheading'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.soc.brandheading.add'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.soc.brandheading.add'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.soc.brandheading.edit'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.soc.brandheading.edit'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.soc.brandheading.delete'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.soc.brandheading.delete'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasPermission('cp.soc.brandheading.delete'))
+                      %span.label.label-success master
+                    - else if ($role->hasMyPermission('cp.soc.brandheading.pull-request'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.soc.brandheading.pull-request'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+
+                %tr
+
+                  %td Dealer
+
+                  %td
+                    - if ($role->hasMyPermission('cp.soc.branddealer'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.soc.branddealer'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.soc.branddealer.add'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.soc.branddealer.add'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.soc.branddealer.edit'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.soc.branddealer.edit'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.soc.branddealer.delete'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.soc.branddealer.delete'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasPermission('cp.soc.branddealer.delete'))
+                      %span.label.label-success master
+                    - else if ($role->hasMyPermission('cp.soc.branddealer.pull-request'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.soc.branddealer.pull-request'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no

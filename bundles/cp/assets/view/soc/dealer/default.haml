@@ -1,3 +1,16 @@
 - $this->layout('cp:layout')
 
-%h1 Dealer -- In developing
+.col-lg-9
+  .ibox
+    .ibox-title
+      %label.label.label-success.pull-right
+      -# = $count
+      %h3 = $currentMenu->title
+    .ibox-content#content
+.col-lg-3
+  -#.ibox
+  -#  .ibox-title
+  -#    Filter
+  -#  .ibox-content
+  -#    filter
+- $assets::pushJs('/js/cp/soc/dealer/list.js')

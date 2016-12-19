@@ -2,250 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/migrate/migrations/18.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/heading/add.haml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Project/ORM/Heading/Query.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/cp/soc/heading/list.jsx" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/cp/wheel/list.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/cp/wheel/list.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/cp/wheel/list.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/amazon-autocomplete/.babelrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/amazon-autocomplete/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/amazon-autocomplete/LICENCE.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/amazon-autocomplete/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/amazon-autocomplete/dist/amazon-autocomplete.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/amazon-autocomplete/gulpfile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/amazon-autocomplete/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/amazon-autocomplete/src/amazon-autocomplete.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/browserify/node_modules/xtend/.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/browserify/node_modules/xtend/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/browserify/node_modules/xtend/LICENCE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/browserify/node_modules/xtend/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/browserify/node_modules/xtend/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/browserify/node_modules/xtend/immutable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/browserify/node_modules/xtend/mutable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/browserify/node_modules/xtend/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/browserify/node_modules/xtend/test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/dom/.gitmodules" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/dom/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/dom/History.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/dom/Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/dom/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/dom/lib/classes.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/dom/lib/domify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/dom/lib/event.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/dom/lib/init.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/dom/lib/matches.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/dom/lib/mutation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/dom/lib/types.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/dom/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/insert-module-globals/node_modules/xtend/.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/insert-module-globals/node_modules/xtend/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/insert-module-globals/node_modules/xtend/LICENCE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/insert-module-globals/node_modules/xtend/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/insert-module-globals/node_modules/xtend/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/insert-module-globals/node_modules/xtend/immutable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/insert-module-globals/node_modules/xtend/mutable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/insert-module-globals/node_modules/xtend/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/insert-module-globals/node_modules/xtend/test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/module-deps/node_modules/xtend/.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/module-deps/node_modules/xtend/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/module-deps/node_modules/xtend/LICENCE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/module-deps/node_modules/xtend/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/module-deps/node_modules/xtend/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/module-deps/node_modules/xtend/immutable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/module-deps/node_modules/xtend/mutable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/module-deps/node_modules/xtend/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/module-deps/node_modules/xtend/test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/moment/locale/bg-x.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/moment/src/locale/bg-x.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/resolve/test/pathfilter/deep_ref/node_modules/deep/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/resolve/test/resolver/bar/node_modules/foo/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/resolve/test/resolver/biz/node_modules/garply/lib/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/resolve/test/resolver/biz/node_modules/garply/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/resolve/test/resolver/biz/node_modules/grux/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/resolve/test/resolver/biz/node_modules/tiv/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/resolve/test/resolver/without_basedir/node_modules/mymodule.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/resolve/test/subdirs/node_modules/a/b/c/x.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/resolve/test/subdirs/node_modules/a/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/stream-http/node_modules/xtend/.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/stream-http/node_modules/xtend/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/stream-http/node_modules/xtend/LICENCE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/stream-http/node_modules/xtend/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/stream-http/node_modules/xtend/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/stream-http/node_modules/xtend/immutable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/stream-http/node_modules/xtend/mutable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/stream-http/node_modules/xtend/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/stream-http/node_modules/xtend/test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/through2/node_modules/xtend/.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/through2/node_modules/xtend/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/through2/node_modules/xtend/LICENCE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/through2/node_modules/xtend/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/through2/node_modules/xtend/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/through2/node_modules/xtend/immutable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/through2/node_modules/xtend/mutable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/through2/node_modules/xtend/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/through2/node_modules/xtend/test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/.travis.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/Gruntfile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/composer.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/dist/bloodhound.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/dist/bloodhound.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/dist/typeahead.bundle.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/dist/typeahead.bundle.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/dist/typeahead.jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/dist/typeahead.jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/doc/bloodhound.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/doc/jquery_typeahead.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/doc/migration/0.10.0.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/karma.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/bloodhound/bloodhound.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/bloodhound/lru_cache.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/bloodhound/options_parser.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/bloodhound/persistent_storage.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/bloodhound/prefetch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/bloodhound/remote.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/bloodhound/search_index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/bloodhound/tokenizers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/bloodhound/transport.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/bloodhound/version.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/common/utils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/typeahead/dataset.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/typeahead/default_menu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/typeahead/event_bus.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/typeahead/event_emitter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/typeahead/highlight.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/typeahead/input.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/typeahead/menu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/typeahead/plugin.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/typeahead/typeahead.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/src/typeahead/www.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/bloodhound/bloodhound_spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/bloodhound/lru_cache_spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/bloodhound/options_parser_spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/bloodhound/persistent_storage_spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/bloodhound/prefetch_spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/bloodhound/remote_spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/bloodhound/search_index_spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/bloodhound/tokenizers_spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/bloodhound/transport_spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/ci" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/fixtures/ajax_responses.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/fixtures/data.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/fixtures/html.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/helpers/typeahead_mocks.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/integration/test.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/integration/test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/playground.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/typeahead/dataset_spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/typeahead/default_results_spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/typeahead/event_bus_spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/typeahead/event_emitter_spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/typeahead/highlight_spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/typeahead/input_spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/typeahead/plugin_spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/typeahead/results_spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/test/typeahead/typeahead_spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead.js/typeahead.js.jquery.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead/example/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead/example/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/typeahead/typeahead.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/xtend/browser/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/xtend/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/xtend/support/compile.js" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/migrate/migrations/19.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.tabs/dealer.haml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/add.haml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/edit.haml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Project/ORM/Dealer/Query.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/cp/soc/dealer/add.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/cp/soc/dealer/add.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/cp/soc/dealer/add.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/cp/soc/dealer/list.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/cp/soc/dealer/list.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/cp/soc/dealer/list.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Heading.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Heading.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/assets/config/orm.php" afterPath="$PROJECT_DIR$/bundles/app/assets/config/orm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/add.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/add.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/default.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/default.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Dealer.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Dealer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/soc/heading/default.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/heading/default.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Heading.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Heading.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/default.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/default.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/sou/role/default.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/sou/role/default.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Dealer.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Dealer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Project/ORMWrappers.php" afterPath="$PROJECT_DIR$/src/Project/ORMWrappers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/.yarn-integrity" afterPath="$PROJECT_DIR$/web/node_modules/.yarn-integrity" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/JSONStream/index.js" afterPath="$PROJECT_DIR$/web/node_modules/JSONStream/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/JSONStream/package.json" afterPath="$PROJECT_DIR$/web/node_modules/JSONStream/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/JSONStream/readme.markdown" afterPath="$PROJECT_DIR$/web/node_modules/JSONStream/readme.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/JSONStream/test/keys.js" afterPath="$PROJECT_DIR$/web/node_modules/JSONStream/test/keys.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/babel-runtime/package.json" afterPath="$PROJECT_DIR$/web/node_modules/babel-runtime/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/datatables.net-bs/css/dataTables.bootstrap.css" afterPath="$PROJECT_DIR$/web/node_modules/datatables.net-bs/css/dataTables.bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/datatables.net-bs/js/dataTables.bootstrap.js" afterPath="$PROJECT_DIR$/web/node_modules/datatables.net-bs/js/dataTables.bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/datatables.net-bs/package.json" afterPath="$PROJECT_DIR$/web/node_modules/datatables.net-bs/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/datatables.net/js/jquery.dataTables.js" afterPath="$PROJECT_DIR$/web/node_modules/datatables.net/js/jquery.dataTables.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/datatables.net/package.json" afterPath="$PROJECT_DIR$/web/node_modules/datatables.net/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/keycode/component.json" afterPath="$PROJECT_DIR$/web/node_modules/keycode/component.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/keycode/keycode.d.ts" afterPath="$PROJECT_DIR$/web/node_modules/keycode/keycode.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/keycode/package.json" afterPath="$PROJECT_DIR$/web/node_modules/keycode/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/metismenu/.verb.md" afterPath="$PROJECT_DIR$/web/node_modules/metismenu/.verb.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/metismenu/Gruntfile.js" afterPath="$PROJECT_DIR$/web/node_modules/metismenu/Gruntfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/metismenu/README.md" afterPath="$PROJECT_DIR$/web/node_modules/metismenu/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/metismenu/dist/metisMenu.css" afterPath="$PROJECT_DIR$/web/node_modules/metismenu/dist/metisMenu.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/metismenu/dist/metisMenu.js" afterPath="$PROJECT_DIR$/web/node_modules/metismenu/dist/metisMenu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/metismenu/dist/metisMenu.js.map" afterPath="$PROJECT_DIR$/web/node_modules/metismenu/dist/metisMenu.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/metismenu/dist/metisMenu.min.css" afterPath="$PROJECT_DIR$/web/node_modules/metismenu/dist/metisMenu.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/metismenu/dist/metisMenu.min.js" afterPath="$PROJECT_DIR$/web/node_modules/metismenu/dist/metisMenu.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/metismenu/package.json" afterPath="$PROJECT_DIR$/web/node_modules/metismenu/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/metismenu/test/index.html" afterPath="$PROJECT_DIR$/web/node_modules/metismenu/test/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/CHANGELOG.md" afterPath="$PROJECT_DIR$/web/node_modules/moment/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/locale/yo.js" afterPath="$PROJECT_DIR$/web/node_modules/moment/locale/yo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/min/locales.js" afterPath="$PROJECT_DIR$/web/node_modules/moment/min/locales.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/min/locales.min.js" afterPath="$PROJECT_DIR$/web/node_modules/moment/min/locales.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/min/moment-with-locales.js" afterPath="$PROJECT_DIR$/web/node_modules/moment/min/moment-with-locales.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/min/moment-with-locales.min.js" afterPath="$PROJECT_DIR$/web/node_modules/moment/min/moment-with-locales.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/min/moment.min.js" afterPath="$PROJECT_DIR$/web/node_modules/moment/min/moment.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/moment.d.ts" afterPath="$PROJECT_DIR$/web/node_modules/moment/moment.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/moment.js" afterPath="$PROJECT_DIR$/web/node_modules/moment/moment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/package.json" afterPath="$PROJECT_DIR$/web/node_modules/moment/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/src/locale/yo.js" afterPath="$PROJECT_DIR$/web/node_modules/moment/src/locale/yo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/moment/src/moment.js" afterPath="$PROJECT_DIR$/web/node_modules/moment/src/moment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/regenerator-runtime/package.json" afterPath="$PROJECT_DIR$/web/node_modules/regenerator-runtime/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/regenerator-runtime/runtime.js" afterPath="$PROJECT_DIR$/web/node_modules/regenerator-runtime/runtime.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/resolve/.travis.yml" afterPath="$PROJECT_DIR$/web/node_modules/resolve/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/resolve/lib/async.js" afterPath="$PROJECT_DIR$/web/node_modules/resolve/lib/async.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/resolve/lib/core.js" afterPath="$PROJECT_DIR$/web/node_modules/resolve/lib/core.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/resolve/lib/core.json" afterPath="$PROJECT_DIR$/web/node_modules/resolve/lib/core.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/resolve/lib/sync.js" afterPath="$PROJECT_DIR$/web/node_modules/resolve/lib/sync.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/resolve/package.json" afterPath="$PROJECT_DIR$/web/node_modules/resolve/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/resolve/readme.markdown" afterPath="$PROJECT_DIR$/web/node_modules/resolve/readme.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/resolve/test/core.js" afterPath="$PROJECT_DIR$/web/node_modules/resolve/test/core.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/resolve/test/pathfilter.js" afterPath="$PROJECT_DIR$/web/node_modules/resolve/test/pathfilter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/resolve/test/resolver.js" afterPath="$PROJECT_DIR$/web/node_modules/resolve/test/resolver.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/resolve/test/resolver_sync.js" afterPath="$PROJECT_DIR$/web/node_modules/resolve/test/resolver_sync.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/sweetalert2/README.md" afterPath="$PROJECT_DIR$/web/node_modules/sweetalert2/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/sweetalert2/dist/sweetalert2.common.js" afterPath="$PROJECT_DIR$/web/node_modules/sweetalert2/dist/sweetalert2.common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/sweetalert2/dist/sweetalert2.js" afterPath="$PROJECT_DIR$/web/node_modules/sweetalert2/dist/sweetalert2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/sweetalert2/dist/sweetalert2.min.js" afterPath="$PROJECT_DIR$/web/node_modules/sweetalert2/dist/sweetalert2.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/sweetalert2/package.json" afterPath="$PROJECT_DIR$/web/node_modules/sweetalert2/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/sweetalert2/src/sweetalert2.js" afterPath="$PROJECT_DIR$/web/node_modules/sweetalert2/src/sweetalert2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/xtend/LICENCE" afterPath="$PROJECT_DIR$/web/node_modules/xtend/LICENCE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/xtend/README.md" afterPath="$PROJECT_DIR$/web/node_modules/xtend/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/node_modules/xtend/package.json" afterPath="$PROJECT_DIR$/web/node_modules/xtend/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/package.json" afterPath="$PROJECT_DIR$/web/package.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/js/cp/brand/add.js" afterPath="$PROJECT_DIR$/web/js/cp/soc/brand/add.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/js/cp/brand/add.js.map" afterPath="$PROJECT_DIR$/web/js/cp/soc/brand/add.js.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/js/cp/brand/add.jsx" afterPath="$PROJECT_DIR$/web/js/cp/soc/brand/add.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/js/cp/brand/edit.js" afterPath="$PROJECT_DIR$/web/js/cp/soc/brand/edit.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/js/cp/brand/edit.js.map" afterPath="$PROJECT_DIR$/web/js/cp/soc/brand/edit.js.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/js/cp/brand/edit.jsx" afterPath="$PROJECT_DIR$/web/js/cp/soc/brand/edit.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/js/cp/brand/list.js" afterPath="$PROJECT_DIR$/web/js/cp/soc/brand/list.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/js/cp/brand/list.js.map" afterPath="$PROJECT_DIR$/web/js/cp/soc/brand/list.js.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/js/cp/brand/list.jsx" afterPath="$PROJECT_DIR$/web/js/cp/soc/brand/list.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/node_modules/resolve/test/pathfilter/deep_ref/node_modules/deep/alt.js" afterPath="$PROJECT_DIR$/web/js/cp/soc/heading/add.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/node_modules/resolve/test/pathfilter/deep_ref/node_modules/deep/deeper/ref.js" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/heading/edit.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/node_modules/resolve/test/pathfilter/deep_ref/node_modules/deep/ref.js" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.tabs/social.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/node_modules/resolve/test/resolver/punycode/node_modules/punycode/index.js" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.tabs/heading.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/soc/brand/add.js" afterPath="$PROJECT_DIR$/web/js/cp/soc/brand/add.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/soc/brand/edit.js" afterPath="$PROJECT_DIR$/web/js/cp/soc/brand/edit.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/soc/brand/edit.js.map" afterPath="$PROJECT_DIR$/web/js/cp/soc/brand/edit.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/soc/brand/edit.jsx" afterPath="$PROJECT_DIR$/web/js/cp/soc/brand/edit.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/soc/brand/list.js" afterPath="$PROJECT_DIR$/web/js/cp/soc/brand/list.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/soc/heading/add.js" afterPath="$PROJECT_DIR$/web/js/cp/soc/heading/add.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/soc/heading/list.js" afterPath="$PROJECT_DIR$/web/js/cp/soc/heading/list.js" />
     </list>
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -281,76 +63,38 @@
       <file leaf-file-name="Brand.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="84" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+            <state relative-caret-position="1043">
+              <caret line="505" column="0" lean-forward="true" selection-start-line="505" selection-start-column="0" selection-end-line="505" selection-end-column="0" />
               <folding>
                 <element signature="e#50#75#0#PHP" expanded="true" />
                 <element signature="e#3406#4887#0#PHP" expanded="false" />
                 <element signature="e#4893#5577#0#PHP" expanded="false" />
                 <element signature="e#5583#6311#0#PHP" expanded="false" />
                 <element signature="e#6317#6993#0#PHP" expanded="false" />
+                <element signature="e#7087#8756#0#PHP" expanded="false" />
+                <element signature="e#8762#9453#0#PHP" expanded="false" />
+                <element signature="e#9459#10195#0#PHP" expanded="false" />
+                <element signature="e#10201#10887#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/cp/soc/brand/edit.jsx">
+      <file leaf-file-name="18.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/18.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="111" column="9" lean-forward="true" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.haml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml">
+      <file leaf-file-name="19.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/19.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="8" selection-end-column="28" />
-              <folding>
-                <marker date="1482062268937" expanded="true" signature="7002:8530" ph="{...}" />
-                <marker date="1482062268937" expanded="true" signature="7050:7317" ph="{...}" />
-                <marker date="1482062268937" expanded="true" signature="7087:7198" ph="{...}" />
-                <marker date="1482062268937" expanded="true" signature="7204:7311" ph="{...}" />
-                <marker date="1482062268937" expanded="true" signature="7379:7705" ph="{...}" />
-                <marker date="1482062268937" expanded="true" signature="7533:7669" ph="{...}" />
-                <marker date="1482062268937" expanded="true" signature="7750:8076" ph="{...}" />
-                <marker date="1482062268937" expanded="true" signature="7890:8046" ph="{...}" />
-                <marker date="1482062268937" expanded="true" signature="8084:8526" ph="//..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.haml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/heading/edit.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Heading.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Heading.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding>
-                <element signature="e#49#74#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routeResolver.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/cp/assets/config/routeResolver.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="60" column="59" lean-forward="false" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="59" />
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -359,8 +103,8 @@
       <file leaf-file-name="Heading.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Heading.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+            <state relative-caret-position="91">
+              <caret line="80" column="51" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="107" selection-end-column="1" />
               <folding>
                 <element signature="e#50#75#0#PHP" expanded="true" />
               </folding>
@@ -368,22 +112,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="heading.haml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.tabs/heading.haml">
+      <file leaf-file-name="edit.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/cp/soc/brand/edit.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="11" lean-forward="true" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+            <state relative-caret-position="-116">
+              <caret line="307" column="22" lean-forward="true" selection-start-line="307" selection-start-column="22" selection-end-line="307" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="social.haml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.tabs/social.haml">
+      <file leaf-file-name="default.haml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sou/role/default.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+            <state relative-caret-position="261">
+              <caret line="337" column="71" lean-forward="false" selection-start-line="337" selection-start-column="71" selection-end-line="337" selection-end-column="71" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/heading/default.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="17" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dealer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Dealer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding>
+                <element signature="e#49#74#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dealer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Dealer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding>
+                <element signature="e#50#75#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -399,16 +177,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ord</find>
-      <find>orderAscendingBy</find>
-      <find>$req</find>
-      <find>like</find>
-      <find>The 'LIKE' operator is not supported</find>
-      <find>operator is not supported</find>
-      <find>pattern</find>
-      <find>orderBy</find>
-      <find>order</find>
-      <find>return Items</find>
       <find>buildLogget</find>
       <find>get('fields', [])</find>
       <find>offset</find>
@@ -426,9 +194,19 @@
       <find>name</find>
       <find>POST</find>
       <find>Social</find>
-      <find>social</find>
       <find>Post</find>
       <find>item</find>
+      <find>Heading</find>
+      <find>title</find>
+      <find>Title</find>
+      <find>findBy</find>
+      <find>HEADING</find>
+      <find>heading</find>
+      <find>dealerType</find>
+      <find>dealerRows</find>
+      <find>heading/</find>
+      <find>S</find>
+      <find>social</find>
     </findStrings>
     <replaceStrings>
       <replace>(/&lt;nextAction&gt;(/&lt;nextId&gt;))</replace>
@@ -439,6 +217,11 @@
       <replace>title</replace>
       <replace>Heading</replace>
       <replace>heading</replace>
+      <replace>Dealer</replace>
+      <replace>name</replace>
+      <replace>DEALER</replace>
+      <replace>Name</replace>
+      <replace>dealer</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\OpenServer\domains\wbs-cms\bundles</dir>
@@ -456,18 +239,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Auth.php" />
-        <option value="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessor.php" />
-        <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/add.haml" />
-        <option value="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Webhook.php" />
-        <option value="$PROJECT_DIR$/assets/config/oauth.php" />
-        <option value="$PROJECT_DIR$/vendor/phpixie/orm/src/PHPixie/ORM/Conditions/Builder/Proxy.php" />
-        <option value="$PROJECT_DIR$/vendor/phpixie/orm/src/PHPixie/ORM/Models/Type/Database/Implementation/Query.php" />
-        <option value="$PROJECT_DIR$/vendor/phpixie/orm/src/PHPixie/ORM/Models/Type/Database/Query.php" />
-        <option value="$PROJECT_DIR$/vendor/phpixie/database/src/PHPixie/Database/Query/Items.php" />
-        <option value="$PROJECT_DIR$/vendor/phpixie/database/src/PHPixie/Database/Query/Implementation/Builder.php" />
-        <option value="$PROJECT_DIR$/vendor/phpixie/database/src/PHPixie/Database/Type/SQL/Parser.php" />
-        <option value="$PROJECT_DIR$/vendor/phpixie/database/src/PHPixie/Database/Driver/Mongo/Query/Items.php" />
         <option value="$PROJECT_DIR$/vendor/phpixie/database/src/PHPixie/Database/Driver/Mongo/Parser.php" />
         <option value="$PROJECT_DIR$/vendor/phpixie/database/src/PHPixie/Database/Values.php" />
         <option value="$PROJECT_DIR$/vendor/phpixie/orm/src/PHPixie/ORM/Wrappers/Type/Database/Query.php" />
@@ -493,20 +264,32 @@
         <option value="$PROJECT_DIR$/web/js/pager.jsx" />
         <option value="$PROJECT_DIR$/web/js/pager.js" />
         <option value="$PROJECT_DIR$/web/js/cp/soc/heading/add.jsx" />
-        <option value="$PROJECT_DIR$/src/Project/ORMWrappers.php" />
         <option value="$PROJECT_DIR$/src/Project/ORM/Heading/Query.php" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/heading/add.haml" />
         <option value="$PROJECT_DIR$/web/js/cp/soc/heading/list.jsx" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.tabs/social.haml" />
-        <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml" />
         <option value="$PROJECT_DIR$/assets/migrate/migrations/18.sql" />
         <option value="$PROJECT_DIR$/bundles/app/assets/config/orm.php" />
-        <option value="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.tabs/heading.haml" />
         <option value="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Heading.php" />
-        <option value="$PROJECT_DIR$/web/js/cp/soc/brand/edit.jsx" />
         <option value="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Heading.php" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/heading/edit.haml" />
+        <option value="$PROJECT_DIR$/src/Project/ORM/Dealer/Query.php" />
+        <option value="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Dealer.php" />
+        <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.tabs/dealer.haml" />
+        <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml" />
+        <option value="$PROJECT_DIR$/web/js/cp/soc/dealer/add.js" />
+        <option value="$PROJECT_DIR$/web/js/cp/soc/dealer/add.jsx" />
+        <option value="$PROJECT_DIR$/web/js/cp/soc/dealer/list.jsx" />
+        <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/default.haml" />
+        <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/add.haml" />
+        <option value="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Dealer.php" />
+        <option value="$PROJECT_DIR$/src/Project/ORMWrappers.php" />
+        <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/edit.haml" />
+        <option value="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php" />
+        <option value="$PROJECT_DIR$/assets/migrate/migrations/19.sql" />
+        <option value="$PROJECT_DIR$/web/js/cp/soc/brand/edit.jsx" />
+        <option value="$PROJECT_DIR$/bundles/cp/assets/view/sou/role/default.haml" />
       </list>
     </option>
   </component>
@@ -669,224 +452,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="soc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="heading" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="list.jsx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="soc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="heading" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="soc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="brand" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ORM" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ORM" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Heading" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ORM" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Brand" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="bundles" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -918,36 +483,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sow" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1011,7 +546,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="invite" />
+              <option name="myItemId" value="role" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1036,18 +571,6 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="soc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="heading" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1060,218 +583,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="soc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="soc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="brand" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="soc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="brand" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="edit.tabs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1300,11 +611,11 @@
       <recent name="C:\OpenServer\domains\wbs-cms\src\Project" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="O:\OpenServer\domains\wbs-cms\assets\migrate\migrations" />
+      <recent name="O:\OpenServer\domains\wbs-cms\bundles\cp\assets\view\soc\dealer" />
+      <recent name="O:\OpenServer\domains\wbs-cms\web\js\cp\soc" />
+      <recent name="O:\OpenServer\domains\wbs-cms\bundles\cp\assets\view\soc\brand\edit.tabs" />
       <recent name="O:\OpenServer\domains\wbs-cms\src\Project\ORM" />
       <recent name="O:\OpenServer\domains\wbs-cms\src\Project\ORM\Brand" />
-      <recent name="O:\OpenServer\domains\wbs-cms\bundles\cp\assets\view\soc\heading" />
-      <recent name="C:\OpenServer\domains\wbs-cms\bundles\api\src\Project\Api\HTTPProcessors\HTTPProcessors\Processor" />
     </key>
   </component>
   <component name="RunManager">
@@ -1512,15 +823,15 @@
       <workItem from="1481301486698" duration="4746000" />
       <workItem from="1481555284238" duration="3859000" />
       <workItem from="1481641158049" duration="8212000" />
-      <workItem from="1482049156064" duration="15237000" />
+      <workItem from="1482049156064" duration="17777000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="730349000" />
+    <option name="totallyTimeSpent" value="732889000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23827533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1569,75 +880,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/js/cp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="7" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpixie/paginate-orm/src/PHPixie/PaginateORM.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Project/Helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="55" column="29" lean-forward="false" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/cp/brand/edit.js" />
-    <entry file="file://$PROJECT_DIR$/web/js/cp/brand/edit.jsx" />
-    <entry file="file://$PROJECT_DIR$/web/js/cp/brand/add.jsx" />
-    <entry file="file://$PROJECT_DIR$/web/js/cp/brand/list.jsx" />
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="51">
-            <caret line="3" column="3" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOU/Invite.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sou/invite/default.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="10" lean-forward="false" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sou/invite/add.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/app/assets/view/email/layout.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/app/assets/view/email/invite.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -1742,14 +984,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Dealer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1770,14 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Project/ORMWrappers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="82" column="6" lean-forward="false" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1811,16 +1037,8 @@
         <state relative-caret-position="491">
           <caret line="37" column="3" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="37" selection-end-column="3" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/18.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="66" lean-forward="true" selection-start-line="17" selection-start-column="66" selection-end-line="17" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1875,23 +1093,7 @@
     <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.tabs/social.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.tabs/heading.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" lean-forward="true" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/cp/soc/brand/edit.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="111" column="9" lean-forward="true" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
+          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1912,62 +1114,206 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php">
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/heading/edit.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="84" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.tabs/heading.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-799">
+          <caret line="106" column="0" lean-forward="true" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
           <folding>
-            <element signature="e#50#75#0#PHP" expanded="true" />
-            <element signature="e#3406#4887#0#PHP" expanded="false" />
-            <element signature="e#4893#5577#0#PHP" expanded="false" />
-            <element signature="e#5583#6311#0#PHP" expanded="false" />
-            <element signature="e#6317#6993#0#PHP" expanded="false" />
+            <marker date="1482138802471" expanded="true" signature="7169:8697" ph="{...}" />
+            <marker date="1482138802471" expanded="true" signature="7217:7484" ph="{...}" />
+            <marker date="1482138802471" expanded="true" signature="7254:7365" ph="{...}" />
+            <marker date="1482138802471" expanded="true" signature="7371:7478" ph="{...}" />
+            <marker date="1482138802471" expanded="true" signature="7546:7872" ph="{...}" />
+            <marker date="1482138802471" expanded="true" signature="7700:7836" ph="{...}" />
+            <marker date="1482138802471" expanded="true" signature="7917:8243" ph="{...}" />
+            <marker date="1482138802471" expanded="true" signature="8057:8213" ph="{...}" />
+            <marker date="1482138802471" expanded="true" signature="8251:8693" ph="//..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Heading.php">
+    <entry file="file://$PROJECT_DIR$/web/js/cp/soc/dealer/add.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding>
-            <element signature="e#50#75#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/cp/soc/dealer/add.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Heading.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="221">
+          <caret line="15" column="24" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="36" selection-end-column="1" />
           <folding>
             <element signature="e#49#74#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml">
+    <entry file="file://$PROJECT_DIR$/src/Project/ORM/Dealer/Query.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="8" selection-end-column="28" />
+        <state relative-caret-position="-79">
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Project/ORMWrappers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="98" column="25" lean-forward="true" selection-start-line="98" selection-start-column="25" selection-end-line="98" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/add.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/edit.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="103" lean-forward="false" selection-start-line="14" selection-start-column="103" selection-end-line="14" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/default.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="36" lean-forward="false" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/heading/default.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="17" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Dealer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1482062268937" expanded="true" signature="7002:8530" ph="{...}" />
-            <marker date="1482062268937" expanded="true" signature="7050:7317" ph="{...}" />
-            <marker date="1482062268937" expanded="true" signature="7087:7198" ph="{...}" />
-            <marker date="1482062268937" expanded="true" signature="7204:7311" ph="{...}" />
-            <marker date="1482062268937" expanded="true" signature="7379:7705" ph="{...}" />
-            <marker date="1482062268937" expanded="true" signature="7533:7669" ph="{...}" />
-            <marker date="1482062268937" expanded="true" signature="7750:8076" ph="{...}" />
-            <marker date="1482062268937" expanded="true" signature="7890:8046" ph="{...}" />
-            <marker date="1482062268937" expanded="true" signature="8084:8526" ph="//..." />
+            <element signature="e#49#74#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/heading/edit.haml">
+    <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Heading.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        <state relative-caret-position="91">
+          <caret line="80" column="51" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="107" selection-end-column="1" />
+          <folding>
+            <element signature="e#50#75#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Dealer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="e#50#75#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1043">
+          <caret line="505" column="0" lean-forward="true" selection-start-line="505" selection-start-column="0" selection-end-line="505" selection-end-column="0" />
+          <folding>
+            <element signature="e#50#75#0#PHP" expanded="true" />
+            <element signature="e#3406#4887#0#PHP" expanded="false" />
+            <element signature="e#4893#5577#0#PHP" expanded="false" />
+            <element signature="e#5583#6311#0#PHP" expanded="false" />
+            <element signature="e#6317#6993#0#PHP" expanded="false" />
+            <element signature="e#7087#8756#0#PHP" expanded="false" />
+            <element signature="e#8762#9453#0#PHP" expanded="false" />
+            <element signature="e#9459#10195#0#PHP" expanded="false" />
+            <element signature="e#10201#10887#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/18.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/19.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/cp/soc/dealer/list.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.tabs/dealer.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/cp/soc/brand/edit.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-116">
+          <caret line="307" column="22" lean-forward="true" selection-start-line="307" selection-start-column="22" selection-end-line="307" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sou/role/default.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="337" column="71" lean-forward="false" selection-start-line="337" selection-start-column="71" selection-end-line="337" selection-end-column="71" />
           <folding />
         </state>
       </provider>

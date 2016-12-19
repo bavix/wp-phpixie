@@ -29,6 +29,7 @@ class ORMWrappers extends WrappersImplementation
         Model::INVITE,
         Model::USER,
         Model::BRAND,
+        Model::DEALER,
         Model::HEADING
     );
 
@@ -76,6 +77,16 @@ class ORMWrappers extends WrappersImplementation
     public function brandQuery($query)
     {
         return new ORM\Brand\Query($query, $this->builder);
+    }
+
+    /**
+     * @param $query
+     *
+     * @return ORM\Dealer\Query
+     */
+    public function dealerQuery($query)
+    {
+        return new ORM\Dealer\Query($query, $this->builder);
     }
 
     /**
