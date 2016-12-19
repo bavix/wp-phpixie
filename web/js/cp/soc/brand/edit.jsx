@@ -77,6 +77,45 @@ class HeadingRows extends React.Component {
     }
 }
 
+class DealerRows extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    columns() {
+        return <thead>
+        <tr>
+            <th>ID</th>
+            <th>Parent ID</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+        </thead>;
+    }
+
+    row(model) {
+        return <tr key={model.id}>
+            <td>{model.id}</td>
+            <td>{model.parentId}</td>
+            <td>{model.name}</td>
+            <td> </td>
+        </tr>;
+    }
+
+    render() {
+
+        const rows = this.props.rows.map(this.row);
+
+        return <table className="table table-striped">
+            {this.columns()}
+            <tbody>
+            { rows }
+            </tbody>
+        </table>;
+    }
+}
+
 $(function () {
 
     // heading
@@ -112,6 +151,37 @@ $(function () {
         }
     });
 
+    $('#dealerType').select2({
+        theme: "bootstrap",
+        ajax: {
+            url: '/api/soc/dealer?limit=15',
+            dataType: 'json',
+            delay: 350,
+            data: function (params) {
+                return {
+                    queries: {
+                        name: params.term
+                    },
+                    page: params.page || 1
+                }
+            },
+            processResults: function (data) {
+                if (typeof data.message !== "undefined") {
+                    return {
+                        results: {}
+                    };
+                }
+
+                return {
+                    results: $.map(data, function (obj) {
+                        return {id: obj.id, text: obj.name};
+                    })
+                };
+            },
+            cache: true
+        }
+    });
+
     /// social
     const socialRows = document.getElementById('socialRows');
     let $formSocial = $('[data-created="social"]');
@@ -120,8 +190,13 @@ $(function () {
     const headingRows = document.getElementById('headingRows');
     let $formHeading = $('[data-created="heading"]');
 
+    // dealer
+    const dealerRows = document.getElementById('dealerRows');
+    let $formDealer = $('[data-created="dealer"]');
+
     let socialJson = [];
     let headingJson = [];
+    let dealerJson = [];
 
     function response(response) {
         if (response.status === 201 || response.status === 200) {
@@ -177,6 +252,36 @@ $(function () {
         }
     }
 
+    function tableDealerInit(json) {
+        if (typeof json.id === "undefined") {
+            dealerJson = json;
+
+            ReactDOM.render(
+                <DealerRows rows={dealerJson}/>,
+                dealerRows
+            );
+        }
+        else {
+            fetch('/api/soc/dealer/' + json.dealerId, {
+                method: 'GET',
+                credentials: 'include'
+            }).then( response ).then( data => {
+                dealerJson.push( {
+                    id: json.dealerId,
+                    parentId: data.parentId,
+                    name: data.name,
+                    createdAt: data.createdAt,
+                    updatedAt: data.updatedAt
+                } );
+
+                ReactDOM.render(
+                    <DealerRows rows={dealerJson}/>,
+                    dealerRows
+                );
+            } );
+        }
+    }
+
     $formHeading.submit(function (event) {
 
         event.preventDefault();
@@ -188,6 +293,20 @@ $(function () {
             credentials: 'include',
             body: form
         }).then(response).then(tableHeadingInit).catch(() => undefined);
+
+    });
+
+    $formDealer.submit(function (event) {
+
+        event.preventDefault();
+
+        let form = new FormData(this);
+
+        fetch($formDealer.attr('action'), {
+            method: $formDealer.attr('method'),
+            credentials: 'include',
+            body: form
+        }).then(response).then(tableDealerInit).catch(() => undefined);
 
     });
 
@@ -214,5 +333,10 @@ $(function () {
         method: 'GET',
         credentials: 'include'
     }).then(response).then(tableHeadingInit).catch(() => undefined);
+
+    fetch('/api/soc/dealer?terms[brands.id]=' + $formDealer.data('id'), {
+        method: 'GET',
+        credentials: 'include'
+    }).then(response).then(tableDealerInit).catch(() => undefined);
 
 });

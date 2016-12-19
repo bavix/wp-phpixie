@@ -411,4 +411,143 @@ class Brand extends SOCProtected
         return $brandHeading->asObject(true);
     }
 
+
+    /**
+     * @param Request $request
+     *
+     * @return array|null|string
+     */
+    public function dealerPostAction(Request $request)
+    {
+        if (!$this->loggedUser()->hasPermission('cp.soc.branddealer.add'))
+        {
+            throw new \Exception('Access denied');
+        }
+
+        $brandId   = $request->attributes()->getRequired('id');
+        $dealerId = $request->data()->getRequired('id');
+
+        $dealerIdValidate = filter_var($dealerId, FILTER_VALIDATE_INT);
+
+        if (!$dealerIdValidate)
+        {
+            throw new \InvalidArgumentException('not a valid Dealer Id');
+        }
+
+        $dealer = $this->components->orm()->query(Model::DEALER)
+            ->in($dealerId)
+            ->findOne();
+
+        if (!$dealer)
+        {
+            RESTFUL::setStatus(REST::NOT_FOUND);
+
+            throw new \InvalidArgumentException('Dealer not found');
+        }
+
+        $brand = $this->components->orm()->query(Model::BRAND)
+            ->in($brandId)
+            ->findOne();
+
+        if (!$brand)
+        {
+            RESTFUL::setStatus(REST::NOT_FOUND);
+
+            throw new \InvalidArgumentException('Brand not found');
+        }
+
+        $brandDealer = $this->components->orm()->query(Model::BRAND_DEALER)
+            ->where('brandId', $brandId)
+            ->where('dealerId', $dealerId)
+            ->findOne();
+
+        if (!$brandDealer)
+        {
+            $brandDealer            = $this->components->orm()->createEntity(Model::BRAND_DEALER);
+            $brandDealer->brandId   = $brandId;
+            $brandDealer->dealerId = $dealerId;
+            $brandDealer->save();
+
+            RESTFUL::setStatus(REST::CREATED);
+        }
+
+        return $brandDealer->asObject(true);
+    }
+
+    public function dealerGetAction(Request $request)
+    {
+        $brandId = $request->attributes()->getRequired('id');
+
+        $preload = $request->query()->get('preload', []);
+        $fields  = $request->query()->get('fields');
+
+        try
+        {
+            $brandDealer = $this->components->orm()->query(Model::BRAND_DEALER)
+                ->where('brandId', $brandId);
+
+            $this->query($brandDealer, $request);
+
+            $brandDealer = $brandDealer->find($preload, $fields);
+        }
+        catch (\Throwable $throwable)
+        {
+            throw new \InvalidArgumentException('Invalid argument');
+        }
+
+        return $brandDealer->asArray(true);
+    }
+
+    public function dealerItemGetAction(Request $request)
+    {
+        $brandDealerId = $request->attributes()->getRequired('nextId');
+
+        $preload = $request->query()->get('preload', []);
+
+        try
+        {
+            $brandDealer = $this->components->orm()->query(Model::BRAND_DEALER)
+                ->in($brandDealerId)
+                ->findOne($preload);
+        }
+        catch (\Throwable $throwable)
+        {
+            throw new \InvalidArgumentException('Invalid argument');
+        }
+
+        if (!$brandDealer)
+        {
+            RESTFUL::setStatus(REST::NOT_FOUND);
+
+            throw new \InvalidArgumentException('BrandDealer not found');
+        }
+
+        return $brandDealer->asObject(true);
+    }
+
+    public function dealerItemDeleteAction(Request $request)
+    {
+        if (!$this->loggedUser()->hasPermission('cp.soc.branddealer.delete'))
+        {
+            throw new \Exception('Access denied');
+        }
+
+        $brandDealerId = $request->attributes()->getRequired('nextId');
+
+        $brandDealer = $this->components->orm()->query(Model::BRAND_DEALER)
+            ->in($brandDealerId)
+            ->findOne();
+
+        if (!$brandDealer)
+        {
+            RESTFUL::setStatus(REST::NOT_FOUND);
+
+            throw new \InvalidArgumentException('BrandDealer not found');
+        }
+
+        $brandDealer->delete();
+
+        return $brandDealer->asObject(true);
+    }
+
 }
