@@ -9,7 +9,7 @@ $(function () {
     $('#brandsSelect').select2({
         theme: "bootstrap",
         ajax: {
-            url: '/api/soc/brand?limit=15',
+            url: '/api/soc/brand?limit=15&sort[name]=asc',
             dataType: 'json',
             delay: 350,
             data: function data(params) {

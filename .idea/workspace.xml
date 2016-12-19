@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/soc/brand/edit.jsx" afterPath="$PROJECT_DIR$/web/js/cp/soc/brand/edit.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/soc/brand/list.js" afterPath="$PROJECT_DIR$/web/js/cp/soc/brand/list.js" />
     </list>
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,7 +36,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="edit.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/cp/soc/brand/edit.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
@@ -96,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="list.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/cp/soc/brand/list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="66">
+              <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -204,7 +204,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vendor/phpixie/database/src/PHPixie/Database/Driver/PDO/Query/Items.php" />
         <option value="$PROJECT_DIR$/assets/sass/template/wbs.sass" />
         <option value="$PROJECT_DIR$/src/Project/Helper.php" />
         <option value="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/AuthProcessor.php" />
@@ -255,6 +254,7 @@
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.tabs/dealer.haml" />
         <option value="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php" />
         <option value="$PROJECT_DIR$/web/js/cp/soc/brand/edit.jsx" />
+        <option value="$PROJECT_DIR$/web/js/cp/soc/brand/list.js" />
       </list>
     </option>
   </component>
@@ -950,12 +950,12 @@
       <workItem from="1481641158049" duration="8212000" />
       <workItem from="1482049156064" duration="19793000" />
       <workItem from="1482150998068" duration="7728000" />
-      <workItem from="1482161344676" duration="30000" />
+      <workItem from="1482161344676" duration="403000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="742663000" />
+    <option name="totallyTimeSpent" value="743036000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1360,18 +1360,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/cp/soc/brand/list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/cp/soc/brand/edit.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="387" column="8" lean-forward="false" selection-start-line="387" selection-start-column="8" selection-end-line="387" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/cp/soc/brand/list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
           <folding />
         </state>
       </provider>
