@@ -272,4 +272,143 @@ class Brand extends SOCProtected
         return $brandSocial->asObject(true);
     }
 
+
+    /**
+     * @param Request $request
+     *
+     * @return array|null|string
+     */
+    public function headingPostAction(Request $request)
+    {
+        if (!$this->loggedUser()->hasPermission('cp.soc.brandheading.add'))
+        {
+            throw new \Exception('Access denied');
+        }
+
+        $brandId   = $request->attributes()->getRequired('id');
+        $headingId = $request->data()->getRequired('id');
+
+        $headingIdValidate = filter_var($headingId, FILTER_VALIDATE_INT);
+
+        if (!$headingIdValidate)
+        {
+            throw new \InvalidArgumentException('not a valid Heading Id');
+        }
+
+        $heading = $this->components->orm()->query(Model::HEADING)
+            ->in($headingId)
+            ->findOne();
+
+        if (!$heading)
+        {
+            RESTFUL::setStatus(REST::NOT_FOUND);
+
+            throw new \InvalidArgumentException('Heading not found');
+        }
+
+        $brand = $this->components->orm()->query(Model::BRAND)
+            ->in($brandId)
+            ->findOne();
+
+        if (!$brand)
+        {
+            RESTFUL::setStatus(REST::NOT_FOUND);
+
+            throw new \InvalidArgumentException('Brand not found');
+        }
+
+        $brandHeading = $this->components->orm()->query(Model::BRAND_HEADING)
+            ->where('brandId', $brandId)
+            ->where('headingId', $headingId)
+            ->findOne();
+
+        if (!$brandHeading)
+        {
+            $brandHeading            = $this->components->orm()->createEntity(Model::BRAND_HEADING);
+            $brandHeading->brandId   = $brandId;
+            $brandHeading->headingId = $headingId;
+            $brandHeading->save();
+
+            RESTFUL::setStatus(REST::CREATED);
+        }
+
+        return $brandHeading->asObject(true);
+    }
+
+    public function headingGetAction(Request $request)
+    {
+        $brandId = $request->attributes()->getRequired('id');
+
+        $preload = $request->query()->get('preload', []);
+        $fields  = $request->query()->get('fields');
+
+        try
+        {
+            $brandHeading = $this->components->orm()->query(Model::BRAND_HEADING)
+                ->where('brandId', $brandId);
+
+            $this->query($brandHeading, $request);
+
+            $brandHeading = $brandHeading->find($preload, $fields);
+        }
+        catch (\Throwable $throwable)
+        {
+            throw new \InvalidArgumentException('Invalid argument');
+        }
+
+        return $brandHeading->asArray(true);
+    }
+
+    public function headingItemGetAction(Request $request)
+    {
+        $brandHeadingId = $request->attributes()->getRequired('nextId');
+
+        $preload = $request->query()->get('preload', []);
+
+        try
+        {
+            $brandHeading = $this->components->orm()->query(Model::BRAND_HEADING)
+                ->in($brandHeadingId)
+                ->findOne($preload);
+        }
+        catch (\Throwable $throwable)
+        {
+            throw new \InvalidArgumentException('Invalid argument');
+        }
+
+        if (!$brandHeading)
+        {
+            RESTFUL::setStatus(REST::NOT_FOUND);
+
+            throw new \InvalidArgumentException('BrandHeading not found');
+        }
+
+        return $brandHeading->asObject(true);
+    }
+
+    public function headingItemDeleteAction(Request $request)
+    {
+        if (!$this->loggedUser()->hasPermission('cp.soc.brandheading.delete'))
+        {
+            throw new \Exception('Access denied');
+        }
+
+        $brandHeadingId = $request->attributes()->getRequired('nextId');
+
+        $brandHeading = $this->components->orm()->query(Model::BRAND_HEADING)
+            ->in($brandHeadingId)
+            ->findOne();
+
+        if (!$brandHeading)
+        {
+            RESTFUL::setStatus(REST::NOT_FOUND);
+
+            throw new \InvalidArgumentException('BrandHeading not found');
+        }
+
+        $brandHeading->delete();
+
+        return $brandHeading->asObject(true);
+    }
+
 }
