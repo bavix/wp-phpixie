@@ -13,6 +13,8 @@ class Model
     const BRAND  = 'brand';
     const DEALER = 'dealer';
 
+    const BOLT_PATTERN = 'boltPattern';
+
     const HEADING = 'heading';
 
     const SOCIAL = 'social';
