@@ -14,6 +14,7 @@ class Model
     const DEALER = 'dealer';
 
     const BOLT_PATTERN = 'boltPattern';
+    const STYLE = 'style';
 
     const HEADING = 'heading';
 

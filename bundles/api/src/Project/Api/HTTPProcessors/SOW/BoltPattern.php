@@ -90,6 +90,39 @@ class BoltPattern extends SOWProtected
         return $pager->getCurrentItems()->asArray(true);
     }
 
+
+    public function itemDeleteAction(Request $request)
+    {
+        if (!$this->loggedUser()->hasPermission('cp.sow.bolt-pattern.delete'))
+        {
+            throw new \Exception('Access denied');
+        }
+
+        $id = $request->attributes()->getRequired('id');
+
+        $boltPattern = $this->components->orm()->query(Model::BOLT_PATTERN)
+            ->in($id)
+            ->findOne();
+
+        if (!$boltPattern)
+        {
+            RESTFUL::setStatus(REST::NOT_FOUND);
+
+            return [];
+        }
+
+        $boltPattern->delete();
+
+        return $boltPattern->asObject(true);
+//        else if ($this->loggedUser()->hasPermission('cp.soc.brand.pull-request'))
+//        {
+//            // pull request
+//
+//            return [];
+//        }
+
+    }
+
     public function itemGetAction(Request $request)
     {
         $id = $request->attributes()->getRequired('id');
