@@ -115,6 +115,43 @@ return array(
             )
         ),
 
+        'settings' => array(
+
+            'type' => 'prefix',
+            'path' => '/settings',
+
+            'defaults' => array(
+                'processor' => 'settings',
+            ),
+
+            'resolver' => array(
+
+                'type' => 'group',
+
+                'resolvers' => array(
+
+                    'item' => array(
+                        'type' => 'pattern',
+                        'path' => '/<nextProcessor>/<action>/<id>'
+                    ),
+
+                    'action' => array(
+                        'type' => 'pattern',
+                        'path' => '/<nextProcessor>/<action>'
+                    ),
+
+                    'processor' => array(
+                        'type'     => 'pattern',
+                        'path'     => '/<nextProcessor>',
+                        'defaults' => array(
+                            'action' => 'default'
+                        )
+                    ),
+
+                )
+            )
+        ),
+
         'item' => array(
             'type' => 'pattern',
             'path' => '/<processor>/<action>/<id>'

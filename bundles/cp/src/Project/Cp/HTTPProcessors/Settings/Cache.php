@@ -1,12 +1,12 @@
 <?php
 
-namespace Project\Cp\HTTPProcessors;
+namespace Project\Cp\HTTPProcessors\Settings;
 
 use PHPixie\HTTP\Request;
-use Project\Cp\HTTPProcessors\Processor\CPProtected;
+use Project\Cp\HTTPProcessors\Processor\SettingsProtected;
 use Stash\Pool;
 
-class Settings extends CPProtected
+class Cache extends SettingsProtected
 {
 
     public function defaultAction(Request $request)
@@ -31,7 +31,7 @@ class Settings extends CPProtected
 
         $this->assign('purgeCache', $purgeCache);
 
-        return $this->render('cp:settings/default');
+        return $this->render('cp:settings/cache/default');
     }
 
 }
