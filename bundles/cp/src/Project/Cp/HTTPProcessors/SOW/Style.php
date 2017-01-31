@@ -9,7 +9,6 @@ use Project\Model;
 class Style extends SOWProtected
 {
 
-
     public function defaultAction(Request $request)
     {
         $this->addItemButton('cp.sow.style@add');

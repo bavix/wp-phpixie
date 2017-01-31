@@ -139,6 +139,17 @@ return [
             'items' => Model::BRAND_SOCIAL
         ],
 
+        // brand <-> wheel
+        [
+            'type'  => 'oneToMany',
+            'owner' => Model::BRAND,
+            'items' => Model::WHEEL,
+        ],
+        [
+            'type'  => 'oneToMany',
+            'owner' => Model::COLLECTION,
+            'items' => Model::WHEEL,
+        ],
 
         // brand <-> heading
         [
