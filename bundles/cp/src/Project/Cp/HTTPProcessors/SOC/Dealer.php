@@ -25,7 +25,7 @@ class Dealer extends SOCProtected
     {
         $id = $request->attributes()->getRequired('id');
 
-        $dealer = $this->components->orm()->query( Model::DEALER )
+        $dealer = $this->components->orm()->query(Model::DEALER)
             ->in($id)
             ->findOne();
 

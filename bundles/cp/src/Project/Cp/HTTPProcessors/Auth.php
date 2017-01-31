@@ -6,7 +6,6 @@ use PHPixie\AuthLogin\Providers\Password as PasswordProvider;
 use PHPixie\HTTP\Request;
 use PHPixie\HTTP\Responses\Response;
 use Project\App\HTTPProcessors\Processor;
-use Project\Framework\Builder;
 use Project\ORM\User\User;
 
 /**

@@ -1,3 +1,58 @@
 - $this->layout('cp:layout')
 
-%h1 Style -- In developing
+.col-lg-9
+  .ibox
+    .ibox-title
+      %label.label.label-success.pull-right = $count
+      %h3 = $currentMenu->title
+    .ibox-content
+      partial: 'cp:pager'
+      %table.table.table-striped
+        %thead
+          %tr
+            %th Type
+            %th Number
+            %th Spoke
+            %th Is Turned
+            %th Created At
+            %th Updated At
+            %th Actions
+        %tbody
+          - foreach ($pager->getCurrentItems() as $style)
+            %tr(id="brand-#{$style->id()}")
+              %td = $style->type
+              %td = $style->number
+              %td = $style->spoke
+              %td = $style->isTurned ? 'Yes' : 'No'
+              %td.entry-date(data-time="#{$style->createdAt}" data-order="#{$style->createdAt}")
+              %td.entry-date(data-time="#{$style->updatedAt}" data-order="#{$style->updatedAt}")
+              %td
+                - $httpPath = 'cp.sow.item'
+                - $attributes = ['nextProcessor' => 'style', 'action' => 'edit', 'id' => $style->id]
+                - $httpPath = $this->httpPath($httpPath, $attributes)
+                %a.btn.btn-primary.btn-sm(href="#{$httpPath}")
+                  %i.fa.fa-edit
+                  Edit
+                - if ($user->hasPermission('cp.sow.style.delete'))
+                  - $httpPath = 'api.sow.item'
+                  - $attributes = ['nextProcessor' => 'style', 'action' => 'delete', 'id' => $style->id]
+                  - $httpPath = $this->httpPath($httpPath, $attributes)
+                  %a.btn.btn-danger.trash-data.btn-sm(href="#{$httpPath}")
+                    %i.fa.fa-trash
+                    Delete
+      partial: 'cp:pager'
+-#.col-lg-3
+  .ibox
+    .ibox-title Filter's
+    .ibox-content
+      %form
+        .form-group
+          %label(for="brandsSelect")
+            Bolt Pattern
+          %select#brandsSelect.form-control.select2-multiple(name="filter[id]" style="width:100%")
+            %option(disabled selected) None
+        .form-group
+          %button.btn.btn-success Submit
+          %a.btn.btn-default(onclick="Url.removeQuery(); location.reload();") Reset
+
+-#- $assets::pushJs('/js/cp/soc/brand/list.js')

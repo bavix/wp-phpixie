@@ -25,7 +25,7 @@ class Heading extends SOCProtected
     {
         $id = $request->attributes()->getRequired('id');
 
-        $heading = $this->components->orm()->query( Model::HEADING )
+        $heading = $this->components->orm()->query(Model::HEADING)
             ->in($id)
             ->findOne();
 

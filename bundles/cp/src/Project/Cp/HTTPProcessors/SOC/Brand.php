@@ -158,6 +158,7 @@ class Brand extends SOCProtected
         $this->assign('pager', $pager);
         $this->assign('count', $brandAllCount);
         $this->assign('filter', $filter);
+
 //        $this->assign('optionSelectBrands', $optionSelectBrands);
 
         return $this->render('cp:soc/brand/default');

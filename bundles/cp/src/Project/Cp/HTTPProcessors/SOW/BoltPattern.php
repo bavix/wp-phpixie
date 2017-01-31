@@ -66,7 +66,7 @@ class BoltPattern extends SOWProtected
     {
         $id = $request->attributes()->getRequired('id');
 
-        $boltPattern = $this->components->orm()->query( Model::BOLT_PATTERN )
+        $boltPattern = $this->components->orm()->query(Model::BOLT_PATTERN)
             ->in($id)
             ->findOne();
 
