@@ -27,10 +27,7 @@ class Compiler extends \PHPixie\Template\Compiler
 
         $dirPath = dirname($cachePath);
 
-        if (!is_dir($dirPath))
-        {
-            mkdir($dirPath, 0777, true);
-        }
+        is_dir($dirPath) OR !@mkdir($dirPath, 0777, true);
 
         if (!file_exists($cachePath) || filemtime($cachePath) < filemtime($path))
         {
