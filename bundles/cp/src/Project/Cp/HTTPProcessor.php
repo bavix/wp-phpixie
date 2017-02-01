@@ -53,11 +53,11 @@ class HTTPProcessor extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
     }
 
     /**
-     * @return HTTPProcessors\Settings
+     * @return HTTPProcessors\SettingsProcessorBuilder
      */
     protected function buildSettingsProcessor()
     {
-        return new HTTPProcessors\Settings($this->builder);
+        return new HTTPProcessors\SettingsProcessorBuilder($this->builder);
     }
 
     /**

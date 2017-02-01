@@ -592,6 +592,57 @@
 
                 %tr
 
+                  %td(rowspan="2")
+                    Settings
+                    - if ($role->hasMyPermission('cp.settings'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.settings'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+
+                  %td API
+                  %td -
+
+                  %td
+                    - if ($role->hasMyPermission('cp.settings.api'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.settings.api'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-default none
+                  %td
+                    %span.label.label-default none
+                  %td
+                    %span.label.label-default none
+                  %td
+                    %span.label.label-default none
+                  %td
+                    %span.label.label-default none
+
+                %tr
+
+                  %td Cache
+                  %td -
+
+                  %td
+                    - if ($role->hasMyPermission('cp.settings.cache'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.settings.cache'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-default none
+                  %td
+                    %span.label.label-default none
+                  %td
+                    %span.label.label-default none
+                  %td
+                    %span.label.label-default none
+                  %td
+                    %span.label.label-default none
+
+                %tr
+
                   %td
                     Log
                     - if ($role->hasMyPermission('cp.log'))

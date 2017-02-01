@@ -14,8 +14,9 @@ class Drivers extends \PHPixie\ORM\Drivers
      * @var array
      */
     protected $classMap = array(
-        'pdo'   => PDO::class,
-        'mongo' => '\PHPixie\ORM\Drivers\Driver\Mongo',
+        'pdo'       => PDO::class,
+        'mongo'     => \PHPixie\ORM\Drivers\Driver\Mongo::class,
+        'interbase' => \PHPixie\ORM\Drivers\Driver\InterBase::class,
     );
 
     /**

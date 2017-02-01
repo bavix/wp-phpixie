@@ -1,9 +1,62 @@
 - $this->layout('cp:layout')
 
-.col-md-12
+.col-lg-9
   .ibox
-    .ibox-title Wheel
+    .ibox-title
+      %label.label.label-success.pull-right = $count
+      %h3 = $currentMenu->title
     .ibox-content
-      #content
+      partial: 'cp:pager'
+      %table.table.table-striped
+        %thead
+          %tr
+            %th Active
+            %th Brand
+            %th Collection
+            %th Name
+            %th Is Custom
+            %th Is Retired
+            %th Created At
+            %th Updated At
+            %th Actions
+        %tbody
+          - foreach ($pager->getCurrentItems() as $wheel)
+            %tr(id="brand-#{$wheel->id()}")
+              %td = $wheel->active ? 'Yes' : 'No'
+              %td = $wheel->brand()->name
+              %td = $wheel->collection()->name
+              %td = $wheel->name
+              %td = $wheel->isCustom ? 'Yes' : 'No'
+              %td = $wheel->isRetired ? 'Yes' : 'No'
+              %td.entry-date(data-time="#{$wheel->createdAt}" data-order="#{$wheel->createdAt}")
+              %td.entry-date(data-time="#{$wheel->updatedAt}" data-order="#{$wheel->updatedAt}")
+              %td
+                - $httpPath = 'cp.sow.item'
+                - $attributes = ['nextProcessor' => 'wheel', 'action' => 'edit', 'id' => $wheel->id]
+                - $httpPath = $this->httpPath($httpPath, $attributes)
+                %a.btn.btn-primary.btn-sm(href="#{$httpPath}")
+                  %i.fa.fa-edit
+                  Edit
+                - if ($user->hasPermission('cp.sow.wheel.delete'))
+                  - $httpPath = 'api.sow.item'
+                  - $attributes = ['nextProcessor' => 'wheel', 'action' => 'delete', 'id' => $wheel->id]
+                  - $httpPath = $this->httpPath($httpPath, $attributes)
+                  %a.btn.btn-danger.trash-data.btn-sm(href="#{$httpPath}")
+                    %i.fa.fa-trash
+                    Delete
+      partial: 'cp:pager'
+-#.col-lg-3
+  .ibox
+    .ibox-title Filter's
+    .ibox-content
+      %form
+        .form-group
+          %label(for="brandsSelect")
+            Bolt Pattern
+          %select#brandsSelect.form-control.select2-multiple(name="filter[id]" wheel="width:100%")
+            %option(disabled selected) None
+        .form-group
+          %button.btn.btn-success Submit
+          %a.btn.btn-default(onclick="Url.removeQuery(); location.reload();") Reset
 
-- $assets::pushJs('/js/cp/wheel/list.js')
+-#- $assets::pushJs('/js/cp/soc/brand/list.js')

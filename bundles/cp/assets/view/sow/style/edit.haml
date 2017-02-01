@@ -1,0 +1,50 @@
+- $this->layout('cp:layout')
+
+.col-lg-9
+  .ibox
+    .ibox-title
+      %h3
+        Edit Style
+        %label.label.label-info.pull-right
+          = $_($style->type)
+    .ibox-content
+      %form(method="POST" action="/api/sow/style" data-created)
+        .row
+
+          .col-md-4
+            .form-group.form-group-lg
+              %label.control-label(for="type")
+                Type
+              %select#type.form-control(name="type")
+                %option(value="I" selected="#{$style->type === 'I'}") I
+                %option(value="X" selected="#{$style->type === 'X'}") X
+                %option(value="Y" selected="#{$style->type === 'Y'}") Y
+                %option(value="V" selected="#{$style->type === 'V'}") V
+                %option(value="0" selected="#{$style->type === 'O'}") O
+
+          .col-md-4
+            .form-group.form-group-lg
+              %label.control-label(for="number")
+                Number
+              %select#number.form-control(name="number")
+                %option(value="Simple" selected="#{$style->number === 'Simple'}") Simple
+                %option(value="Double" selected="#{$style->number === 'Double'}") Double
+                %option(value="Triple" selected="#{$style->number === 'Triple'}") Triple
+
+          .col-md-4
+            .form-group.form-group-lg
+              %label.control-label(for="spoke")
+                Spoke
+              %input.form-control(type="number" name="spoke" value="#{$style->spoke}")
+
+          .col-md-4
+            .form-group.form-group-lg
+              %input#turned.form-control.wbs-checkbox(type="checkbox" name="isTurned" checked="#{(bool)$style->isTurned}")
+              %label.control-label(for="turned") Turned
+
+:javascript
+  $(function () {
+    $('select').select2({
+      theme: "bootstrap"
+    });
+  });

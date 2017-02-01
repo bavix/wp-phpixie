@@ -1,0 +1,19 @@
+- $this->layout('cp:layout')
+
+.col-lg-9
+  .ibox
+    .ibox-title
+      %h3
+        Edit Bolt Pattern
+        %label.label.label-info.pull-right
+          = $_($boltPattern->bolt . 'x' . $boltPattern->pcd)
+    .ibox-content
+      %form(method="POST" action="/api/sow/bolt-pattern" data-created)
+        .form-group.form-group-lg
+          %label.control-label(for="bolt")
+            Bolt / Stud
+          %input#bolt.form-control.text-uppercase(type="text" name="bolt" value="#{$boltPattern->bolt}" )
+        .form-group.form-group-lg
+          %label.control-label(for="pcd")
+            PCD
+          %input#pcd.form-control.text-uppercase(type="text" name="pcd" value="#{$boltPattern->pcd}" )

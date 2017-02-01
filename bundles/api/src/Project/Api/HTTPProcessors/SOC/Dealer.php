@@ -69,11 +69,11 @@ class Dealer extends SOCProtected
 
         $preload = $request->query()->get('preload', []);
 
-        $brand = $this->components->orm()->query(Model::DEALER);
+        $dealer = $this->components->orm()->query(Model::DEALER);
 
-        $this->query($brand, $request);
+        $this->query($dealer, $request);
 
-        $pager = $builder->helper()->pager($page, $brand, $limit, $preload);
+        $pager = $builder->helper()->pager($page, $dealer, $limit, $preload);
 
         return $pager->getCurrentItems()->asArray(true);
     }

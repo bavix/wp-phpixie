@@ -1,0 +1,23 @@
+- $this->layout('cp:layout')
+
+.col-lg-3
+.col-lg-6
+  .ibox
+    .ibox-title
+      %h3 New Bolt Pattern
+    .ibox-content
+      %form(method="POST" action="/api/sow/bolt-pattern" data-created)
+        .form-group.form-group-lg
+          %label.control-label(for="bolt")
+            Bolt / Stud
+          %input#bolt.form-control(type="text" name="bolt" value="" )
+        .form-group.form-group-lg
+          %label.control-label(for="pcd")
+            PCD
+          %input#pcd.form-control(type="text" name="pcd" value="" )
+        .hr-line-dashed
+        .form-group(align="center")
+          %button.btn.btn-primary.btn-lg
+            %i.fa.fa-save
+            Submit
+- $assets::pushJs('/js/cp/sow/bolt-pattern/add.js')
