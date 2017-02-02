@@ -9,8 +9,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/ircmaxell/password-compat" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ircmaxell/random-lib" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ircmaxell/security-lib" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/league/html-to-markdown" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mthaml/mthaml" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nelexa/buffer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/openbuildings/swiftmailer-css-inliner" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
@@ -46,6 +48,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/slice" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/social" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/template" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/test" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpixie/validate" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
@@ -81,8 +84,10 @@
           <root url="file://$MODULE_DIR$/vendor/ircmaxell/password-compat" />
           <root url="file://$MODULE_DIR$/vendor/ircmaxell/random-lib" />
           <root url="file://$MODULE_DIR$/vendor/ircmaxell/security-lib" />
+          <root url="file://$MODULE_DIR$/vendor/league/html-to-markdown" />
           <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
           <root url="file://$MODULE_DIR$/vendor/mthaml/mthaml" />
+          <root url="file://$MODULE_DIR$/vendor/nelexa/buffer" />
           <root url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
           <root url="file://$MODULE_DIR$/vendor/openbuildings/swiftmailer-css-inliner" />
           <root url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
@@ -94,7 +99,6 @@
           <root url="file://$MODULE_DIR$/vendor/phpixie/auth-social" />
           <root url="file://$MODULE_DIR$/vendor/phpixie/bundle-framework" />
           <root url="file://$MODULE_DIR$/vendor/phpixie/bundles" />
-          <root url="file://$MODULE_DIR$/vendor/phpixie/cache" />
           <root url="file://$MODULE_DIR$/vendor/phpixie/cli" />
           <root url="file://$MODULE_DIR$/vendor/phpixie/config" />
           <root url="file://$MODULE_DIR$/vendor/phpixie/console" />
@@ -118,11 +122,11 @@
           <root url="file://$MODULE_DIR$/vendor/phpixie/slice" />
           <root url="file://$MODULE_DIR$/vendor/phpixie/social" />
           <root url="file://$MODULE_DIR$/vendor/phpixie/template" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/test" />
           <root url="file://$MODULE_DIR$/vendor/phpixie/validate" />
           <root url="file://$MODULE_DIR$/vendor/psr/cache" />
           <root url="file://$MODULE_DIR$/vendor/psr/http-message" />
           <root url="file://$MODULE_DIR$/vendor/psr/log" />
-          <root url="file://$MODULE_DIR$/vendor/psr/simple-cache" />
           <root url="file://$MODULE_DIR$/vendor/ralouphie/mimey" />
           <root url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
           <root url="file://$MODULE_DIR$/vendor/symfony/css-selector" />
@@ -139,8 +143,10 @@
           <root url="file://$MODULE_DIR$/vendor/ircmaxell/password-compat" />
           <root url="file://$MODULE_DIR$/vendor/ircmaxell/random-lib" />
           <root url="file://$MODULE_DIR$/vendor/ircmaxell/security-lib" />
+          <root url="file://$MODULE_DIR$/vendor/league/html-to-markdown" />
           <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
           <root url="file://$MODULE_DIR$/vendor/mthaml/mthaml" />
+          <root url="file://$MODULE_DIR$/vendor/nelexa/buffer" />
           <root url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
           <root url="file://$MODULE_DIR$/vendor/openbuildings/swiftmailer-css-inliner" />
           <root url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
@@ -152,7 +158,6 @@
           <root url="file://$MODULE_DIR$/vendor/phpixie/auth-social" />
           <root url="file://$MODULE_DIR$/vendor/phpixie/bundle-framework" />
           <root url="file://$MODULE_DIR$/vendor/phpixie/bundles" />
-          <root url="file://$MODULE_DIR$/vendor/phpixie/cache" />
           <root url="file://$MODULE_DIR$/vendor/phpixie/cli" />
           <root url="file://$MODULE_DIR$/vendor/phpixie/config" />
           <root url="file://$MODULE_DIR$/vendor/phpixie/console" />
@@ -176,11 +181,11 @@
           <root url="file://$MODULE_DIR$/vendor/phpixie/slice" />
           <root url="file://$MODULE_DIR$/vendor/phpixie/social" />
           <root url="file://$MODULE_DIR$/vendor/phpixie/template" />
+          <root url="file://$MODULE_DIR$/vendor/phpixie/test" />
           <root url="file://$MODULE_DIR$/vendor/phpixie/validate" />
           <root url="file://$MODULE_DIR$/vendor/psr/cache" />
           <root url="file://$MODULE_DIR$/vendor/psr/http-message" />
           <root url="file://$MODULE_DIR$/vendor/psr/log" />
-          <root url="file://$MODULE_DIR$/vendor/psr/simple-cache" />
           <root url="file://$MODULE_DIR$/vendor/ralouphie/mimey" />
           <root url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
           <root url="file://$MODULE_DIR$/vendor/symfony/css-selector" />
