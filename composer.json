@@ -41,7 +41,9 @@
 
     "curl/curl": "^1.5",
 
-    "nesbot/carbon": "^1.21"
+    "nesbot/carbon": "^1.21",
+    "deimos/imaginarium-sdk": "^0.0",
+    "deimos/helper": "^0.3"
   },
   "extra": {
     "branch-alias": {

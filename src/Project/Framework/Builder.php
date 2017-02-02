@@ -53,17 +53,19 @@ class Builder extends \PHPixie\BundleFramework\Builder
     /**
      * @return Factory
      */
-    public function randomFactory()
+    public function dHelper()
     {
-        return $this->instance('randomFactory');
+        return $this->instance('dHelper');
     }
 
     /**
-     * @return Factory
+     * @return \Deimos\Helper\Helper
      */
-    protected function buildRandomFactory()
+    protected function buildDHelper()
     {
-        return new Factory();
+        $builder = new \Deimos\Builder\Builder();
+
+        return new \Deimos\Helper\Helper($builder);
     }
 
     /**

@@ -86,13 +86,9 @@ class Invite extends SOUProtected
                 $userId         = $this->loggedUser()->getRequiredField('id');
                 $invite->userId = $userId;
 
-                $factory = $this->builder->frameworkBuilder()->randomFactory();
+                $dHelper = $this->builder->frameworkBuilder()->dHelper();
 
-                $generator = $factory->getHighStrengthGenerator();
-
-                $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-                $invite->token = $generator->generateString(8, $chars);
+                $invite->token = $dHelper->random(8);
 
                 $carbon = Carbon::create();
                 $carbon->addDay(3); // add 3 day
