@@ -66,4 +66,12 @@ class SOWProcessorBuilder extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
         return new SOW\BoltPattern($this->builder);
     }
 
+    /**
+     * @return SOW\Collection
+     */
+    protected function buildCollectionProcessor()
+    {
+        return new SOW\Collection($this->builder);
+    }
+
 }

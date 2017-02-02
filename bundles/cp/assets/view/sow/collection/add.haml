@@ -1,0 +1,31 @@
+- $this->layout('cp:layout')
+
+.col-lg-3
+.col-lg-6
+  .ibox
+    .ibox-title
+      %h3 New Collection
+    .ibox-content
+      %form(method="POST" action="/api/sow/collection" data-created)
+
+        - if (isset($parentId))
+          %input(type="hidden" name="parentId" value="#{$parentId}" )
+
+        .form-group.form-group-lg
+          %label.control-label(for="brandId")
+            Brand
+          %input#brandId.form-control(type="text" name="brandId" value="" )
+
+        .form-group.form-group-lg
+          %label.control-label(for="name")
+            Name
+          %input#name.form-control(type="text" name="name" value="" )
+
+        .hr-line-dashed
+
+        .form-group(align="center")
+          %button.btn.btn-primary.btn-lg
+            %i.fa.fa-save
+            Submit
+
+- $assets::pushJs('/js/cp/sow/collection/add.js')

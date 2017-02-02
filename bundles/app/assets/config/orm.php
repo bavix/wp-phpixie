@@ -144,11 +144,29 @@ return [
             'type'  => 'oneToMany',
             'owner' => Model::BRAND,
             'items' => Model::WHEEL,
+        ], [
+            'type'  => 'oneToMany',
+            'owner' => Model::BRAND,
+            'items' => Model::COLLECTION,
         ],
         [
             'type'  => 'oneToMany',
             'owner' => Model::COLLECTION,
             'items' => Model::WHEEL,
+        ],
+        [ // fixme : проверить условие
+            'type'  => 'oneToMany',
+            'owner' => Model::COLLECTION,
+            'items' => Model::COLLECTION,
+
+            'ownerOptions' => array(
+                'itemsProperty' => 'collections'
+            ),
+
+            'itemsOptions' => array(
+                'ownerProperty' => Model::COLLECTION,
+                'ownerKey'      => 'parentId'
+            )
         ],
 
         // brand <-> heading

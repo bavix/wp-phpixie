@@ -206,7 +206,7 @@ abstract class CPProtected extends Processor
             ->find();
 
         $action      = $request->attributes()->get('action');
-        $breadcrumbs = $this->breadcrumbs($action, $currentMenu);
+        $breadcrumbs = $currentMenu ? $this->breadcrumbs($action, $currentMenu) : [];
 
         $this->assign('user', $this->user);
         $this->assign('currentMenu', $currentMenu);

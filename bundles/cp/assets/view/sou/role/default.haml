@@ -27,7 +27,7 @@
               %tbody
                 %tr
 
-                  %td(rowspan="3")
+                  %td(rowspan="4")
                     Wheels
                     - if ($role->hasMyPermission('cp.sow'))
                       %span.label.label-primary yes
@@ -159,6 +159,49 @@
                     - else if ($role->hasMyPermission('cp.sow.wheel.pull-request'))
                       %span.label.label-primary yes
                     - else if ($role->hasPermission('cp.sow.wheel.pull-request'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+
+                %tr
+
+                  %td Collection
+                  %td -
+
+                  %td
+                    - if ($role->hasMyPermission('cp.sow.collection'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.sow.collection'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.sow.collection.add'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.sow.collection.add'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.sow.collection.edit'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.sow.collection.edit'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasMyPermission('cp.sow.collection.delete'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.sow.collection.delete'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+                  %td
+                    - if ($role->hasPermission('cp.sow.collection.delete'))
+                      %span.label.label-success master
+                    - else if ($role->hasMyPermission('cp.sow.collection.pull-request'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.sow.collection.pull-request'))
                       %span.label.label-warning yes
                     - else
                       %span.label.label-danger no
@@ -641,6 +684,56 @@
                   %td
                     %span.label.label-default none
 
+                %tr
+
+                  %td(rowspan="2")
+                    Upload
+                    - if ($role->hasMyPermission('cp.upload'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.upload'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-danger no
+
+                  %td Image
+                  %td -
+
+                  %td
+                    - if ($role->hasMyPermission('cp.upload.image'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.upload.image'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-default none
+                  %td
+                    %span.label.label-default none
+                  %td
+                    %span.label.label-default none
+                  %td
+                    %span.label.label-default none
+                  %td
+                    %span.label.label-default none
+
+                %tr
+
+                  %td Video
+                  %td -
+
+                  %td
+                    - if ($role->hasMyPermission('cp.upload.video'))
+                      %span.label.label-primary yes
+                    - else if ($role->hasPermission('cp.upload.video'))
+                      %span.label.label-warning yes
+                    - else
+                      %span.label.label-default none
+                  %td
+                    %span.label.label-default none
+                  %td
+                    %span.label.label-default none
+                  %td
+                    %span.label.label-default none
+                  %td
+                    %span.label.label-default none
                 %tr
 
                   %td

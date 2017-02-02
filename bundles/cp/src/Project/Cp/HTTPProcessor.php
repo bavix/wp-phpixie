@@ -45,6 +45,14 @@ class HTTPProcessor extends \PHPixie\DefaultBundle\Processor\HTTP\Builder
     }
 
     /**
+     * @return HTTPProcessors\Upload
+     */
+    protected function buildUploadProcessor()
+    {
+        return new HTTPProcessors\Upload($this->builder);
+    }
+
+    /**
      * @return HTTPProcessors\Auth
      */
     protected function buildAuthProcessor()
