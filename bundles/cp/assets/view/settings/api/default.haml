@@ -5,11 +5,51 @@
     .ibox-title
       %h3 API System
     .ibox-content
-      %p.small
+      partial: 'cp:pager'
+      %table.table
+        %thead
+          %tr
+            %th User [login]
+            %th App name
+            %th Is Active
+            %th Created At
+            %th Updated At
+            %th Actions
+        %tbody
+          - foreach ($pager->getCurrentItems() as $app)
+            %tr
+              %td = $app->user()->login
+              %td = $app->name
+              %td = $app->active ? 'yes' : 'no'
+              %td.entry-date(data-time="#{$app->createdAt}")
+              %td.entry-date(data-time="#{$app->updatedAt}")
+              %td
+                %a.btn.btn-primary(href="/cp/settings/api/edit/#{$app->id}")
+                  %i.fa.fa-edit
+                  Edit
+                %a.btn.btn-danger(href="/cp/settings/api/delete/#{$app->id}")
+                  %i.fa.fa-trash
+                  Delete
+      partial: 'cp:pager'
 
 .col-lg-3
   .ibox
     .ibox-title
       %h3 My Apps
     .ibox-content
-      %p.small
+      %table.table
+        %thead
+          %tr
+            %th App name
+            %th Actions
+        %tbody
+          - foreach ($myApps as $app)
+            %tr
+              %td = $app->name
+              %td
+                %a.btn.btn-primary.btn-xs(href="/cp/settings/api/edit/#{$app->id}")
+                  %i.fa.fa-edit
+                  edit
+                %a.btn.btn-danger.btn-xs(href="/cp/settings/api/delete/#{$app->id}")
+                  %i.fa.fa-trash
+                  delete

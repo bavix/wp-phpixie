@@ -40,24 +40,29 @@ class API extends SettingsProtected
         }
 
         // remove old tokens
-        $orm->query(Model::OAUTH_CLIENT)
+        $client = $orm->query(Model::OAUTH_CLIENT)
             ->where('appId', $app->id())
-            ->delete();
+            ->findOne();
+
+        $redirectUri = $client->redirect_uri;
+
+        $client->delete();
 
         // create new client id/secret
         $client                = $orm->createEntity(Model::OAUTH_CLIENT);
-        $client->client_id     = $builder->dHelper()->str()->random(80);
-        $client->client_secret = $builder->dHelper()->str()->random(80);
+        $client->client_id     = $builder->dHelper()->str()->random(16);
+        $client->client_secret = $builder->dHelper()->str()->random(32);
         $client->appId         = $app->id();
+        $client->redirect_uri  = $redirectUri;
 
         $client->save();
 
-        return $client;
+        return $client->asObject(true);
     }
 
     public function defaultAction(Request $request)
     {
-        $this->addItemButton('cp.settings.app@add');
+        $this->addItemButton('cp.settings.api@add');
 
         /**
          * @var $builder \Project\Framework\Builder
@@ -99,16 +104,53 @@ class API extends SettingsProtected
 
         $pager = $builder->helper()->pager($page, $appQuery);
 
-        $this->assign('apps', $pager);
+        $this->assign('pager', $pager);
         $this->assign('myApps', $myApps);
 
         return $this->render('cp:settings/api/default');
     }
 
-    public function addAction()
+    public function addAction(Request $request)
     {
+        if ($request->method() === 'POST')
+        {
 
-        return $this->render('cp:settings/api/default');
+            try
+            {
+                $appName = $request->data()->getRequired('name');
+
+                return $this->createClient($appName);
+            }
+            catch (\Throwable $exception)
+            {
+                return [
+                    'message' => $exception->getMessage()
+                ];
+            }
+
+        }
+
+        return $this->render('cp:settings/api/add');
+    }
+
+    public function editAction(Request $request)
+    {
+        $orm = $this->components->orm();
+
+        $id = $request->attributes()->getRequired('id');
+
+        $app = $orm->query(Model::APP)
+            ->in($id)
+            ->findOne();
+
+        $client = $orm->query(Model::OAUTH_CLIENT)
+            ->where('appId', $id)
+            ->findOne();
+
+        $this->assign('app', $app);
+        $this->assign('client', $client);
+
+        return $this->render('cp:settings/api/edit');
     }
 
 }
