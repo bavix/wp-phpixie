@@ -2,8 +2,8 @@
 
 namespace Project\OAuth2;
 
-use Project\Api;
 use PHPixie\AuthLogin\Providers\Password as PasswordProvider;
+use Project\Api;
 use Project\Model;
 use Project\ORM\User\Query;
 

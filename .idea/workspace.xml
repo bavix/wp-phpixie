@@ -2,15 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/assets/config/orm.php" afterPath="$PROJECT_DIR$/bundles/app/assets/config/orm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/dashboard/default.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/dashboard/default.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/settings/api/default.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/settings/api/default.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/Exceptions/Unauthorized.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/Exceptions/Unauthorized.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessor.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Auth.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Auth.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/AuthProcessor.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/AuthProcessor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Processor/APIProtected.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Processor/APIProtected.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Dealer.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Dealer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Heading.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Heading.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOCProcessorBuilder.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOCProcessorBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOU/Invite.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOU/Invite.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOU/User.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOU/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOUProcessorBuilder.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOUProcessorBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOW/BoltPattern.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOW/BoltPattern.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOW/Style.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOW/Style.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOW/Wheel.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOW/Wheel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOWProcessorBuilder.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOWProcessorBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/RESTFUL.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/RESTFUL.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App/AuthRepositories.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/AuthRepositories.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App/Builder.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/Builder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessor.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Invite.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Invite.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Landing.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Landing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Webhook.php" afterPath="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Webhook.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessor.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessor.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Auth.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Auth.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Dashboard.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Dashboard.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Processor/CPProtected.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Processor/CPProtected.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Brand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Dealer.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Dealer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Heading.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Heading.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOCProcessorBuilder.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOCProcessorBuilder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Settings/API.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Settings/API.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOU/Invite.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOU/Invite.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOU/Permission.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOU/Permission.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOU/Role.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOU/Role.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOU/User.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOU/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOUProcessorBuilder.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOUProcessorBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOW/BoltPattern.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOW/BoltPattern.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOW/Collection.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOW/Collection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOW/Style.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOW/Style.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOW/Wheel.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOW/Wheel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOWProcessorBuilder.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOWProcessorBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Settings/Cache.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Settings/Cache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SettingsProcessorBuilder.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SettingsProcessorBuilder.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Upload.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Upload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Project/Assets.php" afterPath="$PROJECT_DIR$/src/Project/Assets.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Project/Curl.php" afterPath="$PROJECT_DIR$/src/Project/Curl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Project/Framework.php" afterPath="$PROJECT_DIR$/src/Project/Framework.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Project/Helper.php" afterPath="$PROJECT_DIR$/src/Project/Helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Project/OAuth2/PDO.php" afterPath="$PROJECT_DIR$/src/Project/OAuth2/PDO.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Project/ORMWrappers.php" afterPath="$PROJECT_DIR$/src/Project/ORMWrappers.php" />
     </list>
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,16 +88,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-28">
               <caret line="34" column="32" lean-forward="false" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="default.haml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/dashboard/default.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -103,13 +133,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="API.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="API.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Settings/API.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1388">
               <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Brand.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#54#79#0#PHP" expanded="true" />
+                <element signature="e#50#75#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -230,7 +270,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/bundles/cp/assets/view/sow/bolt-pattern/default.haml" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/sow/bolt-pattern/add.haml" />
         <option value="$PROJECT_DIR$/web/js/cp/sow/bolt-pattern/add.jsx" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/sow/bolt-pattern/edit.haml" />
@@ -281,6 +320,7 @@
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/settings/api/default.haml" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/settings/api/edit.haml" />
         <option value="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Settings/API.php" />
+        <option value="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php" />
       </list>
     </option>
   </component>
@@ -668,10 +708,6 @@
               <option name="myItemId" value="bundles" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -684,338 +720,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HTTPProcessors" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HTTPProcessors" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Settings" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sou" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sou" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="invite" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="soc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="soc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dealer" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="settings" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cache" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="settings" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1037,81 +741,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="api" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1137,7 +767,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="api" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1149,7 +779,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
+              <option name="myItemId" value="Api" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1167,11 +797,61 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="api" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HTTPProcessors" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WBS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wbs-cms" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HTTPProcessors" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOC" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1189,29 +869,23 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="api" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WBS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wbs-cms" />
+              <option name="myItemId" value="Project" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
+              <option name="myItemId" value="Api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Exceptions" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1476,18 +1150,18 @@
       <workItem from="1485966480145" duration="3821000" />
       <workItem from="1486052291752" duration="8151000" />
       <workItem from="1486101631687" duration="649000" />
-      <workItem from="1486136489372" duration="4412000" />
+      <workItem from="1486136489372" duration="5086000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="784008000" />
+    <option name="totallyTimeSpent" value="784682000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21331316" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28441754" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32475883" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1533,13 +1207,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="46" column="4" lean-forward="false" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/27.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1752,9 +1419,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
-          <folding>
-            <element signature="e#34#50#0#PHP" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1922,8 +1587,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1388">
           <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#54#79#0#PHP" expanded="true" />
+            <element signature="e#50#75#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
