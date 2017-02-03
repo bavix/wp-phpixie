@@ -10,8 +10,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/deimos/imaginarium-sdk" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ezyang/htmlpurifier" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ircmaxell/password-compat" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/ircmaxell/random-lib" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/ircmaxell/security-lib" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mthaml/mthaml" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
@@ -85,8 +83,6 @@
           <root url="file://$MODULE_DIR$/vendor/deimos/imaginarium-sdk" />
           <root url="file://$MODULE_DIR$/vendor/ezyang/htmlpurifier" />
           <root url="file://$MODULE_DIR$/vendor/ircmaxell/password-compat" />
-          <root url="file://$MODULE_DIR$/vendor/ircmaxell/random-lib" />
-          <root url="file://$MODULE_DIR$/vendor/ircmaxell/security-lib" />
           <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
           <root url="file://$MODULE_DIR$/vendor/mthaml/mthaml" />
           <root url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
@@ -146,8 +142,6 @@
           <root url="file://$MODULE_DIR$/vendor/deimos/imaginarium-sdk" />
           <root url="file://$MODULE_DIR$/vendor/ezyang/htmlpurifier" />
           <root url="file://$MODULE_DIR$/vendor/ircmaxell/password-compat" />
-          <root url="file://$MODULE_DIR$/vendor/ircmaxell/random-lib" />
-          <root url="file://$MODULE_DIR$/vendor/ircmaxell/security-lib" />
           <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
           <root url="file://$MODULE_DIR$/vendor/mthaml/mthaml" />
           <root url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
