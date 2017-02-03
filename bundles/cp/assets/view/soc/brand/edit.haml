@@ -147,8 +147,90 @@
                                   = mb_substr($value, 0, 25) . $dots
                           %td.entry-date(data-time="#{$log->createdAt}" data-order="#{$log->createdAt}")
 
+:css
+
+  .upload-link {
+    color: #36c;
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    background-color: #fff;
+    background-color: rgba(255,255,255,.85);
+    padding: 3px 8px;
+  }
+
+  .upload-link__txt {
+    z-index: 1;
+    position: relative;
+    border-bottom: 1px dotted #36c;
+  }
+
+  .upload-link:hover .upload-link__txt {
+    /*color: #f00;*/
+    /*border-bottom-color: #f00;*/
+  }
+
+  .upload-link__inp {
+    top: -10px;
+    right: -40px;
+    z-index: 2;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    font-size: 50px;
+  }
+
+  .upload {
+    width: 220px;
+    height: 220px;
+    /*border: 2px solid #ccc;*/
+    position: relative;
+    /*background-color: #fff;*/
+  }
+
+  .upload__preview {
+    -webkit-transition: opacity .3s ease;
+    -moz-transition: opacity .3s ease;
+    transition: opacity .3s ease;
+  }
+
+  .upload__progress {
+    color: #fff;
+  }
+
+  .upload__link, .upload__progress {
+    bottom: 5%;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+  }
+
+  .upload__progress,
+  .upload_active .upload__link { display: none; }
+
+  .upload_active .upload__preview { opacity: .75; }
+  .upload_active .upload__progress { display: block; }
+
 .col-lg-3(align="center")
-  %form(method="post")
+  %form.thumbnail.upload{:name => "userpic"}
+    #preview.upload__preview
+    .upload__progress Uploading…
+    .upload__link
+      %a.upload-link.js-fileapi-wrapper
+        %span.btn.btn-warning.upload-link__txt Browse pic
+        %input.upload-link__inp{:accept => "image/*", :name => "photo", :type => "file"}
+
+  -##uploaderForm
+  -#  %input#uploader.hidden(type="file" name="filedata" accept="image/*")
+  -#  %img.thumbnail(src="//placehold.it/220x220" width="220")
+  -#  %label.btn.btn-warning(for="uploader")
+  -#    %i.fa.fa-download
+  -#    upload image
+  -#%form(method="post")
     %input(type="hidden" name="id" value="#{$brand->id}")
     %input.hidden#brandLogo(type="file" name="logo")
     -#.form-group
@@ -158,6 +240,8 @@
       %button.btn.btn-success.btn-lg(disabled) Upload
 
 - $assets::pushJs('/js/cp/soc/brand/edit.js')
+- $assets::pushJs('/js/cp/upload/image.js')
+- $assets::pushJs('/node_modules/fileapi/dist/FileAPI.min.js')
 
 :javascript
 

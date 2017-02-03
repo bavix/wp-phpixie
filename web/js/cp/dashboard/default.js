@@ -195,6 +195,7 @@ $(function () {
             React.createElement(IBoxBlock, { title: "Brand", count: brandCount }),
             React.createElement(IBoxBlock, { title: "Dealer", count: dealerCount }),
             React.createElement(IBoxBlock, { title: "Heading", count: headingCount }),
+            React.createElement(IBoxBlock, { title: "Invite", count: inviteCount }),
             React.createElement(IBoxBlock, { title: "Wheel", count: wheelCount }),
             React.createElement(IBoxBlock, { title: "Style [wheels]", count: styleCount }),
             React.createElement(IBoxBlock, { title: "Bolt Pattern [wheels]", count: boltPatternCount }),
@@ -202,7 +203,6 @@ $(function () {
             React.createElement(IBoxBlock, { title: "User", count: userCount }),
             React.createElement(IBoxBlock, { title: "Role", count: roleCount }),
             React.createElement(IBoxBlock, { title: "Permission", count: permissionCount }),
-            React.createElement(IBoxBlock, { title: "Invite", count: inviteCount }),
             React.createElement(IBoxBlock, { title: "App", count: appCount })
         ), document.getElementById('content'));
     }

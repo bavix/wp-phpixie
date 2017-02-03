@@ -138,6 +138,7 @@ $(function () {
                 <IBoxBlock title="Brand" count={brandCount}/>
                 <IBoxBlock title="Dealer" count={dealerCount}/>
                 <IBoxBlock title="Heading" count={headingCount}/>
+                <IBoxBlock title="Invite" count={inviteCount}/>
 
                 <IBoxBlock title="Wheel" count={wheelCount}/>
                 <IBoxBlock title="Style [wheels]" count={styleCount}/>
@@ -148,7 +149,6 @@ $(function () {
                 <IBoxBlock title="Role" count={roleCount}/>
                 <IBoxBlock title="Permission" count={permissionCount}/>
 
-                <IBoxBlock title="Invite" count={inviteCount}/>
                 <IBoxBlock title="App" count={appCount}/>
             </div>,
             document.getElementById('content')
