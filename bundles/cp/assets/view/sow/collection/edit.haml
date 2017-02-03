@@ -4,16 +4,16 @@
   .ibox
     .ibox-title
       %h3
-        Edit Bolt Pattern
+        Edit Collection
         %label.label.label-info.pull-right
-          = $_($collection->bolt . 'x' . $collection->pcd)
+          = $_($collection->name)
     .ibox-content
       %form(method="POST" action="/api/sow/collection" data-created)
         .form-group.form-group-lg
-          %label.control-label(for="bolt")
-            Bolt / Stud
-          %input#bolt.form-control.text-uppercase(type="text" name="bolt" value="#{$collection->bolt}" )
+          %label.control-label(for="brandName")
+            Brand
+          %input#brandName.form-control.text-uppercase(type="text" name="brandId" value="#{$collection->brand()->name}" )
         .form-group.form-group-lg
-          %label.control-label(for="pcd")
-            PCD
-          %input#pcd.form-control.text-uppercase(type="text" name="pcd" value="#{$collection->pcd}" )
+          %label.control-label(for="Name")
+            Name
+          %input#name.form-control.text-uppercase(type="text" name="name" value="#{$collection->name}" )
