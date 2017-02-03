@@ -30,8 +30,6 @@
 
     "ezyang/htmlpurifier": "~4.8",
 
-    "ircmaxell/random-lib": "^1.2",
-
     "ralouphie/mimey": "^1.0",
 
     "swiftmailer/swiftmailer": "^5.4",

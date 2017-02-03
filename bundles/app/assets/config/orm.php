@@ -18,6 +18,11 @@ return [
             'table' => 'brandsHeadings'
         ],
 
+        Model::OAUTH_CLIENT => [
+            'table' => 'oauth_clients',
+            'id'    => 'client_id'
+        ],
+
     ],
 
     'relationships' => [

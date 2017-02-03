@@ -17,3 +17,6 @@ ALTER TABLE `styles`
 
 ALTER TABLE `styles`
 	CHANGE COLUMN `type` `type` ENUM('I','X','Y','V','O') NOT NULL COMMENT 'тип стиля' AFTER `parentId`;
+
+ALTER TABLE `styles`
+	CHANGE COLUMN `isTurned` `isTurned` TINYINT(1) NOT NULL DEFAULT '0' AFTER `spoke`;

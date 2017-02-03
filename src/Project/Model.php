@@ -4,6 +4,9 @@ namespace Project;
 
 class Model
 {
+    const APP          = 'app';
+    const OAUTH_CLIENT = 'oauthClient';
+
     const USER       = 'user';
     const ROLE       = 'role';
     const PERMISSION = 'permission';
