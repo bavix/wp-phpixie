@@ -125,7 +125,7 @@ class Collection extends SOWProtected
 
             return [];
         }
-        
+
         $collection->delete();
 
         return $collection->asObject(true);

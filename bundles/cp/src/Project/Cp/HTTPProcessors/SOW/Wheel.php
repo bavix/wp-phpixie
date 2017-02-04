@@ -57,4 +57,22 @@ class Wheel extends SOWProtected
         return $this->render('cp:sow/wheel/default');
     }
 
+    public function addAction(Request $request)
+    {
+        return $this->render('cp:sow/wheel/add');
+    }
+
+    public function editAction(Request $request)
+    {
+        $id = $request->attributes()->getRequired('id');
+
+        $wheel = $this->components->orm()->query(Model::WHEEL)
+            ->in($id)
+            ->findOne();
+
+        $this->assign('wheel', $wheel);
+
+        return $this->render('cp:sow/wheel/edit');
+    }
+
 }

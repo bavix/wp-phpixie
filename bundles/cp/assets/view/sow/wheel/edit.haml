@@ -1,0 +1,23 @@
+- $this->layout('cp:layout')
+
+.col-lg-9
+  .ibox
+    .ibox-title
+      %h3
+        Edit Wheel
+        %label.label.label-info.pull-right
+          = $_($wheel->name)
+    .ibox-content
+      %form(method="POST" action="/api/sow/collection" data-created)
+        .form-group.form-group-lg
+          %label.control-label(for="brandName")
+            Brand
+          %input#brandName.form-control.text-uppercase(type="text" name="brandId" value="#{$wheel->brand()->name}" )
+        .form-group.form-group-lg
+          %label.control-label(for="collectionName")
+            Collection
+          %input#collectionName.form-control.text-uppercase(type="text" name="collectionName" value="#{$wheel->collection()->name}" )
+        .form-group.form-group-lg
+          %label.control-label(for="Name")
+            Name
+          %input#name.form-control.text-uppercase(type="text" name="name" value="#{$wheel->name}" )
