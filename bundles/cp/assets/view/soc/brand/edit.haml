@@ -20,6 +20,8 @@
               %a(data-toggle="tab" href="#tab-heading") Heading
             %li
               %a(data-toggle="tab" href="#tab-dealer") Dealer
+            %li
+              %a(data-toggle="tab" href="#tab-collection") Collection
             - if ($user->hasPermission('cp.log'))
               %li
                 %a(data-toggle="tab" href="#tab-last-activity")
@@ -104,6 +106,9 @@
 
             #tab-dealer.tab-pane
               partial: 'cp:soc/brand/edit.tabs/dealer'
+
+            #tab-collection.tab-pane
+              partial: 'cp:soc/brand/edit.tabs/collection'
 
             - if ($user->hasPermission('cp.log'))
               #tab-last-activity.tab-pane

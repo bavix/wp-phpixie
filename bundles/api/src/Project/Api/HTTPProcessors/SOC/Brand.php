@@ -283,7 +283,6 @@ class Brand extends SOCProtected
         return $brandSocial->asObject(true);
     }
 
-
     /**
      * @param Request $request
      *

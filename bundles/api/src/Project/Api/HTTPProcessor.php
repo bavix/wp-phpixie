@@ -10,6 +10,8 @@ use Project\Extension\Util;
 class HTTPProcessor extends HttpBuilder
 {
 
+    protected $attributeName = 'nextProcessor';
+
     /**
      * @var Builder
      */
