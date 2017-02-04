@@ -72,7 +72,7 @@ $(function () {
         $('#collectionSelect').select2({
             theme: "bootstrap",
             ajax: {
-                url: '/api/sow/collection?queries[brandId]=' + brandId + '&limit=15',
+                url: '/api/sow/collection?terms[brandId]=' + brandId + '&limit=15',
                 dataType: 'json',
                 delay: 350,
                 data: function (params) {

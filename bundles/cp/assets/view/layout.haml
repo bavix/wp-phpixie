@@ -45,8 +45,8 @@
                       %strong.font-bold =$user->login
                     %span.text-muted.text-xs.block
                       =$_($user->role()->title)
-                      %b.fa.fa-angle-down
-                %ul.dropdown-menu.animated.fadeInRight.m-t-xs
+                      -#%b.fa.fa-angle-down
+                -#%ul.dropdown-menu.animated.fadeInRight.m-t-xs
                   %li
                     %a{:href => "profile.html"} Profile
                   %li
@@ -115,13 +115,13 @@
             .navbar-header
               %a.navbar-minimalize.minimalize-styl-2.btn.btn-primary
                 %i.fa.fa-bars
-              %form.navbar-form-custom{:action => "search_results.html", :role => "search"}
+              -#%form.navbar-form-custom{:action => "search_results.html", :role => "search"}
                 .form-group
                   %input#top-search.form-control{:name => "top-search", :placeholder => "Search for something...", :type => "text"}/
             %ul.nav.navbar-top-links.navbar-right
               %li
                 %span.m-r-sm.text-muted.welcome-message
-              %li.dropdown
+              -#%li.dropdown
                 %a.dropdown-toggle.count-info{"data-toggle" => "dropdown", :href => "#"}
                   %i.fa.fa-envelope
                   %span.label.label-warning 16
@@ -167,7 +167,7 @@
                       %a{:href => "mailbox.html"}
                         %i.fa.fa-envelope
                         %strong Read All Messages
-              %li.dropdown
+              -#%li.dropdown
                 %a.dropdown-toggle.count-info{"data-toggle" => "dropdown", :href => "#"}
                   %i.fa.fa-bell
                   %span.label.label-primary 8

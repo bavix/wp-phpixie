@@ -1,0 +1,18 @@
+.panel-body
+  %form(method="POST" data-id="#{$brand->id}" action="/api/soc/brand/#{$brand->id}/collection" data-created="collection")
+
+    .grid
+      .col-md-12
+        .form-group.form-group-lg
+          %label.control-label(for="collectionType") Type
+          %select#collectionType.form-control.select2-multiple(multiple name="id[]" style="width: 100%")
+
+    .hr-line-dashed
+
+    .form-group(align="center")
+      %button.btn.btn-primary.btn-lg
+        %i.fa.fa-save
+        Submit
+
+  // http://wbs-cms/api/soc/collection?terms[brands.id]=9
+  #collectionRows.table-responsive
