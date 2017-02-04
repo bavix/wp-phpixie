@@ -43,6 +43,8 @@ class Wheel extends SOWProtected
 
         $orm = $this->components->orm();
 
+        $name = mb_strtoupper($name);
+
         /**
          * @var \PHPixie\ORM\Wrappers\Type\Database\Query $wheel
          */
