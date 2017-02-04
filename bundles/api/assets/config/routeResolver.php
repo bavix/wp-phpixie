@@ -143,7 +143,8 @@ return array(
             'type'     => 'pattern',
             'path'     => '/auth/token',
             'defaults' => [
-                'nextProcessor' => 'auth',
+                'processor'     => 'auth',
+//                'nextProcessor' => 'auth',
                 'action'        => 'token',
             ]
         ],
