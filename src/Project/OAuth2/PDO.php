@@ -2,8 +2,8 @@
 
 namespace Project\OAuth2;
 
-use Project\Api;
 use PHPixie\AuthLogin\Providers\Password as PasswordProvider;
+use Project\Api;
 use Project\Model;
 use Project\ORM\User\Query;
 
@@ -26,6 +26,10 @@ class PDO extends \OAuth2\Storage\Pdo
 
         $pdo    = $builder->components()->database()->get()->pdo();
         $config = $builder->bundleConfig()->get('oauth', []);
+
+//        $config = $builder->components()->orm()->query(Model::OAUTH_CLIENT)
+//            ->find()
+//            ->asArray(true);
 
         parent::__construct($pdo, $config);
     }

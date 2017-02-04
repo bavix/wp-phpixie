@@ -30,8 +30,6 @@
 
     "ezyang/htmlpurifier": "~4.8",
 
-    "ircmaxell/random-lib": "^1.2",
-
     "ralouphie/mimey": "^1.0",
 
     "swiftmailer/swiftmailer": "^5.4",
@@ -41,7 +39,9 @@
 
     "curl/curl": "^1.5",
 
-    "nesbot/carbon": "^1.21"
+    "nesbot/carbon": "^1.21",
+    "deimos/imaginarium-sdk": "^0.0",
+    "deimos/helper": "^0.3"
   },
   "extra": {
     "branch-alias": {

@@ -23,6 +23,11 @@ class Dashboard extends CPProtected
         return $this->render('cp:dashboard/default');
     }
 
+    /**
+     * @param Request $request
+     *
+     * @return array
+     */
     public function countAction(Request $request)
     {
         $model = $request->query()->getRequired('model');

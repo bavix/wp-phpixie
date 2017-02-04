@@ -1,0 +1,27 @@
+- $this->layout('cp:layout')
+
+.col-lg-9
+  .ibox
+    .ibox-title
+      %h3
+        Edit App
+        %label.label.label-info.pull-right
+          = $_($app->name)
+    .ibox-content
+      %form(method="POST" action="/api/settings/api/edit/#{$app->id}" data-created)
+        .form-group.form-group-lg
+          %label.control-label(for="appName")
+            App Name
+          %input#appName.form-control(type="text" name="name" value="#{$app->name}" )
+        .form-group.form-group-lg
+          %label.control-label(for="redirectUri")
+            Redirect URI
+          %input#redirectUri.form-control(type="text" name="redirect_uri" value="#{$client->redirect_uri}" )
+        .form-group.form-group-lg
+          %label.control-label(for="clientId")
+            Client ID
+          %input#clientId.form-control(type="text" name="name" value="#{$client->client_id}" disabled)
+        .form-group.form-group-lg
+          %label.control-label(for="clientSecret")
+            Client Secret
+          %input#clientSecret.form-control(type="text" name="name" value="#{$client->client_secret}" disabled)

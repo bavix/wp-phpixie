@@ -55,7 +55,18 @@ $(function () {
     var brandCount = 'Loading..';
     var dealerCount = 'Loading..';
     var headingCount = 'Loading..';
+
+    var wheelCount = 'Loading..';
+    var styleCount = 'Loading..';
+    var boltPatternCount = 'Loading..';
+    var collectionCount = 'Loading..';
+
     var userCount = 'Loading..';
+    var roleCount = 'Loading..';
+    var permissionCount = 'Loading..';
+
+    var inviteCount = 'Loading..';
+    var appCount = 'Loading..';
 
     fetch('/cp/dashboard/count?model=brand', {
         method: 'GET',
@@ -97,6 +108,86 @@ $(function () {
         render();
     });
 
+    fetch('/cp/dashboard/count?model=role', {
+        method: 'GET',
+        credentials: 'include'
+    }).then(function (r) {
+        return r.json();
+    }).then(function (res) {
+        roleCount = res.count;
+        render();
+    });
+
+    fetch('/cp/dashboard/count?model=permission', {
+        method: 'GET',
+        credentials: 'include'
+    }).then(function (r) {
+        return r.json();
+    }).then(function (res) {
+        permissionCount = res.count;
+        render();
+    });
+
+    fetch('/cp/dashboard/count?model=wheel', {
+        method: 'GET',
+        credentials: 'include'
+    }).then(function (r) {
+        return r.json();
+    }).then(function (res) {
+        wheelCount = res.count;
+        render();
+    });
+
+    fetch('/cp/dashboard/count?model=style', {
+        method: 'GET',
+        credentials: 'include'
+    }).then(function (r) {
+        return r.json();
+    }).then(function (res) {
+        styleCount = res.count;
+        render();
+    });
+
+    fetch('/cp/dashboard/count?model=boltPattern', {
+        method: 'GET',
+        credentials: 'include'
+    }).then(function (r) {
+        return r.json();
+    }).then(function (res) {
+        boltPatternCount = res.count;
+        render();
+    });
+
+    fetch('/cp/dashboard/count?model=collection', {
+        method: 'GET',
+        credentials: 'include'
+    }).then(function (r) {
+        return r.json();
+    }).then(function (res) {
+        collectionCount = res.count;
+        render();
+    });
+
+    fetch('/cp/dashboard/count?model=invite', {
+        method: 'GET',
+        credentials: 'include'
+    }).then(function (r) {
+        return r.json();
+    }).then(function (res) {
+        inviteCount = res.count;
+        render();
+    });
+
+    fetch('/cp/dashboard/count?model=app', {
+        method: 'GET',
+        credentials: 'include'
+    }).then(function (r) {
+        return r.json();
+    }).then(function (res) {
+        appCount = res.count;
+        render();
+    });
+
     function render() {
         ReactDOM.render(React.createElement(
             "div",
@@ -104,7 +195,15 @@ $(function () {
             React.createElement(IBoxBlock, { title: "Brand", count: brandCount }),
             React.createElement(IBoxBlock, { title: "Dealer", count: dealerCount }),
             React.createElement(IBoxBlock, { title: "Heading", count: headingCount }),
-            React.createElement(IBoxBlock, { title: "User", count: userCount })
+            React.createElement(IBoxBlock, { title: "Invite", count: inviteCount }),
+            React.createElement(IBoxBlock, { title: "Wheel", count: wheelCount }),
+            React.createElement(IBoxBlock, { title: "Style [wheels]", count: styleCount }),
+            React.createElement(IBoxBlock, { title: "Bolt Pattern [wheels]", count: boltPatternCount }),
+            React.createElement(IBoxBlock, { title: "Collection [wheels]", count: collectionCount }),
+            React.createElement(IBoxBlock, { title: "User", count: userCount }),
+            React.createElement(IBoxBlock, { title: "Role", count: roleCount }),
+            React.createElement(IBoxBlock, { title: "Permission", count: permissionCount }),
+            React.createElement(IBoxBlock, { title: "App", count: appCount })
         ), document.getElementById('content'));
     }
 });

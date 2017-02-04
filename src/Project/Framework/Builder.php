@@ -4,7 +4,6 @@ namespace Project\Framework;
 
 use Project\Curl;
 use Project\Helper;
-use RandomLib\Factory;
 use Stash\Driver\Composite;
 use Stash\Pool;
 
@@ -51,19 +50,21 @@ class Builder extends \PHPixie\BundleFramework\Builder
     }
 
     /**
-     * @return Factory
+     * @return \Deimos\Helper\Helper
      */
-    public function randomFactory()
+    public function dHelper()
     {
-        return $this->instance('randomFactory');
+        return $this->instance('dHelper');
     }
 
     /**
-     * @return Factory
+     * @return \Deimos\Helper\Helper
      */
-    protected function buildRandomFactory()
+    protected function buildDHelper()
     {
-        return new Factory();
+        $builder = new \Deimos\Builder\Builder();
+
+        return new \Deimos\Helper\Helper($builder);
     }
 
     /**

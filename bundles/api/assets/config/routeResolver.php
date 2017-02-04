@@ -139,6 +139,15 @@ return array(
             )
         ),
 
+        'auth' => [
+            'type'     => 'pattern',
+            'path'     => '/auth/token',
+            'defaults' => [
+                'nextProcessor' => 'auth',
+                'action'        => 'token',
+            ]
+        ],
+
         'nextItem' => array(
             'type' => 'pattern',
             'path' => '/<nextProcessor>/<id>/<action>/<nextId>'
