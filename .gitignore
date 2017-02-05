@@ -9,3 +9,4 @@ parameters.php
 yarn.lock
 cache/haml/
 docs/
+apidoc/
