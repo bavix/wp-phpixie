@@ -22,6 +22,17 @@ class Auth extends AuthProcessor
         return $request->data()->get();
     }
 
+    /**
+     * @return array
+     */
+    public function resourcePostAction(Request $request)
+    {
+        return [
+            'success',
+            'post' => $request->data()->get()
+        ];
+    }
+
     public function authorizeGetAction()
     {
         $this->server();
