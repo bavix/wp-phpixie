@@ -31,7 +31,9 @@ class Auth extends AuthProcessor
      * @apiName Test
      * @apiGroup Auth
      *
-     * @apiHeader Authorization: Basic access_token
+     * @apiHeader Authorization Authorization Basic {access_token}
+     *
+     * @apiVersion 0.0.1
      *
      * @return array
      */
@@ -77,12 +79,25 @@ class Auth extends AuthProcessor
         return parent::loggedUser();
     }
 
+    /**
+     * @api {post} /auth/register Register
+     * @apiName Register
+     * @apiGroup Auth
+     *
+     * @apiParam grant_type=client_credentials
+     *
+     * @apiHeader Authorization Authorization Basic {access_token}
+     *
+     * @apiVersion 0.0.2
+     */
     public function registerPostAction(Request $request)
     {
 
     }
 
     /**
+     * http -a testC:testS -f POST wbs-cms/api/auth/token grant_type=password username=$USER$ password=$PASSWORD$
+     *
      * @api {post} /auth/token Get Token
      * @apiName Token
      * @apiGroup Auth
@@ -91,9 +106,9 @@ class Auth extends AuthProcessor
      * @apiParam username=LOGIN
      * @apiParam password=PASSWORD
      *
-     * @apiHeader Authorization: Basic access_token
+     * @apiHeader Authorization Authorization Basic {access_token}
      *
-     * http -a testC:testS -f POST wbs-cms/api/auth/token grant_type=password username=$USER$ password=$PASSWORD$
+     * @apiVersion 0.0.1
      *
      * @return mixed|string
      * @throws \OAuth2\InvalidArgumentException
