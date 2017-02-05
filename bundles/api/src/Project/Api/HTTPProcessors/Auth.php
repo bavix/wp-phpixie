@@ -27,6 +27,26 @@ class Auth extends AuthProcessor
     }
 
     /**
+     * @api {post} /auth/resource Test Request
+     * @apiName Test
+     * @apiGroup Auth
+     *
+     * @apiHeader Authorization: Basic access_token
+     *
+     * @return array
+     */
+    public function resourcePostAction(Request $request)
+    {
+        $user = $this->loggedUser();
+
+        return [
+            'type' => 'success',
+            'post' => $request->data()->get(),
+            'user' => $user ? $user->asObject(true) : null,
+        ];
+    }
+
+    /**
      * @return null|\Project\ORM\User\User
      * @throws \PHPixie\ORM\Exception\Query
      */
@@ -57,26 +77,22 @@ class Auth extends AuthProcessor
         return parent::loggedUser();
     }
 
-    /**
-     * @return array
-     */
-    public function resourcePostAction(Request $request)
-    {
-        $user = $this->loggedUser();
-
-        return [
-            'type' => 'success',
-            'post' => $request->data()->get(),
-            'user' => $user ? $user->asObject(true) : null,
-        ];
-    }
-
     public function registerPostAction(Request $request)
     {
 
     }
 
     /**
+     * @api {post} /auth/token Test Request
+     * @apiName Test
+     * @apiGroup Auth
+     *
+     * @apiParam grant_type=password|client_credentials
+     * @apiParam username=LOGIN
+     * @apiParam password=PASSWORD
+     *
+     * @apiHeader Authorization: Basic access_token
+     *
      * http -a testC:testS -f POST wbs-cms/api/auth/token grant_type=password username=$USER$ password=$PASSWORD$
      *
      * @return mixed|string
