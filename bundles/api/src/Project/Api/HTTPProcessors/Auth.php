@@ -84,7 +84,7 @@ class Auth extends AuthProcessor
      * @apiName Register
      * @apiGroup Auth
      *
-     * @apiParam grant_type=client_credentials
+     * @apiParam grant_type value client_credentials
      *
      * @apiHeader Authorization Authorization Basic {access_token}
      *
@@ -102,9 +102,9 @@ class Auth extends AuthProcessor
      * @apiName Token
      * @apiGroup Auth
      *
-     * @apiParam grant_type=password|client_credentials
-     * @apiParam username=LOGIN
-     * @apiParam password=PASSWORD
+     * @apiParam grant_type value password OR client_credentials
+     * @apiParam username LOGIN
+     * @apiParam password PASSWORD
      *
      * @apiHeader Authorization Authorization Basic {access_token}
      *
