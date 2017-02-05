@@ -83,8 +83,8 @@ class Auth extends AuthProcessor
     }
 
     /**
-     * @api {post} /auth/token Test Request
-     * @apiName Test
+     * @api {post} /auth/token Get Token
+     * @apiName Token
      * @apiGroup Auth
      *
      * @apiParam grant_type=password|client_credentials
