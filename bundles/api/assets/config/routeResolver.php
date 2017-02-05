@@ -141,20 +141,11 @@ return array(
 
         'auth' => [
             'type'     => 'pattern',
-            'path'     => '/auth/token',
+            'path'     => '/auth/<action>',
             'defaults' => [
                 'processor'     => 'auth',
                 //                'nextProcessor' => 'auth',
-                'action'        => 'token',
-            ]
-        ],
-        'authResource' => [
-            'type'     => 'pattern',
-            'path'     => '/auth/resource',
-            'defaults' => [
-                'processor'     => 'auth',
-                //                'nextProcessor' => 'auth',
-                'action'        => 'resource',
+                'action'        => 'authorize',
             ]
         ],
 

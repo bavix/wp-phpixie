@@ -21,6 +21,11 @@ class AuthProcessor extends Processor
     protected $access = [];
 
     /**
+     * @var \Project\OAuth2\PDO
+     */
+    protected $oauthPdo;
+
+    /**
      * @return \OAuth2\Request
      */
     protected function globalsRequest()
@@ -28,12 +33,22 @@ class AuthProcessor extends Processor
         return \OAuth2\Request::createFromGlobals();
     }
 
+    protected function oauthPDO()
+    {
+        if (!$this->oauthPdo)
+        {
+            $this->oauthPdo = new \Project\OAuth2\PDO($this->builder);
+        }
+
+        return $this->oauthPdo;
+    }
+
     /**
      * @return \OAuth2\Server
      */
     protected function server()
     {
-        $storage = new \Project\OAuth2\PDO($this->builder);
+        $storage = $this->oauthPDO();
 
         $server = new \OAuth2\Server($storage, [
             'access_lifetime' => 94672800 // 3 year
