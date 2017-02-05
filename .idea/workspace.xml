@@ -2,34 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/api_data.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/api_data.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/api_project.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/api_project.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/img/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/locales/ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/locales/de.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/locales/es.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/locales/fr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/locales/it.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/locales/locale.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/locales/nl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/locales/pl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/locales/pt_br.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/locales/ro.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/locales/ru.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/locales/zh.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/locales/zh_cn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/utils/handlebars_helper.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apidoc/utils/send_sample_request.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path="gallery-auth.iws" />
@@ -88,8 +60,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="13" lean-forward="true" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+            <state relative-caret-position="170">
+              <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -727,7 +699,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="813698000" />
+    <option name="totallyTimeSpent" value="813719000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1192,8 +1164,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="true" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+        <state relative-caret-position="170">
+          <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
           <folding />
         </state>
       </provider>
