@@ -3,6 +3,7 @@
 namespace Project\Api\HTTPProcessors;
 
 use PHPixie\HTTP\Request;
+use Project\Model;
 
 class Auth extends AuthProcessor
 {
@@ -10,7 +11,10 @@ class Auth extends AuthProcessor
     /**
      * @var array
      */
-    protected $access = ['resourcePost'];
+    protected $access = [
+        'resourcePost',
+        'registerPost',
+    ];
 
     /**
      * @param Request $request
@@ -22,9 +26,54 @@ class Auth extends AuthProcessor
         return $request->data()->get();
     }
 
-    public function authorizeGetAction()
+    /**
+     * @return null|\Project\ORM\User\User
+     * @throws \PHPixie\ORM\Exception\Query
+     */
+    public function loggedUser()
     {
-        $this->server();
+        if (!$this->user)
+        {
+            if ($this->server()->verifyResourceRequest($this->globalsRequest()))
+            {
+                $this->server()->verifyResourceRequest($this->globalsRequest());
+                $accessToken = $this->server()->getAccessTokenData($this->globalsRequest());
+
+                if ($accessToken['user_id'])
+                {
+                    $this->user = $this->components->orm()->query(Model::USER)
+                        ->in($accessToken['user_id'])
+                        ->findOne();
+
+                    $this->components->auth()->domain()->setUser(
+                        $this->loggedUser(),
+                        'default'
+                    );
+                }
+
+            }
+        }
+
+        return parent::loggedUser();
+    }
+
+    /**
+     * @return array
+     */
+    public function resourcePostAction(Request $request)
+    {
+        $user = $this->loggedUser();
+
+        return [
+            'type' => 'success',
+            'post' => $request->data()->get(),
+            'user' => $user ? $user->asObject(true) : null,
+        ];
+    }
+
+    public function registerPostAction(Request $request)
+    {
+
     }
 
     /**

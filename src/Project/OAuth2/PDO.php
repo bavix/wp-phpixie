@@ -15,6 +15,8 @@ class PDO extends \OAuth2\Storage\Pdo
      */
     protected $builder;
 
+    protected $user;
+
     /**
      * PDO constructor.
      *
@@ -49,9 +51,14 @@ class PDO extends \OAuth2\Storage\Pdo
          */
         $passwordProvider = $domain->provider('password');
 
-        $user = $passwordProvider->login($login, $password);
+        $this->user = $passwordProvider->login($login, $password);
 
-        return $user !== null;
+        return $this->user !== null;
+    }
+
+    public function user()
+    {
+        return $this->user;
     }
 
     /**
@@ -79,16 +86,16 @@ class PDO extends \OAuth2\Storage\Pdo
          */
         $queryUser = $orm->query(Model::USER);
 
-        $user = $queryUser->findByLogin($login);
+        $this->user = $queryUser->findByLogin($login);
 
-        if (!$user)
+        if (!$this->user)
         {
             return false;
         }
 
-        $user->user_id = $user->id();
+        $this->user->user_id = $this->user->id();
 
-        return (array)$user->asObject(true);
+        return (array)$this->user->asObject(true);
     }
 
     /**
@@ -108,7 +115,7 @@ class PDO extends \OAuth2\Storage\Pdo
          */
         $queryUser = $orm->query(Model::USER);
 
-        $user = $queryUser->findByLogin($login);
+        $this->user = $queryUser->findByLogin($login);
 
         $domain = $this->builder->components()->auth()->domain();
 
@@ -119,26 +126,26 @@ class PDO extends \OAuth2\Storage\Pdo
 
         $passwordHash = $passwordProvider->hash($password);
 
-        if (!$user)
+        if (!$this->user)
         {
-            $user = $orm->createEntity(Model::USER);
+            $this->user = $orm->createEntity(Model::USER);
         }
 
         if ($firstName)
         {
-            $user->name = $firstName;
+            $this->user->name = $firstName;
         }
 
         if ($lastName)
         {
-            $user->lastName = $lastName;
+            $this->user->lastName = $lastName;
         }
 
-        $user->passwordHash = $passwordHash;
+        $this->user->passwordHash = $passwordHash;
 
-        $user->save();
+        $this->user->save();
 
-        return $user->id() > 0;
+        return $this->user->id() > 0;
     }
 
 }
