@@ -10,9 +10,10 @@ return [
         'type'      => 'group',
         'resolvers' => [
 
-            'cp'   => [
+            'cp' => [
                 'type'     => 'prefix',
                 'path'     => 'cp',
+                'host'     => '[^api.]',
                 'defaults' => [
                     'bundle' => 'cp'
                 ],
@@ -22,7 +23,7 @@ return [
                 ]
             ],
 
-            'api'  => [
+            'api' => [
                 'type'     => 'prefix',
                 'host'     => 'api.*',
                 'defaults' => [
@@ -37,6 +38,7 @@ return [
             'api2' => [
                 'type'     => 'prefix',
                 'path'     => 'api/',
+                'host'     => '[^api.]',
                 'defaults' => [
                     'bundle' => 'api'
                 ],
@@ -46,8 +48,9 @@ return [
                 ]
             ],
 
-            'app'  => [
+            'app' => [
                 'type'     => 'prefix',
+                'host'     => '[^api.]',
                 'defaults' => [
                     'bundle' => 'app'
                 ],
