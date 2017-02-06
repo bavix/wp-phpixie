@@ -99,7 +99,6 @@ class HTTPProcessor extends HttpBuilder
         {
             $process = [
                 'error'             => $this->error,
-                'message'           => $throwable->getMessage(),
                 'error_description' => $throwable->getMessage(),
             ];
         }
