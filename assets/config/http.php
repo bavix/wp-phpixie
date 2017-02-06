@@ -13,7 +13,7 @@ return [
             'cp' => [
                 'type'     => 'prefix',
                 'path'     => 'cp',
-                'host'     => '(^api\.)',
+                'host'     => '[^api.]',
                 'defaults' => [
                     'bundle' => 'cp'
                 ],
@@ -38,7 +38,7 @@ return [
             'api2' => [
                 'type'     => 'prefix',
                 'path'     => 'api/',
-                'host'     => '(^api\.)',
+                'host'     => '[^api.]',
                 'defaults' => [
                     'bundle' => 'api'
                 ],
@@ -50,7 +50,7 @@ return [
 
             'app' => [
                 'type'     => 'prefix',
-                'host'     => '(^api\.)',
+                'host'     => '[^api.]',
                 'defaults' => [
                     'bundle' => 'app'
                 ],
