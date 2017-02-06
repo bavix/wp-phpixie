@@ -1,16 +1,16 @@
 <?php
 
-return array(
-    'migrations' => array(
-        'default' => array(
+return [
+    'migrations' => [
+        'default' => [
             'connection' => 'default',
             'path'       => 'migrations'
-        )
-    ),
-    'seeds'      => array(
-        'default' => array(
+        ]
+    ],
+    'seeds'      => [
+        'default' => [
             'connection' => 'default',
             'path'       => 'seeds'
-        )
-    )
-);
+        ]
+    ]
+];

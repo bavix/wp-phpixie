@@ -1,7 +1,7 @@
 <?php
 
-return array(
-    'compiler' => array(
+return [
+    'compiler' => [
         'cacheDirectory' => '/cache/haml/'
-    )
-);
+    ]
+];

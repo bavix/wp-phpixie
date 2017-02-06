@@ -1,67 +1,67 @@
 <?php
 
-return array(
+return [
 
-    'facebook' => array(
+    'facebook' => [
         'type'       => 'facebook',
         'appId'      => '',
         'appSecret'  => '',
-        'scope'      => array(
+        'scope'      => [
             'public_profile',
             'user_friends',
             'email',
-        ),
+        ],
         'apiVersion' => '2.8'
-    ),
+    ],
 
-    'twitter' => array(
+    'twitter' => [
         'type'           => 'twitter',
         'consumerKey'    => '',
         'consumerSecret' => ''
-    ),
+    ],
 
-    'google' => array(
+    'google' => [
         'type'      => 'google',
         'appId'     => '',
         'appSecret' => '',
-        'scope'     => array(
+        'scope'     => [
             'profile',
             'email'
-        )
-    ),
+        ]
+    ],
 
-    'vk' => array(
+    'vk' => [
         'type'      => 'vk',
         'appId'     => '',
         'appSecret' => '',
-        'scope'     => array(
+        'scope'     => [
             'email'
-        ),
-    ),
+        ],
+    ],
 
-    'instagram' => array(
+    'instagram' => [
         'type'      => 'instagram',
         'appId'     => '',
         'appSecret' => '',
-        'scope'     => array(
+        'scope'     => [
             'basic',
             'public_content'
-        ),
-    ),
+        ],
+    ],
 
-    'github' => array(
+    'github' => [
         'type'      => 'github',
         'appId'     => '',
         'appSecret' => '',
-        'scope'     => array(
+        'scope'     => [
             'user', 'gist', 'user:email'
-        )
-    ),
+        ]
+    ],
 
-    'dropbox' => array(
+    'dropbox' => [
         'type'      => 'dropbox',
         'appId'     => '',
         'appSecret' => '',
-    ),
+    ],
 
-);
+];

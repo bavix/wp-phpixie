@@ -128,7 +128,8 @@ class PDO extends \OAuth2\Storage\Pdo
 
         if (!$this->user)
         {
-            $this->user = $orm->createEntity(Model::USER);
+            $this->user        = $orm->createEntity(Model::USER);
+            $this->user->login = $login;
         }
 
         if ($firstName)
