@@ -27,12 +27,12 @@ class Wheel extends SOWProtected
             throw new \InvalidArgumentException('Brand ID not found');
         }
 
-        $collectionId = $request->data()->getRequired('collectionId');
+        $collectionId = $request->data()->get('collectionId');
 
-        if (empty($collectionId) || !is_numeric($collectionId))
-        {
-            throw new \InvalidArgumentException('Collection ID not found');
-        }
+//        if (empty($collectionId) || !is_numeric($collectionId))
+//        {
+//            throw new \InvalidArgumentException('Collection ID not found');
+//        }
 
         $name = $request->data()->getRequired('name');
 
@@ -49,6 +49,7 @@ class Wheel extends SOWProtected
          * @var \PHPixie\ORM\Wrappers\Type\Database\Query $wheel
          */
         $wheel = $orm->query(Model::WHEEL);
+        $wheel->where('brandId', $brandId);
         $wheel->where('collectionId', $collectionId);
         $wheel->where('name', $name);
 
