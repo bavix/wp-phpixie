@@ -33,6 +33,8 @@ class Auth extends AuthProcessor
      * @apiName    Test
      * @apiGroup   Auth
      *
+     * @apiPermission client user
+     *
      * @apiHeader  Authorization Authorization Basic {access_token}
      *
      * @apiVersion 0.0.1
@@ -86,6 +88,8 @@ class Auth extends AuthProcessor
      * @apiName    Register
      * @apiGroup   Auth
      *
+     * @apiPermission client
+     *
      * @apiParam   grant_type value client_credentials
      * @apiParam   username login
      * @apiParam   email email
@@ -103,7 +107,7 @@ class Auth extends AuthProcessor
      *                    }
      *
      * @apiErrorExample Error-Response:
-     *                  HTTP/1.1 403 Bad Request
+     *                  HTTP/1.1 400 Bad Request
      *                  {
      *                      "message": "The username is empty"
      *                  }
@@ -193,11 +197,33 @@ class Auth extends AuthProcessor
      * @apiName    Token
      * @apiGroup   Auth
      *
+     * @apiPermission none
+     *
      * @apiParam   grant_type value password OR client_credentials
      * @apiParam   username LOGIN
      * @apiParam   password PASSWORD
      *
      * @apiHeader  Authorization Authorization Basic {access_token}
+     *
+     * @apiSuccessExample Success-Response:
+     *                    HTTP/1.1 200 OK
+     *                    Content-Type: application/json;charset=UTF-8
+     *                    Cache-Control: no-store
+     *                    Pragma: no-cache
+     *                    {
+     *                      "access_token": "2YotnFZFEjr1zCsicMWpAA",
+     *                      "token_type": "example",
+     *                      "expires_in": 3600,
+     *                      "refresh_token": "tGzv3JOkF0XG5Qx2TlKWIA",
+     *                      "example_parameter": "example_value"
+     *                    }
+     *
+     * @apiErrorExample Error-Response:
+     *                  HTTP/1.1 400 Bad Request
+     *                  {
+     *                      "error": "invalid_client",
+     *                      "error_description": "The client credentials are invalid"
+     *                  }
      *
      * @apiVersion 0.0.1
      *
