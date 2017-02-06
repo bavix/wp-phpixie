@@ -7,7 +7,7 @@ return array(
         'sow' => array(
 
             'type' => 'prefix',
-            'path' => '/sow',
+            'path' => 'sow',
 
             'defaults' => array(
                 'processor' => 'sow',
@@ -52,7 +52,7 @@ return array(
         'soc' => array(
 
             'type' => 'prefix',
-            'path' => '/soc',
+            'path' => 'soc',
 
             'defaults' => array(
                 'processor' => 'soc',
@@ -97,7 +97,7 @@ return array(
         'sou' => array(
 
             'type' => 'prefix',
-            'path' => '/sou',
+            'path' => 'sou',
 
             'defaults' => array(
                 'processor' => 'sou',
@@ -141,7 +141,7 @@ return array(
 
         'auth' => [
             'type'     => 'pattern',
-            'path'     => '/auth/<action>',
+            'path'     => 'auth/<action>',
             'defaults' => [
                 'processor'     => 'auth',
                 //                'nextProcessor' => 'auth',
@@ -151,17 +151,17 @@ return array(
 
         'nextItem' => array(
             'type' => 'pattern',
-            'path' => '/<nextProcessor>/<id>/<action>/<nextId>'
+            'path' => '<nextProcessor>/<id>/<action>/<nextId>'
         ),
 
         'nextAction' => array(
             'type' => 'pattern',
-            'path' => '/<nextProcessor>/<id>/<action>'
+            'path' => '<nextProcessor>/<id>/<action>'
         ),
 
         'item' => array(
             'type'     => 'pattern',
-            'path'     => '/<nextProcessor>/<id>',
+            'path'     => '<nextProcessor>/<id>',
             'defaults' => array(
                 'action' => 'item'
             )
@@ -169,7 +169,7 @@ return array(
 
         'processor' => array(
             'type'     => 'pattern',
-            'path'     => '/<nextProcessor>',
+            'path'     => '<nextProcessor>',
             'defaults' => array(
                 'action' => 'default'
             )
