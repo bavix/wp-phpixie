@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/config/http.php" afterPath="$PROJECT_DIR$/assets/config/http.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/settings/api/add.js" afterPath="$PROJECT_DIR$/web/js/cp/settings/api/add.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/soc/brand/add.js" afterPath="$PROJECT_DIR$/web/js/cp/soc/brand/add.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/soc/brand/edit.js" afterPath="$PROJECT_DIR$/web/js/cp/soc/brand/edit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/soc/brand/list.js" afterPath="$PROJECT_DIR$/web/js/cp/soc/brand/list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/soc/dealer/add.js" afterPath="$PROJECT_DIR$/web/js/cp/soc/dealer/add.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/soc/dealer/list.js" afterPath="$PROJECT_DIR$/web/js/cp/soc/dealer/list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/soc/heading/add.js" afterPath="$PROJECT_DIR$/web/js/cp/soc/heading/add.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/soc/heading/list.js" afterPath="$PROJECT_DIR$/web/js/cp/soc/heading/list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/sow/collection/add.js" afterPath="$PROJECT_DIR$/web/js/cp/sow/collection/add.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/sow/wheel/add.js" afterPath="$PROJECT_DIR$/web/js/cp/sow/wheel/add.js" />
     </list>
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,8 +38,8 @@
       <file leaf-file-name="http.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/config/http.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="43" column="18" lean-forward="true" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+            <state relative-caret-position="884">
+              <caret line="52" column="41" lean-forward="true" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -1210,12 +1199,12 @@
       <workItem from="1486236527792" duration="575000" />
       <workItem from="1486237646503" duration="11655000" />
       <workItem from="1486373023278" duration="1596000" />
-      <workItem from="1486375941765" duration="7011000" />
+      <workItem from="1486375941765" duration="7282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="825249000" />
+    <option name="totallyTimeSpent" value="825520000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -1713,8 +1702,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/config/http.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="43" column="18" lean-forward="true" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+        <state relative-caret-position="884">
+          <caret line="52" column="41" lean-forward="true" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
           <folding />
         </state>
       </provider>
