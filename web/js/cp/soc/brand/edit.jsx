@@ -213,7 +213,7 @@ $(function () {
                 }
             },
             processResults: function (data) {
-                if (typeof data.message !== "undefined") {
+                if (typeof data.error_description !== "undefined") {
                     return {
                         results: {}
                     };
@@ -244,7 +244,7 @@ $(function () {
                 }
             },
             processResults: function (data) {
-                if (typeof data.message !== "undefined") {
+                if (typeof data.error_description !== "undefined") {
                     return {
                         results: {}
                     };
@@ -385,7 +385,7 @@ $(function () {
                 body: form
             }).then(response).then(tableHeadingInit).catch(() => undefined);
         }
-        
+
     });
 
     $formDealer.submit(function (event) {

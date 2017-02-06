@@ -22,7 +22,7 @@ $(function () {
         }).then(function (json) {
 
             location.href = '/cp/soc/dealer/edit/' + json.id;
-
+            
         }).catch(function (error) {
             let $message = $self.find('.alert');
 
@@ -31,7 +31,7 @@ $(function () {
                 $message = $self.find('.alert');
             }
 
-            error.response.json().then((json) => $message.addClass('alert-danger').text(json.message));
+            error.response.json().then((json) => $message.addClass('alert-danger').text(json.error_description));
         });
 
     });

@@ -33,7 +33,7 @@ $(function () {
             }
 
             error.response.json().then(function (json) {
-                return $message.addClass('alert-danger').text(json.message);
+                return $message.addClass('alert-danger').text(json.error_description);
             });
         });
     });

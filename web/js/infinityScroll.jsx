@@ -38,23 +38,23 @@ class InfinityScroll {
 
     }
 
-    hasPageYOffset () {
+    hasPageYOffset() {
         return typeof this.window.pageYOffset !== "undefined";
     }
 
-    pageYOffset () {
+    pageYOffset() {
         return this.window.pageYOffset;
     }
 
-    scrollTop () {
+    scrollTop() {
         return (this.document.documentElement || this.document.body.parentNode || this.document.body).scrollTop;
     }
 
-    top () {
+    top() {
         return ( this.hasPageYOffset() ? this.pageYOffset() : this.scrollTop() );
     }
 
-    documentHeight () {
+    documentHeight() {
         const body = this.document.body;
         const html = this.document.documentElement;
 
@@ -64,15 +64,15 @@ class InfinityScroll {
         );
     };
 
-    innerHeight () {
+    innerHeight() {
         return this.window.innerHeight;
     }
 
-    scrollPercent () {
+    scrollPercent() {
         return this.top() / this.maxTop();
     }
 
-    maxTop () {
+    maxTop() {
         return this.documentHeight() - this.innerHeight();
     }
 

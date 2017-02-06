@@ -22,7 +22,7 @@ class HeadingRows extends React.Component {
             <td>{model.parentId}</td>
             <td>{model.title}</td>
             <td className="entry-date" data-time={ model.updatedAt }></td>
-            <td> </td>
+            <td></td>
         </tr>;
     }
 

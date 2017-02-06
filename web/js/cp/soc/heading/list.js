@@ -76,11 +76,7 @@ var HeadingRows = function (_React$Component) {
                     model.title
                 ),
                 React.createElement("td", { className: "entry-date", "data-time": model.updatedAt }),
-                React.createElement(
-                    "td",
-                    null,
-                    " "
-                )
+                React.createElement("td", null)
             );
         }
     }, {

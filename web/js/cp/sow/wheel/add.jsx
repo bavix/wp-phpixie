@@ -31,7 +31,7 @@ $(function () {
                 $message = $self.find('.alert');
             }
 
-            error.response.json().then((json) => $message.addClass('alert-danger').text(json.message));
+            error.response.json().then((json) => $message.addClass('alert-danger').text(json.error_description));
         });
 
     });
@@ -51,7 +51,7 @@ $(function () {
                 }
             },
             processResults: function (data) {
-                if (typeof data.message !== "undefined") {
+                if (typeof data.error_description !== "undefined") {
                     return {
                         results: {}
                     };
@@ -84,7 +84,7 @@ $(function () {
                     }
                 },
                 processResults: function (data) {
-                    if (typeof data.message !== "undefined") {
+                    if (typeof data.error_description !== "undefined") {
                         return {
                             results: {}
                         };

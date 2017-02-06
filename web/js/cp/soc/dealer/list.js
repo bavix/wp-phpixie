@@ -76,11 +76,7 @@ var DealerRows = function (_React$Component) {
                     model.name
                 ),
                 React.createElement("td", { className: "entry-date", "data-time": model.updatedAt }),
-                React.createElement(
-                    "td",
-                    null,
-                    " "
-                )
+                React.createElement("td", null)
             );
         }
     }, {
