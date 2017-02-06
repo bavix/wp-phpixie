@@ -109,7 +109,8 @@ class Auth extends AuthProcessor
      * @apiErrorExample Error-Response:
      *                  HTTP/1.1 400 Bad Request
      *                  {
-     *                      "message": "The username is empty"
+     *                      "error": "username",
+     *                      "error_description": "The username is empty"
      *                  }
      *
      * @apiVersion 0.0.2
@@ -121,6 +122,7 @@ class Auth extends AuthProcessor
 
         if (empty($username))
         {
+            $this->error = 'username';
             throw new \InvalidArgumentException('The username is empty');
         }
 
@@ -128,11 +130,13 @@ class Auth extends AuthProcessor
 
         if (empty($email))
         {
+            $this->error = 'email';
             throw new \InvalidArgumentException('The email is empty');
         }
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL))
         {
+            $this->error = 'email';
             throw new \InvalidArgumentException('Not valid email');
         }
 
@@ -140,11 +144,13 @@ class Auth extends AuthProcessor
 
         if (empty($password))
         {
+            $this->error = 'password';
             throw new \InvalidArgumentException('The password is empty');
         }
 
         if (mb_strlen($password) < 6)
         {
+            $this->error = 'password';
             throw new \InvalidArgumentException('The password is less than 6 symbols');
         }
 
@@ -159,13 +165,15 @@ class Auth extends AuthProcessor
 
         if ($this->user)
         {
-            throw new \InvalidArgumentException('login is already used');
+            $this->error = 'username';
+            throw new \InvalidArgumentException('username is already used');
         }
 
         $this->user = $queryUser->findByEmail($username);
 
         if ($this->user)
         {
+            $this->error = 'email';
             throw new \InvalidArgumentException('email is already used');
         }
 
