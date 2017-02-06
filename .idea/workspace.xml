@@ -38,8 +38,8 @@
       <file leaf-file-name="http.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/config/http.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="52" column="41" lean-forward="true" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+            <state relative-caret-position="-107">
+              <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -146,8 +146,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sow</find>
-      <find>app</find>
       <find>url('</find>
       <find>FileAPI</find>
       <find>elements</find>
@@ -176,9 +174,10 @@
       <find>json.message</find>
       <find>.message</find>
       <find>collection</find>
+      <find>'^[</find>
+      <find>'^[api.]'</find>
     </findStrings>
     <replaceStrings>
-      <replace>return static</replace>
       <replace>get('fields')</replace>
       <replace>.wbs-select2</replace>
       <replace>Title</replace>
@@ -208,6 +207,7 @@
       <replace>json.error_description</replace>
       <replace>.error_description</replace>
       <replace>]</replace>
+      <replace>'[^api.]'</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\OpenServer\domains\wbs-cms\bundles</dir>
@@ -1199,12 +1199,12 @@
       <workItem from="1486236527792" duration="575000" />
       <workItem from="1486237646503" duration="11655000" />
       <workItem from="1486373023278" duration="1596000" />
-      <workItem from="1486375941765" duration="7282000" />
+      <workItem from="1486375941765" duration="7456000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="825520000" />
+    <option name="totallyTimeSpent" value="825694000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -1702,8 +1702,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/config/http.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="41" lean-forward="true" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+        <state relative-caret-position="-107">
+          <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
           <folding />
         </state>
       </provider>
