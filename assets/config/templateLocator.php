@@ -1,7 +1,7 @@
 <?php
 
-return array(
+return [
     'type'             => 'directory',
     'directory'        => 'view',
     'defaultExtension' => 'haml'
-);
+];

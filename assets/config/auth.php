@@ -1,54 +1,54 @@
 <?php
 
-return array(
-    'domains' => array(
+return [
+    'domains' => [
 
-        'default' => array(
+        'default' => [
 
             // using the 'user' repository from the 'app' bundle
             'repository' => 'app.user',
-            'providers'  => array(
+            'providers'  => [
 
                 // include session support
-                'session'  => array(
+                'session'  => [
                     'type' => 'http.session'
-                ),
+                ],
 
                 // password login support
-                'social'   => array(
+                'social'   => [
                     'type'             => 'social.oauth',
-                    'persistProviders' => array('session')
-                ),
+                    'persistProviders' => ['session']
+                ],
 
-                // include persistent cookies (remember me)
-                'cookie'   => array(
+                // include persistent cookies (remember me]
+                'cookie'   => [
                     'type'             => 'http.cookie',
 
                     // when a cookie is used to login
                     // persist login using session too
-                    'persistProviders' => array('session'),
+                    'persistProviders' => ['session'],
 
                     // token storage
-                    'tokens'           => array(
-                        'storage' => array(
+                    'tokens'           => [
+                        'storage' => [
                             'type'            => 'database',
                             'table'           => 'tokens',
                             'defaultLifetime' => 3600 * 24 * 14 // two weeks
-                        )
-                    )
-                ),
+                        ]
+                    ]
+                ],
 
                 // password login support
-                'password' => array(
+                'password' => [
                     'type'             => 'login.password',
 
                     // remember the user in session
                     // note that we did not add 'cookies' to this array
                     // because we don't want every login to be persistent
-                    'persistProviders' => array('session')
-                )
-            )
-        )
+                    'persistProviders' => ['session']
+                ]
+            ]
+        ]
 
-    )
-);
+    ]
+];

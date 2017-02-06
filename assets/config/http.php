@@ -1,68 +1,73 @@
 <?php
 
-return array(
+return [
 
-    'translator' => array(
+    'translator' => [
         'basePath' => '/'
-    ),
+    ],
 
-    'resolver' => array(
+    'resolver' => [
         'type'      => 'group',
-        'resolvers' => array(
-            'cp'   => array(
+        'resolvers' => [
+
+            'cp'   => [
                 'type'     => 'prefix',
                 'path'     => 'cp',
-                'defaults' => array(
+                'defaults' => [
                     'bundle' => 'cp'
-                ),
-                'resolver' => array(
+                ],
+                'resolver' => [
                     'type' => 'mount',
                     'name' => 'cp'
-                )
-            ),
-            'api'  => array(
+                ]
+            ],
+
+            'api'  => [
                 'type'     => 'prefix',
                 'host'     => 'api.*',
-                'defaults' => array(
+                'defaults' => [
                     'bundle' => 'api'
-                ),
-                'resolver' => array(
+                ],
+                'resolver' => [
                     'type' => 'mount',
                     'name' => 'api'
-                )
-            ),
-            'api2' => array(
+                ]
+            ],
+
+            'api2' => [
                 'type'     => 'prefix',
                 'path'     => 'api/',
-                'defaults' => array(
+                'defaults' => [
                     'bundle' => 'api'
-                ),
-                'resolver' => array(
+                ],
+                'resolver' => [
                     'type' => 'mount',
                     'name' => 'api'
-                )
-            ),
-            'app'  => array(
+                ]
+            ],
+
+            'app'  => [
                 'type'     => 'prefix',
-                'defaults' => array(
+                'defaults' => [
                     'bundle' => 'app'
-                ),
-                'resolver' => array(
+                ],
+                'resolver' => [
                     'type' => 'mount',
                     'name' => 'app'
-                )
-            ),
-        )
-    ),
+                ]
+            ],
 
-    'exceptionResponse' => array(
+        ]
+    ],
+
+    'exceptionResponse' => [
         'template' => 'framework:http/exception'
         //'app:error/404'
-    ),
+    ],
 
-    'notFoundResponse' => array(
+    'notFoundResponse' => [
         'template' => //'framework:http/notFound'
             'app:error/404'
-    )
+    ]
 
-);
+];
