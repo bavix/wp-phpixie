@@ -9,7 +9,7 @@ return array(
     'resolver' => array(
         'type'      => 'group',
         'resolvers' => array(
-            'cp'  => array(
+            'cp'   => array(
                 'type'     => 'prefix',
                 'path'     => 'cp',
                 'defaults' => array(
@@ -20,9 +20,9 @@ return array(
                     'name' => 'cp'
                 )
             ),
-            'api' => array(
+            'api'  => array(
                 'type'     => 'prefix',
-                'path'     => 'api',
+                'host'     => 'api.*',
                 'defaults' => array(
                     'bundle' => 'api'
                 ),
@@ -31,7 +31,18 @@ return array(
                     'name' => 'api'
                 )
             ),
-            'app' => array(
+            'api2' => array(
+                'type'     => 'prefix',
+                'path'     => 'api/',
+                'defaults' => array(
+                    'bundle' => 'api'
+                ),
+                'resolver' => array(
+                    'type' => 'mount',
+                    'name' => 'api'
+                )
+            ),
+            'app'  => array(
                 'type'     => 'prefix',
                 'defaults' => array(
                     'bundle' => 'app'
