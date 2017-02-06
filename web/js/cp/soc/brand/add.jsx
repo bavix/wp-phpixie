@@ -30,8 +30,8 @@ $(function () {
                 $self.find('div:first-child').prepend('<div class="alert"></div>');
                 $message = $self.find('.alert');
             }
-
-            error.response.json().then((json) => $message.addClass('alert-danger').text(json.message));
+            
+            error.response.json().then((json) => $message.addClass('alert-danger').text(json.error_description));
         });
 
     });

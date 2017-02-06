@@ -33,7 +33,7 @@ $(function () {
             }
 
             error.response.json().then(function (json) {
-                return $message.addClass('alert-danger').text(json.message);
+                return $message.addClass('alert-danger').text(json.error_description);
             });
         });
     });
@@ -53,7 +53,7 @@ $(function () {
                 };
             },
             processResults: function processResults(data) {
-                if (typeof data.message !== "undefined") {
+                if (typeof data.error_description !== "undefined") {
                     return {
                         results: {}
                     };

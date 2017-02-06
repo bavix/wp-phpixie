@@ -22,7 +22,7 @@ class DealerRows extends React.Component {
             <td>{model.parentId}</td>
             <td>{model.name}</td>
             <td className="entry-date" data-time={ model.updatedAt }></td>
-            <td> </td>
+            <td></td>
         </tr>;
     }
 

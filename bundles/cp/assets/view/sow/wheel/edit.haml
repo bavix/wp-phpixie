@@ -13,10 +13,12 @@
           %label.control-label(for="brandName")
             Brand
           %input#brandName.form-control.text-uppercase(type="text" name="brandId" value="#{$wheel->brand()->name}" )
-        .form-group.form-group-lg
-          %label.control-label(for="collectionName")
-            Collection
-          %input#collectionName.form-control.text-uppercase(type="text" name="collectionName" value="#{$wheel->collection()->name}" )
+        - $collection = $wheel->collection()
+        - if ($collection)
+          .form-group.form-group-lg
+            %label.control-label(for="collectionName")
+              Collection
+            %input#collectionName.form-control.text-uppercase(type="text" name="collectionName" value="#{$collection->name}" )
         .form-group.form-group-lg
           %label.control-label(for="Name")
             Name

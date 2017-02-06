@@ -31,7 +31,7 @@ $(function () {
                 $message = $self.find('.alert');
             }
 
-            error.response.json().then((json) => $message.addClass('alert-danger').text(json.message));
+            error.response.json().then((json) => $message.addClass('alert-danger').text(json.error_description));
         });
 
     });

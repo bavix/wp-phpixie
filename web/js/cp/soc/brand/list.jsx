@@ -19,12 +19,12 @@ $(function () {
                 }
             },
             processResults: function (data) {
-                if (typeof data.message !== "undefined") {
+                if (typeof data.error_description !== "undefined") {
                     return {
                         results: {}
                     };
                 }
-
+                
                 return {
                     results: $.map(data, function (obj) {
                         return {id: obj.id, text: obj.name};

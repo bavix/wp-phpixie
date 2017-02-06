@@ -21,7 +21,7 @@ $(function () {
                 };
             },
             processResults: function processResults(data) {
-                if (typeof data.message !== "undefined") {
+                if (typeof data.error_description !== "undefined") {
                     return {
                         results: {}
                     };
