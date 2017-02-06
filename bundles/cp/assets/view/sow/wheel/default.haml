@@ -24,7 +24,11 @@
             %tr(id="brand-#{$wheel->id()}")
               %td = $wheel->active ? 'Yes' : 'No'
               %td = $wheel->brand()->name
-              %td = $wheel->collection()->name
+              - $collection = $wheel->collection()
+              - if ($collection)
+                %td = $collection->name
+              - else
+                %td -
               %td = $wheel->name
               %td = $wheel->isCustom ? 'Yes' : 'No'
               %td = $wheel->isRetired ? 'Yes' : 'No'
