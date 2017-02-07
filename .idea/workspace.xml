@@ -100,9 +100,11 @@
       <file leaf-file-name="Auth.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Auth.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="91" column="6" lean-forward="false" selection-start-line="91" selection-start-column="6" selection-end-line="91" selection-end-column="6" />
-              <folding />
+            <state relative-caret-position="72">
+              <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+              <folding>
+                <element signature="e#46#71#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,7 +142,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>FileAPI</find>
       <find>elements</find>
       <find>upload-link__txt</find>
       <find>upload</find>
@@ -170,6 +171,7 @@
       <find>'^[</find>
       <find>'^[api.]'</find>
       <find>Basic</find>
+      <find>register</find>
     </findStrings>
     <replaceStrings>
       <replace>get('fields')</replace>
@@ -1181,12 +1183,12 @@
       <workItem from="1486373023278" duration="1596000" />
       <workItem from="1486375941765" duration="7456000" />
       <workItem from="1486392134490" duration="1549000" />
-      <workItem from="1486487849939" duration="2686000" />
+      <workItem from="1486487849939" duration="3141000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="829929000" />
+    <option name="totallyTimeSpent" value="830384000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1606,9 +1608,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Auth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="91" column="6" lean-forward="false" selection-start-line="91" selection-start-column="6" selection-end-line="91" selection-end-column="6" />
-          <folding />
+        <state relative-caret-position="72">
+          <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+          <folding>
+            <element signature="e#46#71#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
