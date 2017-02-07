@@ -125,6 +125,12 @@ class Auth extends AuthProcessor
             throw new \InvalidArgumentException('The username is empty');
         }
 
+        if (preg_match('~\W~', $username))
+        {
+            $this->error = 'username';
+            throw new \InvalidArgumentException('Username has to contain only a-z, 0-9, _');
+        }
+
         $email = $request->data()->getRequired('email');
 
         if (empty($email))
