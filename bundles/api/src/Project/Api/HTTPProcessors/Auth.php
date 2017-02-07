@@ -29,15 +29,15 @@ class Auth extends AuthProcessor
     }
 
     /**
-     * @api        {post} /auth/resource Test Request
-     * @apiName    Test
-     * @apiGroup   Auth
+     * @api           {post} /auth/resource Test Request
+     * @apiName       Test
+     * @apiGroup      Auth
      *
      * @apiPermission client user
      *
-     * @apiHeader  Authorization Authorization Basic {access_token}
+     * @apiHeader     Authorization Authorization Bearer {access_token}
      *
-     * @apiVersion 0.0.1
+     * @apiVersion    0.0.1
      *
      * @return array
      */
@@ -84,18 +84,17 @@ class Auth extends AuthProcessor
     }
 
     /**
-     * @api        {post} /auth/register Register
-     * @apiName    Register
-     * @apiGroup   Auth
+     * @api               {post} /auth/register Register
+     * @apiName           Register
+     * @apiGroup          Auth
      *
-     * @apiPermission client
+     * @apiPermission     client
      *
-     * @apiParam   grant_type value client_credentials
-     * @apiParam   username login
-     * @apiParam   email email
-     * @apiParam   password password
+     * @apiParam          username login
+     * @apiParam          email email
+     * @apiParam          password password
      *
-     * @apiHeader  Authorization Authorization Basic {access_token}
+     * @apiHeader         Authorization Authorization Bearer {access_token}
      *
      * @apiSuccessExample Success-Response:
      *                    HTTP/1.1 200 OK
@@ -106,14 +105,14 @@ class Auth extends AuthProcessor
      *                      "roleId": "1"
      *                    }
      *
-     * @apiErrorExample Error-Response:
+     * @apiErrorExample   Error-Response:
      *                  HTTP/1.1 400 Bad Request
      *                  {
      *                      "error": "username",
      *                      "error_description": "The username is empty"
      *                  }
      *
-     * @apiVersion 0.0.2
+     * @apiVersion        0.0.2
      */
     public function registerPostAction(Request $request)
     {
@@ -188,10 +187,10 @@ class Auth extends AuthProcessor
 
         $passwordHash = $passwordProvider->hash($password);
 
-        $this->user->login    = $username;
-        $this->user->email    = $email;
-        $this->user->password = $passwordHash;
-        $this->user->roleId   = Role::Register;
+        $this->user->login        = $username;
+        $this->user->email        = $email;
+        $this->user->passwordHash = $passwordHash;
+        $this->user->roleId       = Role::Register;
 
         $this->user->save();
 
@@ -201,17 +200,17 @@ class Auth extends AuthProcessor
     /**
      * http -a testC:testS -f POST wbs-cms/api/auth/token grant_type=password username=$USER$ password=$PASSWORD$
      *
-     * @api        {post} /auth/token Get Token
-     * @apiName    Token
-     * @apiGroup   Auth
+     * @api               {post} /auth/token Get Token
+     * @apiName           Token
+     * @apiGroup          Auth
      *
-     * @apiPermission none
+     * @apiPermission     none
      *
-     * @apiParam   grant_type value password OR client_credentials
-     * @apiParam   username LOGIN
-     * @apiParam   password PASSWORD
+     * @apiParam          grant_type value password OR client_credentials
+     * @apiParam          username LOGIN
+     * @apiParam          password PASSWORD
      *
-     * @apiHeader  Authorization Authorization Basic {access_token}
+     * @apiHeader         Authorization Authorization Bearer {access_token}
      *
      * @apiSuccessExample Success-Response:
      *                    HTTP/1.1 200 OK
@@ -226,14 +225,14 @@ class Auth extends AuthProcessor
      *                      "example_parameter": "example_value"
      *                    }
      *
-     * @apiErrorExample Error-Response:
+     * @apiErrorExample   Error-Response:
      *                  HTTP/1.1 400 Bad Request
      *                  {
      *                      "error": "invalid_client",
      *                      "error_description": "The client credentials are invalid"
      *                  }
      *
-     * @apiVersion 0.0.1
+     * @apiVersion        0.0.1
      *
      * @return mixed|string
      * @throws \OAuth2\InvalidArgumentException
