@@ -35,7 +35,7 @@ class Auth extends AuthProcessor
      *
      * @apiPermission client user
      *
-     * @apiHeader  Authorization Authorization Basic {access_token}
+     * @apiHeader  Authorization Authorization Bearer {access_token}
      *
      * @apiVersion 0.0.1
      *
@@ -95,7 +95,7 @@ class Auth extends AuthProcessor
      * @apiParam   email email
      * @apiParam   password password
      *
-     * @apiHeader  Authorization Authorization Basic {access_token}
+     * @apiHeader  Authorization Authorization Bearer {access_token}
      *
      * @apiSuccessExample Success-Response:
      *                    HTTP/1.1 200 OK
@@ -211,7 +211,7 @@ class Auth extends AuthProcessor
      * @apiParam   username LOGIN
      * @apiParam   password PASSWORD
      *
-     * @apiHeader  Authorization Authorization Basic {access_token}
+     * @apiHeader  Authorization Authorization Bearer {access_token}
      *
      * @apiSuccessExample Success-Response:
      *                    HTTP/1.1 200 OK
