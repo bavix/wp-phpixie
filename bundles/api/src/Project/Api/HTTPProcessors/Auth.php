@@ -90,7 +90,6 @@ class Auth extends AuthProcessor
      *
      * @apiPermission client
      *
-     * @apiParam   grant_type value client_credentials
      * @apiParam   username login
      * @apiParam   email email
      * @apiParam   password password
