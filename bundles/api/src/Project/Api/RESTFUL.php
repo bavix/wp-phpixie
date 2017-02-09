@@ -13,6 +13,11 @@ class RESTFUL
     protected static $status;
 
     /**
+     * @var string
+     */
+    protected static $error;
+
+    /**
      * @param int $default
      *
      * @return int|string
@@ -22,6 +27,22 @@ class RESTFUL
         static::setDefaultStatus($default);
 
         return static::$status;
+    }
+
+    /**
+     * @return int|string
+     */
+    public static function getError()
+    {
+        return static::$error;
+    }
+
+    /**
+     * @param  string $error
+     */
+    public static function setError($error)
+    {
+        static::$error = $error;
     }
 
     /**

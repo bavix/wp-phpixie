@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Openbuildings\Swiftmailer\CssInlinerPlugin;
 use PHPixie\HTTP\Request;
 use Project\Cp\HTTPProcessors\Processor\SOUProtected;
+use Project\Extension\Mail;
 use Project\Model;
 use Project\Role;
 
@@ -78,6 +79,11 @@ class Invite extends SOUProtected
             }
             else
             {
+                /**
+                 * @var \Project\Framework\Builder $builder
+                 */
+                $builder = $this->builder->frameworkBuilder();
+
                 $invite = $orm->createEntity(Model::INVITE);
 
                 $invite->email  = $email;
@@ -86,9 +92,9 @@ class Invite extends SOUProtected
                 $userId         = $this->loggedUser()->getRequiredField('id');
                 $invite->userId = $userId;
 
-                $dHelper = $this->builder->frameworkBuilder()->dHelper();
+                $dHelper = $builder->dHelper();
 
-                $invite->token = $dHelper->random(8);
+                $invite->token = $dHelper->str()->random(8);
 
                 $carbon = Carbon::create();
                 $carbon->addDay(3); // add 3 day
@@ -97,21 +103,6 @@ class Invite extends SOUProtected
 
                 if ($invite->save())
                 {
-                    $config = $this->builder->frameworkBuilder()->assets()->configStorage();
-
-                    /**
-                     * @var $mailConfig \PHPixie\Slice\Type\Slice\Editable
-                     */
-                    $mailConfig = $config->slice('mail.invite');
-
-                    $smtp     = $mailConfig->get('smtp');
-                    $username = $mailConfig->get('username');
-                    $password = $mailConfig->get('password');
-
-                    $transport = \Swift_SmtpTransport::newInstance($smtp);
-                    $transport->setUsername($username);
-                    $transport->setPassword($password);
-
                     $logoPath = __DIR_WEB__ . 'svg/wheel-white.png';
                     $logoData = file_get_contents($logoPath);
                     $logoData = 'data:image/png;base64,' . base64_encode($logoData);
@@ -126,17 +117,12 @@ class Invite extends SOUProtected
                         'invite'     => $invite
                     ));
 
-                    $mailMessage = \Swift_Message::newInstance()
-                        ->setFrom([$username => 'Invite Bot'])
-                        ->setTo([$email])
+                    $send = $builder->helper()->mail(Mail::TYPE_INVITE)
+                        ->setFrom('Invite Bot')
+                        ->setTo($email)
                         ->setSubject('Invite from WBS CMS')
-                        ->setBody($template, 'text/html', 'utf-8');
-
-                    $mailer = \Swift_Mailer::newInstance($transport);
-
-                    $mailer->registerPlugin(new CssInlinerPlugin());
-
-                    $send = $mailer->send($mailMessage);
+                        ->setBody($template)
+                        ->send();
 
                     if ($send)
                     {
