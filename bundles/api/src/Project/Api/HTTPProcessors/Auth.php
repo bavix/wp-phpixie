@@ -3,8 +3,11 @@
 namespace Project\Api\HTTPProcessors;
 
 use PHPixie\HTTP\Request;
+use Project\Api\ENUM\REST;
+use Project\Api\RESTFUL;
 use Project\Model;
 use Project\ORM\User\Query;
+use Project\ORM\User\User;
 use Project\Role;
 
 class Auth extends AuthProcessor
@@ -16,6 +19,8 @@ class Auth extends AuthProcessor
     protected $access = [
         'resourcePost',
         'registerPost',
+        'recoveryPasswordPost',
+        'newPasswordPost',
     ];
 
     /**
@@ -121,13 +126,13 @@ class Auth extends AuthProcessor
 
         if (empty($username))
         {
-            $this->error = 'username';
+            RESTFUL::setError('username');
             throw new \InvalidArgumentException('The username is empty');
         }
 
         if (preg_match('~\W~', $username))
         {
-            $this->error = 'username';
+            RESTFUL::setError('username');
             throw new \InvalidArgumentException('Username has to contain only a-z, 0-9, _');
         }
 
@@ -135,13 +140,13 @@ class Auth extends AuthProcessor
 
         if (empty($email))
         {
-            $this->error = 'email';
+            RESTFUL::setError('email');
             throw new \InvalidArgumentException('The email is empty');
         }
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL))
         {
-            $this->error = 'email';
+            RESTFUL::setError('email');
             throw new \InvalidArgumentException('Not valid email');
         }
 
@@ -149,13 +154,13 @@ class Auth extends AuthProcessor
 
         if (empty($password))
         {
-            $this->error = 'password';
+            RESTFUL::setError('password');
             throw new \InvalidArgumentException('The password is empty');
         }
 
         if (mb_strlen($password) < 6)
         {
-            $this->error = 'password';
+            RESTFUL::setError('password');
             throw new \InvalidArgumentException('The password is less than 6 symbols');
         }
 
@@ -170,7 +175,7 @@ class Auth extends AuthProcessor
 
         if ($this->user)
         {
-            $this->error = 'username';
+            RESTFUL::setError('username');
             throw new \InvalidArgumentException('username is already used');
         }
 
@@ -178,7 +183,7 @@ class Auth extends AuthProcessor
 
         if ($this->user)
         {
-            $this->error = 'email';
+            RESTFUL::setError('email');
             throw new \InvalidArgumentException('email is already used');
         }
 
@@ -201,6 +206,183 @@ class Auth extends AuthProcessor
         $this->user->save();
 
         return $this->user->asObject(true);
+    }
+
+    /**
+     * @api               {post} /auth/recovery-password Recovery Password
+     * @apiName           Recovery Password
+     * @apiGroup          Auth
+     *
+     * @apiPermission     none
+     *
+     * @apiParam          email EMAIL
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiSuccessExample Success-Response:
+     *                    HTTP/1.1 200 OK
+     *                    Content-Type: application/json;charset=UTF-8
+     *                    Cache-Control: no-store
+     *                    Pragma: no-cache
+     *                    {
+     *                      "isSend": true
+     *                    }
+     *
+     * @apiErrorExample   Error-Response:
+     *                  HTTP/1.1 400 Bad Request
+     *                  {
+     *                      "isSend": false
+     *                  }
+     *
+     * @apiVersion        0.0.3
+     *
+     * @param Request $request
+     */
+    public function recoveryPasswordPostAction(Request $request)
+    {
+        $email = $request->data()->getRequired('email');
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL))
+        {
+            RESTFUL::setError('email');
+            throw new \InvalidArgumentException('Not valid email');
+        }
+
+        $orm = $this->components->orm();
+
+        /**
+         * @var Query $userQuery
+         */
+        $userQuery = $orm->query(Model::USER);
+
+        /**
+         * @var User $user
+         */
+        $user = $userQuery->findByEmail($email);
+
+        if (!$user)
+        {
+            RESTFUL::setError('user');
+            throw new \InvalidArgumentException('User not found');
+        }
+
+        $isSend = $user->recoveryPassword($this->template) > 0;
+
+        if (!$isSend)
+        {
+            RESTFUL::setStatus(REST::BAD_REQUEST);
+        }
+
+        return [
+            'isSend' => $isSend
+        ];
+    }
+
+    /**
+     * @api               {post} /auth/new-password New Password
+     * @apiName           New Password
+     * @apiGroup          Auth
+     *
+     * @apiPermission     none
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiParam          email EMAIL
+     * @apiParam          code code [from email] use recovery-password
+     * @apiParam          password new Password (user)
+     *
+     * @apiSuccessExample Success-Response:
+     *                    HTTP/1.1 200 OK
+     *                    Content-Type: application/json;charset=UTF-8
+     *                    Cache-Control: no-store
+     *                    Pragma: no-cache
+     *                    {
+     *                      "isUpdate": true
+     *                    }
+     *
+     * @apiErrorExample   Error-Response:
+     *                  HTTP/1.1 400 Bad Request
+     *                  {
+     *                      "error": "password",
+     *                      "error_description": "The password is empty",
+     *                  }
+     *
+     * @apiErrorExample   Error-Response:
+     *                  HTTP/1.1 400 Bad Request
+     *                  {
+     *                      "isUpdate": false
+     *                  }
+     *
+     * @apiVersion        0.0.3
+     *
+     * @param Request $request
+     */
+    public function newPasswordPostAction(Request $request)
+    {
+        $email    = $request->data()->getRequired('email');
+        $code     = $request->data()->getRequired('code');
+        $password = $request->data()->getRequired('password');
+
+        if (empty($password))
+        {
+            RESTFUL::setError('password');
+            throw new \InvalidArgumentException('The password is empty');
+        }
+
+        if (mb_strlen($password) < 6)
+        {
+            RESTFUL::setError('password');
+            throw new \InvalidArgumentException('The password is less than 6 symbols');
+        }
+
+        $orm = $this->components->orm();
+
+        /**
+         * @var $userQuery Query
+         */
+        $userQuery = $orm->query(Model::USER);
+        $user      = $userQuery->findByEmail($email);
+
+        if (!$user)
+        {
+            RESTFUL::setError('user');
+            throw new \InvalidArgumentException('User not found');
+        }
+
+        $recovery = $orm->query(Model::RECOVERY_PASSWORD)
+            ->where('userId', $user->id())
+            ->where('code', $code)
+            ->where('expires', '>=', time())
+            ->findOne();
+
+        if (!$recovery)
+        {
+            RESTFUL::setError('code');
+            throw new \InvalidArgumentException('Recovery code not found');
+        }
+
+        $domain = $this->builder->components()->auth()->domain();
+
+        /**
+         * @var PasswordProvider $passwordProvider
+         */
+        $passwordProvider = $domain->provider('password');
+
+        $passwordHash = $passwordProvider->hash($password);
+
+        $user->passwordHash = $passwordHash;
+
+        $update = $user->save();
+
+        if (!$update)
+        {
+            RESTFUL::setStatus(REST::BAD_REQUEST);
+        }
+
+        return [
+            'isUpdate' => (bool)$update
+        ];
+
     }
 
     /**

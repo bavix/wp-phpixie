@@ -4,6 +4,7 @@ namespace Project;
 
 use PHPixie\ORM\Models\Type\Database\Query;
 use PHPixie\Paginate\Pager;
+use Project\Extension\Mail;
 use Project\Framework\Builder;
 
 class Helper
@@ -114,6 +115,16 @@ class Helper
     public function logCountByModel($model, $id)
     {
         return $this->modelLog($model, $id)->count();
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return Mail
+     */
+    public function mail($type)
+    {
+        return new Mail($this->builder, $type);
     }
 
 }

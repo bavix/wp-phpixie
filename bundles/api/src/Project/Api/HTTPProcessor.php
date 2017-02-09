@@ -16,11 +16,6 @@ class HTTPProcessor extends HttpBuilder
     protected $builder;
 
     /**
-     * @var string
-     */
-    protected $error;
-
-    /**
      * Constructor
      *
      * @param Builder $builder
@@ -98,7 +93,7 @@ class HTTPProcessor extends HttpBuilder
         catch (\Throwable $throwable)
         {
             $process = [
-                'error'             => $this->error,
+                'error'             => RESTFUL::getError(),
                 'error_description' => $throwable->getMessage(),
             ];
         }

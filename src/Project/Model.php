@@ -7,9 +7,10 @@ class Model
     const APP          = 'app';
     const OAUTH_CLIENT = 'oauthClient';
 
-    const USER       = 'user';
-    const ROLE       = 'role';
-    const PERMISSION = 'permission';
+    const USER              = 'user';
+    const RECOVERY_PASSWORD = 'recoveryPassword';
+    const ROLE              = 'role';
+    const PERMISSION        = 'permission';
 
     const MENU = 'menu';
 
