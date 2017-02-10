@@ -53,13 +53,25 @@ class User extends UserLogin
 
     public function recoveryPassword(Template $template)
     {
-        $recoveryPassword = $this->builder->components()->orm()
-            ->createEntity(Model::RECOVERY_PASSWORD);
+        $orm = $this->builder->components()->orm();
+
+        $recoveryPasswords = $orm->query(Model::RECOVERY_PASSWORD)
+            ->where('userId', $this->id())
+            ->where('active', 1)
+            ->find();
+
+        foreach ($recoveryPasswords as $recoveryPassword)
+        {
+            $recoveryPassword->active = 0;
+            $recoveryPassword->save();
+        }
+
+        $recoveryPassword = $orm->createEntity(Model::RECOVERY_PASSWORD);
 
         $recoveryPassword->userId = $this->id();
 
         $carbon = Carbon::create();
-        $carbon->addMinute(15); // add 15 min
+        $carbon->addMinute(30); // add 30 min
 
         $recoveryPassword->expires = $carbon->timestamp;
         $recoveryPassword->code    = random_int(1000, 9999);

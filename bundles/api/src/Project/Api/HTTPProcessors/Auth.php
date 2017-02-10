@@ -353,10 +353,29 @@ class Auth extends AuthProcessor
             ->where('userId', $user->id())
             ->where('code', $code)
             ->where('expires', '>=', time())
+            ->where('active', 1)
             ->findOne();
 
         if (!$recovery)
         {
+            $recovery = $orm->query(Model::RECOVERY_PASSWORD)
+                ->where('userId', $user->id())
+                ->where('active', 1)
+                ->findOne();
+
+            if (!$recovery)
+            {
+                RESTFUL::setError('code');
+                throw new \InvalidArgumentException('The user has no confidential codes');
+            }
+
+            if (++$recovery->try > 2)
+            {
+                $recovery->active = 0;
+            }
+
+            $recovery->save();
+
             RESTFUL::setError('code');
             throw new \InvalidArgumentException('Recovery code not found');
         }
