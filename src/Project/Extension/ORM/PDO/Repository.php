@@ -22,7 +22,7 @@ class Repository extends \PHPixie\ORM\Drivers\Driver\PDO\Repository
 
     protected function entityLogger($entity, $data, $type)
     {
-        if ($this->modelName() !== 'log' && is_int($entity->id()))
+        if ($this->modelName() !== 'log' && is_numeric($entity->id()))
         {
             $orm = $this->components->orm();
 
