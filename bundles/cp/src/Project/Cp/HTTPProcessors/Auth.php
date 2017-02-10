@@ -92,6 +92,10 @@ class Auth extends Processor
             return $this->render('cp:auth/default');
         }
 
+        // Generate persistent login cookie
+        $provider = $domain->provider('cookie');
+        $provider->persist();
+
         $redirect = $data->get('redirect');
 
         if ($redirect)
