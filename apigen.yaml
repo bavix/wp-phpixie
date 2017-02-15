@@ -1,8 +1,8 @@
 source:
-  - bundles/api/src/Project
-  - bundles/app/src/Project
-  - bundles/cp/src/Project
-#  - src/Project
+  - bundles/api/src
+  - bundles/app/src
+  - bundles/cp/src
+  - src
 destination: ./docs
 internal: yes
 php: yes
