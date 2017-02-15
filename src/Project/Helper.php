@@ -39,7 +39,7 @@ class Helper
      * @return \PHPixie\Paginate\Pager
      * @throws \PHPixie\Paginate\Exception
      */
-    public function pager($page, $query, $limit = 50, $preload = []): Pager
+    public function pager($page, $query, $limit = 50, $preload = [])
     {
         $page = (int)$page > 0 ? $page - 1 : 0;
 

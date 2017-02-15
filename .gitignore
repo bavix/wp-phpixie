@@ -10,3 +10,4 @@ yarn.lock
 cache/haml/
 docs/
 apidoc/
+build/

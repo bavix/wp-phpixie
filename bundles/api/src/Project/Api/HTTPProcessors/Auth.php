@@ -130,10 +130,10 @@ class Auth extends AuthProcessor
             throw new \InvalidArgumentException('The username is empty');
         }
 
-        if (preg_match('~\W~', $username))
+        if (preg_match('~[^\w.]~', $username))
         {
             RESTFUL::setError('username');
-            throw new \InvalidArgumentException('Username has to contain only a-z, 0-9, _');
+            throw new \InvalidArgumentException('Username has to contain only a-z, 0-9, _.');
         }
 
         $email = $request->data()->getRequired('email');
@@ -276,6 +276,110 @@ class Auth extends AuthProcessor
         return [
             'isSend' => $isSend
         ];
+    }
+
+    /**
+     * @api               {post} /auth/change-password Change Password
+     * @apiName           Change Password
+     * @apiGroup          Auth
+     *
+     * @apiPermission     none
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiParam          oldPassword old Password (user)
+     * @apiParam          password new Password (user)
+     *
+     * @apiSuccessExample Success-Response:
+     *                    HTTP/1.1 200 OK
+     *                    Content-Type: application/json;charset=UTF-8
+     *                    Cache-Control: no-store
+     *                    Pragma: no-cache
+     *                    {
+     *                      "isUpdate": true
+     *                    }
+     *
+     * @apiErrorExample   Error-Response:
+     *                  HTTP/1.1 400 Bad Request
+     *                  {
+     *                      "error": "password",
+     *                      "error_description": "The password is empty",
+     *                  }
+     *
+     * @apiErrorExample   Error-Response:
+     *                  HTTP/1.1 400 Bad Request
+     *                  {
+     *                      "isUpdate": false
+     *                  }
+     *
+     * @apiVersion        0.0.4
+     *
+     * @param Request $request
+     */
+    public function changePasswordPostAction(Request $request)
+    {
+
+        $oldPassword    = $request->data()->getRequired('oldPassword');
+        $password = $request->data()->getRequired('password');
+
+        if (empty($oldPassword))
+        {
+            RESTFUL::setError('oldPassword');
+            throw new \InvalidArgumentException('The old password is empty');
+        }
+
+        if (mb_strlen($oldPassword) < 6)
+        {
+            RESTFUL::setError('oldPassword');
+            throw new \InvalidArgumentException('The old password is less than 6 symbols');
+        }
+
+        if (empty($password))
+        {
+            RESTFUL::setError('password');
+            throw new \InvalidArgumentException('The password is empty');
+        }
+
+        if (mb_strlen($password) < 6)
+        {
+            RESTFUL::setError('password');
+            throw new \InvalidArgumentException('The password is less than 6 symbols');
+        }
+
+
+        if (!$this->user)
+        {
+            RESTFUL::setError('user');
+            throw new \InvalidArgumentException('User not found');
+        }
+
+        // todo
+        throw new \InvalidArgumentException('Action in developing');
+
+        $domain = $this->builder->components()->auth()->domain();
+
+        /**
+         * @var PasswordProvider $passwordProvider
+         */
+        $passwordProvider = $domain->provider('password');
+
+        var_dump( get_class($passwordProvider) );
+
+        $passwordHash = $passwordProvider->hash($password);
+
+        $this->user->passwordHash = $passwordHash;
+
+        $update = $this->user->save();
+
+        if (!$update)
+        {
+            RESTFUL::setStatus(REST::BAD_REQUEST);
+        }
+
+        return [
+            'isUpdate' => (bool)$update
+        ];
+
     }
 
     /**
