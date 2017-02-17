@@ -72,6 +72,20 @@ return [
             )
         ],
 
+        // images
+
+        [
+            'type'  => 'oneToOne',
+            'owner' => Model::BRAND,
+            'item'  => Model::BRAND_LOGO,
+        ],
+
+        [
+            'type'  => 'oneToOne',
+            'owner' => Model::DEALER,
+            'item'  => Model::DEALER_LOGO,
+        ],
+
         // brands & dealers
 
         [

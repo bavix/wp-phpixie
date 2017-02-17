@@ -1,13 +1,12 @@
 {
-  "name": "phpixie/project",
+  "name": "deimos/wbs",
   "type": "project",
-  "description": "PHPixie skeleton project",
+  "description": "WBS",
   "license": "BSD",
   "autoload": {
     "psr-4": {
       "": [
         "src/",
-        "tests/",
         "bundles/app/src/",
         "bundles/cp/src/",
         "bundles/api/src/"
