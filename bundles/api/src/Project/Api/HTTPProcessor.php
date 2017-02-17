@@ -34,6 +34,14 @@ class HTTPProcessor extends HttpBuilder
     }
 
     /**
+     * @return HTTPProcessors\Upload
+     */
+    public function buildUploadProcessor()
+    {
+        return new HTTPProcessors\Upload($this->builder);
+    }
+
+    /**
      * @param Request $httpRequest
      *
      * @return string

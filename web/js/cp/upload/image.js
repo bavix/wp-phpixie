@@ -23,7 +23,7 @@ $(function () {
 
     // Параметры загрузки
     var uploadOpts = {
-        url: '//cdn.fktpm.ru/api/upload' // куда грузить
+        url: '//cdn.wbs/api/upload/brands' // куда грузить
         , data: {} // дополнительный POST-параметры
         , name: 'filedata' // название POST-параметра загружаемого файла
         , activeClassName: 'upload_active' // класс, который будем добавлять общему контейнеру при загрузке

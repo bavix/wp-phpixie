@@ -143,9 +143,17 @@ return array(
             'type'     => 'pattern',
             'path'     => 'auth/<action>',
             'defaults' => [
-                'processor'     => 'auth',
+                'processor' => 'auth',
                 //                'nextProcessor' => 'auth',
-                'action'        => 'authorize',
+                'action'    => 'authorize',
+            ]
+        ],
+
+        'upload' => [
+            'type'     => 'pattern',
+            'path'     => 'upload/<action>',
+            'defaults' => [
+                'processor' => 'upload'
             ]
         ],
 
