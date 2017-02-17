@@ -40,7 +40,7 @@ $(function () {
             cancelButtonClass: 'btn btn-primary'
         }).then(function () {
 
-            fetch($current.attr('href'), {
+            fetch('/api' + $current.attr('href'), {
                 method: 'DELETE',
                 credentials: 'include'
             }).then(function (response) {
