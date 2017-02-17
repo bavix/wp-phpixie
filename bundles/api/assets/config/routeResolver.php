@@ -139,37 +139,14 @@ return array(
             )
         ),
 
-        'auth' => [
+        'action' => array(
             'type'     => 'pattern',
-            'path'     => 'auth/<action>',
-            'defaults' => [
-                'processor'     => 'auth',
-                //                'nextProcessor' => 'auth',
-                'action'        => 'authorize',
-            ]
-        ],
-
-        'nextItem' => array(
-            'type' => 'pattern',
-            'path' => '<nextProcessor>/<id>/<action>/<nextId>'
-        ),
-
-        'nextAction' => array(
-            'type' => 'pattern',
-            'path' => '<nextProcessor>/<id>/<action>'
-        ),
-
-        'item' => array(
-            'type'     => 'pattern',
-            'path'     => '<nextProcessor>/<id>',
-            'defaults' => array(
-                'action' => 'item'
-            )
+            'path'     => '<processor>/<action>'
         ),
 
         'processor' => array(
             'type'     => 'pattern',
-            'path'     => '<nextProcessor>',
+            'path'     => '<processor>',
             'defaults' => array(
                 'action' => 'default'
             )

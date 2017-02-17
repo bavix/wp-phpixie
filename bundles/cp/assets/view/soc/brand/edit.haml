@@ -126,11 +126,14 @@
                         %tr(id="log-#{$log->id}")
                           %td
                             - $logUser = $log->user()
-                            - $urlProfile = 'cp.sou.user@profile.' . $logUser->id
-                            - $urlData = \Project\Extension\Util::httpWithURL($urlProfile)
-                            - $httpPath = $this->httpPath($urlData['url'], $urlData['attributes'])
-                            %a(href="#{$httpPath}")
-                              = $_($logUser->login)
+                            - if ($logUser)
+                              - $urlProfile = 'cp.sou.user@profile.' . $logUser->id
+                              - $urlData = \Project\Extension\Util::httpWithURL($urlProfile)
+                              - $httpPath = $this->httpPath($urlData['url'], $urlData['attributes'])
+                              %a(href="#{$httpPath}")
+                                = $_($logUser->login)
+                            - else
+                              bot
                           %td
                             - $classLabel = 'label-success'
                             - if ($log->type === 'updated')
@@ -162,8 +165,8 @@
     overflow: hidden;
     position: relative;
     text-decoration: none;
-    background-color: #fff;
-    background-color: rgba(255,255,255,.85);
+    /*background-color: #fff;*/
+    /*background-color: rgba(255,255,255,.85);*/
     padding: 3px 8px;
   }
 
@@ -222,6 +225,8 @@
 
 .col-lg-3(align="center")
   %form.thumbnail.upload{:name => "userpic"}
+    %input(type="hidden" name="id" value="#{$brand->id}")
+    %input(type="hidden" name="userId" value="#{$user->id}")
     #preview.upload__preview
     .upload__progress Uploading…
     .upload__link
@@ -229,26 +234,22 @@
         %span.btn.btn-warning.upload-link__txt Browse pic
         %input.upload-link__inp{:accept => "image/*", :name => "photo", :type => "file"}
 
-  -##uploaderForm
-  -#  %input#uploader.hidden(type="file" name="filedata" accept="image/*")
-  -#  %img.thumbnail(src="//placehold.it/220x220" width="220")
-  -#  %label.btn.btn-warning(for="uploader")
-  -#    %i.fa.fa-download
-  -#    upload image
-  -#%form(method="post")
-    %input(type="hidden" name="id" value="#{$brand->id}")
-    %input.hidden#brandLogo(type="file" name="logo")
-    -#.form-group
-      -#%label(for="brandLogo")
-      -#  %img.img-rounded(src="https://placeholdit.imgix.net/~text?txtsize=24&txt=210×210&w=210&h=210")
-    .form-group(align="center")
-      %button.btn.btn-success.btn-lg(disabled) Upload
-
 - $assets::pushJs('/js/cp/soc/brand/edit.js')
 - $assets::pushJs('/js/cp/upload/image.js')
+- $assets::pushJs('/js/cp/upload/image-brand.js')
 - $assets::pushJs('/node_modules/fileapi/dist/FileAPI.min.js')
 
 :javascript
+
+  FileAPI.Image("#{$brand->thumbsLogo()}")
+    .preview($(preview).width(), $(preview).height())
+    .get(function (err, image) {
+      if (!err) {
+        var preview = document.getElementById('preview');
+        preview.innerHTML = '';
+        preview.appendChild(image);
+      }
+    });
 
   $(function () {
 
@@ -291,18 +292,4 @@
       return isDelete;
     });
 
-    // $('#brandLogo').filer({
-    //   limit: 1,
-    //   showThumbs: true,
-    //   appendTo: function (event) {
-    //     console.log(event, 'appendTo');
-    //   },
-    //   onSelect: function (event) {
-    //     console.log(event, 'onSelect');
-    //   },
-    //   theme: filerObject.theme,
-    //   dragDrop: filerObject.dragDrop,
-    //   changeInput: filerObject.changeInput,
-    //   extensions: filerObject.extensionsImage,
-    // });
   });

@@ -26,7 +26,9 @@ class Model
 
     const SOCIAL = 'social';
 
-    const IMAGE = 'image';
+    const IMAGE       = 'image';
+    const BRAND_LOGO  = 'brandLogo';
+    const DEALER_LOGO = 'dealerLogo';
 
     const INVITE = 'invite';
 

@@ -4,7 +4,7 @@ var FileAPI = {
     staticPath: '/node_modules/fileapi/dist/' // путь до флешек
 };
 
-$(function () {
+function uploadImage(uploadType) {
 
     // Ссылка на uploader
     var form = document.forms.userpic;
@@ -21,9 +21,15 @@ $(function () {
         , height: 210
     };
 
+    var host = location.host;
+
+    if (host.indexOf('www.') === 0) {
+        host = host.replace('www.', '');
+    }
+
     // Параметры загрузки
     var uploadOpts = {
-        url: '//cdn.fktpm.ru/api/upload' // куда грузить
+        url: '//cdn.' + host + '/api/upload/' + uploadType + '?' + $(form).serialize() // куда грузить
         , data: {} // дополнительный POST-параметры
         , name: 'filedata' // название POST-параметра загружаемого файла
         , activeClassName: 'upload_active' // класс, который будем добавлять общему контейнеру при загрузке
@@ -80,7 +86,8 @@ $(function () {
 
                 if (err) {
                     alert('Увы, произошла ошибка сервера.');
-                } else {
+                }
+                else {
                     // всё успешно загрузилось
                 }
             }
@@ -96,4 +103,4 @@ $(function () {
     // Подписываемся на событие "change", оно будет срабатывать при выборе файла
     FileAPI.event.on(input, "change", _onSelectFile);
 
-});
+}
