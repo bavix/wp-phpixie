@@ -63,6 +63,27 @@ class Brand extends SOCProtected
 
     }
 
+    /**
+     * @api               {get} /auth/soc/brand/<id> Brand Item
+     * @apiName           Brand Item
+     * @apiGroup          SOC
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.4
+     *
+     * @apiParam        {Number}  id brandId
+     *
+     * @apiParam        {Number}  [page=1] set num page [default 1]
+     * @apiParam        {Number}  [limit=50] set limit [default 50]
+     * @apiParam        {String[]}  [preload] loading relationships
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
     public function itemGetAction(Request $request)
     {
         $id = $request->attributes()->getRequired('id');
@@ -88,13 +109,6 @@ class Brand extends SOCProtected
         }
 
         return $brand->asObject(true);
-    }
-
-    public function itemPutAction(Request $request)
-    {
-        $id = $request->attributes()->getRequired('id');
-
-        return [];
     }
 
     public function itemDeleteAction(Request $request)
@@ -140,13 +154,13 @@ class Brand extends SOCProtected
      *
      * @apiVersion        0.0.4
      *
-     * @apiParam          page set num page [default 1]
-     * @apiParam          limit set limit [default 50]
-     * @apiParam          preload loading relationships
+     * @apiParam        {Number}  [page=1] set num page [default 1]
+     * @apiParam        {Number}  [limit=50] set limit [default 50]
+     * @apiParam        {String[]}  [preload] loading relationships
      *
-     * @apiParam          sort order by id desc
-     * @apiParam          terms filter equal id = 4
-     * @apiParam          queries filter LIKE %4%
+     * @apiParam        {String[]}  [sort] order by id desc
+     * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [queries] filter LIKE %4%
      *
      * @param Request $request
      *
@@ -239,15 +253,14 @@ class Brand extends SOCProtected
      *
      * @apiVersion        0.0.4
      *
-     * @apiParam          id brandId
+     * @apiParam        {Number}  id brandId
      *
-     * @apiParam          page set num page [default 1]
-     * @apiParam          limit set limit [default 50]
-     * @apiParam          preload loading relationships
+     * @apiParam        {String[]}  [preload] loading relationships
+     * @apiParam        {String[]}  [fields] fields
      *
-     * @apiParam          sort order by id desc
-     * @apiParam          terms filter equal id = 4
-     * @apiParam          queries filter LIKE %4%
+     * @apiParam        {String[]}  [sort] order by id desc
+     * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [queries] filter LIKE %4%
      *
      * @param Request $request
      *
@@ -288,16 +301,10 @@ class Brand extends SOCProtected
      *
      * @apiVersion        0.0.4
      *
-     * @apiParam          id        brandId
-     * @apiParam          nextId    socialId
+     * @apiParam        {Number}  id        brandId
+     * @apiParam        {Number}  nextId    socialId
      *
-     * @apiParam          page set num page [default 1]
-     * @apiParam          limit set limit [default 50]
-     * @apiParam          preload loading relationships
-     *
-     * @apiParam          sort order by id desc
-     * @apiParam          terms filter equal id = 4
-     * @apiParam          queries filter LIKE %4%
+     * @apiParam        {String[]}  [preload] loading relationships
      *
      * @param Request $request
      *
@@ -430,15 +437,14 @@ class Brand extends SOCProtected
      *
      * @apiVersion        0.0.4
      *
-     * @apiParam          id        brandId
+     * @apiParam        {Number}  id        brandId
      *
-     * @apiParam          page set num page [default 1]
-     * @apiParam          limit set limit [default 50]
-     * @apiParam          preload loading relationships
+     * @apiParam        {String[]}  [preload] loading relationships
+     * @apiParam        {String[]}  [fields] fields
      *
-     * @apiParam          sort order by id desc
-     * @apiParam          terms filter equal id = 4
-     * @apiParam          queries filter LIKE %4%
+     * @apiParam        {String[]}  [sort] order by id desc
+     * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [queries] filter LIKE %4%
      *
      * @param Request $request
      *
@@ -479,16 +485,10 @@ class Brand extends SOCProtected
      *
      * @apiVersion        0.0.4
      *
-     * @apiParam          id        brandId
-     * @apiParam          nextId        headingId
+     * @apiParam        {Number}  id            brandId
+     * @apiParam        {Number}  nextId        headingId
      *
-     * @apiParam          page set num page [default 1]
-     * @apiParam          limit set limit [default 50]
-     * @apiParam          preload loading relationships
-     *
-     * @apiParam          sort order by id desc
-     * @apiParam          terms filter equal id = 4
-     * @apiParam          queries filter LIKE %4%
+     * @apiParam        {String[]}  [preload] loading relationships
      *
      * @param Request $request
      *
@@ -622,15 +622,14 @@ class Brand extends SOCProtected
      *
      * @apiVersion        0.0.4
      *
-     * @apiParam          id        dealerId
+     * @apiParam        {Number}  id        dealerId
      *
-     * @apiParam          page set num page [default 1]
-     * @apiParam          limit set limit [default 50]
-     * @apiParam          preload loading relationships
+     * @apiParam        {String[]}  [preload] loading relationships
+     * @apiParam        {String[]}  [fields] fields
      *
-     * @apiParam          sort order by id desc
-     * @apiParam          terms filter equal id = 4
-     * @apiParam          queries filter LIKE %4%
+     * @apiParam        {String[]}  [sort] order by id desc
+     * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [queries] filter LIKE %4%
      *
      * @param Request $request
      *
@@ -671,16 +670,10 @@ class Brand extends SOCProtected
      *
      * @apiVersion        0.0.4
      *
-     * @apiParam          id        brandId
-     * @apiParam          nextId    dealerId
+     * @apiParam        {Number}  id        brandId
+     * @apiParam        {Number}  nextId    dealerId
      *
-     * @apiParam          page set num page [default 1]
-     * @apiParam          limit set limit [default 50]
-     * @apiParam          preload loading relationships
-     *
-     * @apiParam          sort order by id desc
-     * @apiParam          terms filter equal id = 4
-     * @apiParam          queries filter LIKE %4%
+     * @apiParam        {String[]}  [preload] loading relationships
      *
      * @param Request $request
      *

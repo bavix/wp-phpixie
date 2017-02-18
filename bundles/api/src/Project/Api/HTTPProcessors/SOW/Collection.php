@@ -87,13 +87,13 @@ class Collection extends SOWProtected
      *
      * @apiVersion        0.0.4
      *
-     * @apiParam          page set num page [default 1]
-     * @apiParam          limit set limit [default 50]
-     * @apiParam          preload loading relationships
+     * @apiParam        {Number}  [page=1] set num page [default 1]
+     * @apiParam        {Number}  [limit=50] set limit [default 50]
+     * @apiParam        {String[]}  [preload] loading relationships
      *
-     * @apiParam          sort order by id desc
-     * @apiParam          terms filter equal id = 4
-     * @apiParam          queries filter LIKE %4%
+     * @apiParam        {String[]}  [sort] order by id desc
+     * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [queries] filter LIKE %4%
      *
      * @param Request $request
      *
@@ -167,15 +167,9 @@ class Collection extends SOWProtected
      *
      * @apiVersion        0.0.4
      *
-     * @apiParam          id collectionId
+     * @apiParam        {Number}  id collectionId
      *
-     * @apiParam          page set num page [default 1]
-     * @apiParam          limit set limit [default 50]
-     * @apiParam          preload loading relationships
-     *
-     * @apiParam          sort order by id desc
-     * @apiParam          terms filter equal id = 4
-     * @apiParam          queries filter LIKE %4%
+     * @apiParam        {String[]}  [preload] loading relationships
      *
      * @param Request $request
      *
