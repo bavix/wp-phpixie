@@ -9,27 +9,27 @@ use Project\Model;
 class Upload extends AuthProcessor
 {
 
-    public function toPostAction(Request $request)
-    {
-        /**
-         * @var $builder Builder
-         */
-        $builder = $this->builder->frameworkBuilder();
-
-        $to = $request->uri()->getScheme() . '://';
-        $to .= 'cdn.' . $request->uri()->getHost() . '/api/upload/';
-        $to .= $request->query()->get('type') . '?';
-        $to .= http_build_query($request->query()->get());
-
-        $fileData = $builder->dHelper()->uploads()->simple('filedata');
-
-        return $builder->dHelper()->send()
-            ->data($request->data()->get())
-            ->to($to)
-            ->file('filedata', $fileData->tmpName())
-            ->method('POST')
-            ->exec();
-    }
+//    public function toPostAction(Request $request)
+//    {
+//        /**
+//         * @var $builder Builder
+//         */
+//        $builder = $this->builder->frameworkBuilder();
+//
+//        $to = $request->uri()->getScheme() . '://';
+//        $to .= 'cdn.' . $request->uri()->getHost() . '/api/upload/';
+//        $to .= $request->query()->get('type') . '?';
+//        $to .= http_build_query($request->query()->get());
+//
+//        $fileData = $builder->dHelper()->uploads()->simple('filedata');
+//
+//        return $builder->dHelper()->send()
+//            ->data($request->data()->get())
+//            ->to($to)
+//            ->file('filedata', $fileData->tmpName())
+//            ->method('POST')
+//            ->exec();
+//    }
 
     public function brandPostAction(Request $request)
     {
