@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Upload.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Upload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/upload/image.js" afterPath="$PROJECT_DIR$/web/js/cp/upload/image.js" />
-    </list>
+    <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="" />
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -82,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Settings/Cache.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+              <caret line="16" column="9" lean-forward="false" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -111,8 +108,8 @@
       <file leaf-file-name="image.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/cp/upload/image.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+            <state relative-caret-position="495">
+              <caret line="33" column="32" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -905,12 +902,12 @@
       <workItem from="1487342734060" duration="387000" />
       <workItem from="1487343163115" duration="134000" />
       <workItem from="1487344923189" duration="14079000" />
-      <workItem from="1487365134681" duration="10700000" />
+      <workItem from="1487365134681" duration="11202000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="890888000" />
+    <option name="totallyTimeSpent" value="891390000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1368" height="744" extended-state="6" />
@@ -1297,7 +1294,7 @@
     <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Settings/Cache.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <caret line="16" column="9" lean-forward="false" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1370,8 +1367,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/cp/upload/image.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+        <state relative-caret-position="495">
+          <caret line="33" column="32" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="32" />
           <folding />
         </state>
       </provider>
