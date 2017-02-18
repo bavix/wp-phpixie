@@ -52,8 +52,6 @@ class Upload extends AuthProcessor
 //        query.userId      // userId
 //        data.Filename     // file name
 
-        return $data->get();
-
         $logo              = $this->components->orm()->createEntity(Model::BRAND_LOGO);
         $logo->hash        = $data->get('hash');
         $logo->size        = $data->get('fileSize');
