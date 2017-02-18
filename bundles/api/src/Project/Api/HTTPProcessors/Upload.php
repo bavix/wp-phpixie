@@ -3,7 +3,6 @@
 namespace Project\Api\HTTPProcessors;
 
 use PHPixie\HTTP\Request;
-use Project\Framework\Builder;
 use Project\Model;
 
 class Upload extends AuthProcessor
@@ -42,6 +41,15 @@ class Upload extends AuthProcessor
             ];
         }
 
+        $brandId = $data->get('query.id');
+
+        if (!$brandId)
+        {
+            return [
+                'status' => 'error'
+            ];
+        }
+
 //        fileSize          // bytes
 //        sizes.width       // width
 //        sizes.height      // height
@@ -57,12 +65,12 @@ class Upload extends AuthProcessor
         $logo->size        = $data->get('fileSize');
         $logo->width       = $data->get('sizes.width');
         $logo->height      = $data->get('sizes.height');
-        $logo->brandId     = $data->get('query.id');
+        $logo->brandId     = $brandId;
         $logo->userId      = $data->get('query.userId');
         $logo->description = $data->get('description');
 
         $brand = $this->components->orm()->repository(Model::BRAND)->query()
-            ->in($data->get('query.id'))
+            ->in($brandId)
             ->findOne();
 
         if (!$brand)
