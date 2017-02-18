@@ -29,7 +29,9 @@ function uploadImage(uploadType) {
 
     // Параметры загрузки
     var uploadOpts = {
-        url: '/api/upload/to?type=' + uploadType + '&' + $(form).serialize()// куда грузить
+
+        // temp uri
+        url: 'https://cdn.ln4.ru/api/upload/' + uploadType + '?' + $(form).serialize() // куда грузить
         , data: {} // дополнительный POST-параметры
         , name: 'filedata' // название POST-параметра загружаемого файла
         , activeClassName: 'upload_active' // класс, который будем добавлять общему контейнеру при загрузке
