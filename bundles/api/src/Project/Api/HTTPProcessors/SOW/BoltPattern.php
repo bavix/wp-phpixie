@@ -62,6 +62,24 @@ class BoltPattern extends SOWProtected
     }
 
     /**
+     * @api               {get} /auth/sow/bolt-pattern Bolt Pattern List
+     * @apiName           Bolt Pattern List
+     * @apiGroup          SOW
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.4
+     *
+     * @apiParam          page set num page [default 1]
+     * @apiParam          limit set limit [default 50]
+     * @apiParam          preload loading relationships
+     *
+     * @apiParam          sort order by id desc
+     * @apiParam          terms filter equal id = 4
+     * @apiParam          queries filter LIKE %4%
+     *
      * @param Request $request
      *
      * @return mixed
@@ -123,6 +141,31 @@ class BoltPattern extends SOWProtected
 
     }
 
+    /**
+     * @api               {get} /auth/sow/bolt-pattern/<id> Bolt Pattern Item
+     * @apiName           Bolt Pattern Item
+     * @apiGroup          SOW
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.4
+     *
+     * @apiParam          id boltPatternId
+     *
+     * @apiParam          page set num page [default 1]
+     * @apiParam          limit set limit [default 50]
+     * @apiParam          preload loading relationships
+     *
+     * @apiParam          sort order by id desc
+     * @apiParam          terms filter equal id = 4
+     * @apiParam          queries filter LIKE %4%
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
     public function itemGetAction(Request $request)
     {
         $id = $request->attributes()->getRequired('id');

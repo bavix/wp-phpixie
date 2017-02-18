@@ -77,6 +77,24 @@ class Style extends SOWProtected
     }
 
     /**
+     * @api               {get} /auth/sow/style Style List
+     * @apiName           Style List
+     * @apiGroup          SOW
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.4
+     *
+     * @apiParam          page set num page [default 1]
+     * @apiParam          limit set limit [default 50]
+     * @apiParam          preload loading relationships
+     *
+     * @apiParam          sort order by id desc
+     * @apiParam          terms filter equal id = 4
+     * @apiParam          queries filter LIKE %4%
+     *
      * @param Request $request
      *
      * @return mixed
@@ -138,6 +156,31 @@ class Style extends SOWProtected
 
     }
 
+    /**
+     * @api               {get} /auth/sow/style/<id> Style Item
+     * @apiName           Style Item
+     * @apiGroup          SOW
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.4
+     *
+     * @apiParam          id styleId
+     *
+     * @apiParam          page set num page [default 1]
+     * @apiParam          limit set limit [default 50]
+     * @apiParam          preload loading relationships
+     *
+     * @apiParam          sort order by id desc
+     * @apiParam          terms filter equal id = 4
+     * @apiParam          queries filter LIKE %4%
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
     public function itemGetAction(Request $request)
     {
         $id = $request->attributes()->getRequired('id');
