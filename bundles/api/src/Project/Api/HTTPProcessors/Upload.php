@@ -11,6 +11,18 @@ class Upload extends AuthProcessor
 
     public function toPostAction(Request $request)
     {
+        // Permitted types of request
+        header('Access-Control-Allow-Methods: POST, OPTIONS');
+
+        // Describe custom headers
+        header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Range, Content-Disposition, Content-Type');
+
+        // A comma-separated list of domains
+        header('Access-Control-Allow-Origin: *');
+
+        // Allow cookie
+        header('Access-Control-Allow-Credentials: true');
+
         /**
          * @var $builder Builder
          */
@@ -33,6 +45,18 @@ class Upload extends AuthProcessor
 
     public function brandPostAction(Request $request)
     {
+        // Permitted types of request
+        header('Access-Control-Allow-Methods: POST, OPTIONS');
+
+        // Describe custom headers
+        header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Range, Content-Disposition, Content-Type');
+
+        // A comma-separated list of domains
+        header('Access-Control-Allow-Origin: *');
+
+        // Allow cookie
+        header('Access-Control-Allow-Credentials: true');
+
         $data = $request->data();
 
         if ($data->get('status') !== 'ok')
