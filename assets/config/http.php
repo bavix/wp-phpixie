@@ -35,6 +35,18 @@ return [
                 ]
             ],
 
+            'test' => [
+                'type'     => 'prefix',
+                'host'     => 'test.*',
+                'defaults' => [
+                    'bundle' => 'api'
+                ],
+                'resolver' => [
+                    'type' => 'mount',
+                    'name' => 'api'
+                ]
+            ],
+
             'api2' => [
                 'type'     => 'prefix',
                 'path'     => 'api/',
