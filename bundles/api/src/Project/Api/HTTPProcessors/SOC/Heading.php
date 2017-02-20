@@ -52,6 +52,24 @@ class Heading extends SOCProtected
     }
 
     /**
+     * @api               {get} /auth/soc/heading Heading List
+     * @apiName           Heading List
+     * @apiGroup          SOC
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.4
+     *
+     * @apiParam        {Number}  [page=1] set num page [default 1]
+     * @apiParam        {Number}  [limit=50] set limit [default 50]
+     * @apiParam        {String[]}  [preload] loading relationships
+     *
+     * @apiParam        {String[]}  [sort] order by id desc
+     * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [queries] filter LIKE %4%
+     *
      * @param Request $request
      *
      * @return mixed
@@ -75,9 +93,34 @@ class Heading extends SOCProtected
 
         $pager = $builder->helper()->pager($page, $brand, $limit, $preload);
 
-        return $pager->getCurrentItems()->asArray(true);
+        return [
+            'currentPage' => $pager->currentPage(),
+            'pageSize'    => $pager->pageSize(),
+            'itemCount'   => $pager->itemCount(),
+            'pageCount'   => $pager->pageCount(),
+            'data'        => $pager->getCurrentItems()->asArray(true)
+        ];
     }
 
+    /**
+     * @api               {get} /auth/soc/heading/<id> Heading List
+     * @apiName           Heading List
+     * @apiGroup          SOC
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.4
+     *
+     * @apiParam        {Number}  id        headingId
+     *
+     * @apiParam        {String[]}  [preload] loading relationships
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
     public function itemGetAction(Request $request)
     {
         $id = $request->attributes()->getRequired('id');

@@ -18,7 +18,12 @@ class Brand extends SOCProtected
         'itemDelete'
     ];
 
-    // default
+    /**
+     * @param Request $request
+     *
+     * @return mixed
+     * @throws \Exception
+     */
     public function defaultPostAction(Request $request)
     {
 
@@ -58,6 +63,27 @@ class Brand extends SOCProtected
 
     }
 
+    /**
+     * @api               {get} /auth/soc/brand/<id> Brand Item
+     * @apiName           Brand Item
+     * @apiGroup          SOC
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.4
+     *
+     * @apiParam        {Number}  id brandId
+     *
+     * @apiParam        {Number}  [page=1] set num page [default 1]
+     * @apiParam        {Number}  [limit=50] set limit [default 50]
+     * @apiParam        {String[]}  [preload] loading relationships
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
     public function itemGetAction(Request $request)
     {
         $id = $request->attributes()->getRequired('id');
@@ -83,13 +109,6 @@ class Brand extends SOCProtected
         }
 
         return $brand->asObject(true);
-    }
-
-    public function itemPutAction(Request $request)
-    {
-        $id = $request->attributes()->getRequired('id');
-
-        return [];
     }
 
     public function itemDeleteAction(Request $request)
@@ -125,6 +144,24 @@ class Brand extends SOCProtected
     }
 
     /**
+     * @api               {get} /auth/soc/brand Brand List
+     * @apiName           Brand List
+     * @apiGroup          SOC
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.4
+     *
+     * @apiParam        {Number}  [page=1] set num page [default 1]
+     * @apiParam        {Number}  [limit=50] set limit [default 50]
+     * @apiParam        {String[]}  [preload] loading relationships
+     *
+     * @apiParam        {String[]}  [sort] order by id desc
+     * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [queries] filter LIKE %4%
+     *
      * @param Request $request
      *
      * @return mixed
@@ -148,7 +185,13 @@ class Brand extends SOCProtected
 
         $pager = $builder->helper()->pager($page, $brand, $limit, $preload);
 
-        return $pager->getCurrentItems()->asArray(true);
+        return [
+            'currentPage' => $pager->currentPage(),
+            'pageSize'    => $pager->pageSize(),
+            'itemCount'   => $pager->itemCount(),
+            'pageCount'   => $pager->pageCount(),
+            'data'        => $pager->getCurrentItems()->asArray(true)
+        ];
     }
 
     /**
@@ -205,6 +248,30 @@ class Brand extends SOCProtected
         return $brandSocial->asObject(true);
     }
 
+    /**
+     * @api               {get} /auth/soc/brand/<id>/social Brand Social List
+     * @apiName           Brand Social List
+     * @apiGroup          SOC
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.4
+     *
+     * @apiParam        {Number}  id brandId
+     *
+     * @apiParam        {String[]}  [preload] loading relationships
+     * @apiParam        {String[]}  [fields] fields
+     *
+     * @apiParam        {String[]}  [sort] order by id desc
+     * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [queries] filter LIKE %4%
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
     public function socialGetAction(Request $request)
     {
         $brandId = $request->attributes()->getRequired('id');
@@ -229,6 +296,26 @@ class Brand extends SOCProtected
         return $brandSocial->asArray(true);
     }
 
+    /**
+     * @api               {get} /auth/soc/brand/<id>/social/<nextId> Brand Social Item
+     * @apiName           Brand Social Item
+     * @apiGroup          SOC
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.4
+     *
+     * @apiParam        {Number}  id        brandId
+     * @apiParam        {Number}  nextId    socialId
+     *
+     * @apiParam        {String[]}  [preload] loading relationships
+     *
+     * @param Request $request
+     *
+     * @return mixed
+     */
     public function socialItemGetAction(Request $request)
     {
         $brandSocialId = $request->attributes()->getRequired('nextId');
@@ -345,6 +432,30 @@ class Brand extends SOCProtected
         return $brandHeading->asObject(true);
     }
 
+    /**
+     * @api               {get} /auth/soc/brand/<id>/heading Brand Heading List
+     * @apiName           Brand Heading List
+     * @apiGroup          SOC
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.4
+     *
+     * @apiParam        {Number}  id        brandId
+     *
+     * @apiParam        {String[]}  [preload] loading relationships
+     * @apiParam        {String[]}  [fields] fields
+     *
+     * @apiParam        {String[]}  [sort] order by id desc
+     * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [queries] filter LIKE %4%
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
     public function headingGetAction(Request $request)
     {
         $brandId = $request->attributes()->getRequired('id');
@@ -369,6 +480,26 @@ class Brand extends SOCProtected
         return $brandHeading->asArray(true);
     }
 
+    /**
+     * @api               {get} /auth/soc/brand/<id>/heading/<nextId> Brand Heading Item
+     * @apiName           Brand Heading Item
+     * @apiGroup          SOC
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.4
+     *
+     * @apiParam        {Number}  id            brandId
+     * @apiParam        {Number}  nextId        headingId
+     *
+     * @apiParam        {String[]}  [preload] loading relationships
+     *
+     * @param Request $request
+     *
+     * @return mixed
+     */
     public function headingItemGetAction(Request $request)
     {
         $brandHeadingId = $request->attributes()->getRequired('nextId');
@@ -486,6 +617,30 @@ class Brand extends SOCProtected
         return $brandDealer->asObject(true);
     }
 
+    /**
+     * @api               {get} /auth/soc/brand/<id>/dealer Brand Dealer List
+     * @apiName           Brand Dealer List
+     * @apiGroup          SOC
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.4
+     *
+     * @apiParam        {Number}  id        dealerId
+     *
+     * @apiParam        {String[]}  [preload] loading relationships
+     * @apiParam        {String[]}  [fields] fields
+     *
+     * @apiParam        {String[]}  [sort] order by id desc
+     * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [queries] filter LIKE %4%
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
     public function dealerGetAction(Request $request)
     {
         $brandId = $request->attributes()->getRequired('id');
@@ -510,6 +665,26 @@ class Brand extends SOCProtected
         return $brandDealer->asArray(true);
     }
 
+    /**
+     * @api               {get} /auth/soc/brand/<id>/dealer/<nextId> Brand Dealer Item
+     * @apiName           Brand Dealer Item
+     * @apiGroup          SOC
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.4
+     *
+     * @apiParam        {Number}  id        brandId
+     * @apiParam        {Number}  nextId    dealerId
+     *
+     * @apiParam        {String[]}  [preload] loading relationships
+     *
+     * @param Request $request
+     *
+     * @return mixed
+     */
     public function dealerItemGetAction(Request $request)
     {
         $brandDealerId = $request->attributes()->getRequired('nextId');

@@ -62,6 +62,24 @@ class BoltPattern extends SOWProtected
     }
 
     /**
+     * @api               {get} /auth/sow/bolt-pattern Bolt Pattern List
+     * @apiName           Bolt Pattern List
+     * @apiGroup          SOW
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.4
+     *
+     * @apiParam        {Number}  [page=1] set num page [default 1]
+     * @apiParam        {Number}  [limit=50] set limit [default 50]
+     * @apiParam        {String[]}  [preload] loading relationships
+     *
+     * @apiParam        {String[]}  [sort] order by id desc
+     * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [queries] filter LIKE %4%
+     *
      * @param Request $request
      *
      * @return mixed
@@ -87,7 +105,13 @@ class BoltPattern extends SOWProtected
             ->helper()
             ->pager($page, $boltPattern, $limit, $preload);
 
-        return $pager->getCurrentItems()->asArray(true);
+        return [
+            'currentPage' => $pager->currentPage(),
+            'pageSize'    => $pager->pageSize(),
+            'itemCount'   => $pager->itemCount(),
+            'pageCount'   => $pager->pageCount(),
+            'data'        => $pager->getCurrentItems()->asArray(true)
+        ];
     }
 
 
@@ -123,6 +147,25 @@ class BoltPattern extends SOWProtected
 
     }
 
+    /**
+     * @api               {get} /auth/sow/bolt-pattern/<id> Bolt Pattern Item
+     * @apiName           Bolt Pattern Item
+     * @apiGroup          SOW
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.4
+     *
+     * @apiParam        {Number}  id boltPatternId
+     *
+     * @apiParam        {String[]}  [preload] loading relationships
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
     public function itemGetAction(Request $request)
     {
         $id = $request->attributes()->getRequired('id');

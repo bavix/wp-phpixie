@@ -58,7 +58,7 @@ $(function () {
                 }
 
                 return {
-                    results: $.map(data, function (obj) {
+                    results: $.map(data.data, function (obj) {
                         return {id: obj.id, text: obj.name};
                     })
                 };
@@ -91,7 +91,7 @@ $(function () {
                     }
 
                     return {
-                        results: $.map(data, function (obj) {
+                        results: $.map(data.data, function (obj) {
                             return {id: obj.id, text: obj.name};
                         })
                     };

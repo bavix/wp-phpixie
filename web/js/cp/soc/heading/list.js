@@ -118,9 +118,9 @@ $(function () {
 
     function tableInit(json) {
         if (typeof json.id === "undefined") {
-            headingJson = json;
+            headingJson = json.data;
         } else {
-            headingJson.push(json);
+            headingJson.push(json.data);
         }
 
         ReactDOM.render(React.createElement(HeadingRows, { rows: headingJson }), headingRows);

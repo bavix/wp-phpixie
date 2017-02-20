@@ -12,7 +12,8 @@ $(function () {
     // Add body-small class if window less than 768px
     if ($(this).width() < 769) {
         $('body').addClass('body-small')
-    } else {
+    }
+    else {
         $('body').removeClass('body-small')
     }
 
@@ -140,7 +141,8 @@ $(function () {
         if ($('body').hasClass('fixed-nav')) {
             if (navbarHeigh > wrapperHeigh) {
                 $('#page-wrapper').css("min-height", navbarHeigh + "px");
-            } else {
+            }
+            else {
                 $('#page-wrapper').css("min-height", $(window).height() - 60 + "px");
             }
         }
@@ -163,7 +165,8 @@ $(function () {
     $(window).scroll(function () {
         if ($(window).scrollTop() > 0 && !$('body').hasClass('fixed-nav')) {
             $('#right-sidebar').addClass('sidebar-top');
-        } else {
+        }
+        else {
             $('#right-sidebar').removeClass('sidebar-top');
         }
     });
@@ -188,7 +191,8 @@ $(function () {
 $(window).bind("resize", function () {
     if ($(this).width() < 769) {
         $('body').addClass('body-small')
-    } else {
+    }
+    else {
         $('body').removeClass('body-small')
     }
 });
@@ -219,7 +223,8 @@ $(document).ready(function () {
                 if (!body.hasClass('body-small')) {
                     body.addClass('mini-navbar');
                 }
-            } else {
+            }
+            else {
                 if (!body.hasClass('body-small')) {
                     body.addClass('mini-navbar');
                 }
@@ -271,13 +276,15 @@ function SmoothlyMenu() {
             function () {
                 $('#side-menu').fadeIn(400);
             }, 200);
-    } else if ($('body').hasClass('fixed-sidebar')) {
+    }
+    else if ($('body').hasClass('fixed-sidebar')) {
         $('#side-menu').hide();
         setTimeout(
             function () {
                 $('#side-menu').fadeIn(400);
             }, 100);
-    } else {
+    }
+    else {
         // Remove all inline style from jquery fadeIn function to reset menu state
         $('#side-menu').removeAttr('style');
     }

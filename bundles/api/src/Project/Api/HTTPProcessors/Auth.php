@@ -95,9 +95,9 @@ class Auth extends AuthProcessor
      *
      * @apiPermission     client
      *
-     * @apiParam          username login
-     * @apiParam          email email
-     * @apiParam          password password
+     * @apiParam         {String} username login
+     * @apiParam         {String} email email
+     * @apiParam         {String{6..}} password password
      *
      * @apiHeader         Authorization Authorization Bearer {access_token}
      *
@@ -215,7 +215,7 @@ class Auth extends AuthProcessor
      *
      * @apiPermission     none
      *
-     * @apiParam          email EMAIL
+     * @apiParam         {String} email EMAIL
      *
      * @apiHeader         Authorization Authorization Bearer {access_token}
      *
@@ -287,8 +287,8 @@ class Auth extends AuthProcessor
      *
      * @apiHeader         Authorization Authorization Bearer {access_token}
      *
-     * @apiParam          oldPassword old Password (user)
-     * @apiParam          password new Password (user)
+     * @apiParam         {String} oldPassword old Password (user)
+     * @apiParam         {String} password new Password (user)
      *
      * @apiSuccessExample Success-Response:
      *                    HTTP/1.1 200 OK
@@ -391,9 +391,9 @@ class Auth extends AuthProcessor
      *
      * @apiHeader         Authorization Authorization Bearer {access_token}
      *
-     * @apiParam          email EMAIL
-     * @apiParam          code code [from email] use recovery-password
-     * @apiParam          password new Password (user)
+     * @apiParam         {String} email EMAIL
+     * @apiParam         {String} code code [from email] use recovery-password
+     * @apiParam         {String} password new Password (user)
      *
      * @apiSuccessExample Success-Response:
      *                    HTTP/1.1 200 OK
@@ -517,9 +517,9 @@ class Auth extends AuthProcessor
      *
      * @apiPermission     none
      *
-     * @apiParam          grant_type value password OR client_credentials
-     * @apiParam          username LOGIN
-     * @apiParam          password PASSWORD
+     * @apiParam         {String} grant_type value password OR client_credentials
+     * @apiParam         {String} username LOGIN
+     * @apiParam         {String} password PASSWORD
      *
      * @apiHeader         Authorization Authorization Bearer {access_token}
      *
