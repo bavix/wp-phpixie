@@ -56,10 +56,10 @@ $(function () {
 
     function tableInit(json) {
         if (typeof json.id === "undefined") {
-            dealerJson = json;
+            dealerJson = json.data;
         }
         else {
-            dealerJson.push(json)
+            dealerJson.push(json.data)
         }
 
         ReactDOM.render(

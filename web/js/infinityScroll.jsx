@@ -103,8 +103,9 @@ jQuery.fn.infinityScroll = function (callback, options) {
     }
 
     this.scroll(() => {
-        if (scrollObject.scrollPercent() > percent)
+        if (scrollObject.scrollPercent() > percent) {
             callback(scrollObject);
+        }
     });
 
     return this;

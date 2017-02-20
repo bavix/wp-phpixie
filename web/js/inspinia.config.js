@@ -24,7 +24,8 @@ $(function () {
                 localStorage.setItem("fixednavbar", 'on');
             }
 
-        } else {
+        }
+        else {
 
             $(".navbar-fixed-top").removeClass('navbar-fixed-top').addClass('navbar-static-top');
 
@@ -64,7 +65,8 @@ $(function () {
                 localStorage.setItem("fixednavbar2", 'on');
             }
 
-        } else {
+        }
+        else {
 
             $(".navbar-fixed-top").removeClass('navbar-fixed-top').addClass('navbar-static-top');
             $body.removeClass('fixed-nav').removeClass('fixed-nav-basic');
@@ -97,7 +99,8 @@ $(function () {
                 localStorage.setItem("fixedsidebar", 'on');
             }
 
-        } else {
+        }
+        else {
 
             $('.sidebar-collapse')
                 .slimscroll({destroy: true})
@@ -124,7 +127,8 @@ $(function () {
                 localStorage.setItem("collapse_menu", 'on');
             }
 
-        } else {
+        }
+        else {
 
             $body.removeClass('mini-navbar');
             SmoothlyMenu();
@@ -170,7 +174,8 @@ $(function () {
             if (localStorageSupport) {
                 localStorage.setItem("boxedlayout", 'on');
             }
-        } else {
+        }
+        else {
             $body.removeClass('boxed-layout');
 
             if (localStorageSupport) {
@@ -197,7 +202,8 @@ $(function () {
                 localStorage.setItem("fixedfooter", 'on');
             }
 
-        } else {
+        }
+        else {
 
             $(".footer").removeClass('fixed');
 

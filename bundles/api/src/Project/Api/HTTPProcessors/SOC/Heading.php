@@ -93,7 +93,13 @@ class Heading extends SOCProtected
 
         $pager = $builder->helper()->pager($page, $brand, $limit, $preload);
 
-        return $pager->getCurrentItems()->asArray(true);
+        return [
+            'currentPage' => $pager->currentPage(),
+            'pageSize'    => $pager->pageSize(),
+            'itemCount'   => $pager->itemCount(),
+            'pageCount'   => $pager->pageCount(),
+            'data'        => $pager->getCurrentItems()->asArray(true)
+        ];
     }
 
     /**

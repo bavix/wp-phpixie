@@ -220,7 +220,7 @@ $(function () {
                 }
 
                 return {
-                    results: $.map(data, function (obj) {
+                    results: $.map(data.data, function (obj) {
                         return {id: obj.id, text: obj.title};
                     })
                 };
@@ -251,7 +251,7 @@ $(function () {
                 }
 
                 return {
-                    results: $.map(data, function (obj) {
+                    results: $.map(data.data, function (obj) {
                         return {id: obj.id, text: obj.name};
                     })
                 };
@@ -291,9 +291,9 @@ $(function () {
     }
 
     function tableHeadingInit(json) {
-        if (typeof json.id === "undefined") {
+        if (typeof json.data !== "undefined") {
 
-            json = json.map(data => {
+            json = json.data.map(data => {
                 data.brandId = $formHeading.data('id');
 
                 return data;
@@ -329,9 +329,9 @@ $(function () {
     }
 
     function tableDealerInit(json) {
-        if (typeof json.id === "undefined") {
+        if (typeof json.data !== "undefined") {
 
-            json = json.map(data => {
+            json = json.data.map(data => {
                 data.brandId = $formDealer.data('id');
 
                 return data;
@@ -374,7 +374,9 @@ $(function () {
 
         for (let i in  ids) {
 
-            if (!ids.hasOwnProperty(i)) continue;
+            if (!ids.hasOwnProperty(i)) {
+                continue;
+            }
 
             let form = new FormData();
             form.append("id", ids[i]);
@@ -396,7 +398,9 @@ $(function () {
 
         for (let i in  ids) {
 
-            if (!ids.hasOwnProperty(i)) continue;
+            if (!ids.hasOwnProperty(i)) {
+                continue;
+            }
 
             let form = new FormData();
             form.append("id", ids[i]);

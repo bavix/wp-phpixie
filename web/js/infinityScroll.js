@@ -1,8 +1,34 @@
 "use strict";
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () {
+    function defineProperties(target, props) {
+        for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) {
+                descriptor.writable = true;
+            }
+            Object.defineProperty(target, descriptor.key, descriptor);
+        }
+    }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+    return function (Constructor, protoProps, staticProps) {
+        if (protoProps) {
+            defineProperties(Constructor.prototype, protoProps);
+        }
+        if (staticProps) {
+            defineProperties(Constructor, staticProps);
+        }
+        return Constructor;
+    };
+}();
+
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
 
 // https://jsfiddle.net/69z2wepo/14377/
 
@@ -19,15 +45,18 @@ Object.prototype.defaultValue = function (defObject) {
                 this[key] = defObject[item];
             }
         }
-    } catch (err) {
+    }
+    catch (err) {
         _didIteratorError = true;
         _iteratorError = err;
-    } finally {
+    }
+    finally {
         try {
             if (!_iteratorNormalCompletion && _iterator.return) {
                 _iterator.return();
             }
-        } finally {
+        }
+        finally {
             if (_didIteratorError) {
                 throw _iteratorError;
             }
@@ -137,7 +166,9 @@ jQuery.fn.infinityScroll = function (callback, options) {
     }
 
     this.scroll(function () {
-        if (scrollObject.scrollPercent() > percent) callback(scrollObject);
+        if (scrollObject.scrollPercent() > percent) {
+            callback(scrollObject);
+        }
     });
 
     return this;
