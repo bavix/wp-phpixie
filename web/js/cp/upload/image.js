@@ -1,7 +1,8 @@
 // Объект настройки
 var FileAPI = {
-    debug: true, // режим отладки
-    staticPath: '/node_modules/fileapi/dist/' // путь до флешек
+    debug: true // режим отладки
+    , cors: true
+    , staticPath: '/node_modules/fileapi/dist/' // путь до флешек
 };
 
 function uploadImage(uploadType) {
@@ -26,6 +27,13 @@ function uploadImage(uploadType) {
     if (host.indexOf('www.') === 0) {
         host = host.replace('www.', '');
     }
+
+    // fixme: debug
+    if (host.indexOf('dev.') === 0) {
+        host = host.replace('dev.', '');
+    }
+
+    host = 'wheelpro.ru';
 
     // Параметры загрузки
     var uploadOpts = {
