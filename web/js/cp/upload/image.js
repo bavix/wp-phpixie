@@ -33,11 +33,9 @@ function uploadImage(uploadType) {
         host = host.replace('dev.', '');
     }
 
-    host = 'wheelpro.ru';
-
     // Параметры загрузки
     var uploadOpts = {
-        url: 'http://cdn.' + host + '/api/upload/' + uploadType + '?' + $(form).serialize() // куда грузить
+        url: location.protocol + '//cdn.' + host + '/api/upload/' + uploadType + '?' + $(form).serialize() // куда грузить
         , data: {} // дополнительный POST-параметры
         , name: 'filedata' // название POST-параметра загружаемого файла
         , activeClassName: 'upload_active' // класс, который будем добавлять общему контейнеру при загрузке
