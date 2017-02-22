@@ -13,7 +13,7 @@ return [
             'cp' => [
                 'type'     => 'prefix',
                 'path'     => 'cp',
-                'host'     => '[^api.]',
+                'host'     => '[^apitest.]',
                 'defaults' => [
                     'bundle' => 'cp'
                 ],
@@ -35,10 +35,22 @@ return [
                 ]
             ],
 
+            'test' => [
+                'type'     => 'prefix',
+                'host'     => 'test.*',
+                'defaults' => [
+                    'bundle' => 'api'
+                ],
+                'resolver' => [
+                    'type' => 'mount',
+                    'name' => 'api'
+                ]
+            ],
+
             'api2' => [
                 'type'     => 'prefix',
                 'path'     => 'api/',
-                'host'     => '[^api.]',
+                'host'     => '[^apitest.]',
                 'defaults' => [
                     'bundle' => 'api'
                 ],
@@ -50,7 +62,7 @@ return [
 
             'app' => [
                 'type'     => 'prefix',
-                'host'     => '[^api.]',
+                'host'     => '[^apitest.]',
                 'defaults' => [
                     'bundle' => 'app'
                 ],

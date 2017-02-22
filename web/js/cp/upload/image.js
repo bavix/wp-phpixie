@@ -1,7 +1,8 @@
 // Объект настройки
 var FileAPI = {
-    debug: true, // режим отладки
-    staticPath: '/node_modules/fileapi/dist/' // путь до флешек
+    debug: true // режим отладки
+    , cors: true
+    , staticPath: '/node_modules/fileapi/dist/' // путь до флешек
 };
 
 function uploadImage(uploadType) {
@@ -27,9 +28,14 @@ function uploadImage(uploadType) {
         host = host.replace('www.', '');
     }
 
+    // fixme: debug
+    if (host.indexOf('dev.') === 0) {
+        host = host.replace('dev.', '');
+    }
+
     // Параметры загрузки
     var uploadOpts = {
-        url: '//cdn.' + host + '/api/upload/' + uploadType + '?' + $(form).serialize() // куда грузить
+        url: location.protocol + '//cdn.' + host + '/api/upload/' + uploadType + '?' + $(form).serialize() // куда грузить
         , data: {} // дополнительный POST-параметры
         , name: 'filedata' // название POST-параметра загружаемого файла
         , activeClassName: 'upload_active' // класс, который будем добавлять общему контейнеру при загрузке
