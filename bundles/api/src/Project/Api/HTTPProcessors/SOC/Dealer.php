@@ -53,7 +53,7 @@ class Dealer extends SOCProtected
 
     /**
      * @api               {get} /soc/dealer Dealer List
-     * @apiName           Brand List
+     * @apiName           Dealer List
      * @apiGroup          SOC
      *
      * @apiPermission     client user
