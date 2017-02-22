@@ -28,11 +28,6 @@ function uploadImage(uploadType) {
         host = host.replace('www.', '');
     }
 
-    // fixme: debug
-    if (host.indexOf('dev.') === 0) {
-        host = host.replace('dev.', '');
-    }
-
     // Параметры загрузки
     var uploadOpts = {
         url: location.protocol + '//cdn.' + host + '/api/upload/' + uploadType + '?' + $(form).serialize() // куда грузить
