@@ -41,13 +41,12 @@ class Brand extends Entity
         {
             $uri    = $this->builder->components()->http()->request()->uri();
             $host = $uri->getHost();
-            $scheme = $uri->getScheme();
 
             $sdk = new SDK();
-            $sdk->setServer('cdn.' . $host, $scheme);
+            $sdk->setServer('cdn.' . $host);
             $sdk->setUserName('brand');
 
-            return $sdk->getThumbsUrl($type, $logo->hash);
+            return $sdk->getThumbsUrl($type, $logo->hash, $type . '.png');
         }
 
         return '//placehold.it/' . $size . 'x' . $size . '?text=' . $text;
