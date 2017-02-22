@@ -26,6 +26,13 @@ class Brand extends Entity
         $this->builder = $builder;
     }
 
+    /**
+     * @param string $type
+     * @param int    $size
+     * @param string $text
+     *
+     * @return string
+     */
     protected function _logo($type, $size = 210, $text = '1600x1600')
     {
         $logo = $this->brandLogo();
@@ -33,7 +40,7 @@ class Brand extends Entity
         if ($logo)
         {
             $uri    = $this->builder->components()->http()->request()->uri();
-            $host   = 'test.fktpm.ru';//$uri->getHost();
+            $host = $uri->getHost();
             $scheme = $uri->getScheme();
 
             $sdk = new SDK();
@@ -51,7 +58,7 @@ class Brand extends Entity
      */
     public function thumbsLogo()
     {
-        return $this->_logo('thumbs');
+        return $this->_logo('thumbs', 210, '500x500');
     }
 
 }
