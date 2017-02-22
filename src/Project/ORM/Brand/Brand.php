@@ -33,7 +33,7 @@ class Brand extends Entity
         if ($logo)
         {
             $uri    = $this->builder->components()->http()->request()->uri();
-            $host   = $uri->getHost();
+            $host   = 'test.fktpm.ru';//$uri->getHost();
             $scheme = $uri->getScheme();
 
             $sdk = new SDK();
