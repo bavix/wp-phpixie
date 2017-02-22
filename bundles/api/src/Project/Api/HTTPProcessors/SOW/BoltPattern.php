@@ -62,7 +62,7 @@ class BoltPattern extends SOWProtected
     }
 
     /**
-     * @api               {get} /auth/sow/bolt-pattern Bolt Pattern List
+     * @api               {get} /sow/bolt-pattern Bolt Pattern List
      * @apiName           Bolt Pattern List
      * @apiGroup          SOW
      *
@@ -148,7 +148,7 @@ class BoltPattern extends SOWProtected
     }
 
     /**
-     * @api               {get} /auth/sow/bolt-pattern/<id> Bolt Pattern Item
+     * @api               {get} /sow/bolt-pattern/<id> Bolt Pattern Item
      * @apiName           Bolt Pattern Item
      * @apiGroup          SOW
      *

@@ -77,7 +77,7 @@ class Collection extends SOWProtected
     }
 
     /**
-     * @api               {get} /auth/sow/collection Collection List
+     * @api               {get} /sow/collection Collection List
      * @apiName           Collection List
      * @apiGroup          SOW
      *
@@ -163,7 +163,7 @@ class Collection extends SOWProtected
     }
 
     /**
-     * @api               {get} /auth/sow/collection/<id> Collection List
+     * @api               {get} /sow/collection/<id> Collection List
      * @apiName           Collection List
      * @apiGroup          SOW
      *

@@ -72,7 +72,7 @@ class Wheel extends SOWProtected
     }
 
     /**
-     * @api               {get} /auth/sow/wheel Wheel List
+     * @api               {get} /sow/wheel Wheel List
      * @apiName           Wheel List
      * @apiGroup          SOW
      *
@@ -158,7 +158,7 @@ class Wheel extends SOWProtected
     }
 
     /**
-     * @api               {get} /auth/sow/wheel/<id> Wheel Item
+     * @api               {get} /sow/wheel/<id> Wheel Item
      * @apiName           Wheel Item
      * @apiGroup          SOW
      *
