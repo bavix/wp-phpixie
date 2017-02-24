@@ -212,7 +212,7 @@ class Wheel extends SOWProtected
      *
      * @apiHeader         Authorization Authorization Bearer {access_token}
      *
-     * @apiVersion        0.0.4
+     * @apiVersion        0.0.5
      *
      * @apiParam        {Number}  id        wheelId
      *
@@ -222,6 +222,24 @@ class Wheel extends SOWProtected
      * @apiParam        {String[]}  [sort] order by id desc
      * @apiParam        {String[]}  [terms] filter equal id = 4
      * @apiParam        {String[]}  [queries] filter LIKE %4%
+     *
+     * @apiSuccessExample Success-Response:
+     *                    HTTP/1.1 200 OK
+     *                   {
+     *                       "currentPage": 1,
+     *                       "pageSize": 50,
+     *                       "itemCount": "1",
+     *                       "pageCount": 1,
+     *                       "data": [
+     *                           {
+     *                               "id": "1",
+     *                               "text": "hello world!",
+     *                               "userId": "1",
+     *                               "createdAt": "2017-02-24 16:09:08",
+     *                               "updatedAt": "2017-02-24 16:09:08"
+     *                           }
+     *                       ]
+     *                   }
      *
      * @param Request $request
      *
