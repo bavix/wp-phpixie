@@ -1,12 +1,12 @@
 <?php
 
-namespace Project\ORM\Brand;
+namespace Project\ORM\Wheel;
 
 use Deimos\ImaginariumSDK\SDK;
 use PHPixie\ORM\Wrappers\Type\Database\Entity;
 use Project\App\Builder;
 
-class Brand extends Entity
+class Wheel extends Entity
 {
 
     /**
@@ -35,7 +35,7 @@ class Brand extends Entity
      */
     protected function _logo($type, $size = 210, $text = '1600x1600')
     {
-        $logo = $this->brandLogo();
+        $logo = $this->previewWheel();
 
         if ($logo)
         {
@@ -44,7 +44,7 @@ class Brand extends Entity
 
             $sdk = new SDK();
             $sdk->setServer('cdn.' . $host);
-            $sdk->setUserName('brand');
+            $sdk->setUserName('wheel');
 
             return $sdk->getThumbsUrl($type, $logo->hash, $type . '.png');
         }
@@ -57,7 +57,7 @@ class Brand extends Entity
      */
     public function thumbsLogo()
     {
-        return $this->_logo('thumbs', 210, '500x500');
+        return $this->_logo('thumbs', 210);
     }
 
 }
