@@ -77,7 +77,7 @@ class Style extends SOWProtected
     }
 
     /**
-     * @api               {get} /auth/sow/style Style List
+     * @api               {get} /sow/style Style List
      * @apiName           Style List
      * @apiGroup          SOW
      *
@@ -163,7 +163,7 @@ class Style extends SOWProtected
     }
 
     /**
-     * @api               {get} /auth/sow/style/<id> Style Item
+     * @api               {get} /sow/style/<id> Style Item
      * @apiName           Style Item
      * @apiGroup          SOW
      *

@@ -40,7 +40,8 @@
 
     "nesbot/carbon": "^1.21",
     "deimos/imaginarium-sdk": "^0.0",
-    "deimos/helper": "~1.0"
+    "deimos/helper": "~1.0",
+    "embed/embed": "^3.0"
   },
   "extra": {
     "branch-alias": {

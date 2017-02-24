@@ -52,8 +52,8 @@ class Dealer extends SOCProtected
     }
 
     /**
-     * @api               {get} /auth/soc/dealer Dealer List
-     * @apiName           Brand List
+     * @api               {get} /soc/dealer Dealer List
+     * @apiName           Dealer List
      * @apiGroup          SOC
      *
      * @apiPermission     client user
@@ -103,7 +103,7 @@ class Dealer extends SOCProtected
     }
 
     /**
-     * @api               {get} /auth/soc/dealer/<id> Dealer Item
+     * @api               {get} /soc/dealer/<id> Dealer Item
      * @apiName           Dealer Item
      * @apiGroup          SOC
      *

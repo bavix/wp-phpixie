@@ -18,6 +18,10 @@ return [
             'table' => 'brandsHeadings'
         ],
 
+        Model::WHEEL_COMMENT => [
+            'table' => 'wheelsComments'
+        ],
+
         Model::OAUTH_CLIENT => [
             'table' => 'oauth_clients',
             'id'    => 'client_id'
@@ -84,6 +88,18 @@ return [
             'type'  => 'oneToOne',
             'owner' => Model::DEALER,
             'item'  => Model::DEALER_LOGO,
+        ],
+
+        [
+            'type'  => 'oneToOne',
+            'owner' => Model::WHEEL,
+            'item'  => Model::PREVIEW_WHEEL,
+        ],
+
+        [
+            'type'  => 'manyToMany',
+            'left' => Model::WHEEL,
+            'right' => Model::VIDEO,
         ],
 
         // brands & dealers
@@ -156,6 +172,60 @@ return [
             'type'  => 'oneToMany',
             'owner' => Model::SOCIAL,
             'items' => Model::BRAND_SOCIAL
+        ],
+
+        // wheel <=> comment
+        [
+            'type'  => 'manyToMany',
+            'left'  => Model::WHEEL,
+            'right' => Model::COMMENT
+        ],
+        [
+            'type'  => 'manyToMany',
+            'left'  => Model::WHEEL,
+            'right' => Model::IMAGE
+        ],
+
+        // wheel <=> like
+        [
+            'type'  => 'manyToMany',
+            'left'  => Model::WHEEL,
+            'right' => Model::USER,
+
+            'leftOptions' => [
+                'property' => 'likes'
+            ],
+
+            'rightOptions' => [
+                'property' => 'likeWheels'
+            ],
+
+            'pivot' => 'wheelsLikes',
+
+            'pivotOptions' => [
+                'rightKey' => 'wheelId',
+                'leftKey'  => 'userId'
+            ]
+        ],
+        [
+            'type'  => 'manyToMany',
+            'left'  => Model::WHEEL,
+            'right' => Model::USER,
+
+            'leftOptions' => [
+                'property' => 'favorites'
+            ],
+
+            'rightOptions' => [
+                'property' => 'favoriteWheels'
+            ],
+
+            'pivot' => 'wheelsFavorites',
+
+            'pivotOptions' => [
+                'rightKey' => 'wheelId',
+                'leftKey'  => 'userId'
+            ]
         ],
 
         // brand <-> wheel

@@ -72,7 +72,7 @@ class Wheel extends SOWProtected
     }
 
     /**
-     * @api               {get} /auth/sow/wheel Wheel List
+     * @api               {get} /sow/wheel Wheel List
      * @apiName           Wheel List
      * @apiGroup          SOW
      *
@@ -158,7 +158,7 @@ class Wheel extends SOWProtected
     }
 
     /**
-     * @api               {get} /auth/sow/wheel/<id> Wheel Item
+     * @api               {get} /sow/wheel/<id> Wheel Item
      * @apiName           Wheel Item
      * @apiGroup          SOW
      *
@@ -201,6 +201,109 @@ class Wheel extends SOWProtected
         }
 
         return $wheel->asObject(true);
+    }
+
+    /**
+     * @api               {get} /sow/wheel/<id>/comment Wheel Comment List
+     * @apiName           Wheel Comment List
+     * @apiGroup          SOW
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.4
+     *
+     * @apiParam        {Number}  id        wheelId
+     *
+     * @apiParam        {String[]}  [preload] loading relationships
+     * @apiParam        {String[]}  [fields] fields
+     *
+     * @apiParam        {String[]}  [sort] order by id desc
+     * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [queries] filter LIKE %4%
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
+    public function commentGetAction(Request $request)
+    {
+        $wheelId = $request->attributes()->getRequired('id');
+
+        /**
+         * @var $builder Builder
+         */
+        $builder = $this->builder->frameworkBuilder();
+
+        $page  = $request->query()->get('page', 1);
+        $limit = $request->query()->get('limit', 50);
+
+        $preload = $request->query()->get('preload', []);
+//        $fields  = $request->query()->get('fields');
+
+        try
+        {
+            $wheelComment = $this->components->orm()
+                ->query(Model::COMMENT)
+                ->relatedTo(
+                    'wheels',
+                    $this->components->orm()
+                        ->query(Model::WHEEL)
+                        ->in($wheelId)
+                );
+
+            $this->query($wheelComment, $request);
+
+//            $wheelComment = $wheelComment->find($preload, $fields);
+        }
+        catch (\Throwable $throwable)
+        {
+            throw new \InvalidArgumentException('Invalid argument');
+        }
+
+        $pager = $builder
+            ->helper()
+            ->pager($page, $wheelComment, $limit, $preload);
+
+        return [
+            'currentPage' => $pager->currentPage(),
+            'pageSize'    => $pager->pageSize(),
+            'itemCount'   => $pager->itemCount(),
+            'pageCount'   => $pager->pageCount(),
+            'data'        => $pager->getCurrentItems()->asArray(true)
+        ];
+//        return $wheelComment->asArray(true);
+    }
+
+    /**
+     * @api               {post} /sow/wheel/<id>/comment Wheel Comment Add
+     * @apiName           Wheel Comment Add
+     * @apiGroup          SOW
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.4
+     *
+     * @apiParam        {Number}  id        wheelId
+     * @apiParam        {string}  text      text
+     *
+     * @apiParam        {String[]}  [preload] loading relationships
+     * @apiParam        {String[]}  [fields] fields
+     *
+     * @apiParam        {String[]}  [sort] order by id desc
+     * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [queries] filter LIKE %4%
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
+    public function commentPostAction(Request $request)
+    {
+        throw new \InvalidArgumentException('In developing');
     }
 
 }

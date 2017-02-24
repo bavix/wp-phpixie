@@ -64,7 +64,7 @@ class Brand extends SOCProtected
     }
 
     /**
-     * @api               {get} /auth/soc/brand/<id> Brand Item
+     * @api               {get} /soc/brand/<id> Brand Item
      * @apiName           Brand Item
      * @apiGroup          SOC
      *
@@ -144,7 +144,7 @@ class Brand extends SOCProtected
     }
 
     /**
-     * @api               {get} /auth/soc/brand Brand List
+     * @api               {get} /soc/brand Brand List
      * @apiName           Brand List
      * @apiGroup          SOC
      *
@@ -249,7 +249,7 @@ class Brand extends SOCProtected
     }
 
     /**
-     * @api               {get} /auth/soc/brand/<id>/social Brand Social List
+     * @api               {get} /soc/brand/<id>/social Brand Social List
      * @apiName           Brand Social List
      * @apiGroup          SOC
      *
@@ -297,7 +297,7 @@ class Brand extends SOCProtected
     }
 
     /**
-     * @api               {get} /auth/soc/brand/<id>/social/<nextId> Brand Social Item
+     * @api               {get} /soc/brand/<id>/social/<nextId> Brand Social Item
      * @apiName           Brand Social Item
      * @apiGroup          SOC
      *
@@ -433,7 +433,7 @@ class Brand extends SOCProtected
     }
 
     /**
-     * @api               {get} /auth/soc/brand/<id>/heading Brand Heading List
+     * @api               {get} /soc/brand/<id>/heading Brand Heading List
      * @apiName           Brand Heading List
      * @apiGroup          SOC
      *
@@ -481,7 +481,7 @@ class Brand extends SOCProtected
     }
 
     /**
-     * @api               {get} /auth/soc/brand/<id>/heading/<nextId> Brand Heading Item
+     * @api               {get} /soc/brand/<id>/heading/<nextId> Brand Heading Item
      * @apiName           Brand Heading Item
      * @apiGroup          SOC
      *
@@ -618,7 +618,7 @@ class Brand extends SOCProtected
     }
 
     /**
-     * @api               {get} /auth/soc/brand/<id>/dealer Brand Dealer List
+     * @api               {get} /soc/brand/<id>/dealer Brand Dealer List
      * @apiName           Brand Dealer List
      * @apiGroup          SOC
      *
@@ -650,8 +650,15 @@ class Brand extends SOCProtected
 
         try
         {
-            $brandDealer = $this->components->orm()->query(Model::BRAND_DEALER)
-                ->where('brandId', $brandId);
+
+            $brandDealer = $this->components->orm()
+                ->query(Model::DEALER)
+                ->relatedTo(
+                    'brands',
+                    $this->components->orm()
+                        ->query(Model::BRAND)
+                        ->in($brandId)
+                );
 
             $this->query($brandDealer, $request);
 
@@ -666,7 +673,7 @@ class Brand extends SOCProtected
     }
 
     /**
-     * @api               {get} /auth/soc/brand/<id>/dealer/<nextId> Brand Dealer Item
+     * @api               {get} /soc/brand/<id>/dealer/<nextId> Brand Dealer Item
      * @apiName           Brand Dealer Item
      * @apiGroup          SOC
      *

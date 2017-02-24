@@ -52,7 +52,7 @@ class Heading extends SOCProtected
     }
 
     /**
-     * @api               {get} /auth/soc/heading Heading List
+     * @api               {get} /soc/heading Heading List
      * @apiName           Heading List
      * @apiGroup          SOC
      *
@@ -103,7 +103,7 @@ class Heading extends SOCProtected
     }
 
     /**
-     * @api               {get} /auth/soc/heading/<id> Heading List
+     * @api               {get} /soc/heading/<id> Heading List
      * @apiName           Heading List
      * @apiGroup          SOC
      *

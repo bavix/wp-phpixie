@@ -40,7 +40,8 @@ class ORMWrappers extends WrappersImplementation
         Model::USER,
         Model::ROLE,
         Model::MENU,
-        Model::BRAND
+        Model::BRAND,
+        Model::WHEEL,
     );
 
     /**
@@ -113,11 +114,21 @@ class ORMWrappers extends WrappersImplementation
     /**
      * @param $entity
      *
-     * @return ORM\User\User
+     * @return ORM\Brand\Brand
      */
     public function brandEntity($entity)
     {
         return new ORM\Brand\Brand($entity, $this->builder);
+    }
+
+    /**
+     * @param $entity
+     *
+     * @return ORM\Wheel\Wheel
+     */
+    public function wheelEntity($entity)
+    {
+        return new ORM\Wheel\Wheel($entity, $this->builder);
     }
 
     /**

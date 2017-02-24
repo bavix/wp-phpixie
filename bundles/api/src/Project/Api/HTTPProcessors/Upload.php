@@ -41,9 +41,9 @@ class Upload extends AuthProcessor
             ];
         }
 
-        $brandId = $data->get('query.id');
+        $id = $data->get('query.id');
 
-        if (!$brandId)
+        if (!$id)
         {
             return [
                 'status' => 'error'
@@ -65,12 +65,12 @@ class Upload extends AuthProcessor
         $logo->size        = $data->get('fileSize');
         $logo->width       = $data->get('sizes.width');
         $logo->height      = $data->get('sizes.height');
-        $logo->brandId     = $brandId;
+        $logo->brandId     = $id;
         $logo->userId      = $data->get('query.userId');
         $logo->description = $data->get('description');
 
         $brand = $this->components->orm()->repository(Model::BRAND)->query()
-            ->in($brandId)
+            ->in($id)
             ->findOne();
 
         if (!$brand)
@@ -85,6 +85,86 @@ class Upload extends AuthProcessor
         $logo->save();
 
         $brand->brandLogo->set($logo);
+
+        return ['status' => 'ok'];
+    }
+
+    public function wheelPostAction(Request $request)
+    {
+        $data = $request->data();
+
+        if ($data->get('status') !== 'ok')
+        {
+            return [
+                'status' => 'error'
+            ];
+        }
+
+        $id = $data->get('query.id');
+
+        if (!$id)
+        {
+            return [
+                'status' => 'error'
+            ];
+        }
+
+        if ($data->get('query.preview'))
+        {
+
+            $preview = $this->components->orm()->createEntity(Model::PREVIEW_WHEEL);
+
+            $preview->hash        = $data->get('hash');
+            $preview->size        = $data->get('fileSize');
+            $preview->width       = $data->get('sizes.width');
+            $preview->height      = $data->get('sizes.height');
+            $preview->userId      = $data->get('query.userId');
+            $preview->description = $data->get('description');
+
+            $wheel = $this->components->orm()->repository(Model::WHEEL)->query()
+                ->in($id)
+                ->findOne();
+
+            if (!$wheel)
+            {
+                return [
+                    'status' => 'error'
+                ];
+            }
+
+            $preview->save();
+
+            $wheel->previewWheel->set($preview);
+
+        }
+        else
+        {
+
+            $image = $this->components->orm()->createEntity(Model::IMAGE);
+
+            $image->hash        = $data->get('hash');
+            $image->size        = $data->get('fileSize');
+            $image->width       = $data->get('sizes.width');
+            $image->height      = $data->get('sizes.height');
+            $image->userId      = $data->get('query.userId');
+            $image->description = $data->get('description');
+
+            $wheel = $this->components->orm()->repository(Model::WHEEL)->query()
+                ->in($id)
+                ->findOne();
+
+            if (!$wheel)
+            {
+                return [
+                    'status' => 'error'
+                ];
+            }
+
+            $image->save();
+
+            $wheel->images->add($image);
+
+        }
 
         return ['status' => 'ok'];
     }
