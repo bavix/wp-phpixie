@@ -650,8 +650,15 @@ class Brand extends SOCProtected
 
         try
         {
-            $brandDealer = $this->components->orm()->query(Model::BRAND_DEALER)
-                ->where('brandId', $brandId);
+
+            $brandDealer = $this->components->orm()
+                ->query(Model::DEALER)
+                ->relatedTo(
+                    'brands',
+                    $this->components->orm()
+                        ->query(Model::BRAND)
+                        ->in($brandId)
+                );
 
             $this->query($brandDealer, $request);
 

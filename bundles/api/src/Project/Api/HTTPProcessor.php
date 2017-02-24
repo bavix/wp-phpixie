@@ -42,6 +42,14 @@ class HTTPProcessor extends HttpBuilder
     }
 
     /**
+     * @return HTTPProcessors\Video
+     */
+    public function buildVideoProcessor()
+    {
+        return new HTTPProcessors\Video($this->builder);
+    }
+
+    /**
      * @param Request $httpRequest
      *
      * @return string

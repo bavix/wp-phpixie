@@ -10,7 +10,7 @@ class Model
     const USER              = 'user';
     const RECOVERY_PASSWORD = 'recoveryPassword';
     const ROLE              = 'role';
-    const PERMISSION        = 'permission';
+    const PERMISSION    = 'permission';
 
     const MENU = 'menu';
 
@@ -23,12 +23,18 @@ class Model
     const COLLECTION   = 'collection';
 
     const HEADING = 'heading';
+    const COMMENT = 'comment';
 
     const SOCIAL = 'social';
 
-    const IMAGE       = 'image';
+    const IMAGE = 'image';
+    const VIDEO = 'video';
+
     const BRAND_LOGO  = 'brandLogo';
     const DEALER_LOGO = 'dealerLogo';
+
+    const PREVIEW_WHEEL = 'previewWheel';
+    const WHEEL_IMAGE   = 'wheelsImage';
 
     const INVITE = 'invite';
 
@@ -38,4 +44,7 @@ class Model
     const BRAND_SOCIAL  = 'brandSocial';
     const BRAND_DEALER  = 'brandDealer';
     const BRAND_HEADING = 'brandHeading';
+
+
+    const WHEEL_COMMENT = 'wheelComment';
 }
