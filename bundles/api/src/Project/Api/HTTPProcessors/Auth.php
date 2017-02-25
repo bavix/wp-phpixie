@@ -192,7 +192,7 @@ class Auth extends AuthProcessor
         $domain = $this->builder->components()->auth()->domain();
 
         /**
-         * @var PasswordProvider $passwordProvider
+         * @var \PHPixie\AuthLogin\Providers\Password  $passwordProvider
          */
         $passwordProvider = $domain->provider('password');
 
@@ -346,6 +346,7 @@ class Auth extends AuthProcessor
             throw new \InvalidArgumentException('The password is less than 6 symbols');
         }
 
+        $this->user = $this->loggedUser();
 
         if (!$this->user)
         {
@@ -353,17 +354,18 @@ class Auth extends AuthProcessor
             throw new \InvalidArgumentException('User not found');
         }
 
-        // todo
-        throw new \InvalidArgumentException('Action in developing');
-
         $domain = $this->builder->components()->auth()->domain();
 
         /**
-         * @var PasswordProvider $passwordProvider
+         * @var \PHPixie\AuthLogin\Providers\Password $passwordProvider
          */
         $passwordProvider = $domain->provider('password');
 
-        var_dump( get_class($passwordProvider) );
+        if (!$passwordProvider->verify( $oldPassword, $this->user->passwordHash() ))
+        {
+            RESTFUL::setError('oldPassword');
+            throw new \InvalidArgumentException('Invalid oldPassword');
+        }
 
         $passwordHash = $passwordProvider->hash($password);
 
@@ -487,7 +489,7 @@ class Auth extends AuthProcessor
         $domain = $this->builder->components()->auth()->domain();
 
         /**
-         * @var PasswordProvider $passwordProvider
+         * @var \PHPixie\AuthLogin\Providers\Password  $passwordProvider
          */
         $passwordProvider = $domain->provider('password');
 

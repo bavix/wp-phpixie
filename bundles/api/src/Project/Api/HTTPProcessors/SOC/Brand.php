@@ -672,53 +672,6 @@ class Brand extends SOCProtected
         return $brandDealer->asArray(true);
     }
 
-    /**
-     * @api               {get} /soc/brand/<id>/dealer/<nextId> Brand Dealer Item
-     * @apiName           Brand Dealer Item
-     * @apiGroup          SOC
-     *
-     * @apiPermission     client user
-     *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
-     *
-     * @apiVersion        0.0.4
-     *
-     * @apiParam        {Number}  id        brandId
-     * @apiParam        {Number}  nextId    dealerId
-     *
-     * @apiParam        {String[]}  [preload] loading relationships
-     *
-     * @param Request $request
-     *
-     * @return mixed
-     */
-    public function dealerItemGetAction(Request $request)
-    {
-        $brandDealerId = $request->attributes()->getRequired('nextId');
-
-        $preload = $request->query()->get('preload', []);
-
-        try
-        {
-            $brandDealer = $this->components->orm()->query(Model::BRAND_DEALER)
-                ->in($brandDealerId)
-                ->findOne($preload);
-        }
-        catch (\Throwable $throwable)
-        {
-            throw new \InvalidArgumentException('Invalid argument');
-        }
-
-        if (!$brandDealer)
-        {
-            RESTFUL::setStatus(REST::NOT_FOUND);
-
-            throw new \InvalidArgumentException('BrandDealer not found');
-        }
-
-        return $brandDealer->asObject(true);
-    }
-
     public function dealerItemDeleteAction(Request $request)
     {
         if (!$this->loggedUser()->hasPermission('cp.soc.branddealer.delete'))

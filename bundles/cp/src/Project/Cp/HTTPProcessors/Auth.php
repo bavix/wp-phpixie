@@ -74,7 +74,7 @@ class Auth extends Processor
         $domain = $this->components->auth()->domain();
 
         /**
-         * @var PasswordProvider $passwordProvider
+         * @var \PHPixie\AuthLogin\Providers\Password  $passwordProvider
          */
         $passwordProvider = $domain->provider('password');
 

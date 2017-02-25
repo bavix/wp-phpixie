@@ -12,6 +12,10 @@ use Project\Model;
 class Wheel extends SOWProtected
 {
 
+    protected $access = [
+        'commentPost'
+    ];
+
     // default
     public function defaultPostAction(Request $request)
     {
@@ -115,13 +119,7 @@ class Wheel extends SOWProtected
             ->helper()
             ->pager($page, $wheel, $limit, $preload);
 
-        return [
-            'currentPage' => $pager->currentPage(),
-            'pageSize'    => $pager->pageSize(),
-            'itemCount'   => $pager->itemCount(),
-            'pageCount'   => $pager->pageCount(),
-            'data'        => $pager->getCurrentItems()->asArray(true)
-        ];
+        return $this->pager($pager);
     }
 
 
@@ -284,14 +282,7 @@ class Wheel extends SOWProtected
             ->helper()
             ->pager($page, $wheelComment, $limit, $preload);
 
-        return [
-            'currentPage' => $pager->currentPage(),
-            'pageSize'    => $pager->pageSize(),
-            'itemCount'   => $pager->itemCount(),
-            'pageCount'   => $pager->pageCount(),
-            'data'        => $pager->getCurrentItems()->asArray(true)
-        ];
-//        return $wheelComment->asArray(true);
+        return $this->pager($pager);
     }
 
     /**
@@ -321,7 +312,46 @@ class Wheel extends SOWProtected
      */
     public function commentPostAction(Request $request)
     {
-        throw new \InvalidArgumentException('In developing');
+        $user = $this->loggedUser();
+
+        if (!$user)
+        {
+            throw new \InvalidArgumentException('User not found');
+        }
+
+        $id = $request->data()->getRequired('id');
+
+        if (is_numeric($id))
+        {
+            throw new \InvalidArgumentException('ID is not numeric!');
+        }
+
+        $text = $request->data()->getRequired('text');
+        $text = strip_tags($text);
+
+        if (empty($text))
+        {
+            throw new \InvalidArgumentException('Text is empty!');
+        }
+
+        $wheel = $this->components->orm()->query(Model::WHEEL)
+            ->in($id)
+            ->findOne();
+
+        if (!$wheel)
+        {
+            throw new \InvalidArgumentException('Wheel not found');
+        }
+
+        $comment         = $this->components->orm()->createEntity(Model::COMMENT);
+        $comment->userId = $user->id();
+        $comment->text   = $text;
+
+        $comment->save();
+
+        $wheel->comments->add($comment);
+
+        return $comment->asObject(true);
     }
 
 }

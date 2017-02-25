@@ -105,13 +105,7 @@ class BoltPattern extends SOWProtected
             ->helper()
             ->pager($page, $boltPattern, $limit, $preload);
 
-        return [
-            'currentPage' => $pager->currentPage(),
-            'pageSize'    => $pager->pageSize(),
-            'itemCount'   => $pager->itemCount(),
-            'pageCount'   => $pager->pageCount(),
-            'data'        => $pager->getCurrentItems()->asArray(true)
-        ];
+        return $this->pager($pager);
     }
 
 
