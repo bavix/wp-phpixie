@@ -7,6 +7,7 @@ use OAuth2\GrantType\ClientCredentials;
 use OAuth2\GrantType\RefreshToken;
 use OAuth2\GrantType\UserCredentials;
 use PHPixie\HTTP\Request;
+use PHPixie\Paginate\Pager;
 use Project\Api\ENUM\REST;
 use Project\Api\Exceptions\Unauthorized;
 use Project\Api\RESTFUL;
@@ -133,6 +134,31 @@ class AuthProcessor extends Processor
         }
 
         return parent::process($request);
+    }
+
+    /**
+     * @param Pager $pager
+     *
+     * @return array
+     */
+    public function pager(Pager $pager)
+    {
+        return [
+            // current page [example: 1]
+            'currentPage' => $pager->currentPage(),
+
+            // page size [example: 50]
+            'pageSize'    => $pager->pageSize(),
+
+            // item count [example: 800]
+            'itemCount'   => $pager->itemCount(),
+
+            // page count [example: 800/50]
+            'pageCount'   => $pager->pageCount(),
+
+            // return array with limit [50]
+            'data'        => $pager->getCurrentItems()->asArray(true)
+        ];
     }
 
     /**
