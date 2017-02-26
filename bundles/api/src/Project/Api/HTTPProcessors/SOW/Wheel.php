@@ -321,12 +321,12 @@ class Wheel extends SOWProtected
 
         $id = $request->data()->getRequired('id');
 
-        if (is_numeric($id))
+        if (!is_numeric($id))
         {
             throw new \InvalidArgumentException('ID is not numeric!');
         }
 
-        $text = $request->data()->getRequired('text');
+        $text = $request->attributes()->getRequired('text');
         $text = strip_tags($text);
 
         if (empty($text))
@@ -352,6 +352,117 @@ class Wheel extends SOWProtected
         $wheel->comments->add($comment);
 
         return $comment->asObject(true);
+    }
+
+    /**
+     * @api               {post} /sow/wheel/<id>/favorite Wheel Favorite Add
+     * @apiName           Wheel Favorite Add
+     * @apiGroup          SOW
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.5
+     *
+     * @apiParam        {Number}  id        wheelId
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
+    public function favoritePostAction(Request $request)
+    {
+        //$user = $this->loggedUser();
+        $user = $this->components->orm()->query(Model::USER)->findOne();
+
+        if (!$user)
+        {
+            throw new \InvalidArgumentException('User not found');
+        }
+
+        $id = $request->attributes()->getRequired('id');
+
+        if (!is_numeric($id))
+        {
+            throw new \InvalidArgumentException('ID is not numeric!');
+        }
+
+        $wheel = $this->components->orm()->query(Model::WHEEL)
+            ->in($id)
+            ->findOne();
+
+        if (!$wheel)
+        {
+            throw new \InvalidArgumentException('Wheel not found');
+        }
+
+        if ($wheel->favorites->add($user))
+        {
+            RESTFUL::setStatus(REST::CREATED);
+
+            return [
+                'created' => true,
+                'count'   => $wheel->favorites->query()->count()
+            ];
+        }
+
+        RESTFUL::setError('favorite');
+        throw new \InvalidArgumentException('Can\'t make favorite on wheel');
+    }
+
+    /**
+     * @api               {delete} /sow/wheel/<id>/favorite Wheel Favorite Remove
+     * @apiName           Wheel Favorite Remove
+     * @apiGroup          SOW
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.5
+     *
+     * @apiParam        {Number}  id        wheelId
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
+    public function favoriteDeleteAction(Request $request)
+    {
+        //$user = $this->loggedUser();
+        $user = $this->components->orm()->query(Model::USER)->findOne();
+
+        if (!$user)
+        {
+            throw new \InvalidArgumentException('User not found');
+        }
+
+        $id = $request->attributes()->getRequired('id');
+
+        if (!is_numeric($id))
+        {
+            throw new \InvalidArgumentException('ID is not numeric!');
+        }
+
+        $wheel = $this->components->orm()->query(Model::WHEEL)
+            ->in($id)
+            ->findOne();
+
+        if (!$wheel)
+        {
+            throw new \InvalidArgumentException('Wheel not found');
+        }
+
+        if ($wheel->favorites->remove($user))
+        {
+            RESTFUL::setStatus(REST::NO_CONTENT);
+
+            return null; // restful api
+        }
+
+        RESTFUL::setError('favorite');
+        throw new \InvalidArgumentException('Can\'t remove favorite on wheel');
     }
 
 }
