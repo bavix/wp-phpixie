@@ -213,14 +213,14 @@ return [
             'right' => Model::USER,
 
             'leftOptions' => [
-                'property' => 'favorites'
+                'property' => 'favourites'
             ],
 
             'rightOptions' => [
-                'property' => 'favoriteWheels'
+                'property' => 'favouriteWheels'
             ],
 
-            'pivot' => 'wheelsFavorites',
+            'pivot' => 'wheelsFavourites',
 
             'pivotOptions' => [
                 'leftKey'  => 'wheelId',
