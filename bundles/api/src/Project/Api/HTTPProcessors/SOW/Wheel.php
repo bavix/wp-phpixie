@@ -829,66 +829,66 @@ class Wheel extends SOWProtected
         return $this->pager($pager);
     }
 
-    public function debugGetAction(Request $request)
-    {
-
-        $video = $this->components->orm()->query(Model::VIDEO)->findOne();
-
-        if (!$video)
-        {
-
-            $urls = [
-                'https://www.youtube.com/watch?v=JLl_Wli9C18',
-                'https://www.youtube.com/watch?v=Yi6LU3Z7obM',
-                'https://www.youtube.com/watch?v=cFNHuIIMTto',
-                'https://www.youtube.com/watch?v=m9V3zTneXjM',
-                'https://www.youtube.com/watch?v=Nnbs6K49Edo',
-            ];
-
-            $wheel = $this->components->orm()->query(Model::WHEEL)
-                ->in($request->attributes()->getRequired('id'))
-                ->findOne();
-
-            foreach ($urls as $url)
-            {
-                $info = \Embed\Embed::create($url);
-                $list = [
-                    'url'      => $info->url,
-                    'provider' => $info->providerName,
-
-                    'title'       => $info->title,
-                    'description' => $info->description,
-
-                    'image'       => $info->image,
-                    'imageWidth'  => $info->imageWidth,
-                    'imageHeight' => $info->imageHeight,
-
-                    'width'       => $info->width,
-                    'height'      => $info->height,
-                    'aspectRatio' => $info->aspectRatio,
-
-                    'authorName' => $info->authorName,
-                    'authorUrl'  => $info->authorUrl,
-
-                    'userId' => 1,
-                ];
-
-                $video = $this->components->orm()->createEntity(Model::VIDEO);
-
-                foreach ($list as $column => $value)
-                {
-                    $video->{$column} = $value;
-                }
-
-                $video->save();
-
-                $wheel->videos->add($video);
-            }
-
-        }
-
-        return $video->asObject(true);
-    }
+//    public function debugGetAction(Request $request)
+//    {
+//
+//        $video = $this->components->orm()->query(Model::VIDEO)->findOne();
+//
+//        if (!$video)
+//        {
+//
+//            $urls = [
+//                'https://www.youtube.com/watch?v=JLl_Wli9C18',
+//                'https://www.youtube.com/watch?v=Yi6LU3Z7obM',
+//                'https://www.youtube.com/watch?v=cFNHuIIMTto',
+//                'https://www.youtube.com/watch?v=m9V3zTneXjM',
+//                'https://www.youtube.com/watch?v=Nnbs6K49Edo',
+//            ];
+//
+//            $wheel = $this->components->orm()->query(Model::WHEEL)
+//                ->in($request->attributes()->getRequired('id'))
+//                ->findOne();
+//
+//            foreach ($urls as $url)
+//            {
+//                $info = \Embed\Embed::create($url);
+//                $list = [
+//                    'url'      => $info->url,
+//                    'provider' => $info->providerName,
+//
+//                    'title'       => $info->title,
+//                    'description' => $info->description,
+//
+//                    'image'       => $info->image,
+//                    'imageWidth'  => $info->imageWidth,
+//                    'imageHeight' => $info->imageHeight,
+//
+//                    'width'       => $info->width,
+//                    'height'      => $info->height,
+//                    'aspectRatio' => $info->aspectRatio,
+//
+//                    'authorName' => $info->authorName,
+//                    'authorUrl'  => $info->authorUrl,
+//
+//                    'userId' => 1,
+//                ];
+//
+//                $video = $this->components->orm()->createEntity(Model::VIDEO);
+//
+//                foreach ($list as $column => $value)
+//                {
+//                    $video->{$column} = $value;
+//                }
+//
+//                $video->save();
+//
+//                $wheel->videos->add($video);
+//            }
+//
+//        }
+//
+//        return $video->asObject(true);
+//    }
 
 
 }
