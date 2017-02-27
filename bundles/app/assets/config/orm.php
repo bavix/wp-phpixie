@@ -98,7 +98,7 @@ return [
 
         [
             'type'  => 'manyToMany',
-            'left' => Model::WHEEL,
+            'left'  => Model::WHEEL,
             'right' => Model::VIDEO,
         ],
 
@@ -203,8 +203,8 @@ return [
             'pivot' => 'wheelsLikes',
 
             'pivotOptions' => [
-                'rightKey' => 'wheelId',
-                'leftKey'  => 'userId'
+                'leftKey'  => 'wheelId',
+                'rightKey' => 'userId',
             ]
         ],
         [
@@ -223,8 +223,8 @@ return [
             'pivot' => 'wheelsFavorites',
 
             'pivotOptions' => [
-                'rightKey' => 'wheelId',
-                'leftKey'  => 'userId'
+                'leftKey'  => 'wheelId',
+                'rightKey' => 'userId',
             ]
         ],
 

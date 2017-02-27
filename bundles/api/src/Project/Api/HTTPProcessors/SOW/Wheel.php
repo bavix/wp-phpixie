@@ -113,9 +113,9 @@ class Wheel extends SOWProtected
         $page  = $request->query()->get('page', 1);
         $limit = $request->query()->get('limit', 50);
 
-        $user = $this->loggedUser();
-
         $preload = $request->query()->get('preload', []);
+
+        $user = $this->loggedUser();
 
         if ($user)
         {
@@ -160,7 +160,6 @@ class Wheel extends SOWProtected
 
         return $this->pager($pager);
     }
-
 
     public function itemDeleteAction(Request $request)
     {
@@ -218,6 +217,41 @@ class Wheel extends SOWProtected
         $id = $request->attributes()->getRequired('id');
 
         $preload = $request->query()->get('preload', []);
+
+        $user = $this->loggedUser();
+
+        if ($user)
+        {
+            $preload = array_merge($preload, [
+
+                'likes' => [
+                    'queryCallback' => function ($query) use ($user)
+                    {
+                        /**
+                         * @var $query \PHPixie\Database\Driver\PDO\Query\Type\Select
+                         */
+                        $query
+                            ->fields('id')
+                            ->where('users.id', $user->id())
+                            ->limit(1);
+                    }
+                ],
+
+                'favorites' => [
+                    'queryCallback' => function ($query) use ($user)
+                    {
+                        /**
+                         * @var $query \PHPixie\Database\Driver\PDO\Query\Type\Select
+                         */
+                        $query
+                            ->fields('id')
+                            ->where('users.id', $user->id())
+                            ->limit(1);
+                    }
+                ]
+
+            ]);
+        }
 
         try
         {
