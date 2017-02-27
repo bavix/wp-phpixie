@@ -151,7 +151,7 @@ class AuthProcessor extends Processor
             'pageSize'    => $pager->pageSize(),
 
             // item count [example: 800]
-            'itemCount'   => $pager->itemCount(),
+            'itemCount'   => (int)$pager->itemCount(),
 
             // page count [example: 800/50]
             'pageCount'   => $pager->pageCount(),

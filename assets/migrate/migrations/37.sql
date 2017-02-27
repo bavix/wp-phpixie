@@ -1,0 +1,1 @@
+ALTER TABLE `wheels` ADD `styleId` INT NULL AFTER `collectionId`;
