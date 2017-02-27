@@ -560,4 +560,115 @@ class Wheel extends SOWProtected
         throw new \InvalidArgumentException('Can\'t remove favorite on wheel');
     }
 
+    /**
+     * @api               {post} /sow/wheel/<id>/like Wheel Like Add
+     * @apiName           Wheel Like Add
+     * @apiGroup          SOW
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.5
+     *
+     * @apiParam        {Number}  id        wheelId
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
+    public function likePostAction(Request $request)
+    {
+        //$user = $this->loggedUser();
+        $user = $this->components->orm()->query(Model::USER)->findOne();
+
+        if (!$user)
+        {
+            throw new \InvalidArgumentException('User not found');
+        }
+
+        $id = $request->attributes()->getRequired('id');
+
+        if (!is_numeric($id))
+        {
+            throw new \InvalidArgumentException('ID is not numeric!');
+        }
+
+        $wheel = $this->components->orm()->query(Model::WHEEL)
+            ->in($id)
+            ->findOne();
+
+        if (!$wheel)
+        {
+            throw new \InvalidArgumentException('Wheel not found');
+        }
+
+        if ($wheel->likes->add($user))
+        {
+            RESTFUL::setStatus(REST::CREATED);
+
+            return [
+                'created' => true,
+                'count'   => $wheel->likes->query()->count()
+            ];
+        }
+
+        RESTFUL::setError('like');
+        throw new \InvalidArgumentException('Can\'t make like on wheel');
+    }
+
+    /**
+     * @api               {delete} /sow/wheel/<id>/like Wheel Favorite Remove
+     * @apiName           Wheel Like Remove
+     * @apiGroup          SOW
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.5
+     *
+     * @apiParam        {Number}  id        wheelId
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
+    public function likeDeleteAction(Request $request)
+    {
+        //$user = $this->loggedUser();
+        $user = $this->components->orm()->query(Model::USER)->findOne();
+
+        if (!$user)
+        {
+            throw new \InvalidArgumentException('User not found');
+        }
+
+        $id = $request->attributes()->getRequired('id');
+
+        if (!is_numeric($id))
+        {
+            throw new \InvalidArgumentException('ID is not numeric!');
+        }
+
+        $wheel = $this->components->orm()->query(Model::WHEEL)
+            ->in($id)
+            ->findOne();
+
+        if (!$wheel)
+        {
+            throw new \InvalidArgumentException('Wheel not found');
+        }
+
+        if ($wheel->likes->remove($user))
+        {
+            RESTFUL::setStatus(REST::NO_CONTENT);
+
+            return null; // restful api
+        }
+
+        RESTFUL::setError('like');
+        throw new \InvalidArgumentException('Can\'t remove like on wheel');
+    }
+
 }
