@@ -14,8 +14,8 @@ class Wheel extends SOWProtected
 
     protected $access = [
         'commentPost',
-        'favoritePost',
-        'favoriteDelete',
+        'favouritePost',
+        'favouriteDelete',
         'likePost',
         'likeDelete',
     ];
@@ -134,7 +134,7 @@ class Wheel extends SOWProtected
                     }
                 ],
 
-                'favorites' => [
+                'favourites' => [
                     'queryCallback' => function ($query) use ($user)
                     {
                         /**
@@ -237,7 +237,7 @@ class Wheel extends SOWProtected
                     }
                 ],
 
-                'favorites' => [
+                'favourites' => [
                     'queryCallback' => function ($query) use ($user)
                     {
                         /**
@@ -488,8 +488,8 @@ class Wheel extends SOWProtected
     }
 
     /**
-     * @api               {post} /sow/wheel/<id>/favorite Wheel Favorite Add
-     * @apiName           Wheel Favorite Add
+     * @api               {post} /sow/wheel/<id>/favourite Wheel Favourite Add
+     * @apiName           Wheel Favourite Add
      * @apiGroup          SOW
      *
      * @apiPermission     client user
@@ -504,7 +504,7 @@ class Wheel extends SOWProtected
      *
      * @return array
      */
-    public function favoritePostAction(Request $request)
+    public function favouritePostAction(Request $request)
     {
         //$user = $this->loggedUser();
         $user = $this->components->orm()->query(Model::USER)->findOne();
@@ -530,23 +530,23 @@ class Wheel extends SOWProtected
             throw new \InvalidArgumentException('Wheel not found');
         }
 
-        if ($wheel->favorites->add($user))
+        if ($wheel->favourites->add($user))
         {
             RESTFUL::setStatus(REST::CREATED);
 
             return [
                 'created' => true,
-                'count'   => $wheel->favorites->query()->count()
+                'count'   => $wheel->favourites->query()->count()
             ];
         }
 
-        RESTFUL::setError('favorite');
-        throw new \InvalidArgumentException('Can\'t make favorite on wheel');
+        RESTFUL::setError('favourite');
+        throw new \InvalidArgumentException('Can\'t make favourite on wheel');
     }
 
     /**
-     * @api               {delete} /sow/wheel/<id>/favorite Wheel Favorite Remove
-     * @apiName           Wheel Favorite Remove
+     * @api               {delete} /sow/wheel/<id>/favourite Wheel favourite Remove
+     * @apiName           Wheel favourite Remove
      * @apiGroup          SOW
      *
      * @apiPermission     client user
@@ -561,7 +561,7 @@ class Wheel extends SOWProtected
      *
      * @return array
      */
-    public function favoriteDeleteAction(Request $request)
+    public function favouriteDeleteAction(Request $request)
     {
         //$user = $this->loggedUser();
         $user = $this->components->orm()->query(Model::USER)->findOne();
@@ -587,15 +587,15 @@ class Wheel extends SOWProtected
             throw new \InvalidArgumentException('Wheel not found');
         }
 
-        if ($wheel->favorites->remove($user))
+        if ($wheel->favourites->remove($user))
         {
             RESTFUL::setStatus(REST::NO_CONTENT);
 
             return null; // restful api
         }
 
-        RESTFUL::setError('favorite');
-        throw new \InvalidArgumentException('Can\'t remove favorite on wheel');
+        RESTFUL::setError('favourite');
+        throw new \InvalidArgumentException('Can\'t remove favourite on wheel');
     }
 
     /**

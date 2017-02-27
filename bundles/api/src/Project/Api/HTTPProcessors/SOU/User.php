@@ -17,8 +17,8 @@ class User extends SOUProtected
     }
 
     /**
-     * @api               {get} /sou/user/<id>/favorite-wheel Wheel Favorite List
-     * @apiName           Wheel Favorite List
+     * @api               {get} /sou/user/<id>/favourite-wheel Wheel Favourite List
+     * @apiName           Wheel Favourite List
      * @apiGroup          SOU
      *
      * @apiPermission     client user
@@ -42,7 +42,7 @@ class User extends SOUProtected
      * @return mixed
      * @throws \PHPixie\Paginate\Exception
      */
-    public function favoriteWheelGetAction(Request $request)
+    public function favouriteWheelGetAction(Request $request)
     {
         /**
          * @var $builder Builder
@@ -75,7 +75,7 @@ class User extends SOUProtected
                     }
                 ],
 
-                'favorites' => [
+                'favourites' => [
                     'queryCallback' => function ($query) use ($user)
                     {
                         /**
@@ -101,7 +101,7 @@ class User extends SOUProtected
             throw new \InvalidArgumentException('User not found');
         }
 
-        $wheel = $user->favoriteWheels->query();
+        $wheel = $user->favouriteWheels->query();
 
         $this->query($wheel, $request);
 
@@ -172,7 +172,7 @@ class User extends SOUProtected
                     }
                 ],
 
-                'favorites' => [
+                'favourites' => [
                     'queryCallback' => function ($query) use ($user)
                     {
                         /**

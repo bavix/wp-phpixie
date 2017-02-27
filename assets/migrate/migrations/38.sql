@@ -1,0 +1,1 @@
+rename TABLE wheelsFavorites to wheelsFavourites;
