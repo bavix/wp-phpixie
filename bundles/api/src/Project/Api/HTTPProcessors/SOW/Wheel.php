@@ -622,7 +622,7 @@ class Wheel extends SOWProtected
     }
 
     /**
-     * @api               {delete} /sow/wheel/<id>/like Wheel Favorite Remove
+     * @api               {delete} /sow/wheel/<id>/like Wheel Like Remove
      * @apiName           Wheel Like Remove
      * @apiGroup          SOW
      *
