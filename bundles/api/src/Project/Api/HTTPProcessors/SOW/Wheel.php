@@ -286,6 +286,66 @@ class Wheel extends SOWProtected
     }
 
     /**
+     * @api               {get} /sow/wheel/<id>/similar Wheel Similar List
+     * @apiName           Wheel Similar List
+     * @apiGroup          SOW
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.5
+     *
+     * @apiParam        {Number}  id        wheelId
+     *
+     * @apiParam        {String[]}  [preload] loading relationships
+     * @apiParam        {String[]}  [fields] fields
+     *
+     * @apiParam        {String[]}  [sort] order by id desc
+     * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [queries] filter LIKE %4%
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
+    public function similarGetAction(Request $request)
+    {
+        $wheelId = $request->attributes()->getRequired('id');
+
+        /**
+         * @var $builder Builder
+         */
+        $builder = $this->builder->frameworkBuilder();
+
+        $page  = $request->query()->get('page', 1);
+        $limit = $request->query()->get('limit', 50);
+
+        $preload = $request->query()->get('preload', []);
+
+        $wheel = $this->components->orm()->query(Model::WHEEL)
+            ->in($wheelId)
+            ->findOne();
+
+        if (!$wheel)
+        {
+            RESTFUL::setError('wheel');
+            throw new \InvalidArgumentException('Wheel not found');
+        }
+
+        $wheelQuery = $this->components->orm()->query(Model::WHEEL)
+            ->where('id', '!=', $wheelId)
+            ->where('styleId', '!=', null)
+            ->where('styleId', $wheel->styleId);
+
+        $pager = $builder
+            ->helper()
+            ->pager($page, $wheelQuery, $limit, $preload);
+
+        return $this->pager($pager);
+    }
+
+    /**
      * @api               {post} /sow/wheel/<id>/comment Wheel Comment Add
      * @apiName           Wheel Comment Add
      * @apiGroup          SOW

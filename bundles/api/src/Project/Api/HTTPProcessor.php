@@ -50,6 +50,14 @@ class HTTPProcessor extends HttpBuilder
     }
 
     /**
+     * @return HTTPProcessors\Account
+     */
+    public function buildAccountProcessor()
+    {
+        return new HTTPProcessors\Account($this->builder);
+    }
+
+    /**
      * @param Request $httpRequest
      *
      * @return string
