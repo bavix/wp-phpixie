@@ -13,7 +13,11 @@ class Wheel extends SOWProtected
 {
 
     protected $access = [
-        'commentPost'
+        'commentPost',
+        'favoritePost',
+        'favoriteDelete',
+        'likePost',
+        'likeDelete',
     ];
 
     // default
