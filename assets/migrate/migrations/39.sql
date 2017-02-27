@@ -1,0 +1,1 @@
+ALTER TABLE `users` ADD `about` VARCHAR(255) NULL AFTER `email`;
