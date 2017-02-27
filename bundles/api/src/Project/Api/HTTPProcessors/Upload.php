@@ -85,6 +85,7 @@ class Upload extends AuthProcessor
         $logo->save();
 
         $brand->brandLogo->set($logo);
+        $logo->brand->set($brand);
 
         return ['status' => 'ok'];
     }
@@ -135,6 +136,7 @@ class Upload extends AuthProcessor
             $preview->save();
 
             $wheel->previewWheel->set($preview);
+            $preview->wheel->set($wheel);
 
         }
         else
