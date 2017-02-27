@@ -709,4 +709,186 @@ class Wheel extends SOWProtected
         throw new \InvalidArgumentException('Can\'t remove like on wheel');
     }
 
+    /**
+     * @api               {get} /sow/wheel/<id>/video Wheel Video List
+     * @apiName           Wheel Video List
+     * @apiGroup          SOW
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.5
+     *
+     * @apiParam        {Number}  id        wheelId
+     *
+     * @apiParam        {String[]}  [preload] loading relationships
+     * @apiParam        {String[]}  [fields] fields
+     *
+     * @apiParam        {String[]}  [sort] order by id desc
+     * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [queries] filter LIKE %4%
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
+    public function videoGetAction(Request $request)
+    {
+        $wheelId = $request->attributes()->getRequired('id');
+
+        /**
+         * @var $builder Builder
+         */
+        $builder = $this->builder->frameworkBuilder();
+
+        $page  = $request->query()->get('page', 1);
+        $limit = $request->query()->get('limit', 50);
+
+        $preload = $request->query()->get('preload', []);
+//        $fields  = $request->query()->get('fields');
+
+
+        $wheel = $this->components->orm()
+            ->query(Model::WHEEL)
+            ->in($wheelId)
+            ->findOne();
+
+        if (!$wheel)
+        {
+            RESTFUL::setError('wheel');
+            throw new \InvalidArgumentException('Wheel not found');
+        }
+
+        $videoQuery = $wheel->videos->query();
+
+        $pager = $builder
+            ->helper()
+            ->pager($page, $videoQuery, $limit, $preload);
+
+        return $this->pager($pager);
+    }
+
+
+    /**
+     * @api               {get} /sow/wheel/<id>/image Wheel Video List
+     * @apiName           Wheel Video List
+     * @apiGroup          SOW
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.5
+     *
+     * @apiParam        {Number}  id        wheelId
+     *
+     * @apiParam        {String[]}  [preload] loading relationships
+     * @apiParam        {String[]}  [fields] fields
+     *
+     * @apiParam        {String[]}  [sort] order by id desc
+     * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [queries] filter LIKE %4%
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
+    public function imageGetAction(Request $request)
+    {
+        $wheelId = $request->attributes()->getRequired('id');
+
+        /**
+         * @var $builder Builder
+         */
+        $builder = $this->builder->frameworkBuilder();
+
+        $page  = $request->query()->get('page', 1);
+        $limit = $request->query()->get('limit', 50);
+
+        $preload = $request->query()->get('preload', []);
+//        $fields  = $request->query()->get('fields');
+
+        $wheel = $this->components->orm()
+            ->query(Model::WHEEL)
+            ->in($wheelId)
+            ->findOne();
+
+        if (!$wheel)
+        {
+            RESTFUL::setError('wheel');
+            throw new \InvalidArgumentException('Wheel not found');
+        }
+
+        $videoQuery = $wheel->images->query();
+
+        $pager = $builder
+            ->helper()
+            ->pager($page, $videoQuery, $limit, $preload);
+
+        return $this->pager($pager);
+    }
+
+    public function debugGetAction(Request $request)
+    {
+
+        $video = $this->components->orm()->query(Model::VIDEO)->findOne();
+
+        if (!$video)
+        {
+
+            $urls = [
+                'https://www.youtube.com/watch?v=JLl_Wli9C18',
+                'https://www.youtube.com/watch?v=Yi6LU3Z7obM',
+                'https://www.youtube.com/watch?v=cFNHuIIMTto',
+                'https://www.youtube.com/watch?v=m9V3zTneXjM',
+                'https://www.youtube.com/watch?v=Nnbs6K49Edo',
+            ];
+
+            $wheel = $this->components->orm()->query(Model::WHEEL)
+                ->in($request->attributes()->getRequired('id'))
+                ->findOne();
+
+            foreach ($urls as $url)
+            {
+                $info = \Embed\Embed::create($url);
+                $list = [
+                    'url'      => $info->url,
+                    'provider' => $info->providerName,
+
+                    'title'       => $info->title,
+                    'description' => $info->description,
+
+                    'image'       => $info->image,
+                    'imageWidth'  => $info->imageWidth,
+                    'imageHeight' => $info->imageHeight,
+
+                    'width'       => $info->width,
+                    'height'      => $info->height,
+                    'aspectRatio' => $info->aspectRatio,
+
+                    'authorName' => $info->authorName,
+                    'authorUrl'  => $info->authorUrl,
+
+                    'userId' => 1,
+                ];
+
+                $video = $this->components->orm()->createEntity(Model::VIDEO);
+
+                foreach ($list as $column => $value)
+                {
+                    $video->{$column} = $value;
+                }
+
+                $video->save();
+
+                $wheel->videos->add($video);
+            }
+
+        }
+
+        return $video->asObject(true);
+    }
+
+
 }
