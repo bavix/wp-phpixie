@@ -256,7 +256,6 @@ class Brand extends SOCProtected
      * @apiParam        {Number}  id brandId
      *
      * @apiParam        {String[]}  [preload] loading relationships
-     * @apiParam        {String[]}  [fields] fields
      *
      * @apiParam        {String[]}  [sort] order by id desc
      * @apiParam        {String[]}  [terms] filter equal id = 4
@@ -270,24 +269,26 @@ class Brand extends SOCProtected
     {
         $brandId = $request->attributes()->getRequired('id');
 
+        /**
+         * @var $builder Builder
+         */
+        $builder = $this->builder->frameworkBuilder();
+
+        $page  = $request->query()->get('page', 1);
+        $limit = $request->query()->get('limit', 50);
+
         $preload = $request->query()->get('preload', []);
-        $fields  = $request->query()->get('fields');
 
-        try
-        {
-            $brandSocial = $this->components->orm()->query(Model::BRAND_SOCIAL)
-                ->where('brandId', $brandId);
+        $socialQuery = $this->components->orm()->query(Model::BRAND_SOCIAL)
+            ->where('brandId', $brandId);
 
-            $this->query($brandSocial, $request);
+        $this->query($socialQuery, $request);
 
-            $brandSocial = $brandSocial->find($preload, $fields);
-        }
-        catch (\Throwable $throwable)
-        {
-            throw new \InvalidArgumentException('Invalid argument');
-        }
+        $pager = $builder
+            ->helper()
+            ->pager($page, $socialQuery, $limit, $preload);
 
-        return $brandSocial->asArray(true);
+        return $this->pager($pager);
     }
 
     /**
@@ -454,24 +455,35 @@ class Brand extends SOCProtected
     {
         $brandId = $request->attributes()->getRequired('id');
 
+        /**
+         * @var $builder Builder
+         */
+        $builder = $this->builder->frameworkBuilder();
+
+        $page  = $request->query()->get('page', 1);
+        $limit = $request->query()->get('limit', 50);
+
         $preload = $request->query()->get('preload', []);
-        $fields  = $request->query()->get('fields');
 
-        try
+        $brand = $this->components->orm()->query(Model::BRAND)
+            ->in($brandId)
+            ->findOne();
+
+        if (!$brand)
         {
-            $brandHeading = $this->components->orm()->query(Model::BRAND_HEADING)
-                ->where('brandId', $brandId);
-
-            $this->query($brandHeading, $request);
-
-            $brandHeading = $brandHeading->find($preload, $fields);
-        }
-        catch (\Throwable $throwable)
-        {
-            throw new \InvalidArgumentException('Invalid argument');
+            RESTFUL::setError('brand');
+            throw new \InvalidArgumentException('Brand not found');
         }
 
-        return $brandHeading->asArray(true);
+        $headingQuery = $brand->headings->query();
+
+        $this->query($headingQuery, $request);
+
+        $pager = $builder
+            ->helper()
+            ->pager($page, $headingQuery, $limit, $preload);
+
+        return $this->pager($pager);
     }
 
     /**
@@ -625,7 +637,6 @@ class Brand extends SOCProtected
      * @apiParam        {Number}  id        dealerId
      *
      * @apiParam        {String[]}  [preload] loading relationships
-     * @apiParam        {String[]}  [fields] fields
      *
      * @apiParam        {String[]}  [sort] order by id desc
      * @apiParam        {String[]}  [terms] filter equal id = 4
@@ -639,31 +650,35 @@ class Brand extends SOCProtected
     {
         $brandId = $request->attributes()->getRequired('id');
 
+        /**
+         * @var $builder Builder
+         */
+        $builder = $this->builder->frameworkBuilder();
+
+        $page  = $request->query()->get('page', 1);
+        $limit = $request->query()->get('limit', 50);
+
         $preload = $request->query()->get('preload', []);
-        $fields  = $request->query()->get('fields');
 
-        try
+        $brand = $this->components->orm()->query(Model::BRAND)
+            ->in($brandId)
+            ->findOne();
+
+        if (!$brand)
         {
-
-            $brandDealer = $this->components->orm()
-                ->query(Model::DEALER)
-                ->relatedTo(
-                    'brands',
-                    $this->components->orm()
-                        ->query(Model::BRAND)
-                        ->in($brandId)
-                );
-
-            $this->query($brandDealer, $request);
-
-            $brandDealer = $brandDealer->find($preload, $fields);
-        }
-        catch (\Throwable $throwable)
-        {
-            throw new \InvalidArgumentException('Invalid argument');
+            RESTFUL::setError('brand');
+            throw new \InvalidArgumentException('Brand not found');
         }
 
-        return $brandDealer->asArray(true);
+        $dealerQuery = $brand->dealers->query();
+
+        $this->query($dealerQuery, $request);
+
+        $pager = $builder
+            ->helper()
+            ->pager($page, $dealerQuery, $limit, $preload);
+
+        return $this->pager($pager);
     }
 
     public function dealerItemDeleteAction(Request $request)
@@ -691,6 +706,67 @@ class Brand extends SOCProtected
         $brandDealer->delete();
 
         return $brandDealer->asObject(true);
+    }
+
+    /**
+     * @api               {get} /soc/brand/<id>/address Brand Address List
+     * @apiName           Brand Address List
+     * @apiGroup          SOW
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.5
+     *
+     * @apiParam        {Number}  id        brandId
+     *
+     * @apiParam        {String[]}  [preload] loading relationships
+     * @apiParam        {String[]}  [fields] fields
+     *
+     * @apiParam        {String[]}  [sort] order by id desc
+     * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [queries] filter LIKE %4%
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
+    public function addressGetAction(Request $request)
+    {
+        $brandId = $request->attributes()->getRequired('id');
+
+        /**
+         * @var $builder Builder
+         */
+        $builder = $this->builder->frameworkBuilder();
+
+        $page  = $request->query()->get('page', 1);
+        $limit = $request->query()->get('limit', 50);
+
+        $preload = $request->query()->get('preload', []);
+//        $fields  = $request->query()->get('fields');
+
+        $brand = $this->components->orm()
+            ->query(Model::BRAND)
+            ->in($brandId)
+            ->findOne();
+
+        if (!$brand)
+        {
+            RESTFUL::setError('brand');
+            throw new \InvalidArgumentException('Brand not found');
+        }
+
+        $imageQuery = $brand->addresses->query();
+
+        $this->query($imageQuery, $request);
+
+        $pager = $builder
+            ->helper()
+            ->pager($page, $imageQuery, $limit, $preload);
+
+        return $this->pager($pager);
     }
 
 }

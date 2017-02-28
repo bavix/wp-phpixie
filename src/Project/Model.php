@@ -14,6 +14,8 @@ class Model
 
     const MENU = 'menu';
 
+    const ADDRESS = 'address';
+
     const BRAND  = 'brand';
     const DEALER = 'dealer';
 

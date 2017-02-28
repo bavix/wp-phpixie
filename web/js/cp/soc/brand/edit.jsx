@@ -88,7 +88,13 @@ class SocialRows extends React.Component {
     }
 
     row(model) {
-        const socialName = $('#socialType [value="' + model.socialId + '"]').text();
+        let socialName;
+        if (typeof model.social === "undefined") {
+            socialName = $('#socialType [value="' + model.socialId + '"]').text();
+        }
+        else {
+            socialName = model.social.title;
+        }
         return <tr key={model.id}>
             <td>{model.id}</td>
             <td>{socialName}</td>
@@ -278,7 +284,7 @@ $(function () {
 
     function tableInit(json) {
         if (typeof json.id === "undefined") {
-            socialJson = json;
+            socialJson = json.data;
         }
         else {
             socialJson.push(json)
@@ -429,7 +435,7 @@ $(function () {
 
     });
 
-    fetch($formSocial.attr('action'), {
+    fetch($formSocial.attr('action') + '?preload[]=social', {
         method: 'GET',
         credentials: 'include'
     }).then(response).then(tableInit).catch(() => undefined);

@@ -132,7 +132,12 @@ var SocialRows = function (_React$Component2) {
     }, {
         key: 'row',
         value: function row(model) {
-            var socialName = $('#socialType [value="' + model.socialId + '"]').text();
+            var socialName = void 0;
+            if (typeof model.social === "undefined") {
+                socialName = $('#socialType [value="' + model.socialId + '"]').text();
+            } else {
+                socialName = model.social.title;
+            }
             return React.createElement(
                 'tr',
                 { key: model.id },
@@ -450,7 +455,7 @@ $(function () {
 
     function tableInit(json) {
         if (typeof json.id === "undefined") {
-            socialJson = json;
+            socialJson = json.data;
         } else {
             socialJson.push(json);
         }
@@ -585,7 +590,7 @@ $(function () {
         });
     });
 
-    fetch($formSocial.attr('action'), {
+    fetch($formSocial.attr('action') + '?preload[]=social', {
         method: 'GET',
         credentials: 'include'
     }).then(response).then(tableInit).catch(function () {
