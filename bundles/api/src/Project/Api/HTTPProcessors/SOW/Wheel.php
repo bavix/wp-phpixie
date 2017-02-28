@@ -411,6 +411,8 @@ class Wheel extends SOWProtected
             ->where('styleId', '!=', null)
             ->where('styleId', $wheel->styleId);
 
+        $this->query($wheelQuery, $request);
+
         $pager = $builder
             ->helper()
             ->pager($page, $wheelQuery, $limit, $preload);
@@ -762,6 +764,8 @@ class Wheel extends SOWProtected
 
         $videoQuery = $wheel->videos->query();
 
+        $this->query($videoQuery, $request);
+
         $pager = $builder
             ->helper()
             ->pager($page, $videoQuery, $limit, $preload);
@@ -820,11 +824,13 @@ class Wheel extends SOWProtected
             throw new \InvalidArgumentException('Wheel not found');
         }
 
-        $videoQuery = $wheel->images->query();
+        $imageQuery = $wheel->images->query();
+
+        $this->query($imageQuery, $request);
 
         $pager = $builder
             ->helper()
-            ->pager($page, $videoQuery, $limit, $preload);
+            ->pager($page, $imageQuery, $limit, $preload);
 
         return $this->pager($pager);
     }
