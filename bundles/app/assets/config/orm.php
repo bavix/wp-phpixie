@@ -287,6 +287,13 @@ return [
             'owner' => Model::USER,
             'items' => Model::LOG
         ],
+
+        [
+            'type'  => 'manyToMany',
+            'left'  => Model::BRAND,
+            'right' => Model::ADDRESS
+        ],
+
     ]
 
 ];
