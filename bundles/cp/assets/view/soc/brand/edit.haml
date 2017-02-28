@@ -22,6 +22,8 @@
               %a(data-toggle="tab" href="#tab-dealer") Dealer
             %li
               %a(data-toggle="tab" href="#tab-collection") Collection
+            %li
+              %a(data-toggle="tab" href="#tab-address") Address
             - if ($user->hasPermission('cp.log'))
               %li
                 %a(data-toggle="tab" href="#tab-last-activity")
@@ -109,6 +111,9 @@
 
             #tab-collection.tab-pane
               partial: 'cp:soc/brand/edit.tabs/collection'
+
+            #tab-address.tab-pane
+              partial: 'cp:soc/brand/edit.tabs/address'
 
             - if ($user->hasPermission('cp.log'))
               #tab-last-activity.tab-pane
@@ -238,6 +243,9 @@
 - $assets::pushJs('/js/cp/upload/image.js')
 - $assets::pushJs('/js/cp/upload/image-brand.js')
 - $assets::pushJs('/node_modules/fileapi/dist/FileAPI.min.js')
+
+<script async src="/js/cp/soc/brand/map.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHwKmhpcuYuLSS33zpMrEpUAh8sEOpflQ&signed_in=true&libraries=places&callback=initAutocomplete"></script>
 
 :javascript
 

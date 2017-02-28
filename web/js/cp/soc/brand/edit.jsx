@@ -3,10 +3,16 @@ function response(response) {
         return response.json();
     }
 
-    let error = new Error(response.statusText);
-    error.response = response;
-    throw error;
+    if (response.status !== 204) {
+        let error = new Error(response.statusText);
+        error.response = response;
+        throw error;
+    }
+
+    return [];
 }
+
+let brandId;
 
 class ButtonDelete extends React.Component {
 
@@ -200,6 +206,50 @@ class DealerRows extends React.Component {
     }
 }
 
+class AddressRows extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    columns() {
+        return <thead>
+        <tr>
+            <th>ID</th>
+            <th>Country</th>
+            <th>City</th>
+            <th>Street</th>
+            <th>Number Street</th>
+        </tr>
+        </thead>;
+    }
+
+    row(model) {
+        return <tr key={model.id}>
+            <td>{model.id}</td>
+            <td>{model.country}</td>
+            <td>{model.city}</td>
+            <td>{model.street}</td>
+            <td>{model.streetNumber}</td>
+            <td>
+                <ButtonDelete key={model.id} api={'/api/soc/brand/' + brandId + '/address/' + model.id}/>
+            </td>
+        </tr>;
+    }
+
+    render() {
+
+        const rows = this.props.rows.map(this.row);
+
+        return <table className="table table-striped">
+            {this.columns()}
+            <tbody>
+            { rows }
+            </tbody>
+        </table>;
+    }
+}
+
 $(function () {
 
     // heading
@@ -278,9 +328,16 @@ $(function () {
     const dealerRows = document.getElementById('dealerRows');
     let $formDealer = $('[data-created="dealer"]');
 
+    // address
+    const addressRows = document.getElementById('addressRows');
+    let $formAddress = $('[data-created="address"]');
+
     let socialJson = [];
     let headingJson = [];
     let dealerJson = [];
+    let addressJson = [];
+
+    brandId = $formDealer.data('id');
 
     function tableInit(json) {
         if (typeof json.id === "undefined") {
@@ -293,6 +350,20 @@ $(function () {
         ReactDOM.render(
             <SocialRows rows={socialJson}/>,
             socialRows
+        );
+    }
+
+    function tableAddressInit(json) {
+        if (typeof json.id === "undefined") {
+            addressJson = json.data;
+        }
+        else {
+            addressJson.push(json)
+        }
+
+        ReactDOM.render(
+            <AddressRows rows={addressJson}/>,
+            addressRows
         );
     }
 
@@ -435,10 +506,34 @@ $(function () {
 
     });
 
+    $formAddress.submit(function (event) {
+
+        event.preventDefault();
+
+        $formAddress.find('input').prop('disabled', false);
+
+        let form = new FormData(this);
+
+        $formAddress.find('input:not(#autocomplete)').prop('disabled', true);
+        $formAddress.find('button').prop('disabled', true);
+
+        fetch($formAddress.attr('action'), {
+            method: $formAddress.attr('method'),
+            credentials: 'include',
+            body: form
+        }).then(response).then(tableAddressInit).catch(() => undefined);
+
+    });
+
     fetch($formSocial.attr('action') + '?preload[]=social', {
         method: 'GET',
         credentials: 'include'
     }).then(response).then(tableInit).catch(() => undefined);
+
+    fetch($formAddress.attr('action'), {
+        method: 'GET',
+        credentials: 'include'
+    }).then(response).then(tableAddressInit).catch(() => undefined);
 
     fetch('/api/soc/heading?terms[brands.id]=' + $formHeading.data('id'), {
         method: 'GET',
