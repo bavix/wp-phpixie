@@ -113,7 +113,11 @@ class Brand extends SOCProtected
 
         $address->save();
 
-        $brand->addresses->add($address);
+        $brandsAddress            = $this->components->orm()->createEntity('brandsAddress');
+        $brandsAddress->brandId   = $brandId;
+        $brandsAddress->addressId = $address->id();
+
+        $brandsAddress->save();
 
         return $address->asObject(true);
     }
@@ -131,27 +135,18 @@ class Brand extends SOCProtected
             throw new \InvalidArgumentException('User not found');
         }
 
-        $brand = $this->components->orm()->query(Model::BRAND)
-            ->in($brandId)
+        $brandsAddress = $this->components->orm()->query('brandsAddress')
+            ->where('brandId', $brandId)
+            ->where('addressId', $addressId)
             ->findOne();
 
-        if (!$brand)
+        if (!$brandsAddress)
         {
-            RESTFUL::setError('brand');
-            throw new \InvalidArgumentException('Brand not found');
+            RESTFUL::setError('brandsAddress');
+            throw new \InvalidArgumentException('BrandsAddress not found');
         }
 
-        $address = $this->components->orm()->query(Model::ADDRESS)
-            ->in($addressId)
-            ->findOne();
-
-        if (!$address)
-        {
-            RESTFUL::setError('address');
-            throw new \InvalidArgumentException('Address not found');
-        }
-
-        if ($brand->addresses->remove($address))
+        if ($brandsAddress->delete())
         {
             RESTFUL::setStatus(REST::NO_CONTENT);
 
