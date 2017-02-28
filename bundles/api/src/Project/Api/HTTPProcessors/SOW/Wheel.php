@@ -773,7 +773,6 @@ class Wheel extends SOWProtected
         return $this->pager($pager);
     }
 
-
     /**
      * @api               {get} /sow/wheel/<id>/image Wheel Video List
      * @apiName           Wheel Video List

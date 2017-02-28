@@ -693,4 +693,67 @@ class Brand extends SOCProtected
         return $brandDealer->asObject(true);
     }
 
+
+
+    /**
+     * @api               {get} /soc/brand/<id>/address Brand Address List
+     * @apiName           Brand Address List
+     * @apiGroup          SOW
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.5
+     *
+     * @apiParam        {Number}  id        brandId
+     *
+     * @apiParam        {String[]}  [preload] loading relationships
+     * @apiParam        {String[]}  [fields] fields
+     *
+     * @apiParam        {String[]}  [sort] order by id desc
+     * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [queries] filter LIKE %4%
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
+    public function addressGetAction(Request $request)
+    {
+        $brandId = $request->attributes()->getRequired('id');
+
+        /**
+         * @var $builder Builder
+         */
+        $builder = $this->builder->frameworkBuilder();
+
+        $page  = $request->query()->get('page', 1);
+        $limit = $request->query()->get('limit', 50);
+
+        $preload = $request->query()->get('preload', []);
+//        $fields  = $request->query()->get('fields');
+
+        $brand = $this->components->orm()
+            ->query(Model::BRAND)
+            ->in($brandId)
+            ->findOne();
+
+        if (!$brand)
+        {
+            RESTFUL::setError('brand');
+            throw new \InvalidArgumentException('Brand not found');
+        }
+
+        $imageQuery = $brand->addresses->query();
+
+        $this->query($imageQuery, $request);
+
+        $pager = $builder
+            ->helper()
+            ->pager($page, $imageQuery, $limit, $preload);
+
+        return $this->pager($pager);
+    }
+
 }
