@@ -787,7 +787,6 @@ class Wheel extends SOWProtected
      * @apiParam        {Number}  id        wheelId
      *
      * @apiParam        {String[]}  [preload] loading relationships
-     * @apiParam        {String[]}  [fields] fields
      *
      * @apiParam        {String[]}  [sort] order by id desc
      * @apiParam        {String[]}  [terms] filter equal id = 4
