@@ -3,6 +3,7 @@
 namespace Project\Api\HTTPProcessors;
 
 use PHPixie\HTTP\Request;
+use Project\Api\Exceptions\Unauthorized;
 use Project\Api\RESTFUL;
 use Project\Model;
 
@@ -34,7 +35,14 @@ class Account extends AuthProcessor
      */
     public function defaultGetAction(Request $request)
     {
-        return $this->loggedUser();
+        $user = $this->loggedUser();
+
+        if ($user)
+        {
+            return $user->asObject(true);
+        }
+
+        throw new Unauthorized();
     }
 
     /**
