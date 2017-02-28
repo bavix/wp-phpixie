@@ -13,10 +13,16 @@ function response(response) {
         return response.json();
     }
 
-    var error = new Error(response.statusText);
-    error.response = response;
-    throw error;
+    if (response.status !== 204) {
+        var error = new Error(response.statusText);
+        error.response = response;
+        throw error;
+    }
+
+    return [];
 }
+
+var brandId = void 0;
 
 var ButtonDelete = function (_React$Component) {
     _inherits(ButtonDelete, _React$Component);
@@ -371,6 +377,112 @@ var DealerRows = function (_React$Component4) {
     return DealerRows;
 }(React.Component);
 
+var AddressRows = function (_React$Component5) {
+    _inherits(AddressRows, _React$Component5);
+
+    function AddressRows(props) {
+        _classCallCheck(this, AddressRows);
+
+        return _possibleConstructorReturn(this, (AddressRows.__proto__ || Object.getPrototypeOf(AddressRows)).call(this, props));
+    }
+
+    _createClass(AddressRows, [{
+        key: 'columns',
+        value: function columns() {
+            return React.createElement(
+                'thead',
+                null,
+                React.createElement(
+                    'tr',
+                    null,
+                    React.createElement(
+                        'th',
+                        null,
+                        'ID'
+                    ),
+                    React.createElement(
+                        'th',
+                        null,
+                        'Country'
+                    ),
+                    React.createElement(
+                        'th',
+                        null,
+                        'City'
+                    ),
+                    React.createElement(
+                        'th',
+                        null,
+                        'Street'
+                    ),
+                    React.createElement(
+                        'th',
+                        null,
+                        'Number Street'
+                    )
+                )
+            );
+        }
+    }, {
+        key: 'row',
+        value: function row(model) {
+            return React.createElement(
+                'tr',
+                { key: model.id },
+                React.createElement(
+                    'td',
+                    null,
+                    model.id
+                ),
+                React.createElement(
+                    'td',
+                    null,
+                    model.country
+                ),
+                React.createElement(
+                    'td',
+                    null,
+                    model.city
+                ),
+                React.createElement(
+                    'td',
+                    null,
+                    model.street
+                ),
+                React.createElement(
+                    'td',
+                    null,
+                    model.streetNumber
+                ),
+                React.createElement(
+                    'td',
+                    null,
+                    React.createElement(ButtonDelete, { key: model.id, api: '/api/soc/brand/' + brandId + '/address/' + model.id })
+                )
+            );
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+
+            var rows = this.props.rows.map(this.row);
+
+            return React.createElement(
+                'table',
+                { className: 'table table-striped' },
+                this.columns(),
+                React.createElement(
+                    'tbody',
+                    null,
+                    rows
+                )
+            );
+        }
+    }]);
+
+    return AddressRows;
+}(React.Component);
+
 $(function () {
 
     // heading
@@ -449,9 +561,16 @@ $(function () {
     var dealerRows = document.getElementById('dealerRows');
     var $formDealer = $('[data-created="dealer"]');
 
+    // address
+    var addressRows = document.getElementById('addressRows');
+    var $formAddress = $('[data-created="address"]');
+
     var socialJson = [];
     var headingJson = [];
     var dealerJson = [];
+    var addressJson = [];
+
+    brandId = $formDealer.data('id');
 
     function tableInit(json) {
         if (typeof json.id === "undefined") {
@@ -461,6 +580,16 @@ $(function () {
         }
 
         ReactDOM.render(React.createElement(SocialRows, { rows: socialJson }), socialRows);
+    }
+
+    function tableAddressInit(json) {
+        if (typeof json.id === "undefined") {
+            addressJson = json.data;
+        } else {
+            addressJson.push(json);
+        }
+
+        ReactDOM.render(React.createElement(AddressRows, { rows: addressJson }), addressRows);
     }
 
     function tableHeadingInit(json) {
@@ -590,10 +719,37 @@ $(function () {
         });
     });
 
+    $formAddress.submit(function (event) {
+
+        event.preventDefault();
+
+        $formAddress.find('input').prop('disabled', false);
+
+        var form = new FormData(this);
+
+        $formAddress.find('input:not(#autocomplete)').prop('disabled', true);
+        $formAddress.find('button').prop('disabled', true);
+
+        fetch($formAddress.attr('action'), {
+            method: $formAddress.attr('method'),
+            credentials: 'include',
+            body: form
+        }).then(response).then(tableAddressInit).catch(function () {
+            return undefined;
+        });
+    });
+
     fetch($formSocial.attr('action') + '?preload[]=social', {
         method: 'GET',
         credentials: 'include'
     }).then(response).then(tableInit).catch(function () {
+        return undefined;
+    });
+
+    fetch($formAddress.attr('action'), {
+        method: 'GET',
+        credentials: 'include'
+    }).then(response).then(tableAddressInit).catch(function () {
         return undefined;
     });
 

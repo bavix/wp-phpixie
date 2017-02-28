@@ -63,6 +63,107 @@ class Brand extends SOCProtected
 
     }
 
+    public function addressPostAction(Request $request)
+    {
+        $brandId = $request->attributes()->getRequired('id');
+
+        $user = $this->loggedUser();
+
+        if (!$user)
+        {
+            RESTFUL::setError('user');
+            throw new \InvalidArgumentException('User not found');
+        }
+
+        $brand = $this->components->orm()->query(Model::BRAND)
+            ->in($brandId)
+            ->findOne();
+
+        if (!$brand)
+        {
+            RESTFUL::setError('brand');
+            throw new \InvalidArgumentException('Brand not found');
+        }
+
+        $address         = $this->components->orm()->createEntity(Model::ADDRESS);
+        $address->userId = $user->id();
+
+        /**
+         * @var $list array
+         */
+        $list = $request->data()->get();
+
+        if (!$list)
+        {
+            RESTFUL::setError('POST is empty');
+            throw new \InvalidArgumentException();
+        }
+
+        foreach ($list as $key => $value)
+        {
+            $data = null;
+
+            if (!empty($value))
+            {
+                $data = $value;
+            }
+
+            $address->{$key} = $data;
+        }
+
+        $address->save();
+
+        $brand->addresses->add($address);
+
+        return $address->asObject(true);
+    }
+
+    public function addressItemDeleteAction(Request $request)
+    {
+        $brandId   = $request->attributes()->getRequired('id');
+        $addressId = $request->attributes()->getRequired('nextId');
+
+        $user = $this->loggedUser();
+
+        if (!$user)
+        {
+            RESTFUL::setError('user');
+            throw new \InvalidArgumentException('User not found');
+        }
+
+        $brand = $this->components->orm()->query(Model::BRAND)
+            ->in($brandId)
+            ->findOne();
+
+        if (!$brand)
+        {
+            RESTFUL::setError('brand');
+            throw new \InvalidArgumentException('Brand not found');
+        }
+
+        $address = $this->components->orm()->query(Model::ADDRESS)
+            ->in($addressId)
+            ->findOne();
+
+        if (!$address)
+        {
+            RESTFUL::setError('address');
+            throw new \InvalidArgumentException('Address not found');
+        }
+
+        if ($brand->addresses->remove($address))
+        {
+            RESTFUL::setStatus(REST::NO_CONTENT);
+
+            return [
+                'success' => true
+            ];
+        }
+
+        RESTFUL::setStatus('address');
+        throw new \InvalidArgumentException('Error remove address from brand');
+    }
+
     /**
      * @api               {get} /soc/brand/<id> Brand Item
      * @apiName           Brand Item

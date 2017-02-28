@@ -49,9 +49,16 @@ $(function () {
                     return response.json();
                 }
 
-                var error = new Error(response.statusText);
-                error.response = response;
-                throw error;
+                console.log(response.status);
+
+                if (response.status != 204)
+                {
+                    var error = new Error(response.statusText);
+                    error.response = response;
+                    throw error;
+                }
+
+                return [];
 
             }).then(function (json) {
                 $current.parents('tr').remove();
@@ -60,7 +67,7 @@ $(function () {
                     'Your file has been deleted.',
                     'success'
                 );
-            }).catch(function () {
+            }).catch(function (res) {
                 swal(
                     'Deleted!',
                     'Your file has not been deleted.',
