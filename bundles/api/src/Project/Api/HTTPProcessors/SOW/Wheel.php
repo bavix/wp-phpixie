@@ -12,14 +12,6 @@ use Project\Model;
 class Wheel extends SOWProtected
 {
 
-    protected $access = [
-        'commentPost',
-        'favouritePost',
-        'favouriteDelete',
-        'likePost',
-        'likeDelete',
-    ];
-
     // default
     public function defaultPostAction(Request $request)
     {

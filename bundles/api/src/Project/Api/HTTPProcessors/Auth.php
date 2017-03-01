@@ -16,46 +16,9 @@ class Auth extends AuthProcessor
     /**
      * @var array
      */
-    protected $access = [
-        'resourcePost',
-        'registerPost',
-        'recoveryPasswordPost',
-        'newPasswordPost',
+    protected $allow = [
+        'tokenPost'
     ];
-
-    /**
-     * @param Request $request
-     *
-     * @return array|null|string
-     */
-    public function callbackGetAction(Request $request)
-    {
-        return $request->data()->get();
-    }
-
-    /**
-     * @api           {post} /auth/resource Test Request
-     * @apiName       Test
-     * @apiGroup      Auth
-     *
-     * @apiPermission client user
-     *
-     * @apiHeader     Authorization Authorization Bearer {access_token}
-     *
-     * @apiVersion    0.0.1
-     *
-     * @return array
-     */
-    public function resourcePostAction(Request $request)
-    {
-        $user = $this->loggedUser();
-
-        return [
-            'type' => 'success',
-            'post' => $request->data()->get(),
-            'user' => $user ? $user->asObject(true) : null,
-        ];
-    }
 
     /**
      * @return null|\Project\ORM\User\User
@@ -67,7 +30,6 @@ class Auth extends AuthProcessor
         {
             if ($this->server()->verifyResourceRequest($this->globalsRequest()))
             {
-                $this->server()->verifyResourceRequest($this->globalsRequest());
                 $accessToken = $this->server()->getAccessTokenData($this->globalsRequest());
 
                 if ($accessToken['user_id'])
@@ -76,10 +38,7 @@ class Auth extends AuthProcessor
                         ->in($accessToken['user_id'])
                         ->findOne();
 
-                    $this->components->auth()->domain()->setUser(
-                        $this->loggedUser(),
-                        'default'
-                    );
+                    $this->components->auth()->domain()->setUser($this->loggedUser(), 'default');
                 }
 
             }
@@ -213,7 +172,7 @@ class Auth extends AuthProcessor
      * @apiName           Recovery Password
      * @apiGroup          Auth
      *
-     * @apiPermission     none
+     * @apiPermission     client
      *
      * @apiParam         {String} email EMAIL
      *
@@ -283,7 +242,7 @@ class Auth extends AuthProcessor
      * @apiName           Change Password
      * @apiGroup          Auth
      *
-     * @apiPermission     none
+     * @apiPermission     user
      *
      * @apiHeader         Authorization Authorization Bearer {access_token}
      *
@@ -389,7 +348,7 @@ class Auth extends AuthProcessor
      * @apiName           New Password
      * @apiGroup          Auth
      *
-     * @apiPermission     none
+     * @apiPermission     user
      *
      * @apiHeader         Authorization Authorization Bearer {access_token}
      *

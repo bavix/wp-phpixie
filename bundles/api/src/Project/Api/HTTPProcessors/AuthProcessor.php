@@ -19,7 +19,7 @@ class AuthProcessor extends Processor
     /**
      * @var array
      */
-    protected $access = [];
+    protected $allow = [];
 
     /**
      * @var \Project\OAuth2\PDO
@@ -123,7 +123,7 @@ class AuthProcessor extends Processor
 
         $action = $request->attributes()->get('action');
 
-        if (in_array($action . $method, $this->access, true))
+        if (!in_array($action . $method, $this->allow, true))
         {
             $accessDenied = $this->accessDenied();
 
@@ -184,7 +184,7 @@ class AuthProcessor extends Processor
         /**
          * equal
          *
-         * @param array $terms
+         * @var array $terms
          */
         $terms = $request->query()->get('terms', []);
 

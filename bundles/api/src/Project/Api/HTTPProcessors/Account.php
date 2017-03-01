@@ -11,19 +11,11 @@ class Account extends AuthProcessor
 {
 
     /**
-     * @var array
-     */
-    protected $access = [
-        'defaultGet',
-        //        'defaultPost',
-    ];
-
-    /**
      * @api           {get} /account User Account
      * @apiName       Get Current User Info
      * @apiGroup      Account
      *
-     * @apiPermission client user
+     * @apiPermission user
      *
      * @apiHeader     Authorization Authorization Bearer {access_token}
      *
@@ -50,7 +42,7 @@ class Account extends AuthProcessor
      * @apiName       Update Current User Info
      * @apiGroup      Account
      *
-     * @apiPermission client user
+     * @apiPermission user
      *
      * @apiHeader     Authorization Authorization Bearer {access_token}
      *

@@ -13,11 +13,6 @@ use Project\ORM\Brand\Query;
 class Brand extends SOCProtected
 {
 
-    protected $access = [
-        'defaultPost',
-        'itemDelete'
-    ];
-
     /**
      * @param Request $request
      *
