@@ -15,7 +15,7 @@ class Video extends AuthProcessor
      *
      * @apiPermission client user
      *
-     * @apiHeader     Authorization Authorization Bearer {access_token}
+     * @apiHeader     Authorization Bearer {access_token}
      *
      * @apiParam      url example: https://www.youtube.com/watch?v=x3bLrSVxpzg
      *

@@ -68,7 +68,7 @@ class BoltPattern extends SOWProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.4
      *
@@ -148,7 +148,7 @@ class BoltPattern extends SOWProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.4
      *

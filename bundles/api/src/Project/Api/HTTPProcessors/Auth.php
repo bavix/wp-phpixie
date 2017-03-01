@@ -58,7 +58,7 @@ class Auth extends AuthProcessor
      * @apiParam         {String} email email
      * @apiParam         {String{6..}} password password
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiSuccessExample Success-Response:
      *                    HTTP/1.1 200 OK
@@ -176,7 +176,7 @@ class Auth extends AuthProcessor
      *
      * @apiParam         {String} email EMAIL
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiSuccessExample Success-Response:
      *                    HTTP/1.1 200 OK
@@ -244,7 +244,7 @@ class Auth extends AuthProcessor
      *
      * @apiPermission     user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiParam         {String} oldPassword old Password (user)
      * @apiParam         {String} password new Password (user)
@@ -350,7 +350,7 @@ class Auth extends AuthProcessor
      *
      * @apiPermission     user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiParam         {String} email EMAIL
      * @apiParam         {String} code code [from email] use recovery-password
@@ -482,7 +482,7 @@ class Auth extends AuthProcessor
      * @apiParam         {String} username LOGIN
      * @apiParam         {String} password PASSWORD
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiSuccessExample Success-Response:
      *                    HTTP/1.1 200 OK
