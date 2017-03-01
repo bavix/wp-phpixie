@@ -403,6 +403,11 @@ var AddressRows = function (_React$Component5) {
                     React.createElement(
                         'th',
                         null,
+                        'Description'
+                    ),
+                    React.createElement(
+                        'th',
+                        null,
                         'Country'
                     ),
                     React.createElement(
@@ -433,6 +438,11 @@ var AddressRows = function (_React$Component5) {
                     'td',
                     null,
                     model.id
+                ),
+                React.createElement(
+                    'td',
+                    null,
+                    model.description
                 ),
                 React.createElement(
                     'td',

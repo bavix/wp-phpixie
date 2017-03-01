@@ -51,6 +51,13 @@
             Street Number
           %input#streetNumber.form-control(type="text" name="streetNumber" disabled)
 
+    .grid
+      .col-md-12
+        .form-group.form-group-lg
+          %label.control-label(for="description")
+            Description
+          %textarea#description.form-control(name="description" rows=3)
+
     %input#latitude(type="hidden" name="latitude")
     %input#longitude(type="hidden" name="longitude")
 

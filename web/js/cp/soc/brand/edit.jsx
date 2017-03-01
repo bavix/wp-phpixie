@@ -216,6 +216,7 @@ class AddressRows extends React.Component {
         return <thead>
         <tr>
             <th>ID</th>
+            <th>Description</th>
             <th>Country</th>
             <th>City</th>
             <th>Street</th>
@@ -227,6 +228,7 @@ class AddressRows extends React.Component {
     row(model) {
         return <tr key={model.id}>
             <td>{model.id}</td>
+            <td>{model.description}</td>
             <td>{model.country}</td>
             <td>{model.city}</td>
             <td>{model.street}</td>
