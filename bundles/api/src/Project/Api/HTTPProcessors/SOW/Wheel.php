@@ -12,14 +12,6 @@ use Project\Model;
 class Wheel extends SOWProtected
 {
 
-    protected $access = [
-        'commentPost',
-        'favouritePost',
-        'favouriteDelete',
-        'likePost',
-        'likeDelete',
-    ];
-
     // default
     public function defaultPostAction(Request $request)
     {
@@ -86,7 +78,7 @@ class Wheel extends SOWProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.4
      *
@@ -200,7 +192,7 @@ class Wheel extends SOWProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.4
      *
@@ -281,7 +273,7 @@ class Wheel extends SOWProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.5
      *
@@ -365,7 +357,7 @@ class Wheel extends SOWProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.5
      *
@@ -427,7 +419,7 @@ class Wheel extends SOWProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.4
      *
@@ -496,7 +488,7 @@ class Wheel extends SOWProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.5
      *
@@ -553,7 +545,7 @@ class Wheel extends SOWProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.5
      *
@@ -607,7 +599,7 @@ class Wheel extends SOWProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.5
      *
@@ -664,7 +656,7 @@ class Wheel extends SOWProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.5
      *
@@ -718,7 +710,7 @@ class Wheel extends SOWProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.5
      *
@@ -780,7 +772,7 @@ class Wheel extends SOWProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.5
      *

@@ -8,6 +8,11 @@ use Project\Model;
 class Upload extends AuthProcessor
 {
 
+    protected $allow = [
+        'brandPost',
+        'wheelPost',
+    ];
+
 //    public function toPostAction(Request $request)
 //    {
 //        /**
@@ -31,7 +36,7 @@ class Upload extends AuthProcessor
 //    }
 
     public function brandPostAction(Request $request)
-    {
+    {// fixme : убрать мой быдлокод
         $data = $request->data();
 
         if ($data->get('status') !== 'ok')
@@ -91,7 +96,7 @@ class Upload extends AuthProcessor
     }
 
     public function wheelPostAction(Request $request)
-    {
+    {// fixme : убрать мой быдлокод
         $data = $request->data();
 
         if ($data->get('status') !== 'ok')

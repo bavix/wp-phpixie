@@ -9,20 +9,13 @@ class Video extends AuthProcessor
 {
 
     /**
-     * @var array
-     */
-    protected $access = [
-//        'embedGet'
-    ];
-
-    /**
      * @api           {get} /video/embed Video Embed Data
      * @apiName       Embed
      * @apiGroup      Video
      *
      * @apiPermission client user
      *
-     * @apiHeader     Authorization Authorization Bearer {access_token}
+     * @apiHeader     Authorization Bearer {access_token}
      *
      * @apiParam      url example: https://www.youtube.com/watch?v=x3bLrSVxpzg
      *

@@ -13,11 +13,6 @@ use Project\ORM\Brand\Query;
 class Brand extends SOCProtected
 {
 
-    protected $access = [
-        'defaultPost',
-        'itemDelete'
-    ];
-
     /**
      * @param Request $request
      *
@@ -166,7 +161,7 @@ class Brand extends SOCProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.4
      *
@@ -246,7 +241,7 @@ class Brand extends SOCProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.4
      *
@@ -345,7 +340,7 @@ class Brand extends SOCProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.4
      *
@@ -394,7 +389,7 @@ class Brand extends SOCProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.4
      *
@@ -530,7 +525,7 @@ class Brand extends SOCProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.4
      *
@@ -589,7 +584,7 @@ class Brand extends SOCProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.4
      *
@@ -726,7 +721,7 @@ class Brand extends SOCProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.4
      *
@@ -811,7 +806,7 @@ class Brand extends SOCProtected
      *
      * @apiPermission     client user
      *
-     * @apiHeader         Authorization Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
      * @apiVersion        0.0.5
      *
