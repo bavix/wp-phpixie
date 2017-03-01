@@ -1,0 +1,1 @@
+ALTER TABLE `addresses` ADD `description` VARCHAR(255) NULL DEFAULT NULL AFTER `longitude`;
