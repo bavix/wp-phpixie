@@ -65,7 +65,7 @@ class Upload extends AuthProcessor
 //        query.userId      // userId
 //        data.Filename     // file name
 
-        $logo              = $this->components->orm()->createEntity(Model::BRAND_LOGO);
+        $logo              = $this->components->orm()->createEntity(Model::IMAGE);
         $logo->hash        = $data->get('hash');
         $logo->size        = $data->get('fileSize');
         $logo->width       = $data->get('sizes.width');
@@ -89,7 +89,7 @@ class Upload extends AuthProcessor
 
         $logo->save();
 
-        $brand->brandLogo->set($logo);
+        $brand->image->set($logo);
         $logo->brand->set($brand);
 
         return ['status' => 'ok'];
@@ -118,7 +118,7 @@ class Upload extends AuthProcessor
         if ($data->get('query.preview'))
         {
 
-            $preview = $this->components->orm()->createEntity(Model::PREVIEW_WHEEL);
+            $preview = $this->components->orm()->createEntity(Model::IMAGE);
 
             $preview->hash        = $data->get('hash');
             $preview->size        = $data->get('fileSize');
@@ -140,7 +140,7 @@ class Upload extends AuthProcessor
 
             $preview->save();
 
-            $wheel->previewWheel->set($preview);
+            $wheel->image->set($preview);
             $preview->wheel->set($wheel);
 
         }

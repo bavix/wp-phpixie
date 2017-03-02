@@ -81,19 +81,31 @@ return [
         [
             'type'  => 'oneToOne',
             'owner' => Model::BRAND,
-            'item'  => Model::BRAND_LOGO,
+            'item' => Model::IMAGE,
+
+            'itemOptions' => [
+                'ownerKey'      => 'itemId',
+            ]
         ],
 
         [
             'type'  => 'oneToOne',
             'owner' => Model::DEALER,
-            'item'  => Model::DEALER_LOGO,
+            'item'  => Model::IMAGE,
+
+            'itemOptions' => [
+                'ownerKey'      => 'itemId',
+            ]
         ],
 
         [
             'type'  => 'oneToOne',
             'owner' => Model::WHEEL,
-            'item'  => Model::PREVIEW_WHEEL,
+            'item'  => Model::IMAGE,
+
+            'itemOptions' => [
+                'ownerKey'      => 'itemId',
+            ]
         ],
 
         [

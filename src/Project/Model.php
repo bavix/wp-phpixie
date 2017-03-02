@@ -32,10 +32,6 @@ class Model
     const IMAGE = 'image';
     const VIDEO = 'video';
 
-    const BRAND_LOGO  = 'brandLogo';
-    const DEALER_LOGO = 'dealerLogo';
-
-    const PREVIEW_WHEEL = 'previewWheel';
     const WHEEL_IMAGE   = 'wheelsImage';
 
     const INVITE = 'invite';
@@ -46,7 +42,6 @@ class Model
     const BRAND_SOCIAL  = 'brandSocial';
     const BRAND_DEALER  = 'brandDealer';
     const BRAND_HEADING = 'brandHeading';
-
 
     const WHEEL_COMMENT = 'wheelComment';
 }
