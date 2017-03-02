@@ -35,7 +35,7 @@ class Wheel extends Entity
      */
     protected function _logo($type, $size = 210, $text = '1600x1600')
     {
-        $logo = $this->previewWheel();
+        $logo = $this->image();
 
         if ($logo)
         {
