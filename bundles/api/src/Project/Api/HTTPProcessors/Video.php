@@ -57,12 +57,11 @@ class Video extends AuthProcessor
 
         // brands
         $storage = $this->components->orm()->query('brandLogo')->find();
+        return $storage->asArray(true);
 
         foreach ($storage as $item)
         {
             $brand = $this->components->orm()->query(Model::BRAND)->in($item->brandId)->findOne();
-            if (!$brand) continue;
-
             $image = $this->components->orm()->createEntity(Model::IMAGE);
 
             $image->description = $item->description;
@@ -83,7 +82,6 @@ class Video extends AuthProcessor
         foreach ($storage as $item)
         {
             $wheel = $this->components->orm()->query(Model::WHEEL)->in($item->wheelId)->findOne();
-            if (!$wheel) continue;
             $image = $this->components->orm()->createEntity(Model::IMAGE);
 
             $image->description = $item->description;
