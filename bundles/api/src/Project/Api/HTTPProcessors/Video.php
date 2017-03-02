@@ -63,8 +63,11 @@ class Video extends AuthProcessor
             if (!$item->brandId)
             {
                 $brand = $this->components->orm()->query(Model::BRAND)
-                    ->where('imageId', $item->id())
+                    ->where('imageId', $item->id)
                     ->findOne();
+
+                if (!$brand)
+                    throw new \InvalidArgumentException('Not found');
             }
             else {
 
@@ -75,7 +78,7 @@ class Video extends AuthProcessor
 
             $image->description = $item->description;
             $image->hash        = $item->hash;
-            $image->itemId      = $item->brandId;
+            $image->itemId      = $brand->id();
             $image->userId      = $item->userId;
             $image->size        = $item->size;
             $image->width       = $item->width;
@@ -93,8 +96,11 @@ class Video extends AuthProcessor
             if (!$item->wheelId)
             {
                 $wheel = $this->components->orm()->query(Model::WHEEL)
-                    ->where('imageId', $item->id())
+                    ->where('imageId', $item->id)
                     ->findOne();
+
+                if (!$wheel)
+                    throw new \InvalidArgumentException('Not found');
             }
             else {
 
@@ -105,7 +111,7 @@ class Video extends AuthProcessor
 
             $image->description = $item->description;
             $image->hash        = $item->hash;
-            $image->itemId      = $item->wheelId;
+            $image->itemId      = $wheel->id();
             $image->userId      = $item->userId;
             $image->size        = $item->size;
             $image->width       = $item->width;
