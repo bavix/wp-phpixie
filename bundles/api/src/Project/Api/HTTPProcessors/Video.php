@@ -67,7 +67,7 @@ class Video extends AuthProcessor
                     ->findOne();
 
                 if (!$brand)
-                    throw new \InvalidArgumentException('Not found');
+                    continue;
             }
             else {
 
@@ -100,7 +100,7 @@ class Video extends AuthProcessor
                     ->findOne();
 
                 if (!$wheel)
-                    throw new \InvalidArgumentException('Not found');
+                    continue;
             }
             else {
 
