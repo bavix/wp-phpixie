@@ -50,77 +50,77 @@ class Video extends AuthProcessor
         ];
     }
 
-    protected $allow = ['debugGet'];
-
-    public function debugGetAction()
-    {
-
-        // brands
-        $storage = $this->components->orm()->query('brandLogo')->find();
-
-        foreach ($storage as $item)
-        {
-            if (!$item->brandId)
-            {
-                $brand = $this->components->orm()->query(Model::BRAND)
-                    ->where('imageId', $item->id)
-                    ->findOne();
-
-                if (!$brand)
-                    continue;
-            }
-            else {
-
-                $brand = $this->components->orm()->query(Model::BRAND)->in($item->brandId)->findOne();
-            }
-
-            $image = $this->components->orm()->createEntity(Model::IMAGE);
-
-            $image->description = $item->description;
-            $image->hash        = $item->hash;
-            $image->itemId      = $brand->id();
-            $image->userId      = $item->userId;
-            $image->size        = $item->size;
-            $image->width       = $item->width;
-            $image->height      = $item->height;
-
-            $image->save();
-            $brand->image->set($image);
-        }
-
-        // wheels
-        $storage = $this->components->orm()->query('previewWheel')->find();
-
-        foreach ($storage as $item)
-        {
-            if (!$item->wheelId)
-            {
-                $wheel = $this->components->orm()->query(Model::WHEEL)
-                    ->where('imageId', $item->id)
-                    ->findOne();
-
-                if (!$wheel)
-                    continue;
-            }
-            else {
-
-                $wheel = $this->components->orm()->query(Model::WHEEL)->in($item->wheelId)->findOne();
-            }
-
-            $image = $this->components->orm()->createEntity(Model::IMAGE);
-
-            $image->description = $item->description;
-            $image->hash        = $item->hash;
-            $image->itemId      = $wheel->id();
-            $image->userId      = $item->userId;
-            $image->size        = $item->size;
-            $image->width       = $item->width;
-            $image->height      = $item->height;
-
-            $image->save();
-            $wheel->image->set($image);
-        }
-
-    }
+//    protected $allow = ['debugGet'];
+//
+//    public function debugGetAction()
+//    {
+//
+//        // brands
+//        $storage = $this->components->orm()->query('brandLogo')->find();
+//
+//        foreach ($storage as $item)
+//        {
+//            if (!$item->brandId)
+//            {
+//                $brand = $this->components->orm()->query(Model::BRAND)
+//                    ->where('imageId', $item->id)
+//                    ->findOne();
+//
+//                if (!$brand)
+//                    continue;
+//            }
+//            else {
+//
+//                $brand = $this->components->orm()->query(Model::BRAND)->in($item->brandId)->findOne();
+//            }
+//
+//            $image = $this->components->orm()->createEntity(Model::IMAGE);
+//
+//            $image->description = $item->description;
+//            $image->hash        = $item->hash;
+//            $image->itemId      = $brand->id();
+//            $image->userId      = $item->userId;
+//            $image->size        = $item->size;
+//            $image->width       = $item->width;
+//            $image->height      = $item->height;
+//
+//            $image->save();
+//            $brand->image->set($image);
+//        }
+//
+//        // wheels
+//        $storage = $this->components->orm()->query('previewWheel')->find();
+//
+//        foreach ($storage as $item)
+//        {
+//            if (!$item->wheelId)
+//            {
+//                $wheel = $this->components->orm()->query(Model::WHEEL)
+//                    ->where('imageId', $item->id)
+//                    ->findOne();
+//
+//                if (!$wheel)
+//                    continue;
+//            }
+//            else {
+//
+//                $wheel = $this->components->orm()->query(Model::WHEEL)->in($item->wheelId)->findOne();
+//            }
+//
+//            $image = $this->components->orm()->createEntity(Model::IMAGE);
+//
+//            $image->description = $item->description;
+//            $image->hash        = $item->hash;
+//            $image->itemId      = $wheel->id();
+//            $image->userId      = $item->userId;
+//            $image->size        = $item->size;
+//            $image->width       = $item->width;
+//            $image->height      = $item->height;
+//
+//            $image->save();
+//            $wheel->image->set($image);
+//        }
+//
+//    }
 
 }
