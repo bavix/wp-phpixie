@@ -70,7 +70,6 @@ class Upload extends AuthProcessor
         $logo->size        = $data->get('fileSize');
         $logo->width       = $data->get('sizes.width');
         $logo->height      = $data->get('sizes.height');
-        $logo->brandId     = $id;
         $logo->userId      = $data->get('query.userId');
         $logo->description = $data->get('description');
 

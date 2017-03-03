@@ -109,6 +109,16 @@ return [
         ],
 
         [
+            'type'  => 'oneToOne',
+            'owner' => Model::USER,
+            'item'  => Model::IMAGE,
+
+            'itemOptions' => [
+                'ownerKey'      => 'itemId',
+            ]
+        ],
+
+        [
             'type'  => 'manyToMany',
             'left'  => Model::WHEEL,
             'right' => Model::VIDEO,

@@ -1,0 +1,1 @@
+ALTER TABLE `users` ADD `imageId` INT NULL AFTER `dropboxId`;
