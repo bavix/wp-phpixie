@@ -27,10 +27,16 @@ class Account extends AuthProcessor
      */
     public function defaultGetAction(Request $request)
     {
-        $user = $this->loggedUser();
+        $user    = $this->loggedUser();
+        $preload = $request->query()->get('preload', []);
 
         if ($user)
         {
+            // fixme: for preload
+            $user = $this->components->orm()->query(Model::USER)
+                ->in($user)
+                ->findOne($preload);
+
             return $user->asObject(true);
         }
 
@@ -84,6 +90,16 @@ class Account extends AuthProcessor
 
         if (!empty($email))
         {
+            $check = $this->components->orm()->query(Model::USER)
+                ->where('email', $email)
+                ->findOne();
+
+            if ($check)
+            {
+                RESTFUL::setError('email');
+                throw new \InvalidArgumentException('Email exists');
+            }
+
             $user->email = $email;
         }
 
