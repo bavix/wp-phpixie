@@ -500,8 +500,7 @@ class Wheel extends SOWProtected
      */
     public function favouritePostAction(Request $request)
     {
-        //$user = $this->loggedUser();
-        $user = $this->components->orm()->query(Model::USER)->findOne();
+        $user = $this->loggedUser();
 
         if (!$user)
         {
@@ -557,8 +556,7 @@ class Wheel extends SOWProtected
      */
     public function favouriteDeleteAction(Request $request)
     {
-        //$user = $this->loggedUser();
-        $user = $this->components->orm()->query(Model::USER)->findOne();
+        $user = $this->loggedUser();
 
         if (!$user)
         {
@@ -611,8 +609,7 @@ class Wheel extends SOWProtected
      */
     public function likePostAction(Request $request)
     {
-        //$user = $this->loggedUser();
-        $user = $this->components->orm()->query(Model::USER)->findOne();
+        $user = $this->loggedUser();
 
         if (!$user)
         {
@@ -668,8 +665,7 @@ class Wheel extends SOWProtected
      */
     public function likeDeleteAction(Request $request)
     {
-        //$user = $this->loggedUser();
-        $user = $this->components->orm()->query(Model::USER)->findOne();
+        $user = $this->loggedUser();
 
         if (!$user)
         {
