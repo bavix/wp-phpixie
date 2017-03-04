@@ -21,33 +21,6 @@ class Auth extends AuthProcessor
     ];
 
     /**
-     * @return null|\Project\ORM\User\User
-     * @throws \PHPixie\ORM\Exception\Query
-     */
-    public function loggedUser()
-    {
-        if (!$this->user)
-        {
-            if ($this->server()->verifyResourceRequest($this->globalsRequest()))
-            {
-                $accessToken = $this->server()->getAccessTokenData($this->globalsRequest());
-
-                if ($accessToken['user_id'])
-                {
-                    $this->user = $this->components->orm()->query(Model::USER)
-                        ->in($accessToken['user_id'])
-                        ->findOne();
-
-                    $this->components->auth()->domain()->setUser($this->loggedUser(), 'default');
-                }
-
-            }
-        }
-
-        return parent::loggedUser();
-    }
-
-    /**
      * @api               {post} /auth/register Register
      * @apiName           Register
      * @apiGroup          Auth
