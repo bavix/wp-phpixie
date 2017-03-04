@@ -4,6 +4,7 @@ namespace Project\Api\HTTPProcessors;
 
 use PHPixie\HTTP\Request;
 use Project\Api\ENUM\REST;
+use Project\Api\Exceptions\Unauthorized;
 use Project\Api\RESTFUL;
 use Project\Model;
 use Project\ORM\User\Query;
@@ -195,7 +196,7 @@ class Auth extends AuthProcessor
         if (!$user)
         {
             RESTFUL::setError('user');
-            throw new \InvalidArgumentException('User not found');
+            throw new Unauthorized();
         }
 
         $isSend = $user->recoveryPassword($this->template) > 0;
@@ -283,7 +284,7 @@ class Auth extends AuthProcessor
         if (!$this->user)
         {
             RESTFUL::setError('user');
-            throw new \InvalidArgumentException('User not found');
+            throw new Unauthorized();
         }
 
         $domain = $this->builder->components()->auth()->domain();
@@ -384,7 +385,7 @@ class Auth extends AuthProcessor
         if (!$user)
         {
             RESTFUL::setError('user');
-            throw new \InvalidArgumentException('User not found');
+            throw new Unauthorized();
         }
 
         $recovery = $orm->query(Model::RECOVERY_PASSWORD)

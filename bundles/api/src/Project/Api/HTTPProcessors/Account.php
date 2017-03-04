@@ -92,7 +92,7 @@ class Account extends AuthProcessor
         if (!$user)
         {
             RESTFUL::setError('user');
-            throw new \InvalidArgumentException('User not found');
+            throw new Unauthorized();
         }
 
         $lastname = $request->data()->get('lastname');

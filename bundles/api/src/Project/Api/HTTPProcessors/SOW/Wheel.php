@@ -4,6 +4,7 @@ namespace Project\Api\HTTPProcessors\SOW;
 
 use PHPixie\HTTP\Request;
 use Project\Api\ENUM\REST;
+use Project\Api\Exceptions\Unauthorized;
 use Project\Api\HTTPProcessors\Processor\SOWProtected;
 use Project\Api\RESTFUL;
 use Project\Framework\Builder;
@@ -443,7 +444,8 @@ class Wheel extends SOWProtected
 
         if (!$user)
         {
-            throw new \InvalidArgumentException('User not found');
+            RESTFUL::setError('user');
+            throw new Unauthorized();
         }
 
         $id = $request->data()->getRequired('id');
@@ -504,7 +506,8 @@ class Wheel extends SOWProtected
 
         if (!$user)
         {
-            throw new \InvalidArgumentException('User not found');
+            RESTFUL::setError('user');
+            throw new Unauthorized();
         }
 
         $id = $request->attributes()->getRequired('id');
@@ -560,7 +563,8 @@ class Wheel extends SOWProtected
 
         if (!$user)
         {
-            throw new \InvalidArgumentException('User not found');
+            RESTFUL::setError('user');
+            throw new Unauthorized();
         }
 
         $id = $request->attributes()->getRequired('id');
@@ -613,7 +617,8 @@ class Wheel extends SOWProtected
 
         if (!$user)
         {
-            throw new \InvalidArgumentException('User not found');
+            RESTFUL::setError('user');
+            throw new Unauthorized();
         }
 
         $id = $request->attributes()->getRequired('id');
@@ -669,7 +674,8 @@ class Wheel extends SOWProtected
 
         if (!$user)
         {
-            throw new \InvalidArgumentException('User not found');
+            RESTFUL::setError('user');
+            throw new Unauthorized();
         }
 
         $id = $request->attributes()->getRequired('id');
