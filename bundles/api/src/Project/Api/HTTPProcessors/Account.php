@@ -21,6 +21,29 @@ class Account extends AuthProcessor
      *
      * @apiVersion    0.0.6
      *
+     * @apiSuccessExample Success-Response:
+     *                    HTTP/1.1 200 OK
+     *                    {
+     *                      "id": 1,
+     *                      "googleId": null,
+     *                      "facebookId": null,
+     *                      "instagramId": null,
+     *                      "githubId": "123456789",
+     *                      "vkId": "123456789",
+     *                      "twitterId": null,
+     *                      "dropboxId": null,
+     *                      "imageId": null,
+     *                      "login": "rez1dent3",
+     *                      "lastname": "Бабичев",
+     *                      "name": "Максим",
+     *                      "email": "maksim.babichev95@gmail.com",
+     *                      "about": null,
+     *                      "passwordHash": "PASSWORD",
+     *                      "roleId": 1,
+     *                      "createdAt": "2016-10-06 17:45:45",
+     *                      "updatedAt": "2016-11-02 04:30:30"
+     *                     }
+     *
      * @param Request $request
      *
      * @return null|\Project\ORM\User\User
@@ -56,29 +79,6 @@ class Account extends AuthProcessor
      * @apiParam      {String} [name]       name (firstname)
      * @apiParam      {String} [email]      e-mail
      * @apiParam      {String} [about]
-     *
-     * @apiSuccessExample Success-Response:
-     *                    HTTP/1.1 200 OK
-     *                    {
-     *                      "id": 1,
-     *                      "googleId": null,
-     *                      "facebookId": null,
-     *                      "instagramId": null,
-     *                      "githubId": "123456789",
-     *                      "vkId": "123456789",
-     *                      "twitterId": null,
-     *                      "dropboxId": null,
-     *                      "imageId": null,
-     *                      "login": "rez1dent3",
-     *                      "lastname": "Бабичев",
-     *                      "name": "Максим",
-     *                      "email": "maksim.babichev95@gmail.com",
-     *                      "about": null,
-     *                      "passwordHash": "PASSWORD",
-     *                      "roleId": 1,
-     *                      "createdAt": "2016-10-06 17:45:45",
-     *                      "updatedAt": "2016-11-02 04:30:30"
-     *                     }
      *
      * @apiVersion    0.0.6
      *
