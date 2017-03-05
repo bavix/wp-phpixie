@@ -4,6 +4,7 @@ namespace Project\Api\HTTPProcessors;
 
 use PHPixie\HTTP\Request;
 use Project\Api\ENUM\REST;
+use Project\Api\Exceptions\Unauthorized;
 use Project\Api\RESTFUL;
 use Project\Model;
 use Project\ORM\User\Query;
@@ -19,33 +20,6 @@ class Auth extends AuthProcessor
     protected $allow = [
         'tokenPost'
     ];
-
-    /**
-     * @return null|\Project\ORM\User\User
-     * @throws \PHPixie\ORM\Exception\Query
-     */
-    public function loggedUser()
-    {
-        if (!$this->user)
-        {
-            if ($this->server()->verifyResourceRequest($this->globalsRequest()))
-            {
-                $accessToken = $this->server()->getAccessTokenData($this->globalsRequest());
-
-                if ($accessToken['user_id'])
-                {
-                    $this->user = $this->components->orm()->query(Model::USER)
-                        ->in($accessToken['user_id'])
-                        ->findOne();
-
-                    $this->components->auth()->domain()->setUser($this->loggedUser(), 'default');
-                }
-
-            }
-        }
-
-        return parent::loggedUser();
-    }
 
     /**
      * @api               {post} /auth/register Register
@@ -222,7 +196,7 @@ class Auth extends AuthProcessor
         if (!$user)
         {
             RESTFUL::setError('user');
-            throw new \InvalidArgumentException('User not found');
+            throw new Unauthorized();
         }
 
         $isSend = $user->recoveryPassword($this->template) > 0;
@@ -310,7 +284,7 @@ class Auth extends AuthProcessor
         if (!$this->user)
         {
             RESTFUL::setError('user');
-            throw new \InvalidArgumentException('User not found');
+            throw new Unauthorized();
         }
 
         $domain = $this->builder->components()->auth()->domain();
@@ -411,7 +385,7 @@ class Auth extends AuthProcessor
         if (!$user)
         {
             RESTFUL::setError('user');
-            throw new \InvalidArgumentException('User not found');
+            throw new Unauthorized();
         }
 
         $recovery = $orm->query(Model::RECOVERY_PASSWORD)

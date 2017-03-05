@@ -3,6 +3,7 @@
 namespace Project\Api\HTTPProcessors\SOU;
 
 use PHPixie\HTTP\Request;
+use Project\Api\Exceptions\Unauthorized;
 use Project\Api\HTTPProcessors\Processor\SOUProtected;
 use Project\Api\RESTFUL;
 use Project\Framework\Builder;
@@ -98,7 +99,7 @@ class User extends SOUProtected
         if (!$user)
         {
             RESTFUL::setError('user');
-            throw new \InvalidArgumentException('User not found');
+            throw new Unauthorized();
         }
 
         $wheel = $user->favouriteWheels->query();
@@ -195,7 +196,7 @@ class User extends SOUProtected
         if (!$user)
         {
             RESTFUL::setError('user');
-            throw new \InvalidArgumentException('User not found');
+            throw new Unauthorized();
         }
 
         $wheel = $user->likeWheels->query();

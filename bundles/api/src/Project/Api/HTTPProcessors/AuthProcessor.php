@@ -12,6 +12,7 @@ use Project\Api\ENUM\REST;
 use Project\Api\Exceptions\Unauthorized;
 use Project\Api\RESTFUL;
 use Project\Extension\Util;
+use Project\Model;
 
 class AuthProcessor extends Processor
 {
@@ -32,6 +33,34 @@ class AuthProcessor extends Processor
     protected function globalsRequest()
     {
         return \OAuth2\Request::createFromGlobals();
+    }
+
+
+    /**
+     * @return null|\Project\ORM\User\User
+     * @throws \PHPixie\ORM\Exception\Query
+     */
+    public function loggedUser()
+    {
+        if (!$this->user)
+        {
+            if ($this->server()->verifyResourceRequest($this->globalsRequest()))
+            {
+                $accessToken = $this->server()->getAccessTokenData($this->globalsRequest());
+
+                if ($accessToken['user_id'])
+                {
+                    $this->user = $this->components->orm()->query(Model::USER)
+                        ->in($accessToken['user_id'])
+                        ->findOne();
+
+                    $this->components->auth()->domain()->setUser($this->user, 'default');
+                }
+
+            }
+        }
+
+        return parent::loggedUser();
     }
 
     protected function oauthPDO()

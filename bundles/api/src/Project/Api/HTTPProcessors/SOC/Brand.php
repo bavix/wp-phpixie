@@ -4,6 +4,7 @@ namespace Project\Api\HTTPProcessors\SOC;
 
 use PHPixie\HTTP\Request;
 use Project\Api\ENUM\REST;
+use Project\Api\Exceptions\Unauthorized;
 use Project\Api\HTTPProcessors\Processor\SOCProtected;
 use Project\Api\RESTFUL;
 use Project\Framework\Builder;
@@ -67,7 +68,7 @@ class Brand extends SOCProtected
         if (!$user)
         {
             RESTFUL::setError('user');
-            throw new \InvalidArgumentException('User not found');
+            throw new Unauthorized();
         }
 
         $brand = $this->components->orm()->query(Model::BRAND)
@@ -127,7 +128,7 @@ class Brand extends SOCProtected
         if (!$user)
         {
             RESTFUL::setError('user');
-            throw new \InvalidArgumentException('User not found');
+            throw new Unauthorized();
         }
 
         $brandsAddress = $this->components->orm()->query('brandsAddress')

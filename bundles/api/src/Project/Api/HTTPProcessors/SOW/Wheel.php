@@ -4,6 +4,7 @@ namespace Project\Api\HTTPProcessors\SOW;
 
 use PHPixie\HTTP\Request;
 use Project\Api\ENUM\REST;
+use Project\Api\Exceptions\Unauthorized;
 use Project\Api\HTTPProcessors\Processor\SOWProtected;
 use Project\Api\RESTFUL;
 use Project\Framework\Builder;
@@ -443,7 +444,8 @@ class Wheel extends SOWProtected
 
         if (!$user)
         {
-            throw new \InvalidArgumentException('User not found');
+            RESTFUL::setError('user');
+            throw new Unauthorized();
         }
 
         $id = $request->data()->getRequired('id');
@@ -500,12 +502,12 @@ class Wheel extends SOWProtected
      */
     public function favouritePostAction(Request $request)
     {
-        //$user = $this->loggedUser();
-        $user = $this->components->orm()->query(Model::USER)->findOne();
+        $user = $this->loggedUser();
 
         if (!$user)
         {
-            throw new \InvalidArgumentException('User not found');
+            RESTFUL::setError('user');
+            throw new Unauthorized();
         }
 
         $id = $request->attributes()->getRequired('id');
@@ -557,12 +559,12 @@ class Wheel extends SOWProtected
      */
     public function favouriteDeleteAction(Request $request)
     {
-        //$user = $this->loggedUser();
-        $user = $this->components->orm()->query(Model::USER)->findOne();
+        $user = $this->loggedUser();
 
         if (!$user)
         {
-            throw new \InvalidArgumentException('User not found');
+            RESTFUL::setError('user');
+            throw new Unauthorized();
         }
 
         $id = $request->attributes()->getRequired('id');
@@ -611,12 +613,12 @@ class Wheel extends SOWProtected
      */
     public function likePostAction(Request $request)
     {
-        //$user = $this->loggedUser();
-        $user = $this->components->orm()->query(Model::USER)->findOne();
+        $user = $this->loggedUser();
 
         if (!$user)
         {
-            throw new \InvalidArgumentException('User not found');
+            RESTFUL::setError('user');
+            throw new Unauthorized();
         }
 
         $id = $request->attributes()->getRequired('id');
@@ -668,12 +670,12 @@ class Wheel extends SOWProtected
      */
     public function likeDeleteAction(Request $request)
     {
-        //$user = $this->loggedUser();
-        $user = $this->components->orm()->query(Model::USER)->findOne();
+        $user = $this->loggedUser();
 
         if (!$user)
         {
-            throw new \InvalidArgumentException('User not found');
+            RESTFUL::setError('user');
+            throw new Unauthorized();
         }
 
         $id = $request->attributes()->getRequired('id');
