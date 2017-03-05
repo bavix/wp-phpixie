@@ -54,7 +54,7 @@ class AuthProcessor extends Processor
                         ->in($accessToken['user_id'])
                         ->findOne();
 
-                    $this->components->auth()->domain()->setUser($this->loggedUser(), 'default');
+                    $this->components->auth()->domain()->setUser($this->user, 'default');
                 }
 
             }
