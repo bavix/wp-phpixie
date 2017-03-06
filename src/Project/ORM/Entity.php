@@ -46,7 +46,7 @@ class Entity extends PHPixieEntity
         {
             $uri  = $this->builder->components()->http()->request()->uri();
             $host = $uri->getHost();
-
+var_dump($uri->getScheme());die;
             $sdk = new SDK();
             $sdk->setServer('cdn.' . $host, $uri->getScheme());
             $sdk->setUserName($this->modelName());
