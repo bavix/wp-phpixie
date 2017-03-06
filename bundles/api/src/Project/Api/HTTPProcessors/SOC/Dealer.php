@@ -142,4 +142,63 @@ class Dealer extends SOCProtected
         return $dealer->asObject(true);
     }
 
+    /**
+     * @api               {get} /soc/dealer/<id>/address Dealer Address List
+     * @apiName           Dealer Address List
+     * @apiGroup          SOC
+     *
+     * @apiPermission     client user
+     *
+     * @apiHeader         Authorization Bearer {access_token}
+     *
+     * @apiVersion        0.0.5
+     *
+     * @apiParam        {Number}  id        brandId
+     *
+     * @apiParam        {String[]}  [preload] loading relationships
+     *
+     * @apiParam        {String[]}  [sort] order by id desc
+     * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [queries] filter LIKE %4%
+     *
+     * @param Request $request
+     *
+     * @return array
+     */
+    public function addressGetAction(Request $request)
+    {
+        $brandId = $request->attributes()->getRequired('id');
+
+        /**
+         * @var $builder Builder
+         */
+        $builder = $this->builder->frameworkBuilder();
+
+        $page  = $request->query()->get('page', 1);
+        $limit = $request->query()->get('limit', 50);
+
+        $preload = $request->query()->get('preload', []);
+
+        $dealer = $this->components->orm()
+            ->query(Model::DEALER)
+            ->in($brandId)
+            ->findOne();
+
+        if (!$dealer)
+        {
+            RESTFUL::setError('dealer');
+            throw new \InvalidArgumentException('Dealer not found');
+        }
+
+        $query = $dealer->addresses->query();
+
+        $this->query($query, $request);
+
+        $pager = $builder
+            ->helper()
+            ->pager($page, $query, $limit, $preload);
+
+        return $this->pager($pager);
+    }
+
 }

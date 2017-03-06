@@ -533,7 +533,6 @@ class Brand extends SOCProtected
      * @apiParam        {Number}  id        brandId
      *
      * @apiParam        {String[]}  [preload] loading relationships
-     * @apiParam        {String[]}  [fields] fields
      *
      * @apiParam        {String[]}  [sort] order by id desc
      * @apiParam        {String[]}  [terms] filter equal id = 4
@@ -803,7 +802,7 @@ class Brand extends SOCProtected
     /**
      * @api               {get} /soc/brand/<id>/address Brand Address List
      * @apiName           Brand Address List
-     * @apiGroup          SOW
+     * @apiGroup          SOC
      *
      * @apiPermission     client user
      *
@@ -814,7 +813,6 @@ class Brand extends SOCProtected
      * @apiParam        {Number}  id        brandId
      *
      * @apiParam        {String[]}  [preload] loading relationships
-     * @apiParam        {String[]}  [fields] fields
      *
      * @apiParam        {String[]}  [sort] order by id desc
      * @apiParam        {String[]}  [terms] filter equal id = 4
@@ -837,7 +835,6 @@ class Brand extends SOCProtected
         $limit = $request->query()->get('limit', 50);
 
         $preload = $request->query()->get('preload', []);
-//        $fields  = $request->query()->get('fields');
 
         $brand = $this->components->orm()
             ->query(Model::BRAND)
@@ -850,13 +847,13 @@ class Brand extends SOCProtected
             throw new \InvalidArgumentException('Brand not found');
         }
 
-        $imageQuery = $brand->addresses->query();
+        $query = $brand->addresses->query();
 
-        $this->query($imageQuery, $request);
+        $this->query($query, $request);
 
         $pager = $builder
             ->helper()
-            ->pager($page, $imageQuery, $limit, $preload);
+            ->pager($page, $query, $limit, $preload);
 
         return $this->pager($pager);
     }

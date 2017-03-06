@@ -42,11 +42,11 @@ class HTTPProcessor extends HttpBuilder
     }
 
     /**
-     * @return HTTPProcessors\Video
+     * @return HTTPProcessors\Embed
      */
-    public function buildVideoProcessor()
+    public function buildEmbedProcessor()
     {
-        return new HTTPProcessors\Video($this->builder);
+        return new HTTPProcessors\Embed($this->builder);
     }
 
     /**
