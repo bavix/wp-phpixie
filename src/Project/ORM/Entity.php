@@ -45,10 +45,10 @@ class Entity extends PHPixieEntity
         if ($logo)
         {
             $request = $this->builder->components()->http()->request();
-            $server = $request->server();
-            $uri  = $request->uri();
-            $host = $uri->getHost();
-            $schema = $server->get('https', 'off') === 'on' ? 'https' : 'http';
+            $server  = $request->server();
+            $uri     = $request->uri();
+            $host    = $uri->getHost();
+            $schema  = (int)$server->get('server_port', 80) === 80 ? 'http' : 'https';
 
             /**
              * @var $uri \PHPixie\HTTP\Messages\URI\SAPI
