@@ -177,8 +177,10 @@ class Account extends AuthProcessor
 
         $simple->save($to);
 
+        $host = $request->uri()->getHost();
+
         $data = $helper->send()
-            ->to('http://cdn.wbs/api/upload/avatar?id=' . $user->id() . '&userId=' . $user->id())
+            ->to('http://cdn.' . $host . '/api/upload/avatar?id=' . $user->id() . '&userId=' . $user->id())
             ->file('filedata', $to)
             ->headers([
                 'Origin: *'
