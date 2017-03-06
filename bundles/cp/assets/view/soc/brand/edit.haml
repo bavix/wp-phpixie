@@ -33,7 +33,7 @@
 
             #tab-base.tab-pane.active
               .panel-body
-                %form(method="PATCH" action="/api/soc/brand/#{$brand->id}")
+                %form(method="POST" action="/api/soc/brand/#{$brand->id}" data-updated="brand")
                   .form-group.form-group-lg
                     %label.control-label(for="brandName")
                       Name

@@ -749,6 +749,25 @@ $(function () {
         });
     });
 
+    $('[data-updated="brand"]').submit(function () {
+
+        event.preventDefault();
+
+        var form = new FormData(this);
+
+        fetch($(this).attr('action'), {
+            method: $(this).attr('method'),
+            credentials: 'include',
+            body: form
+        }).then(response).then(function (response) {
+
+            alert('Информация обновлена!');
+            console.log(response);
+        }).catch(function () {
+            return undefined;
+        });
+    });
+
     fetch($formSocial.attr('action') + '?preload[]=social', {
         method: 'GET',
         credentials: 'include'

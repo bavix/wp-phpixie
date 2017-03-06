@@ -235,6 +235,76 @@ class Brand extends SOCProtected
 
     }
 
+    public function itemPostAction(Request $request)
+    {
+        if (!$this->loggedUser()->hasPermission('cp.soc.brand.edit'))
+        {
+            throw new \Exception('Access denied');
+        }
+
+        $id = $request->attributes()->getRequired('id');
+
+        $brand = $this->components->orm()->query(Model::BRAND)
+            ->in($id)
+            ->findOne();
+
+        if (!$brand)
+        {
+            RESTFUL::setStatus(REST::NOT_FOUND);
+
+            return [];
+        }
+
+        $data = $request->data();
+
+        $name = $data->getRequired('name');
+        $web  = $data->get('web');
+
+        if (empty($web))
+        {
+            $web = null;
+        }
+
+        $webGroup   = $data->get('webGroup');
+        $isCarbon   = $data->get('isCarbon') === 'on';
+        $isMultiple = $data->get('isMultiple') === 'on';
+        $isOffRoad  = $data->get('isOffRoad') === 'on';
+
+        $brand->name       = $name;
+        $brand->web        = $web;
+        $brand->webGroup   = $webGroup;
+        $brand->isCarbon   = (int)$isCarbon;
+        $brand->isMultiple = (int)$isMultiple;
+        $brand->isOffRoad  = (int)$isOffRoad;
+
+        $brand->save();
+
+        $brand->brands->query()->update([
+            'isMultiple' => 0,
+            'parentId'   => null
+        ]);
+
+        /**
+         * @var array $brands
+         */
+        $brands = $data->get('brands', []);
+
+        if (!empty($brands))
+        {
+            $brandQuery = $this->components->orm()
+                ->query(Model::BRAND)
+                ->in($brands);
+
+            $brand->brands->add($brandQuery);
+
+            $brandQuery->update([
+                'isMultiple' => 1
+            ]);
+        }
+
+        return $brand->asObject(true);
+    }
+
     /**
      * @api               {get} /soc/brand Brand List
      * @apiName           Brand List
