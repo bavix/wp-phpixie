@@ -80,41 +80,41 @@ return [
 
         [
             'type'  => 'oneToOne',
-            'owner' => Model::BRAND,
-            'item' => Model::IMAGE,
+            'owner' => Model::IMAGE,
+            'item'  => Model::BRAND,
 
-            'itemOptions' => [
-                'ownerKey'      => 'itemId',
+            'ownerOptions' => [
+                'itemKey' => 'itemId',
             ]
         ],
 
         [
             'type'  => 'oneToOne',
-            'owner' => Model::DEALER,
-            'item'  => Model::IMAGE,
+            'owner' => Model::IMAGE,
+            'item'  => Model::DEALER,
 
-            'itemOptions' => [
-                'ownerKey'      => 'itemId',
+            'ownerOptions' => [
+                'itemKey' => 'itemId',
             ]
         ],
 
         [
             'type'  => 'oneToOne',
-            'owner' => Model::WHEEL,
-            'item'  => Model::IMAGE,
+            'owner' => Model::IMAGE,
+            'item'  => Model::WHEEL,
 
-            'itemOptions' => [
-                'ownerKey'      => 'itemId',
+            'ownerOptions' => [
+                'itemKey' => 'itemId',
             ]
         ],
 
         [
             'type'  => 'oneToOne',
-            'owner' => Model::USER,
-            'item'  => Model::IMAGE,
+            'owner' => Model::IMAGE,
+            'item'  => Model::USER,
 
-            'itemOptions' => [
-                'ownerKey'      => 'itemId',
+            'ownerOptions' => [
+                'itemKey' => 'itemId',
             ]
         ],
 
