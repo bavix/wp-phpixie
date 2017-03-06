@@ -343,7 +343,8 @@ class Brand extends SOCProtected
 
         $preload = $request->query()->get('preload', []);
 
-        $brand = $this->components->orm()->query(Model::BRAND);
+        $brand = $this->components->orm()->query(Model::BRAND)
+            ->where('active', 1);
 
         $this->query($brand, $request);
 
