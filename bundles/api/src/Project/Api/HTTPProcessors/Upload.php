@@ -87,10 +87,11 @@ class Upload extends AuthProcessor
 
         // ALTER TABLE `brands` ADD `imageId` INT NOT NULL AFTER `parentId`;
 
+        $logo->itemId = $brand->id();
         $logo->save();
 
-        $brand->image->set($logo);
-        $logo->brand->set($brand);
+        $brand->imageId = $logo->id();
+        $brand->save();
 
         return ['status' => 'ok'];
     }
@@ -137,10 +138,12 @@ class Upload extends AuthProcessor
 
         // ALTER TABLE `brands` ADD `imageId` INT NOT NULL AFTER `parentId`;
 
+        $logo->itemId = $user->id();
         $logo->save();
 
-        $user->image->set($logo);
-        $logo->user->set($user);
+        $user->imageId = $logo->id();
+        $user->save();
+
 
         return ['status' => 'ok'];
     }
@@ -188,10 +191,11 @@ class Upload extends AuthProcessor
                 ];
             }
 
+            $preview->itemId = $wheel->id();
             $preview->save();
 
-            $wheel->image->set($preview);
-            $preview->wheel->set($wheel);
+            $wheel->imageId = $preview->id();
+            $wheel->save();
 
         }
         else
