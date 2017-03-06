@@ -56,6 +56,13 @@
           %select#brandsSelect.form-control.select2-multiple(name="filter[id]" style="width:100%")
             %option(disabled selected) None
         .form-group
+          %label(for="activeSelect")
+            Active
+          %select#activeSelect.form-control.select2-multiple(name="filter[active]" style="width:100%")
+            %option(disabled selected) All
+            %option(value="1" ) Active
+            %option(value="0" ) No active
+        .form-group
           %button.btn.btn-success Submit
           %a.btn.btn-default(onclick="Url.removeQuery(); location.reload();") Reset
 

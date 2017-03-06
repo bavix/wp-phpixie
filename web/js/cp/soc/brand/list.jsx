@@ -4,6 +4,11 @@
 // );
 
 $(function () {
+
+    $('#activeSelect').select2({
+        theme: "bootstrap"
+    });
+
     $('#brandsSelect').select2({
         theme: "bootstrap",
         ajax: {
