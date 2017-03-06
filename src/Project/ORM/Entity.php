@@ -44,11 +44,17 @@ class Entity extends PHPixieEntity
 
         if ($logo)
         {
-            $uri  = $this->builder->components()->http()->request()->uri();
+            $request = $this->builder->components()->http()->request();
+            $server = $request->server();
+            $uri  = $request->uri();
             $host = $uri->getHost();
-var_dump($uri->getScheme());die;
+            $schema = $server->get('http', 'http');
+            
+            /**
+             * @var $uri \PHPixie\HTTP\Messages\URI\SAPI
+             */
             $sdk = new SDK();
-            $sdk->setServer('cdn.' . $host, $uri->getScheme());
+            $sdk->setServer('cdn.' . $host, $schema);
             $sdk->setUserName($this->modelName());
 
             return $sdk->getThumbsUrl($type, $logo->hash, $type . '.png');
