@@ -1,5 +1,10 @@
 - $this->layout('cp:layout')
 
+- if (isset($_GET['deb']))
+  %form(method="post" enctype="multipart/form-data" action="/api/account/image?id=6")
+    %input(type="file" name="filedata")
+    %button(type="submit") send
+
 #content
 
 -#%form(action="/cp/upload/image" method="post" enctype="multipart/form-data")

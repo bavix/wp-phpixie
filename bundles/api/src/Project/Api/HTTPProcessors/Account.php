@@ -11,15 +11,15 @@ class Account extends AuthProcessor
 {
 
     /**
-     * @api           {get} /account User Account
-     * @apiName       Get Current User Info
-     * @apiGroup      Account
+     * @api               {get} /account User Account
+     * @apiName           Get Current User Info
+     * @apiGroup          Account
      *
-     * @apiPermission user
+     * @apiPermission     user
      *
-     * @apiHeader     Authorization Bearer {access_token}
+     * @apiHeader         Authorization Bearer {access_token}
      *
-     * @apiVersion    0.0.6
+     * @apiVersion        0.0.6
      *
      * @apiSuccessExample Success-Response:
      *                    HTTP/1.1 200 OK
@@ -136,6 +136,58 @@ class Account extends AuthProcessor
         $user->save();
 
         return $user->asObject(true);
+    }
+
+    /**
+     * @api           {post} /account/image Update User Avatar
+     * @apiName       Update Current User Avatar
+     * @apiGroup      Account
+     *
+     * @apiPermission user
+     *
+     * @apiHeader     Authorization Bearer {access_token}
+     *
+     * @apiParam      {file} filedata Image file
+     *
+     * @apiVersion    0.0.7
+     *
+     * @param Request $request
+     */
+    public function imagePostAction(Request $request)
+    {
+        $user = $this->loggedUser();
+
+        if (!$user)
+        {
+            RESTFUL::setError('user');
+            throw new Unauthorized();
+        }
+
+        /**
+         * @var $builder \Project\Framework\Builder
+         */
+        $builder = $this->builder->frameworkBuilder();
+        $helper  = $builder->dHelper();
+        $temp    = $this->builder->webRoot();
+
+        $simple = $helper->uploads()->simple('filedata');
+
+        $name = md5($simple->tmpName());
+        $to   = $temp->path($name);
+
+        $simple->save($to);
+
+        $data = $helper->send()
+            ->to('http://cdn.wbs/api/upload/avatar?id=' . $user->id() . '&userId=' . $user->id())
+            ->file('filedata', $to)
+            ->headers([
+                'Origin: *'
+            ])
+            ->exec();
+
+        @unlink($to);
+
+        return $data;
     }
 
 }

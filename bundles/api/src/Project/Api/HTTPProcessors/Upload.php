@@ -11,6 +11,7 @@ class Upload extends AuthProcessor
     protected $allow = [
         'brandPost',
         'wheelPost',
+        'avatarPost',
     ];
 
 //    public function toPostAction(Request $request)
@@ -90,6 +91,56 @@ class Upload extends AuthProcessor
 
         $brand->image->set($logo);
         $logo->brand->set($brand);
+
+        return ['status' => 'ok'];
+    }
+
+
+    public function avatarPostAction(Request $request)
+    {// fixme : убрать мой быдлокод
+        $data = $request->data();
+
+        if ($data->get('status') !== 'ok')
+        {
+            return [
+                'status' => 'error'
+            ];
+        }
+
+        $id = $data->get('query.id');
+
+        if (!$id)
+        {
+            return [
+                'status' => 'error'
+            ];
+        }
+
+        $logo              = $this->components->orm()->createEntity(Model::IMAGE);
+        $logo->hash        = $data->get('hash');
+        $logo->size        = $data->get('fileSize');
+        $logo->width       = $data->get('sizes.width');
+        $logo->height      = $data->get('sizes.height');
+        $logo->userId      = $data->get('query.userId');
+        $logo->description = $data->get('description');
+
+        $user = $this->components->orm()->repository(Model::USER)->query()
+            ->in($id)
+            ->findOne();
+
+        if (!$user)
+        {
+            return [
+                'status' => 'error'
+            ];
+        }
+
+        // ALTER TABLE `brands` ADD `imageId` INT NOT NULL AFTER `parentId`;
+
+        $logo->save();
+
+        $user->image->set($logo);
+        $logo->user->set($user);
 
         return ['status' => 'ok'];
     }
