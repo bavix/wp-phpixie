@@ -269,6 +269,7 @@ class Brand extends SOCProtected
         $isCarbon   = $data->get('isCarbon') === 'on';
         $isMultiple = $data->get('isMultiple') === 'on';
         $isOffRoad  = $data->get('isOffRoad') === 'on';
+        $active     = $data->get('active') === 'on';
 
         $brand->name       = $name;
         $brand->web        = $web;
@@ -276,6 +277,7 @@ class Brand extends SOCProtected
         $brand->isCarbon   = (int)$isCarbon;
         $brand->isMultiple = (int)$isMultiple;
         $brand->isOffRoad  = (int)$isOffRoad;
+        $brand->active     = (int)$active;
 
         $brand->save();
 
