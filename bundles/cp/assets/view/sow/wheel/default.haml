@@ -10,6 +10,7 @@
       %table.table.table-striped
         %thead
           %tr
+            %th Logo
             %th Active
             %th Brand
             %th Collection
@@ -22,6 +23,8 @@
         %tbody
           - foreach ($pager->getCurrentItems() as $wheel)
             %tr(id="brand-#{$wheel->id()}")
+              %td
+                %img.img-circle(width="70px" src="#{$wheel->thumbsLogo()}")
               %td = $wheel->active ? 'Yes' : 'No'
               %td = $wheel->brand()->name
               - $collection = $wheel->collection()
