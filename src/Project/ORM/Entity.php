@@ -48,8 +48,8 @@ class Entity extends PHPixieEntity
             $server = $request->server();
             $uri  = $request->uri();
             $host = $uri->getHost();
-            $schema = $server->get('http', 'http');
-            
+            $schema = $server->get('https', 'off') === 'on' ? 'https' : 'http';
+
             /**
              * @var $uri \PHPixie\HTTP\Messages\URI\SAPI
              */
