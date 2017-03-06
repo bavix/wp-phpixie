@@ -281,7 +281,6 @@ class Wheel extends SOWProtected
      * @apiParam        {Number}  id        wheelId
      *
      * @apiParam        {String[]}  [preload] loading relationships
-     * @apiParam        {String[]}  [fields] fields
      *
      * @apiParam        {String[]}  [sort] order by id desc
      * @apiParam        {String[]}  [terms] filter equal id = 4
@@ -322,7 +321,6 @@ class Wheel extends SOWProtected
         $limit = $request->query()->get('limit', 50);
 
         $preload = $request->query()->get('preload', []);
-//        $fields  = $request->query()->get('fields');
 
         try
         {
@@ -336,8 +334,6 @@ class Wheel extends SOWProtected
                 );
 
             $this->query($wheelComment, $request);
-
-//            $wheelComment = $wheelComment->find($preload, $fields);
         }
         catch (\Throwable $throwable)
         {
@@ -365,7 +361,6 @@ class Wheel extends SOWProtected
      * @apiParam        {Number}  id        wheelId
      *
      * @apiParam        {String[]}  [preload] loading relationships
-     * @apiParam        {String[]}  [fields] fields
      *
      * @apiParam        {String[]}  [sort] order by id desc
      * @apiParam        {String[]}  [terms] filter equal id = 4
@@ -428,7 +423,6 @@ class Wheel extends SOWProtected
      * @apiParam        {string}  text      text
      *
      * @apiParam        {String[]}  [preload] loading relationships
-     * @apiParam        {String[]}  [fields] fields
      *
      * @apiParam        {String[]}  [sort] order by id desc
      * @apiParam        {String[]}  [terms] filter equal id = 4
@@ -526,7 +520,13 @@ class Wheel extends SOWProtected
             throw new \InvalidArgumentException('Wheel not found');
         }
 
-        if ($wheel->favourites->add($user))
+        $wheelFavourite = $this->components->orm()->createEntity('wheelsFavourite');
+        $wheelFavourite->wheelid = $wheel->id();
+        $wheelFavourite->userId = $user->id();
+
+        $wheelFavourite->save();
+
+        if ($wheelFavourite->id())
         {
             RESTFUL::setStatus(REST::CREATED);
 
@@ -637,7 +637,13 @@ class Wheel extends SOWProtected
             throw new \InvalidArgumentException('Wheel not found');
         }
 
-        if ($wheel->likes->add($user))
+        $wheelLike = $this->components->orm()->createEntity('wheelsLike');
+        $wheelLike->wheelid = $wheel->id();
+        $wheelLike->userId = $user->id();
+
+        $wheelLike->save();
+
+        if ($wheelLike->id())
         {
             RESTFUL::setStatus(REST::CREATED);
 
@@ -719,7 +725,6 @@ class Wheel extends SOWProtected
      * @apiParam        {Number}  id        wheelId
      *
      * @apiParam        {String[]}  [preload] loading relationships
-     * @apiParam        {String[]}  [fields] fields
      *
      * @apiParam        {String[]}  [sort] order by id desc
      * @apiParam        {String[]}  [terms] filter equal id = 4
@@ -742,8 +747,6 @@ class Wheel extends SOWProtected
         $limit = $request->query()->get('limit', 50);
 
         $preload = $request->query()->get('preload', []);
-//        $fields  = $request->query()->get('fields');
-
 
         $wheel = $this->components->orm()
             ->query(Model::WHEEL)
@@ -803,7 +806,6 @@ class Wheel extends SOWProtected
         $limit = $request->query()->get('limit', 50);
 
         $preload = $request->query()->get('preload', []);
-//        $fields  = $request->query()->get('fields');
 
         $wheel = $this->components->orm()
             ->query(Model::WHEEL)

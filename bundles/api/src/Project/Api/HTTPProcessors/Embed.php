@@ -2,15 +2,13 @@
 
 namespace Project\Api\HTTPProcessors;
 
-use Embed\Embed;
 use PHPixie\HTTP\Request;
-use Project\Model;
 
-class Video extends AuthProcessor
+class Embed extends AuthProcessor
 {
 
     /**
-     * @api           {get} /video/embed Video Embed Data
+     * @api           {get} /embed Video Embed Data
      * @apiName       Embed
      * @apiGroup      Video
      *
@@ -24,13 +22,15 @@ class Video extends AuthProcessor
      *
      * @return array
      */
-    public function embedGetAction(Request $request)
+    public function defaultGetAction(Request $request)
     {
         $url = $request->query()->getRequired('url');
 
-        $info = Embed::create($url);
+        $info = \Embed\Embed::create($url);
 
         return [
+            'identifier' => $info->getResponse()->getUrl()->getQueryParameter('v'),
+
             'url'      => $info->url,
             'provider' => $info->providerName,
 

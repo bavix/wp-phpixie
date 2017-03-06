@@ -316,6 +316,12 @@ return [
             'right' => Model::ADDRESS
         ],
 
+        [
+            'type'  => 'manyToMany',
+            'left'  => Model::DEALER,
+            'right' => Model::ADDRESS
+        ],
+
     ]
 
 ];
