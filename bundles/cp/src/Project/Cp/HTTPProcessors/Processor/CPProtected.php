@@ -83,7 +83,7 @@ abstract class CPProtected extends Processor
         $builder = $this->builder->frameworkBuilder();
         $pool    = $builder->cache();
 
-        $key = __FUNCTION__ . $action . $current->id();
+        $key = __FILE__ . __FUNCTION__ . $action . $current->id();
 
         if ($pool->hasItem($key) === false)
         {

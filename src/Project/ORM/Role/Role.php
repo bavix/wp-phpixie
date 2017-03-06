@@ -22,7 +22,7 @@ class Role extends Entity
 
     protected function cache($query, $method)
     {
-        $key = $method . Model::ROLE . $this->id();
+        $key = __FILE__ . $method . Model::ROLE . $this->id();
 
         $pool = $this->builder->frameworkBuilder()->cache();
 
