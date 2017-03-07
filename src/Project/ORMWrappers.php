@@ -42,6 +42,7 @@ class ORMWrappers extends WrappersImplementation
         Model::MENU,
         Model::BRAND,
         Model::WHEEL,
+        Model::STYLE,
     );
 
     /**
@@ -129,6 +130,16 @@ class ORMWrappers extends WrappersImplementation
     public function wheelEntity($entity)
     {
         return new ORM\Wheel\Wheel($entity, $this->builder);
+    }
+
+    /**
+     * @param $entity
+     *
+     * @return ORM\Style\Style
+     */
+    public function styleEntity($entity)
+    {
+        return new ORM\Style\Style($entity, $this->builder);
     }
 
     /**

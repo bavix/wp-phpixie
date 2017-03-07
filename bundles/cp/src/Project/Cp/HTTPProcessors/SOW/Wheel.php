@@ -70,6 +70,9 @@ class Wheel extends SOWProtected
             ->in($id)
             ->findOne();
 
+        $styles = $this->components->orm()->query(Model::STYLE)->find();
+
+        $this->assign('styles', $styles);
         $this->assign('wheel', $wheel);
 
         return $this->render('cp:sow/wheel/edit');

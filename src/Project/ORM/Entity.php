@@ -3,28 +3,9 @@
 namespace Project\ORM;
 
 use Deimos\ImaginariumSDK\SDK;
-use PHPixie\ORM\Wrappers\Type\Database\Entity as PHPixieEntity;
-use Project\App\Builder;
 
-class Entity extends PHPixieEntity
+class Entity extends EmptyEntity
 {
-
-    /**
-     * @var $builder Builder
-     */
-    protected $builder;
-
-    /**
-     * Brand constructor.
-     *
-     * @param $entity
-     * @param $builder
-     */
-    public function __construct($entity, $builder)
-    {
-        parent::__construct($entity);
-        $this->builder = $builder;
-    }
 
     protected function defaultImage($width, $height, $text = null)
     {
