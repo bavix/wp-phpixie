@@ -79,6 +79,8 @@ function toForm(place) {
         return;
     }
 
+    console.debug(place.address_components);
+
     // Get each component of the address from the place details
     // and fill the corresponding field on the form.
     for (let i = 0; i < place.address_components.length; i++) {
