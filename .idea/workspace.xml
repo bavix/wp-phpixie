@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOW/Wheel.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOW/Wheel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/assets/config/orm.php" afterPath="$PROJECT_DIR$/bundles/app/assets/config/orm.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/edit.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/edit.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOW/Wheel.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOW/Wheel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Project/ORM/Entity.php" afterPath="$PROJECT_DIR$/src/Project/ORM/Entity.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Project/ORMWrappers.php" afterPath="$PROJECT_DIR$/src/Project/ORMWrappers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/sow/wheel/edit.js" afterPath="$PROJECT_DIR$/web/js/cp/sow/wheel/edit.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/sow/wheel/edit.js.map" afterPath="$PROJECT_DIR$/web/js/cp/sow/wheel/edit.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/sow/wheel/edit.jsx" afterPath="$PROJECT_DIR$/web/js/cp/sow/wheel/edit.jsx" />
     </list>
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,84 +40,92 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Wheel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Project/ORM/Wheel/Wheel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ORMWrappers.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Project/ORMWrappers.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="45" column="6" lean-forward="false" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
+            <state relative-caret-position="313">
+              <caret line="40" column="20" lean-forward="false" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Wheel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOW/Wheel.php">
+      <file leaf-file-name="base.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/edit.tabs/base.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="224" column="9" lean-forward="true" selection-start-line="224" selection-start-column="9" selection-end-line="224" selection-end-column="9" />
+            <state relative-caret-position="15">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="image.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/edit.tabs/image.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="video.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/edit.tabs/video.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="15" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/edit.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="44" column="23" lean-forward="false" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="23" />
               <folding>
-                <element signature="e#50#75#0#PHP" expanded="true" />
+                <marker date="1488892015027" expanded="true" signature="1289:1550" ph="{...}" />
+                <marker date="1488892015027" expanded="true" signature="1572:1653" ph="{...}" />
+                <marker date="1488892015027" expanded="true" signature="1694:1755" ph="{...}" />
+                <marker date="1488892015027" expanded="true" signature="1777:1944" ph="{...}" />
+                <marker date="1488892015027" expanded="true" signature="1956:2086" ph="{...}" />
+                <marker date="1488892015027" expanded="true" signature="2107:2227" ph="{...}" />
+                <marker date="1488892015027" expanded="true" signature="2249:2271" ph="{...}" />
+                <marker date="1488892015027" expanded="true" signature="2308:2394" ph="{...}" />
+                <marker date="1488892015027" expanded="true" signature="3426:3585" ph="{...}" />
+                <marker date="1488892015027" expanded="true" signature="3444:3579" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.haml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/edit.haml">
+      <file leaf-file-name="Embed.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Embed.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="183" column="0" lean-forward="true" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
-              <folding>
-                <marker date="1488886791940" expanded="true" signature="3762:4023" ph="{...}" />
-                <marker date="1488886791940" expanded="true" signature="4045:4126" ph="{...}" />
-                <marker date="1488886791940" expanded="true" signature="4167:4228" ph="{...}" />
-                <marker date="1488886791940" expanded="true" signature="4250:4417" ph="{...}" />
-                <marker date="1488886791940" expanded="true" signature="4429:4559" ph="{...}" />
-                <marker date="1488886791940" expanded="true" signature="4580:4700" ph="{...}" />
-                <marker date="1488886791940" expanded="true" signature="4722:4744" ph="{...}" />
-                <marker date="1488886791940" expanded="true" signature="4781:4867" ph="{...}" />
-                <marker date="1488886791940" expanded="true" signature="5899:6058" ph="{...}" />
-                <marker date="1488886791940" expanded="true" signature="5917:6052" ph="{...}" />
-              </folding>
+            <state relative-caret-position="450">
+              <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="48" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/js/cp/sow/wheel/edit.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="592">
+              <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="edit.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/cp/sow/wheel/edit.jsx">
+        <entry file="file://$PROJECT_DIR$/web/js/cp/soc/brand/edit.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Wheel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOW/Wheel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="74" column="41" lean-forward="false" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Style.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Project/ORM/Style/Style.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+            <state relative-caret-position="495">
+              <caret line="508" column="7" lean-forward="true" selection-start-line="495" selection-start-column="0" selection-end-line="508" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -136,8 +142,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>limit</find>
-      <find>.col-lg</find>
       <find>socialGet</find>
       <find>socialItemDe</find>
       <find>social</find>
@@ -166,9 +170,10 @@
       <find>IMAGE</find>
       <find>itemPost</find>
       <find>WHEEL</find>
+      <find>socialUrl</find>
+      <find>Post</find>
     </findStrings>
     <replaceStrings>
-      <replace>Name</replace>
       <replace>= res.count</replace>
       <replace>.then(r =&gt; r.json()).then( res</replace>
       <replace>brandId</replace>
@@ -198,6 +203,7 @@
       <replace>Authorization: Bearer {access_token}</replace>
       <replace>Bearer {access_token}</replace>
       <replace>wheel</replace>
+      <replace>youtubeUrl</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\OpenServer\domains\wbs-cms\bundles</dir>
@@ -227,8 +233,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/bundles/app/src/Project/App/HTTPProcessors/Invite.php" />
-        <option value="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Auth.php" />
         <option value="$PROJECT_DIR$/assets/migrate/migrations/38.sql" />
         <option value="$PROJECT_DIR$/assets/migrate/migrations/39.sql" />
         <option value="$PROJECT_DIR$/assets/migrate/migrations/40.sql" />
@@ -275,9 +279,11 @@
         <option value="$PROJECT_DIR$/src/Project/ORM/Style/Style.php" />
         <option value="$PROJECT_DIR$/src/Project/ORMWrappers.php" />
         <option value="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOW/Wheel.php" />
+        <option value="$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/edit.tabs/base.haml" />
+        <option value="$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/edit.tabs/video.haml" />
         <option value="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOW/Wheel.php" />
-        <option value="$PROJECT_DIR$/web/js/cp/sow/wheel/edit.jsx" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/edit.haml" />
+        <option value="$PROJECT_DIR$/web/js/cp/sow/wheel/edit.jsx" />
       </list>
     </option>
   </component>
@@ -544,13 +550,31 @@
               <option name="myItemId" value="sow" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="wheel" />
+              <option name="myItemId" value="WBS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="add.jsx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cp" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="soc" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -575,7 +599,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sow" />
+              <option name="myItemId" value="soc" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="brand" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -906,6 +934,44 @@
               <option name="myItemId" value="sow" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wheel" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="edit.tabs" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WBS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cp" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sow" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -968,6 +1034,44 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="brand" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WBS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cp" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="soc" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="brand" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="edit.tabs" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1072,6 +1176,138 @@
               <option name="myItemId" value="bundles" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WBS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WBS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WBS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HTTPProcessors" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WBS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HTTPProcessors" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOW" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -1092,11 +1328,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/edit.tabs" />
       <recent name="$PROJECT_DIR$/src/Project/ORM" />
       <recent name="$PROJECT_DIR$/web/js/cp/sow/wheel" />
       <recent name="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.tabs" />
       <recent name="$PROJECT_DIR$/web/js/cp/sow" />
-      <recent name="$PROJECT_DIR$/src/Project/ORM/Brand" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Project/ORM" />
@@ -1363,12 +1599,12 @@
       <workItem from="1488562314795" duration="4293000" />
       <workItem from="1488626378763" duration="5173000" />
       <workItem from="1488812568304" duration="13405000" />
-      <workItem from="1488869423303" duration="11165000" />
+      <workItem from="1488869423303" duration="16093000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1013809000" />
+    <option name="totallyTimeSpent" value="1018737000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1447,58 +1683,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Settings/Cache.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="31" column="42" lean-forward="false" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/Processor/CPProtected.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="204" column="40" lean-forward="true" selection-start-line="204" selection-start-column="40" selection-end-line="204" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Project/ORM/Role/Role.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="24" column="26" lean-forward="false" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Project/Framework/Builder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="81" column="28" lean-forward="false" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Project/Extension/Template/Compiler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="31" column="51" lean-forward="false" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SettingsProcessorBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="53" column="24" lean-forward="false" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/47.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="66" lean-forward="false" selection-start-line="0" selection-start-column="66" selection-end-line="0" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/46.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1510,13 +1694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="36" column="7" lean-forward="true" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/cp/soc/brand/edit.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="543" column="0" lean-forward="false" selection-start-line="543" selection-start-column="0" selection-end-line="543" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1717,33 +1894,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="100" selection-end-column="28" />
-          <folding>
-            <marker date="1488868436248" expanded="true" signature="7209:7470" ph="{...}" />
-            <marker date="1488868436248" expanded="true" signature="7492:7573" ph="{...}" />
-            <marker date="1488868436248" expanded="true" signature="7614:7675" ph="{...}" />
-            <marker date="1488868436248" expanded="true" signature="7697:7864" ph="{...}" />
-            <marker date="1488868436248" expanded="true" signature="7876:8006" ph="{...}" />
-            <marker date="1488868436248" expanded="true" signature="8027:8147" ph="{...}" />
-            <marker date="1488868436248" expanded="true" signature="8169:8191" ph="{...}" />
-            <marker date="1488868436248" expanded="true" signature="8228:8314" ph="{...}" />
-            <marker date="1488868436248" expanded="true" signature="9513:9672" ph="{...}" />
-            <marker date="1488868436248" expanded="true" signature="9531:9666" ph="{...}" />
-            <marker date="1488868436248" expanded="true" signature="9692:10773" ph="{...}" />
-            <marker date="1488868436248" expanded="true" signature="9740:10007" ph="{...}" />
-            <marker date="1488868436248" expanded="true" signature="9777:9888" ph="{...}" />
-            <marker date="1488868436248" expanded="true" signature="9894:10001" ph="{...}" />
-            <marker date="1488868436248" expanded="true" signature="10069:10395" ph="{...}" />
-            <marker date="1488868436248" expanded="true" signature="10223:10359" ph="{...}" />
-            <marker date="1488868436248" expanded="true" signature="10440:10766" ph="{...}" />
-            <marker date="1488868436248" expanded="true" signature="10580:10736" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/add.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -1808,6 +1958,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/cp/sow/wheel/edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="53" lean-forward="false" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Project/ORM/Wheel/Wheel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1818,46 +1976,134 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Project/ORMWrappers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="45" column="6" lean-forward="false" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
+        <state relative-caret-position="313">
+          <caret line="40" column="20" lean-forward="false" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="240" column="0" lean-forward="true" selection-start-line="240" selection-start-column="0" selection-end-line="241" selection-end-column="45" />
+          <folding>
+            <marker date="1488868436248" expanded="true" signature="7209:7470" ph="{...}" />
+            <marker date="1488868436248" expanded="true" signature="7492:7573" ph="{...}" />
+            <marker date="1488868436248" expanded="true" signature="7614:7675" ph="{...}" />
+            <marker date="1488868436248" expanded="true" signature="7697:7864" ph="{...}" />
+            <marker date="1488868436248" expanded="true" signature="7876:8006" ph="{...}" />
+            <marker date="1488868436248" expanded="true" signature="8027:8147" ph="{...}" />
+            <marker date="1488868436248" expanded="true" signature="8169:8191" ph="{...}" />
+            <marker date="1488868436248" expanded="true" signature="8228:8314" ph="{...}" />
+            <marker date="1488868436248" expanded="true" signature="9513:9672" ph="{...}" />
+            <marker date="1488868436248" expanded="true" signature="9531:9666" ph="{...}" />
+            <marker date="1488868436248" expanded="true" signature="9692:10773" ph="{...}" />
+            <marker date="1488868436248" expanded="true" signature="9740:10007" ph="{...}" />
+            <marker date="1488868436248" expanded="true" signature="9777:9888" ph="{...}" />
+            <marker date="1488868436248" expanded="true" signature="9894:10001" ph="{...}" />
+            <marker date="1488868436248" expanded="true" signature="10069:10395" ph="{...}" />
+            <marker date="1488868436248" expanded="true" signature="10223:10359" ph="{...}" />
+            <marker date="1488868436248" expanded="true" signature="10440:10766" ph="{...}" />
+            <marker date="1488868436248" expanded="true" signature="10580:10736" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/cp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.tabs/social.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Embed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="48" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/edit.tabs/base.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOW/Wheel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="224" column="9" lean-forward="true" selection-start-line="224" selection-start-column="9" selection-end-line="224" selection-end-column="9" />
+        <state relative-caret-position="328">
+          <caret line="239" column="5" lean-forward="true" selection-start-line="239" selection-start-column="5" selection-end-line="239" selection-end-column="5" />
           <folding>
-            <element signature="e#50#75#0#PHP" expanded="true" />
+            <element signature="e#50#66#0#PHP" expanded="true" />
+            <marker date="1488890758374" expanded="true" signature="8605:9146" ph="..." />
+            <marker date="1488890758374" expanded="true" signature="10823:12373" ph="..." />
+            <marker date="1488890758374" expanded="true" signature="13383:14156" ph="..." />
+            <marker date="1488890758374" expanded="true" signature="15167:16031" ph="..." />
+            <marker date="1488890758374" expanded="true" signature="17026:17581" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/cp/sow/wheel/edit.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/edit.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="183" column="0" lean-forward="true" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="44" column="23" lean-forward="false" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="23" />
           <folding>
-            <marker date="1488886791940" expanded="true" signature="3762:4023" ph="{...}" />
-            <marker date="1488886791940" expanded="true" signature="4045:4126" ph="{...}" />
-            <marker date="1488886791940" expanded="true" signature="4167:4228" ph="{...}" />
-            <marker date="1488886791940" expanded="true" signature="4250:4417" ph="{...}" />
-            <marker date="1488886791940" expanded="true" signature="4429:4559" ph="{...}" />
-            <marker date="1488886791940" expanded="true" signature="4580:4700" ph="{...}" />
-            <marker date="1488886791940" expanded="true" signature="4722:4744" ph="{...}" />
-            <marker date="1488886791940" expanded="true" signature="4781:4867" ph="{...}" />
-            <marker date="1488886791940" expanded="true" signature="5899:6058" ph="{...}" />
-            <marker date="1488886791940" expanded="true" signature="5917:6052" ph="{...}" />
+            <marker date="1488892015027" expanded="true" signature="1289:1550" ph="{...}" />
+            <marker date="1488892015027" expanded="true" signature="1572:1653" ph="{...}" />
+            <marker date="1488892015027" expanded="true" signature="1694:1755" ph="{...}" />
+            <marker date="1488892015027" expanded="true" signature="1777:1944" ph="{...}" />
+            <marker date="1488892015027" expanded="true" signature="1956:2086" ph="{...}" />
+            <marker date="1488892015027" expanded="true" signature="2107:2227" ph="{...}" />
+            <marker date="1488892015027" expanded="true" signature="2249:2271" ph="{...}" />
+            <marker date="1488892015027" expanded="true" signature="2308:2394" ph="{...}" />
+            <marker date="1488892015027" expanded="true" signature="3426:3585" ph="{...}" />
+            <marker date="1488892015027" expanded="true" signature="3444:3579" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/edit.tabs/image.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/edit.tabs/video.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="15" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/cp/soc/brand/edit.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="508" column="7" lean-forward="true" selection-start-line="495" selection-start-column="0" selection-end-line="508" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/cp/sow/wheel/edit.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
