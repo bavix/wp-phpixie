@@ -53,6 +53,28 @@ function toForm(place) {
         document.getElementById(componentForm[component].id).value = '';
     }
 
+    if (typeof place.address_components === "undefined") {
+        var map = new google.maps.Map(document.getElementById("map"));
+        var service = new google.maps.places.PlacesService(map);
+
+        service.getDetails({
+            placeId: place.place_id
+        }, function (place, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+
+                var lat = place.geometry.location.lat();
+                var lng = place.geometry.location.lng();
+
+                document.getElementById('latitude').value = lat;
+                document.getElementById('longitude').value = lng;
+
+                toForm(place);
+            }
+        });
+
+        return;
+    }
+
     // Get each component of the address from the place details
     // and fill the corresponding field on the form.
     for (var i = 0; i < place.address_components.length; i++) {
