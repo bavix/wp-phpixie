@@ -210,7 +210,8 @@ class Wheel extends SOWProtected
         $data = $request->data();
 
         $name           = $data->getRequired('name');
-        $collectionName = $data->getRequired('collectionName');
+        $brandName      = $data->getRequired('brandName');
+        $collectionName = $data->get('collectionName');
         $styleId        = $data->get('styleId', $wheel->styleId);
         $isCustom       = (int)($data->get('isCustom', 'off') === 'on');
         $isRetired      = (int)($data->get('isRetired', 'off') === 'on');
@@ -220,14 +221,26 @@ class Wheel extends SOWProtected
             ->where('name', $collectionName)
             ->findOne();
 
+        if ($collection)
+        {
+            $brandId = $collection->brandId;
+        }
+        else
+        {
+            $brandId = $this->components->orm()->query(Model::BRAND)
+                ->where('name', $brandName)
+                ->findOne()
+                ->id();
+        }
+
         if (empty($styleId))
         {
             $styleId = null;
         }
 
         $wheel->name         = $name;
-        $wheel->brandId      = $collection->brandId;
-        $wheel->collectionId = $collection->id();
+        $wheel->brandId      = $brandId;
+        $wheel->collectionId = $collection ? $collection->id() : null;
         $wheel->styleId      = $styleId;
         $wheel->isCustom     = $isCustom;
         $wheel->isRetired    = $isRetired;
@@ -632,7 +645,7 @@ class Wheel extends SOWProtected
             throw new \InvalidArgumentException('ID is not numeric!');
         }
 
-        $wheel                   = $this->components->orm()->query(Model::WHEEL)
+        $wheel = $this->components->orm()->query(Model::WHEEL)
             ->in($id)
             ->findOne();
 
@@ -641,7 +654,7 @@ class Wheel extends SOWProtected
             throw new \InvalidArgumentException('Wheel not found');
         }
 
-        $wheelFavourite = $this->components->orm()->createEntity('wheelsFavourite');
+        $wheelFavourite          = $this->components->orm()->createEntity('wheelsFavourite');
         $wheelFavourite->wheelid = $wheel->id();
         $wheelFavourite->userId  = $user->id();
 
@@ -749,7 +762,7 @@ class Wheel extends SOWProtected
             throw new \InvalidArgumentException('ID is not numeric!');
         }
 
-        $wheel              = $this->components->orm()->query(Model::WHEEL)
+        $wheel = $this->components->orm()->query(Model::WHEEL)
             ->in($id)
             ->findOne();
 
@@ -758,7 +771,7 @@ class Wheel extends SOWProtected
             throw new \InvalidArgumentException('Wheel not found');
         }
 
-        $wheelLike = $this->components->orm()->createEntity('wheelsLike');
+        $wheelLike          = $this->components->orm()->createEntity('wheelsLike');
         $wheelLike->wheelid = $wheel->id();
         $wheelLike->userId  = $user->id();
 
