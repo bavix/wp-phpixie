@@ -64,8 +64,6 @@ function toForm(place) {
         }, function(newPlace, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
 
-                console.log(newPlace);
-
                 const lat = newPlace.geometry.location.lat();
                 const lng = newPlace.geometry.location.lng();
 
@@ -78,8 +76,6 @@ function toForm(place) {
 
         return;
     }
-
-    console.debug(place.address_components);
 
     // Get each component of the address from the place details
     // and fill the corresponding field on the form.
@@ -96,8 +92,6 @@ function toForm(place) {
 function fillInAddress() {
     'use strict';
     let place = autocomplete.getPlaces()[0];
-
-    console.log(place);
 
     const lat = place.geometry.location.lat();
     const lng = place.geometry.location.lng();
