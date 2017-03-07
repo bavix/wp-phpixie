@@ -54,8 +54,6 @@ function toForm(place) {
         document.getElementById(componentForm[component].id).value = '';
     }
 
-    console.log(place);
-
     if (typeof place.address_components === "undefined")
     {
         let map = new google.maps.Map(document.getElementById("map"));
@@ -96,6 +94,8 @@ function toForm(place) {
 function fillInAddress() {
     'use strict';
     let place = autocomplete.getPlaces()[0];
+
+    console.log(place);
 
     const lat = place.geometry.location.lat();
     const lng = place.geometry.location.lng();
