@@ -260,6 +260,7 @@ class Wheel extends SOWProtected
         }
 
         $url = $request->data()->getRequired('url');
+        $url = $url[0] === 'h' ? $url : 'http://' . $url;
 
         $info = Embed::create($url);
 
