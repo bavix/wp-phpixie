@@ -2,17 +2,6 @@
 
 .col-lg-9
 
-  -#%div.grid
-  -#
-  -#  %div.col-md-4
-  -#    %div(data-type="youtube" data-video-id="x3bLrSVxpzg")
-  -#
-  -#  %div.col-md-4
-  -#    %div(data-type="youtube" data-video-id="x3bLrSVxpzg")
-  -#
-  -#  %div.col-md-4
-  -#    %div(data-type="youtube" data-video-id="x3bLrSVxpzg")
-
   .ibox
     .ibox-title
       %h3
@@ -40,67 +29,20 @@
 
             #tab-base.tab-pane.active
               .panel-body
-                %form(method="POST" action="/api/sow/wheel/#{$wheel->id}" data-updated="wheel")
-
-                  .form-group.form-group-lg
-                    %label.control-label(for="brandName")
-                      Brand
-                    %input#brandName.form-control.text-uppercase(type="text" name="brandId" value="#{$wheel->brand()->name}" )
-
-                  - $collection = $wheel->collection()
-                  - if ($collection)
-                    .form-group.form-group-lg
-                      %label.control-label(for="collectionName")
-                        Collection
-                      %input#collectionName.form-control.text-uppercase(type="text" name="collectionName" value="#{$collection->name}" )
-
-                  .form-group.form-group-lg
-                    %label.control-label(for="name")
-                      Name
-                    %input#name.form-control.text-uppercase(type="text" name="name" value="#{$wheel->name}" )
-
-                  .form-group.form-group-lg
-                    %label.control-label(for="styleWheel")
-                      Style
-                    %select#styleWheel.form-control.select2-multiple(name="styleId" style="width:100%")
-                      %option(disabled selected) None
-                      - foreach ($styles as $style)
-                        %option(value="#{$style->id}" selected="#{ $style->id === $wheel->styleId }") = $style
-
-                  .form-group.form-group-lg
-                    %input#isCustom.wbs-checkbox(type="checkbox" name="isCustom" checked="#{!!$wheel->isCustom}")
-                    %label(for="isCustom")
-                      Is Custom
-
-                  .form-group.form-group-lg
-                    %input#isRetired.wbs-checkbox(type="checkbox" name="isRetired" checked="#{!!$wheel->isRetired}")
-                    %label(for="isRetired")
-                      Is Retired
-
-                  .form-group.form-group-lg
-                    %input#activeWheel.wbs-checkbox(type="checkbox" name="active" checked="#{!!$wheel->active}")
-                    %label(for="activeWheel")
-                      Active
-
-                  .hr-line-dashed
-
-                  .form-group(align="center")
-                    %button.btn.btn-primary.btn-lg
-                      %i.fa.fa-save
-                      Submit
+                partial: 'cp:sow/wheel/edit.tabs/base'
 
             #tab-image.tab-pane
               .panel-body
-                image
+                partial: 'cp:sow/wheel/edit.tabs/image'
 
             #tab-video.tab-pane
               .panel-body
-                video
+                partial: 'cp:sow/wheel/edit.tabs/video'
 
 -# fixme css/js code
 <link rel="stylesheet" href="/node_modules/plyr/dist/plyr.css">
 <script src="/node_modules/plyr/dist/plyr.js"></script>
-<script>plyr.setup();</script>
+-#<script>plyr.setup();</script>
 
 :css
 

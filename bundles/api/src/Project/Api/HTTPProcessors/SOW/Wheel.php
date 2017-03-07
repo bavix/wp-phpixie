@@ -2,6 +2,7 @@
 
 namespace Project\Api\HTTPProcessors\SOW;
 
+use Embed\Embed;
 use PHPixie\HTTP\Request;
 use Project\Api\ENUM\REST;
 use Project\Api\Exceptions\Unauthorized;
@@ -236,6 +237,73 @@ class Wheel extends SOWProtected
 
         return $wheel->asObject(true);
 
+    }
+
+    public function videoPostAction(Request $request)
+    {
+        if (!$this->loggedUser()->hasPermission('cp.sow.wheel.edit'))
+        {
+            throw new \Exception('Access denied');
+        }
+
+        $id = $request->attributes()->getRequired('id');
+
+        $wheel = $this->components->orm()->query(Model::WHEEL)
+            ->in($id)
+            ->findOne();
+
+        if (!$wheel)
+        {
+            RESTFUL::setStatus(REST::NOT_FOUND);
+
+            return [];
+        }
+
+        $url = $request->data()->getRequired('url');
+
+        $info = Embed::create($url);
+
+        if ($info->providerName !== 'YouTube')
+        {
+            RESTFUL::setError('provider');
+            throw new \InvalidArgumentException('It is the reference not of YouTube');
+        }
+
+        $video = $this->components->orm()->query(Model::VIDEO)
+            ->where('url', $info->url)
+            ->findOne();
+
+        if (!$video)
+        {
+            $video = $this->components->orm()->createEntity(Model::VIDEO);
+
+            $video->identifier = $info->getResponse()->getUrl()->getQueryParameter('v');
+
+            $video->url      = $info->url;
+            $video->provider = $info->providerName;
+
+            $video->title       = $info->title;
+            $video->description = $info->description;
+
+            $video->image       = $info->image;
+            $video->imageWidth  = $info->imageWidth;
+            $video->imageHeight = $info->imageHeight;
+
+            $video->width       = $info->width;
+            $video->height      = $info->height;
+            $video->aspectRatio = $info->aspectRatio;
+
+            $video->authorName = $info->authorName;
+            $video->authorUrl  = $info->authorUrl;
+
+            $video->userId = $this->loggedUser()->id();
+
+            $video->save();
+        }
+
+        $wheel->videos->add($video);
+
+        return $video->asObject(true);
     }
 
     /**
@@ -563,7 +631,7 @@ class Wheel extends SOWProtected
             throw new \InvalidArgumentException('ID is not numeric!');
         }
 
-        $wheel = $this->components->orm()->query(Model::WHEEL)
+        $wheel                   = $this->components->orm()->query(Model::WHEEL)
             ->in($id)
             ->findOne();
 
@@ -574,7 +642,7 @@ class Wheel extends SOWProtected
 
         $wheelFavourite = $this->components->orm()->createEntity('wheelsFavourite');
         $wheelFavourite->wheelid = $wheel->id();
-        $wheelFavourite->userId = $user->id();
+        $wheelFavourite->userId  = $user->id();
 
         $wheelFavourite->save();
 
@@ -680,7 +748,7 @@ class Wheel extends SOWProtected
             throw new \InvalidArgumentException('ID is not numeric!');
         }
 
-        $wheel = $this->components->orm()->query(Model::WHEEL)
+        $wheel              = $this->components->orm()->query(Model::WHEEL)
             ->in($id)
             ->findOne();
 
@@ -691,7 +759,7 @@ class Wheel extends SOWProtected
 
         $wheelLike = $this->components->orm()->createEntity('wheelsLike');
         $wheelLike->wheelid = $wheel->id();
-        $wheelLike->userId = $user->id();
+        $wheelLike->userId  = $user->id();
 
         $wheelLike->save();
 
