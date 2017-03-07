@@ -59,16 +59,16 @@ function toForm(place) {
 
         service.getDetails({
             placeId: place.place_id
-        }, function (place, status) {
+        }, function (newPlace, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
 
-                var lat = place.geometry.location.lat();
-                var lng = place.geometry.location.lng();
+                var lat = newPlace.geometry.location.lat();
+                var lng = newPlace.geometry.location.lng();
 
                 document.getElementById('latitude').value = lat;
                 document.getElementById('longitude').value = lng;
 
-                toForm(place);
+                toForm(newPlace);
             }
         });
 
