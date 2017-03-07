@@ -257,6 +257,10 @@ return [
             'items' => Model::WHEEL,
         ], [
             'type'  => 'oneToMany',
+            'owner' => Model::STYLE,
+            'items' => Model::WHEEL,
+        ], [
+            'type'  => 'oneToMany',
             'owner' => Model::BRAND,
             'items' => Model::COLLECTION,
         ],

@@ -186,6 +186,58 @@ class Wheel extends SOWProtected
 
     }
 
+    public function itemPostAction(Request $request)
+    {
+        if (!$this->loggedUser()->hasPermission('cp.sow.wheel.edit'))
+        {
+            throw new \Exception('Access denied');
+        }
+
+        $id = $request->attributes()->getRequired('id');
+
+        $wheel = $this->components->orm()->query(Model::WHEEL)
+            ->in($id)
+            ->findOne();
+
+        if (!$wheel)
+        {
+            RESTFUL::setStatus(REST::NOT_FOUND);
+
+            return [];
+        }
+
+        $data = $request->data();
+
+        $name           = $data->getRequired('name');
+        $collectionName = $data->getRequired('collectionName');
+        $styleId        = $data->get('styleId', $wheel->styleId);
+        $isCustom       = (int)($data->get('isCustom', 'off') === 'on');
+        $isRetired      = (int)($data->get('isRetired', 'off') === 'on');
+        $active         = (int)($data->get('active', 'off') === 'on');
+
+        $collection = $this->components->orm()->query(Model::COLLECTION)
+            ->where('name', $collectionName)
+            ->findOne();
+
+        if (empty($styleId))
+        {
+            $styleId = null;
+        }
+
+        $wheel->name         = $name;
+        $wheel->brandId      = $collection->brandId;
+        $wheel->collectionId = $collection->id();
+        $wheel->styleId      = $styleId;
+        $wheel->isCustom     = $isCustom;
+        $wheel->isRetired    = $isRetired;
+        $wheel->active       = $active;
+
+        $wheel->save();
+
+        return $wheel->asObject(true);
+
+    }
+
     /**
      * @api               {get} /sow/wheel/<id> Wheel Item
      * @apiName           Wheel Item
