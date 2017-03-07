@@ -62,6 +62,8 @@ function toForm(place) {
         }, function (newPlace, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
 
+                console.log(newPlace);
+                
                 var lat = newPlace.geometry.location.lat();
                 var lng = newPlace.geometry.location.lng();
 
