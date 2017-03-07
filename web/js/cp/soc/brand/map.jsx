@@ -54,6 +54,8 @@ function toForm(place) {
         document.getElementById(componentForm[component].id).value = '';
     }
 
+    console.log(place);
+
     if (typeof place.address_components === "undefined")
     {
         let map = new google.maps.Map(document.getElementById("map"));
@@ -63,6 +65,8 @@ function toForm(place) {
             placeId: place.place_id
         }, function(newPlace, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
+
+                console.log(newPlace);
 
                 const lat = newPlace.geometry.location.lat();
                 const lng = newPlace.geometry.location.lng();

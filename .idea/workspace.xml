@@ -108,22 +108,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="map.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/cp/soc/brand/map.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+            <state relative-caret-position="340">
+              <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="map.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/cp/soc/brand/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-675">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="105">
+              <caret line="58" column="23" lean-forward="false" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+              <folding>
+                <marker date="1488918914389" expanded="true" signature="1186:1879" ph="{...}" />
+                <marker date="1488918914389" expanded="true" signature="1429:1854" ph="{...}" />
+                <marker date="1488918914389" expanded="true" signature="1501:1844" ph="{...}" />
+                <marker date="1488918914389" expanded="true" signature="1885:1997" ph="//..." />
+                <marker date="1488918914389" expanded="true" signature="2060:2370" ph="{...}" />
+                <marker date="1488918914389" expanded="true" signature="2399:2734" ph="{...}" />
+                <marker date="1488918914389" expanded="true" signature="2770:4032" ph="{...}" />
+                <marker date="1488918914389" expanded="true" signature="2920:2968" ph="{&quot;center&quot;: coords...}" />
+                <marker date="1488918914389" expanded="true" signature="3012:3156" ph="{&quot;position&quot;: coords...}" />
+                <marker date="1488918914389" expanded="true" signature="3227:3353" ph="{...}" />
+                <marker date="1488918914389" expanded="true" signature="3422:4005" ph="{...}" />
+                <marker date="1488918914389" expanded="true" signature="3877:3997" ph="{...}" />
+                <marker date="1488918914389" expanded="true" signature="3936:3987" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -240,7 +254,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/migrate/migrations/38.sql" />
         <option value="$PROJECT_DIR$/assets/migrate/migrations/39.sql" />
         <option value="$PROJECT_DIR$/assets/migrate/migrations/40.sql" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/soc/brand/edit.tabs/social.haml" />
@@ -290,6 +303,7 @@
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/edit.haml" />
         <option value="$PROJECT_DIR$/web/js/cp/sow/wheel/edit.jsx" />
         <option value="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Brand.php" />
+        <option value="$PROJECT_DIR$/web/js/cp/soc/brand/map.js" />
         <option value="$PROJECT_DIR$/web/js/cp/soc/brand/map.jsx" />
       </list>
     </option>
@@ -1137,12 +1151,12 @@
       <workItem from="1488626378763" duration="5173000" />
       <workItem from="1488812568304" duration="13405000" />
       <workItem from="1488869423303" duration="16093000" />
-      <workItem from="1488915896191" duration="2831000" />
+      <workItem from="1488915896191" duration="3020000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1021568000" />
+    <option name="totallyTimeSpent" value="1021757000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1584,18 +1598,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/cp/soc/brand/map.jsx">
+    <entry file="file://$PROJECT_DIR$/web/js/cp/soc/brand/map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="105">
+          <caret line="58" column="23" lean-forward="false" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+          <folding>
+            <marker date="1488918914389" expanded="true" signature="1186:1879" ph="{...}" />
+            <marker date="1488918914389" expanded="true" signature="1429:1854" ph="{...}" />
+            <marker date="1488918914389" expanded="true" signature="1501:1844" ph="{...}" />
+            <marker date="1488918914389" expanded="true" signature="1885:1997" ph="//..." />
+            <marker date="1488918914389" expanded="true" signature="2060:2370" ph="{...}" />
+            <marker date="1488918914389" expanded="true" signature="2399:2734" ph="{...}" />
+            <marker date="1488918914389" expanded="true" signature="2770:4032" ph="{...}" />
+            <marker date="1488918914389" expanded="true" signature="2920:2968" ph="{&quot;center&quot;: coords...}" />
+            <marker date="1488918914389" expanded="true" signature="3012:3156" ph="{&quot;position&quot;: coords...}" />
+            <marker date="1488918914389" expanded="true" signature="3227:3353" ph="{...}" />
+            <marker date="1488918914389" expanded="true" signature="3422:4005" ph="{...}" />
+            <marker date="1488918914389" expanded="true" signature="3877:3997" ph="{...}" />
+            <marker date="1488918914389" expanded="true" signature="3936:3987" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/cp/soc/brand/map.js">
+    <entry file="file://$PROJECT_DIR$/web/js/cp/soc/brand/map.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-675">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="340">
+          <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
           <folding />
         </state>
       </provider>
