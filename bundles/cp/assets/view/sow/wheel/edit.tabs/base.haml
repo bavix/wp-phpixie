@@ -3,7 +3,7 @@
   .form-group.form-group-lg
     %label.control-label(for="brandName")
       Brand
-    %input#brandName.form-control.text-uppercase(type="text" name="brandId" value="#{$wheel->brand()->name}" )
+    %input#brandName.form-control.text-uppercase(type="text" name="brandName" value="#{$wheel->brand()->name}" )
 
   - $collection = $wheel->collection()
   - if ($collection)
