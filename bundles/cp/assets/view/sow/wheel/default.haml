@@ -15,6 +15,7 @@
             %th Brand
             %th Collection
             %th Name
+            %th Style
             %th Is Custom
             %th Is Retired
             %th Created At
@@ -33,6 +34,8 @@
               - else
                 %td -
               %td = $wheel->name
+              - $style = (string)$wheel->style()
+              %td = empty($style) ? '-' : $style
               %td = $wheel->isCustom ? 'Yes' : 'No'
               %td = $wheel->isRetired ? 'Yes' : 'No'
               %td.entry-date(data-time="#{$wheel->createdAt}" data-order="#{$wheel->createdAt}")

@@ -48,7 +48,7 @@ class Wheel extends SOWProtected
          */
         $builder = $this->builder->frameworkBuilder();
 
-        $pager = $builder->helper()->pager($page, $styleQuery);
+        $pager = $builder->helper()->pager($page, $styleQuery, 50, ['style', 'image']);
 
         $this->assign('pager', $pager);
         $this->assign('count', $styleAllCount);
