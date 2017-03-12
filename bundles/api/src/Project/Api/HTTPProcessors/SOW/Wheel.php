@@ -576,14 +576,14 @@ class Wheel extends SOWProtected
             throw new Unauthorized();
         }
 
-        $id = $request->data()->getRequired('id');
+        $id = $request->attributes()->getRequired('id');
 
         if (!is_numeric($id))
         {
             throw new \InvalidArgumentException('ID is not numeric!');
         }
 
-        $text = $request->attributes()->getRequired('text');
+        $text = $request->data()->getRequired('text');
         $text = strip_tags($text);
 
         if (empty($text))
