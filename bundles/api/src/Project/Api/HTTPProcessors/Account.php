@@ -86,8 +86,8 @@ class Account extends AuthProcessor
      */
     public function defaultPostAction(Request $request)
     {
-//        $user = $this->loggedUser();
-        $user = $this->components->orm()->query(Model::USER)->findOne();
+        $user = $this->loggedUser();
+//        $user = $this->components->orm()->query(Model::USER)->findOne();
 
         if (!$user)
         {
