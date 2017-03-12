@@ -5,6 +5,7 @@ namespace Project\Api;
 use PHPixie\DefaultBundle\Processor\HTTP\Builder as HttpBuilder;
 use PHPixie\HTTP\Request;
 use Project\Api\ENUM\REST;
+use Project\Api\Exceptions\Unauthorized;
 use Project\Extension\Util;
 
 class HTTPProcessor extends HttpBuilder
@@ -116,6 +117,11 @@ class HTTPProcessor extends HttpBuilder
         }
         catch (\Throwable $throwable)
         {
+            if ($throwable instanceof Unauthorized)
+            {
+                RESTFUL::getStatus(REST::UNAUTHORIZED);
+            }
+
             $process = [
                 'error'             => RESTFUL::getError(),
                 'error_description' => $throwable->getMessage(),
