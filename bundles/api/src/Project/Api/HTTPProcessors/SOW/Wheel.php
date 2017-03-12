@@ -606,9 +606,21 @@ class Wheel extends SOWProtected
 
         $comment->save();
 
-        $wheel->comments->add($comment);
+        $wheelComment            = $this->components->orm()->createEntity('wheelsComment');
+        $wheelComment->wheelid   = $wheel->id();
+        $wheelComment->commentId = $comment->id();
 
-        return $comment->asObject(true);
+        $wheelComment->save();
+
+        if ($wheelComment->id())
+        {
+            RESTFUL::setStatus(REST::CREATED);
+
+            return $comment->asObject(true);
+        }
+
+        RESTFUL::setError('comment');
+        throw new \InvalidArgumentException('Can\'t make comment on wheel');
     }
 
     /**
