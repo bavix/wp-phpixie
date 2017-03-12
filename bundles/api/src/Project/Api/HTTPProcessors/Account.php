@@ -3,6 +3,7 @@
 namespace Project\Api\HTTPProcessors;
 
 use PHPixie\HTTP\Request;
+use Project\Api\ENUM\REST;
 use Project\Api\Exceptions\Unauthorized;
 use Project\Api\RESTFUL;
 use Project\Model;
@@ -190,6 +191,40 @@ class Account extends AuthProcessor
         @unlink($to);
 
         return $data;
+    }
+
+    /**
+     * @api           {delete} /account/image Delete User Avatar
+     * @apiName       Delete Current User Avatar
+     * @apiGroup      Account
+     *
+     * @apiPermission user
+     *
+     * @apiHeader     Authorization Bearer {access_token}
+     *
+     * @apiVersion    0.0.8
+     *
+     * @param Request $request
+     */
+    public function imageDeleteAction(Request $request)
+    {
+        $user = $this->loggedUser();
+
+        if (!$user)
+        {
+            RESTFUL::setError('user');
+            throw new Unauthorized();
+        }
+
+        $user->imageId = null;
+        if ($user->save())
+        {
+            RESTFUL::setStatus(REST::NO_CONTENT);
+            return $user->asObject(true);
+        }
+
+        RESTFUL::setError('avatar');
+        throw new \InvalidArgumentException('Can\'t delete avatar');
     }
 
 }
