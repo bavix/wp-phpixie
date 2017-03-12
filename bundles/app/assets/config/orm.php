@@ -253,6 +253,10 @@ return [
         // brand <-> wheel
         [
             'type'  => 'oneToMany',
+            'owner' => Model::USER,
+            'items' => Model::COMMENT,
+        ],[
+            'type'  => 'oneToMany',
             'owner' => Model::BRAND,
             'items' => Model::WHEEL,
         ], [
