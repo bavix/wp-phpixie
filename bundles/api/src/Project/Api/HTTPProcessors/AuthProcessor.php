@@ -197,6 +197,29 @@ class AuthProcessor extends Processor
     public function query($query, Request $request)
     {
 
+        // ordering
+        $this->querySort($query, $request);
+
+        // equal id = 1
+        $this->queryTerms($query, $request);
+
+        // less id < 1
+        $this->queryLess($query, $request);
+
+        // greater id > 1
+        $this->queryGreater($query, $request);
+
+        // queries name LIKE '%OTIFOR%' ~ Rotiform
+        $this->queryQueries($query, $request);
+    }
+
+    /**
+     * @param \PHPixie\ORM\Models\Type\Database\Implementation\Query $query
+     * @param Request                                                $request
+     */
+    protected function querySort($query, Request $request)
+    {
+
         /**
          * [ [ name, sort ], [ id, sort ] ]
          *
@@ -209,6 +232,15 @@ class AuthProcessor extends Processor
             // order by
             $query->orderBy($field, $direction);
         }
+
+    }
+
+    /**
+     * @param \PHPixie\ORM\Models\Type\Database\Implementation\Query $query
+     * @param Request                                                $request
+     */
+    protected function queryTerms($query, Request $request)
+    {
 
         /**
          * equal
@@ -228,6 +260,57 @@ class AuthProcessor extends Processor
                 $query->where($column, $value);
             }
         }
+
+    }
+
+    /**
+     * @param \PHPixie\ORM\Models\Type\Database\Implementation\Query $query
+     * @param Request                                                $request
+     */
+    protected function queryGreater($query, Request $request)
+    {
+
+        /**
+         * greater
+         *
+         * @var array $terms
+         */
+        $terms = $request->query()->get('greater', []);
+
+        foreach ($terms as $column => $value)
+        {
+            $query->where($column, '>', $value);
+        }
+
+    }
+
+    /**
+     * @param \PHPixie\ORM\Models\Type\Database\Implementation\Query $query
+     * @param Request                                                $request
+     */
+    protected function queryLess($query, Request $request)
+    {
+
+        /**
+         * less
+         *
+         * @var array $terms
+         */
+        $terms = $request->query()->get('less', []);
+
+        foreach ($terms as $column => $value)
+        {
+            $query->where($column, '<', $value);
+        }
+
+    }
+
+    /**
+     * @param \PHPixie\ORM\Models\Type\Database\Implementation\Query $query
+     * @param Request                                                $request
+     */
+    protected function queryQueries($query, Request $request)
+    {
 
         /**
          * @var array $queries

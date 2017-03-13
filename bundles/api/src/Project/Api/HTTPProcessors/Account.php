@@ -98,21 +98,21 @@ class Account extends AuthProcessor
 
         $lastname = $request->data()->get('lastname');
 
-        if (!empty($lastname))
+        if (!empty($lastname) && $lastname !== $user->lastname)
         {
             $user->lastname = $lastname;
         }
 
         $name = $request->data()->get('name');
 
-        if (!empty($name))
+        if (!empty($name) && $name !== $user->name)
         {
             $user->name = $name;
         }
 
         $email = $request->data()->get('email');
 
-        if (!empty($email))
+        if (!empty($email) && $email !== $user->email)
         {
             $check = $this->components->orm()->query(Model::USER)
                 ->where('email', $email)
@@ -129,7 +129,7 @@ class Account extends AuthProcessor
 
         $about = $request->data()->get('about');
 
-        if (!empty($about))
+        if (!empty($about) && $about !== $user->about)
         {
             $user->about = $about;
         }
@@ -220,6 +220,7 @@ class Account extends AuthProcessor
         if ($user->save())
         {
             RESTFUL::setStatus(REST::NO_CONTENT);
+
             return $user->asObject(true);
         }
 

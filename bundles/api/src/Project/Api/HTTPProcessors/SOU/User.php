@@ -120,6 +120,8 @@ class User extends SOUProtected
      *
      * @apiParam        {String[]}  [sort] order by id desc
      * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [less] filter less id < 4
+     * @apiParam        {String[]}  [greater] filter greater id > 4
      * @apiParam        {String[]}  [queries] filter LIKE %4%
      *
      * @param Request $request
@@ -217,6 +219,8 @@ class User extends SOUProtected
      *
      * @apiParam        {String[]}  [sort] order by id desc
      * @apiParam        {String[]}  [terms] filter equal id = 4
+     * @apiParam        {String[]}  [less] filter less id < 4
+     * @apiParam        {String[]}  [greater] filter greater id > 4
      * @apiParam        {String[]}  [queries] filter LIKE %4%
      *
      * @param Request $request
