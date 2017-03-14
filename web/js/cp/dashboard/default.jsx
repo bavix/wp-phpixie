@@ -5,7 +5,7 @@ class IBoxBlock extends React.Component {
     }
 
     render() {
-        return <div className="col-md-3">
+        return <div className="col-xs-3">
             <div className="ibox-title">
                 {/*<span className="label label-success pull-right"> [BETA] </span>*/}
                 <h5>{ this.props.title }</h5>
@@ -134,7 +134,7 @@ $(function () {
 
     function render() {
         ReactDOM.render(
-            <div className="col-md-12">
+            <div className="col-lg-12">
                 <IBoxBlock title="Brand" count={brandCount}/>
                 <IBoxBlock title="Dealer" count={dealerCount}/>
                 <IBoxBlock title="Heading" count={headingCount}/>
