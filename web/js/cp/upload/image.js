@@ -42,33 +42,27 @@ function uploadImage(uploadType) {
         // Получаем выбранный файл
         var file = FileAPI.getFiles(evt)[0];
 
-        // if (file) {
-        //
-        //     FileAPI.Image(file).get(function (err, image) {
-        //
-        //         if (!err) {
-        //
-        //             var view = document.getElementById('#modalUpload img');
-        //             view.innerHTML = '';
-        //             view.appendChild(image);
-        //
-        //             $('#modalUpload').modal();
-        //
-        //         }
-        //
-        //     });
-        //
-        //     console.log(evt);
-        //     console.log(file);
-        //
-        // }
-
         if (file) {
+
+            FileAPI.Image(file).get(function (err, image) {
+
+                console.log(!err, err);
+
+                if (!err) {
+                    $('#modalUploadImg').attr('src', image.toDataURL("img/png"));
+                    $('#modalUpload').modal();
+                }
+
+            });
+
+            console.log(evt);
+            console.log(file);
+
             // Строим preview для изображений
             _createPreview(file);
 
             // Загружаем файл на сервер
-            _uploadFile(file);
+            // _uploadFile(file);
         }
     };
 
