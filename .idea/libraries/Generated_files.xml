@@ -11,6 +11,7 @@
         <item url="file://$PROJECT_DIR$/web/js/cp/sow/wheel/add.js" />
         <item url="file://$PROJECT_DIR$/web/js/cp/sow/collection/add.js" />
         <item url="file://$PROJECT_DIR$/web/js/cp/soc/brand/edit.js" />
+        <item url="file://$PROJECT_DIR$/web/js/cp/dashboard/default.js" />
         <item url="file://$PROJECT_DIR$/web/js/cp/soc/brand/map.js" />
         <item url="file://$PROJECT_DIR$/web/js/cp/sow/bolt-pattern/add.js" />
         <item url="file://$PROJECT_DIR$/web/js/cp/sow/style/add.js" />
@@ -33,6 +34,7 @@
       <root url="file://$PROJECT_DIR$/web/js/cp/sow/wheel/add.js" />
       <root url="file://$PROJECT_DIR$/web/js/cp/sow/collection/add.js" />
       <root url="file://$PROJECT_DIR$/web/js/cp/soc/brand/edit.js" />
+      <root url="file://$PROJECT_DIR$/web/js/cp/dashboard/default.js" />
       <root url="file://$PROJECT_DIR$/web/js/cp/soc/brand/map.js" />
       <root url="file://$PROJECT_DIR$/web/js/cp/sow/bolt-pattern/add.js" />
       <root url="file://$PROJECT_DIR$/web/js/cp/sow/style/add.js" />
