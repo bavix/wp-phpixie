@@ -20,12 +20,12 @@
           - foreach ($pager->getCurrentItems() as $invite)
             %tr
               %td
-                %label.label{:class => ($invite->activated ? 'label-warning' : 'label-success')}
-                  - if ($invite->activated)
+                %label.label{:class => ($invite->active ? 'label-warning' : 'label-success')}
+                  - if ($invite->active)
                     No
                   - else
                     - if ($invite->expires < time())
-                      No [no activated]
+                      No [no active]
                     - else
                       Yes
               %td = $invite->token

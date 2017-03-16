@@ -31,9 +31,11 @@ class Dashboard extends CPProtected
     public function countAction(Request $request)
     {
         $model = $request->query()->getRequired('model');
+        $query = $this->components->orm()->query($model);
 
         return [
-            'count' => $this->components->orm()->query($model)->count()
+            'count'  => $query->count(),
+            'active' => $query->where('active', 1)->count(),
         ];
     }
 

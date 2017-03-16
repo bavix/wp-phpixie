@@ -5,154 +5,128 @@ class IBoxBlock extends React.Component {
     }
 
     render() {
-        return <div className="col-xs-3">
+        return <div className="col-sm-6 col-xs-4 col-md-4 col-lg-3">
             <div className="ibox-title">
-                {/*<span className="label label-success pull-right"> [BETA] </span>*/}
-                <h5>{ this.props.title }</h5>
+                <h5>{ this.props.data.title }</h5>
             </div>
             <div className="ibox-content">
-                <h2 className="no-margins"> { this.props.count } </h2>
+                <canvas id={"chart-" + this.props.data.id} width="100%"> Loading ...</canvas>
             </div>
         </div>
     }
 
 }
 
+function initChart(stringId, data, block) {
+    new Chart(document.getElementById("chart-" + stringId).getContext('2d'), {
+        type: 'pie',
+        data: {
+            labels: ["Active", "No Active"],
+            datasets: [{
+                backgroundColor: block.backgroundColor,
+                data: data
+            }]
+        }
+    });
+}
+
 $(function () {
 
-    let brandCount = 'Loading..';
-    let dealerCount = 'Loading..';
-    let headingCount = 'Loading..';
+    let dataStorage = [];
+    let blocks = {
+        brand: {
+            id: 'brand',
+            title: 'Brand',
+            backgroundColor: ['#e74c3c']
+        },
 
-    let wheelCount = 'Loading..';
-    let styleCount = 'Loading..';
-    let boltPatternCount = 'Loading..';
-    let collectionCount = 'Loading..';
+        dealer: {
+            id: 'dealer',
+            title: 'Dealer',
+            backgroundColor: ['#4BC0C0']
+        },
 
-    let userCount = 'Loading..';
-    let roleCount = 'Loading..';
-    let permissionCount = 'Loading..';
+        heading: {
+            id: 'heading',
+            title: 'Heading',
+            backgroundColor: ['#36A2EB']
+        },
 
-    let inviteCount = 'Loading..';
-    let appCount = 'Loading..';
+        invite: {
+            id: 'invite',
+            title: 'Invite',
+            backgroundColor: ['#c2c4d1']
+        },
 
-    fetch('/cp/dashboard/count?model=brand', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(r => r.json()).then(res => {
-        brandCount = res.count;
-        render();
-    });
+        wheel: {
+            id: 'wheel',
+            title: 'Wheel',
+            backgroundColor: ['#ffe6ab']
+        },
 
-    fetch('/cp/dashboard/count?model=dealer', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(r => r.json()).then(res => {
-        dealerCount = res.count;
-        render();
-    });
+        style: {
+            id: 'style',
+            title: 'Style [Wheels]',
+            backgroundColor: ['#36A2EB']
+        },
 
-    fetch('/cp/dashboard/count?model=heading', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(r => r.json()).then(res => {
-        headingCount = res.count;
-        render();
-    });
+        boltPattern: {
+            id: 'boltPattern',
+            title: 'Bolt Pattern [Wheels]',
+            backgroundColor: ['#c2c4d1']
+        },
 
-    fetch('/cp/dashboard/count?model=user', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(r => r.json()).then(res => {
-        userCount = res.count;
-        render();
-    });
+        collection: {
+            id: 'collection',
+            title: 'Collection [Wheels]',
+            backgroundColor: ['#4BC0C0']
+        },
 
-    fetch('/cp/dashboard/count?model=role', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(r => r.json()).then(res => {
-        roleCount = res.count;
-        render();
-    });
+        user: {
+            id: 'user',
+            title: 'User',
+            backgroundColor: ['#ffe6ab']
+        },
 
-    fetch('/cp/dashboard/count?model=permission', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(r => r.json()).then(res => {
-        permissionCount = res.count;
-        render();
-    });
+        app: {
+            id: 'app',
+            title: 'Application',
+            backgroundColor: ['#FF6384']
+        }
+    };
 
-    fetch('/cp/dashboard/count?model=wheel', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(r => r.json()).then(res => {
-        wheelCount = res.count;
-        render();
-    });
+    for (let model in blocks) {
+        fetch('/cp/dashboard/count?model=' + model, {
+            method: 'GET',
+            credentials: 'include'
+        }).then(r => r.json()).then(res => {
+            dataStorage[blocks[model].id] = [res.active, res.count - res.active];
+            render(blocks[model].id);
+        });
+    }
 
-    fetch('/cp/dashboard/count?model=style', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(r => r.json()).then(res => {
-        styleCount = res.count;
-        render();
-    });
+    function render(type) {
+        let content = document.getElementById('content');
 
-    fetch('/cp/dashboard/count?model=boltPattern', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(r => r.json()).then(res => {
-        boltPatternCount = res.count;
-        render();
-    });
-
-    fetch('/cp/dashboard/count?model=collection', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(r => r.json()).then(res => {
-        collectionCount = res.count;
-        render();
-    });
-
-    fetch('/cp/dashboard/count?model=invite', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(r => r.json()).then(res => {
-        inviteCount = res.count;
-        render();
-    });
-
-    fetch('/cp/dashboard/count?model=app', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(r => r.json()).then(res => {
-        appCount = res.count;
-        render();
-    });
-
-    function render() {
         ReactDOM.render(
             <div className="col-lg-12">
-                <IBoxBlock title="Brand" count={brandCount}/>
-                <IBoxBlock title="Dealer" count={dealerCount}/>
-                <IBoxBlock title="Heading" count={headingCount}/>
-                <IBoxBlock title="Invite" count={inviteCount}/>
+                <IBoxBlock data={ blocks.brand }/>
+                <IBoxBlock data={ blocks.dealer }/>
+                <IBoxBlock data={ blocks.heading }/>
+                <IBoxBlock data={ blocks.invite }/>
 
-                <IBoxBlock title="Wheel" count={wheelCount}/>
-                <IBoxBlock title="Style [wheels]" count={styleCount}/>
-                <IBoxBlock title="Bolt Pattern [wheels]" count={boltPatternCount}/>
-                <IBoxBlock title="Collection [wheels]" count={collectionCount}/>
+                <IBoxBlock data={ blocks.wheel }/>
+                <IBoxBlock data={ blocks.style }/>
+                <IBoxBlock data={ blocks.boltPattern }/>
+                <IBoxBlock data={ blocks.collection }/>
 
-                <IBoxBlock title="User" count={userCount}/>
-                <IBoxBlock title="Role" count={roleCount}/>
-                <IBoxBlock title="Permission" count={permissionCount}/>
-
-                <IBoxBlock title="App" count={appCount}/>
+                <IBoxBlock data={ blocks.user }/>
+                <IBoxBlock data={ blocks.app }/>
             </div>,
-            document.getElementById('content')
+            content
         );
+
+        initChart(type, dataStorage[type], blocks[type]);
     }
 
 });

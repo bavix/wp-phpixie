@@ -94,6 +94,9 @@ class Assets
         // fetch
         '/node_modules/whatwg-fetch/fetch.js',
 
+        // Chart.js
+        '/node_modules/chart.js/dist/Chart.min.js',
+
         //        '/js/infinityScroll.js',
         '/js/storage.js',
 
