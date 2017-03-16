@@ -20,12 +20,39 @@ var IBoxBlock = function (_React$Component) {
     _createClass(IBoxBlock, [{
         key: "render",
         value: function render() {
+
+            var first = React.createElement(
+                "span",
+                { className: "label label-primary pull-right" },
+                "loading.."
+            );
+            var last = void 0;
+
+            if (typeof this.props.data.count !== "undefined") {
+                first = React.createElement(
+                    "span",
+                    { className: "label label-primary pull-right" },
+                    this.props.data.count
+                );
+
+                if (this.props.data.active !== this.props.data.count) {
+                    last = React.createElement(
+                        "span",
+                        { className: "label label-danger pull-right" },
+                        this.props.data.active
+                    );
+                }
+            }
+
             return React.createElement(
                 "div",
                 { className: "col-sm-6 col-xs-4 col-md-4 col-lg-3" },
                 React.createElement(
                     "div",
                     { className: "ibox-title" },
+                    first,
+                    " ",
+                    last,
                     React.createElement(
                         "h5",
                         null,
@@ -48,14 +75,14 @@ var IBoxBlock = function (_React$Component) {
     return IBoxBlock;
 }(React.Component);
 
-function initChart(stringId, data, block) {
-    new Chart(document.getElementById("chart-" + stringId).getContext('2d'), {
+function initChart(data) {
+    new Chart(document.getElementById("chart-" + data.id).getContext('2d'), {
         type: 'pie',
         data: {
             labels: ["Active", "No Active"],
             datasets: [{
-                backgroundColor: block.backgroundColor,
-                data: data
+                backgroundColor: data.backgroundColor,
+                data: data.data
             }]
         }
     });
@@ -63,7 +90,6 @@ function initChart(stringId, data, block) {
 
 $(function () {
 
-    var dataStorage = [];
     var blocks = {
         brand: {
             id: 'brand',
@@ -133,8 +159,10 @@ $(function () {
         }).then(function (r) {
             return r.json();
         }).then(function (res) {
-            dataStorage[blocks[model].id] = [res.active, res.count - res.active];
-            render(blocks[model].id);
+            blocks[blocks[model].id].count = res.count;
+            blocks[blocks[model].id].active = res.active;
+            blocks[blocks[model].id].data = [res.active, res.count - res.active];
+            render(blocks[blocks[model].id]);
         });
     };
 
@@ -142,7 +170,7 @@ $(function () {
         _loop(model);
     }
 
-    function render(type) {
+    function render(data) {
         var content = document.getElementById('content');
 
         ReactDOM.render(React.createElement(
@@ -160,7 +188,7 @@ $(function () {
             React.createElement(IBoxBlock, { data: blocks.app })
         ), content);
 
-        initChart(type, dataStorage[type], blocks[type]);
+        initChart(data);
     }
 });
 //# sourceMappingURL=default.js.map

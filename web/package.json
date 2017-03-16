@@ -8,7 +8,7 @@
     "blueimp-file-upload": "^9.14.1",
     "bootstrap": "^3.3.7",
     "chart.js": "^2.5.0",
-    "cropper": "^2.3.4",
+    "cropperjs": "^1.0.0-beta.2",
     "datatables.net": "^1.10.12",
     "datatables.net-bs": "^1.10.12",
     "fileapi": "^2.0.21",
