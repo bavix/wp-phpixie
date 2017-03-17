@@ -36,7 +36,7 @@ class Entity extends EmptyEntity
             $sdk->setServer('cdn.' . $host);
             $sdk->setUserName($this->modelName());
 
-            return $sdk->getThumbsUrl($type, $logo->hash, $type . '.png');
+            return $sdk->getThumbsUrl($type, $logo->hash);
         }
 
         return $this->defaultImage($size, $size, $text);
