@@ -25,7 +25,7 @@ class Invite extends Processor
         $invite = $this->components->orm()->query(Model::INVITE)
             ->where('token', $token)
             ->where('expires', '>=', time())
-            ->where('activated', 0)
+            ->where('active', 0)
             ->findOne();
 
         if (!$invite)
@@ -62,7 +62,7 @@ class Invite extends Processor
                 $user->passwordHash = $passwordProvider->hash($data->get('password'));
                 $user->save();
 
-                $invite->activated = 1;
+                $invite->active = 1;
                 $invite->save();
 
                 $domain->setUser($user, 'session');

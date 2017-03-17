@@ -5,6 +5,46 @@ var FileAPI = {
     , staticPath: '/node_modules/fileapi/dist/' // путь до флешек
 };
 
+var fileEvent;
+var createPreview;
+var uploadFile;
+
+window.addEventListener('DOMContentLoaded', function () {
+    var cropper;
+
+    var $modal = $('#modalUpload');
+
+    $modal.on('shown.bs.modal', function () {
+        cropper = new Cropper(document.getElementById('modalUploadImg'), {
+            autoCropArea: 1,
+            aspectRatio: NaN
+        });
+    }).on('hidden.bs.modal', function () {
+
+        cropper.destroy();
+
+    }).find('button.btn.btn-success').click(function () {
+
+        $modal.modal('hide');
+
+        if (fileEvent) {
+
+            var cropData = cropper.getData();
+
+            var selfImage = FileAPI.Image(fileEvent)
+                .crop(cropData.x, cropData.y, cropData.width, cropData.height);
+
+            // Загружаем файл на сервер
+            uploadFile(selfImage.clone());
+
+            // Строим preview для изображений
+            createPreview(selfImage);
+
+        }
+
+    });
+});
+
 function uploadImage(uploadType) {
 
     // Ссылка на uploader
@@ -40,42 +80,31 @@ function uploadImage(uploadType) {
     var _onSelectFile = function (evt/**Event*/) {
 
         // Получаем выбранный файл
-        var file = FileAPI.getFiles(evt)[0];
+        fileEvent = FileAPI.getFiles(evt)[0];
+        createPreview = _createPreview;
+        uploadFile = _uploadFile;
 
-        // if (file) {
-        //
-        //     FileAPI.Image(file).get(function (err, image) {
-        //
-        //         if (!err) {
-        //
-        //             var view = document.getElementById('#modalUpload img');
-        //             view.innerHTML = '';
-        //             view.appendChild(image);
-        //
-        //             $('#modalUpload').modal();
-        //
-        //         }
-        //
-        //     });
-        //
-        //     console.log(evt);
-        //     console.log(file);
-        //
-        // }
+        if (fileEvent) {
+            FileAPI.Image(fileEvent).get(function (err, image) {
+                if (!err) {
 
-        if (file) {
-            // Строим preview для изображений
-            _createPreview(file);
+                    if (image.tagName === 'CANVAS') {
+                        $('#modalUploadImg').attr('src', image.toDataURL("img/png"));
+                    }
+                    else {
+                        $('#modalUploadImg').attr('src', $(image).attr('src'));
+                    }
 
-            // Загружаем файл на сервер
-            _uploadFile(file);
+                    $('#modalUpload').modal();
+                }
+            });
         }
     };
 
     // Функция создающая preview для изображения
-    var _createPreview = function (file/**File*/) {
-        FileAPI.Image(file)
-            .preview(previewOpts.width, previewOpts.height)
+    var _createPreview = function (img) {
+
+        img.resize(previewOpts.width, previewOpts.height, 'max')
             .get(function (err, image) {
                 // Если не было ошибок, то вставляем изображение
                 if (!err) {
@@ -85,8 +114,8 @@ function uploadImage(uploadType) {
                     // Вставляем новое
                     preview.appendChild(image);
                 }
-            })
-        ;
+            });
+
     };
 
     // Функция загрузки файла на сервер

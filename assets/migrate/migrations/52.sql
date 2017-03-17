@@ -1,0 +1,7 @@
+ALTER TABLE `dealers` ADD `active` TINYINT NOT NULL DEFAULT '1' AFTER `name`;
+ALTER TABLE `headings` ADD `active` TINYINT NOT NULL DEFAULT '1' AFTER `title`;
+ALTER TABLE `invites` CHANGE `activated` `active` TINYINT(1) NOT NULL DEFAULT '0';
+ALTER TABLE `styles` ADD `active` TINYINT NOT NULL DEFAULT '1' AFTER `isTurned`;
+ALTER TABLE `boltPatterns` ADD `active` TINYINT NOT NULL DEFAULT '1' AFTER `pcd`;
+ALTER TABLE `collections` ADD `active` TINYINT NOT NULL DEFAULT '1' AFTER `name`;
+ALTER TABLE `users` ADD `active` TINYINT NOT NULL DEFAULT '1' AFTER `roleId`;

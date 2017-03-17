@@ -20,27 +20,52 @@ var IBoxBlock = function (_React$Component) {
     _createClass(IBoxBlock, [{
         key: "render",
         value: function render() {
+
+            var first = React.createElement(
+                "span",
+                { className: "label label-primary pull-right" },
+                "loading.."
+            );
+            var last = void 0;
+
+            if (typeof this.props.data.count !== "undefined") {
+                first = React.createElement(
+                    "span",
+                    { className: "label label-primary pull-right" },
+                    this.props.data.count
+                );
+
+                if (this.props.data.active !== this.props.data.count) {
+                    last = React.createElement(
+                        "span",
+                        { className: "label label-danger pull-right" },
+                        this.props.data.active
+                    );
+                }
+            }
+
             return React.createElement(
                 "div",
-                { className: "col-xs-3" },
+                { className: "col-sm-6 col-xs-4 col-md-4 col-lg-3" },
                 React.createElement(
                     "div",
                     { className: "ibox-title" },
+                    first,
+                    " ",
+                    last,
                     React.createElement(
                         "h5",
                         null,
-                        this.props.title
+                        this.props.data.title
                     )
                 ),
                 React.createElement(
                     "div",
                     { className: "ibox-content" },
                     React.createElement(
-                        "h2",
-                        { className: "no-margins" },
-                        " ",
-                        this.props.count,
-                        " "
+                        "canvas",
+                        { id: "chart-" + this.props.data.id, width: "100%" },
+                        " Loading ..."
                     )
                 )
             );
@@ -50,161 +75,120 @@ var IBoxBlock = function (_React$Component) {
     return IBoxBlock;
 }(React.Component);
 
+function initChart(data) {
+    new Chart(document.getElementById("chart-" + data.id).getContext('2d'), {
+        type: 'pie',
+        data: {
+            labels: ["Active", "No Active"],
+            datasets: [{
+                backgroundColor: data.backgroundColor,
+                data: data.data
+            }]
+        }
+    });
+}
+
 $(function () {
 
-    var brandCount = 'Loading..';
-    var dealerCount = 'Loading..';
-    var headingCount = 'Loading..';
+    var blocks = {
+        brand: {
+            id: 'brand',
+            title: 'Brand',
+            backgroundColor: ['#e74c3c']
+        },
 
-    var wheelCount = 'Loading..';
-    var styleCount = 'Loading..';
-    var boltPatternCount = 'Loading..';
-    var collectionCount = 'Loading..';
+        dealer: {
+            id: 'dealer',
+            title: 'Dealer',
+            backgroundColor: ['#4BC0C0']
+        },
 
-    var userCount = 'Loading..';
-    var roleCount = 'Loading..';
-    var permissionCount = 'Loading..';
+        heading: {
+            id: 'heading',
+            title: 'Heading',
+            backgroundColor: ['#36A2EB']
+        },
 
-    var inviteCount = 'Loading..';
-    var appCount = 'Loading..';
+        invite: {
+            id: 'invite',
+            title: 'Invite',
+            backgroundColor: ['#c2c4d1']
+        },
 
-    fetch('/cp/dashboard/count?model=brand', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(function (r) {
-        return r.json();
-    }).then(function (res) {
-        brandCount = res.count;
-        render();
-    });
+        wheel: {
+            id: 'wheel',
+            title: 'Wheel',
+            backgroundColor: ['#ffe6ab']
+        },
 
-    fetch('/cp/dashboard/count?model=dealer', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(function (r) {
-        return r.json();
-    }).then(function (res) {
-        dealerCount = res.count;
-        render();
-    });
+        style: {
+            id: 'style',
+            title: 'Style [Wheels]',
+            backgroundColor: ['#36A2EB']
+        },
 
-    fetch('/cp/dashboard/count?model=heading', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(function (r) {
-        return r.json();
-    }).then(function (res) {
-        headingCount = res.count;
-        render();
-    });
+        boltPattern: {
+            id: 'boltPattern',
+            title: 'Bolt Pattern [Wheels]',
+            backgroundColor: ['#c2c4d1']
+        },
 
-    fetch('/cp/dashboard/count?model=user', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(function (r) {
-        return r.json();
-    }).then(function (res) {
-        userCount = res.count;
-        render();
-    });
+        collection: {
+            id: 'collection',
+            title: 'Collection [Wheels]',
+            backgroundColor: ['#4BC0C0']
+        },
 
-    fetch('/cp/dashboard/count?model=role', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(function (r) {
-        return r.json();
-    }).then(function (res) {
-        roleCount = res.count;
-        render();
-    });
+        user: {
+            id: 'user',
+            title: 'User',
+            backgroundColor: ['#ffe6ab']
+        },
 
-    fetch('/cp/dashboard/count?model=permission', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(function (r) {
-        return r.json();
-    }).then(function (res) {
-        permissionCount = res.count;
-        render();
-    });
+        app: {
+            id: 'app',
+            title: 'Application',
+            backgroundColor: ['#FF6384']
+        }
+    };
 
-    fetch('/cp/dashboard/count?model=wheel', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(function (r) {
-        return r.json();
-    }).then(function (res) {
-        wheelCount = res.count;
-        render();
-    });
+    var _loop = function _loop(model) {
+        fetch('/cp/dashboard/count?model=' + model, {
+            method: 'GET',
+            credentials: 'include'
+        }).then(function (r) {
+            return r.json();
+        }).then(function (res) {
+            blocks[blocks[model].id].count = res.count;
+            blocks[blocks[model].id].active = res.active;
+            blocks[blocks[model].id].data = [res.active, res.count - res.active];
+            render(blocks[blocks[model].id]);
+        });
+    };
 
-    fetch('/cp/dashboard/count?model=style', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(function (r) {
-        return r.json();
-    }).then(function (res) {
-        styleCount = res.count;
-        render();
-    });
+    for (var model in blocks) {
+        _loop(model);
+    }
 
-    fetch('/cp/dashboard/count?model=boltPattern', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(function (r) {
-        return r.json();
-    }).then(function (res) {
-        boltPatternCount = res.count;
-        render();
-    });
+    function render(data) {
+        var content = document.getElementById('content');
 
-    fetch('/cp/dashboard/count?model=collection', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(function (r) {
-        return r.json();
-    }).then(function (res) {
-        collectionCount = res.count;
-        render();
-    });
-
-    fetch('/cp/dashboard/count?model=invite', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(function (r) {
-        return r.json();
-    }).then(function (res) {
-        inviteCount = res.count;
-        render();
-    });
-
-    fetch('/cp/dashboard/count?model=app', {
-        method: 'GET',
-        credentials: 'include'
-    }).then(function (r) {
-        return r.json();
-    }).then(function (res) {
-        appCount = res.count;
-        render();
-    });
-
-    function render() {
         ReactDOM.render(React.createElement(
             "div",
             { className: "col-lg-12" },
-            React.createElement(IBoxBlock, { title: "Brand", count: brandCount }),
-            React.createElement(IBoxBlock, { title: "Dealer", count: dealerCount }),
-            React.createElement(IBoxBlock, { title: "Heading", count: headingCount }),
-            React.createElement(IBoxBlock, { title: "Invite", count: inviteCount }),
-            React.createElement(IBoxBlock, { title: "Wheel", count: wheelCount }),
-            React.createElement(IBoxBlock, { title: "Style [wheels]", count: styleCount }),
-            React.createElement(IBoxBlock, { title: "Bolt Pattern [wheels]", count: boltPatternCount }),
-            React.createElement(IBoxBlock, { title: "Collection [wheels]", count: collectionCount }),
-            React.createElement(IBoxBlock, { title: "User", count: userCount }),
-            React.createElement(IBoxBlock, { title: "Role", count: roleCount }),
-            React.createElement(IBoxBlock, { title: "Permission", count: permissionCount }),
-            React.createElement(IBoxBlock, { title: "App", count: appCount })
-        ), document.getElementById('content'));
+            React.createElement(IBoxBlock, { data: blocks.brand }),
+            React.createElement(IBoxBlock, { data: blocks.dealer }),
+            React.createElement(IBoxBlock, { data: blocks.heading }),
+            React.createElement(IBoxBlock, { data: blocks.invite }),
+            React.createElement(IBoxBlock, { data: blocks.wheel }),
+            React.createElement(IBoxBlock, { data: blocks.style }),
+            React.createElement(IBoxBlock, { data: blocks.boltPattern }),
+            React.createElement(IBoxBlock, { data: blocks.collection }),
+            React.createElement(IBoxBlock, { data: blocks.user }),
+            React.createElement(IBoxBlock, { data: blocks.app })
+        ), content);
+
+        initChart(data);
     }
 });
 //# sourceMappingURL=default.js.map

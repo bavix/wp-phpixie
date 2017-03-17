@@ -240,46 +240,19 @@
         %input.upload-link__inp{:accept => "image/*", :name => "photo", :type => "file"}
 
 / Modal
--##modalUpload.modal.fade{"aria-labelledby" => "modalLabel", :role => "dialog", :tabindex => "-1"}
--#  .modal-dialog{:role => "document"}
--#    .modal-content
--#      .modal-header
--#        %h5#modalLabel.modal-title Cropper
--#        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
--#          %span{"aria-hidden" => "true"} ×
--#      .modal-body
--#        .img-container
--#          %img
--#      .modal-footer
--#        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Upload
--#        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
-
-:javascript
-  // window.addEventListener('DOMContentLoaded', function () {
-  // var image = document.getElementById('#modalUpload img');
-  // var cropBoxData;
-  // var canvasData;
-  // var cropper;
-  //
-  // $('#modalUpload').on('shown.bs.modal', function () {
-  //   cropper = new Cropper(image, {
-  //     //autoCropArea: 0.5,
-  //     aspectRatio: 1.0,
-  //     ready: function () {
-  //
-  //       // Strict mode: set crop box data first
-  //       cropper.setCropBoxData(cropBoxData).setCanvasData(canvasData);
-  //     }
-  //     });
-  //   }).on('hidden.bs.modal', function () {
-  //     cropBoxData = cropper.getCropBoxData();
-  //     canvasData = cropper.getCanvasData();
-  //
-  //     console.log(cropBoxData, canvasData);
-  //
-  //     cropper.destroy();
-  //   });
-  // });
+#modalUpload.modal.fade{"aria-labelledby" => "modalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-lg{:role => "document"}
+    .modal-content
+      .modal-header
+        %h5#modalLabel.modal-title Cropper
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+      .modal-body
+        .img-container
+          %img#modalUploadImg(style="max-width: 550px")
+      .modal-footer
+        %button.btn.btn-success{"data-dismiss" => "upload", :type => "button"} Upload
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
 
 -# cropperJs
 - $assets::pushJs('/node_modules/cropperjs/dist/cropper.min.js')
@@ -290,7 +263,7 @@
 - $assets::pushJs('/js/cp/upload/image-brand.js')
 - $assets::pushJs('/node_modules/fileapi/dist/FileAPI.min.js')
 
-<script async src="/js/cp/soc/brand/map.js"></script>
+<script async defer src="/js/cp/soc/brand/map.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIEtS2ncgpT5WGXLuMtqjABoCbZDKQu6k&libraries=places&callback=initAutocomplete"></script>
 
 :javascript
