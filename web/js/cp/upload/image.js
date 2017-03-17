@@ -1,6 +1,6 @@
 // Объект настройки
 var FileAPI = {
-    debug: true // режим отладки
+    debug: false // режим отладки
     , cors: true
     , staticPath: '/node_modules/fileapi/dist/' // путь до флешек
 };
@@ -41,6 +41,27 @@ function uploadImage(uploadType) {
 
         // Получаем выбранный файл
         var file = FileAPI.getFiles(evt)[0];
+
+        // if (file) {
+        //
+        //     FileAPI.Image(file).get(function (err, image) {
+        //
+        //         if (!err) {
+        //
+        //             var view = document.getElementById('#modalUpload img');
+        //             view.innerHTML = '';
+        //             view.appendChild(image);
+        //
+        //             $('#modalUpload').modal();
+        //
+        //         }
+        //
+        //     });
+        //
+        //     console.log(evt);
+        //     console.log(file);
+        //
+        // }
 
         if (file) {
             // Строим preview для изображений
