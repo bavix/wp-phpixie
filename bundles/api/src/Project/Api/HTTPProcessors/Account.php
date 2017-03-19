@@ -186,7 +186,7 @@ class Account extends AuthProcessor
         }
 
         $data = $helper->send()
-            ->to('http://cdn.' . $host . '/api/upload/avatar?id=' . $user->id() . '&userId=' . $user->id())
+            ->to('https://cdn.' . $host . '/api/upload/avatar?id=' . $user->id() . '&userId=' . $user->id())
             ->file('filedata', $to)
             ->headers([
                 'Origin: *'
