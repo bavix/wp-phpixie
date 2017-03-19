@@ -6,14 +6,14 @@
       %h3
         Edit Collection
         %label.label.label-info.pull-right
-          = $_($collection->name)
+          = $_($item->name)
     .ibox-content
       %form(method="POST" action="/api/sow/collection" data-created)
         .form-group.form-group-lg
           %label.control-label(for="brandName")
             Brand
-          %input#brandName.form-control.text-uppercase(type="text" name="brandId" value="#{$collection->brand()->name}" )
+          %input#brandName.form-control.text-uppercase(type="text" name="brandId" value="#{$item->brand()->name}" )
         .form-group.form-group-lg
           %label.control-label(for="Name")
             Name
-          %input#name.form-control.text-uppercase(type="text" name="name" value="#{$collection->name}" )
+          %input#name.form-control.text-uppercase(type="text" name="name" value="#{$item->name}" )

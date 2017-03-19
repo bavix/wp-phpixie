@@ -41,6 +41,7 @@ class ORMWrappers extends WrappersImplementation
         Model::ROLE,
         Model::MENU,
         Model::BRAND,
+        Model::DEALER,
         Model::WHEEL,
         Model::STYLE,
     );
@@ -120,6 +121,16 @@ class ORMWrappers extends WrappersImplementation
     public function brandEntity($entity)
     {
         return new ORM\Brand\Brand($entity, $this->builder);
+    }
+
+    /**
+     * @param $entity
+     *
+     * @return ORM\Dealer\Dealer
+     */
+    public function dealerEntity($entity)
+    {
+        return new ORM\Dealer\Dealer($entity, $this->builder);
     }
 
     /**

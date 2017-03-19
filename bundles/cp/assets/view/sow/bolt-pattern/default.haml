@@ -16,22 +16,22 @@
             %th Updated At
             %th Actions
         %tbody
-          - foreach ($pager->getCurrentItems() as $boltPattern)
-            %tr(id="brand-#{$boltPattern->id()}")
-              %td = $boltPattern->bolt
-              %td = $boltPattern->pcd
-              %td.entry-date(data-time="#{$boltPattern->createdAt}" data-order="#{$boltPattern->createdAt}")
-              %td.entry-date(data-time="#{$boltPattern->updatedAt}" data-order="#{$boltPattern->updatedAt}")
+          - foreach ($pager->getCurrentItems() as $item)
+            %tr(id="brand-#{$item->id()}")
+              %td = $item->bolt
+              %td = $item->pcd
+              %td.entry-date(data-time="#{$item->createdAt}" data-order="#{$item->createdAt}")
+              %td.entry-date(data-time="#{$item->updatedAt}" data-order="#{$item->updatedAt}")
               %td
                 - $httpPath = 'cp.sow.item'
-                - $attributes = ['nextProcessor' => 'bolt-pattern', 'action' => 'edit', 'id' => $boltPattern->id]
+                - $attributes = ['nextProcessor' => 'bolt-pattern', 'action' => 'edit', 'id' => $item->id]
                 - $httpPath = $this->httpPath($httpPath, $attributes)
                 %a.btn.btn-primary.btn-sm(href="#{$httpPath}")
                   %i.fa.fa-edit
                   Edit
                 - if ($user->hasPermission('cp.sow.bolt-pattern.delete'))
                   - $httpPath = 'api.sow.item'
-                  - $attributes = ['nextProcessor' => 'bolt-pattern', 'action' => 'delete', 'id' => $boltPattern->id]
+                  - $attributes = ['nextProcessor' => 'bolt-pattern', 'action' => 'delete', 'id' => $item->id]
                   - $httpPath = $this->httpPath($httpPath, $attributes)
                   %a.btn.btn-danger.trash-data.btn-sm(href="#{$httpPath}")
                     %i.fa.fa-trash

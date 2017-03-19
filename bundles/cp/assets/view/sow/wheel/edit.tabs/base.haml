@@ -1,11 +1,11 @@
-%form(method="POST" action="/api/sow/wheel/#{$wheel->id}" data-updated="wheel")
+%form(method="POST" action="/api/sow/wheel/#{$item->id}" data-updated="wheel")
 
   .form-group.form-group-lg
     %label.control-label(for="brandName")
       Brand
-    %input#brandName.form-control.text-uppercase(type="text" name="brandName" value="#{$wheel->brand()->name}" )
+    %input#brandName.form-control.text-uppercase(type="text" name="brandName" value="#{$item->brand()->name}" )
 
-  - $collection = $wheel->collection()
+  - $collection = $item->collection()
   - if ($collection)
     .form-group.form-group-lg
       %label.control-label(for="collectionName")
@@ -15,7 +15,7 @@
   .form-group.form-group-lg
     %label.control-label(for="name")
       Name
-    %input#name.form-control.text-uppercase(type="text" name="name" value="#{$wheel->name}" )
+    %input#name.form-control.text-uppercase(type="text" name="name" value="#{$item->name}" )
 
   .form-group.form-group-lg
     %label.control-label(for="styleWheel")
@@ -23,20 +23,20 @@
     %select#styleWheel.form-control.select2-multiple(name="styleId" style="width:100%")
       %option(disabled selected) None
       - foreach ($styles as $style)
-        %option(value="#{$style->id}" selected="#{ $style->id === $wheel->styleId }") = $style
+        %option(value="#{$style->id}" selected="#{ $style->id === $item->styleId }") = $style
 
   .form-group.form-group-lg
-    %input#isCustom.wbs-checkbox(type="checkbox" name="isCustom" checked="#{!!$wheel->isCustom}")
+    %input#isCustom.wbs-checkbox(type="checkbox" name="isCustom" checked="#{!!$item->isCustom}")
     %label(for="isCustom")
       Is Custom
 
   .form-group.form-group-lg
-    %input#isRetired.wbs-checkbox(type="checkbox" name="isRetired" checked="#{!!$wheel->isRetired}")
+    %input#isRetired.wbs-checkbox(type="checkbox" name="isRetired" checked="#{!!$item->isRetired}")
     %label(for="isRetired")
       Is Retired
 
   .form-group.form-group-lg
-    %input#activeWheel.wbs-checkbox(type="checkbox" name="active" checked="#{!!$wheel->active}")
+    %input#activeWheel.wbs-checkbox(type="checkbox" name="active" checked="#{!!$item->active}")
     %label(for="activeWheel")
       Active
 

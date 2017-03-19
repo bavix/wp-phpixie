@@ -22,34 +22,34 @@
             %th Updated At
             %th Actions
         %tbody
-          - foreach ($pager->getCurrentItems() as $wheel)
-            %tr(id="brand-#{$wheel->id()}")
+          - foreach ($pager->getCurrentItems() as $item)
+            %tr(id="brand-#{$item->id()}")
               %td
-                %img.img-circle(width="70px" src="#{$wheel->thumbsLogo()}")
-              %td = $wheel->active ? 'Yes' : 'No'
-              %td = $wheel->brand()->name
-              - $collection = $wheel->collection()
+                %img.img-circle(width="70px" src="#{$item->thumbsLogo()}")
+              %td = $item->active ? 'Yes' : 'No'
+              %td = $item->brand()->name
+              - $collection = $item->collection()
               - if ($collection)
                 %td = $collection->name
               - else
                 %td -
-              %td = $wheel->name
-              - $style = (string)$wheel->style()
+              %td = $item->name
+              - $style = (string)$item->style()
               %td = empty($style) ? '-' : $style
-              %td = $wheel->isCustom ? 'Yes' : 'No'
-              %td = $wheel->isRetired ? 'Yes' : 'No'
-              %td.entry-date(data-time="#{$wheel->createdAt}" data-order="#{$wheel->createdAt}")
-              %td.entry-date(data-time="#{$wheel->updatedAt}" data-order="#{$wheel->updatedAt}")
+              %td = $item->isCustom ? 'Yes' : 'No'
+              %td = $item->isRetired ? 'Yes' : 'No'
+              %td.entry-date(data-time="#{$item->createdAt}" data-order="#{$item->createdAt}")
+              %td.entry-date(data-time="#{$item->updatedAt}" data-order="#{$item->updatedAt}")
               %td
                 - $httpPath = 'cp.sow.item'
-                - $attributes = ['nextProcessor' => 'wheel', 'action' => 'edit', 'id' => $wheel->id]
+                - $attributes = ['nextProcessor' => 'wheel', 'action' => 'edit', 'id' => $item->id]
                 - $httpPath = $this->httpPath($httpPath, $attributes)
                 %a.btn.btn-primary.btn-sm(href="#{$httpPath}")
                   %i.fa.fa-edit
                   Edit
                 - if ($user->hasPermission('cp.sow.wheel.delete'))
                   - $httpPath = 'api.sow.item'
-                  - $attributes = ['nextProcessor' => 'wheel', 'action' => 'delete', 'id' => $wheel->id]
+                  - $attributes = ['nextProcessor' => 'wheel', 'action' => 'delete', 'id' => $item->id]
                   - $httpPath = $this->httpPath($httpPath, $attributes)
                   %a.btn.btn-danger.trash-data.btn-sm(href="#{$httpPath}")
                     %i.fa.fa-trash

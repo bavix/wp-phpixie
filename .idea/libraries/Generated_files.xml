@@ -2,21 +2,21 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/web/js/infinityScroll.js" />
         <item url="file://$PROJECT_DIR$/web/js/cp/soc/brand/list.js" />
         <item url="file://$PROJECT_DIR$/web/js/cp/soc/dealer/add.js" />
+        <item url="file://$PROJECT_DIR$/web/js/cp/dashboard/default.js" />
         <item url="file://$PROJECT_DIR$/web/js/cp/soc/dealer/list.js" />
         <item url="file://$PROJECT_DIR$/web/js/cp/soc/heading/add.js" />
-        <item url="file://$PROJECT_DIR$/web/js/cp/soc/heading/list.js" />
-        <item url="file://$PROJECT_DIR$/web/js/cp/sow/wheel/add.js" />
-        <item url="file://$PROJECT_DIR$/web/js/cp/sow/collection/add.js" />
-        <item url="file://$PROJECT_DIR$/web/js/cp/soc/brand/edit.js" />
-        <item url="file://$PROJECT_DIR$/web/js/cp/dashboard/default.js" />
         <item url="file://$PROJECT_DIR$/web/js/cp/soc/brand/map.js" />
-        <item url="file://$PROJECT_DIR$/web/js/cp/sow/bolt-pattern/add.js" />
+        <item url="file://$PROJECT_DIR$/web/js/infinityScroll.js" />
         <item url="file://$PROJECT_DIR$/web/js/cp/sow/style/add.js" />
         <item url="file://$PROJECT_DIR$/web/js/cp/sow/wheel/edit.js" />
+        <item url="file://$PROJECT_DIR$/web/js/cp/sow/wheel/add.js" />
+        <item url="file://$PROJECT_DIR$/web/js/cp/sow/collection/add.js" />
+        <item url="file://$PROJECT_DIR$/web/js/cp/soc/heading/list.js" />
+        <item url="file://$PROJECT_DIR$/web/js/cp/sow/bolt-pattern/add.js" />
         <item url="file://$PROJECT_DIR$/web/js/cp/soc/brand/add.js" />
+        <item url="file://$PROJECT_DIR$/web/js/cp/soc/brand/edit.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -25,21 +25,21 @@
       <root url="file://$PROJECT_DIR$/dist/web/js/infinityScroll.js" />
       <root url="file://$PROJECT_DIR$/dist/web/js/cp/soc/heading/list.js" />
       <root url="file://$PROJECT_DIR$/dist/web/js/cp/soc/heading/list.js" />
-      <root url="file://$PROJECT_DIR$/web/js/infinityScroll.js" />
       <root url="file://$PROJECT_DIR$/web/js/cp/soc/brand/list.js" />
       <root url="file://$PROJECT_DIR$/web/js/cp/soc/dealer/add.js" />
+      <root url="file://$PROJECT_DIR$/web/js/cp/dashboard/default.js" />
       <root url="file://$PROJECT_DIR$/web/js/cp/soc/dealer/list.js" />
       <root url="file://$PROJECT_DIR$/web/js/cp/soc/heading/add.js" />
-      <root url="file://$PROJECT_DIR$/web/js/cp/soc/heading/list.js" />
-      <root url="file://$PROJECT_DIR$/web/js/cp/sow/wheel/add.js" />
-      <root url="file://$PROJECT_DIR$/web/js/cp/sow/collection/add.js" />
-      <root url="file://$PROJECT_DIR$/web/js/cp/soc/brand/edit.js" />
-      <root url="file://$PROJECT_DIR$/web/js/cp/dashboard/default.js" />
       <root url="file://$PROJECT_DIR$/web/js/cp/soc/brand/map.js" />
-      <root url="file://$PROJECT_DIR$/web/js/cp/sow/bolt-pattern/add.js" />
+      <root url="file://$PROJECT_DIR$/web/js/infinityScroll.js" />
       <root url="file://$PROJECT_DIR$/web/js/cp/sow/style/add.js" />
       <root url="file://$PROJECT_DIR$/web/js/cp/sow/wheel/edit.js" />
+      <root url="file://$PROJECT_DIR$/web/js/cp/sow/wheel/add.js" />
+      <root url="file://$PROJECT_DIR$/web/js/cp/sow/collection/add.js" />
+      <root url="file://$PROJECT_DIR$/web/js/cp/soc/heading/list.js" />
+      <root url="file://$PROJECT_DIR$/web/js/cp/sow/bolt-pattern/add.js" />
       <root url="file://$PROJECT_DIR$/web/js/cp/soc/brand/add.js" />
+      <root url="file://$PROJECT_DIR$/web/js/cp/soc/brand/edit.js" />
     </CLASSES>
     <SOURCES />
   </library>

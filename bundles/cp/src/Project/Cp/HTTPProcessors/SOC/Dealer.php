@@ -29,7 +29,8 @@ class Dealer extends SOCProtected
             ->in($id)
             ->findOne();
 
-        $this->assign('dealer', $dealer);
+        $this->assign('id', $id);
+        $this->assign('item', $dealer);
 
         return $this->render('cp:soc/dealer/edit');
     }

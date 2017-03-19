@@ -1,4 +1,4 @@
-%form(method="POST" action="/api/sow/wheel/#{$wheel->id}/video" data-created="video")
+%form(method="POST" action="/api/sow/wheel/#{$item->id}/video" data-created="video")
 
   .grid
 
@@ -15,6 +15,6 @@
       Submit
 
 .grid#videoRows
-  -#- foreach ($wheel->videos() as $video)
+  -#- foreach ($item->videos() as $video)
   -#  %div.col-md-6
   -#    %div(data-type="#{strtolower($video->provider)}" data-video-id="#{$video->identifier}")

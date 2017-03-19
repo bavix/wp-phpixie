@@ -41,10 +41,11 @@ class Brand extends SOCProtected
 
         $brands = $this->components->orm()->query(Model::BRAND)->find();
 
-        $this->assign('brand', $brand);
+        $this->assign('id', $id);
+        $this->assign('item', $brand);
+        $this->assign('items', $brands);
 
         $this->assign('socials', $socials);
-        $this->assign('brands', $brands);
 
         $this->assign('logCount', $logCount);
 

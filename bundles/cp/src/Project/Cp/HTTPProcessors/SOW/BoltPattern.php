@@ -70,7 +70,8 @@ class BoltPattern extends SOWProtected
             ->in($id)
             ->findOne();
 
-        $this->assign('boltPattern', $boltPattern);
+        $this->assign('id', $id);
+        $this->assign('item', $boltPattern);
 
         return $this->render('cp:sow/bolt-pattern/edit');
     }

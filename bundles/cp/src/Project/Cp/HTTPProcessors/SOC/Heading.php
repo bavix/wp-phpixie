@@ -29,7 +29,8 @@ class Heading extends SOCProtected
             ->in($id)
             ->findOne();
 
-        $this->assign('heading', $heading);
+        $this->assign('id', $id);
+        $this->assign('item', $heading);
 
         return $this->render('cp:soc/heading/edit');
     }
