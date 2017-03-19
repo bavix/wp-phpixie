@@ -180,6 +180,11 @@ class Account extends AuthProcessor
 
         $host = $request->uri()->getHost();
 
+        if (0 === strpos($host, 'api.'))
+        {
+            $host = substr($host, 4);
+        }
+
         $data = $helper->send()
             ->to('http://cdn.' . $host . '/api/upload/avatar?id=' . $user->id() . '&userId=' . $user->id())
             ->file('filedata', $to)

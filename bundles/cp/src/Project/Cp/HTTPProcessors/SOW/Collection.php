@@ -71,7 +71,8 @@ class Collection extends SOWProtected
             ->in($id)
             ->findOne();
 
-        $this->assign('collection', $collection);
+        $this->assign('id', $id);
+        $this->assign('item', $collection);
 
         return $this->render('cp:sow/collection/edit');
     }

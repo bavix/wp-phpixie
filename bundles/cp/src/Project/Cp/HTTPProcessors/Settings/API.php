@@ -147,6 +147,7 @@ class API extends SettingsProtected
             ->where('appId', $id)
             ->findOne();
 
+        $this->assign('id', $id);
         $this->assign('app', $app);
         $this->assign('client', $client);
 

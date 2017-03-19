@@ -16,24 +16,24 @@
             %th Updated At
             %th Actions
         %tbody
-          - foreach ($pager->getCurrentItems() as $collection)
-            %tr(id="brand-#{$collection->id()}")
-              %td = $collection->brand()->name
+          - foreach ($pager->getCurrentItems() as $item)
+            %tr(id="brand-#{$item->id()}")
+              %td = $item->brand()->name
               %td
-                = $collection->name
+                = $item->name
 
-              %td.entry-date(data-time="#{$collection->createdAt}" data-order="#{$collection->createdAt}")
-              %td.entry-date(data-time="#{$collection->updatedAt}" data-order="#{$collection->updatedAt}")
+              %td.entry-date(data-time="#{$item->createdAt}" data-order="#{$item->createdAt}")
+              %td.entry-date(data-time="#{$item->updatedAt}" data-order="#{$item->updatedAt}")
               %td
                 - $httpPath = 'cp.sow.item'
-                - $attributes = ['nextProcessor' => 'collection', 'action' => 'edit', 'id' => $collection->id]
+                - $attributes = ['nextProcessor' => 'collection', 'action' => 'edit', 'id' => $item->id]
                 - $httpPath = $this->httpPath($httpPath, $attributes)
                 %a.btn.btn-primary.btn-sm(href="#{$httpPath}")
                   %i.fa.fa-edit
                   Edit
                 - if ($user->hasPermission('cp.sow.collection.delete'))
                   - $httpPath = 'api.sow.item'
-                  - $attributes = ['nextProcessor' => 'collection', 'action' => 'delete', 'id' => $collection->id]
+                  - $attributes = ['nextProcessor' => 'collection', 'action' => 'delete', 'id' => $item->id]
                   - $httpPath = $this->httpPath($httpPath, $attributes)
                   %a.btn.btn-danger.trash-data.btn-sm(href="#{$httpPath}")
                     %i.fa.fa-trash

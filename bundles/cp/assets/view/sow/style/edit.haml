@@ -6,7 +6,7 @@
       %h3
         Edit Style
         %label.label.label-info.pull-right
-          = $_($style->type)
+          = $_($item->type)
     .ibox-content
       %form(method="POST" action="/api/sow/style" data-created)
         .row
@@ -16,30 +16,30 @@
               %label.control-label(for="type")
                 Type
               %select#type.form-control(name="type")
-                %option(value="I" selected="#{$style->type === 'I'}") I
-                %option(value="X" selected="#{$style->type === 'X'}") X
-                %option(value="Y" selected="#{$style->type === 'Y'}") Y
-                %option(value="V" selected="#{$style->type === 'V'}") V
-                %option(value="0" selected="#{$style->type === 'O'}") O
+                %option(value="I" selected="#{$item->type === 'I'}") I
+                %option(value="X" selected="#{$item->type === 'X'}") X
+                %option(value="Y" selected="#{$item->type === 'Y'}") Y
+                %option(value="V" selected="#{$item->type === 'V'}") V
+                %option(value="0" selected="#{$item->type === 'O'}") O
 
           .col-md-4
             .form-group.form-group-lg
               %label.control-label(for="number")
                 Number
               %select#number.form-control(name="number")
-                %option(value="Simple" selected="#{$style->number === 'Simple'}") Simple
-                %option(value="Double" selected="#{$style->number === 'Double'}") Double
-                %option(value="Triple" selected="#{$style->number === 'Triple'}") Triple
+                %option(value="Simple" selected="#{$item->number === 'Simple'}") Simple
+                %option(value="Double" selected="#{$item->number === 'Double'}") Double
+                %option(value="Triple" selected="#{$item->number === 'Triple'}") Triple
 
           .col-md-4
             .form-group.form-group-lg
               %label.control-label(for="spoke")
                 Spoke
-              %input.form-control(type="number" name="spoke" value="#{$style->spoke}")
+              %input.form-control(type="number" name="spoke" value="#{$item->spoke}")
 
           .col-md-4
             .form-group.form-group-lg
-              %input#turned.form-control.wbs-checkbox(type="checkbox" name="isTurned" checked="#{(bool)$style->isTurned}")
+              %input#turned.form-control.wbs-checkbox(type="checkbox" name="isTurned" checked="#{(bool)$item->isTurned}")
               %label.control-label(for="turned") Turned
 
 :javascript

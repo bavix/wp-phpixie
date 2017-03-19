@@ -6,10 +6,12 @@
       %h3
         Edit Dealer
         %label.label.label-info.pull-right
-          = $_($dealer->name)
+          = $_($item->name)
     .ibox-content
       %form(method="POST" action="/api/soc/dealer" data-created)
         .form-group.form-group-lg
           %label.control-label(for="dealerTitle")
             Name
-          %input#dealerTitle.form-control.text-uppercase(type="text" name="name" value="#{$dealer->name}" )
+          %input#dealerTitle.form-control.text-uppercase(type="text" name="name" value="#{$item->name}" )
+
+partial:'cp:soc/brand/preview'

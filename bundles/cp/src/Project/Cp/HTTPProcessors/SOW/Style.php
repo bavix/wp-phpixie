@@ -78,7 +78,8 @@ class Style extends SOWProtected
             ->in($id)
             ->findOne();
 
-        $this->assign('style', $style);
+        $this->assign('id', $id);
+        $this->assign('item', $style);
 
         return $this->render('cp:sow/style/edit');
     }
