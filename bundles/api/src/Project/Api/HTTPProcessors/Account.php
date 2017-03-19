@@ -139,6 +139,16 @@ class Account extends AuthProcessor
         return $user->asObject(true);
     }
 
+    public function image2PostAction()
+    {
+        return [
+            'get'         => $_GET,
+            'post'        => $_POST,
+            'files'       => $_FILES,
+            'fullRequest' => $_REQUEST,
+        ];
+    }
+
     /**
      * @api           {post} /account/image Update User Avatar
      * @apiName       Update Current User Avatar
