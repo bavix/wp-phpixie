@@ -25,29 +25,29 @@ function uploadImages(uploadType) {
 
         var files = FileAPI.getFiles(evt);
 
-        // FileAPI.Image(files).get(function (err, image) {
-        //     if (!err) {
-        //         _uploadFile(image);
+        FileAPI.Image(files).get(function (err, image) {
+            if (!err) {
+                _uploadFile(image);
+            }
+        });
+
+        // for (var i in files) {
+        //
+        //     if (!files.hasOwnProperty(i)) {
+        //         continue;
         //     }
-        // });
-
-        for (var i in files) {
-
-            if (!files.hasOwnProperty(i)) {
-                continue;
-            }
-
-            var fileEvent = files[i];
-
-            if (fileEvent) {
-                FileAPI.Image(fileEvent).get(function (err, image) {
-                    if (!err) {
-                        _uploadFile(image);
-                    }
-                });
-            }
-
-        }
+        //
+        //     var fileEvent = files[i];
+        //
+        //     if (fileEvent) {
+        //         FileAPI.Image(fileEvent).get(function (err, image) {
+        //             if (!err) {
+        //                 _uploadFile(image);
+        //             }
+        //         });
+        //     }
+        //
+        // }
 
 
     };
