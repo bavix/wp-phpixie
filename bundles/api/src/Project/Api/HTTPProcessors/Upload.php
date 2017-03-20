@@ -168,7 +168,7 @@ class Upload extends AuthProcessor
             ];
         }
 
-        if ($data->get('query.preview'))
+        if ($data->get('query.preview', 1))
         {
 
             $preview = $this->components->orm()->createEntity(Model::IMAGE);

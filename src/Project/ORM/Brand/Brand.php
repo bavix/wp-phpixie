@@ -18,7 +18,7 @@ class Brand extends Entity
      */
     public function thumbsLogo()
     {
-        return $this->_logo('thumbs', 210, '500x500');
+        return $this->_getImage('thumbs', 210, '500x500');
     }
 
 }
