@@ -23,13 +23,15 @@ function uploadImages(uploadType) {
     // Функция, которая будет срабатывать при выборе файла
     var _onSelectFile = function (evt/**Event*/) {
 
-        var files = FileAPI.getFiles(evt);
+        _uploadFile(FileAPI.getFiles(evt));
 
-        FileAPI.Image(files).get(function (err, image) {
-            if (!err) {
-                _uploadFile(image);
-            }
-        });
+        // var files = FileAPI.getFiles(evt);
+        //
+        // FileAPI.Image(files).get(function (err, image) {
+        //     if (!err) {
+        //         _uploadFile(image);
+        //     }
+        // });
 
         // for (var i in files) {
         //
