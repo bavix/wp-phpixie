@@ -7,9 +7,23 @@ use Deimos\ImaginariumSDK\SDK;
 class Entity extends EmptyEntity
 {
 
+    protected $imageType;
+
     protected function defaultImage($width, $height, $text = null)
     {
         return '//placehold.it/' . $width . 'x' . $height . '?text=' . $text;
+    }
+
+    protected function setImageType($type)
+    {
+        $this->imageType = $type;
+
+        return $this;
+    }
+
+    protected function _getImageObject()
+    {
+        return $this->imageType ? $this : $this->image();
     }
 
     /**
@@ -19,11 +33,11 @@ class Entity extends EmptyEntity
      *
      * @return string
      */
-    protected function _logo($type, $size = 210, $text = '1600x1600')
+    protected function _getImage($type, $size = 210, $text = '1600x1600')
     {
-        $logo = $this->image();
+        $imageObject = $this->_getImageObject();
 
-        if ($logo)
+        if ($imageObject)
         {
             $request = $this->builder->components()->http()->request();
             $uri     = $request->uri();
@@ -33,10 +47,10 @@ class Entity extends EmptyEntity
              * @var $uri \PHPixie\HTTP\Messages\URI\SAPI
              */
             $sdk = new SDK();
-            $sdk->setServer('cdn.' . $host);
-            $sdk->setUserName($this->modelName());
+            $sdk->setServer('cdn.' . 'wheelpro.ru'); //$host);
+            $sdk->setUserName($this->imageType ?: $this->modelName());
 
-            return $sdk->getThumbsUrl($type, $logo->hash);
+            return $sdk->getThumbsUrl($type, $imageObject->hash);
         }
 
         return $this->defaultImage($size, $size, $text);

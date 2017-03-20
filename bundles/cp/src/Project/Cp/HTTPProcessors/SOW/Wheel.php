@@ -75,6 +75,7 @@ class Wheel extends SOWProtected
         $this->assign('id', $id);
         $this->assign('item', $wheel);
         $this->assign('styles', $styles);
+        $this->assign('imageType', 'wheel');
 
         return $this->render('cp:sow/wheel/edit');
     }
