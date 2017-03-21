@@ -18,7 +18,7 @@ class Wheel extends Entity
      */
     public function thumbsLogo()
     {
-        return $this->_logo('thumbs', 210);
+        return $this->_getImage('thumbs', 210);
     }
 
 }

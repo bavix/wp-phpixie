@@ -25,10 +25,6 @@ class Assets
         // sweetalert
         '/node_modules/sweetalert2/dist/sweetalert2.min.css',
 
-        // filer
-        '/node_modules/jquery.filer/css/jquery.filer.css',
-        '/node_modules/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css',
-
         // gridlex
         '/node_modules/gridlex/docs/gridlex.min.css',
 
@@ -68,9 +64,6 @@ class Assets
         // pace
         '/node_modules/pace-progress/pace.min.js',
 
-        // filer
-        '/node_modules/jquery.filer/js/jquery.filer.min.js',
-
         // datatables
         '/node_modules/datatables.net/js/jquery.dataTables.js',
         '/node_modules/datatables.net-bs/js/dataTables.bootstrap.js',
@@ -89,6 +82,9 @@ class Assets
 
         // react
         '/node_modules/react/dist/react.js',
+        // filer
+        '/node_modules/jquery.filer/js/jquery.filer.min.js',
+
         '/node_modules/react-dom/dist/react-dom.js',
 
         // fetch
