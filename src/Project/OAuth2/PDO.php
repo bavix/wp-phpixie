@@ -86,7 +86,10 @@ class PDO extends \OAuth2\Storage\Pdo
          */
         $queryUser = $orm->query(Model::USER);
 
-        $this->user = $queryUser->findByLogin($login);
+        $this->user = $queryUser
+            ->where('login', $login)
+            ->orWhere('email', $login)
+            ->findOne();
 
         if (!$this->user)
         {
