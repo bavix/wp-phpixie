@@ -18,10 +18,7 @@ class Auth extends AuthProcessor
      * @var array
      */
     protected $allow = [
-        'tokenPost',
-        
-        'recoveryPasswordPost',
-        'newPasswordPost'
+        'tokenPost'
     ];
 
     /**
