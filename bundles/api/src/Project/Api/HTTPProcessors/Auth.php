@@ -20,7 +20,7 @@ class Auth extends AuthProcessor
     protected $allow = [
         'tokenPost',
         
-        'changePasswordPost',
+        'recoveryPasswordPost',
         'newPasswordPost'
     ];
 

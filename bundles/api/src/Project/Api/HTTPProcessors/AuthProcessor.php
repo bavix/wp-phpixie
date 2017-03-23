@@ -146,13 +146,9 @@ class AuthProcessor extends Processor
      */
     public function process($request)
     {
-        $method = $request->method();
-        $method = strtolower($method);
-        $method = ucfirst($method);
+        $action = $this->getActionNameFor($request);
 
-        $action = $request->attributes()->get('action');
-
-        if (!in_array($action . $method, $this->allow, true))
+        if (!in_array($action, $this->allow, true))
         {
             $accessDenied = $this->accessDenied();
 
