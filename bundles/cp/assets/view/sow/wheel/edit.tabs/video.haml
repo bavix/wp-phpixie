@@ -1,12 +1,11 @@
 %form(method="POST" action="/api/sow/wheel/#{$item->id}/video" data-created="video")
 
-  .grid
+  .col-md-12
+    .form-group.form-group-lg
+      %label.control-label(for="youtubeUrl") YouTube Url
+      %input#youtubeUrl.form-control(type="text" name="url" value="")
 
-    .col-md-12
-      .form-group.form-group-lg
-        %label.control-label(for="youtubeUrl") YouTube Url
-        %input#youtubeUrl.form-control(type="text" name="url" value="")
-
+  .clearfix
   .hr-line-dashed
 
   .form-group(align="center")
@@ -14,7 +13,6 @@
       %i.fa.fa-save
       Submit
 
-.grid#videoRows
-  -#- foreach ($item->videos() as $video)
-  -#  %div.col-md-6
-  -#    %div(data-type="#{strtolower($video->provider)}" data-video-id="#{$video->identifier}")
+.gallery-list#videoRows
+
+- $assets::pushJs('/node_modules/lg-video/dist/lg-video.min.js')

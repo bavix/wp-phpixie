@@ -39,12 +39,46 @@ var VideoRows = function (_React$Component) {
     _createClass(VideoRows, [{
         key: "row",
         value: function row(model) {
-            var provider = String(model.provider).toLowerCase();
-
             return React.createElement(
-                "div",
-                { key: model.id, className: "col-md-6" },
-                React.createElement("div", { "data-type": provider, "data-video-id": model.identifier })
+                "li",
+                { key: model.id, className: "col-xs-6 col-sm-4 col-md-3 video",
+                    "data-src": model.url,
+                    "data-sub-html": "<h4>" + model.description + "</h4>" },
+                React.createElement(
+                    "a",
+                    null,
+                    React.createElement("img", { className: "img-responsive", src: model.image }),
+                    React.createElement(
+                        "div",
+                        { className: "gallery-list-poster" },
+                        React.createElement("img", { src: "/node_modules/lightgallery/dist/img/video-play.png" })
+                    )
+                ),
+                React.createElement(
+                    "div",
+                    { className: "caption" },
+                    React.createElement(
+                        "h4",
+                        { style: {
+                                overflow: "hidden",
+                                "white-space": "nowrap",
+                                "text-overflow": "ellipsis",
+                                "width": "200px"
+                            } },
+                        " ",
+                        model.title
+                    ),
+                    React.createElement(
+                        "a",
+                        { className: "btn btn-danger btn-sm pull-right" },
+                        React.createElement(
+                            "i",
+                            { className: "fa fa-trash" },
+                            " "
+                        ),
+                        " trash"
+                    )
+                )
             );
         }
     }, {
@@ -54,8 +88,8 @@ var VideoRows = function (_React$Component) {
             var rows = this.props.rows.map(this.row);
 
             return React.createElement(
-                "div",
-                { className: "col-xs-12" },
+                "ul",
+                { id: "videoGallery", className: "lightGallery" },
                 rows
             );
         }
@@ -124,7 +158,10 @@ $(function () {
 
         ReactDOM.render(React.createElement(VideoRows, { rows: videoJson }), videoRows);
 
-        plyr.setup();
+        // plyr.setup();
+        $('#videoGallery').lightGallery({
+            video: true
+        });
     }
 
     // init data

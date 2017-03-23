@@ -1,22 +1,20 @@
-.grid
-  %form.form-horizontal{:name => "images"}
-    %input(type="hidden" name="preview" value="0")
-    %input(type="hidden" name="id" value="#{$id}")
-    %input(type="hidden" name="userId" value="#{$user->id}")
-    .upload__progress Uploading…
-    %a.upload-link.js-fileapi-wrapper
-      %span.btn.btn-warning.upload-link__txt Browse
-      %input.upload-link__inp{:accept => "image/*", :name => "photo", :type => "file", :multiple => true}
+%form.form-horizontal{:name => "images"}
+  %input(type="hidden" name="preview" value="0")
+  %input(type="hidden" name="id" value="#{$id}")
+  %input(type="hidden" name="userId" value="#{$user->id}")
+  .upload__progress Uploading…
+  %a.upload-link.js-fileapi-wrapper
+    %span.btn.btn-warning.upload-link__txt Browse
+    %input.upload-link__inp{:accept => "image/*", :name => "photo", :type => "file", :multiple => true}
 
-.grid
-  .gallery-list
-    %ul.lightGallery
-      - foreach ($item->images() as $image)
-        %li(data-pinterest-text="Pin it" data-responsive="#{$image->thumbs($imageType)} 250, #{$image->optimize($imageType)} 500, #{$image->normal($imageType)} 1000" data-src="#{$image->maximal($imageType)}")
-          %a(href="")
-            %img.img-responsive(src="#{$image->thumbs($imageType)}")
-            .gallery-list-poster
-              %img(src="http://sachinchoolur.github.io/lightGallery/static/img/zoom.png")
+.gallery-list
+  %ul.lightGallery
+    - foreach ($item->images() as $image)
+      %li(data-pinterest-text="Pin it" data-responsive="#{$image->thumbs($imageType)} 250, #{$image->optimize($imageType)} 500, #{$image->normal($imageType)} 1000" data-src="#{$image->maximal($imageType)}")
+        %a(href="")
+          %img.img-responsive(src="#{$image->thumbs($imageType)}")
+          .gallery-list-poster
+            %img(src="http://sachinchoolur.github.io/lightGallery/static/img/zoom.png")
 
 - $assets::pushCss('/css/gallery.css')
 - $assets::pushCss('/node_modules/lightgallery/dist/css/lightgallery.min.css')
@@ -24,12 +22,20 @@
 - $assets::pushJs('https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js')
 - $assets::pushJs('https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js')
 - $assets::pushJs('/node_modules/lightgallery/dist/js/lightgallery.min.js')
+- $assets::pushJs('/node_modules/lg-zoom/dist/lg-zoom.min.js')
+- $assets::pushJs('/node_modules/lg-thumbnail/dist/lg-thumbnail.min.js')
+- $assets::pushJs('/node_modules/lg-fullscreen/dist/lg-fullscreen.min.js')
 - $assets::pushJs('/js/cp/upload/images.js')
 - $assets::pushJs('/js/cp/upload/images-wheel.js')
 
 :javascript
   $(document).ready(function() {
     $('.lightGallery').lightGallery({
-      pager: true
+      pager: true,
+      zoom: true,
+      download: false,
+      thumbnail:true,
+      animateThumb: false,
+      showThumbByDefault: false
     });
   });
