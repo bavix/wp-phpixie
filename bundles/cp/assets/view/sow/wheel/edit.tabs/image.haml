@@ -10,7 +10,7 @@
 .gallery-list
   %ul.lightGallery
     - foreach ($item->images() as $image)
-      %li(data-pinterest-text="Pin it" data-responsive="#{$image->thumbs($imageType)} 250, #{$image->optimize($imageType)} 500, #{$image->normal($imageType)} 1000" data-src="#{$image->maximal($imageType)}")
+      %li(data-pinterest-text="Pin it" data-trash="/sow/wheel/#{$item->id}/image/#{$image->id}" data-responsive="#{$image->thumbs($imageType)} 250, #{$image->optimize($imageType)} 500, #{$image->normal($imageType)} 1000" data-src="#{$image->maximal($imageType)}")
         %a(href="")
           %img.img-responsive(src="#{$image->thumbs($imageType)}")
           .gallery-list-poster
@@ -25,6 +25,7 @@
 - $assets::pushJs('/node_modules/lg-zoom/dist/lg-zoom.min.js')
 - $assets::pushJs('/node_modules/lg-thumbnail/dist/lg-thumbnail.min.js')
 - $assets::pushJs('/node_modules/lg-fullscreen/dist/lg-fullscreen.min.js')
+- $assets::pushJs('/js/lg-trash.js')
 - $assets::pushJs('/js/cp/upload/images.js')
 - $assets::pushJs('/js/cp/upload/images-wheel.js')
 

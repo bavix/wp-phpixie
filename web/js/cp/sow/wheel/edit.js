@@ -38,10 +38,12 @@ var VideoRows = function (_React$Component) {
 
     _createClass(VideoRows, [{
         key: "row",
-        value: function row(model) {
+        value: function row(object) {
+            var model = object.model;
             return React.createElement(
                 "li",
                 { key: model.id, className: "col-xs-6 col-sm-4 col-md-3 video",
+                    "data-trash": "/sow/wheel/" + object.id + "/video/" + model.id,
                     "data-src": model.url,
                     "data-sub-html": "<h4>" + model.description + "</h4>" },
                 React.createElement(
@@ -59,24 +61,9 @@ var VideoRows = function (_React$Component) {
                     { className: "caption" },
                     React.createElement(
                         "h4",
-                        { style: {
-                                overflow: "hidden",
-                                "white-space": "nowrap",
-                                "text-overflow": "ellipsis",
-                                "width": "200px"
-                            } },
+                        null,
                         " ",
                         model.title
-                    ),
-                    React.createElement(
-                        "a",
-                        { className: "btn btn-danger btn-sm pull-right" },
-                        React.createElement(
-                            "i",
-                            { className: "fa fa-trash" },
-                            " "
-                        ),
-                        " trash"
                     )
                 )
             );
@@ -148,17 +135,27 @@ $(function () {
     var $formVideo = $('[data-created="video"]');
 
     var videoJson = [];
+    var id = $formVideo.find('[name=id]').val();
 
     function tableInit(json) {
         if (typeof json.id === "undefined") {
-            videoJson = json.data;
+            videoJson = json.data.map(function (model) {
+                return {
+                    id: id,
+                    model: model
+                };
+            });
         } else {
-            videoJson.push(json);
+            videoJson.push({
+                id: id,
+                model: json
+            });
         }
+
+        console.log(videoJson);
 
         ReactDOM.render(React.createElement(VideoRows, { rows: videoJson }), videoRows);
 
-        // plyr.setup();
         $('#videoGallery').lightGallery({
             video: true
         });

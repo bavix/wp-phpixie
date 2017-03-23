@@ -22,28 +22,21 @@ class VideoRows extends React.Component {
         };
     }
 
-    row(model) {
+    row(object) {
+        let model = object.model;
         return <li key={model.id} className="col-xs-6 col-sm-4 col-md-3 video"
-                data-src={model.url}
-                data-sub-html={"<h4>" + model.description + "</h4>"}>
+                   data-trash={"/sow/wheel/" + object.id + "/video/" + model.id}
+                   data-src={model.url}
+                   data-sub-html={"<h4>" + model.description + "</h4>"}>
             <a>
                 <img className="img-responsive" src={model.image}/>
                 <div className="gallery-list-poster">
-                    {/*<img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png"/>*/}
                     <img src="/node_modules/lightgallery/dist/img/video-play.png"/>
                 </div>
             </a>
 
             <div className="caption">
-                <h4 style={ {
-                    overflow:"hidden"
-                    , "white-space":"nowrap",
-                    "text-overflow": "ellipsis"
-                        , "width":"200px"
-                    } }> {model.title}</h4>
-                <a className="btn btn-danger btn-sm pull-right">
-                    <i className="fa fa-trash"> </i> trash
-                </a>
+                <h4> {model.title}</h4>
             </div>
         </li>
     }
@@ -108,21 +101,31 @@ $(function () {
     let $formVideo = $('[data-created="video"]');
 
     let videoJson = [];
+    let id = $formVideo.find('[name=id]').val();
 
     function tableInit(json) {
         if (typeof json.id === "undefined") {
-            videoJson = json.data;
+            videoJson = json.data.map(function (model) {
+                return {
+                    id: id,
+                    model: model
+                };
+            });
         }
         else {
-            videoJson.push(json)
+            videoJson.push({
+                id: id,
+                model: json
+            })
         }
+
+        console.log(videoJson);
 
         ReactDOM.render(
             <VideoRows rows={videoJson}/>,
             videoRows
         );
 
-        // plyr.setup();
         $('#videoGallery').lightGallery({
             video: true
         });
