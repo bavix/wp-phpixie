@@ -737,7 +737,12 @@ class Wheel extends SOWProtected
             throw new \InvalidArgumentException('Wheel not found');
         }
 
-        if ($wheel->favourites->remove($user))
+        $result = $this->components->orm()->query('wheelsFavourite')
+            ->where('wheelId', $wheel->id())
+            ->where('userId', $user->id())
+            ->delete();
+
+        if ($result)
         {
             RESTFUL::setStatus(REST::NO_CONTENT);
 
@@ -854,7 +859,12 @@ class Wheel extends SOWProtected
             throw new \InvalidArgumentException('Wheel not found');
         }
 
-        if ($wheel->likes->remove($user))
+        $result = $this->components->orm()->query('wheelsLike')
+            ->where('wheelId', $wheel->id())
+            ->where('userId', $user->id())
+            ->delete();
+
+        if ($result)
         {
             RESTFUL::setStatus(REST::NO_CONTENT);
 
