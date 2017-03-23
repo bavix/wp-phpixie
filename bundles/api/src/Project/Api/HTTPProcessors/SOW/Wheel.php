@@ -157,6 +157,52 @@ class Wheel extends SOWProtected
         return $this->pager($pager);
     }
 
+    public function videoItemDeleteAction(Request $request)
+    {
+        if (!$this->loggedUser()->hasPermission('cp.sow.wheel.delete'))
+        {
+            throw new \Exception('Access denied');
+        }
+
+        $attributes = $request->attributes();
+        $wheelId = $attributes->get('id');
+        $videoId = $attributes->get('nextId');
+
+        if ($this->components->orm()->query('wheelsVideo')
+            ->where('wheelId', $wheelId)
+            ->where('videoId', $videoId)
+            ->delete())
+        {
+            RESTFUL::setStatus(REST::NO_CONTENT);
+            throw new \InvalidArgumentException('Success');
+        }
+
+        throw new \InvalidArgumentException('Video not found');
+    }
+
+    public function imageItemDeleteAction(Request $request)
+    {
+        if (!$this->loggedUser()->hasPermission('cp.sow.wheel.delete'))
+        {
+            throw new \Exception('Access denied');
+        }
+
+        $attributes = $request->attributes();
+        $wheelId = $attributes->get('id');
+        $imageId = $attributes->get('nextId');
+
+        if ($this->components->orm()->query('wheelsImage')
+            ->where('wheelId', $wheelId)
+            ->where('imageId', $imageId)
+            ->delete())
+        {
+            RESTFUL::setStatus(REST::NO_CONTENT);
+            throw new \InvalidArgumentException('Success');
+        }
+
+        throw new \InvalidArgumentException('Video not found');
+    }
+
     public function itemDeleteAction(Request $request)
     {
         if (!$this->loggedUser()->hasPermission('cp.sow.wheel.delete'))

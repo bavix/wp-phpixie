@@ -140,8 +140,8 @@ return array(
         ),
 
         'action' => array(
-            'type'     => 'pattern',
-            'path'     => '<processor>/<action>'
+            'type' => 'pattern',
+            'path' => '<processor>/<action>'
         ),
 
         'processor' => array(

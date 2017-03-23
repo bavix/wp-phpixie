@@ -2,6 +2,7 @@
 
   .col-md-12
     .form-group.form-group-lg
+      %input(type="hidden" name="id" value="#{$item->id}")
       %label.control-label(for="youtubeUrl") YouTube Url
       %input#youtubeUrl.form-control(type="text" name="url" value="")
 
