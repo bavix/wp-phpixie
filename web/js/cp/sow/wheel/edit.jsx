@@ -23,20 +23,38 @@ class VideoRows extends React.Component {
     }
 
     row(model) {
-        let provider = String(model.provider).toLowerCase();
+        return <li key={model.id} className="col-xs-6 col-sm-4 col-md-3 video"
+                data-src={model.url}
+                data-sub-html={"<h4>" + model.description + "</h4>"}>
+            <a>
+                <img className="img-responsive" src={model.image}/>
+                <div className="gallery-list-poster">
+                    {/*<img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png"/>*/}
+                    <img src="/node_modules/lightgallery/dist/img/video-play.png"/>
+                </div>
+            </a>
 
-        return <div key={model.id} className="col-md-6">
-            <div data-type={provider} data-video-id={model.identifier}></div>
-        </div>;
+            <div className="caption">
+                <h4 style={ {
+                    overflow:"hidden"
+                    , "white-space":"nowrap",
+                    "text-overflow": "ellipsis"
+                        , "width":"200px"
+                    } }> {model.title}</h4>
+                <a className="btn btn-danger btn-sm pull-right">
+                    <i className="fa fa-trash"> </i> trash
+                </a>
+            </div>
+        </li>
     }
 
     render() {
 
         const rows = this.props.rows.map(this.row);
 
-        return <div className="col-xs-12">
+        return <ul id="videoGallery" className="lightGallery" >
             { rows }
-        </div>;
+        </ul>;
     }
 }
 
@@ -104,7 +122,10 @@ $(function () {
             videoRows
         );
 
-        plyr.setup();
+        // plyr.setup();
+        $('#videoGallery').lightGallery({
+            video: true
+        });
 
     }
 

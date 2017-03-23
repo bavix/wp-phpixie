@@ -167,7 +167,14 @@ class Auth extends AuthProcessor
      *                      "isSend": false
      *                  }
      *
-     * @apiVersion        0.0.3
+     * @apiErrorExample   Error-Response:
+     *                  HTTP/1.1 404 Not Found
+     *                  {
+     *                      "error": "user",
+     *                      "error_description": "User not found",
+     *                  }
+     *
+     * @apiVersion        0.0.9
      *
      * @param Request $request
      */
@@ -195,8 +202,9 @@ class Auth extends AuthProcessor
 
         if (!$user)
         {
+            RESTFUL::getStatus(REST::NOT_FOUND);
             RESTFUL::setError('user');
-            throw new Unauthorized();
+            throw new \InvalidArgumentException('User not found');
         }
 
         $isSend = $user->recoveryPassword($this->template) > 0;
