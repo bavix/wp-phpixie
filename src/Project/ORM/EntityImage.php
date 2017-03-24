@@ -21,6 +21,9 @@ trait EntityImage
 
     protected function _getImageObject()
     {
+        if ($this->imageType && $this instanceof Image\Image)
+            return $this;
+
         return $this->image();
     }
 
