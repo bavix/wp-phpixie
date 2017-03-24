@@ -8,7 +8,7 @@
       .col-3_md-4_sm-6_xs-12
         .ibox
           .ibox-content.product-box
-            %img(src="#{$_user->getAvatar(400)}" width="100%")
+            %img(src="#{$_user->imageThumbs()}" width="100%")
             .product-desc
               %small.text-muted = $_($_user->login)
               - $httpPath = 'cp.sou.item'

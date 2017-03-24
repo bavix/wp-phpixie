@@ -12,7 +12,7 @@
           %tr
             %th Bolt / Stud
             %th PCD
-            %th Created At
+            -#%th Created At
             %th Updated At
             %th Actions
         %tbody
@@ -20,7 +20,7 @@
             %tr(id="brand-#{$item->id()}")
               %td = $item->bolt
               %td = $item->pcd
-              %td.entry-date(data-time="#{$item->createdAt}" data-order="#{$item->createdAt}")
+              -#%td.entry-date(data-time="#{$item->createdAt}" data-order="#{$item->createdAt}")
               %td.entry-date(data-time="#{$item->updatedAt}" data-order="#{$item->updatedAt}")
               %td
                 - $httpPath = 'cp.sow.item'

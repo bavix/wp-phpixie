@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectTasksOptions" suppressed-tasks="HAML">
+  <component name="ProjectTasksOptions" suppressed-tasks="HAML;Haml">
     <TaskOptions isEnabled="true">
       <option name="arguments" value="--no-cache --update $FileName$:$ProjectFileDir$/web/css/$FileNameWithoutExtension$.css" />
       <option name="checkSyntaxErrors" value="true" />

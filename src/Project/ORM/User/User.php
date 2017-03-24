@@ -9,6 +9,7 @@ use PHPixie\Template;
 use Project\App\Builder;
 use Project\Extension\Mail;
 use Project\Model;
+use Project\ORM\EntityImage;
 use Project\ORM\Role\Role;
 
 /**
@@ -16,6 +17,10 @@ use Project\ORM\Role\Role;
  */
 class User extends UserLogin
 {
+
+    use EntityImage;
+
+    protected $imageType = 'avatar';
 
     /**
      * @var $builder Builder
@@ -104,37 +109,11 @@ class User extends UserLogin
     }
 
     /**
-     * @param int $width
-     *
      * @return string
      */
-    public function getAvatar($width = 96)
+    public function imageThumbs()
     {
-        $components = $this->builder->components();
-
-        $http    = $components->http();
-        $request = $http->request();
-        $uri     = $request->uri();
-
-        $size = 140;
-        if ($width >= 300)
-        {
-            $size = 512;
-        }
-
-        $urlPath = $uri->getScheme() . '://' . $uri->getHost() . '/svg/no-avatar-' . $size . '.png';
-
-        if ($this->email)
-        {
-            $grAvatar = 'https://secure.gravatar.com/avatar/' . md5($this->email);
-
-            $grAvatar .= '?s=' . $width;
-            $grAvatar .= '&d=' . $urlPath;
-
-            return $grAvatar;
-        }
-
-        return $urlPath;
+        return $this->_getImage('thumbs', 210, '500x500');
     }
 
 }

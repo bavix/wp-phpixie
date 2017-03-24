@@ -17,15 +17,15 @@
             %th Name
             %th Style
             %th Is Custom
-            %th Is Retired
-            %th Created At
+            -#%th Is Retired
+            -#%th Created At
             %th Updated At
             %th Actions
         %tbody
           - foreach ($pager->getCurrentItems() as $item)
             %tr(id="brand-#{$item->id()}")
               %td
-                %img.img-circle(width="70px" src="#{$item->thumbsLogo()}")
+                %img.img-circle(width="70px" src="#{$item->thumbsImage()}")
               %td = $item->active ? 'Yes' : 'No'
               %td = $item->brand()->name
               - $collection = $item->collection()
@@ -37,8 +37,8 @@
               - $style = (string)$item->style()
               %td = empty($style) ? '-' : $style
               %td = $item->isCustom ? 'Yes' : 'No'
-              %td = $item->isRetired ? 'Yes' : 'No'
-              %td.entry-date(data-time="#{$item->createdAt}" data-order="#{$item->createdAt}")
+              -#%td = $item->isRetired ? 'Yes' : 'No'
+              -#%td.entry-date(data-time="#{$item->createdAt}" data-order="#{$item->createdAt}")
               %td.entry-date(data-time="#{$item->updatedAt}" data-order="#{$item->updatedAt}")
               %td
                 - $httpPath = 'cp.sow.item'

@@ -2,9 +2,9 @@
 
 namespace Project\ORM\Style;
 
-use Project\ORM\EmptyEntity;
+use Project\ORM\Entity;
 
-class Style extends EmptyEntity
+class Style extends Entity
 {
 
     public function __toString()

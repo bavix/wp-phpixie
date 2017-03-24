@@ -11,8 +11,6 @@
     .container
       .login-container
         #output
-        - if (!isset($avatar))
-          - $avatar = '/svg/no-avatar-140.png'
-        %img.avatar(src="#{$avatar}" title="Avatar")
+        %img.avatar(src="/svg/no-avatar-140.png" title="Avatar")
         .form-box
           - $this->childContent()

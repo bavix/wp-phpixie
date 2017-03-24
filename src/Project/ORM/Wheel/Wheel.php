@@ -3,9 +3,9 @@
 namespace Project\ORM\Wheel;
 
 use Project\App\Builder;
-use Project\ORM\Entity;
+use Project\ORM\EntityImage;
 
-class Wheel extends Entity
+class Wheel extends EntityImage
 {
 
     /**
@@ -16,7 +16,7 @@ class Wheel extends Entity
     /**
      * @return string
      */
-    public function thumbsLogo()
+    public function thumbsImage()
     {
         return $this->_getImage('thumbs', 210);
     }

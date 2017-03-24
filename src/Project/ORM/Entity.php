@@ -2,58 +2,28 @@
 
 namespace Project\ORM;
 
-use Deimos\ImaginariumSDK\SDK;
+use Project\App\Builder;
 
-class Entity extends EmptyEntity
+class Entity extends \PHPixie\ORM\Wrappers\Type\Database\Entity
 {
 
     protected $imageType;
 
-    protected function defaultImage($width, $height, $text = null)
-    {
-        return '//placehold.it/' . $width . 'x' . $height . '?text=' . $text;
-    }
-
-    protected function setImageType($type)
-    {
-        $this->imageType = $type;
-
-        return $this;
-    }
-
-    protected function _getImageObject()
-    {
-        return $this->imageType ? $this : $this->image();
-    }
+    /**
+     * @var $builder Builder
+     */
+    protected $builder;
 
     /**
-     * @param string $type
-     * @param int    $size
-     * @param string $text
+     * Brand constructor.
      *
-     * @return string
+     * @param $entity
+     * @param $builder
      */
-    protected function _getImage($type, $size = 210, $text = '1600x1600')
+    public function __construct($entity, $builder)
     {
-        $imageObject = $this->_getImageObject();
-
-        if ($imageObject)
-        {
-            $request = $this->builder->components()->http()->request();
-            $uri     = $request->uri();
-            $host    = $uri->getHost();
-
-            /**
-             * @var $uri \PHPixie\HTTP\Messages\URI\SAPI
-             */
-            $sdk = new SDK();
-            $sdk->setServer('cdn.' . 'wheelpro.ru'); //$host);
-            $sdk->setUserName($this->imageType ?: $this->modelName());
-
-            return $sdk->getThumbsUrl($type, $imageObject->hash);
-        }
-
-        return $this->defaultImage($size, $size, $text);
+        parent::__construct($entity);
+        $this->builder = $builder;
     }
 
 }

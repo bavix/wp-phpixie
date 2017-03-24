@@ -2,7 +2,6 @@
 
 namespace Project\Cp\HTTPProcessors;
 
-use PHPixie\AuthLogin\Providers\Password as PasswordProvider;
 use PHPixie\HTTP\Request;
 use PHPixie\HTTP\Responses\Response;
 use Project\App\HTTPProcessors\Processor;
@@ -58,6 +57,13 @@ class Auth extends Processor
     {
         $this->components->auth()->domain()->forgetUser();
 
+        $redirect = $request->query()->get('redirect');
+
+        if ($redirect)
+        {
+            return $this->redirect($redirect);
+        }
+
         return $this->redirectResponse('app.processor');
     }
 
@@ -74,7 +80,7 @@ class Auth extends Processor
         $domain = $this->components->auth()->domain();
 
         /**
-         * @var \PHPixie\AuthLogin\Providers\Password  $passwordProvider
+         * @var \PHPixie\AuthLogin\Providers\Password $passwordProvider
          */
         $passwordProvider = $domain->provider('password');
 
@@ -85,8 +91,14 @@ class Auth extends Processor
             $data->getRequired('password')
         );
 
+        $redirect = $data->get(
+            'redirect',
+            $request->query()->get('redirect')
+        );
+
         if ($user === null)
         {
+            $this->assign('redirect', $redirect);
             $this->assign('loginFailed', true);
 
             return $this->render('cp:auth/default');
@@ -95,8 +107,6 @@ class Auth extends Processor
         // Generate persistent login cookie
         $provider = $domain->provider('cookie');
         $provider->persist();
-
-        $redirect = $data->get('redirect');
 
         if ($redirect)
         {

@@ -3,6 +3,7 @@
   <component name="dataSourceStorageLocal">
     <data-source name="Gallery" uuid="6d5d9b53-fdd8-4c4c-95f0-3477bb00a107">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <introspection-schemas>*:gallery</introspection-schemas>
     </data-source>
   </component>
 </project>

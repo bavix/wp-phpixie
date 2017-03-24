@@ -134,9 +134,13 @@ abstract class CPProtected extends Processor
         $this->assign('actions', []);
     }
 
-    protected function accessDenied()
+    protected function accessDenied(Request $request)
     {
-        throw new \PHPixie\Processors\Exception("Access Denied");
+//        throw new \PHPixie\Processors\Exception("Access Denied");
+
+        $this->assign('redirect', $request->uri()->getPath());
+
+        return $this->render('cp:auth/accessDenied');
     }
 
     /**
@@ -188,7 +192,7 @@ abstract class CPProtected extends Processor
 
         if (!$this->user->hasPermission($permission))
         {
-            $this->accessDenied();
+            return $this->accessDenied($request);
         }
 
         $orm = $this->components->orm();
