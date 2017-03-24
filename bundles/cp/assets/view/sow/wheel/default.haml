@@ -25,7 +25,7 @@
           - foreach ($pager->getCurrentItems() as $item)
             %tr(id="brand-#{$item->id()}")
               %td
-                %img.img-circle(width="70px" src="#{$item->thumbsImage()}")
+                %img.img-circle(width="70px" src="#{$item->imageThumbs()}")
               %td = $item->active ? 'Yes' : 'No'
               %td = $item->brand()->name
               - $collection = $item->collection()

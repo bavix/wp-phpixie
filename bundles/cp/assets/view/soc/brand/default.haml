@@ -20,7 +20,7 @@
           - foreach ($pager->getCurrentItems() as $item)
             %tr(id="brand-#{$item->id()}")
               %td
-                %img.img-circle(width="70px" src="#{$item->thumbsImage()}")
+                %img.img-circle(width="70px" src="#{$item->imageThumbs()}")
               %td
                 %label.label{:class => ($item->active ? 'label-success' : 'label-warning')}
                   - if ($item->active)
