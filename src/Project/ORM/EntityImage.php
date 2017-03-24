@@ -21,9 +21,7 @@ trait EntityImage
 
     protected function _getImageObject()
     {
-        return $this->imageType ? (
-            $this instanceof Image\Image ? $this : null
-        ) : $this->image();
+        return $this->image();
     }
 
     /**
@@ -49,9 +47,6 @@ trait EntityImage
             $sdk = new SDK();
             $sdk->setServer('cdn.' . 'wheelpro.ru'); //$host);
             $sdk->setUserName($this->imageType ?: $this->modelName());
-
-            var_dump($imageObject->getField('hash'), $imageObject);
-            die;
 
             return $sdk->getThumbsUrl($type, $imageObject->hash);
         }
