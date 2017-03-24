@@ -174,7 +174,7 @@ class Brand extends SOCProtected
      *
      * @param Request $request
      *
-     * @return array
+     * @return mixed
      */
     public function itemGetAction(Request $request)
     {
@@ -266,6 +266,7 @@ class Brand extends SOCProtected
         }
 
         $webGroup   = $data->get('webGroup');
+        $titleGroup = $data->get('titleGroup');
         $isCarbon   = $data->get('isCarbon') === 'on';
         $isMultiple = $data->get('isMultiple') === 'on';
         $isOffRoad  = $data->get('isOffRoad') === 'on';
@@ -274,6 +275,7 @@ class Brand extends SOCProtected
         $brand->name       = $name;
         $brand->web        = $web;
         $brand->webGroup   = $webGroup;
+        $brand->titleGroup = $titleGroup;
         $brand->isCarbon   = (int)$isCarbon;
         $brand->isMultiple = (int)$isMultiple;
         $brand->isOffRoad  = (int)$isOffRoad;

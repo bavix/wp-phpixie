@@ -77,6 +77,11 @@
                   %div#multipleBrandInputs(class="#{ ( $item->isMultiple ? '' : 'hidden' ) }")
 
                     .form-group.form-group-lg
+                      %label.control-label(for="brandTitleGroup")
+                        Title Group
+                      %input#brandTitleGroup.form-control(type="text" disabled="#{!$item->isMultiple}" name="titleGroup" value="#{$item->titleGroup}")
+
+                    .form-group.form-group-lg
                       %label.control-label(for="brandWebGroup")
                         Web Group
                       %input#brandWebGroup.form-control(type="text" disabled="#{!$item->isMultiple}" name="webGroup" value="#{$item->webGroup}")
