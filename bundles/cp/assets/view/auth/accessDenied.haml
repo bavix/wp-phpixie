@@ -1,0 +1,7 @@
+- $this->layout('app:layout/auth')
+
+%h4 Access Denied
+- $httpPath = $this->httpPath('cp.action', ['processor' => 'auth', 'action' => 'logout'])
+%form{:action => $httpPath, :method => "GET"}
+  %input(type="hidden" name="redirect" value="#{$redirect}")
+  %button.btn.btn-info.btn-block.login{:type => "submit"} Log out

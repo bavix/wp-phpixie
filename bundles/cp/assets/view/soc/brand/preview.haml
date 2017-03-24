@@ -34,7 +34,7 @@
 
 :javascript
 
-  FileAPI.Image("#{$item->thumbsLogo()}")
+  FileAPI.Image("#{$item->thumbsImage()}")
     .preview($(preview).width(), $(preview).height())
     .get(function (err, image) {
       if (!err) {

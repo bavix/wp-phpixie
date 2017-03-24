@@ -12,7 +12,7 @@
           %tr
             %th Brand
             %th Collection
-            %th Created At
+            -#%th Created At
             %th Updated At
             %th Actions
         %tbody
@@ -22,7 +22,7 @@
               %td
                 = $item->name
 
-              %td.entry-date(data-time="#{$item->createdAt}" data-order="#{$item->createdAt}")
+              -#%td.entry-date(data-time="#{$item->createdAt}" data-order="#{$item->createdAt}")
               %td.entry-date(data-time="#{$item->updatedAt}" data-order="#{$item->updatedAt}")
               %td
                 - $httpPath = 'cp.sow.item'

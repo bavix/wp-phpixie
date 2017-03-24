@@ -4,9 +4,12 @@ namespace Project\ORM\Image;
 
 use Project\App\Builder;
 use Project\ORM\Entity;
+use Project\ORM\EntityImage;
 
 class Image extends Entity
 {
+
+    use EntityImage;
 
     /**
      * @var $builder Builder

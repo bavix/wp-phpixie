@@ -37,7 +37,7 @@
             %li.nav-header
               .dropdown.profile-element(align="center")
                 %span
-                  %img.img-circle(src="#{$user->getAvatar(48)}" width="48")
+                  %img.img-circle(src="#{$user->imageThumbs()}" width="48")
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                   %span.clear
                     %span.block.m-t-xs

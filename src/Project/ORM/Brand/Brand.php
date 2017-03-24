@@ -4,9 +4,14 @@ namespace Project\ORM\Brand;
 
 use Project\App\Builder;
 use Project\ORM\Entity;
+use Project\ORM\EntityImage;
 
 class Brand extends Entity
 {
+
+    use EntityImage;
+
+    protected $imageType = 'brand';
 
     /**
      * @var $builder Builder
@@ -16,7 +21,7 @@ class Brand extends Entity
     /**
      * @return string
      */
-    public function thumbsLogo()
+    public function imageThumbs()
     {
         return $this->_getImage('thumbs', 210, '500x500');
     }
