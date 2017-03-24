@@ -3,10 +3,15 @@
 namespace Project\ORM\Wheel;
 
 use Project\App\Builder;
+use Project\ORM\Entity;
 use Project\ORM\EntityImage;
 
-class Wheel extends EntityImage
+class Wheel extends Entity
 {
+
+    use EntityImage;
+    
+    protected $imageType = 'wheel';
 
     /**
      * @var $builder Builder
@@ -16,7 +21,7 @@ class Wheel extends EntityImage
     /**
      * @return string
      */
-    public function thumbsImage()
+    public function imageThumbs()
     {
         return $this->_getImage('thumbs', 210);
     }
