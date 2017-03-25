@@ -148,7 +148,11 @@ class Wheel extends SOWProtected
 
         $wheel = $this->components->orm()->query(Model::WHEEL);
 
-        $this->query($wheel, $request);
+        $this->query($wheel, $request, [
+            'sort' => [
+                'popular' => 'desc'
+            ]
+        ]);
 
         $pager = $builder
             ->helper()

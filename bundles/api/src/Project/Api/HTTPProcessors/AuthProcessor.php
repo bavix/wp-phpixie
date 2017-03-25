@@ -189,31 +189,33 @@ class AuthProcessor extends Processor
     /**
      * @param \PHPixie\ORM\Models\Type\Database\Implementation\Query $query
      * @param Request                                                $request
+     * @param array $defaults
      */
-    public function query($query, Request $request)
+    public function query($query, Request $request, array $defaults = [])
     {
 
         // ordering
-        $this->querySort($query, $request);
+        $this->querySort($query, $request, $defaults['sort'] ?? []);
 
         // equal id = 1
-        $this->queryTerms($query, $request);
+        $this->queryTerms($query, $request, $defaults['terms'] ?? []);
 
         // less id < 1
-        $this->queryLess($query, $request);
+        $this->queryLess($query, $request, $defaults['less'] ?? []);
 
         // greater id > 1
-        $this->queryGreater($query, $request);
+        $this->queryGreater($query, $request, $defaults['greater'] ?? []);
 
         // queries name LIKE '%OTIFOR%' ~ Rotiform
-        $this->queryQueries($query, $request);
+        $this->queryQueries($query, $request, $defaults['queries'] ?? []);
     }
 
     /**
      * @param \PHPixie\ORM\Models\Type\Database\Implementation\Query $query
      * @param Request                                                $request
+     * @param array $defaults
      */
-    protected function querySort($query, Request $request)
+    protected function querySort($query, Request $request, array $defaults)
     {
 
         /**
@@ -221,7 +223,7 @@ class AuthProcessor extends Processor
          *
          * @var array $sort
          */
-        $sort = $request->query()->get('sort', []);
+        $sort = $request->query()->get('sort', $defaults);
 
         foreach ($sort as $field => $direction)
         {
@@ -234,8 +236,9 @@ class AuthProcessor extends Processor
     /**
      * @param \PHPixie\ORM\Models\Type\Database\Implementation\Query $query
      * @param Request                                                $request
+     * @param array $defaults
      */
-    protected function queryTerms($query, Request $request)
+    protected function queryTerms($query, Request $request, array $defaults)
     {
 
         /**
@@ -243,7 +246,7 @@ class AuthProcessor extends Processor
          *
          * @var array $terms
          */
-        $terms = $request->query()->get('terms', []);
+        $terms = $request->query()->get('terms', $defaults);
 
         foreach ($terms as $column => $value)
         {
@@ -262,8 +265,9 @@ class AuthProcessor extends Processor
     /**
      * @param \PHPixie\ORM\Models\Type\Database\Implementation\Query $query
      * @param Request                                                $request
+     * @param array $defaults
      */
-    protected function queryGreater($query, Request $request)
+    protected function queryGreater($query, Request $request, array $defaults)
     {
 
         /**
@@ -271,7 +275,7 @@ class AuthProcessor extends Processor
          *
          * @var array $terms
          */
-        $terms = $request->query()->get('greater', []);
+        $terms = $request->query()->get('greater', $defaults);
 
         foreach ($terms as $column => $value)
         {
@@ -283,8 +287,9 @@ class AuthProcessor extends Processor
     /**
      * @param \PHPixie\ORM\Models\Type\Database\Implementation\Query $query
      * @param Request                                                $request
+     * @param array $defaults
      */
-    protected function queryLess($query, Request $request)
+    protected function queryLess($query, Request $request, array $defaults)
     {
 
         /**
@@ -292,7 +297,7 @@ class AuthProcessor extends Processor
          *
          * @var array $terms
          */
-        $terms = $request->query()->get('less', []);
+        $terms = $request->query()->get('less', $defaults);
 
         foreach ($terms as $column => $value)
         {
@@ -304,14 +309,15 @@ class AuthProcessor extends Processor
     /**
      * @param \PHPixie\ORM\Models\Type\Database\Implementation\Query $query
      * @param Request                                                $request
+     * @param array $defaults
      */
-    protected function queryQueries($query, Request $request)
+    protected function queryQueries($query, Request $request, array $defaults)
     {
 
         /**
          * @var array $queries
          */
-        $queries = $request->query()->get('queries', []);
+        $queries = $request->query()->get('queries', $defaults);
 
         foreach ($queries as $column => $value)
         {
