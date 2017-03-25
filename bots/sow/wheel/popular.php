@@ -22,6 +22,6 @@ $query = $connection->updateQuery()
             commentCount / likeCount,
             likeCount / commentCount
             ),
-          -1
+          if(imageId is not null,-0.5,-1)
         )'))
     ->execute();
