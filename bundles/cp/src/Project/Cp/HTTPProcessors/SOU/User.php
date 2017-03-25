@@ -24,7 +24,7 @@ class User extends SOUProtected
         $orm  = $this->components->orm();
         $page = $query->get('page');
 
-        $userQuery = $orm->query(Model::USER);
+        $itemQuery = $orm->query(Model::USER);
 
         /**
          * @var $builder \Project\Framework\Builder
@@ -34,8 +34,14 @@ class User extends SOUProtected
         /**
          * @var $pager \PHPixie\Paginate\Pager
          */
-        $pager = $builder->helper()->pager($page, $userQuery, 24);
+        $pager = $builder->helper()->pager(
+            $page,
+            $itemQuery,
+            50,
+            ['image', 'role']
+        );
 
+        $this->assign('count', $itemQuery->count());
         $this->assign('pager', $pager);
 
         return $this->render('cp:sou/user/default');
@@ -45,51 +51,19 @@ class User extends SOUProtected
     {
         if (!$this->user->hasPermission('cp.sou.user.edit'))
         {
-            $this->accessDenied();
+            return $this->accessDenied($request);
         }
 
-        // if not load
-        //  => throw new exception
-
-        if ($request->method() === 'POST')
-        {
-            // update profile user
-        }
-
-        return $this->render('cp:sou/user/edit');
-    }
-
-    public function deleteAction(Request $request)
-    {
-        if (!$this->user->hasPermission('cp.sou.user.delete'))
-        {
-            $this->accessDenied();
-        }
-
-        return [];
-    }
-
-    public function pullRequestAction(Request $request)
-    {
-        if (!$this->user->hasPermission('cp.sou.user.pull-request'))
-        {
-            $this->accessDenied();
-        }
-
-        return [];
-    }
-
-    public function profileAction(Request $request)
-    {
         $id = $request->attributes()->getRequired('id');
 
-        $user = $this->components->orm()->query(Model::USER)
+        $item = $this->components->orm()->query(Model::USER)
             ->in($id)
-            ->findOne();
+            ->findOne(['image']);
 
-        $this->assign('profile', $user);
+        $this->assign('id', $id);
+        $this->assign('item', $item);
 
-        return $this->render('cp:sou/user/profile');
+        return $this->render('cp:sou/user/edit');
     }
 
 }

@@ -1,3 +1,58 @@
 - $this->layout('cp:layout')
 
-%h1 edit
+.col-lg-9
+  .ibox
+    .ibox-title
+      %h3
+        Edit User
+        %label.label.label-info.pull-right
+          = $_($item->login)
+    .ibox-content
+
+      .tabs-container
+        .tabs-right
+          %ul.nav.nav-tabs
+            %li.active
+              %a(data-toggle="tab" href="#tab-base") Base
+          .tab-content
+
+            #tab-base.tab-pane.active
+              .panel-body
+                %form(method="POST" action="/api/sou/user/#{$item->id}" data-updated="user")
+                  .form-group.form-group-lg
+                    %label.control-label(for="userLogin")
+                      login
+                    %input#userLogin.form-control(type="text" name="login" value="#{$item->login}")
+
+                  .form-group.form-group-lg
+                    %label.control-label(for="userLastName")
+                      Last Name
+                    %input#userLastName.form-control(type="text" name="lastname" value="#{$item->lastname}")
+
+                  .form-group.form-group-lg
+                    %label.control-label(for="userName")
+                      Name
+                    %input#userName.form-control(type="text" name="name" value="#{$item->name}")
+
+                  .hr-line-dashed
+
+                  %div.grid
+
+                    .col-lg-6
+
+                      .form-group.form-group-lg
+                        %input#activeUser.wbs-checkbox(type="checkbox" name="active" checked="#{!!$item->active}")
+                        %label(for="activeUser")
+                          Active
+
+                  .hr-line-dashed
+
+                  .form-group(align="center")
+                    %button.btn.btn-primary.btn-lg
+                      %i.fa.fa-save
+                      Submit
+
+partial:'cp:soc/brand/preview'
+
+- $assets::pushJs('/js/cp/sou/user/edit.js')
+- $assets::pushJs('/js/cp/upload/image-avatar.js')
