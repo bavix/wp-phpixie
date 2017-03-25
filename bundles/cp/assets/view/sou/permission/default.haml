@@ -1,3 +1,46 @@
 - $this->layout('cp:layout')
 
-%h1 Permission -- In developing
+.col-lg-9
+  .ibox
+    .ibox-title
+      %label.label.label-success.pull-right = $count
+      %h3 = $currentMenu->title
+    .ibox-content
+      partial: 'cp:pager'
+      %table.table.table-striped
+        %thead
+          %tr
+            %th id
+            %th title
+            %th name
+            %th has permission
+            %th Updated At
+            -#%th Actions
+        %tbody
+          - foreach ($pager->getCurrentItems() as $item)
+            %tr(id="permission-#{$item->id()}")
+              %td = $item->id()
+              %td = $item->title
+              %td = $item->name
+              %td
+                - if ($user->hasPermission($item->name))
+                  %label.label.label-success yes
+                - else
+                  %label.label.label-danger no
+              -#%td.entry-date(data-time="#{$item->createdAt}" data-order="#{$item->createdAt}")
+              %td.entry-date(data-time="#{$item->updatedAt}" data-order="#{$item->updatedAt}")
+              -#%td
+                - $httpPath = 'cp.sou.item'
+                - $attributes = ['nextProcessor' => 'permission', 'action' => 'edit', 'id' => $item->id]
+                - $httpPath = $this->httpPath($httpPath, $attributes)
+                %a.btn.btn-primary.btn-sm(href="#{$httpPath}")
+                  %i.fa.fa-edit
+                  Edit
+                - if ($user->hasPermission('cp.sou.permission.delete'))
+                  - $httpPath = 'api.sou.item'
+                  - $attributes = ['nextProcessor' => 'permission', 'action' => 'delete', 'id' => $item->id]
+                  - $httpPath = $this->httpPath($httpPath, $attributes)
+                  %a.btn.btn-danger.trash-data.btn-sm(href="#{$httpPath}")
+                    %i.fa.fa-trash
+                    Delete
+      partial: 'cp:pager'

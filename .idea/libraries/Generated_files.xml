@@ -4,11 +4,13 @@
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/web/js/lg-trash.js" />
         <item url="file://$PROJECT_DIR$/web/js/cp/sow/wheel/edit.js" />
+        <item url="file://$PROJECT_DIR$/web/js/cp/sou/user/edit.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/web/js/lg-trash.js" />
       <root url="file://$PROJECT_DIR$/web/js/cp/sow/wheel/edit.js" />
+      <root url="file://$PROJECT_DIR$/web/js/cp/sou/user/edit.js" />
     </CLASSES>
     <SOURCES />
   </library>

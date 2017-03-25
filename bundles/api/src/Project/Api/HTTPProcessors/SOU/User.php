@@ -101,6 +101,67 @@ class User extends SOUProtected
         return $user->asObject(true);
     }
 
+
+    public function itemPostAction(Request $request)
+    {
+        $user = $this->loggedUser();
+//        $user = $this->components->orm()->query(Model::USER)->findOne();
+
+        if (!$user)
+        {
+            RESTFUL::setError('user');
+            throw new Unauthorized();
+        }
+
+        if (!$user->hasPermission('cp.sou.user.edit'))
+        {
+            throw new \InvalidArgumentException('Access Denied');
+        }
+
+        $lastname = $request->data()->get('lastname');
+
+        if (!empty($lastname) && $lastname !== $user->lastname)
+        {
+            $user->lastname = $lastname;
+        }
+
+        $name = $request->data()->get('name');
+
+        if (!empty($name) && $name !== $user->name)
+        {
+            $user->name = $name;
+        }
+
+        $email = $request->data()->get('email');
+
+        if (!empty($email) && $email !== $user->email)
+        {
+            $check = $this->components->orm()->query(Model::USER)
+                ->where('email', $email)
+                ->findOne();
+
+            if ($check)
+            {
+                RESTFUL::setError('email');
+                throw new \InvalidArgumentException('Email exists');
+            }
+
+            $user->email = $email;
+        }
+
+        $about = $request->data()->get('about');
+
+        if (!empty($about) && $about !== $user->about)
+        {
+            $user->about = $about;
+        }
+
+        $user->save();
+
+        return $user->asObject(true);
+    }
+
+
     /**
      * @api               {get} /sou/user/<id>/favourite-wheel Wheel Favourite List
      * @apiName           Wheel Favourite List

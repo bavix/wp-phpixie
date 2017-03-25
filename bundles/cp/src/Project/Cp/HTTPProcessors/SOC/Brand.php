@@ -103,7 +103,7 @@ class Brand extends SOCProtected
          */
         $builder = $this->builder->frameworkBuilder();
 
-        $pager = $builder->helper()->pager($page, $brandQuery);
+        $pager = $builder->helper()->pager($page, $brandQuery, 50, ['image']);
 
 //        $optionSelectBrands = $orm->query(Model::BRAND)
 //            ->orderAscendingBy('name')
