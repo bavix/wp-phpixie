@@ -52,19 +52,3 @@ set popular = (
            / (select count(1) c from wheelsComments group by wheelId order by c desc limit 1) * ( 0.20225 )
          )
        ) ;
-
-# join (
-#     SELECT
-#       1.618             favouriteRating,
-#       1.618 / 2         likeRating,
-#       1.618 / 2 / 4     commentRating,
-#
-#       min(likeCount)    lineMin,
-#       avg(likeCount)    lineAvg,
-#       max(likeCount)    likeMax,
-#
-#       min(commentCount) commentMin,
-#       avg(commentCount) commentAvg,
-#       max(commentCount) commentMax
-#     FROM wheels
-#     ) data ON data.likeMax IS NOT null;
