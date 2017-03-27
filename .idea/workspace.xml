@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/migrate/migrations/54.sql" afterPath="$PROJECT_DIR$/assets/migrate/migrations/54.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/sow/wheel/popular.php" afterPath="$PROJECT_DIR$/bots/sow/wheel/popular.php" />
     </list>
     <ignored path="gallery-auth.iws" />
@@ -46,43 +44,6 @@
               <folding>
                 <marker date="1490604220255" expanded="true" signature="878:958" ph="%td.entry-date(data-time=&quot;##{$item-&gt;createdAt}&quot; data-order=&quot;##{$item-&gt;createdAt}&quot;)" />
                 <marker date="1490604220255" expanded="true" signature="878:1830" ph="%tr(id=&quot;brand-##{$item-&gt;id()}&quot;)" />
-                <marker date="1490604220255" expanded="true" signature="973:1053" ph="%td.entry-date(data-time=&quot;##{$item-&gt;updatedAt}&quot; data-order=&quot;##{$item-&gt;updatedAt}&quot;)" />
-                <marker date="1490604220255" expanded="true" signature="1068:1830" ph="%td" />
-                <marker date="1490604220255" expanded="true" signature="1088:1115" ph="- $httpPath = 'cp.soc.item'" />
-                <marker date="1490604220255" expanded="true" signature="1132:1215" ph="- $attributes = ['nextProcessor' =&gt; 'brand', 'action' =&gt; 'edit', 'id' =&gt; $item-&gt;id]" />
-                <marker date="1490604220255" expanded="true" signature="1232:1285" ph="- $httpPath = $this-&gt;httpPath($httpPath, $attributes)" />
-                <marker date="1490604220255" expanded="true" signature="1302:1403" ph="%a.btn.btn-primary.btn-sm(href=&quot;##{$httpPath}&quot;)" />
-                <marker date="1490604220255" expanded="true" signature="1367:1380" ph="%i.fa.fa-edit" />
-                <marker date="1490604220255" expanded="true" signature="1399:1403" ph="Edit" />
-                <marker date="1490604220255" expanded="true" signature="1420:1830" ph="- if ($user-&gt;hasPermission('cp.soc.brand.delete'))" />
-                <marker date="1490604220255" expanded="true" signature="1489:1517" ph="- $httpPath = 'api.soc.item'" />
-                <marker date="1490604220255" expanded="true" signature="1536:1621" ph="- $attributes = ['nextProcessor' =&gt; 'brand', 'action' =&gt; 'delete', 'id' =&gt; $item-&gt;id]" />
-                <marker date="1490604220255" expanded="true" signature="1640:1693" ph="- $httpPath = $this-&gt;httpPath($httpPath, $attributes)" />
-                <marker date="1490604220255" expanded="true" signature="1712:1830" ph="%a.btn.btn-danger.trash-data.btn-sm(href=&quot;##{$httpPath}&quot;)" />
-                <marker date="1490604220255" expanded="true" signature="1789:1803" ph="%i.fa.fa-trash" />
-                <marker date="1490604220255" expanded="true" signature="1824:1830" ph="Delete" />
-                <marker date="1490604220255" expanded="true" signature="1837:1856" ph="partial: 'cp:pager'" />
-                <marker date="1490604220255" expanded="true" signature="1857:2595" ph=".col-lg-3" />
-                <marker date="1490604220255" expanded="true" signature="1869:2595" ph=".ibox" />
-                <marker date="1490604220255" expanded="true" signature="1879:1899" ph=".ibox-title Filter's" />
-                <marker date="1490604220255" expanded="true" signature="1904:2595" ph=".ibox-content" />
-                <marker date="1490604220255" expanded="true" signature="1924:2595" ph="%form" />
-                <marker date="1490604220255" expanded="true" signature="1938:2147" ph=".form-group" />
-                <marker date="1490604220255" expanded="true" signature="1960:2004" ph="%label(for=&quot;brandsSelect&quot;)" />
-                <marker date="1490604220255" expanded="true" signature="1999:2004" ph="Brand" />
-                <marker date="1490604220255" expanded="true" signature="2015:2147" ph="%select##brandsSelect.form-control.select2-multiple(name=&quot;filter[id]&quot; style=&quot;width:100%&quot;)" />
-                <marker date="1490604220255" expanded="true" signature="2116:2147" ph="%option(disabled selected) None" />
-                <marker date="1490604220255" expanded="true" signature="2156:2450" ph=".form-group" />
-                <marker date="1490604220255" expanded="true" signature="2178:2223" ph="%label(for=&quot;activeSelect&quot;)" />
-                <marker date="1490604220255" expanded="true" signature="2217:2223" ph="Active" />
-                <marker date="1490604220255" expanded="true" signature="2234:2450" ph="%select##activeSelect.form-control.select2-multiple(name=&quot;filter[active]&quot; style=&quot;width:100%&quot;)" />
-                <marker date="1490604220255" expanded="true" signature="2339:2369" ph="%option(disabled selected) All" />
-                <marker date="1490604220255" expanded="true" signature="2382:2408" ph="%option(value=&quot;1&quot; ) Active" />
-                <marker date="1490604220255" expanded="true" signature="2421:2450" ph="%option(value=&quot;0&quot; ) No active" />
-                <marker date="1490604220255" expanded="true" signature="2459:2595" ph=".form-group" />
-                <marker date="1490604220255" expanded="true" signature="2481:2511" ph="%button.btn.btn-success Submit" />
-                <marker date="1490604220255" expanded="true" signature="2522:2595" ph="%a.btn.btn-default(onclick=&quot;Url.removeQuery(); location.reload();&quot;) Reset" />
-                <marker date="1490604220255" expanded="true" signature="2597:2642" ph="- $assets::pushJs('/js/cp/soc/brand/list.js')" />
               </folding>
             </state>
           </provider>
@@ -93,9 +54,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="480">
               <caret line="32" column="32" lean-forward="false" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
-              <folding>
-                <marker date="1490604220255" expanded="true" signature="1948:1969" ph=".row" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,8 +62,8 @@
       <file leaf-file-name="54.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/54.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="39" column="71" lean-forward="true" selection-start-line="39" selection-start-column="71" selection-end-line="39" selection-end-column="71" />
+            <state relative-caret-position="878">
+              <caret line="69" column="41" lean-forward="false" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -113,8 +72,8 @@
       <file leaf-file-name="popular.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bots/sow/wheel/popular.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+            <state relative-caret-position="405">
+              <caret line="27" column="75" lean-forward="true" selection-start-line="27" selection-start-column="75" selection-end-line="27" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -429,7 +388,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -602,9 +560,46 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WBS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bots" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WBS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bots" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sow" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wheel" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -927,11 +922,12 @@
       <workItem from="1490387591639" duration="876000" />
       <workItem from="1490427306011" duration="5853000" />
       <workItem from="1490604408152" duration="1784000" />
+      <workItem from="1490611973362" duration="42000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1082733000" />
+    <option name="totallyTimeSpent" value="1082797000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -946,7 +942,7 @@
     <frame x="-1" y="25" width="1922" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2534685" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2561366" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32051283" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1215,13 +1211,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sou/user/profile.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sou/user/profile.haml" />
     <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sou/permission/default.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
@@ -1266,43 +1256,6 @@
           <folding>
             <marker date="1490604220255" expanded="true" signature="878:958" ph="%td.entry-date(data-time=&quot;##{$item-&gt;createdAt}&quot; data-order=&quot;##{$item-&gt;createdAt}&quot;)" />
             <marker date="1490604220255" expanded="true" signature="878:1830" ph="%tr(id=&quot;brand-##{$item-&gt;id()}&quot;)" />
-            <marker date="1490604220255" expanded="true" signature="973:1053" ph="%td.entry-date(data-time=&quot;##{$item-&gt;updatedAt}&quot; data-order=&quot;##{$item-&gt;updatedAt}&quot;)" />
-            <marker date="1490604220255" expanded="true" signature="1068:1830" ph="%td" />
-            <marker date="1490604220255" expanded="true" signature="1088:1115" ph="- $httpPath = 'cp.soc.item'" />
-            <marker date="1490604220255" expanded="true" signature="1132:1215" ph="- $attributes = ['nextProcessor' =&gt; 'brand', 'action' =&gt; 'edit', 'id' =&gt; $item-&gt;id]" />
-            <marker date="1490604220255" expanded="true" signature="1232:1285" ph="- $httpPath = $this-&gt;httpPath($httpPath, $attributes)" />
-            <marker date="1490604220255" expanded="true" signature="1302:1403" ph="%a.btn.btn-primary.btn-sm(href=&quot;##{$httpPath}&quot;)" />
-            <marker date="1490604220255" expanded="true" signature="1367:1380" ph="%i.fa.fa-edit" />
-            <marker date="1490604220255" expanded="true" signature="1399:1403" ph="Edit" />
-            <marker date="1490604220255" expanded="true" signature="1420:1830" ph="- if ($user-&gt;hasPermission('cp.soc.brand.delete'))" />
-            <marker date="1490604220255" expanded="true" signature="1489:1517" ph="- $httpPath = 'api.soc.item'" />
-            <marker date="1490604220255" expanded="true" signature="1536:1621" ph="- $attributes = ['nextProcessor' =&gt; 'brand', 'action' =&gt; 'delete', 'id' =&gt; $item-&gt;id]" />
-            <marker date="1490604220255" expanded="true" signature="1640:1693" ph="- $httpPath = $this-&gt;httpPath($httpPath, $attributes)" />
-            <marker date="1490604220255" expanded="true" signature="1712:1830" ph="%a.btn.btn-danger.trash-data.btn-sm(href=&quot;##{$httpPath}&quot;)" />
-            <marker date="1490604220255" expanded="true" signature="1789:1803" ph="%i.fa.fa-trash" />
-            <marker date="1490604220255" expanded="true" signature="1824:1830" ph="Delete" />
-            <marker date="1490604220255" expanded="true" signature="1837:1856" ph="partial: 'cp:pager'" />
-            <marker date="1490604220255" expanded="true" signature="1857:2595" ph=".col-lg-3" />
-            <marker date="1490604220255" expanded="true" signature="1869:2595" ph=".ibox" />
-            <marker date="1490604220255" expanded="true" signature="1879:1899" ph=".ibox-title Filter's" />
-            <marker date="1490604220255" expanded="true" signature="1904:2595" ph=".ibox-content" />
-            <marker date="1490604220255" expanded="true" signature="1924:2595" ph="%form" />
-            <marker date="1490604220255" expanded="true" signature="1938:2147" ph=".form-group" />
-            <marker date="1490604220255" expanded="true" signature="1960:2004" ph="%label(for=&quot;brandsSelect&quot;)" />
-            <marker date="1490604220255" expanded="true" signature="1999:2004" ph="Brand" />
-            <marker date="1490604220255" expanded="true" signature="2015:2147" ph="%select##brandsSelect.form-control.select2-multiple(name=&quot;filter[id]&quot; style=&quot;width:100%&quot;)" />
-            <marker date="1490604220255" expanded="true" signature="2116:2147" ph="%option(disabled selected) None" />
-            <marker date="1490604220255" expanded="true" signature="2156:2450" ph=".form-group" />
-            <marker date="1490604220255" expanded="true" signature="2178:2223" ph="%label(for=&quot;activeSelect&quot;)" />
-            <marker date="1490604220255" expanded="true" signature="2217:2223" ph="Active" />
-            <marker date="1490604220255" expanded="true" signature="2234:2450" ph="%select##activeSelect.form-control.select2-multiple(name=&quot;filter[active]&quot; style=&quot;width:100%&quot;)" />
-            <marker date="1490604220255" expanded="true" signature="2339:2369" ph="%option(disabled selected) All" />
-            <marker date="1490604220255" expanded="true" signature="2382:2408" ph="%option(value=&quot;1&quot; ) Active" />
-            <marker date="1490604220255" expanded="true" signature="2421:2450" ph="%option(value=&quot;0&quot; ) No active" />
-            <marker date="1490604220255" expanded="true" signature="2459:2595" ph=".form-group" />
-            <marker date="1490604220255" expanded="true" signature="2481:2511" ph="%button.btn.btn-success Submit" />
-            <marker date="1490604220255" expanded="true" signature="2522:2595" ph="%a.btn.btn-default(onclick=&quot;Url.removeQuery(); location.reload();&quot;) Reset" />
-            <marker date="1490604220255" expanded="true" signature="2597:2642" ph="- $assets::pushJs('/js/cp/soc/brand/list.js')" />
           </folding>
         </state>
       </provider>
@@ -1340,9 +1293,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="32" lean-forward="false" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
-          <folding>
-            <marker date="1490604220255" expanded="true" signature="1948:1969" ph=".row" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1350,7 +1301,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1508,16 +1458,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/54.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="39" column="71" lean-forward="true" selection-start-line="39" selection-start-column="71" selection-end-line="39" selection-end-column="71" />
+        <state relative-caret-position="878">
+          <caret line="69" column="41" lean-forward="false" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bots/sow/wheel/popular.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+        <state relative-caret-position="405">
+          <caret line="27" column="75" lean-forward="true" selection-start-line="27" selection-start-column="75" selection-end-line="27" selection-end-column="75" />
           <folding />
         </state>
       </provider>

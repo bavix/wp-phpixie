@@ -16,7 +16,7 @@ $connection = $database->get();
  */
 $query = $connection->updateQuery()
     ->table('wheels')
-    ->set('popular', $database->sqlExpression('(
+    ->set('popular', $database->sqlExpression('if (imageId is null, 0,
          ( -- favourite
            favouriteCount  / (select count(1) c from wheelsFavourites group by wheelId order by c desc limit 1) * ( 1.618 )
          ) +
