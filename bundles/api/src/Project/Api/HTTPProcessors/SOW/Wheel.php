@@ -146,7 +146,8 @@ class Wheel extends SOWProtected
             ]);
         }
 
-        $wheel = $this->components->orm()->query(Model::WHEEL);
+        $wheel = $this->components->orm()->query(Model::WHEEL)
+            ->where('active', 1);
 
         $this->query($wheel, $request, [
             'sort' => [
