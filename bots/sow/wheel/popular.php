@@ -16,12 +16,16 @@ $connection = $database->get();
  */
 $query = $connection->updateQuery()
     ->table('wheels')
-    ->set('popular', $database->sqlExpression('if(likeCount + commentCount > 1,
-          if (
-              likeCount > commentCount,
-            commentCount / likeCount,
-            likeCount / commentCount
-            ),
-          if(imageId is not null,-0.5,-1)
-        )'))
+    ->set('popular', $database->sqlExpression('(
+         ( -- favourite
+           favouriteCount  / (select count(1) c from wheelsFavourites group by wheelId order by c desc limit 1) * ( 1.618 )
+         ) +
+         ( -- likes
+           likeCount  / (select count(1) c from wheelsLikes group by wheelId order by c desc limit 1) * ( 0.809 )
+         ) +
+         ( -- comments
+           LEAST(commentCount, (select avg(cc.data) from (select avg(1) data from wheelsLikes group by wheelId) cc))
+           / (select count(1) c from wheelsComments group by wheelId order by c desc limit 1) * ( 0.20225 )
+         )
+       )'))
     ->execute();

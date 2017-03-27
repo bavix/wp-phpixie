@@ -18,3 +18,53 @@ UPDATE `wheels` SET popular= if(
     ),
   -1
 );
+
+-- version 2
+
+
+# update wheels
+
+select count(1) c from wheelsLikes group by wheelId order by c desc limit 1;
+select avg(cc.data) from (select avg(1) data from wheelsLikes group by wheelId) cc;
+
+ALTER TABLE `wheels` ADD `favouriteCount` INT NOT NULL DEFAULT '0' AFTER `name`;
+
+CREATE TRIGGER `wheelFavouriteCountDelete`
+AFTER DELETE ON `wheelsFavourites`
+FOR EACH ROW UPDATE `wheels`
+SET `favouriteCount` = IF(`favouriteCount` = 0, 0, `favouriteCount` - 1) WHERE `id` = OLD.`wheelId`;
+
+CREATE TRIGGER `wheelFavouriteCountInsert`
+BEFORE INSERT ON `wheelsFavourites`
+FOR EACH ROW UPDATE `wheels`
+SET `favouriteCount` = `favouriteCount` + 1 WHERE `id` = NEW.`wheelId`;
+
+update wheels as w
+set popular = (
+         ( -- favourite
+           w.favouriteCount  / (select count(1) c from wheelsFavourites group by wheelId order by c desc limit 1) * ( 1.618 )
+         ) +
+         ( -- likes
+           w.likeCount  / (select count(1) c from wheelsLikes group by wheelId order by c desc limit 1) * ( 0.809 )
+         ) +
+         ( -- comments
+           LEAST(w.commentCount, (select avg(cc.data) from (select avg(1) data from wheelsLikes group by wheelId) cc))
+           / (select count(1) c from wheelsComments group by wheelId order by c desc limit 1) * ( 0.20225 )
+         )
+       ) ;
+
+# join (
+#     SELECT
+#       1.618             favouriteRating,
+#       1.618 / 2         likeRating,
+#       1.618 / 2 / 4     commentRating,
+#
+#       min(likeCount)    lineMin,
+#       avg(likeCount)    lineAvg,
+#       max(likeCount)    likeMax,
+#
+#       min(commentCount) commentMin,
+#       avg(commentCount) commentAvg,
+#       max(commentCount) commentMax
+#     FROM wheels
+#     ) data ON data.likeMax IS NOT null;
