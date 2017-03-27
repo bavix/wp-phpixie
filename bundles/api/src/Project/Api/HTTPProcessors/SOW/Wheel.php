@@ -150,7 +150,8 @@ class Wheel extends SOWProtected
 
         $this->query($wheel, $request, [
             'sort' => [
-                'popular' => 'desc'
+                'popular'   => 'desc',
+                'updatedAt' => 'desc',
             ]
         ]);
 
@@ -169,13 +170,14 @@ class Wheel extends SOWProtected
         }
 
         $attributes = $request->attributes();
-        $wheelId = $attributes->get('id');
-        $videoId = $attributes->get('nextId');
+        $wheelId    = $attributes->get('id');
+        $videoId    = $attributes->get('nextId');
 
         if ($this->components->orm()->query('wheelsVideo')
             ->where('wheelId', $wheelId)
             ->where('videoId', $videoId)
-            ->delete())
+            ->delete()
+        )
         {
             RESTFUL::setStatus(REST::NO_CONTENT);
             throw new \InvalidArgumentException('Success');
@@ -192,13 +194,14 @@ class Wheel extends SOWProtected
         }
 
         $attributes = $request->attributes();
-        $wheelId = $attributes->get('id');
-        $imageId = $attributes->get('nextId');
+        $wheelId    = $attributes->get('id');
+        $imageId    = $attributes->get('nextId');
 
         if ($this->components->orm()->query('wheelsImage')
             ->where('wheelId', $wheelId)
             ->where('imageId', $imageId)
-            ->delete())
+            ->delete()
+        )
         {
             RESTFUL::setStatus(REST::NO_CONTENT);
             throw new \InvalidArgumentException('Success');
