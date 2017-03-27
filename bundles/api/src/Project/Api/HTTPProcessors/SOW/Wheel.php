@@ -151,7 +151,7 @@ class Wheel extends SOWProtected
         $this->query($wheel, $request, [
             'sort' => [
                 'popular'   => 'desc',
-                'updatedAt' => 'desc',
+                'createdAt' => 'desc',
             ]
         ]);
 
