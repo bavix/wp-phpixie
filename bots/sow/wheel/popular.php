@@ -31,7 +31,7 @@ $query = $connection->updateQuery()
          (
             if (createdAt > DATE_SUB(NOW(), INTERVAL 1 WEEK), 0.3, 
                 if (createdAt > DATE_SUB(NOW(), INTERVAL 2 WEEK), 0.2, 
-                    if (createdAt > DATE_SUB(NOW(), INTERVAL 1 WEEK), 0.1, 0) 
+                    if (createdAt > DATE_SUB(NOW(), INTERVAL 3 WEEK), 0.1, 0) 
          )))
        )'))
     ->execute();
