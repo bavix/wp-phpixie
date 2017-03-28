@@ -26,9 +26,12 @@ $query = $connection->updateQuery()
          ( -- comments
            LEAST(commentCount, (select avg(cc.data) from (select avg(1) data from wheelsLikes group by wheelId) cc))
            / (select count(1) c from wheelsComments group by wheelId order by c desc limit 1) * ( 0.20225 )
-         ) + (
-            -- if wheel is new 
-            if (createdAt > DATE_SUB(NOW(), INTERVAL 30 DAY), 0.3, 0) 
-         )
+         ) + 
+          -- if wheel is new 1 week
+         (
+            if (createdAt > DATE_SUB(NOW(), INTERVAL 1 WEEK), 0.3, 
+                if (createdAt > DATE_SUB(NOW(), INTERVAL 2 WEEK), 0.2, 
+                    if (createdAt > DATE_SUB(NOW(), INTERVAL 1 WEEK), 0.1, 0) 
+         )))
        )'))
     ->execute();
