@@ -9,6 +9,7 @@ class Upload extends AuthProcessor
 {
 
     protected $allow = [
+        'dealerPost',
         'brandPost',
         'wheelPost',
         'avatarPost',
