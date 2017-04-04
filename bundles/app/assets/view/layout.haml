@@ -1,9 +1,66 @@
 !!!
 %html{:lang => "en"}
   %head
-    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
-    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
     %title Wheel Pro
+
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+
+    / The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+    %meta{:content => "Wheel Pro", :name => "description"}/
+    %meta{:content => "index, follow", :name => "robots"}/
+    %meta{:content => "WBS", :name => "author"}/
+    %meta{:content => "WheelPRO", :name => "copyright"}/
+    %meta{:content => "all", :name => "audience"}/
+
+    / favicon
+    %link{:href => "/favicons/apple-icon-57x57.png", :rel => "apple-touch-icon", :sizes => "57x57"}/
+    %link{:href => "/favicons/apple-icon-60x60.png", :rel => "apple-touch-icon", :sizes => "60x60"}/
+    %link{:href => "/favicons/apple-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
+    %link{:href => "/favicons/apple-icon-76x76.png", :rel => "apple-touch-icon", :sizes => "76x76"}/
+    %link{:href => "/favicons/apple-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
+    %link{:href => "/favicons/apple-icon-120x120.png", :rel => "apple-touch-icon", :sizes => "120x120"}/
+    %link{:href => "/favicons/apple-icon-144x144.png", :rel => "apple-touch-icon", :sizes => "144x144"}/
+    %link{:href => "/favicons/apple-icon-152x152.png", :rel => "apple-touch-icon", :sizes => "152x152"}/
+    %link{:href => "/favicons/apple-icon-180x180.png", :rel => "apple-touch-icon", :sizes => "180x180"}/
+    %link{:href => "/favicons/android-icon-192x192.png", :rel => "icon", :sizes => "192x192", :type => "image/png"}/
+    %link{:href => "/favicons/favicon-32x32.png", :rel => "icon", :sizes => "32x32", :type => "image/png"}/
+    %link{:href => "/favicons/favicon-96x96.png", :rel => "icon", :sizes => "96x96", :type => "image/png"}/
+    %link{:href => "/favicons/favicon-16x16.png", :rel => "icon", :sizes => "16x16", :type => "image/png"}/
+    %link{:href => "/favicons/manifest.json", :rel => "manifest"}/
+    %meta{:content => "/favicons/ms-icon-144x144.png", :name => "msapplication-TileImage"}/
+    %meta{:content => "#ffffff", :name => "msapplication-TileColor"}/
+    %meta{:content => "#ffffff", :name => "theme-color"}/
+
+    / Open graph
+    %meta{:content => "WheelPro", :property => "og:title"}/
+    %meta{:content => "website", :property => "og:type"}/
+
+    / More types on http://ogp.me/#types
+    %meta{:content => "https://wheelpro.ru", :property => "og:url"}/
+    %meta{:content => "/images/logo.webp", :property => "og:image"}/
+
+    / Open graph generally recommended
+    %meta{:content => "", :property => "og:image:type"}/
+
+    / Recomanded: Extra Large image >(1200x630px) (600x315px)<=Large image <=(1200x630px) , Small image <(600x315px)
+    / Try to keep your images as close to 1.91:1 aspect ratio as possible to display the full image in News Feed without any cropping.
+    / The minimum image size is 200 x 200 pixels. If you try to use an image smaller than this you will see an error in the URL Debugger.
+    %meta{:content => "200", :property => "og:image:width"}/
+    %meta{:content => "200", :property => "og:image:height"}/
+    %meta{:content => "WheelPro Under Construction", :property => "og:description"}/
+    %meta{:content => "en_US", :property => "og:locale"}/
+    %meta{:content => "WheelPro", :property => "og:site_name"}/
+
+    / Twitter Card
+    %meta{:content => "summary_large_image", :name => "twitter:card"}/
+    %meta{:content => "https://wheelpro.ru", :name => "twitter:site"}/
+    %meta{:content => "WheelPro", :name => "twitter:creator"}/
+    %meta{:content => "WheelPro", :name => "twitter:title"}/
+    %meta{:content => "WheelPro Under Construction", :name => "twitter:description"}/
+    %meta{:content => "/images/logo.webp", :name => "twitter:image"}/
+
     :css
       img {
         width: 120px;
@@ -14,4 +71,4 @@
         margin: -60px 0 0 -60px;
       }
   %body
-    %img(src="/images/logo.png" alt="Wheel Pro")
+    %img(src="/images/logo.webp" alt="Wheel Pro")
