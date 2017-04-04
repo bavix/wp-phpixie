@@ -96,6 +96,65 @@ class Upload extends AuthProcessor
         return ['status' => 'ok'];
     }
 
+    public function dealerPostAction(Request $request)
+    {// fixme : убрать мой быдлокод
+        $data = $request->data();
+
+        if ($data->get('status') !== 'ok')
+        {
+            return [
+                'status' => 'error'
+            ];
+        }
+
+        $id = $data->get('query.id');
+
+        if (!$id)
+        {
+            return [
+                'status' => 'error'
+            ];
+        }
+
+//        fileSize          // bytes
+//        sizes.width       // width
+//        sizes.height      // height
+//        mime              // mime
+//        hash              // hash
+//        user              // type == dealer
+//        query.id          // dealerId
+//        query.userId      // userId
+//        data.Filename     // file name
+
+        $logo              = $this->components->orm()->createEntity(Model::IMAGE);
+        $logo->hash        = $data->get('hash');
+        $logo->size        = $data->get('fileSize');
+        $logo->width       = $data->get('sizes.width');
+        $logo->height      = $data->get('sizes.height');
+        $logo->userId      = $data->get('query.userId');
+        $logo->description = $data->get('description');
+
+        $dealer = $this->components->orm()->repository(Model::DEALER)->query()
+            ->in($id)
+            ->findOne();
+
+        if (!$dealer)
+        {
+            return [
+                'status' => 'error'
+            ];
+        }
+
+        // ALTER TABLE `dealers` ADD `imageId` INT NOT NULL AFTER `parentId`;
+
+        $logo->itemId = $dealer->id();
+        $logo->save();
+
+        $dealer->imageId = $logo->id();
+        $dealer->save();
+
+        return ['status' => 'ok'];
+    }
 
     public function avatarPostAction(Request $request)
     {// fixme : убрать мой быдлокод
