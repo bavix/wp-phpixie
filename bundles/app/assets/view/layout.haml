@@ -71,4 +71,6 @@
         margin: -60px 0 0 -60px;
       }
   %body
-    %img(src="/images/logo.png" alt="Wheel Pro")
+    %picture
+      %source{:srcset => "/images/logo.webp", :type => "image/webp"}
+      %img{:src => "/images/logo.png", :alt => "Wheel Pro"}/
