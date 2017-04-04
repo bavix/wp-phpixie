@@ -19,16 +19,16 @@ ALTER TABLE `dealersSocials`
 
 
 INSERT INTO `permissions` (`title`, `name`) VALUES ('Доступ к рубрикам диллеров', 'cp.soc.dealerheading');
-insert INTO `rolesPermissions` (`roleId`, `permissionId`) VALUES (6, last_insert_id());
+insert INTO `rolesPermissions` (`roleId`, `permissionId`) VALUES (7, last_insert_id());
 
 INSERT INTO `permissions` (`title`, `name`) VALUES ('Добавить рубрику к диллеру', 'cp.soc.dealerheading.add');
-insert INTO `rolesPermissions` (`roleId`, `permissionId`) VALUES (6, last_insert_id());
+insert INTO `rolesPermissions` (`roleId`, `permissionId`) VALUES (7, last_insert_id());
 
 INSERT INTO `permissions` (`title`, `name`) VALUES ('Редактирование рубрики диллеров', 'cp.soc.dealerheading.edit');
-insert INTO `rolesPermissions` (`roleId`, `permissionId`) VALUES (6, last_insert_id());
+insert INTO `rolesPermissions` (`roleId`, `permissionId`) VALUES (7, last_insert_id());
 
 INSERT INTO `permissions` (`title`, `name`) VALUES ('Удалить рубрику из диллера', 'cp.soc.dealerheading.delete');
 insert INTO `rolesPermissions` (`roleId`, `permissionId`) VALUES (5, last_insert_id());
 
 INSERT INTO `permissions` (`title`, `name`) VALUES ('Запросить удаление рубрики из диллера', 'cp.soc.dealerheading.pull-request');
-insert INTO `rolesPermissions` (`roleId`, `permissionId`) VALUES (6, last_insert_id());
+insert INTO `rolesPermissions` (`roleId`, `permissionId`) VALUES (7, last_insert_id());

@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27d78056-086e-4457-8ed2-7fd553580d7f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/migrate/migrations/55.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/edit.tabs/address.haml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/edit.tabs/heading.haml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/edit.tabs/social.haml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/cp/upload/image-dealer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/migrate/migrations/18.sql" afterPath="$PROJECT_DIR$/assets/migrate/migrations/18.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/migrate/migrations/54.sql" afterPath="$PROJECT_DIR$/assets/migrate/migrations/54.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Dealer.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Dealer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/app/assets/config/orm.php" afterPath="$PROJECT_DIR$/bundles/app/assets/config/orm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/default.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/default.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/edit.haml" afterPath="$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/edit.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Dealer.php" afterPath="$PROJECT_DIR$/bundles/cp/src/Project/Cp/HTTPProcessors/SOC/Dealer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Project/Model.php" afterPath="$PROJECT_DIR$/src/Project/Model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/soc/dealer/list.js" afterPath="$PROJECT_DIR$/web/js/cp/soc/dealer/list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/soc/dealer/list.js.map" afterPath="$PROJECT_DIR$/web/js/cp/soc/dealer/list.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/cp/soc/dealer/list.jsx" afterPath="$PROJECT_DIR$/web/js/cp/soc/dealer/list.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/migrate/migrations/55.sql" afterPath="$PROJECT_DIR$/assets/migrate/migrations/55.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Upload.php" afterPath="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Upload.php" />
     </list>
     <ignored path="gallery-auth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Dealer.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="512" column="49" lean-forward="true" selection-start-line="512" selection-start-column="49" selection-end-line="512" selection-end-column="69" />
+              <caret line="512" column="49" lean-forward="false" selection-start-line="512" selection-start-column="49" selection-end-line="512" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -65,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/18.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="66" />
+              <caret line="14" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -75,27 +61,27 @@
         <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/16.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="17" column="65" lean-forward="true" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
+              <caret line="17" column="65" lean-forward="false" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="55.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="55.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/55.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+            <state relative-caret-position="285">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.haml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/edit.haml">
+      <file leaf-file-name="Upload.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Upload.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="703">
-              <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+              <caret line="156" column="5" lean-forward="false" selection-start-line="156" selection-start-column="5" selection-end-line="156" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -105,9 +91,9 @@
         <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/edit.tabs/address.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-362">
-              <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+              <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
               <folding>
-                <marker date="1491300152845" expanded="true" signature="2253:2324" ph="{...}" />
+                <marker date="1491301067465" expanded="true" signature="2253:2324" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -117,7 +103,7 @@
         <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/edit.tabs/heading.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -127,7 +113,7 @@
         <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/edit.tabs/social.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -147,7 +133,7 @@
         <entry file="file://$PROJECT_DIR$/web/js/cp/upload/image-dealer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+              <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -164,7 +150,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>th</find>
       <find>thu</find>
       <find>thum</find>
       <find>accessDenied</find>
@@ -193,10 +178,10 @@
       <find>cp.soc.brheading</find>
       <find>cp.soc.branheading</find>
       <find>cp.soc.brandheading</find>
+      <find>6</find>
       <find>brand</find>
     </findStrings>
     <replaceStrings>
-      <replace>$wheel</replace>
       <replace>collection</replace>
       <replace>[</replace>
       <replace>json.error_description</replace>
@@ -225,6 +210,7 @@
       <replace>dealers</replace>
       <replace>Dealer</replace>
       <replace>DEALER</replace>
+      <replace>7</replace>
       <replace>dealer</replace>
     </replaceStrings>
     <dirStrings>
@@ -267,7 +253,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/config/http.php" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/default.haml" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/sow/style/default.haml" />
         <option value="$PROJECT_DIR$/bundles/cp/assets/view/sow/collection/default.haml" />
@@ -318,6 +303,7 @@
         <option value="$PROJECT_DIR$/web/js/cp/upload/image-dealer.js" />
         <option value="$PROJECT_DIR$/assets/migrate/migrations/18.sql" />
         <option value="$PROJECT_DIR$/assets/migrate/migrations/55.sql" />
+        <option value="$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Upload.php" />
       </list>
     </option>
   </component>
@@ -1344,12 +1330,12 @@
       <workItem from="1490604408152" duration="1784000" />
       <workItem from="1490611973362" duration="624000" />
       <workItem from="1490626249700" duration="409000" />
-      <workItem from="1491296695981" duration="4290000" />
+      <workItem from="1491296695981" duration="5137000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1088087000" />
+    <option name="totallyTimeSpent" value="1088934000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1428,13 +1414,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Project/ORM/Wheel/Wheel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="7" lean-forward="false" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/sow/wheel/edit.tabs/image.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1701,7 +1680,7 @@
     <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/edit.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="703">
-          <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1725,9 +1704,9 @@
     <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/edit.tabs/address.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-362">
-          <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
           <folding>
-            <marker date="1491300152845" expanded="true" signature="2253:2324" ph="{...}" />
+            <marker date="1491301067465" expanded="true" signature="2253:2324" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1735,7 +1714,7 @@
     <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/edit.tabs/heading.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1743,7 +1722,7 @@
     <entry file="file://$PROJECT_DIR$/bundles/cp/assets/view/soc/dealer/edit.tabs/social.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1767,7 +1746,7 @@
     <entry file="file://$PROJECT_DIR$/web/js/cp/upload/image-dealer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -1775,7 +1754,7 @@
     <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/16.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="17" column="65" lean-forward="true" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
+          <caret line="17" column="65" lean-forward="false" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
           <folding />
         </state>
       </provider>
@@ -1783,7 +1762,7 @@
     <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/SOC/Dealer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="512" column="49" lean-forward="true" selection-start-line="512" selection-start-column="49" selection-end-line="512" selection-end-column="69" />
+          <caret line="512" column="49" lean-forward="false" selection-start-line="512" selection-start-column="49" selection-end-line="512" selection-end-column="69" />
           <folding />
         </state>
       </provider>
@@ -1791,15 +1770,23 @@
     <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/18.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="66" />
+          <caret line="14" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="66" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/migrate/migrations/55.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/api/src/Project/Api/HTTPProcessors/Upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="156" column="5" lean-forward="false" selection-start-line="156" selection-start-column="5" selection-end-line="156" selection-end-column="5" />
           <folding />
         </state>
       </provider>
