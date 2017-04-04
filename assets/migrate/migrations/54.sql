@@ -52,3 +52,6 @@ set popular = (
            / (select count(1) c from wheelsComments group by wheelId order by c desc limit 1) * ( 0.20225 )
          )
        ) ;
+
+# ALTER TABLE `brands` ADD `popular` FLOAT NOT NULL DEFAULT '-1' AFTER `webGroup`;
+# ALTER TABLE `dealers` ADD `popular` FLOAT NOT NULL DEFAULT '-1' AFTER `web`;

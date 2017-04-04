@@ -13,6 +13,6 @@ insert INTO `rolesPermissions` (`roleId`, `permissionId`) VALUES (5, last_insert
 INSERT INTO `permissions` (`title`, `name`) VALUES ('Запросить удаление рубрики из бренда', 'cp.soc.brandheading.pull-request');
 insert INTO `rolesPermissions` (`roleId`, `permissionId`) VALUES (6, last_insert_id());
 
-ALTER TABLE `brandsSocials`
+ALTER TABLE `brandsHeadings`
 	DROP INDEX `relationship`,
 	ADD UNIQUE INDEX `relationship` (`brandId`, `headingId`, `url`);

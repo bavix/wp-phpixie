@@ -8,10 +8,116 @@
         %label.label.label-info.pull-right
           = $_($item->name)
     .ibox-content
-      %form(method="POST" action="/api/soc/dealer" data-created)
-        .form-group.form-group-lg
-          %label.control-label(for="dealerTitle")
-            Name
-          %input#dealerTitle.form-control.text-uppercase(type="text" name="name" value="#{$item->name}" )
+
+      .tabs-container
+        .tabs-right
+          %ul.nav.nav-tabs
+            %li.active
+              %a(data-toggle="tab" href="#tab-base") Base
+            %li
+              %a(data-toggle="tab" href="#tab-social") Social
+            %li
+              %a(data-toggle="tab" href="#tab-heading") Heading
+            %li
+              %a(data-toggle="tab" href="#tab-address") Address
+            - if ($user->hasPermission('cp.log'))
+              %li
+                %a(data-toggle="tab" href="#tab-last-activity")
+                  %label.label.label-info.pull-right = $logCount
+                  Last activity
+          .tab-content
+
+            #tab-base.tab-pane.active
+              .panel-body
+                %form(method="POST" action="/api/soc/dealer/#{$item->id}" data-updated="dealer")
+                  .form-group.form-group-lg
+                    %label.control-label(for="dealerName")
+                      Name
+                    %input#dealerName.form-control.text-uppercase(type="text" name="name" value="#{$item->name}")
+
+                  .hr-line-dashed
+
+                  .form-group.form-group-lg
+                    %label.control-label(for="dealerWeb")
+                      Web site
+                    %input#dealerWeb.form-control(type="text" name="web" value="#{$item->web}")
+
+                  .hr-line-dashed
+
+                  %div.grid
+
+                    .col-lg-6
+
+                      .form-group.form-group-lg
+                        %input#activeDealer.wbs-checkbox(type="checkbox" name="active" checked="#{!!$item->active}")
+                        %label(for="activeDealer")
+                          Active
+
+                  .hr-line-dashed
+
+                  .form-group(align="center")
+                    %button.btn.btn-primary.btn-lg
+                      %i.fa.fa-save
+                      Submit
+
+            #tab-social.tab-pane
+              partial: 'cp:soc/dealer/edit.tabs/social'
+
+            #tab-heading.tab-pane
+              partial: 'cp:soc/dealer/edit.tabs/heading'
+
+            #tab-address.tab-pane
+              partial: 'cp:soc/dealer/edit.tabs/address'
+
+            - if ($user->hasPermission('cp.log'))
+              #tab-last-activity.tab-pane
+                .panel-body
+                  %table.table.table-bordered
+                    %thead
+                      %tr
+                        %th User (Login)
+                        %th Type
+                        %th Model
+                        %th Data
+                        %th Created At
+                    %tbody
+                      - foreach ($pager->getCurrentItems() as $log)
+                        %tr(id="log-#{$log->id}")
+                          %td
+                            - $logUser = $log->user()
+                            - if ($logUser)
+                              - $urlProfile = 'cp.sou.user@profile.' . $logUser->id
+                              - $urlData = \Project\Extension\Util::httpWithURL($urlProfile)
+                              - $httpPath = $this->httpPath($urlData['url'], $urlData['attributes'])
+                              %a(href="#{$httpPath}")
+                                = $_($logUser->login)
+                            - else
+                              bot
+                          %td
+                            - $classLabel = 'label-success'
+                            - if ($log->type === 'updated')
+                              - $classLabel = 'label-warning'
+                            - else if ($log->type === 'deleted')
+                              - $classLabel = 'label-danger'
+                            %label{:class => ['label', $classLabel]} = $_($log->type)
+                          %td = $log->model
+                          %td
+                            - $data = json_decode($log->data)
+                            - foreach ($data as $name => $value)
+                              .grid
+                                - $value = $_($value)
+                                = $name . ' = '
+                                %span(style="white-space: nowrap; overflow: hidden;" )
+                                  - $dots = '..'
+                                  - if (mb_strlen($value) < 25)
+                                    - $dots = ''
+                                  = mb_substr($value, 0, 25) . $dots
+                          %td.entry-date(data-time="#{$log->createdAt}" data-order="#{$log->createdAt}")
 
 partial:'cp:soc/brand/preview'
+
+- $assets::pushJs('/js/cp/upload/image-dealer.js')
+- $assets::pushJs('/js/cp/soc/dealer/edit.js')
+
+<script async defer src="/js/cp/soc/brand/map.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIEtS2ncgpT5WGXLuMtqjABoCbZDKQu6k&libraries=places&callback=initAutocomplete"></script>

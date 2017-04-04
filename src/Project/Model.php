@@ -43,5 +43,10 @@ class Model
     const BRAND_DEALER  = 'brandDealer';
     const BRAND_HEADING = 'brandHeading';
 
+    // many to many
+    const DEALER_SOCIAL  = 'dealerSocial';
+    const DEALER_DEALER  = 'dealerDealer';
+    const DEALER_HEADING = 'dealerHeading';
+
     const WHEEL_COMMENT = 'wheelComment';
 }

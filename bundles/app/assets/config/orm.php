@@ -18,6 +18,18 @@ return [
             'table' => 'brandsHeadings'
         ],
 
+        Model::DEALER_SOCIAL => [
+            'table' => 'dealersSocials'
+        ],
+
+        Model::DEALER_DEALER => [
+            'table' => 'dealersDealers'
+        ],
+
+        Model::DEALER_HEADING => [
+            'table' => 'dealersHeadings'
+        ],
+
         Model::WHEEL_COMMENT => [
             'table' => 'wheelsComments'
         ],
@@ -132,11 +144,6 @@ return [
             'right' => Model::DEALER,
         ],
         [
-            'type'  => 'manyToMany',
-            'left'  => Model::DEALER, // бренд + рубрика
-            'right' => Model::HEADING,
-        ],
-        [
             'type'  => 'oneToMany',
             'owner' => Model::BRAND,
             'items' => Model::BRAND,
@@ -194,6 +201,23 @@ return [
             'type'  => 'oneToMany',
             'owner' => Model::SOCIAL,
             'items' => Model::BRAND_SOCIAL
+        ],
+
+        // brand <-> social
+        [
+            'type'  => 'manyToMany',
+            'left'  => Model::DEALER,
+            'right' => Model::SOCIAL
+        ],
+        [
+            'type'  => 'oneToMany',
+            'owner' => Model::DEALER,
+            'items' => Model::DEALER_SOCIAL
+        ],
+        [
+            'type'  => 'oneToMany',
+            'owner' => Model::SOCIAL,
+            'items' => Model::DEALER_SOCIAL
         ],
 
         // wheel <=> comment
@@ -310,6 +334,23 @@ return [
             'type'  => 'oneToMany',
             'owner' => Model::HEADING,
             'items' => Model::BRAND_HEADING
+        ],
+
+        // brand <-> heading
+        [
+            'type'  => 'manyToMany',
+            'left'  => Model::DEALER,
+            'right' => Model::HEADING
+        ],
+        [
+            'type'  => 'oneToMany',
+            'owner' => Model::DEALER,
+            'items' => Model::DEALER_HEADING
+        ],
+        [
+            'type'  => 'oneToMany',
+            'owner' => Model::HEADING,
+            'items' => Model::DEALER_HEADING
         ],
 
         [
