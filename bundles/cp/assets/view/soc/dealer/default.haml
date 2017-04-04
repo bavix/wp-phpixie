@@ -3,14 +3,67 @@
 .col-lg-9
   .ibox
     .ibox-title
-      %label.label.label-success.pull-right
-      -# = $count
+      %label.label.label-success.pull-right = $count
       %h3 = $currentMenu->title
-    .ibox-content#content
+    .ibox-content
+      partial: 'cp:pager'
+      %table.table.table-striped
+        %thead
+          %tr
+            %th Logo
+            %th Active
+            %th Name
+            -#%th Created At
+            %th Updated At
+            %th Actions
+        %tbody
+          - foreach ($pager->getCurrentItems() as $item)
+            %tr(id="dealer-#{$item->id()}")
+              %td
+                %img.img-circle(width="70px" src="#{$item->imageThumbs()}")
+              %td
+                %label.label{:class => ($item->active ? 'label-success' : 'label-warning')}
+                  - if ($item->active)
+                    Yes
+                  - else
+                    No
+              %td = $item->name
+              -#%td.entry-date(data-time="#{$item->createdAt}" data-order="#{$item->createdAt}")
+              %td.entry-date(data-time="#{$item->updatedAt}" data-order="#{$item->updatedAt}")
+              %td
+                - $httpPath = 'cp.soc.item'
+                - $attributes = ['nextProcessor' => 'dealer', 'action' => 'edit', 'id' => $item->id]
+                - $httpPath = $this->httpPath($httpPath, $attributes)
+                %a.btn.btn-primary.btn-sm(href="#{$httpPath}")
+                  %i.fa.fa-edit
+                  Edit
+                - if ($user->hasPermission('cp.soc.dealer.delete'))
+                  - $httpPath = 'api.soc.item'
+                  - $attributes = ['nextProcessor' => 'dealer', 'action' => 'delete', 'id' => $item->id]
+                  - $httpPath = $this->httpPath($httpPath, $attributes)
+                  %a.btn.btn-danger.trash-data.btn-sm(href="#{$httpPath}")
+                    %i.fa.fa-trash
+                    Delete
+      partial: 'cp:pager'
 .col-lg-3
-  -#.ibox
-  -#  .ibox-title
-  -#    Filter
-  -#  .ibox-content
-  -#    filter
+  .ibox
+    .ibox-title Filter's
+    .ibox-content
+      %form
+        .form-group
+          %label(for="dealersSelect")
+            Dealer
+          %select#dealersSelect.form-control.select2-multiple(name="filter[id]" style="width:100%")
+            %option(disabled selected) None
+        .form-group
+          %label(for="activeSelect")
+            Active
+          %select#activeSelect.form-control.select2-multiple(name="filter[active]" style="width:100%")
+            %option(disabled selected) All
+            %option(value="1" ) Active
+            %option(value="0" ) No active
+        .form-group
+          %button.btn.btn-success Submit
+          %a.btn.btn-default(onclick="Url.removeQuery(); location.reload();") Reset
+
 - $assets::pushJs('/js/cp/soc/dealer/list.js')

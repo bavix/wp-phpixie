@@ -1,0 +1,80 @@
+.panel-body
+  %form(method="POST" data-id="#{$item->id}" action="/api/soc/dealer/#{$item->id}/address" data-created="address")
+
+    .grid
+      .col-md-12.col-xs-12
+        .form-group.form-group-lg
+          %label.control-label(for="autocomplete")
+            Query
+          %input#autocomplete.form-control(type="text")
+
+    .grid
+      .col-md-12.col-xs-12
+        #map.wbs-google-map
+
+    .grid
+      .col-md-7.col-xs-7
+        .form-group.form-group-lg
+          %label.control-label(for="country")
+            Country
+          %input#country.form-control(type="text" name="country" disabled)
+
+      .col-md-5.col-xs-5
+        .form-group.form-group-lg
+          %label.control-label(for="zipCode")
+            zip code
+          %input#zipCode.form-control(type="text" name="zipCode" disabled)
+
+    .grid
+      .col-md-5.col-xs-5
+        .form-group.form-group-lg
+          %label.control-label(for="state")
+            State
+          %input#state.form-control(type="text" name="state" disabled)
+
+      .col-md-7.col-xs-7
+        .form-group.form-group-lg
+          %label.control-label(for="city")
+            City
+          %input#city.form-control(type="text" name="city" disabled)
+
+    .grid
+      .col-md-8.col-xs-8
+        .form-group.form-group-lg
+          %label.control-label(for="street")
+            Street
+          %input#street.form-control(type="text" name="street" disabled)
+
+      .col-md-4.col-xs-4
+        .form-group.form-group-lg
+          %label.control-label(for="streetNumber")
+            Street Number
+          %input#streetNumber.form-control(type="text" name="streetNumber" disabled)
+
+    .grid
+      .col-md-12
+        .form-group.form-group-lg
+          %label.control-label(for="description")
+            Description
+          %textarea#description.form-control(name="description" rows=3)
+
+    %input#latitude(type="hidden" name="latitude")
+    %input#longitude(type="hidden" name="longitude")
+
+    .hr-line-dashed
+
+    .form-group(align="center")
+      %a.btn.btn-warning.btn-lg(href="javascript:hasChecked()")
+        %i.fa.fa-check
+        Has checked
+
+      %button.btn.btn-primary.btn-lg(disabled)
+        %i.fa.fa-save
+        Submit
+
+  #addressRows.table-responsive
+
+:javascript
+  function hasChecked() {
+    $('[data-created="address"] button').prop('disabled', false);
+  }
