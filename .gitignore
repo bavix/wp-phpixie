@@ -11,3 +11,4 @@ cache/haml/
 docs/
 apidoc/
 build/
+.idea/
