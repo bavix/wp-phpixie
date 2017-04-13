@@ -62,7 +62,7 @@
     %meta{:content => "/images/logo.png", :name => "twitter:image"}/
 
     :css
-      img {
+      .logo {
         width: 120px;
         height: 120px;
         position: absolute;
@@ -70,7 +70,14 @@
         top: 50%;
         margin: -60px 0 0 -60px;
       }
+      .icons {
+        position:absolute;
+        left:50%;
+        top:50%; margin:80px 0 0 -70px;
+      }
   %body
-    %picture
-      %source{:srcset => "/images/logo.webp", :type => "image/webp"}
-      %img{:src => "/images/logo.png", :alt => "Wheel Pro"}/
+    %picture.logo
+      %img{:src => "/images/logo.svg", :alt => "Wheel Pro", :width => 120, :height => 120}/
+    .icons
+      %a(href="" title="Wheel Pro")
+        %img(src="/images/shops/appstore.svg" alt="AppStore")
