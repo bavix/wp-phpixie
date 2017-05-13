@@ -5,12 +5,17 @@
       Brand
     %input#brandName.form-control.text-uppercase(type="text" name="brandName" value="#{$item->brand()->name}" )
 
-  - $collection = $item->collection()
-  - if ($collection)
-    .form-group.form-group-lg
-      %label.control-label(for="collectionName")
-        Collection
-      %input#collectionName.form-control.text-uppercase(type="text" name="collectionName" value="#{$collection->name}" )
+  - $selfCollection = $item->collection()
+  - $collectionId = null
+  - if ($selfCollection)
+    - $collectionId = $selfCollection->id
+  .form-group.form-group-lg
+    %label.control-label(for="collectionName")
+      Collection
+    %select.form-control.select2-multiple(name="collectionId" style="width:100%")
+      %option(value="" selected) None
+      - foreach ($collections as $collection)
+        %option(value="#{$collection->id}" selected="#{ $collectionId === $collection->id }") = $collection->name
 
   .form-group.form-group-lg
     %label.control-label(for="name")
