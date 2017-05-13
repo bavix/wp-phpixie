@@ -71,10 +71,15 @@ class Wheel extends SOWProtected
             ->findOne();
 
         $styles = $this->components->orm()->query(Model::STYLE)->find();
+        $collections = $this->components->orm()
+            ->query(Model::COLLECTION)
+            ->where('brandId', $wheel->brandId)
+            ->find();
 
         $this->assign('id', $id);
         $this->assign('item', $wheel);
         $this->assign('styles', $styles);
+        $this->assign('collections', $collections);
         $this->assign('imageType', 'wheel');
 
         return $this->render('cp:sow/wheel/edit');

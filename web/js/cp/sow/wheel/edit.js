@@ -125,7 +125,7 @@ $(function () {
     });
 
     // fixme
-    $('#styleWheel').select2({
+    $('.select2-multiple').select2({
         theme: "bootstrap"
     });
 
