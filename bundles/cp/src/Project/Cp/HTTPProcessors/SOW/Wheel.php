@@ -16,43 +16,31 @@ class Wheel extends SOWProtected
         $query = $request->query();
         $page  = $query->get('page');
 
-        /**
-         * @var $filter array
-         */
-        $filter = $query->get('filter', []);
-
         $orm = $this->components->orm();
 
-        $styleQuery = $orm->query(Model::WHEEL)
-            ->orderDescendingBy('createdAt');
+        $wheelQuery = $orm->query(Model::WHEEL);
 
-        if (is_array($filter))
-        {
-            foreach ($filter as $name => $value)
-            {
-                if (is_array($value))
-                {
-                    $styleQuery->orWhere($name, 'in', $value);
-                }
-                else
-                {
-                    $styleQuery->orWhere($name, $value);
-                }
-            }
-        }
+        $this->query($wheelQuery, $request, [
+            'sort' => [
+                'createdAt' => 'asc'
+            ]
+        ]);
 
-        $styleAllCount = $styleQuery->count();
+        $wheelAllCount = $wheelQuery->count();
 
         /**
          * @var $builder \Project\Framework\Builder
          */
         $builder = $this->builder->frameworkBuilder();
 
-        $pager = $builder->helper()->pager($page, $styleQuery, 50, ['style', 'image']);
+        $pager = $builder->helper()->pager($page, $wheelQuery, 50, [
+            'collection',
+            'style',
+            'image'
+        ]);
 
         $this->assign('pager', $pager);
-        $this->assign('count', $styleAllCount);
-        $this->assign('filter', $filter);
+        $this->assign('count', $wheelAllCount);
 
         return $this->render('cp:sow/wheel/default');
     }
@@ -68,7 +56,7 @@ class Wheel extends SOWProtected
 
         $wheel = $this->components->orm()->query(Model::WHEEL)
             ->in($id)
-            ->findOne();
+            ->findOne(['brand', 'collection', 'style']);
 
         $styles = $this->components->orm()->query(Model::STYLE)->find();
         $collections = $this->components->orm()

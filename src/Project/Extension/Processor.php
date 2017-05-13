@@ -5,6 +5,7 @@ namespace Project\Extension;
 use PHPixie\BundleFramework\Components;
 use PHPixie\DefaultBundle\Builder;
 use PHPixie\DefaultBundle\Processor\HTTP\Actions;
+use PHPixie\HTTP\Request;
 use PHPixie\HTTP\Responses\Response;
 use Project\ORM\User\User;
 
@@ -147,6 +148,146 @@ abstract class Processor extends Actions
     public function assign($key, $value)
     {
         $this->variables[$key] = $value;
+    }
+
+    /**
+     * @param \PHPixie\ORM\Models\Type\Database\Implementation\Query $query
+     * @param Request                                                $request
+     * @param array $defaults
+     */
+    public function query($query, Request $request, array $defaults = [])
+    {
+
+        // ordering
+        $this->querySort($query, $request, $defaults['sort'] ?? []);
+
+        // equal id = 1
+        $this->queryTerms($query, $request, $defaults['terms'] ?? []);
+
+        // less id < 1
+        $this->queryLess($query, $request, $defaults['less'] ?? []);
+
+        // greater id > 1
+        $this->queryGreater($query, $request, $defaults['greater'] ?? []);
+
+        // queries name LIKE '%OTIFOR%' ~ Rotiform
+        $this->queryQueries($query, $request, $defaults['queries'] ?? []);
+    }
+
+    /**
+     * @param \PHPixie\ORM\Models\Type\Database\Implementation\Query $query
+     * @param Request                                                $request
+     * @param array $defaults
+     */
+    protected function querySort($query, Request $request, array $defaults)
+    {
+
+        /**
+         * [ [ name, sort ], [ id, sort ] ]
+         *
+         * @var array $sort
+         */
+        $sort = $request->query()->get('sort', $defaults);
+
+        foreach ($sort as $field => $direction)
+        {
+            // order by
+            $query->orderBy($field, $direction);
+        }
+
+    }
+
+    /**
+     * @param \PHPixie\ORM\Models\Type\Database\Implementation\Query $query
+     * @param Request                                                $request
+     * @param array $defaults
+     */
+    protected function queryTerms($query, Request $request, array $defaults)
+    {
+
+        /**
+         * equal
+         *
+         * @var array $terms
+         */
+        $terms = $request->query()->get('terms', $defaults);
+
+        foreach ($terms as $column => $value)
+        {
+            if (is_array($value))
+            {
+                $query->where($column, 'in', $value);
+            }
+            else
+            {
+                $query->where($column, $value);
+            }
+        }
+
+    }
+
+    /**
+     * @param \PHPixie\ORM\Models\Type\Database\Implementation\Query $query
+     * @param Request                                                $request
+     * @param array $defaults
+     */
+    protected function queryGreater($query, Request $request, array $defaults)
+    {
+
+        /**
+         * greater
+         *
+         * @var array $terms
+         */
+        $terms = $request->query()->get('greater', $defaults);
+
+        foreach ($terms as $column => $value)
+        {
+            $query->where($column, '>', $value);
+        }
+
+    }
+
+    /**
+     * @param \PHPixie\ORM\Models\Type\Database\Implementation\Query $query
+     * @param Request                                                $request
+     * @param array $defaults
+     */
+    protected function queryLess($query, Request $request, array $defaults)
+    {
+
+        /**
+         * less
+         *
+         * @var array $terms
+         */
+        $terms = $request->query()->get('less', $defaults);
+
+        foreach ($terms as $column => $value)
+        {
+            $query->where($column, '<', $value);
+        }
+
+    }
+
+    /**
+     * @param \PHPixie\ORM\Models\Type\Database\Implementation\Query $query
+     * @param Request                                                $request
+     * @param array $defaults
+     */
+    protected function queryQueries($query, Request $request, array $defaults)
+    {
+
+        /**
+         * @var array $queries
+         */
+        $queries = $request->query()->get('queries', $defaults);
+
+        foreach ($queries as $column => $value)
+        {
+            $query->where($column, 'like', "%$value%");
+        }
+
     }
 
 }
